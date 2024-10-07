@@ -1,0 +1,15 @@
+    h2, p {color:white;}
+    h2 {border-bottom: 1px solid white;}
+    p {font-size:16px;}
+    body{width:100%; background-color:#1d1d1d;}
+
+    .columnmain{}
+    .columnleft{}
+
+    .storylet{background-color:#182828; padding:10px; margin:0 auto; width:50%; border:2px solid white; border-style:groove;}
+    .storylettitle{background-color:#183838; padding:10px; margin:0 auto; width:95%; border:2px solid white; border-style:groove;}
+    .action{background-color:#183838; padding:10px; margin:0 auto; width:90%; border:1px solid white; border-style:groove;}
+    .outcome{background-color:#183838; padding:10px; margin:0 auto; width:85%; border:1px solid white; border-style:groove;}
+    actionbutton{background-color:#a38851; font-weight:bold; cursor:pointer; border: 2px solid #ceb06f; border-radius:8px; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px;}
+    actionbutton:hover{border:2px solid #ceb06f; background-color:#9c7f3a;}
+    actionbutton:active{border:2px solid #5c4c1c; background-color:#4e370d;}
