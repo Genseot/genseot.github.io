@@ -1,0 +1,15 @@
+<br>
+        <div class="storylettitle">
+        	<h2>About This Website</h2>
+        	<p>As you probably know, I'm Genseot, i program and write etc.</p>
+        	<p>I'm still working on my website, can't say much about how it'll come out but it'll host short (or medium-sized) stories set within my worldbuilding project (no name yet but unofficially (if that matters) I call it "The Heavens"), I have 2 planned out (mostly), but for now you can check out my other stuff!</p>
+        </div>
+	<br>
+	<div class="action">
+		<h2>Neocities</h2>
+           	<p>Check out my Neocities page while you're waiting for new stuff here!! Although it's slightly (a lot) outdated, it's set within a place that will not be mentioned within my stories for quite a while - if you'd like to check it out!</p>
+		<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.neocities.org')">Visit</actionbutton></p>
+	</div>
+	<br>
+	<p><actionbutton onclick="loadIndex()">Return</actionbutton></p>
+<br>

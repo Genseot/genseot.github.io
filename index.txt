@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<head>
-    <link href="/code/main.css" rel="stylesheet" type="text/css" media="all">
-    <script src="/code/maintrans.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .mainsitestorylet{background-color:#182828; padding:10px; margin:0 auto; width:80%; border:2px solid white; border-style:groove}
-    </style>
-</head>
-<body>
-    <div class="mainsitestorylet">
-        <br>
-        <div class="storylettitle">
+<br>
+	<div class="storylettitle">
         	<h2>Welcome</h2>
         	<p>Hello!! Welcome to my website!! I'm Genseot, i program and write.</p>
         	<p>This site won't have much yet, still working on it, sorry!</p>
@@ -29,7 +17,4 @@
         	<p>Check out my stories!</p>
         	<p style="text-align:right"><actionbutton onclick="loadStories()">Continue</actionbutton></p>
         </div>
-        <br>
-    </div>
-</body>
-</html>
+<br>
