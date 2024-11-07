@@ -319,7 +319,7 @@ function loadGateMainOutcome1() {
 	xhttp.open("GET", "/constellarium/beginning/bridge/outcome/gatemain1.txt");
 	xhttp.send();
 }
-function loadTodream-castle() {
+function loadToConstellarium() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/constellarium/beginning/bridge/outcome/toconstellarium.txt");
 	xhttp.send();
