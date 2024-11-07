@@ -1,4 +1,5 @@
-//GENERAL THINGS
+/*GENERAL THINGS*/
+
 const xhttp = new XMLHttpRequest();
 var excisedScar = false;
 
@@ -207,7 +208,7 @@ function loadBoatMain()
 	if (exploringSea == 1)
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Wait`;
-		document.getElementById("changeoptiontext").innerHTML = `Slowly, slowly, the Constellarium grows in size across the horizon...`;
+		document.getElementById("changeoptiontext").innerHTML = `Slowly, slowly, the dream-castle grows in size across the horizon...`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`;
 
 		document.getElementById("changeoptiontitle2").innerHTML = `Look into the Sea`;
@@ -217,7 +218,7 @@ function loadBoatMain()
 	else if (exploringSea == 2)
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Wait More`;
-		document.getElementById("changeoptiontext").innerHTML = `The boat rocks and sways on the Sea, the Constellarium is now almost at its original height, standing grand and majestic above all.`;
+		document.getElementById("changeoptiontext").innerHTML = `The boat rocks and sways on the Sea, the dream-castle is now almost at its original height, standing grand and majestic above all.`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`;
 
 		document.getElementById("changeoptiontitle2").innerHTML = `Look into the Sea Again`;
@@ -227,7 +228,7 @@ function loadBoatMain()
 	else
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Disembark`;
-		document.getElementById("changeoptiontext").innerHTML = `The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`;
+		document.getElementById("changeoptiontext").innerHTML = `The boat rocks before the bridge to the dream-castle. It awaits in silent certainty.`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBoatToBridgeOutcome()">Disembark</actionbutton>`;
 		
 		$('#action2').remove(); 
@@ -277,7 +278,7 @@ function loadBridgeMain()
 	else
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Approach the Gates`;
-		document.getElementById("changeoptiontext").innerHTML = `The gates to the Constellarium are not much further, now. Only a little more to go -`;
+		document.getElementById("changeoptiontext").innerHTML = `The gates to the dream-castle are not much further, now. Only a little more to go -`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToGate()">Approach</actionbutton>`;
 	}
 	xhttp.send();
@@ -301,14 +302,14 @@ function loadGates()
 	xhttp.open("GET", "/constellarium/beginning/bridge/gatemain.txt");
 	if (exploringBridge == 1)
 	{
-		document.getElementById("changeoptiontitle").innerHTML = ``;
-		document.getElementById("changeoptiontext").innerHTML = ``;
+		document.getElementById("changeoptiontitle").innerHTML = `Approach the Gates`;
+		document.getElementById("changeoptiontext").innerHTML = `Prepare to open them, if you can.`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadGateMainOutcome1()"></actionbutton>`;
 	}
 	else
 	{
-		document.getElementById("changeoptiontitle").innerHTML = ``;
-		document.getElementById("changeoptiontext").innerHTML = ``;
+		document.getElementById("changeoptiontitle").innerHTML = `Open the Gates`;
+		document.getElementById("changeoptiontext").innerHTML = `The gates will open with the help of the Stars, who have formed into Constellations.`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToConstellarium()"></actionbutton>`;
 	}
 	xhttp.send();
@@ -318,7 +319,7 @@ function loadGateMainOutcome1() {
 	xhttp.open("GET", "/constellarium/beginning/bridge/outcome/gatemain1.txt");
 	xhttp.send();
 }
-function loadToConstellarium() {
+function loadTodream-castle() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/constellarium/beginning/bridge/outcome/toconstellarium.txt");
 	xhttp.send();
