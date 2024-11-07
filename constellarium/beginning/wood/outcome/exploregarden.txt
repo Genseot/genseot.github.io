@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>In the Gardens of Appetite</h2>
+		<p>I travel through the dense vegetation of the Wood to where the moths sup upon the succulent nectar of which makes their bodies so plump as to burst upon a flame's touch. Through thicket and treacherous ground, I follow the young moths who have not yet had a taste of this ambrosial nectar. The moths follow a wild and chaotic path - yet I persist through the peril of the Wood to its closely-guarded appetites.</p>
+		<p id="displaychangingtext"></p>
+		<p id="displaychangingtext2"></p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You've gathered more knowledge on the Wood - on its appetites and the moth-ways.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadWoodMain()">Continue</actionbutton></p>
+<br>

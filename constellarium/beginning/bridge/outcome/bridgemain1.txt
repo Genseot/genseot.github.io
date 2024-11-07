@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2>Approaching</h2>
+		<p>My steps clack on the stone of the bridge, echoing across its entirety. Here - it is silent, everything has drawn its breath, waiting for me to enter the dream-castle. I approach - step by step, echo by echo towards the castle, inching ever closer to what might set me free.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You are almost at the Constellarium's gates.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadBridgeMain()"></actionbutton></p>
+<br>

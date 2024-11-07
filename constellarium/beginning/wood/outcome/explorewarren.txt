@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>Primaeval Scrawlings</h2>
+		<p>I travel through the mud and dirt of the Wood, following tracks of some indiscernible being - one that must be quite intimate with the Wood's ways, and its secret paths. The tracks seem to be uncertain of their true nature, twisting into different shapes with each passing step, as if they were uncomfortable with their form. At the end of this primaeval path, a yawning, gaping mouth awaits. The entrance to a damp and dank cave, of which a creature must reside within, no doubt - but perhaps it may be deep within its winding warrens, dreaming.</p>
+		<p id="displaychangingtext"></p>
+		<p id="displaychangingtext2"></p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You've gathered more knowledge on the Wood - on the ways its inhabitants use.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadWoodMain()">Continue</actionbutton></p>
+<br>

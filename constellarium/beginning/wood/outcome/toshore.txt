@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Before a Midnight Sea</h2>
+		<p>I walk to the edge of the world. The grass and dirt lend way to the Midnight Shores, comprised of crunchy, black dead carapace-shells of creatures long dead. This, in turn, yields to an inky-black sea - the Seas Beneath. Across the deep, dark sea, you can see the dream-castle that you have so long awaited for, bathed under the light of the Moon and the Stars - the dream-castle.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>I stand upon the Midnight Shores.</p>
+		<p>The Constellarium lies just across the Seas Beneath...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadShoreMain()">Continue</actionbutton></p>
+<br>

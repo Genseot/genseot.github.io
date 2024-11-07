@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Night's Navigator</h2>
+		<p>I ponder of the Moon and the light it reflects. The moonlight moves strange and eerily in the dark of the Wood and of the Sky, its beams of light - shivering and swaying pale. As though the Moon is the monarch of night, resting upon its throne of dappled shadow and eigengrau - there must be a reason for its light shining this way, must there?</p>
+		<p id="displaychangingtext"></p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You've gathered more knowledge on the Wood - on the Moon and its light.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadWoodMain()">Continue</actionbutton></p>
+<br>

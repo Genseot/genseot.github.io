@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2>Disembarking</h2>
+		<p>The boat finally arrives. The Boatman tugs on a rope leashed to the quayside of the bridge - this rocks the boat, but fortunately, you are still on it as the Boatman docks. With a gesture of its hand, it permits you ashore onto the quay. The Boatman grabs its paddles and draws away from where you stand, presumably to fetch another dreamer. It regards you with a silent smile and a nod of its head.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You disembark onto the Bridge of Dreams. The Boatman draws away from you to ferry another dreamer.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadBridgeMain()"></actionbutton></p>
+<br>

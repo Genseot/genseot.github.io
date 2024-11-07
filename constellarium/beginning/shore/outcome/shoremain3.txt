@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2>Payment</h2>
+		<p>I put my hand in my pocket. A freezing-cold circular object awaits. I take it out, it seems to be a coin, comprised mostly of onyx--black as ink--and bone--white as starlight. The patterns the bone creates on the face of the coin resemble skeletons and waves of water - the reverse shows a city beneath the white waves of a black sea. As I examine the coin, the Boatman reaches its skeletal fingers out and pockets the coin. It waves to me, allowing me to climb aboard.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The Boatman's dues have been paid in full.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadShoreMain()"></actionbutton></p>
+<br>
