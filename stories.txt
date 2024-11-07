@@ -7,7 +7,7 @@
         <div class="action">
         	<h2>Beyond the Gates of Dream</h2>
         	<p>Delve within the dream-castle of the Stars, explore and enlist the help of the Ten Constellations, crack open the Dream-Gate and ascend into the Stars beyond.</p>
-        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="transitionTo('blehh')"-->Begin</actionbutton></p>
+        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="load[]Confirmation"-->Begin</actionbutton></p>
         </div>
         <br>
 	<!--<div class="action">
