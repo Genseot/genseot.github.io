@@ -48,7 +48,7 @@ function loadWoodExploreOutcome()
 			$('#displaychangingtext2').remove(); 
 		}
 	}
-	else if (airs => 25 && airs < 50)
+	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt");
 		if (exploringWood < 10)
@@ -57,7 +57,7 @@ function loadWoodExploreOutcome()
 			document.getElementById("displaychangingtext2").innerHTML = "I follow the markings back to where they begun - the end of the path this time, as beginnings always have an end - and ends always have a beginning. I pick my way back to the clearing through the annoyances of the Wood.";
 		}
 	}
-	else if (airs => 50 && airs < 75)
+	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
 		if (exploringWood < 10)
@@ -90,7 +90,7 @@ function loadWoodPonderOutcome()
 	exploringWood++;
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-	if (airs =< 25) 
+	if (airs <= 25) 
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 		if (exploringWood < 10)
@@ -99,7 +99,7 @@ function loadWoodPonderOutcome()
 			$('#displaychangingtext2').remove(); 
 		}
 	}
-	else if (airs => 25 && airs < 50)
+	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 		if (exploringWood < 10)
@@ -108,7 +108,7 @@ function loadWoodPonderOutcome()
 			$('#displaychangingtext2').remove(); 
 		}
 	}
-	else if (airs => 50 && airs < 75)
+	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 		if (exploringWood < 10)
