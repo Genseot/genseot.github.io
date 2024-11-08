@@ -10,5 +10,5 @@
 		<p>You arrive at the gates.</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadGateMain()"></actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadGateMain()">Continue</actionbutton></p>
 <br>

@@ -8,5 +8,5 @@
 		<p>You disembark onto the Bridge of Dreams. The Boatman draws away from you to ferry another dreamer.</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadBridgeMain()"></actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadBridgeMain()">Continue</actionbutton></p>
 <br>

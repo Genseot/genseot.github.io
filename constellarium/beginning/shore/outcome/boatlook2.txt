@@ -8,5 +8,5 @@
 		<p>Anchored, you arrive to the Bridge of Dreams.</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadBoatMain()"></actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadBoatMain()">Continue</actionbutton></p>
 <br>
