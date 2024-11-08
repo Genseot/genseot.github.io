@@ -43,17 +43,17 @@ function loadWoodExploreOutcome()
 	{
 		if (exploringWood < 10)
 		{
-			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;}
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I come out dazed and weary; I stumble across that clearing yet again. These hours I spent under the stygian and silvered Wood may not have been all for nought though - I have become more intimate with the primaeval, prowling powers that pervade under the surface of its skin. My mind grows in harmony with the Wood's paths and ways - and it with me.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I come out dazed and weary; I stumble across that clearing yet again. These hours I spent under the stygian and silvered Wood may not have been all for nought though - I have become more intimate with the primaeval, prowling powers that pervade under the surface of its skin. My mind grows in harmony with the Wood's paths and ways - and it with me.";}
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";}
 		}
 	}
 	else if (airs >= 25 && airs < 50)
@@ -63,15 +63,14 @@ function loadWoodExploreOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "I follow the markings back to where they begun - the end of the path this time, as beginnings always have an end - and ends always have a beginning. I pick my way back to the clearing through the annoyances of the Wood.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood."; document.getElementById("displaychangingtext2").innerHTML = "I follow the markings back to where they begun - the end of the path this time, as beginnings always have an end - and ends always have a beginning. I pick my way back to the clearing through the annoyances of the Wood.";}
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";}
 		}
 	}
 	else if (airs >= 50 && airs < 75)
@@ -81,15 +80,14 @@ function loadWoodExploreOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I walk into its warrens, staying near the light of the Moon and the candles of the Wood. Within the entrance of the cave lies scrawlings, primitive drawings of the routes of the tangled Wood. I record some to memory, before swiftly leaving, for if the moths of the Wood have a strong appetite - then this must have an appetite stronger and more primal than those of the moths.";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I walk into its warrens, staying near the light of the Moon and the candles of the Wood. Within the entrance of the cave lies scrawlings, primitive drawings of the routes of the tangled Wood. I record some to memory, before swiftly leaving, for if the moths of the Wood have a strong appetite - then this must have an appetite stronger and more primal than those of the moths."; document.getElementById("displaychangingtext2").innerHTML = "I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.";}
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";}
 		}
 	}
 	else
@@ -99,15 +97,14 @@ function loadWoodExploreOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I cleave my path through a drooping canopy of thick vines, and a fantastical sight awaited - plump, red roses, moths flitting about, partaking in the Wood's gifts, before yielding so eagerly in the candle-flames that illuminate the scene like a tapestry. I flit among the moths for a while, learning their secrets to travelling the Wood, before settling upon having a drop of the rich, red nectar of the flowers. A singular plump, red drop -";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "Through a red and viscous haze, I awake, sprawled in the grass and roots of the clearing, yet again. I do not remember what transpired, yet I remember more of the moth-secrets of travelling the Wood.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I cleave my path through a drooping canopy of thick vines, and a fantastical sight awaited - plump, red roses, moths flitting about, partaking in the Wood's gifts, before yielding so eagerly in the candle-flames that illuminate the scene like a tapestry. I flit among the moths for a while, learning their secrets to travelling the Wood, before settling upon having a drop of the rich, red nectar of the flowers. A singular plump, red drop -"; document.getElementById("displaychangingtext2").innerHTML = "Through a red and viscous haze, I awake, sprawled in the grass and roots of the clearing, yet again. I do not remember what transpired, yet I remember more of the moth-secrets of travelling the Wood.";}
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";}
 		}
 	}
 }
@@ -124,15 +121,14 @@ function loadWoodPonderOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I struggle for hours on end trudging through the ways of mind and memory - to see anything resembling what a potential path may be through my experiences through the Wood. I take attention to every miniscule detail of the Wood - yet it yields only little, tiny scraps of knowledge - this is all I've learnt for now, until inspiration strikes.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I struggle for hours on end trudging through the ways of mind and memory - to see anything resembling what a potential path may be through my experiences through the Wood. I take attention to every miniscule detail of the Wood - yet it yields only little, tiny scraps of knowledge - this is all I've learnt for now, until inspiration strikes.";}
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."; document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";}
 		}
 	}
 	else if (airs >= 25 && airs < 50)
@@ -142,15 +138,14 @@ function loadWoodPonderOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I consider this path - what similarities it must have with other paths and routes through the Wood. The way the roots twine with one another, the candle's light, the way the trees grow - there must be something here, something important. I will keep this knowledge to myself, for now.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "I consider this path - what similarities it must have with other paths and routes through the Wood. The way the roots twine with one another, the candle's light, the way the trees grow - there must be something here, something important. I will keep this knowledge to myself, for now.";}
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."; document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
 		}
 	}
 	else if (airs >= 50 && airs < 75)
@@ -160,15 +155,14 @@ function loadWoodPonderOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.";};
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."; document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
 		}
 	}
 	else
@@ -178,15 +172,14 @@ function loadWoodPonderOutcome()
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "My fingernails come out, caked with dirt and mud and the muck of the Wood. I see the roots that travel deep beneath the Earth, following the paths of the roots above ground. I see the patterns that they yield to me - they follow a path. Each in their tangled knotwork eventually yield to a singular, unerring path - one that almost definitely shall yield to the heart of the Wood. This path that the roots follow, the ways they grow, a possibility of where the ways of the roots terminate - this is what scraps I have learnt.";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "My fingernails come out, caked with dirt and mud and the muck of the Wood. I see the roots that travel deep beneath the Earth, following the paths of the roots above ground. I see the patterns that they yield to me - they follow a path. Each in their tangled knotwork eventually yield to a singular, unerring path - one that almost definitely shall yield to the heart of the Wood. This path that the roots follow, the ways they grow, a possibility of where the ways of the roots terminate - this is what scraps I have learnt.";};
 		}
 		if (exploringWood >= 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 			xhttp.send();
-			xhttp.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.";};
-			xhttp.onload = function() {document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
+			window.onload = function() {document.getElementById("displaychangingtext").innerHTML = "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."; document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";};
 		}
 	}
 }
