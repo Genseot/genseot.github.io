@@ -1,13 +1,32 @@
-p {font-style:italic;}
+rose {color:#ff60bc; font-style:italic;}
+heart {color:#fc9cff; font-weight: bold; font-style:normal;}
+crystal {color:#ff42ff; font-weight: bold; font-style:normal;}
+gale {color:#538aa1; font-style:italic;}
+flame {color:#ff8027; font-weight: bold; font-style:normal;}
+scar {color:#b44dfb; font-weight: bold; font-style:normal;}
+star {color:#a2a2ff; font-weight: bold; font-style:normal;}
+candle {color:#ffdc02; font-weight: bold; font-style:italic;}
+threshold {color:#ffffff; font-weight: bold; font-style:italic;}
+mirror {color:#b2b2b2; font-weight: bold; font-style:normal;}
 
-b {-webkit-text-stroke: 0.5px #ffffff;}
-rose {color:#ff60bc; -webkit-text-stroke: 0.5px #ff60bc; font-style:normal;}
-heart {color:#fc9cff; -webkit-text-stroke: 0.5px #fc9cff; font-style:normal;}
-crystal {color:#ff42ff; -webkit-text-stroke: 0.5px #ff42ff; font-style:normal;}
-gale {color:#538aa1; -webkit-text-stroke: 0.5px #538aa1; font-style:normal;}
-flame {color:#ff8027; -webkit-text-stroke: 0.5px #ff8027; font-style:normal;}
-scar {color:#b44dfb; -webkit-text-stroke: 0.5px #b44dfb; font-style:normal;}
-star {color:#a2a2ff; -webkit-text-stroke: 0.5px #a2a2ff; font-style:normal;}
-candle {color:#ffdc02; -webkit-text-stroke: 0.5px #ffdc02; font-style:normal;}
-threshold {color:#ffffff; -webkit-text-stroke: 0.5px #ffffff; font-style:normal;}
-mirror {color:#b2b2b2; -webkit-text-stroke: 0.5px #b2b2b2; font-style:normal;}
+h1, h2, p {font-family:slabo; color:white;}
+h2 {border-bottom: 1px solid white;}
+p {font-size:16px; font-style:italic;} 
+b {font-weight: bold;}
+@font-face {font-family:"slabo";src: url("https://file.garden/ZgeTHkDRARPwyXFA/Slabo_27px.zip");} 
+body{width:100%; background-color:#1d1d1d;}
+
+.storyletbig{background-color:#182828; padding:10px; margin:0 auto; width:75%; border:2px solid white; border-style:groove;}
+.storylet{background-color:#182828; padding:10px; margin:0 auto; width:50%; border:2px solid white; border-style:groove;}
+.storylettitle{background-color:#183838; padding:10px; margin:0 auto; width:95%; border:2px solid white; border-style:groove;}
+.action{background-color:#183838; padding:10px; margin:0 auto; width:90%; border:1px solid white; border-style:groove;}
+.outcome{background-color:#183838; padding:10px; margin:0 auto; width:85%; border:1px solid white; border-style:groove;}
+actionbutton{background-color:#a38851; font-weight:bold; cursor:pointer; border: 2px solid #ceb06f; border-radius:8px; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px;}
+actionbutton:hover{border:2px solid #ceb06f; background-color:#9c7f3a;}
+actionbutton:active{border:2px solid #5c4c1c; background-color:#4e370d;}
+
+@media screen 
+  and (min-device-width : 320px) 
+  and (max-device-width : 480px) {
+  .storylet{background-color:#182828; padding:10px; margin:0 auto; width:100%; border:2px solid white; border-style:groove;}
+}
