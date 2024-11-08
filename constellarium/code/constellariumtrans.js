@@ -115,7 +115,7 @@ function loadWoodExploreOutcome()
 						}
 					  };			  
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
+					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt", true);
 				}
 			}
 			else
@@ -129,7 +129,7 @@ function loadWoodExploreOutcome()
 							document.getElementById("displaychangingtext2").replaceWith("Through a red and viscous haze, I awake, sprawled in the grass and roots of the clearing, yet again. I do not remember what transpired, yet I remember more of the moth-secrets of travelling the Wood.");
 						}
 					  };
-					xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
+					xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt", true);
 					xhttp.send();
 				}
 				else
@@ -140,7 +140,7 @@ function loadWoodExploreOutcome()
 							document.getElementById("displaychangingtext").replaceWith("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
 						}
 					  };
-					xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
+					xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt", true);
 					xhttp.send();
 				}
 			}
