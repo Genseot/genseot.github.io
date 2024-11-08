@@ -215,27 +215,27 @@ function loadShoreMain()
 	setTimeout(function(){
 		if(exploringShore == 1)
 		{
-			$("changeoptiontitle").append(`Look Across the Sea`); 
-			$("changeoptiontext").append(`Something seems to be approaching, disturbing the still seas...`); 
-			$("changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome1()">Observe</actionbutton>`);
+			$("#changeoptiontitle").append(`Look Across the Sea`); 
+			$("#changeoptiontext").append(`Something seems to be approaching, disturbing the still seas...`); 
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome1()">Observe</actionbutton>`);
 		}
 		else if(exploringShore == 2)
 		{
-			$("changeoptiontitle").append(`Approach the Boatman`); 
-			$("changeoptiontext").append(`Its teeth twinkle in the starlight, its eyes hold something else - curiosity?`); 
-			$("changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome2()">Approach</actionbutton>`);
+			$("#changeoptiontitle").append(`Approach the Boatman`); 
+			$("#changeoptiontext").append(`Its teeth twinkle in the starlight, its eyes hold something else - curiosity?`); 
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome2()">Approach</actionbutton>`);
 		}
 		else if(exploringShore == 3)
 		{
-			$("changeoptiontitle").append(`Payment?`); 
-			$("changeoptiontext").append(`You feel a heavy weight in your pocket...`); 
-			$("changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome3()">Investigate</actionbutton>`);
+			$("#changeoptiontitle").append(`Payment?`); 
+			$("#changeoptiontext").append(`You feel a heavy weight in your pocket...`); 
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome3()">Investigate</actionbutton>`);
 		}
 		else
 		{
-			$("changeoptiontitle").append(`Boarding`); 
-			$("changeoptiontext").append(`The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`); 
-			$("changeoptionbutton").append(`<actionbutton onclick="loadToBoat()">Board</actionbutton>`);
+			$("#changeoptiontitle").append(`Boarding`); 
+			$("#changeoptiontext").append(`The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`); 
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadToBoat()">Board</actionbutton>`);
 		}
 	}, 50);
 }
@@ -271,29 +271,29 @@ function loadBoatMain()
 	setTimeout(function(){
 		if (exploringSea == 1)
 		{
-			$("changeoptiontitle").append(`Wait`);
-			$("changeoptiontext").append(`Slowly, slowly, the Constellarium grows in size across the horizon...`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`);
+			$("#changeoptiontitle").append(`Wait`);
+			$("#changeoptiontext").append(`Slowly, slowly, the Constellarium grows in size across the horizon...`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`);
 	
-			$("changeoptiontitle2").append(`Look into the Sea`);
-			$("changeoptiontext2").append(`You see little glints of light under the waves, what are they?`);
-			$("changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome1()">Look</actionbutton>`);
+			$("#changeoptiontitle2").append(`Look into the Sea`);
+			$("#changeoptiontext2").append(`You see little glints of light under the waves, what are they?`);
+			$("#changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome1()">Look</actionbutton>`);
 		}
 		else if (exploringSea == 2)
 		{
-			$("changeoptiontitle").append(`Wait More`);
-			$("changeoptiontext").append(`The boat rocks and sways on the Sea, the Constellarium is now almost at its original height, standing grand and majestic above all.`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`);
+			$("#changeoptiontitle").append(`Wait More`);
+			$("#changeoptiontext").append(`The boat rocks and sways on the Sea, the Constellarium is now almost at its original height, standing grand and majestic above all.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`);
 	
-			$("changeoptiontitle2").append(`Look into the Sea Again`);
-			$("changeoptiontext2").append(`The waters are less murky, here. Something grand lurks beneath the waves, might you take a look?`);
-			$("changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome2()">Look</actionbutton>`);
+			$("#changeoptiontitle2").append(`Look into the Sea Again`);
+			$("#changeoptiontext2").append(`The waters are less murky, here. Something grand lurks beneath the waves, might you take a look?`);
+			$("#changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome2()">Look</actionbutton>`);
 		}
 		else
 		{
-			$("changeoptiontitle").append(`Disembark`);
-			$("changeoptiontext").append(`The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadBoatToBridgeOutcome()">Disembark</actionbutton>`);
+			$("#changeoptiontitle").append(`Disembark`);
+			$("#changeoptiontext").append(`The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatToBridgeOutcome()">Disembark</actionbutton>`);
 			
 			$('#action2').remove(); 
 		}
@@ -337,15 +337,15 @@ function loadBridgeMain()
 	setTimeout(function(){
 		if (exploringBridge == 1)
 		{
-			$("changeoptiontitle").append(`Step by Step`);
-			$("changeoptiontext").append(`You have a ways to go until you approach the gates. Better start, then.`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadBridgeMainOutcome1()">Travel</actionbutton>`);
+			$("#changeoptiontitle").append(`Step by Step`);
+			$("#changeoptiontext").append(`You have a ways to go until you approach the gates. Better start, then.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadBridgeMainOutcome1()">Travel</actionbutton>`);
 		}
 		else
 		{
-			$("changeoptiontitle").append(`Approach the Gates`);
-			$("changeoptiontext").append(`The gates to the Constellarium are not much further, now. Only a little more to go -`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadToGate()">Approach</actionbutton>`);
+			$("#changeoptiontitle").append(`Approach the Gates`);
+			$("#changeoptiontext").append(`The gates to the Constellarium are not much further, now. Only a little more to go -`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadToGate()">Approach</actionbutton>`);
 		}
 	}, 50);
 }
@@ -370,15 +370,15 @@ function loadGates()
 	setTimeout(function(){
 		if (exploringBridge == 1)
 		{
-			$("changeoptiontitle").append(`Prepare to Open the Gates`);
-			$("changeoptiontext").append(`Prepare to open them, if you can.`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadGateMainOutcome1()">Prepare</actionbutton>`);
+			$("#changeoptiontitle").append(`Prepare to Open the Gates`);
+			$("#changeoptiontext").append(`Prepare to open them, if you can.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGateMainOutcome1()">Prepare</actionbutton>`);
 		}
 		else
 		{
-			$("changeoptiontitle").append(`Open the Gates`);
-			$("changeoptiontext").append(`The gates will open with the help of the Stars, who have formed into Constellations.`);
-			$("changeoptionbutton").append(`<actionbutton onclick="loadToConstellarium()">Open</actionbutton>`);
+			$("#changeoptiontitle").append(`Open the Gates`);
+			$("#changeoptiontext").append(`The gates will open with the help of the Stars, who have formed into Constellations.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadToConstellarium()">Open</actionbutton>`);
 		}
 	}, 50);
 }
