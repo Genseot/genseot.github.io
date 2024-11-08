@@ -125,9 +125,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("I struggle for hours on end trudging through the ways of mind and memory - to see anything resembling what a potential path may be through my experiences through the Wood. I take attention to every miniscule detail of the Wood - yet it yields only little, tiny scraps of knowledge - this is all I've learnt for now, until inspiration strikes.");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("I struggle for hours on end trudging through the ways of mind and memory - to see anything resembling what a potential path may be through my experiences through the Wood. I take attention to every miniscule detail of the Wood - yet it yields only little, tiny scraps of knowledge - this is all I've learnt for now, until inspiration strikes.");}, 20);
 		}
 		else
 		{
@@ -135,10 +133,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.");
-				$("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."); $("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");}, 20);
 		}
 	}
 	else if (airs >= 25 && airs < 50)
@@ -149,9 +144,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("I consider this path - what similarities it must have with other paths and routes through the Wood. The way the roots twine with one another, the candle's light, the way the trees grow - there must be something here, something important. I will keep this knowledge to myself, for now.");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("I consider this path - what similarities it must have with other paths and routes through the Wood. The way the roots twine with one another, the candle's light, the way the trees grow - there must be something here, something important. I will keep this knowledge to myself, for now.");}, 20);
 		}
 		else
 		{
@@ -159,10 +152,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.");
-				$("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."); $("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");}, 20);
 		}
 	}
 	else if (airs >= 50 && airs < 75)
@@ -173,9 +163,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.");}, 20);
 		}
 		else
 		{
@@ -183,9 +171,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.");
-				$("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
+			setTimeout(function(){$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."); $("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
 			});
 		}
 	}
@@ -197,9 +183,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("My fingernails come out, caked with dirt and mud and the muck of the Wood. I see the roots that travel deep beneath the Earth, following the paths of the roots above ground. I see the patterns that they yield to me - they follow a path. Each in their tangled knotwork eventually yield to a singular, unerring path - one that almost definitely shall yield to the heart of the Wood. This path that the roots follow, the ways they grow, a possibility of where the ways of the roots terminate - this is what scraps I have learnt.");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("My fingernails come out, caked with dirt and mud and the muck of the Wood. I see the roots that travel deep beneath the Earth, following the paths of the roots above ground. I see the patterns that they yield to me - they follow a path. Each in their tangled knotwork eventually yield to a singular, unerring path - one that almost definitely shall yield to the heart of the Wood. This path that the roots follow, the ways they grow, a possibility of where the ways of the roots terminate - this is what scraps I have learnt.");}, 20);
 		}
 		else
 		{
@@ -207,10 +191,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 			xhttp.send();
-			$(document).ready(function() {
-				$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.");
-				$("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."); $("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");}, 20);
 		}
 	}
 }
@@ -233,28 +214,36 @@ function loadShoreMain()
 	xhttp.send();
 	if(exploringShore == 1)
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Look Across the Sea`; 
-		document.getElementById("changeoptiontext").innerHTML = `Something seems to be approaching, disturbing the still seas...`; 
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadShoreMainOutcome1()">Observe</actionbutton>`;
+		setTimeout(function(){
+			$("changeoptiontitle").append(`Look Across the Sea`); 
+			$("changeoptiontext").append(`Something seems to be approaching, disturbing the still seas...`); 
+			$("changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome1()">Observe</actionbutton>`);
+		}, 20);
 	}
 	else if(exploringShore == 2)
-		{
-			document.getElementById("changeoptiontitle").innerHTML = `Approach the Boatman`; 
-			document.getElementById("changeoptiontext").innerHTML = `Its teeth twinkle in the starlight, its eyes hold something else - curiosity?`; 
-			document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadShoreMainOutcome2()">Approach</actionbutton>`;
-		}
+	{
+		setTimeout(function(){
+			$("changeoptiontitle").append(`Approach the Boatman`); 
+			$("changeoptiontext").append(`Its teeth twinkle in the starlight, its eyes hold something else - curiosity?`); 
+			$("changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome2()">Approach</actionbutton>`);
+		}, 20);
+	}
 	else if(exploringShore == 3)
-		{
-		document.getElementById("changeoptiontitle").innerHTML = `Payment?`; 
-		 document.getElementById("changeoptiontext").innerHTML = `You feel a heavy weight in your pocket...`; 
-		 document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadShoreMainOutcome3()">Investigate</actionbutton>`;
-		}
+	{
+		setTimeout(function(){
+			$("changeoptiontitle").append(`Payment?`); 
+			$("changeoptiontext").append(`You feel a heavy weight in your pocket...`); 
+			$("changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome3()">Investigate</actionbutton>`);
+		}, 20);
+	}
 	else
-		{
-			document.getElementById("changeoptiontitle").innerHTML = `Boarding`; 
-			document.getElementById("changeoptiontext").innerHTML = `The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`; 
-			document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToBoat()">Board</actionbutton>`;
-		}
+	{
+		setTimeout(function(){
+			$("changeoptiontitle").append(`Boarding`); 
+			$("changeoptiontext").append(`The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`); 
+			$("changeoptionbutton").append(`<actionbutton onclick="loadToBoat()">Board</actionbutton>`);
+		}, 20);
+	}
 }
 
 function loadShoreMainOutcome1() {
@@ -287,31 +276,37 @@ function loadBoatMain()
 	xhttp.send();
 	if (exploringSea == 1)
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Wait`;
-		document.getElementById("changeoptiontext").innerHTML = `Slowly, slowly, the Constellarium grows in size across the horizon...`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`;
-
-		document.getElementById("changeoptiontitle2").innerHTML = `Look into the Sea`;
-		document.getElementById("changeoptiontext2").innerHTML = `You see little glints of light under the waves, what are they?`;
-		document.getElementById("changeoptionbutton2").innerHTML = `<actionbutton onclick="loadBoatLookOutcome1()">Look</actionbutton>`;
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Wait`);
+			$("changeoptiontext").append(`Slowly, slowly, the Constellarium grows in size across the horizon...`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`);
+	
+			$("changeoptiontitle2").append(`Look into the Sea`);
+			$("changeoptiontext2").append(`You see little glints of light under the waves, what are they?`);
+			$("changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome1()">Look</actionbutton>`);
+		}, 20);
 	}
 	else if (exploringSea == 2)
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Wait More`;
-		document.getElementById("changeoptiontext").innerHTML = `The boat rocks and sways on the Sea, the Constellarium is now almost at its original height, standing grand and majestic above all.`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`;
-
-		document.getElementById("changeoptiontitle2").innerHTML = `Look into the Sea Again`;
-		document.getElementById("changeoptiontext2").innerHTML = `The waters are less murky, here. Something grand lurks beneath the waves, might you take a look?`;
-		document.getElementById("changeoptionbutton2").innerHTML = `<actionbutton onclick="loadBoatLookOutcome2()">Look</actionbutton>`;
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Wait More`);
+			$("changeoptiontext").append(`The boat rocks and sways on the Sea, the Constellarium is now almost at its original height, standing grand and majestic above all.`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`);
+	
+			$("changeoptiontitle2").append(`Look into the Sea Again`);
+			$("changeoptiontext2").append(`The waters are less murky, here. Something grand lurks beneath the waves, might you take a look?`);
+			$("changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome2()">Look</actionbutton>`);
+		}, 20);
 	}
 	else
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Disembark`;
-		document.getElementById("changeoptiontext").innerHTML = `The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBoatToBridgeOutcome()">Disembark</actionbutton>`;
-		
-		$('#action2').remove(); 
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Disembark`);
+			$("changeoptiontext").append(`The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadBoatToBridgeOutcome()">Disembark</actionbutton>`);
+			
+			$('#action2').remove(); 
+		}, 20);
 	}
 }
 function loadBoatWaitOutcome1() {
@@ -351,15 +346,19 @@ function loadBridgeMain()
 	xhttp.send();
 	if (exploringBridge == 1)
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Step by Step`;
-		document.getElementById("changeoptiontext").innerHTML = `You have a ways to go until you approach the gates. Better start, then.`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadBridgeMainOutcome1()">Travel</actionbutton>`;
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Step by Step`);
+			$("changeoptiontext").append(`You have a ways to go until you approach the gates. Better start, then.`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadBridgeMainOutcome1()">Travel</actionbutton>`);
+		}, 20);
 	}
 	else
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Approach the Gates`;
-		document.getElementById("changeoptiontext").innerHTML = `The gates to the Constellarium are not much further, now. Only a little more to go -`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToGate()">Approach</actionbutton>`;
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Approach the Gates`);
+			$("changeoptiontext").append(`The gates to the Constellarium are not much further, now. Only a little more to go -`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadToGate()">Approach</actionbutton>`);
+		}, 20);
 	}
 }
 function loadBridgeMainOutcome1() {
@@ -382,15 +381,19 @@ function loadGates()
 	xhttp.send();
 	if (exploringBridge == 1)
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Prepare to Open the Gates`;
-		document.getElementById("changeoptiontext").innerHTML = `Prepare to open them, if you can.`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadGateMainOutcome1()">Prepare</actionbutton>`;
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Prepare to Open the Gates`);
+			$("changeoptiontext").append(`Prepare to open them, if you can.`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadGateMainOutcome1()">Prepare</actionbutton>`);
+		}, 20);
 	}
 	else
 	{
-		document.getElementById("changeoptiontitle").innerHTML = `Open the Gates`;
-		document.getElementById("changeoptiontext").innerHTML = `The gates will open with the help of the Stars, who have formed into Constellations.`;
-		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToConstellarium()">Open</actionbutton>`;
+		setTimeout(function*(){
+			$("changeoptiontitle").append(`Open the Gates`);
+			$("changeoptiontext").append(`The gates will open with the help of the Stars, who have formed into Constellations.`);
+			$("changeoptionbutton").append(`<actionbutton onclick="loadToConstellarium()">Open</actionbutton>`);
+		}, 20);
 	}
 }
 function loadGateMainOutcome1() {
