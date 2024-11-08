@@ -6,7 +6,7 @@
 	<br>
 	<div class="outcome">
 		<p>I stand upon the Midnight Shores.</p>
-		<p>The Constellarium lies just across the Seas Beneath...</p>
+		<p>The dream-castle lies just across the Seas Beneath...</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadShoreMain()">Continue</actionbutton></p>
