@@ -22,15 +22,15 @@ function loadWoodMain()
 {
 	if (exploringWood < 10)
 	{
-		xhttp.send();
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/main.txt");
+		xhttp.send();
 	}
 	if (exploringWood >= 10)
 	{
-		xhttp.send();
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/toshore.txt");
+		xhttp.send();
 	}
 }
 
