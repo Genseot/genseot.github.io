@@ -40,6 +40,7 @@ function loadWoodExploreOutcome()
 	exploringWood++;
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.send();
 	if (airs < 25)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
@@ -82,7 +83,6 @@ function loadWoodExploreOutcome()
 		document.getElementById("displaychangingtext").innerHTML = "I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";
 		$('#displaychangingtext2').remove(); 
 	}
-	xhttp.send();
 }
 
 function loadWoodPonderOutcome()
@@ -91,6 +91,7 @@ function loadWoodPonderOutcome()
 	exploringWood++;
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.send();
 	if (airs <= 25) 
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
@@ -133,7 +134,6 @@ function loadWoodPonderOutcome()
 		document.getElementById("displaychangingtext").innerHTML =  "Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.";
 		document.getElementById("displaychangingtext2").innerHTML = "Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -";
 	}
-	xhttp.send();
 }
 
 function loadToShoreOutcome() 
@@ -151,6 +151,7 @@ function loadShoreMain()
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/constellarium/beginning/shore/shoremain.txt");
+	xhttp.send();
 	if (exploringShore == 1)
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Look Across the Sea`;
@@ -175,7 +176,6 @@ function loadShoreMain()
 		document.getElementById("changeoptiontext").innerHTML = `The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToBoat()">Board</actionbutton>`;
 	}
-	xhttp.send();
 }
 
 function loadShoreMainOutcome1() {
@@ -205,6 +205,7 @@ function loadBoatMain()
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/constellarium/beginning/shore/boatmain.txt");
+	xhttp.send();
 	if (exploringSea == 1)
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Wait`;
@@ -233,7 +234,6 @@ function loadBoatMain()
 		
 		$('#action2').remove(); 
 	}
-	xhttp.send();
 }
 function loadBoatWaitOutcome1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
@@ -269,6 +269,7 @@ function loadBridgeMain()
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/constellarium/beginning/bridge/bridgemain.txt");
+	xhttp.send();
 	if (exploringBridge == 1)
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Step by Step`;
@@ -281,7 +282,6 @@ function loadBridgeMain()
 		document.getElementById("changeoptiontext").innerHTML = `The gates to the dream-castle are not much further, now. Only a little more to go -`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToGate()">Approach</actionbutton>`;
 	}
-	xhttp.send();
 }
 function loadBridgeMainOutcome1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
@@ -300,6 +300,7 @@ function loadGates()
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/constellarium/beginning/bridge/gatemain.txt");
+	xhttp.send();
 	if (exploringBridge == 1)
 	{
 		document.getElementById("changeoptiontitle").innerHTML = `Approach the Gates`;
@@ -312,7 +313,6 @@ function loadGates()
 		document.getElementById("changeoptiontext").innerHTML = `The gates will open with the help of the Stars, who have formed into Constellations.`;
 		document.getElementById("changeoptionbutton").innerHTML = `<actionbutton onclick="loadToConstellarium()"></actionbutton>`;
 	}
-	xhttp.send();
 }
 function loadGateMainOutcome1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
