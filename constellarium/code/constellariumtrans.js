@@ -40,10 +40,10 @@ function loadWoodExploreOutcome()
 	exploringWood++;
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-	xhttp.send();
 	if (airs < 25)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "I come out dazed and weary; I stumble across that clearing yet again. These hours I spent under the stygian and silvered Wood may not have been all for nought though - I have become more intimate with the primaeval, prowling powers that pervade under the surface of its skin. My mind grows in harmony with the Wood's paths and ways - and it with me.";
@@ -53,6 +53,7 @@ function loadWoodExploreOutcome()
 	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.";
@@ -62,6 +63,7 @@ function loadWoodExploreOutcome()
 	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "I walk into its warrens, staying near the light of the Moon and the candles of the Wood. Within the entrance of the cave lies scrawlings, primitive drawings of the routes of the tangled Wood. I record some to memory, before swiftly leaving, for if the moths of the Wood have a strong appetite - then this must have an appetite stronger and more primal than those of the moths.";
@@ -71,6 +73,7 @@ function loadWoodExploreOutcome()
 	else
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "I cleave my path through a drooping canopy of thick vines, and a fantastical sight awaited - plump, red roses, moths flitting about, partaking in the Wood's gifts, before yielding so eagerly in the candle-flames that illuminate the scene like a tapestry. I flit among the moths for a while, learning their secrets to travelling the Wood, before settling upon having a drop of the rich, red nectar of the flowers. A singular plump, red drop -";
@@ -91,10 +94,10 @@ function loadWoodPonderOutcome()
 	exploringWood++;
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-	xhttp.send();
 	if (airs <= 25) 
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "I struggle for hours on end trudging through the ways of mind and memory - to see anything resembling what a potential path may be through my experiences through the Wood. I take attention to every miniscule detail of the Wood - yet it yields only little, tiny scraps of knowledge - this is all I've learnt for now, until inspiration strikes.";
@@ -113,6 +116,7 @@ function loadWoodPonderOutcome()
 	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.";
@@ -122,6 +126,7 @@ function loadWoodPonderOutcome()
 	else
 	{
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
+		xhttp.send();
 		if (exploringWood < 10)
 		{
 			document.getElementById("displaychangingtext").innerHTML = "My fingernails come out, caked with dirt and mud and the muck of the Wood. I see the roots that travel deep beneath the Earth, following the paths of the roots above ground. I see the patterns that they yield to me - they follow a path. Each in their tangled knotwork eventually yield to a singular, unerring path - one that almost definitely shall yield to the heart of the Wood. This path that the roots follow, the ways they grow, a possibility of where the ways of the roots terminate - this is what scraps I have learnt.";
