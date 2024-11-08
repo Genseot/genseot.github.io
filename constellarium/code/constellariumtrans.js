@@ -153,7 +153,7 @@ function loadWoodPonderOutcome()
 		if (exploringWood < 10)
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-			xhttp.onreadystatechange = function() {if(this.readyState == 4 && this.status == 200){document.getElementById("displaychangingtext").innerHTML = "The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.";};
+			xhttp.onreadystatechange = function() {if(this.readyState == 4 && this.status == 200){document.getElementById("displaychangingtext").innerHTML = "The light shines brighter sometimes, shimmering and dancing beautifully and gracefully; at others, it might be dull, shivering and dancing sluggishly. This must mean something - the Moon knows night and dream better than most. Perhaps it illuminates the true path through its reflected light? Perhaps it must be my compass that I must follow? My mind swims with questions, the Moon looks on in the endless heavens - perhaps it will be my guide through the ways of the deep, dark Wood, and will guide me beyond - this is what I have learnt for now.";}};
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 			xhttp.send();
 		}
