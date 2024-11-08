@@ -38,7 +38,7 @@ function loadWoodExploreOutcome()
 {
 	let airs = Math.floor(Math.random() * 101);
 	exploringWood++;
-	
+
 	for (let i = 0; i < 1; i++)
 	{
 		if (airs < 25)
@@ -55,9 +55,7 @@ function loadWoodExploreOutcome()
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-					});
+					$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
 				}
 			}
 			else if (airs >= 25 && airs < 50)
@@ -67,19 +65,15 @@ function loadWoodExploreOutcome()
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.");
-						$("#displaychangingtext2").append("I follow the markings back to where they begun - the end of the path this time, as beginnings always have an end - and ends always have a beginning. I pick my way back to the clearing through the annoyances of the Wood.");
-					});
+					$("#displaychangingtext").append("I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.");
+					$("#displaychangingtext2").append("I follow the markings back to where they begun - the end of the path this time, as beginnings always have an end - and ends always have a beginning. I pick my way back to the clearing through the annoyances of the Wood.");
 				}
 				else
 				{
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-					});
+					$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
 				}
 			}
 			else if (airs >= 50 && airs < 75)
@@ -89,19 +83,15 @@ function loadWoodExploreOutcome()
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I walk into its warrens, staying near the light of the Moon and the candles of the Wood. Within the entrance of the cave lies scrawlings, primitive drawings of the routes of the tangled Wood. I record some to memory, before swiftly leaving, for if the moths of the Wood have a strong appetite - then this must have an appetite stronger and more primal than those of the moths.");
-						$("#displaychangingtext2").append("I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.");
-					});
+					$("#displaychangingtext").append("I walk into its warrens, staying near the light of the Moon and the candles of the Wood. Within the entrance of the cave lies scrawlings, primitive drawings of the routes of the tangled Wood. I record some to memory, before swiftly leaving, for if the moths of the Wood have a strong appetite - then this must have an appetite stronger and more primal than those of the moths.");
+					$("#displaychangingtext2").append("I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.");
 				}
 				else
 				{
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-					});
+					$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
 				}
 			}
 			else
@@ -111,19 +101,15 @@ function loadWoodExploreOutcome()
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I cleave my path through a drooping canopy of thick vines, and a fantastical sight awaited - plump, red roses, moths flitting about, partaking in the Wood's gifts, before yielding so eagerly in the candle-flames that illuminate the scene like a tapestry. I flit among the moths for a while, learning their secrets to travelling the Wood, before settling upon having a drop of the rich, red nectar of the flowers. A singular plump, red drop -");
-						$("#displaychangingtext2").append("Through a red and viscous haze, I awake, sprawled in the grass and roots of the clearing, yet again. I do not remember what transpired, yet I remember more of the moth-secrets of travelling the Wood.");
-					});
+					$("#displaychangingtext").append("I cleave my path through a drooping canopy of thick vines, and a fantastical sight awaited - plump, red roses, moths flitting about, partaking in the Wood's gifts, before yielding so eagerly in the candle-flames that illuminate the scene like a tapestry. I flit among the moths for a while, learning their secrets to travelling the Wood, before settling upon having a drop of the rich, red nectar of the flowers. A singular plump, red drop -");
+					$("#displaychangingtext2").append("Through a red and viscous haze, I awake, sprawled in the grass and roots of the clearing, yet again. I do not remember what transpired, yet I remember more of the moth-secrets of travelling the Wood.");
 				}
 				else
 				{
 					xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 					xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt");
 					xhttp.send();
-					$(document).ready(function() {
-						$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-					});
+					$("#displaychangingtext").append("I make my way through, but - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
 				}
 			}
 	}
