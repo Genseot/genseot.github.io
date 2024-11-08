@@ -43,14 +43,10 @@ function loadWoodExploreOutcome()
 	{
 		if (exploringWood < 10)
 		{
-			ajax({ 
-				done: function(){
-					document.getElementById("storylet").innerHTML = this.responseText;
-					xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
-					$("#displaychangingtext").append("I come out dazed and weary; I stumble across that clearing yet again. These hours I spent under the stygian and silvered Wood may not have been all for nought though - I have become more intimate with the primaeval, prowling powers that pervade under the surface of its skin. My mind grows in harmony with the Wood's paths and ways - and it with me.");
-					xhttp.send();
-				}
-			});
+			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt");
+			xhttp.send();
+			document.replace("displaychangingtext","I come out dazed and weary; I stumble across that clearing yet again. These hours I spent under the stygian and silvered Wood may not have been all for nought though - I have become more intimate with the primaeval, prowling powers that pervade under the surface of its skin. My mind grows in harmony with the Wood's paths and ways - and it with me.");
 		}
 		else 
 		{
