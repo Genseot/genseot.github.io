@@ -14,5 +14,5 @@
 		<p>The gates lay what it so dearly guards bear for you to see.</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="blehhh()">Continue</actionbutton></p>
+	<p style="text-align:right">END</p>
 <br>
