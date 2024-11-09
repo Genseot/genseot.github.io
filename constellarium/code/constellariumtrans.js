@@ -337,7 +337,7 @@ function loadBridgeMain()
 		if (exploringBridge == 1)
 		{
 			$("#changeoptiontitle").append(`Step by Step`);
-			$("#changeoptiontext").append(`You have a ways to go until you approach the gates. Better start, then.`);
+			$("#changeoptiontext").append(`I still have a ways to go until you approach the gates. Better start, then.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadBridgeMainOutcome1()">Travel</actionbutton>`);
 		}
 		else
