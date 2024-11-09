@@ -3,7 +3,7 @@
 		<h2>Before the Gates</h2>
 		<p>I arrive to the gates before the dream-castle. They stand tall and imposing, towering over my height tenfold. The gates are wrought of wood mostly, and steel. Inset within the wood of both sides of the gates are pink crystals, emitting a harsh, pink glow - memory-crystals. The shapes these memory-crystals form are sigils within the language that the Stars speak, but all understand.</p>
 		<p><b>THE TRAVELLER; FOREVER WANDERING; FOREVER RETURNING.<b></p>
-		<p><b>A DREAM OF WHAT-MIGHT-BE; A DREAM OF WHAT-COULD-BE; A DREAM OF WHAT-WILL-BE.<b></p>
+		<p><b>A DREAM OF WHAT-MIGHT-BE; A DREAM OF WHAT-COULD-BE; A DREAM OF WHAT-WILL-BE.</b></p>
 	</div>
 	<br>
 	<div class="outcome">
