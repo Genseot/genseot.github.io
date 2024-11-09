@@ -3,11 +3,11 @@
 		<h2>Unseamed, Unlocked, Unsealed</h2>
 		<p>The Stars lock into their places in the heavens - as if they've practiced this dozens of times. They begin to gleam brighter than ever before - and ever will. Slowly, the scarred valves of the gate open - and within, a bright light, one that ever so slowly inches out and out under the Stars as the gate grinds more and more open. The light feels warm, but unkind - a force more primaeval than the Wood, than any I've ever known. This light envelops me, and I am left to only my senses within it.</p>
 		<p>I am within the heavens, taking on the form of a Star. I and so many others congregate within this circle of the heavens. Looking past, others are in similar positions, congregating into certain patches of the heavens. We begin to form into Constellations - I have no say in this; I am but only a visitor within someone else's body. I notice the Constellations form into sigils within the language of the Stars -</p>
-		<p>THE DUSK AFTER DAY; THE NIGHT AFTER DUSK; THE DAWN AFTER NIGHT.</p>
-		<p>TO LIGHT A CANDLE; TO STAVE OFF THE DARKNESS; TO ILLUMINATE.</p>
-		<p>TO RISE AGAIN; TO ILLUMINATE ONCE MORE; THE SUN, RISING ONCE MORE.</p>
+		<p><b>TO LIGHT A CANDLE; TO STAVE OFF THE DARKNESS; TO ILLUMINATE.</b></p>
+		<p><b>THE DUSK AFTER DAY; THE NIGHT AFTER DUSK; THE DAWN AFTER NIGHT.</b></p>
+		<p><b>TO RISE AGAIN; TO ILLUMINATE ONCE MORE; THE SUN, RISING ONCE MORE.</b></p>
 		<p>More and more Constellations form into sigils just like these - and then a bright, white light sparks in the centre of us. It begins as a small spark, but begins to grow rapidly, devouring all the Stars and Constellations who wait in silent certainty - until it envelops me -</p>
-		<p>The gates are open, a vast amphitheater lies in wait - and a bright white light resides within the centre of it, shining bright.</p>
+		<p>The gates are open, a vast amphitheater lies in wait - and a bright white light resides within the centre of it, shining bright. I enter the Constellarium - the waxen seal to my fate.</p>
 	</div>
 	<br>
 	<div class="outcome">
