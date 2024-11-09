@@ -7,7 +7,7 @@
 	</div>
 	<br>
 	<div class="outcome">
-		<p>You arrive at the gates.</p>
+		<p>You arrive at the gates of the dream-castle.</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadGateMain()">Continue</actionbutton></p>
