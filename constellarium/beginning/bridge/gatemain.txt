@@ -1,6 +1,6 @@
 <br>
 	<div class="storylettitle">
-		<h2>The Constellarium's Gates</h2>
+		<h2>The Star-Wrought Gate</h2>
 		<p><b>THE TRAVELLER; FOREVER WANDERING; FOREVER RETURNING.</b></p>
 		<p><b>A DREAM OF WHAT-MIGHT-BE; A DREAM OF WHAT-COULD-BE; A DREAM OF WHAT-WILL-BE.</b></p>
 	</div>
