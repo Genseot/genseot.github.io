@@ -171,8 +171,7 @@ function loadWoodPonderOutcome()
 
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 			xhttp.send();
-			setTimeout(function(){$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."); $("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");
-			});
+			setTimeout(function(){$("#displaychangingtext").append("Suddenly - a breakthrough! This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out."); $("#displaychangingtext2").append("Travelling down the long ways of the Wood, I notice the patterns - the root's growth, the Moon shining above, the Stars watching. Here, I hear the sound of water. This must be it, I press on through the undergrowth. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -");}, 500);
 		}
 	}
 	else
