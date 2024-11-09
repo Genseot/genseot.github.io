@@ -360,7 +360,7 @@ function loadToGate() {
 	xhttp.send();
 }
 
-function loadGates()
+function loadGateMain()
 {
 	exploringGate++;
 
