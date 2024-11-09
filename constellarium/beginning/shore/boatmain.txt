@@ -10,7 +10,7 @@
 		<p style="text-align:right" id="changeoptionbutton"></p>
 	</div>
 	<br>
-	<div class="action">
+	<div id="action2" class="action">
 		<h2 id="changeoptiontitle2"></h2>
 		<p id="changeoptiontext2"></p> 
 		<p style="text-align:right" id="changeoptionbutton2"></p>
