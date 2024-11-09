@@ -293,7 +293,7 @@ function loadBoatMain()
 		{
 			$("#changeoptiontitle").append(`Disembark`);
 			$("#changeoptiontext").append(`The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`);
-			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatToBridgeOutcome()">Disembark</actionbutton>`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadToBridge()">Disembark</actionbutton>`);
 			
 			$('#action2').remove(); 
 		}
