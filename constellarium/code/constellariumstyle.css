@@ -28,5 +28,6 @@ actionbutton:active{border:2px solid #5c4c1c; background-color:#4e370d;}
 @media screen 
   and (min-device-width : 320px) 
   and (max-device-width : 480px) {
-  .storylet{background-color:#182828; padding:10px; margin:0 auto; width:100%; border:2px solid white; border-style:groove;}
+    .storyletbig{background-color:#182828; padding:10px; margin:0 auto; width:100%; border:2px solid white; border-style:groove;}
+    .storylet{background-color:#182828; padding:10px; margin:0 auto; width:100%; border:2px solid white; border-style:groove;}
 }
