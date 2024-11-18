@@ -1,7 +1,9 @@
 <br>
 	<div class="storylettitle">
 		<h2>Before a Midnight Sea</h2>
-		<p>I walk to the edge of the world. The grass and dirt lend way to the Midnight Shores, comprised of crunchy, black dead carapace-shells of creatures long dead. This, in turn, yields to an inky-black sea - the Seas Beneath. Across the deep, dark sea, I see the dream-castle that I have so long awaited for, bathed under the light of the Moon and the Stars, almost glowing.</p>
+		<p>The compass of my mind is attuned to its course. This path I thought of - this must be a path to the heart, the Stars align correctly, the Moon refracts the light just the right way, this is where the roots lead. I memorise the twists and turns and terrain of this path - and set out.</p>
+		<p>I make my way through, and - a strange sound - water? I pick my way through the perils of the Wood towards the source of the noise. Whatever it is, it must prove useful in my expedition. I move between branch-throngs, moth-crowds, root-masses, avoiding the dangers and delving further within the Wood. The canopy overhead begins to fall away, the trees begin to thin, their candle's flames grow dimmer, the moonlight and starlight break through, illuminating my path in a pale tint -</p>
+		<p>I walk to the edge of the world. The grass and dirt lend way to the Midnight Shores, comprised of crunchy, black dead carapace-shells of creatures long dead. This, in turn, yields to an inky-black sea - the Seas Beneath. Across the deep, dark sea, you can see the dream-castle that you have so long awaited for, bathed under the light of the Moon and the Stars.</p>
 	</div>
 	<br>
 	<div class="outcome">

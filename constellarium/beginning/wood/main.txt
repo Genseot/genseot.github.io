@@ -4,6 +4,8 @@
 		<p>Above me, no canopy of tree-branches and leaves block the pale moonlight from settling on the ground. A clearing is rare enough within these woods - I could use this as an anchor, to steady myself in my expeditions through the wood, until I find what I'm looking for.</p>
 	</div>
 	<br>
+	<div id="addcontinue">
+	</div>
 	<div class="action">
 		<h2>Explore</h2>
 		<p>I must find a way through the moon-seared Wood, I need to trek across the roots and mud by foot to find the place I desire.</p> 

@@ -2,12 +2,12 @@
 	<div class="storylettitle">
 		<h2>Wood-Inscribed</h2>
 		<p>I walk among the trees of the Wood, following strange inscriptions on their bark. I follow these inscriptions: the same, repeating pattern on the trees, the branches, the roots - a symbol of a candle's flame. This leads me into the deep reaches of the woods, where the skies are midnight and the Stars are hidden in the gloom of night. At the end of the path the symbols brought me, I come across an interesting sight - a thin copse of trees, but here, there seems to be a dense thicket symbols scratched onto the wood of the trees and even the dirt of the ground.</p>
-		<p id="displaychangingtext"></p>
-		<p id="displaychangingtext2"></p>
+		<p>I follow some of these paths the creature scratched. Here, the roots and trees of the Wood are much more kinder than they are than normal, more light seems to break through the thick canopy, more candles light the way. I return to the clearing, and take note of some of the secret paths of the Wood.</p>
+		<p>I follow the markings back to where they begun - the end of the path this time, as beginnings always have an end - and ends always have a beginning. I pick my way back to the clearing through the annoyances of the Wood.</p>
 	</div>
 	<br>
 	<div class="outcome">
-		<p>You've gathered more knowledge on the Wood - on the heart and its forgotten city.</p>
+		<p id="outcome">You've gathered more knowledge on the Wood - on the heart and its forgotten city.</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadWoodMain()">Continue</actionbutton></p>

@@ -1,7 +1,7 @@
 <br>
 	<div class="storylettitle">
 		<h2>A Gateway into Dream</h2>
-		<p>I stand before the gates, who stubbornly stay closed. The Stars shine above, and begin to form into Constellations, coreographed, almost - preparing to open the gates; who shall herald me into this winding dream-castle, who shall be the harbinger to my destruction and who shall be the herald to my birth.</p>
+		<p>I stand before the gates, who stubbornly stay closed. The Stars shine above, and begin to form into Constellations - preparing to open the gates into the dream-castle, who will herald me, who will assist me in becoming who I will be.</p>
 	</div>
 	<br>
 	<div class="outcome">

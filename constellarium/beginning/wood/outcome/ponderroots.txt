@@ -2,11 +2,11 @@
 	<div class="storylettitle">
 		<h2>Root-Ways</h2>
 		<p>I ponder about the roots of the Wood and the strange ways they grow under the light of the Moon. I examine the roots, consider the ways they grow in the Wood, the ways they twist, the ways they twine with one another. Most seem to grow towards a certain direction from what I have previously seen, but now noticed. There must be meaning in the way the Wood grows under the cloak of the Moon's light, mustn't there? I've so thoroughly examined the roots above the Wood's skin - I must see what lies, deep below the Earth...</p>
-		<p id="displaychangingtext"></p>
+		<p>My fingernails come out, caked with dirt and mud and the muck of the Wood. I see the roots that travel deep beneath the Earth, following the paths of the roots above ground. I see the patterns that they yield to me - they follow a path. Each in their tangled knotwork eventually yield to a singular, unerring path - one that almost definitely shall yield to the heart of the Wood. This path that the roots follow, the ways they grow, a possibility of where the ways of the roots terminate - this is what scraps I have learnt.</p>
 	</div>
 	<br>
 	<div class="outcome">
-		<p>You've gathered more knowledge on the Wood - on the root's ways and patterns.</p>
+		<p id="outcome">You've gathered more knowledge on the Wood - on the root's ways and patterns.</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadWoodMain()">Continue</actionbutton></p>
