@@ -61,6 +61,7 @@ function loadWoodExploreOutcome()
 			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt", true);
 			xhttp.send();
 			setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		}
 		else
 		{
 			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
