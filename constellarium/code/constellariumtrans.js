@@ -42,33 +42,33 @@ function loadWoodExploreOutcome()
 	exploringWood++;
 
 	if (airs < 25)
-		{
-			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt", true);
-			xhttp.send();
-			setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
-		}
-		else if (airs >= 25 && airs < 50)
-		{
-			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt", true);
-			xhttp.send();
-			setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
-		}
-		else if (airs >= 50 && airs < 75)
-		{
-			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-			xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt", true);
-			xhttp.send();
-			setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
-		}
-		else
-		{
-			xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-			xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt", true);
-			xhttp.send();
-			setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
-		}
+	{
+		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt", true);
+		xhttp.send();
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
+	}
+	else if (airs >= 25 && airs < 50)
+	{
+		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt", true);
+		xhttp.send();
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
+	}
+	else if (airs >= 50 && airs < 75)
+	{
+		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt", true);
+		xhttp.send();
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
+	}
+	else
+	{
+		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+		xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt", true);
+		xhttp.send();
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
+	}
 }
 
 function loadWoodPonderOutcome()
@@ -81,28 +81,28 @@ function loadWoodPonderOutcome()
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 		xhttp.send();
-		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
 	}
 	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 		xhttp.send();
-		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
 	}
 	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 		xhttp.send();
-		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
 	}
 	else
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 		xhttp.send();
-		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10)");}, 300);
 	}
 }
 
