@@ -7,7 +7,7 @@
 		<p><b>THE DUSK AFTER DAY; THE NIGHT AFTER DUSK; THE DAWN AFTER NIGHT.</b></p>
 		<p><b>TO RISE AGAIN; TO ILLUMINATE ONCE MORE; THE SUN, RISING ONCE MORE.</b></p>
 		<p>More and more Constellations form into sigils just like these - and then a bright, white light sparks in the centre of us. It begins as a small spark, but begins to grow rapidly, devouring all the Stars and Constellations who wait in silent certainty - until it envelops me -</p>
-		<p>The gates are open, a vast amphitheater lies in wait - and a white light resides within the centre, shining bright. I enter the Constellarium - the waxen seal to my fate.</p>
+		<p>The gates are open, a vast library lies in wait - and a harsh, white light resides within the centre, shining bright. I enter the Constellarium proper - the waxen seal to my fate.</p>
 	</div>
 	<br>
 	<div class="outcome">
