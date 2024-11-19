@@ -81,28 +81,28 @@ function loadWoodPonderOutcome()
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 		xhttp.send();
-);}, 300);			setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
 	}
 	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 		xhttp.send();
-);}, 300);			setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
 	}
 	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 		xhttp.send();
-);}, 300);			setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
 	}
 	else
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 		xhttp.send();
-);}, 300);			setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
+		setTimeout(function(){$("outcome").append(" (Exploring the Wood is now " + exploringWood + " / 10");}, 300);
 	}
 }
 
