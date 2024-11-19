@@ -124,19 +124,19 @@ function loadShoreMain()
 	xhttp.open("GET", "/constellarium/beginning/shore/shoremain.txt");
 	xhttp.send();
 	setTimeout(function(){
-		if(exploringShore == 1)
+		if (exploringShore == 1)
 		{
 			$("#changeoptiontitle").append(`Look Across the Sea`); 
 			$("#changeoptiontext").append(`Something seems to be approaching, disturbing the still seas...`); 
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome1()">Observe</actionbutton>`);
 		}
-		else if(exploringShore == 2)
+		else if (exploringShore == 2)
 		{
 			$("#changeoptiontitle").append(`Approach the Boatman`); 
 			$("#changeoptiontext").append(`Its teeth twinkle in the starlight, its eyes hold something else - curiosity?`); 
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome2()">Approach</actionbutton>`);
 		}
-		else if(exploringShore == 3)
+		else if (exploringShore == 3)
 		{
 			$("#changeoptiontitle").append(`Payment?`); 
 			$("#changeoptiontext").append(`You feel a heavy weight in your pocket...`); 

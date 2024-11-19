@@ -11,7 +11,7 @@
 	</div>
 	<br>
 	<div class="outcome">
-		<p>The gates lay what it so dearly guards bear for you to see.</p>
+		<p>The gates lay what it so dearly guards bere for you to see.</p>
 	</div>
 	<br>
 	<p style="text-align:right">END</p>
