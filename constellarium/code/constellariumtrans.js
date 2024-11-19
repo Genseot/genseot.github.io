@@ -29,7 +29,7 @@ function loadWoodMain()
 			<div class="action">
 				<h2>My Mind's Compass</h2>
 				<p>I think I have learnt a path into the heart of the Wood...</p> 
-    				<p>- You unlocked this with Exploring the Wood 10.</p>
+    				<p><b>- You unlocked this with Exploring the Wood 10.<b></p>
 				<p style="text-align:right"><actionbutton onclick="loadToShore()">Follow</actionbutton></p>
 			</div>
 			<br>
