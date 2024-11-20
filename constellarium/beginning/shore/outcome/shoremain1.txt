@@ -5,7 +5,7 @@
 		<p>Closer. A rowboat.</p>
 		<p>Closer. A figure dressed in a black robe steers its oars.</p>
 		<p>Closer. The hands of the figure that row the boat are skeletal.</p>
-		<p>Closer. It docks on shore, and bids you to come closer, with a nod of its gleaming skull under its hood and a wagging, skeletal finger.</p>
+		<p>Closer. It docks on shore, and bids me to come closer, with a nod of its gleaming skull under its hood and a wagging, skeletal finger.</p>
 	</div>
 	<br>
 	<div class="outcome">
