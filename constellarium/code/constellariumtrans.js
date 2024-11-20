@@ -139,7 +139,7 @@ function loadShoreMain()
 		else if (exploringShore == 3)
 		{
 			$("#changeoptiontitle").append(`Payment?`); 
-			$("#changeoptiontext").append(`You feel a heavy weight in your pocket...`); 
+			$("#changeoptiontext").append(`I feel a heavy weight in my pocket...`); 
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadShoreMainOutcome3()">Investigate</actionbutton>`);
 		}
 		else
