@@ -1,7 +1,7 @@
 <br>
 	<div class="storylettitle">
 		<h2>Rocking, Swaying</h2>
-		<p>The boat rocks and sways on the still, silent waters of the Sea. Every push of the oar sends ripples across the waters, becoming larger and larger as they go by. A stray wave sets the boat careening over itself, but nothing more comes of it. Nothing to keep you company here but the still-silent, calm sea, and your ferryman to the dream-castle.</p>
+		<p>The boat rocks and sways on the still, silent waters of the Sea. Every push of the oar sends ripples across the waters, becoming larger and larger as they go by. A stray wave sets the boat careening over it for but a moment, but nothing more comes of it. Nothing to keep me company here but the still-silent, calm sea, and my ferryman to the dream-castle.</p>
 	</div>
 	<br>
 	<div class="outcome">
