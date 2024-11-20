@@ -33,7 +33,7 @@ function loadWoodMain()
 				<p style="text-align:right"><actionbutton onclick="loadToShore()">Follow</actionbutton></p>
 			</div>
 			<br>
-		`);}, 50);
+		`);}, 100);
 	}
 }
 
@@ -47,28 +47,28 @@ function loadWoodExploreOutcome()
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorenormal.txt", true);
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewood.txt", true);
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/explorewarren.txt", true);
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 	else
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/exploregarden.txt", true);
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 }
 
@@ -82,28 +82,28 @@ function loadWoodPonderOutcome()
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondernormal.txt");
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 	else if (airs >= 25 && airs < 50)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderinspiration.txt");
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 	else if (airs >= 50 && airs < 75)
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/pondermoon.txt");
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 	else
 	{
 		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 		xhttp.open("GET", "/constellarium/beginning/wood/outcome/ponderroots.txt");
 		xhttp.send();
-		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 50);
+		setTimeout(function(){$("#outcome").append(" (Exploring the Wood is now " + exploringWood + "/10)");}, 100);
 	}
 }
 
@@ -148,7 +148,7 @@ function loadShoreMain()
 			$("#changeoptiontext").append(`The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`); 
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadToBoat()">Board</actionbutton>`);
 		}
-	}, 50);
+	}, 100);
 }
 
 function loadShoreMainOutcome1() {
@@ -208,7 +208,7 @@ function loadBoatMain()
 			
 			$('#action2').remove(); 
 		}
-	}, 50);
+	}, 100);
 }
 function loadBoatWaitOutcome1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
@@ -258,7 +258,7 @@ function loadBridgeMain()
 			$("#changeoptiontext").append(`The gates to the Constellarium are not much further, now. Only a little more to go -`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadToGate()">Approach</actionbutton>`);
 		}
-	}, 50);
+	}, 100);
 }
 function loadBridgeMainOutcome1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
@@ -291,7 +291,7 @@ function loadGateMain()
 			$("#changeoptiontext").append(`The gates will open with the help of the Stars, who have formed into Constellations.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadToConstellarium()">Open</actionbutton>`);
 		}
-	}, 50);
+	}, 100);
 }
 function loadGateMainOutcome1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
