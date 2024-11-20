@@ -145,7 +145,7 @@ function loadShoreMain()
 		else
 		{
 			$("#changeoptiontitle").append(`Boarding`); 
-			$("#changeoptiontext").append(`The Boatman climbs back into the boat, inviting you on board with a skeletal finger.`); 
+			$("#changeoptiontext").append(`The Boatman climbs back into the boat, inviting me on board with a skeletal finger.`); 
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadToBoat()">Board</actionbutton>`);
 		}
 	}, 100);
@@ -187,7 +187,7 @@ function loadBoatMain()
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`);
 	
 			$("#changeoptiontitle2").append(`Look into the Sea`);
-			$("#changeoptiontext2").append(`You see little glints of light under the waves, what are they?`);
+			$("#changeoptiontext2").append(`I see little glints of light under the waves, what are they?`);
 			$("#changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome1()">Look</actionbutton>`);
 		}
 		else if (exploringBoat == 2)
@@ -197,7 +197,7 @@ function loadBoatMain()
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`);
 	
 			$("#changeoptiontitle2").append(`Look into the Sea Again`);
-			$("#changeoptiontext2").append(`The waters are less murky, here. Something grand lurks beneath the waves, might you take a look?`);
+			$("#changeoptiontext2").append(`The waters are less murky, here. Something grand lurks beneath the waves, might I take a look?`);
 			$("#changeoptionbutton2").append(`<actionbutton onclick="loadBoatLookOutcome2()">Look</actionbutton>`);
 		}
 		else
@@ -249,7 +249,7 @@ function loadBridgeMain()
 		if (exploringBridge == 1)
 		{
 			$("#changeoptiontitle").append(`Step by Step`);
-			$("#changeoptiontext").append(`You have a ways to go until you approach the gates. Better start, then.`);
+			$("#changeoptiontext").append(`I have a ways to go until I approach the gates. Better start, then.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadBridgeMainOutcome1()">Travel</actionbutton>`);
 		}
 		else
@@ -282,7 +282,7 @@ function loadGateMain()
 		if (exploringGate == 1)
 		{
 			$("#changeoptiontitle").append(`Prepare to Open the Gates`);
-			$("#changeoptiontext").append(`Prepare to open them, if you can.`);
+			$("#changeoptiontext").append(`I must prepare to open them, if I can.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadGateMainOutcome1()">Prepare</actionbutton>`);
 		}
 		else
