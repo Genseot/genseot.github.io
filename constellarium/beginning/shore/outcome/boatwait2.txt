@@ -1,7 +1,7 @@
 <br>
 	<div class="storylettitle">
 		<h2>The Stars and Moon</h2>
-		<p>Above, the Stars gleam brighter than they did in the Wood, like little Suns in the endless heavens. They flit about like little moths, forming into Constellations not seen in the real, waking world. The Moon refracts the light of the Stars, shining ever brighter, heralding more of its light to illuminate your path - a herald of darkness, but also a herald of light.</p>
+		<p>Above, the Stars gleam brighter than they did in the Wood, like little Suns in the endless heavens. They flit about like little moths, forming into Constellations not seen in the real, waking world. The Moon refracts the light of the Stars, shining ever brighter, heralding more of its light to illuminate my path - a herald of darkness, but also a herald of light.</p>
 	</div>
 	<br>
 	<div class="outcome">
