@@ -203,7 +203,7 @@ function loadBoatMain()
 		else
 		{
 			$("#changeoptiontitle").append(`Disembark`);
-			$("#changeoptiontext").append(`The boat rocks before the bridge to the Constellarium. It awaits in silent certainty.`);
+			$("#changeoptiontext").append(`The boat rocks before the bridge to the dream-castle. It awaits in silent certainty.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadToBridge()">Disembark</actionbutton>`);
 			
 			$('#action2').remove(); 
