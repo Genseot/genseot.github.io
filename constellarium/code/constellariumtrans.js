@@ -255,7 +255,7 @@ function loadBridgeMain()
 		else
 		{
 			$("#changeoptiontitle").append(`Approach the Gates`);
-			$("#changeoptiontext").append(`The gates to the Constellarium are not much further, now. Only a little more to go -`);
+			$("#changeoptiontext").append(`The gates to the dream-castle are not much further, now. Only a little more to go -`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadToGate()">Approach</actionbutton>`);
 		}
 	}, 350);
