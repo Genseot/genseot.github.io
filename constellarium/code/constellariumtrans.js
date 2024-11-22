@@ -183,7 +183,7 @@ function loadBoatMain()
 		if (exploringBoat == 1)
 		{
 			$("#changeoptiontitle").append(`Wait`);
-			$("#changeoptiontext").append(`Slowly, slowly, the Constellarium grows in size across the horizon...`);
+			$("#changeoptiontext").append(`Slowly, slowly, the dream-castle grows in size across the horizon...`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome1()">Wait</actionbutton>`);
 	
 			$("#changeoptiontitle2").append(`Look into the Sea`);
@@ -193,7 +193,7 @@ function loadBoatMain()
 		else if (exploringBoat == 2)
 		{
 			$("#changeoptiontitle").append(`Wait More`);
-			$("#changeoptiontext").append(`The boat rocks and sways on the Sea, the Constellarium is now almost at its original height, standing grand and majestic above all.`);
+			$("#changeoptiontext").append(`The boat rocks and sways on the Sea, the dream-castle is now almost at its original height, standing grand and majestic above all.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadBoatWaitOutcome2()">Wait</actionbutton>`);
 	
 			$("#changeoptiontitle2").append(`Look into the Sea Again`);
