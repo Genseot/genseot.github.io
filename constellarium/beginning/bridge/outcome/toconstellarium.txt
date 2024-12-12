@@ -14,5 +14,6 @@
 		<p>The gates lay what it so dearly guards bare for you to see.</p>
 	</div>
 	<br>
-	<p style="text-align:right">END</p>
+	<p style="text-align:right">END OF DEMO</p>
+        <p style="text-align:right"><actionbutton on click="loadIndex()">Return to the Main Page</actionbutton></p>
 <br>
