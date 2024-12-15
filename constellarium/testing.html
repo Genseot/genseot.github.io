@@ -10,7 +10,7 @@
 	<script>
 	async function loadText() {
 		const jsonRequest = new Request ("https://genseot.github.io/constellarium/code/constellariumtext.json");
-		const jsonFetch = await fetch(jsonRequest).then(response => response.json()).then(data => {console.log(data)});
+		const jsonFetch = await fetch(jsonRequest);
 		const constellariumText = await jsonFetch.json();
 		console.log(constellariumText);
 		$("#title").append(constellariumText["testingtext"][0]);
