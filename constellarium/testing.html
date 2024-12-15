@@ -22,7 +22,7 @@ function onClick() {
 	}
 	getText().then(constellariumText => {
   	console.log(constellariumText);
-	document.getElementById('title').innerHTML = JSON.parse(constellariumText["testingtext"][0]);});
+	document.getElementById('title').innerHTML = JSON.stringify(JSON.parse(constellariumText["testingtext"][0]));});
 }
 	</script>
 </head>
