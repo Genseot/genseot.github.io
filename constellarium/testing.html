@@ -15,14 +15,14 @@ function onClick() {
 			if (!response.ok) {
       				throw new Error(`Error! status: ${response.status}`);
     			}
-			const data = await response.json();
-			return data;
+			const constellariumText = await response.json();
+			return constellariumText;
   		} 
 		catch (error) {console.log(error);}
 	}
-	getText().then(data => {
-  	console.log(data);
-	document.getElementById('title').innerHTML = JSON.stringify(data, null, 2);});
+	getText().then(constellariumText => {
+  	console.log(constellariumText);
+	document.getElementById('title').innerHTML = JSON.stringify(constellariumText.testingtext[0]);});
 }
 	</script>
 </head>
