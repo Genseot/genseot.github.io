@@ -12,7 +12,7 @@ function onClick() {
 	async function getText() {
 		try {
 			const jsonResponse = await fetch('https://genseot.github.io/constellarium/code/constellariumtext.json',{method: 'GET',},);
-			if (!jsonResponse.ok) {
+			if (!response.ok) {
       				throw new Error(`Error! status: ${response.status}`);
     			}
 			const constellariumText = await jsonResponse.json();
