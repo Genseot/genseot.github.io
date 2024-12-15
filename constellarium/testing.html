@@ -24,6 +24,9 @@ function onClick() {
 		let titleText = JSON.stringify(constellariumText["testingtext"]["text"][0]);
 		let body1Text = JSON.stringify(constellariumText["testingtext"]["text"][1]);
 		let body2Text = JSON.stringify(constellariumText["testingtext"]["text"][2]);
+		titleText = titleText.slice(1, -1);
+		body1Text = body1Text.slice(1, -1);
+		body2Text = body2Text.slice(1, -1);
 		document.getElementById(`title`).innerHTML = titleText;
 		document.getElementById(`body1`).innerHTML = body1Text;
 		document.getElementById(`body2`).innerHTML = body2Text;
