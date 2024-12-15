@@ -20,7 +20,7 @@ function onClick() {
   		} 
 		catch (error) {console.log(error);}
 	}
-	getUsers().then(data => {
+	getText().then(data => {
   	console.log(data);
 	document.getElementById('title').innerHTML = JSON.stringify(data, null, 2);});
 }
