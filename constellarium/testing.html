@@ -9,10 +9,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 	async function loadText() {
-		const jsonRequest = new Response("https://genseot.github.io/constellarium/code/constellariumtext.json");
-		const jsonFetch = await fetch(jsonRequest).then(response => response.json()).then(data => {console.log(data)})
+		const jsonURL = "https://genseot.github.io/constellarium/code/constellariumtext.json";
+		const jsonRequest = new Request (jsonURL);
+		const jsonFetch = await fetch(jsonRequest);
 		console.log(jsonFetch);
-		const constellariumText = jsonFetch;
+		const constellariumText = await jsonFetch.json();
 		console.log(constellariumText);
 		$("#title").append(constellariumText["testingtext"][0]);
 		$("#body1").append(constellariumText["testingtext"][1]);
