@@ -8,12 +8,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-	async function getText() {
-		const jsonRequest = new Request ("https://genseot.github.io/constellarium/code/constellariumtext.json");
-		const jsonFetch = await fetch(jsonRequest);
-		const constellariumText = await jsonFetch.json();
-		console.log(constellariumText);
-	}
+	var constellariumText;
 		
 	function loadText() {
 		getText();
@@ -22,6 +17,12 @@
 			$("#body1").append(constellariumText["testingtext"][1]);
 			$("#body2").append(constellariumText["testingtext"][2]);
 		}, 1000);
+	}
+	async function getText() {
+		const jsonRequest = new Request ("https://genseot.github.io/constellarium/code/constellariumtext.json");
+		const jsonFetch = await fetch(jsonRequest);
+		constellariumText = await jsonFetch.json();
+		console.log(constellariumText);
 	}
 	</script>
 </head>
