@@ -9,13 +9,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 	function loadText() {
-		fetch("https://genseot.github.io/constellarium/code/constellariumtext.json").then(res =>
-   			res.json()).then(d => {
-       			console.log(d)
-			$("#title").append(constellariumText["testingtext"][0]);
-			$("#body1").append(constellariumText["testingtext"][1]);
-			$("#body2").append(constellariumText["testingtext"][2]);
-    		})
+		const jsonText = new Response("https://genseot.github.io/constellarium/code/constellariumtext.json");
+		fetch(text).then(response => response.json()).then(data => {console.log(data)})
+		const constellariumText = JSON.parse(jsonText);
+		$("#title").append(constellariumText["testingtext"][0]);
+		$("#body1").append(constellariumText["testingtext"][1]);
+		$("#body2").append(constellariumText["testingtext"][2]);
 	}
 	</script>
 </head>
