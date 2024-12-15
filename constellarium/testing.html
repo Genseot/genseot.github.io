@@ -12,7 +12,7 @@
 		const jsonText = new Response("https://genseot.github.io/constellarium/code/constellariumtext.json");
 		fetch(jsonText).then(response => response.json()).then(data => {console.log(data)})
 		console.log(jsonText);
-		const constellariumText = JSON.parse(jsonText);
+		const constellariumText = JSON.parse(JSON.stringify(jsonText));
 		console.log(constellariumText);
 		$("#title").append(constellariumText["testingtext"][0]);
 		$("#body1").append(constellariumText["testingtext"][1]);
