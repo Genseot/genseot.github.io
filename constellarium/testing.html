@@ -11,18 +11,17 @@
 function onClick() {
 	async function getText() {
 		try {
-			const jsonResponse = await fetch('https://genseot.github.io/constellarium/code/constellariumtext.json',{method: 'GET',},);
-			if (!response.ok) {
-      				throw new Error(`Error! status: ${response.status}`);
+			const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
+    			if (!jsonResponse.ok) {
+      				throw new Error(`Error! status: ${jsonResponse.status}`);
     			}
 			const constellariumText = await jsonResponse.json();
 			return constellariumText;
-  		} 
+  		}
 		catch (error) {console.log(error);}
 	}
-	getText().then(constellariumText => {
-  	console.log(constellariumText);
-	document.getElementById('title').innerHTML = JSON.stringify(constellariumText["testingtext"]["text"][0]);
+	getText().then(constellariumText => {console.log(constellariumText);
+		document.getElementById(`title`).innerHTML = JSON.stringify(constellariumText[testingtext][text][0]);
 	});
 }
 	</script>
