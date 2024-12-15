@@ -13,7 +13,7 @@
 	async function getText() {
 		const jsonRequest = new Request ("https://genseot.github.io/constellarium/code/constellariumtext.json");
 		const jsonFetch = await fetch(jsonRequest);
-		constellariumText = await jsonFetch.json();
+		var constellariumText = await jsonFetch.json();
 		console.log(constellariumText);
 		loadText();
 	}
