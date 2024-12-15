@@ -9,20 +9,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 	var constellariumText;
-		
-	function loadText() {
-		getText();
-		setTimeout(function(){
-			$("#title").append(constellariumText["testingtext"][0]);
-			$("#body1").append(constellariumText["testingtext"][1]);
-			$("#body2").append(constellariumText["testingtext"][2]);
-		}, 1000);
-	}
+
 	async function getText() {
 		const jsonRequest = new Request ("https://genseot.github.io/constellarium/code/constellariumtext.json");
 		const jsonFetch = await fetch(jsonRequest);
 		constellariumText = await jsonFetch.json();
 		console.log(constellariumText);
+		loadText();
+	}
+	function loadText() {
+		$("#title").append(constellariumText["testingtext"][0]);
+		$("#body1").append(constellariumText["testingtext"][1]);
+		$("#body2").append(constellariumText["testingtext"][2]);
 	}
 	</script>
 </head>
@@ -36,7 +34,7 @@
 		</div>
 		<br>
 		<div class="action">
-			<p style="text-align:right"><actionbutton onclick="loadText()">Press to Hopefully Load Text</actionbutton></p>
+			<p style="text-align:right"><actionbutton onclick="getText()">Press to Hopefully Load Text</actionbutton></p>
 		</div>
 <br>
 </div>
