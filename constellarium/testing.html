@@ -21,7 +21,7 @@ function onClick() {
 		catch (error) {console.log(error);}
 	}
 	getText().then(constellariumText => {console.log(constellariumText);
-		document.getElementById(`title`).innerHTML = JSON.stringify(constellariumText[testingtext][text][0]);
+		document.getElementById(`title`).innerHTML = JSON.stringify(constellariumText["testingtext"]["text"][0]);
 	});
 }
 	</script>
