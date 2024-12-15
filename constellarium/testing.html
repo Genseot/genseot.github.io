@@ -8,20 +8,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-	var constellariumText;
-
 	async function getText() {
-		const jsonRequest = new Request ("https://genseot.github.io/constellarium/code/constellariumtext.json");
-		const jsonFetch = await fetch(jsonRequest);
-		constellariumText = await jsonFetch.json();
-		console.log(constellariumText);
-		loadText();
+		try {
+			const jsonFetch = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method:`GET`,},);
+			if (!jsonFetch.ok) {
+				throw new Error(`something messed up (status: ${response.status})`);
+			}
+			const constellariumText = await jsonFetch.json();
+			return constellariumText;
+		}
 	}
-	function loadText() {
-		$("#title").append(constellariumText["testingtext"][0]);
-		$("#body1").append(constellariumText["testingtext"][1]);
-		$("#body2").append(constellariumText["testingtext"][2]);
-	}
+	catch (error) { console.log(error); }
+	getText().then(data => { 
+		console.log(data); 
+		document.getElementById("title").innerHTML = JSON.stringify(data, null, 0);
+		document.getElementById("body1").innerHTML = JSON.stringify(data, null, 1);
+		document.getElementById("body2").innerHTML = JSON.stringify(data, null, 2);
+	});
 	</script>
 </head>
 <body>
