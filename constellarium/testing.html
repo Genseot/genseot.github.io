@@ -7,21 +7,21 @@
 	<script src="/constellarium/code/constellariumtrans.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<script>
-function loadText() {
-	fetch(new Request("https://genseot.github.io/constellarium/code/constellariumtext.json")).then(getConstellariumText);
-}
-	
-function getConstellariumText(response) {
+	<script>
+	function loadText() {
+		fetch(new Request("https://genseot.github.io/constellarium/code/constellariumtext.json")).then(getConstellariumText);
+	}
+
+	function getConstellariumText(response) {
 	var constellariumText = response.json();
 	console.log(constellariumText);
 	$("#title").append(constellariumText["testingtext"][0];);
 	$("#body1").append(constellariumText["testingtext"][1];);
 	$("#body2").append(constellariumText["testingtext"][2];);
-}
-</script>
+	}
+	</script>
+</head>
+<body>
 <div id="storylet" class="storyletbig">
 <br>
 		<div class="storylettitle">
