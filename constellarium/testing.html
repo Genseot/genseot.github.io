@@ -8,28 +8,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-	/*function fuckThis()
-	{
-		async function getText() {
-			try {
-				const jsonFetch = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method:`GET`,},);
-				if (!jsonFetch.ok) {
-					throw new Error(`something messed up (status: ${response.status})`);
-				}
-				const constellariumText = await jsonFetch.json();
-				return constellariumText;
-			}
-   			catch (error) { console.log(error); }
-		}
-		getText().then(data => { 
-			console.log(data); 
-			document.getElementById("title").innerHTML = JSON.stringify(data, null, 0);
-			document.getElementById("body1").innerHTML = JSON.stringify(data, null, 1);
-			document.getElementById("body2").innerHTML = JSON.stringify(data, null, 2);
-		});
-	}*/
 function onClick() {
-	async function getUsers() {
+	async function getText() {
 		try {
 			const response = await fetch('https://genseot.github.io/constellarium/code/constellariumtext.json',{method: 'GET',},);
 			if (!response.ok) {
@@ -42,9 +22,7 @@ function onClick() {
 	}
 	getUsers().then(data => {
   	console.log(data);
-	const preElement = document.getElementById('title');
-	preElement.style.fontSize = '18px';
-	preElement.innerHTML = JSON.stringify(data, null, 2);});
+	document.getElementById('title').innerHTML = JSON.stringify(data, null, 2);});
 }
 	</script>
 </head>
