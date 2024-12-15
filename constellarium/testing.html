@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 	function loadText() {
-		fetch(new Request("https://genseot.github.io/constellarium/code/constellariumtext.json")).then((response) => response.json()).then(getConstellariumText);
+		fetch(new Request("https://genseot.github.io/constellarium/code/constellariumtext.json")).then(getConstellariumText);
 	}
 
 	function getConstellariumText(response) {
