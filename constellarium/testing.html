@@ -10,7 +10,7 @@
 	<script>
 	function loadText() {
 		const jsonText = new Response("https://genseot.github.io/constellarium/code/constellariumtext.json");
-		fetch(text).then(response => response.json()).then(data => {console.log(data)})
+		fetch(jsonText).then(response => response.json()).then(data => {console.log(data)})
 		console.log(jsonText);
 		const constellariumText = JSON.parse(jsonText);
 		console.log(constellariumText);
