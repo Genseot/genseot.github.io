@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>	
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ 	<link href="/constellarium/code/constellariumstyle.css" rel="stylesheet" type="text/css" media="all">
+	<script src="/constellarium/code/constellariumtrans.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		function loadText()
+		{
+			$("#title").append(constellariumText["testingtext"][0]);
+			$("#body1").append(constellariumText["testingtext"][1]);
+			$("#body2").append(constellariumText["testingtext"][2]);
+		}
+	</script>
+</head>
+<body>
+<div id="storylet" class="storyletbig">
+<br>
+		<div class="storylettitle">
+			<h2 id="title"></h2>
+			<p id="body1"></p>
+			<p id="body2"></p>
+		</div>
+		<br>
+		<div class="action">
+			<p style="text-align:right"><actionbutton onclick="loadText()">Press to Hopefully Load Text</actionbutton></p>
+		</div>
+<br>
+</div>
+<script>
+const constellariumText = new Request("https://genseot.github.io/constellarium/code/constellariumtext.json");
+	fetch(constellariumText)
+        .then((response) => console.log(response.json()));
+</script>
+</body>
+</html>
