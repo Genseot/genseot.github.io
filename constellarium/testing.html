@@ -28,28 +28,24 @@
 			document.getElementById("body2").innerHTML = JSON.stringify(data, null, 2);
 		});
 	}*/
-	function onClick() {
-async function getUsers() {
-	try {
-		const response = await fetch('https://genseot.github.io/constellarium/code/constellariumtext.json',{method: 'GET',},);
-		if (!response.ok) {
-      			throw new Error(`Error! status: ${response.status}`);
-    		}
-		const data = await response.json();
-		return data;
-  	} 
-	catch (error) {console.log(error);}
-}
+function onClick() {
+	async function getUsers() {
+		try {
+			const response = await fetch('https://genseot.github.io/constellarium/code/constellariumtext.json',{method: 'GET',},);
+			if (!response.ok) {
+      				throw new Error(`Error! status: ${response.status}`);
+    			}
+			const data = await response.json();
+			return data;
+  		} 
+		catch (error) {console.log(error);}
+	}
 	getUsers().then(data => {
   	console.log(data);
-
- 	const preElement = document.getElementById('title');
-
- 	preElement.style.fontSize = '18px';
-
-  	preElement.innerHTML = JSON.stringify(data, null, 2);
-});
-	}
+	const preElement = document.getElementById('title');
+	preElement.style.fontSize = '18px';
+	preElement.innerHTML = JSON.stringify(data, null, 2);});
+}
 	</script>
 </head>
 <body>
@@ -62,7 +58,7 @@ async function getUsers() {
 		</div>
 		<br>
 		<div class="action">
-			<p style="text-align:right"><actionbutton onclick="fuckThis()">Press to Hopefully Load Text</actionbutton></p>
+			<p style="text-align:right"><actionbutton onclick="onClick()">Press to Hopefully Load Text</actionbutton></p>
 		</div>
 <br>
 </div>
