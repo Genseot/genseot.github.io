@@ -10,9 +10,11 @@
 	<script>
 	function loadText() {
 		getText();
-		$("#title").append(constellariumText["testingtext"][0]);
-		$("#body1").append(constellariumText["testingtext"][1]);
-		$("#body2").append(constellariumText["testingtext"][2]);
+		setTimeout(function(){
+			$("#title").append(constellariumText["testingtext"][0]);
+			$("#body1").append(constellariumText["testingtext"][1]);
+			$("#body2").append(constellariumText["testingtext"][2]);
+		}, 1000);
 	}
 
 	async function getText() {
