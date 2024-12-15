@@ -21,9 +21,9 @@ function onClick() {
 		catch (error) {console.log(error);}
 	}
 	getText().then(constellariumText => {console.log(constellariumText);
-		document.getElementById(`title`).innerHTML = JSON.stringify(constellariumText["testingtext"]["text"][0]);
-		document.getElementById(`body1`).innerHTML = JSON.stringify(constellariumText["testingtext"]["text"][1]);
-		document.getElementById(`body2`).innerHTML = JSON.stringify(constellariumText["testingtext"]["text"][2]);
+		document.getElementById(`title`).innerHTML = JSON.parse(constellariumText["testingtext"]["text"][0]);
+		document.getElementById(`body1`).innerHTML = JSON.parse(constellariumText["testingtext"]["text"][1]);
+		document.getElementById(`body2`).innerHTML = JSON.parse(constellariumText["testingtext"]["text"][2]);
 	});
 }
 	</script>
