@@ -36,7 +36,7 @@ function LoadText() {
 	FetchText().then(constellariumText => {console.log(constellariumText);
 	console.log(area);
 	console.log(outcome);
-	console.log(constellariumText["testingtext"][0]["text"][0]);
+	console.log(constellariumText["testingtext"]["text"][0]);
 	let titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
 	let body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
 	let body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
