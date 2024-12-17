@@ -8,6 +8,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
+	var titleText = null;
+	var body1Text = null;
+	var body2Text = null;
 function Click() {
 	var area = "testingtext";	
 	var outcome = 0;
@@ -29,14 +32,14 @@ async function FetchText() {
 	catch (error) {console.log(error);}
 }
 function GetText() {
-	var titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
-	var body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
-	var body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
+	titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
+	body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
+	body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
 }
 function ExciseQuotes() {
-	var titleText = titleText.slice(1, -1);
-	var body1Text = body1Text.slice(1, -1);
-	var body2Text = body2Text.slice(1, -1);
+	titleText = titleText.slice(1, -1);
+	body1Text = body1Text.slice(1, -1);
+	body2Text = body2Text.slice(1, -1);
 }
 function LoadText() {
 	$("#title").append(titleText);
