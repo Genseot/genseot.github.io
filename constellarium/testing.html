@@ -8,6 +8,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
+	var threeBody = false;
+	var oneOutcome = false;
+	var twoOutcome = false;
+	var oneOption = false;
+	var twoOption = false;
+	var addContinue = false;
 function OnClick() {
 	var area = "testingtext";	
 	var outcome = 0;
@@ -32,30 +38,30 @@ function LoadText() {
 	var titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
 	var body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
 	var body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
-	if (var threeBody == true) {
+	if (threeBody == true) {
 		var body3Text = JSON.stringify(constellariumText[area][outcome]["text"][3]);
 	}
-	if (var oneOutcome == true) {
+	if (oneOption == true) {
 		var option1TitleText = JSON.stringify(constellariumText[area][outcome]["option1"][0]);
 		var option1BodyText = JSON.stringify(constellariumText[area][outcome]["option1"][1]);
 		var option1ButtonText = JSON.stringify(constellariumText[area][outcome]["option1"][2]);
 	}
-	else if (var twoOutcome == true) {
+	else if (twoOption == true) {
 		var option2TitleText = JSON.stringify(constellariumText[area][outcome]["option2"][0]);
 		var option2BodyText = JSON.stringify(constellariumText[area][outcome]["option2"][1]);
 		var option2ButtonText = JSON.stringify(constellariumText[area][outcome]["option2"][2]);
 	}
-	if (var addContinue == true) {
+	if (addContinue == true) {
 		var continueTitleText = JSON.stringify(constellariumText[area][outcome]["continue"][0]);
 		var continueBodyText = JSON.stringify(constellariumText[area][outcome]["continue"][1]);
 		var continueUnlockText = JSON.stringify(constellariumText[area][outcome]["continue"][2]);
 		var continueButtonText = JSON.stringify(constellariumText[area][outcome]["continue"][3]);
 	}
-	if (var oneOutcome == true) {
+	if (oneOutcome == true) {
 		var outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
 		var buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
 	}
-	else if (var twoOutcome == true) {
+	else if (twoOutcome == true) {
 		var outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
 		var outcome2Text = JSON.stringify(constellariumText[area][outcome]["outcome"][1]);
 		var buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
