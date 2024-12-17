@@ -8,16 +8,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
-	var titleText = null;
-	var body1Text = null;
-	var body2Text = null;
 function OnClick() {
 	var area = "testingtext";	
 	var outcome = 0;
-	FetchText();
-	console.log("finishes click()");
+	LoadText();
 }
-async function FetchText() {
+function LoadText() {
+	async function FetchText() {
 	try {
 		const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
     		if (!jsonResponse.ok) {
@@ -27,28 +24,122 @@ async function FetchText() {
 		return constellariumText;
 		console.log("returns constellariumText");
   	}
-	catch (error) {console.log(error);}
-	GetText();
-}
-function GetText() {
-	titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
-	body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
-	body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
-	ExciseQuotes();
-}
-function ExciseQuotes() {
+	catch (error) {console.log(error);
+	}
+	
+	FetchText().then(constellariumText => {console.log(constellariumText);
+	//GET TEXT
+	var titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
+	var body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
+	var body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
+	if (var threeBody == true) {
+		var body3Text = JSON.stringify(constellariumText[area][outcome]["text"][3]);
+	}
+	if (var oneOutcome == true) {
+		var option1TitleText = JSON.stringify(constellariumText[area][outcome]["option1"][0]);
+		var option1BodyText = JSON.stringify(constellariumText[area][outcome]["option1"][1]);
+		var option1ButtonText = JSON.stringify(constellariumText[area][outcome]["option1"][2]);
+	}
+	else if (var twoOutcome == true) {
+		var option2TitleText = JSON.stringify(constellariumText[area][outcome]["option2"][0]);
+		var option2BodyText = JSON.stringify(constellariumText[area][outcome]["option2"][1]);
+		var option2ButtonText = JSON.stringify(constellariumText[area][outcome]["option2"][2]);
+	}
+	if (var addContinue == true) {
+		var continueTitleText = JSON.stringify(constellariumText[area][outcome]["continue"][0]);
+		var continueBodyText = JSON.stringify(constellariumText[area][outcome]["continue"][1]);
+		var continueUnlockText = JSON.stringify(constellariumText[area][outcome]["continue"][2]);
+		var continueButtonText = JSON.stringify(constellariumText[area][outcome]["continue"][3]);
+	}
+	if (var oneOutcome == true) {
+		var outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
+		var buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
+	}
+	else if (var twoOutcome == true) {
+		var outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
+		var outcome2Text = JSON.stringify(constellariumText[area][outcome]["outcome"][1]);
+		var buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
+	}
+
+	//EXCISE QUOTES
 	titleText = titleText.slice(1, -1);
 	body1Text = body1Text.slice(1, -1);
 	body2Text = body2Text.slice(1, -1);
-	LoadText();
-}
-function LoadText() {
+	if (threeBody == true) {
+		body3Text = body3Text.slice(1, -1);
+	}
+	if (oneOption == true) {
+		option1TitleText = option1TitleText.slice(1, -1);
+		option1BodyText = option1BodyText.slice(1, -1);
+		option1ButtonText = option1ButtonText.slice(1, -1);
+	}
+	else if (twoOption == true) {
+		option2TitleText = option2TitleText.slice(1, -1);
+		option2BodyText = option2BodyText.slice(1, -1);
+		option2ButtonText = option2ButtonText.slice(1, -1);
+	}
+	if (addContinue == true) {
+		continueTitleText = continueTitleText.slice(1, -1);
+		continueBodyText = continueBodyText.slice(1, -1);
+		continueButtonText = continueButtonText.slice(1, -1);
+		continueUnlockText = continueUnlockText.slice(1, -1);
+	}
+	if (oneOutcome == true) {
+		outcome1Text = outcome1Text.slice(1, -1);
+		buttonText = buttonText.slice(1, -1);
+	}
+	else if (twoOutcome == true ) {
+		outcome1Text = outcome1Text.slice(1, -1);
+		outcome2Text = outcome2Text.slice(1, -1);
+		buttonText = buttonText.slice(1, -1);
+	}
+
+
+	//LOAD TEXT
 	setTimeout(function() {
-		$("#title").append(titleText);
-		$("#body1").append(body1Text);
-		$("#body2").append(body2Text);
-		area = null;
-		outcome = 0;
+	$("#title").append(titleText);
+	$("#body1").append(body1Text);
+	$("#body2").append(body2Text);
+	if (threeBody == true) {
+		$("#body3").append(body3Text);
+		threeBody = false;
+	}
+	if (oneOption == true) {
+		$("#option1title").append(option1TitleText);
+		$("#option1body").append(option1BodyText);
+		$("#option1button").append(option1ButtonText);
+		oneOption = false;
+	}
+	else if (twoOption == true) {
+		$("#option1title").append(option1TitleText);
+		$("#option1body").append(option1BodyText);
+		$("#option1button").append(option1ButtonText);
+		$("#option2title").append(option2TitleText);
+		$("#option2body").append(option2BodyText);
+		$("#option2button").append(option2ButtonText);
+		twoOption = false;
+	}
+	if (addContinue == true)
+	{
+		$("#continuetitle").append(continueTitleText);
+		$("#continuebody").append(continueBodyText);
+		$("#continueunlock").append(continueUnlockText);
+		$("#continuebutton").append(continueButtonText);
+		addContinue = false;
+	}
+	if (oneOutcome == true) {
+		$("#outcome1").append(outcome1Text);
+		$("#button").append(buttonText);
+		oneOutcome = false;
+	}
+	else if (twoOutcome == true) {
+		$("#outcome1").append(outcome1Text);
+		$("#outcome2").append(outcome2Text);
+		$("#button").append(buttonText);
+		twoOutcome = false;
+	}
+	area = null;
+	outcome = 0;
 	}, 350);
 }
 	</script>
