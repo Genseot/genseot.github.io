@@ -14,10 +14,12 @@
 function Click() {
 	var area = "testingtext";	
 	var outcome = 0;
-	FetchText().then(result => GetText()).then(ExciseQuotes()).then(setTimeout(function(){ LoadText(); }, 350));
-	/*GetText();
-	ExciseQuotes();
-	setTimeout(function(){ LoadText(); }, 350);*/
+	FetchText();
+	setTimeout(function() {
+		GetText();
+		ExciseQuotes();
+		LoadText();
+	}, 350);
 	console.log("works");
 }
 async function FetchText() {
