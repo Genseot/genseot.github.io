@@ -15,9 +15,10 @@ function Click() {
 	var area = "testingtext";	
 	var outcome = 0;
 	LoadText();
-	console.log("works");
+	console.log("finishes click()");
 }
 async function LoadText() {
+	console.log("begins loadtext()");
 	try {
 		const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
     		if (!jsonResponse.ok) {
@@ -25,22 +26,27 @@ async function LoadText() {
     		}
 		const constellariumText = await jsonResponse.json();
 		return constellariumText;
+		console.log("returns constellariumText");
   	}
 	catch (error) {console.log(error);}
 
 	titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
 	body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
 	body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
+	console.log("stringify-s everything");
 	titleText = titleText.slice(1, -1);
 	body1Text = body1Text.slice(1, -1);
 	body2Text = body2Text.slice(1, -1);
+	console.log("excises the quotes");
 	setTimeout(function() {
 		$("#title").append(titleText);
 		$("#body1").append(body1Text);
 		$("#body2").append(body2Text);
+		console.log("loads text");
 	}, 350);
 	area = null;
 	outcome = 0;
+	console.log("finishes loadtext()");
 }
 	</script>
 </head>
