@@ -21,53 +21,48 @@ function OnClick() {
 }
 function LoadText() {
 	async function FetchText() {
-	try {
-		const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
-    		if (!jsonResponse.ok) {
-      			throw new Error(`Error! status: ${jsonResponse.status}`);
-    		}
-		const constellariumText = await jsonResponse.json();
-		return constellariumText;
-		console.log("returns constellariumText");
-  	}
-	catch (error) {console.log(error);
+		try {
+			const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
+    			if (!jsonResponse.ok) {
+      				throw new Error(`Error! status: ${jsonResponse.status}`);
+    			}
+			const constellariumText = await jsonResponse.json();
+			return constellariumText;
+  		}
+		catch (error) {console.log(error);}
 	}
-	
 	FetchText().then(constellariumText => {console.log(constellariumText);
-	//GET TEXT
-	var titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
-	var body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
-	var body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
+	let titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
+	let body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
+	let body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
 	if (threeBody == true) {
-		var body3Text = JSON.stringify(constellariumText[area][outcome]["text"][3]);
+		let body3Text = JSON.stringify(constellariumText[area][outcome]["text"][3]);
 	}
 	if (oneOption == true) {
-		var option1TitleText = JSON.stringify(constellariumText[area][outcome]["option1"][0]);
-		var option1BodyText = JSON.stringify(constellariumText[area][outcome]["option1"][1]);
-		var option1ButtonText = JSON.stringify(constellariumText[area][outcome]["option1"][2]);
+		let option1TitleText = JSON.stringify(constellariumText[area][outcome]["option1"][0]);
+		let option1BodyText = JSON.stringify(constellariumText[area][outcome]["option1"][1]);
+		let option1ButtonText = JSON.stringify(constellariumText[area][outcome]["option1"][2]);
 	}
 	else if (twoOption == true) {
-		var option2TitleText = JSON.stringify(constellariumText[area][outcome]["option2"][0]);
-		var option2BodyText = JSON.stringify(constellariumText[area][outcome]["option2"][1]);
-		var option2ButtonText = JSON.stringify(constellariumText[area][outcome]["option2"][2]);
+		let option2TitleText = JSON.stringify(constellariumText[area][outcome]["option2"][0]);
+		let option2BodyText = JSON.stringify(constellariumText[area][outcome]["option2"][1]);
+		let option2ButtonText = JSON.stringify(constellariumText[area][outcome]["option2"][2]);
 	}
 	if (addContinue == true) {
-		var continueTitleText = JSON.stringify(constellariumText[area][outcome]["continue"][0]);
-		var continueBodyText = JSON.stringify(constellariumText[area][outcome]["continue"][1]);
-		var continueUnlockText = JSON.stringify(constellariumText[area][outcome]["continue"][2]);
-		var continueButtonText = JSON.stringify(constellariumText[area][outcome]["continue"][3]);
+		let continueTitleText = JSON.stringify(constellariumText[area][outcome]["continue"][0]);
+		let continueBodyText = JSON.stringify(constellariumText[area][outcome]["continue"][1]);
+		let continueUnlockText = JSON.stringify(constellariumText[area][outcome]["continue"][2]);
+		let continueButtonText = JSON.stringify(constellariumText[area][outcome]["continue"][3]);
 	}
 	if (oneOutcome == true) {
-		var outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
-		var buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
+		let outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
+		let buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
 	}
 	else if (twoOutcome == true) {
-		var outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
-		var outcome2Text = JSON.stringify(constellariumText[area][outcome]["outcome"][1]);
-		var buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
+		let outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
+		let outcome2Text = JSON.stringify(constellariumText[area][outcome]["outcome"][1]);
+		let buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
 	}
-
-	//EXCISE QUOTES
 	titleText = titleText.slice(1, -1);
 	body1Text = body1Text.slice(1, -1);
 	body2Text = body2Text.slice(1, -1);
@@ -84,7 +79,8 @@ function LoadText() {
 		option2BodyText = option2BodyText.slice(1, -1);
 		option2ButtonText = option2ButtonText.slice(1, -1);
 	}
-	if (addContinue == true) {
+	if (addContinue == true)
+	{
 		continueTitleText = continueTitleText.slice(1, -1);
 		continueBodyText = continueBodyText.slice(1, -1);
 		continueButtonText = continueButtonText.slice(1, -1);
@@ -99,10 +95,7 @@ function LoadText() {
 		outcome2Text = outcome2Text.slice(1, -1);
 		buttonText = buttonText.slice(1, -1);
 	}
-
-
-	//LOAD TEXT
-	setTimeout(function() {
+	setTimeout(function(){
 	$("#title").append(titleText);
 	$("#body1").append(body1Text);
 	$("#body2").append(body2Text);
@@ -145,7 +138,7 @@ function LoadText() {
 		twoOutcome = false;
 	}
 	area = null;
-	outcome = 0;
+	outcome = 0;		
 	}, 350);
 	});
 }
