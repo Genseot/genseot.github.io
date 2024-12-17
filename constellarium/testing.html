@@ -9,31 +9,136 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 function onClick() {
-	async function getText() {
-		try {
-			const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
-    			if (!jsonResponse.ok) {
-      				throw new Error(`Error! status: ${jsonResponse.status}`);
-    			}
-			const constellariumText = await jsonResponse.json();
-			return constellariumText;
-  		}
-		catch (error) {console.log(error);}
+	var area = "testingtext";	
+	var outcome = 0;
+	FetchText();
+	GetText();
+	ExciseQuotes();
+	setTimeout(function(){ LoadText(); }, 350);
+	console.log("works");
+}
+async function FetchText() {
+	try {
+		const jsonResponse = await fetch(`https://genseot.github.io/constellarium/code/constellariumtext.json`,{method: `GET`,},);
+    		if (!jsonResponse.ok) {
+      			throw new Error(`Error! status: ${jsonResponse.status}`);
+    		}
+		const constellariumText = await jsonResponse.json();
+		return constellariumText;
+  	}
+	catch (error) {console.log(error);}
+}
+function GetText() {
+	titleText = JSON.stringify(constellariumText[area][outcome]["text"][0]);
+	body1Text = JSON.stringify(constellariumText[area][outcome]["text"][1]);
+	body2Text = JSON.stringify(constellariumText[area][outcome]["text"][2]);
+	if (threeBody == true) {
+		body3Text = JSON.stringify(constellariumText[area][outcome]["text"][3]);
 	}
-	getText().then(constellariumText => {console.log(constellariumText);
-		let titleText = JSON.stringify(constellariumText["testingtext"]["text"][0]);
-		let body1Text = JSON.stringify(constellariumText["testingtext"]["text"][1]);
-		let body2Text = JSON.stringify(constellariumText["testingtext"]["text"][2]);
-		titleText = titleText.slice(1, -1);
-		body1Text = body1Text.slice(1, -1);
-		body2Text = body2Text.slice(1, -1);
-		$("#title").append(titleText);
-		$("#body1").append(body1Text);
-		$("#body2").append(body2Text);
-		/*document.getElementById(`title`).innerHTML = titleText;
-		document.getElementById(`body1`).innerHTML = body1Text;
-		document.getElementById(`body2`).innerHTML = body2Text;*/
-	});
+	if (oneOutcome == true) {
+		option1TitleText = JSON.stringify(constellariumText[area][outcome]["option1"][0]);
+		option1BodyText = JSON.stringify(constellariumText[area][outcome]["option1"][1]);
+		option1ButtonText = JSON.stringify(constellariumText[area][outcome]["option1"][2]);
+	}
+	else if (twoOutcome == true) {
+		option2TitleText = JSON.stringify(constellariumText[area][outcome]["option2"][0]);
+		option2BodyText = JSON.stringify(constellariumText[area][outcome]["option2"][1]);
+		option2ButtonText = JSON.stringify(constellariumText[area][outcome]["option2"][2]);
+	}
+	if (addContinue == true) {
+		continueTitleText = JSON.stringify(constellariumText[area][outcome]["continue"][0]);
+		continueBodyText = JSON.stringify(constellariumText[area][outcome]["continue"][1]);
+		continueUnlockText = JSON.stringify(constellariumText[area][outcome]["continue"][2]);
+		continueButtonText = JSON.stringify(constellariumText[area][outcome]["continue"][3]);
+	}
+	if (oneOutcome == true) {
+		outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
+		buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
+	}
+	else if (twoOutcome == true) {
+		outcome1Text = JSON.stringify(constellariumText[area][outcome]["outcome"][0]);
+		outcome2Text = JSON.stringify(constellariumText[area][outcome]["outcome"][1]);
+		buttonText = JSON.stringify(constellariumText[area][outcome]["button"][0]);
+	}
+}
+function ExciseQuotes() {
+	titleText = titleText.slice(1, -1);
+	body1Text = body1Text.slice(1, -1);
+	body2Text = body2Text.slice(1, -1);
+	if (threeBody == true) {
+		body3Text = body3Text.slice(1, -1);
+	}
+	if (oneOption == true) {
+		option1TitleText = option1TitleText.slice(1, -1);
+		option1BodyText = option1BodyText.slice(1, -1);
+		option1ButtonText = option1ButtonText.slice(1, -1);
+	}
+	else if (twoOption == true) {
+		option2TitleText = option2TitleText.slice(1, -1);
+		option2BodyText = option2BodyText.slice(1, -1);
+		option2ButtonText = option2ButtonText.slice(1, -1);
+	}
+	if (addContinue == true)
+	{
+		continueTitleText = continueTitleText.slice(1, -1);
+		continueBodyText = continueBodyText.slice(1, -1);
+		continueButtonText = continueButtonText.slice(1, -1);
+		continueUnlockText = continueUnlockText.slice(1, -1);
+	}
+	if (oneOutcome == true) {
+		outcome1Text = outcome1Text.slice(1, -1);
+		buttonText = buttonText.slice(1, -1);
+	}
+	else if (twoOutcome == true ) {
+		outcome1Text = outcome1Text.slice(1, -1);
+		outcome2Text = outcome2Text.slice(1, -1);
+		buttonText = buttonText.slice(1, -1);
+	}
+}
+function LoadText() {
+	$("#option1title").append(option1TitleText);
+	$("#option1body").append(option1BodyText);
+	$("#option1button").append(option1ButtonText);
+	if (threeBody == true) {
+		$("#body3").append(body3Text);
+		threeBody = false;
+	}
+	if (oneOption == true) {
+		$("#option1title").append(option1TitleText);
+		$("#option1body").append(option1BodyText);
+		$("#option1button").append(option1ButtonText);
+		oneOption = false;
+	}
+	else if (twoOption == true) {
+		$("#option1title").append(option1TitleText);
+		$("#option1body").append(option1BodyText);
+		$("#option1button").append(option1ButtonText);
+		$("#option2title").append(option2TitleText);
+		$("#option2body").append(option2BodyText);
+		$("#option2button").append(option2ButtonText);
+		twoOption = false;
+	}
+	if (addContinue == true)
+	{
+		$("#continuetitle").append(continueTitleText);
+		$("#continuebody").append(continueBodyText);
+		$("#continueunlock").append(continueUnlockText);
+		$("#continuebutton").append(continueButtonText);
+		addContinue = false;
+	}
+	if (oneOutcome == true) {
+		$("#outcome1").append(outcome1Text);
+		$("#button").append(buttonText);
+		oneOutcome = false;
+	}
+	else if (twoOutcome == true) {
+		$("#outcome1").append(outcome1Text);
+		$("#outcome2").append(outcome2Text);
+		$("#button").append(buttonText);
+		twoOutcome = false;
+	}
+	area = null;
+	outcome = 0;
 }
 	</script>
 </head>
