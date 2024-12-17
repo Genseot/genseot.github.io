@@ -11,10 +11,10 @@
 function Click() {
 	var area = "testingtext";	
 	var outcome = 0;
-	await FetchText();
-	GetText();
+	FetchText().then(result => GetText();).then(ExciseQuotes();).then(setTimeout(function(){ LoadText(); }, 350););
+	/*GetText();
 	ExciseQuotes();
-	setTimeout(function(){ LoadText(); }, 350);
+	setTimeout(function(){ LoadText(); }, 350);*/
 	console.log("works");
 }
 async function FetchText() {
