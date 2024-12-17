@@ -1,11 +1,12 @@
 {
-    "testingtext": {
+    "testingtext": [
+    {
         "text": [
             "Silvered Wood, Pale Moonlight",
             "I travel for what seems like hours upon end through the tangled roots and routes of the Wood. The pale moonlight sways before my eyes in its ethereal dance. I pass by an indeterminate number of trees, their gnarled limbs almost seem as if they were reaching for me, their leaves fluttering in the winds, before breaking away and drifting softly to the ground, like snow.",
             "At the end of my ill-fated travels, I find no beating heart of the Wood; yet I find a spot in the wood where the heavens are observable, a rare sight in the Wood. The Stars wheel high in the cosmos, dreaming in their eternal reveries, travelling the unreachable skies... I will stay, and light a path into the heart of the Wood from here."
         ]
-    },
+    }],
     "testingtext2": {
         "text": [
             "title text",
