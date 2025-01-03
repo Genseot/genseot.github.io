@@ -7,8 +7,7 @@ body{width:100%; background-color:#1d1d1d;}
 .columnmain{}
 .columnleft{}
 
-.storyletbig{background-color:#182828; padding:10px; margin:0 auto; width:75%; border:2px solid white; border-style:groove;}
-.storylet{background-color:#182828; padding:10px; margin:0 auto; width:50%; border:2px solid white; border-style:groove;}
+.storylet{background-color:#182828; padding:10px; margin:0 auto; width:65%; border:2px solid white; border-style:groove;}
 .storylettitle{background-color:#183838; padding:10px; margin:0 auto; width:95%; border:2px solid white; border-style:groove;}
 .action{background-color:#183838; padding:10px; margin:0 auto; width:90%; border:1px solid white; border-style:groove;}
 .outcome{background-color:#183838; padding:10px; margin:0 auto; width:85%; border:1px solid white; border-style:groove;}
