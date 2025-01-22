@@ -420,12 +420,12 @@ function loadRecordatiumExplore() {
 	ExploringRecordatium();
 }
 
-function loadToChambersLiminal1 {
+function loadToChambersLiminal1() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/tochambersliminal1.txt");
 	xhttp.send();
 }
-function loadToChambersLiminal2 {
+function loadToChambersLiminal2() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/tochambersliminal2.txt");
 	xhttp.send();
@@ -568,7 +568,7 @@ function loadChambersLiminalMain() {
 
 
 // GARDENS FUNCTIONS
-function loadChambersToGarden {
+function loadChambersToGarden() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/togardens.txt");
 	xhttp.send();
@@ -576,7 +576,7 @@ function loadChambersToGarden {
 
 
 // HEART FUNCTIONS
-function loadChambersToHeart {
+function loadChambersToHeart() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toheart.txt");
 	xhttp.send();
@@ -584,7 +584,7 @@ function loadChambersToHeart {
 
 
 // GROVE FUNCTIONS
-function loadChambersToGrove {
+function loadChambersToGrove() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/togrove.txt");
 	xhttp.send();
@@ -592,7 +592,7 @@ function loadChambersToGrove {
 
 
 // PRECIPICE FUNCTIONS
-function loadChambersToPrecipice {
+function loadChambersToPrecipice() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toprecipice.txt");
 	xhttp.send();
@@ -600,7 +600,7 @@ function loadChambersToPrecipice {
 
 
 // SANDS FUNCTIONS
-function loadChambersToSands {
+function loadChambersToSands() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tosands.txt");
 	xhttp.send();
@@ -608,7 +608,7 @@ function loadChambersToSands {
 
 
 // SHORES FUNCTIONS
-function loadChambersToShores {
+function loadChambersToShores() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toshores.txt");
 	xhttp.send();
@@ -616,7 +616,7 @@ function loadChambersToShores {
 
 
 // SANCTUARY FUNCTIONS
-function loadChambersToSanctuary {
+function loadChambersToSanctuary() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tosanctuary.txt");
 	xhttp.send();
@@ -624,7 +624,7 @@ function loadChambersToSanctuary {
 
 
 // CHANDLERY FUNCTIONS
-function loadChambersToChandlery {
+function loadChambersToChandlery() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tochandlery.txt");
 	xhttp.send();
@@ -632,7 +632,7 @@ function loadChambersToChandlery {
 
 
 // CROSSROADS FUNCTIONS
-function loadChambersToCrossroads {
+function loadChambersToCrossroads() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tocrossroads.txt");
 	xhttp.send();
@@ -640,7 +640,7 @@ function loadChambersToCrossroads {
 
 
 // REFLECTORY FUNCTIONS
-function loadChambersToReflectory {
+function loadChambersToReflectory() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toreflectory.txt");
 	xhttp.send();
