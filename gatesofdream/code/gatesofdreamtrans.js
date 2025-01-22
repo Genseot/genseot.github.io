@@ -342,6 +342,7 @@ function ChangeRecordatiumText() {
 function ExploringRecordatium() {
 	setTimeout(function(){
 		$("#outcome").append(" (Exploring the Recordatium is now " + exploringRecordatium + "/10)");
+	}, 500);
 }
 function ContinueRecordatium() {
 	$("#addcontinue").append(`
