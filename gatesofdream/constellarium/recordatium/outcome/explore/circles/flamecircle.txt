@@ -10,5 +10,5 @@
 		<p id="outcome">You've gathered more knowledge on the Recordatium - on traversing its fiery aisles.</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadRecordatiumMain()"></actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadRecordatiumMain()">Continue</actionbutton></p>
 <br>

@@ -11,5 +11,5 @@
 		<p>I seek audience with the avatar of the Crystal - the Crystalline Mind...</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadGroveMain()">Continue</actionbutton></p>
 <br>
