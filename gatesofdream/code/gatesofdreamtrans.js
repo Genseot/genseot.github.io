@@ -360,7 +360,6 @@ function loadRecordatiumMain() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/recordatiummain.txt");
 	xhttp.send();
-
 	setTimeout(function() {
 		ChangeRecordatiumText();
 		if (exploringRecordatium >= 10) {
