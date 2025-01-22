@@ -372,48 +372,48 @@ function loadRecordatiumExplore() {
 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	if (airs < 20) {
-		xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/reminiscenceroom.txt");
+		xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/reminiscenceroom.txt");
 	}
 	else if (airs >= 20 && airs < 40) {
-		xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/treeoflight.txt");
+		xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/treeoflight.txt");
 	}
 	else if (airs >= 40 && airs < 60) {
-		xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/librariansoffice.txt");
+		xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/librariansoffice.txt");
 	}
 	else if (airs >= 60 && airs < 80) {
-		xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/grandstaircase.txt");
+		xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/grandstaircase.txt");
 	}
 	else {
 		let aisleAirs = Math.floor(Math.random() * 101);
 		if (aisleAirs < 10) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/rosecircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/rosecircle.txt");
 		}
 		if (aisleAirs >= 10 && aisleAirs < 20) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/heartcircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/heartcircle.txt");
 		}
 		if (aisleAirs >= 20 && aisleAirs < 30) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/crystalcircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/crystalcircle.txt");
 		}
 		if (aisleAirs >= 30 && aisleAirs < 40) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/galecircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/galecircle.txt");
 		}
 		if (aisleAirs >= 40 && aisleAirs < 50) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/flamecircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/flamecircle.txt");
 		}
 		if (aisleAirs >= 50 && aisleAirs < 60) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/scarcircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/scarcircle.txt");
 		}
 		if (aisleAirs >= 60 && aisleAirs < 70) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/starcircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/starcircle.txt");
 		}
 		if (aisleAirs >= 70 && aisleAirs < 80) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/candlecircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/candlecircle.txt");
 		}
 		if (aisleAirs >= 80 && aisleAirs < 90) {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/thresholdcircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/thresholdcircle.txt");
 		}
 		else {
-			xhttp.open("GET", "/gatesofdream/constellarium/main/outcome/explore/circles/mirrorcircle.txt");
+			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/mirrorcircle.txt");
 		}
 	}
 	xhttp.send();
