@@ -320,7 +320,11 @@ function loadToRecordatium() {
 	xhttp.open("GET", "/gatesofdream/beginning/bridge/outcome/torecordatium.txt");
 	xhttp.send();
 }
-
+function loadRecordatiumIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/recordatiumintro.txt");
+	xhttp.send();
+}
 
 
 // CONSTELLARIUM FUNCTIONS
