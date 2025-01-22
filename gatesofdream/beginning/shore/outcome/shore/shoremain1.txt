@@ -1,0 +1,16 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Boat and its Boatman</h2>
+		<p>Across the still, dark sea - little, silent ripples of water drift by unto the shore. The source of these ripples are but a speck on the horizon, inching ever closer.</p>
+		<p>Closer. A rowboat, upon which rests only its pilot.</p>
+		<p>Closer. The pilot is dressed in ornamental black robes.</p>
+		<p>Closer. Those hands that pilot the oars are skeletal.</p>
+		<p>Closer. The figure docks on shore and bids me to come closer, with a nod of its gleaming skull under its hood and a wagging, skeletal finger.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The Boatman beckons.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadShoreMain()">Continue</actionbutton></p>
+<br>

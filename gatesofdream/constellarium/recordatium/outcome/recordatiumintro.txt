@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Spark</h2>
+		<p>I enter the bounds of the Constellarium; the gates grinding shut behind me. Before me, in the centre of the vast amphitheatre-library - the bright, white light that I recognise from my vision walks the avenues of the bookshelves. The light of the Tree of Light - what once sprouted from the Spark's remnants, taking root in this grand library-castle, spreading the old light of the Spark. Its light blinds me in the same way the Sun would - but it is more lenient, allowing me to gaze through its unkind, unmerciful light into the winding, labyrinthine aisles of this place. That light--the light of the Spark--that is what the old Stars were born from - this is what dwells within the secret hiding-places inside the soul of every being - contained here, within the Constellarium; a tribute to what the coming dawn will bring.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The gates grind shut.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadConstellariumMain()"></actionbutton></p>
+<br>

@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Chandlery</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to candle-stubs penetrating the walls, each candle eternally dripping wax, congealing on the floor as their candle-flame never ceases. The candles light the way in the smog, both in front and behind me - lighting the path to the future, and burning the past.</p>
+		<p>It is hard to see through the smoke and the smog - but, looking at the flames of the candles stuck onto the walls, I can sometimes see things. Scraps of what will come and what has come pass through the flickering lights of the candles.</p>
+		<p>This is the Domain of the Candle.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The flickering of candlelight, the thick smog of smoke - I travel the Domain of the Candle.</p>
+		<p>I seek audience with the avatar of the Candle - the Chandler...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

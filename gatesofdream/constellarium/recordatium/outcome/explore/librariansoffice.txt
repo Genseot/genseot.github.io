@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Librarian's Office</h2>
+		<p>I travel the glimmering aisles of the Recordatium following markings. On the floor and on the walls - subtle, yet apparent; these were probably left by a Librarian recently. With hope - I can follow them, and they may lead me towards one of their offices, perhaps something may help me there. These markings are each of a certain sigil of the language of the Stars, each corresponding to the sigils on the memory-crystals on the shelves nearby - the Librarian was once organising the shelves, probably. The sigils eventually lead me to a side room after a little poking around, the Librarian's office?</p>
+		<p>I slowly enter the office - no one is here, neither the Librarian nor anyone else. The floors are panneled wood, and a wooden desk lies at the side opposite the doorway; on the walls are more stone shelves bearing crystals towering high - enough to warrant a ladder. A cabinet lies next to the Librarian's desk, I take a look inside - I shuffle through the papers, reference cards with esoteric names and impossibly long numbers, logs and records that unfurl longer and longer the more you take them out - almost never ending. On the margins on some of the sheafs of paper are the Librarian's notes, scribed in some incomprehensible language to me - its words shift and sway on the paper, almost-alive. On the backs, though - more coherent maps of the Library lie, a few sketches of the Librarian's routes through the Recordatium. They are only tiny sections of the library, but still that is enough to find my way around the places closest to here.</p>
+		<p>I scavenge through the other shelves and drawers, looking for other things of interest. Shuffling through sheafs and piles of paper I learn that the Recordatium is organised into "Circles" - ten in total, each containing memories relevant to the principle of the Circle; those memories closest to the heart of that Circle are most in-tune with the relevant Constellation and what they preside over. I attempt to take a closer look into those Circles, but it's written in the same incomprehensible language; nothing for me, then. But a little insight into the inner workings of the library may serve helpful. After I finish, I quickly abscond into the aisles of the Recordatium - quickly enough in case the Librarian is approaching.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've gathered more knowledge on the Recordatium - on its Circles and Librarians.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadRecordatiumMain()"></actionbutton></p>
+<br>

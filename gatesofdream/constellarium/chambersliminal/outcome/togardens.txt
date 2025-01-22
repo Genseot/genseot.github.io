@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Rosen Gardens</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields way to grass, swaying in an unfelt wind - tree-roots breaking through the dirt, of which used to be stone; roses flower in an imagined light.</p>
+		<p>Under the false-sunlight of the imagined Sun, roses blossom here, betwixt the swaying blades of grass. Each blossoming rose is as big as my head and their scent is enough to make my head spin - strong, but elegant - like notes in a fine wine. The roses are of an unearthly red colour, one not seen so often in waking - one so beautiful that one cannot look away.</p> 
+		<p>This is the Domain of the Rose.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>Golden false-sunlight, ruby-red roses - I travel the Domain of the Rose.</p>
+		<p>I seek audience with the avatar of the Rose - the Rose-Witch...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

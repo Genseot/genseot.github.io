@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Reflectory</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to still, dark-blue waters flooding the floor - those drowning waters reflect my every move, my every thought. Mirrors throng on the walls, my reflection always-watching in refracted, polished glory.</p>
+		<p>On the miscellany of mirrors on the walls, I take note of their designs - some flourished, some gilded; some silvered, some not; some reflecting my true self, and some reflecting something else. I look into the drowning waters of the floor - foot-high, dark teal-blue water. Deep and murky--yet it reflects, almost glistening in the mirror's light, under the light of the Stars.</p>
+		<p>This is the Domain of the Mirror.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The ever-reflective mirrors, the rippling, reflective waters - I travel the Domain of the Mirror.</p>
+		<p>I seek audience with the avatar of the Mirror - the Silvered Twins...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

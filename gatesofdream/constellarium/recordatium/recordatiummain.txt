@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Recordatium</h2>
+		<p id="body1"></p>
+		<p id="body2"></p>
+	</div>
+	<br>
+	<div id="addcontinue">
+	</div>
+	<div class="action">
+		<h2>Explore</h2>
+		<p>I must find a way through the winding and labyrinthine ways of the Recordatium's crystalline shelf-aisles to the deeper reaches of the Constellarium.</p> 
+		<p style="text-align:right"><actionbutton onclick="loadRecordatiumExplore()">Explore</actionbutton></p>
+	</div>
+<br>

@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Silent Sanctuary</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to a silent grandeur unlike anything in the Constellarium - halls and chambers are of pure white marble brickwork, inlaid with elaborate decorations and mosaic--a fallen palace. Here, it is completely silent - even taking so much of a step does not produce any sound at all. The only sound penetrating this cloak of silence is a blizzard, raging with sorrow beyond a desolate gate--standing firm against the storm.</p>
+		<p>Those mosaics inset within the walls and ceilings and floors are of light blues and whites and sometimes deep purples, each one depicting something sorrowful - a death, a loss, something gone. As I examine the grand mosaics and murals, the storm begins to subtly quiet down as I understand the pain that the storm holds within its heart - here, within this sanctuary.</p>
+		<p>This is the Domain of the Star.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The silent drifting of snow, the harsh winds of a blizzard - I travel the Domain of the Star.</p>
+		<p>I seek audience with the avatar of the Star - the Shattered King...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

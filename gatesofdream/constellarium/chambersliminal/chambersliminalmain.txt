@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Chambers Liminal</h2>
+		<p>The Chambers Liminal - the heart of the Constellarium, who pierces the starry skies and the sunken abyss below. A tall and vast chamber of ways into the Domains of the Constellations - twined in ivory and horn - bearing the many Dreams of Constellations and the realms they inhabit through scarred gate-frames. Here, floating stone tiles allow me to walk and climb higher--or to descend lower--within the Chambers; fragments of walls and floors and staircases are scattered about the Chambers, suspended in the air by the same forces that allow me to walk on the tiles. Perhaps this place was meant to be something else? yet it is not. Now it is an area in-between.</p>
+		<p>From here - there are many gate-frames that--rather than holding a Constellation's Domain--lead to passages that snake into other chambers of the Chambers Liminal - or carve a path deeper into the Constellarium--like the arteries of a heart. I must follow these paths to find those places touched and blessed by one of the Ten Constellations - and I must hope to gain their favour, one way or another. Once I am done with this, the Ten shall herald me to where I shall meet my destiny with open arms.</p>
+	</div>
+	<br>
+	<div class="action">
+		<h2 id="option1title"></h2>
+		<p id="option1body"></p> 
+		<p style="text-align:right" id="option1button"></p>
+	</div>
+<br>

@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Gale's Circle</h2>
+		<p>I walk the multitudinous shelves of the Recordatium, looking for nothing in particular. I travel through the Recordatium's intricate stonework, it's ever-wandering dreamers, it's crystal-thronged bookshelves. Wandering the endless labyrinthine library, I find myself within a strange section of the Recordatium...</p>
+		<p>The stone brickwork of the Recordatium begins to yield to a cobblestone path--less elegant than the brickwork of the Recordatium--upon a field of grass. The bookshelves are the same as they always are - though, the memory-crystals on the shelves of this section are of a turquoise hue - the colour of a deep--yet kind--ocean; each of these crystals twinkle through the harsh winds. Here - a tempest rages, the sound of thunder cracks the skies - yet no lightning strikes; the Sky's howl--the flurry of winds and gales--batters my body - and the Sky's tears--the heavy fall of rain from the clouded skies--lashes the ground and my skin. Above the bookshelves and through the storm-clouds  - towards the underbelly of the upper floor - I see those murals of the Recordatium. They depict images of travel, of the Sky, and of yearning - no human figures nor Stars are depicted, here. Only whisps of wind and clouds before the Sky - endless travel, a hopeless yearning to return to somewhere long-past.</p>
+		<p>As I traverse deeper into the tempestuous aisles of the Recordatium, the rain begins to lessen, the winds begin to weaken, the thunderclaps become much more quiter. I arrive at the eye of the storm - here it is completely silent, no rain, no thunder, no wind, even the clouds above clear; there is only me. Here lies nothing but a hopeless, wistful silence - naught but the bedraggled hope of regaining something once lost. The sounds of thunder clashing in the skies and the sounds of the winds racing by and the sounds of the rain lashing the ground return to those wuthering aisles as I travel further; I eventually make it through and out of those tempestuous--yet wistful--aisles, having learnt a little more knowledge on locales like these.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've gathered more knowledge on the Recordatium - on traversing its wistful aisles.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadRecordatiumMain()"></actionbutton></p>
+<br>

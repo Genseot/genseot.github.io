@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Towards the Crossroads-Chamber</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork beings to yield to a winding labyrinth - many paths bathed in an unnatural darkness. Within the maze, tiny motes of light flit about, always seeming a little out of reach - flitting about like little, lone fireflies.</p>
+		<p>As much as I can make out, the walls of this passage are similar to the rest of the Constellarium - though they have been bathed in ink, the air being steeped in a deep-black dark. The shadows cloak the walls and the floors completely - making it almost impossible to see through, except for those little, flitting lights. Here - every path here opens wide, beckoning me to explore them - to get lost in them - to close all other paths.</p>
+		<p>This is the Domain of the Threshold.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The ever-encroaching shadows, the little sparks of light, far in the distance - I travel the Domain of the Threshold.</p>
+		<p>I seek audience with the avatar of the Threshold - the Crossroads-Bearer</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

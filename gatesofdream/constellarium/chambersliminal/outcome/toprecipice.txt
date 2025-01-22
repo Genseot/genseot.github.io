@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>To the Precipice</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. I pass through halls almost deathly silent, only accompanied by the splattering of raindrops overhead and the occasional crack of lightning. At the end of these halls - a bruised and battered door lies, holding the wuthering winds beyond it from flooding these passages.</p>
+		<p>The doors fling open - and I am met by a tempestuous storm, casting the skies in a dark grey--as dark as the seas on a moonless night. The skies scream out as thunder strikes and shakes the stony earth--lashing like a whip, illuminating the earth for but a moment; the wordless sorrow of the skies coalesce in heavy blankets of raindrops, beating upon the earth like a drum; the sky's anguished cries, sweeping through the earth as the gales that walk the empty edges of the world.</p>
+		<p>This is the Domain of the Gale.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>Wuthering winds, tempestuous lightning - I travel the Domain of the Gale.</p>
+		<p>I seek audience with the avatar of the Gale - the Wind-Whisper...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

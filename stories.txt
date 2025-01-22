@@ -6,16 +6,27 @@
         <br>
         <div class="action">
         	<h2>Beyond the Gates of Dream</h2>
-        	<p>Delve within the dream-castle of the Stars, explore and enlist the help of the Ten Constellations, crack open the Dream-Gate and ascend into the Stars beyond.</p>
-        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="load[]Confirmation"-->Begin</actionbutton></p>
+        	<p>Delve within the dream-castle of the Stars, explore and enlist the help of the Ten Constellations, unseal the Dream-Gate and ascend into the Stars beyond.</p>
+        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="transitionTo('')"-->Begin</actionbutton></p>
 			<br>
-			<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.github.io/constellarium/main.html')">Try the Demo!</actionbutton></p>
+			<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.github.io/gatesofdream/main.html')">Try the Demo!</actionbutton></p>
         </div>
         <br>
-	<!--<div class="action">
-        	<h2>A Crystalline Heart</h2>
+	<!--
+	<div class="action">
+		<h2>A Starlit Storm</h2>
+		<p></p>
+		<p style="text-align:right"><actionbutton onclick="transitionTo('')">Begin</actionbutton></>
+	</div>
+	<br>
+	-->
+	<!--
+	<div class="action">
+        	<h2>The Crystalline Heart</h2>
         	<p></p>
-        	<p style="text-align:right"><actionbutton onclick="loadCrystallineHeart()">Begin</actionbutton></p>
-        </div>-->
+        	<p style="text-align:right"><actionbutton onclick="transitionTo('')">Begin</actionbutton></p>
+        </div>
+	<br>
+	-->
 	<p><actionbutton onclick="loadIndex()">Return</actionbutton></p>
 <br>

@@ -15,8 +15,3 @@ function loadStories() {
 xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 xhttp.open("GET", "stories.txt");
 xhttp.send();}
-
-function loadBeyondConfirmation() {
-xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-xhttp.open("GET", "/constellarium/confirmation.txt");
-xhttp.send();}

@@ -1,0 +1,33 @@
+rose {color:#ff60bc; font-style:italic;}
+heart {color:#fc9cff; font-weight: bold; font-style:normal;}
+crystal {color:#ff42ff; font-weight: bold; font-style:normal;}
+gale {color:#538aa1; font-style:italic;}
+flame {color:#ff8027; font-weight: bold; font-style:normal;}
+scar {color:#b44dfb; font-weight: bold; font-style:normal;}
+star {color:#a2a2ff; font-weight: bold; font-style:normal;}
+candle {color:#ffdc02; font-weight: bold; font-style:italic;}
+threshold {color:#68626e; font-weight: bold; font-style:italic;}
+mirror {color:#b2b2b2; font-weight: bold; font-style:normal;}
+
+h1, h2, p {font-family:slabo; color:white;}
+h2 {border-bottom: 1px solid white;}
+p {font-size:16px; font-style:italic;} 
+b {font-weight: bold;}
+@font-face {font-family:"slabo";src: url("https://file.garden/ZgeTHkDRARPwyXFA/Slabo_27px.zip");} 
+body{width:100%; background-color:#1d1d1d;}
+
+.storyletbig{background-color:#182828; padding:10px; margin:0 auto; width:75%; border:2px solid white; border-style:groove;}
+.storylet{background-color:#182828; padding:10px; margin:0 auto; width:50%; border:2px solid white; border-style:groove;}
+.storylettitle{background-color:#183838; padding:10px; margin:0 auto; width:95%; border:2px solid white; border-style:groove;}
+.action{background-color:#183838; padding:10px; margin:0 auto; width:90%; border:1px solid white; border-style:groove;}
+.outcome{background-color:#183838; padding:10px; margin:0 auto; width:85%; border:1px solid white; border-style:groove;}
+actionbutton{background-color:#a38851; font-weight:bold; cursor:pointer; border: 2px solid #ceb06f; border-radius:8px; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px;}
+actionbutton:hover{border:2px solid #ceb06f; background-color:#9c7f3a;}
+actionbutton:active{border:2px solid #5c4c1c; background-color:#4e370d;}
+
+@media screen 
+  and (min-device-width : 320px) 
+  and (max-device-width : 480px) {
+    .storyletbig{background-color:#182828; padding:10px; margin:0 auto; width:100%; border:2px solid white; border-style:groove;}
+    .storylet{background-color:#182828; padding:10px; margin:0 auto; width:100%; border:2px solid white; border-style:groove;}
+}

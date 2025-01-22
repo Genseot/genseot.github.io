@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Heart</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to something primaeval, stalactites jut from the ceiling of this cavernous place with stalagmites jutting up opposingly from the ground--like teeth of a mouth.</p>
+		<p>As I observe those stalagmites and stalactites, I notice carvings and inscriptions gouged deep within the stone, dancing throughout the cavern. Each of these carvings depict performances of rituals and dances - these, perhaps, to preserve oneself or others as the Heart does - or perhaps to contribute to the eternal dance of the beating heart of the world, to preserve it through the tides of time.</p>
+		<p>This is the Domain of the Heart.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>Gnashing stalactites and stalagmites, primaeval carvings - I travel the Domain of the Heart.</p>
+		<p>I seek audience with the avatar of the Heart - the Drummer-in-the-Heart...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

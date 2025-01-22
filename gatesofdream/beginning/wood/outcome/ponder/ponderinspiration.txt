@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Inspiration's Touch</h2>
+		<p>I wait under the moonlight thinking still of the Wood's ways. From the moonlight - inspiration touches me, reaching her hand out of it, revealing a possible route through the Wood. My mind swarms with questions - but this idea defeats all of them. A sudden, divine inspiration? A gift from the heavens? If this route proves to be true - then there must be others like it, waiting for me to learn their ways.</p>
+		<p>I consider this path - what similarities it must have with other paths and routes through the Wood. The way the roots twine with one another, the candle's light, the way the trees grow - there must be something here, something important. I will keep this knowledge tucked away for now.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've gathered more knowledge on the Wood - on its ways and patterns.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadWoodMain()">Continue</actionbutton></p>
+<br>

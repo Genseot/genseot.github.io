@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A City Beneath</h2>
+		<p>Beneath the oily-black waves I see a city - garlanded in onyx-black and bone-white, lit by pure white candle-flames lying upon decorated pillars. Shapes pass through the streets, ephemeral humanoid shapes as if the wind itself took form and walked the empty, silent avenues of the city.</p>
+		<p>In the skies above the city--or the water as I see it--tiny, winged things flit across speedily--like little bats; and luminescent things lazily drift among the throng of other things--like little Stars. All other manner of interesting beings swim about under these waves; it is quite a beautiful sight from above. Perhaps this is what the Stars see in turn, looking down upon the earth?</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You draw nearer to the dream-castle.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadBoatMain()">Continue</actionbutton></p>
+<br>

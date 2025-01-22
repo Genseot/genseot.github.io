@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Sun-Scorched Sands</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to the scorching sands of a desert, whose skin is beat upon by the Sun mercilessly, relentlessly. Flames burst upon the horizon, its heat carried by the stray winds of the desert.</p>
+		<p>Among the sweeping sands of the desert, plateaus of sandstone rise across the horizon - jagged and towering high into the horizon. From these plateaus, lava flows down unto the crucibles of the earth, from which they trail off into rivers and streams--as if they were the veins of the desert. </p>
+		<p>This is the Domain of the Flame.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The unmerciful Sun's heat, the blazing sands - I travel the Domain of the Flame.</p>
+		<p>I seek audience with the avatar of the Flame - the Leashed Flame...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Astral Passages, Starlit Chambers</h2>
+		<p>The compass of my mind is attuned to its course once again. This path must be the one that shall lead me into the deeper reaches of the Constellarium past the never-ending sea of bookshelves of the Recordatium. As I set out - the path begins to look familiar, the snatches of visions I've seen throughout my wandering of the paths of my future, the paths of my desire, this avenue I walk may be what leads to my desire, what leads to my future. I begin recognise certain parts of these changing paths more and more through my previous travels and otherwise. My route through the aisles of the Recordatium begins to coincide with those crystalline marker-staves - perhaps beginning to lead me towards where the route out may lie.</p>
+		<p>An arch lies before me, the exit from the crystalline aisles of the Recordatium. As I pass the threshold, the cold night breeze once again touches my skin, and the light of the Stars begins to light my way once again. Before me lies a tangled, twisting web of passages - some with walls rising impossibly high into the night skies, yet open-aired - and others more like cloisters, revealing the barren abyss beneath. Betwixt some of the halls lie grand, circular chambers--not too unlike the Recordatium, each rises high into the night - some have closed ceilings, those ceilings painted with grand murals--and others with atriums, allowing me to see the heavenly night above. From here, I must travel further to reach the heart of the Constellarium - and that I can see from certain vistas in this maze - a towering, opulent chamber twined and flourished with ivory and horn. That is the heart of the Constellarium - where I must travel to, to begin my journey truly.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You walk the inner reaches of the Constellarium.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadToChambersLiminal2()">Continue</actionbutton></p>
+<br>

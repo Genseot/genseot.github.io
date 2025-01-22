@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>To the Seas</h2>
+		<p>I climb aboard the Boatman's ferry and the waves swiftly take us off shore, into the waters.</p>
+		<p>Before us lies the endless, black sea in the full of its fathoms - the approach to the dream-castle I so desire.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>Welcome aboard.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadBoatMain()">Continue</actionbutton></p>
+<br>

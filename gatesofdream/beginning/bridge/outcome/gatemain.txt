@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Gateway into Dream</h2>
+		<p>I stand before the gates, of whom stay stubbornly closed. As I look above, however, the Stars shine and begin to form into Constellations - preparing to open the gates into the dream-castle. The Stars who shall herald me and the Stars who shall assist me in becoming who I will be.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The Stars prepare to herald you into the dream-castle...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGateMain()">Continue</actionbutton></p>
+<br>

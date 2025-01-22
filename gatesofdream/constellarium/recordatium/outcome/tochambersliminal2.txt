@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Gates of Ivory</h2>
+		<p>I travel the endless passages of the Constellarium's interior reaches in pursuit of its heart. I pass through the high-rising halls, the vaulted chambers, the abyssal cloisters for hours upon end in the ever-shifting labyrinth. I ascend towards the heavens above and descend into the gaping abyss below through staircases spiralling to no end - slowly but surely, I approach the heart of the Constellarium. As it pierces the horizon above me and the dark sea beneath me, the Constellarium begins to twist and change in paradoxical ways. Architecture betrayed, mathematics shattered; the laws of the waking world do not apply to dreams as deep as this.</p>
+		<p>I ascend the final staircase before the heart of the Constellarium. Before me lies those gates of ivory - those white gates that so many dreamers never see. As I approach the gates, the doors grind open--seemingly by themselves, allowing my passage through the threshold it once guarded. A passage lies dormant behind the gates--there is no solid ground here, only the gaping maw of the void awaits me here - yet slabs of stone materialise in the air, meeting my feet as I walk across the gate's threshold into the Chambers Liminal proper.</p>
+		<p>A grand sight beholds me as I enter the Chambers Liminal - the tall, towering chamber that pierces and drinks the night skies and the abyss below is multifaceted within, like a gleaming crystal. As I look around, gate-frames lie dormant beholding a unique vista each - these are the Realms of the Constellations. These Realms are those of every Constellation--be it Major or Minor--yet what I seek is not here, exactly. I can use this as a place to rest between my travels and my dealings with the Ten Constellations - those Constellations that preside over all those principles within the Earth and its dream-spheres; the Ten, whose influence is so vast they cannot be contained within the gate-frames of the Chambers Liminal - yet this will work as a starting-point for a mortal such as I.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You have beheld the sights of the Chambers Liminal.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadChambersLiminalMain()">Continue</actionbutton></p>
+<br>

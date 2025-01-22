@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Blood-Steeped Shores</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to the sands of a beach - seeped with a vital, crimson pigment. This beach of red sands yields to a blood-red sea - here, massive slivers of iron and steel pierce into the skies above, perforating the firmament as the skies bleed.</p>
+		<p>Beyond the blood-red shores, the bloodied sea becomes a richer, deeper crimson as it approaches the horizon, where many of the slivers of steel congregate as they exsanguinate the skies. Stab-wounds and scars litter the skies below those slivers of iron who have sunken deep into the sands of the sea as time has marched on. In the centre of the sea, a grand scar in the sky bleeds unto two slivers crossing--like spears lodged in the hide of some beast.</p>
+		<p>This is the Domain of the Scar.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>The sickly-sweet smell of blood, the cold iron flakes of the shores - I travel the Domain of the Scar.</p>
+		<p>I seek audience with the avatar of the Scar - the Flayed Knight...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

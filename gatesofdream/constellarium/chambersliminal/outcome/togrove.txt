@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>Into the Starlit Grove</h2>
+		<p>I travel through the Constellarium - though its vaulted chambers, through its many halls open to starlight, through its twisting and unconforming ways. The stone brickwork yields to gleaming crystals jutting from the walls like daggers and trees whose body is shaped from stone and whose leaves are shaped from crystal, interlacing their branches under the starlight. </p>
+		<p>Under the gleaming starlight, these crystals shimmer and shine - the light granted from the heavens drifting through them like water. Upon each of these crystals are those sigils - once again - scratched upon them in a deep, copper colour, like those I have seen in the Recordatium. Within the heart of these crystals are multitudes of colours, mingling with one another, creating hues esoteric and vibrant, shining like the Stars above.</p>
+		<p>This is the Domain of the Crystal.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>Twinkling, vibrant crystals, gleaming thickets of crystalline-trees - I travel the Domain of the Crystal.</p>
+		<p>I seek audience with the avatar of the Crystal - the Crystalline Mind...</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()"></actionbutton></p>
+<br>

@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Star's Circle</h2>
+		<p>I walk the multitudinous shelves of the Recordatium, looking for nothing in particular. I travel through the Recordatium's intricate stonework, it's ever-wandering dreamers, it's crystal-thronged bookshelves. Wandering the endless labyrinthine library, I find myself within a strange section of the Recordatium...</p>
+		<p>The stone brickwork of the Recordatium begins to yield to a thick layer of snow coating the ground below a sort, pure-white blanket of clouds. The shelves here are mostly the same as the rest of the Recordatium, coated in snow. The memory-crystals on the shelves of this section are a deep, regal blue-violet hue--the hue of the skies during a blizzard--each of the crystals dimmer than they usually are - though they have a little sparkle within--like a snowflake. Slowly, softly drifting snowflakes fall from the clouded skies - a crystallised tear of the skies, each unique, shed for an especial reason - one that can never be quite replicated. Here, it is almost completely silent - all that makes sound are a few wisps of wind flowing through the air, curling about the skies and heralding the snow. Above the bookshelves and through the snow-white skies - towards the underbelly of the upper floor - I see those murals of the Recordatium. They depict images of sorrow, of despair, of death - the finality of death within both Stars and humans, and the despair that blossoms from the seed of sorrow.</p>
+		<p>As I traverse deeper into the snow-laden aisles, the winds begin to bite at my skin--a blizzard begins to form obscuring all my sight and stifling all my senses. The wind howls through the endless quiet - shrieking for something--or someone--lost beneath the skies. The airs become snow-laden by the tears of the skies - the clouds overhead becoming a darker, blacker colour; the colour of despair - the colour of hope, lost and squandered. I trudge through the snow and winds of the blizzard and eventually make it through and out of those melancholic, forlorn aisles, having learnt a little more knowledge on locales like these.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've gathered more knowledge on the Recordatium - on traversing its sorrowful aisles.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadRecordatiumMain()"></actionbutton></p>
+<br>

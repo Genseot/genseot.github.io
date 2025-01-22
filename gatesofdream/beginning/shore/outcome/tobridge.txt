@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>Disembarking</h2>
+		<p>The boat finally arrives. The Boatman tugs on a rope leashed to the quayside of the bridge - this rocks the boat, but fortunately, I am still on it as the Boatman docks. With a gesture of its hand, it permits me ashore onto the quay. The Boatman grabs its paddles and draws away from where I stand, presumably to fetch another dreamer.</p>
+		<p>As the Boatman draws away, it regards me with a silent smile and a nod of its head. I turn, and upon the horizon lies the dream-castle - large and magnificent before its basalt-pillared isle. The Bridge of Dreams stretches onward before me - but at the end of it lies my desire - what I have so hoped for all this time. Better get going.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You disembark onto the Bridge of Dreams.</p>
+                <p>The Boatman draws away from you to ferry another dreamer.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadBridgeMain()">Continue</actionbutton></p>
+<br>

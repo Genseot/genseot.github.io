@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Midnight Shore, the Seas Beneath</h2>
+		<p>I now stand on the dead, black carapace-shells of those inky-black shores. Under the Moon's light, the carapace-shells shine, like little jet-black Stars. Beyond lies an endless sea - stygian-black, like the uncharted fathoms of the heavens.</p>
+		<p>As I look across the tar-black, inky sea, towards the horizon - I spot it, adrift on the sea: that dream-castle - where I must go, where I must end, where I must begin.</p>
+	</div>
+	<br>
+	<div class="action">
+		<h2 id="changeoptiontitle"></h2>
+		<p id="changeoptiontext"></p> 
+		<p style="text-align:right" id="changeoptionbutton"></p>
+	</div>
+<br>

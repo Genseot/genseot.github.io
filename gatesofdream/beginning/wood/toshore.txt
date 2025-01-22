@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2>Before a Black Shore</h2>
+		<p>Step by step, the Wood begins to fall away behind me. Grass throngs about, a tiny glade, lit by the light of the Moon and the Stars. But what lies in front of me, though, captures my interest. A black shore awaits just before yielding to a murky, midnight sea. Beyond that sea must lie something important to my journey - this must be the outer reaches of the Wood's heart.</p>
+	</div>
+	<br>
+	<div class="action">
+		<h2>Approach</h2>
+		<p>The black shores beckon, I can get a better view of the sea from the shores, probably.</p> 
+		<p style="text-align:right"><actionbutton onclick="loadToShoreOutcome()">Explore</actionbutton></p>
+	</div>
+<br>
