@@ -18,7 +18,7 @@ function ExploringWood() {
 	}, 500);
 }
 function ContinueWood() {
-	setTimeout(function(){$("#addcontinue").append(`
+	$("#addcontinue").append(`
 		<div class="action">
 			<h2>My Mind's Compass</h2>
 			<p>I think I have found a path into the heart of the Wood...</p> 
@@ -26,10 +26,8 @@ function ContinueWood() {
 			<p style="text-align:right"><actionbutton onclick="loadToShore()">Follow</actionbutton></p>
 		</div>
 		<br>
-	`);}, 500);
+	`);
 }
-
-
 
 function loadIntroOutcome() 
 {
@@ -43,10 +41,12 @@ function loadWoodMain()
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/beginning/wood/main.txt");
 	xhttp.send();
-	if (exploringWood >= 10)
-	{
-		ContinueWood();
-	}
+	setTimeout(function(){
+		if (exploringWood >= 10)
+		{
+			ContinueWood();
+		}
+	}, 500);
 }
 
 function loadWoodExploreOutcome()
@@ -355,8 +355,6 @@ function ContinueRecordatium() {
 		<br>
 	`);
 }
-
-
 
 function loadRecordatiumMain() { 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
