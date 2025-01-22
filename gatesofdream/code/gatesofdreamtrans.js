@@ -444,7 +444,7 @@ function ChambersLiminalOptions() {
 				Before me lies one of the passages of the Chambers Liminal - a way into one of the Ten's Domains. The entrance to this passage is twined with ruby-red roses, sharp brambles, and thick roots. The roses bloom grandly, displaying their glory and splendour for all to see - the petals are steeped in and drip a sort of deep-red viscous liquid. This passage must lead to the Domain of the Rose.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToGarden">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToGarden()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Heart")) {
@@ -455,7 +455,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage - another artery - of the Chambers Liminal. Here, the passage is crammed with stalactites and stalagmites, biting down through the ceilings and the floors like gnashing teeth of a primal mouth. I can see the flickers of flames held in braziers within, and primaeval carvings upon the walls leading into this cavern. This passage will lead to the Domain of the Heart.  
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToHeart">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToHeart()">Enter</actionbutton>
 			`);				
 		}
 		else if (!constellationHelp.includes("Crystal")) {
@@ -466,7 +466,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal - open-aired, for all the Stars to see--yet still claustrophobic in nature. Embedded within the stone walls are faceted memory-crystals and echo-shards in multitudes and bigger shards of both kinds impale the ground--like spears. Looking from afar, one might mistake these as the heavens above, gleaming and scintillating with pin-pricks of light. This passage will surely lead to the Domain of the Crystal.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToGrove">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToGrove()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Gale")) {
@@ -477,7 +477,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Coursing through the veins of this artery is not blood, but rather, the gales and the tears of the skies above. The cracks between the stonework of this passage are slick and slippery with rain as it streams down into the chambers in which I stand. The gales travelling through this passage ruffle my clothes - I might even be able to hear whispering, if I listen close enough. This passage will lead to the Domain of the Gale.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToPrecipice">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToPrecipice()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Flame")) {
@@ -488,7 +488,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Little particles and grains of sand sweep through little gales that pass through this passage. I can hear the crackling of flames and feel the heat of the crucibles that work beyond this passage through those gales that pass here. Little snakes of fire slip through the cracks in the stonework of the passage, here, I'd better be a little careful. This passage will lead to the Domain of the Flame.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToSands">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToSands()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Scar")) {
@@ -499,7 +499,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage - a true artery - of the Chambers Liminal. Coursing through the cracks of the stonework of this passage is blood, drop by drop flowing down into these chambers, carrying its sickly-sweet scent. Piercing through the stonework are slivers of steel perforating the passageway - I'll need to be careful, of course, as these are razor-sharp. This passage must lead to the Domain of the Scar.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToShores">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToShores()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Star")) {
@@ -510,7 +510,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Drifting softly, snow begins to settle upon the ground, carried by winds drifting through the passageways. This passage is almost completely silent - the winds don't make any sound, neither does the snow; it's almost as if a mantle of silence was placed over this passage - nothing else, even from the outside - can be heard. Nothing. This passage must lead to the Domain of the Star.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToSanctuary">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToSanctuary()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Candle")) {
@@ -521,7 +521,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Its entrance is almost entirely covered in wax - wax that candle-stubs penetrate out of, their wicks alight with a dancing flame. The cracks between the brickwork of the passage are almost entirely sealed in this wax, with yet more candles dotted about, lighting the way into the passage's depths. This passage will lead to the Domain of the Candle.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToChandlery">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToChandlery()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Threshold")) {
@@ -532,7 +532,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. This one is cloaked in and courses with an unnatural thick, inky-black darkness, bleeding a little out of the entrance - before disappating into regular darkness, of which the starlight melts away. In the passage's depths, I can see small lights dotted about, a guiding hand through this heavy shadow. This passage will lead to the Domain of the Threshold.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToCrossroads">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToCrossroads()">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Mirror")) {
@@ -543,7 +543,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Strewn about on the walls lie mirrors, polishd and gilded and carved to an almost-obsessive degree. They stand in their silent, ever-watching, ever-reflecting sentinel. Flowing upon the floors of this passage is a layer of water - a turquoise murky-blue, yet it is as reflective as its silvered bretheren. This passage must lead to the Domain of the Mirror.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToReflectory">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToReflectory()">Enter</actionbutton>
 			`);	
 		}
 		else {
@@ -554,7 +554,7 @@ function ChambersLiminalOptions() {
 				I walk with full authority of the Ten. Where I travel, they shall follow behind me. Where I present myself, they shall herald me. And where I must travel to and present myself will reveal itself to me, as the Ten will have decreed for it to leave its shadow, and announce itself to the light. At the end of this passage I shall meet my destiny, and the Ten shall be its harbingers.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToDreamGate">Approach</actionbutton>
+				<actionbutton onclick="loadChambersToDreamGate()">Approach</actionbutton>
 			`);	
 		}
 	}, 500);
