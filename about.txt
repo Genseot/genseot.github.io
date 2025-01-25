@@ -38,7 +38,6 @@
 				<img src="/buttons/ramen.png">
 			</a>
 		</p>
-		<br>
 		<p>
 			<a href="https://corru.observer">
 				<img src="/buttons/corru.gif">
