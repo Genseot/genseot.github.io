@@ -42,6 +42,9 @@
 			<a href="https://corru.observer">
 				<img src="/buttons/corru.gif">
 			</a>
+			<a href="https://i-n-t-e-n-d-e-d.neocities.org/">
+				<img src="/buttons/intended.png">
+			</a>
 		</p>	
 	</div>
 	<br>
