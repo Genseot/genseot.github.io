@@ -2,7 +2,7 @@
         <div class="storylettitle">
         	<h2>About This Website</h2>
         	<p>As you probably know, I'm Genseot, i program and write etc.</p>
-        	<p>I'm still working on my website, can't say much about how it'll come out but it'll host short (or medium-sized) stories set within my worldbuilding project (no name yet but unofficially (if that matters) I call it "The Heavens"), I have 2 planned out (mostly), but for now you can check out my other stuff!</p>
+        	<p>I'm still working on my website, can't say much about how it'll come out but it'll host my web projects - currently my attention is mostly focused on writing stories (see stories page for more info). Feel free to check out everything listed here while you're waiting, though!</p>
 			<p>Also if you'd like to contact me for whatever reason, im @Genseot on discord.</p>
         </div>
 	<br>
