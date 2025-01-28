@@ -354,18 +354,22 @@ function ChangeRecordatiumText() {
 	}, 500);
 }
 function ExploringRecordatium() {
-	$("#outcome").append(" (Exploring the Recordatium is now " + exploringRecordatium + "/10)");
+	setTimeout(function() {
+		$("#outcome").append(" (Exploring the Recordatium is now " + exploringRecordatium + "/10)");
+	}, 500);
 }
 function ContinueRecordatium() {
-	$("#addcontinue").append(`
-		<div class="action">
-			<h2>My Mind's Compass</h2>
-			<p>I think I have found a way into the further reaches of the Constellarium...</p> 
-    			<p><b>- You unlocked this with having Exploring the Recordatium at 10 or more.<b></p>
-			<p style="text-align:right"><actionbutton onclick="loadToChambersLiminal1()">Follow</actionbutton></p>
-		</div>
-		<br>
-	`);
+	setTimeout(function() {
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>My Mind's Compass</h2>
+				<p>I think I have found a way into the further reaches of the Constellarium...</p> 
+    				<p><b>- You unlocked this with having Exploring the Recordatium at 10 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadToChambersLiminal1()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
 }
 
 
@@ -374,12 +378,10 @@ function loadRecordatiumMain() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/recordatiummain.txt");
 	xhttp.send();
-	setTimeout(function(){
-		ChangeRecordatiumText();
-		if (exploringRecordatium >= 10) {
-			ContinueRecordatium();
-		}
-	}, 500);
+	ChangeRecordatiumText();
+	if (exploringRecordatium >= 10) {
+		ContinueRecordatium();
+	}
 }
 function loadRecordatiumExplore() {
 	let airs = Math.floor(Math.random() * 101);
