@@ -6,7 +6,7 @@
 	</div>
 	<br>
 	<div class="outcome">
-		<p>You've travelled through the thickets of the Rosen Gardens.</p>
+		<p id="outcome">You've travelled through the thickets of the Rosen Gardens.</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadGardensIntro()">Continue</actionbutton></p>

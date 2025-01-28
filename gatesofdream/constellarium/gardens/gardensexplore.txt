@@ -5,7 +5,7 @@
 		<p>The roses here drip with an viscous red syrup that I might find a little familiar - enticing me, yet I can keep enough mind to stay my hand from tasting it. I'm not exactly sure whether the rose or the syrup that drips from its petals emits that fragrant scent - the one that draws me in, almost to tasting that syrup - yet I do know that it is one of the dangers of the Rose. In any case, I should be on the right path in its Domain, I just need to find the heart of these gardens and prepare an offering - an offering that would need to be succulent enough to appease the Rose.</p>
 	</div>
 	<br>
-	<div class="continue">
+	<div id="addcontinue">
 	</div>
 	<div class="action">
 		<h2 id="changeoptiontitle">Explore</h2>

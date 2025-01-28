@@ -586,35 +586,41 @@ function loadChambersLiminalMain() {
 
 // GARDENS FUNCTIONS
 function ContinueGardens() {
-	$("#addcontinue").append(`
-		<div class="action">
-			<h2>Approaching the Heart</h2>
-			<p>As I cleave through the final curtain of vines, I am met with the heart of the Rosen Gardens...</p> 
-    		<p><b>- You unlocked this with having Exploring the Rosen Gardens at 3 or more.<b></p>
-			<p style="text-align:right"><actionbutton onclick="loadGardensToHeart()">Follow</actionbutton></p>
-		</div>
-		<br>
-	`);
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I cleave through the final curtain of vines, I am met with the heart of the Rosen Gardens...</p> 
+    			<p><b>- You unlocked this with having Exploring the Rosen Gardens at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadGardensToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
 }
 function ExploringGardens() {
-	$("#outcome").append(" (Exploring the Rosen Gardens is now " + exploringGardens + "/3)");
+	setTimeout(function() {
+		$("#outcome").append(" (Exploring the Rosen Gardens is now " + exploringGardens + "/3)");
+	}, 500);
 }
 function ChangeGardensOptions() {
-	if (exploringGardens == 0) {
+	setTimeout(function() {
+		if (exploringGardens == 0) {
 		$("#changeoptiontitle").append(`Gather`);
 		$("#changeoptiontext").append(`To perform the rites, I must gather something from among the roses and the trees.`);
 		$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Gather</actionbutton>`);
-	}
-	else if (exploringGardens == 1) {
+		}
+		else if (exploringGardens == 1) {
 			$("#changeoptiontitle").append(`Prepare`);
 			$("#changeoptiontext").append(`Now, to prepare the rites - to place everything in the proper order and the proper manner.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Prepare</actionbutton>`);
-	}
-	else if (exploringGardens == 2) {
-		$("#changeoptiontitle").append(`Perform`);
-		$("#changeoptiontext").append(`I must recite the words, perform the actions, pray the Rose looks kindly upon me.`);
-		$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Perform</actionbutton>`);
-	}
+		}
+		if (exploringGardens == 2) {
+			$("#changeoptiontitle").append(`Perform`);
+			$("#changeoptiontext").append(`I must recite the words, perform the actions, pray the Rose looks kindly upon me.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Perform</actionbutton>`);
+		}
+	}, 500);
 }
 
 function loadChambersToGarden() {
@@ -626,11 +632,9 @@ function loadGardensIntro() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/gardens/gardensexplore.txt");
 	xhttp.send();
-	setTimeout(function(){
-		if (exploringGardens >= 3) {
-			ContinueGardens();
-		}
-	}, 500);
+	if (exploringGardens >= 3) {
+		ContinueGardens();
+	}
 }
 function loadGardensExplore() {
 	let airs = Math.floor(Math.random() * 100);
@@ -646,9 +650,7 @@ function loadGardensExplore() {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/explore/explore3.txt");
 	}
 	xhttp.send();
-	setTimeout(function(){
-		ExploringGardens();
-	}, 500);
+	ExploringGardens();
 }
 function loadGardensToHeart() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
@@ -660,9 +662,7 @@ function loadGardensHeart() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/gardens/gardensheart.txt");
 	xhttp.send();
-	setTimeout(function(){
-		ChangeGardensOptions();
-	}, 500);
+	ChangeGardensOptions();
 }
 function loadGardensRite() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
