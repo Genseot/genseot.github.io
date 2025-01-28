@@ -9,7 +9,18 @@ var exploringBoat = 0;
 var exploringBridge = 0;
 var exploringGate = 0;
 var exploringRecordatium = 0;
+
 const constellationHelp = [];
+var exploringGardens = 0;
+var exploringHeart = 0;
+var exploringGrove = 0;
+var exploringPrecipice = 0;
+var exploringSands = 0;
+var exploringShores = 0;
+var exploringSanctuary = 0;
+var exploringChandlery = 0;
+var exploringCrossroads = 0;
+var exploringReflectory = 0;
 
 // FUNCTIONS FOR WOOD
 function ExploringWood() {
@@ -18,7 +29,7 @@ function ExploringWood() {
 	}, 500);
 }
 function ContinueWood() {
-	$("#addcontinue").append(`
+	setTimeout(function(){$("#addcontinue").append(`
 		<div class="action">
 			<h2>My Mind's Compass</h2>
 			<p>I think I have found a path into the heart of the Wood...</p> 
@@ -26,8 +37,10 @@ function ContinueWood() {
 			<p style="text-align:right"><actionbutton onclick="loadToShore()">Follow</actionbutton></p>
 		</div>
 		<br>
-	`);
+	`);}, 500);
 }
+
+
 
 function loadIntroOutcome() 
 {
@@ -41,12 +54,10 @@ function loadWoodMain()
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/beginning/wood/main.txt");
 	xhttp.send();
-	setTimeout(function(){
-		if (exploringWood >= 10)
-		{
-			ContinueWood();
-		}
-	}, 500);
+	if (exploringWood >= 10)
+	{
+		ContinueWood();
+	}
 }
 
 function loadWoodExploreOutcome()
@@ -327,22 +338,23 @@ function loadRecordatiumIntro() {
 }
 
 
+
 // CONSTELLARIUM FUNCTIONS
 // RECORDATIUM FUNCTIONS
 function ChangeRecordatiumText() {
-	if (exploringRecordatium == 0) {
-		$("#body1").append(`I stand after the gates of the Constellarium, beholding the sights before me: a vast, circular chamber - the Recordatium; shelves line the walls and stand upright--almost forming a maze or labyrinth--each brimming with crystals of varying colours. Spiralling staircases lead to even greater heights - hundreds and hundreds of floors rise up above you, each floor being a labyrinth of its own. The underbellies of the floors above are sky-high, almost as if they were the skies of the waking world; the murals on those ceilings span the length of what would be entire mountains, painted in colours rarely-seen.`)
-		$("#body2").append(`Within the heart of the ground floor of the Constellarium, an amphitheatre lies in rest. Cradled within its heart - the Tree of Light, humming with power and pure light, illuminating the Recordatium. What you're looking for is beyond the Recordatium, though - you must find a way into the deeper reaches of the Constellarium. You know what to look for, but not exactly where - the Recordatium is ever-shifting with the help of its Librarians, though they probably aren't prowling at this time.`);
-	}
-	else {
-		$("#body1").append(`A sea of shimmering stone bookshelves crest the horizons of my sight. On those gleaming shelves lie vibrant, overpowering purple-hued memory-crystals and solemn, yielding blue-hued echo-shards. Each of these crystals vary slightly in colour - the crystal's natural colour mingling with other hues the memory contained within propagates. In certain areas of the Recordatium, the crystals lining the shelves may be entirely of a deep green or a vibrant red or the vast multitudes of other chromatiques; a library of hues.`);
-		$("#body2").append(`Along the aisles, other dreamers are also lost within the Recordatium. These dreamers are but mere wisps of their waking selves, almost intangible; some wander, looking for a place or a direction as I do; but others stare intently at the crystals within the bookshelves - lost within the memories or reveries of the Stars. One can only hope that they are kind.`);
-	}
+	setTimeout(function() {
+		if (exploringRecordatium == 0) {
+			$("#body1").append(`I stand after the gates of the Constellarium, beholding the sights before me: a vast, circular chamber - the Recordatium; shelves line the walls and stand upright--almost forming a maze or labyrinth--each brimming with crystals of varying colours. Spiralling staircases lead to even greater heights - hundreds and hundreds of floors rise up above you, each floor being a labyrinth of its own. The underbellies of the floors above are sky-high, almost as if they were the skies of the waking world; the murals on those ceilings span the length of what would be entire mountains, painted in colours rarely-seen.`)
+			$("#body2").append(`Within the heart of the ground floor of the Constellarium, an amphitheatre lies in rest. Cradled within its heart - the Tree of Light, humming with power and pure light, illuminating the Recordatium. What you're looking for is beyond the Recordatium, though - you must find a way into the deeper reaches of the Constellarium. You know what to look for, but not exactly where - the Recordatium is ever-shifting with the help of its Librarians, though they probably aren't prowling at this time.`);
+		}
+		else {
+			$("#body1").append(`A sea of shimmering stone bookshelves crest the horizons of my sight. On those gleaming shelves lie vibrant, overpowering purple-hued memory-crystals and solemn, yielding blue-hued echo-shards. Each of these crystals vary slightly in colour - the crystal's natural colour mingling with other hues the memory contained within propagates. In certain areas of the Recordatium, the crystals lining the shelves may be entirely of a deep green or a vibrant red or the vast multitudes of other chromatiques; a library of hues.`);
+			$("#body2").append(`Along the aisles, other dreamers are also lost within the Recordatium. These dreamers are but mere wisps of their waking selves, almost intangible; some wander, looking for a place or a direction as I do; but others stare intently at the crystals within the bookshelves - lost within the memories or reveries of the Stars. One can only hope that they are kind.`);
+		}
+	}, 500);
 }
 function ExploringRecordatium() {
-	setTimeout(function(){
-		$("#outcome").append(" (Exploring the Recordatium is now " + exploringRecordatium + "/10)");
-	}, 500);
+	$("#outcome").append(" (Exploring the Recordatium is now " + exploringRecordatium + "/10)");
 }
 function ContinueRecordatium() {
 	$("#addcontinue").append(`
@@ -356,16 +368,18 @@ function ContinueRecordatium() {
 	`);
 }
 
+
+
 function loadRecordatiumMain() { 
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/recordatiummain.txt");
 	xhttp.send();
-	setTimeout(function() {
+	setTimeout(function(){
 		ChangeRecordatiumText();
 		if (exploringRecordatium >= 10) {
 			ContinueRecordatium();
 		}
-	}, 500);	
+	}, 500);
 }
 function loadRecordatiumExplore() {
 	let airs = Math.floor(Math.random() * 101);
@@ -444,7 +458,7 @@ function ChambersLiminalOptions() {
 				Before me lies one of the passages of the Chambers Liminal - a way into one of the Ten's Domains. The entrance to this passage is twined with ruby-red roses, sharp brambles, and thick roots. The roses bloom grandly, displaying their glory and splendour for all to see - the petals are steeped in and drip a sort of deep-red viscous liquid. This passage must lead to the Domain of the Rose.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToGarden()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToGarden">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Heart")) {
@@ -455,7 +469,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage - another artery - of the Chambers Liminal. Here, the passage is crammed with stalactites and stalagmites, biting down through the ceilings and the floors like gnashing teeth of a primal mouth. I can see the flickers of flames held in braziers within, and primaeval carvings upon the walls leading into this cavern. This passage will lead to the Domain of the Heart.  
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToHeart()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToHeart">Enter</actionbutton>
 			`);				
 		}
 		else if (!constellationHelp.includes("Crystal")) {
@@ -466,7 +480,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal - open-aired, for all the Stars to see--yet still claustrophobic in nature. Embedded within the stone walls are faceted memory-crystals and echo-shards in multitudes and bigger shards of both kinds impale the ground--like spears. Looking from afar, one might mistake these as the heavens above, gleaming and scintillating with pin-pricks of light. This passage will surely lead to the Domain of the Crystal.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToGrove()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToGrove">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Gale")) {
@@ -477,7 +491,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Coursing through the veins of this artery is not blood, but rather, the gales and the tears of the skies above. The cracks between the stonework of this passage are slick and slippery with rain as it streams down into the chambers in which I stand. The gales travelling through this passage ruffle my clothes - I might even be able to hear whispering, if I listen close enough. This passage will lead to the Domain of the Gale.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToPrecipice()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToPrecipice">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Flame")) {
@@ -488,7 +502,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Little particles and grains of sand sweep through little gales that pass through this passage. I can hear the crackling of flames and feel the heat of the crucibles that work beyond this passage through those gales that pass here. Little snakes of fire slip through the cracks in the stonework of the passage, here, I'd better be a little careful. This passage will lead to the Domain of the Flame.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToSands()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToSands">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Scar")) {
@@ -499,7 +513,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage - a true artery - of the Chambers Liminal. Coursing through the cracks of the stonework of this passage is blood, drop by drop flowing down into these chambers, carrying its sickly-sweet scent. Piercing through the stonework are slivers of steel perforating the passageway - I'll need to be careful, of course, as these are razor-sharp. This passage must lead to the Domain of the Scar.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToShores()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToShores">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Star")) {
@@ -510,7 +524,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Drifting softly, snow begins to settle upon the ground, carried by winds drifting through the passageways. This passage is almost completely silent - the winds don't make any sound, neither does the snow; it's almost as if a mantle of silence was placed over this passage - nothing else, even from the outside - can be heard. Nothing. This passage must lead to the Domain of the Star.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToSanctuary()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToSanctuary">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Candle")) {
@@ -521,7 +535,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Its entrance is almost entirely covered in wax - wax that candle-stubs penetrate out of, their wicks alight with a dancing flame. The cracks between the brickwork of the passage are almost entirely sealed in this wax, with yet more candles dotted about, lighting the way into the passage's depths. This passage will lead to the Domain of the Candle.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToChandlery()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToChandlery">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Threshold")) {
@@ -532,7 +546,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. This one is cloaked in and courses with an unnatural thick, inky-black darkness, bleeding a little out of the entrance - before disappating into regular darkness, of which the starlight melts away. In the passage's depths, I can see small lights dotted about, a guiding hand through this heavy shadow. This passage will lead to the Domain of the Threshold.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToCrossroads()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToCrossroads">Enter</actionbutton>
 			`);	
 		}
 		else if (!constellationHelp.includes("Mirror")) {
@@ -543,7 +557,7 @@ function ChambersLiminalOptions() {
 				Before me lies another passage of the Chambers Liminal. Strewn about on the walls lie mirrors, polishd and gilded and carved to an almost-obsessive degree. They stand in their silent, ever-watching, ever-reflecting sentinel. Flowing upon the floors of this passage is a layer of water - a turquoise murky-blue, yet it is as reflective as its silvered bretheren. This passage must lead to the Domain of the Mirror.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToReflectory()">Enter</actionbutton>
+				<actionbutton onclick="loadChambersToReflectory">Enter</actionbutton>
 			`);	
 		}
 		else {
@@ -554,7 +568,7 @@ function ChambersLiminalOptions() {
 				I walk with full authority of the Ten. Where I travel, they shall follow behind me. Where I present myself, they shall herald me. And where I must travel to and present myself will reveal itself to me, as the Ten will have decreed for it to leave its shadow, and announce itself to the light. At the end of this passage I shall meet my destiny, and the Ten shall be its harbingers.
 			`);
 			$("#option1button").append(`
-				<actionbutton onclick="loadChambersToDreamGate()">Approach</actionbutton>
+				<actionbutton onclick="loadChambersToDreamGate">Approach</actionbutton>
 			`);	
 		}
 	}, 500);
@@ -569,80 +583,385 @@ function loadChambersLiminalMain() {
 
 
 // GARDENS FUNCTIONS
+function ContinueGardens() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I cleave through the final curtain of vines, I am met with the heart of the Rosen Gardens...</p> 
+    				<p><b>- You unlocked this with having Exploring the Rosen Gardens at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadGardensToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringGardens() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Rosen Gardens is now " + exploringGardens + "/3)");
+	}, 500);
+}
+function ChangeGardensOptions() {
+	setTimeout(function(){
+		if (exploringGardens == 0) {
+			$("#changeoptiontitle").append(`Gather`);
+			$("#changeoptiontext").append(`To perform the rites, I must gather something from among the roses and the trees.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Gather</actionbutton>`);
+		}
+		if (exploringGardens == 1) {
+			$("#changeoptiontitle").append(`Prepare`);
+			$("#changeoptiontext").append(`Now, to prepare the rites - to place everything in the proper order and the proper manner.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Prepare</actionbutton>`);
+		}
+		if (exploringGardens == 2) {
+			$("#changeoptiontitle").append(`Perform`);
+			$("#changeoptiontext").append(`I must recite the words, perform the actions, pray the Rose looks kindly upon me.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Perform</actionbutton>`);
+		}
+	}, 500);
+}
+
 function loadChambersToGarden() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/togardens.txt");
 	xhttp.send();
 }
+function loadGardensIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/gardens/gardensexplore.txt");
+	xhttp.send();
+	if (exploringGardens >= 10) {
+		ContinueGardens();
+	}
+}
+function loadGardensExplore() {
+	let airs = Math.floor(Math.random() * 101);
+	exploringGardens++;
+	
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	if (airs > 33) {
+		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/explore/explore1.txt");
+	}
+	else if (airs >= 33 && airs < 66) {
+		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	}
+	else {
+		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	}
+	xhttp.send();
+	ExploringGardens();
+}
+function loadGardensToHeart() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/toheart.txt");
+	xhttp.send();
+	exploringGardens = 0;
+}
+function loadGardensHeart() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/gardens/gardensheart.txt");
+	xhttp.send();
+	ChangeGardensOptions();
+}
+function loadGardensRite() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	if (exploreGardens == 0) {
+		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt");
+	}
+	if (exploreGardens == 1) {
+		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt");
+	}	
+	if (exploreGardens == 2) {
+		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt");
+	}
+	xhttp.send();
+	exploreGardens++;
+}
 
 
 // HEART FUNCTIONS
+function ContinueHeart() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I squeeze through the final rock faces, I am met with the heart of the Heart...</p> 
+    				<p><b>- You unlocked this with having Exploring the Heart at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadHeartToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringHeart() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Heart is now " + exploringHeart + "/3)");
+	}, 500);
+}
+
 function loadChambersToHeart() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toheart.txt");
 	xhttp.send();
 }
+function loadHeartIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/heart/heartexplore.txt");
+	xhttp.send();
+}
 
 
 // GROVE FUNCTIONS
+function ContinueGrove() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I pass through a field of crystals, I am met with the heart of the Starlit Grove...</p> 
+    				<p><b>- You unlocked this with having Exploring the Grove at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadGroveToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringGrove() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Starlit Grove is now " + exploringGrove + "/3)");
+	}, 500);
+}
+
 function loadChambersToGrove() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/togrove.txt");
 	xhttp.send();
 }
+function loadGroveIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/grove/groveexplore.txt");
+	xhttp.send();
+}
 
 
 // PRECIPICE FUNCTIONS
+function ContinuePrecipice() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I approach the storm's eye, I am met with the heart of the Precipice...</p> 
+    				<p><b>- You unlocked this with having Exploring the Precipice at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadPrecipiceToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringPrecipice() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Precipice is now " + exploringPrecipice + "/3)");
+	}, 500);
+}
+
 function loadChambersToPrecipice() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toprecipice.txt");
 	xhttp.send();
 }
+function loadPrecipiceIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/precipice/precipiceexplore.txt");
+	xhttp.send();
+}
 
 
 // SANDS FUNCTIONS
+function ContinueSands() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I crest the final dune-top, I am met with the heart of the Sunswept Sands...</p> 
+    				<p><b>- You unlocked this with having Exploring the Sunswept Sands at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadSandsToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringSands() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Sunswept Sands is now " + exploringSands + "/3)");
+	}, 500);
+}
+
 function loadChambersToSands() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tosands.txt");
 	xhttp.send();
 }
+function loadSandsIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/sands/sandsexplore.txt");
+	xhttp.send();
+}
 
 
 // SHORES FUNCTIONS
+function ContinueShores() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I approach the scar within the sky, I am met with the heart of the Bloodsteeped Shores...</p> 
+    				<p><b>- You unlocked this with having Exploring the Bloodsteeped Shores at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadShoresToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringShores() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Bloodsteeped Shores is now " + exploringShores + "/3)");
+	}, 500);
+}
+
 function loadChambersToShores() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toshores.txt");
 	xhttp.send();
 }
+function loadShoresIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/shores/shoresexplore.txt");
+	xhttp.send();
+}
 
 
 // SANCTUARY FUNCTIONS
+function ContinueSanctuary() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I enter the most vast chamber yet, I am met with the heart of the Silent Sanctuary...</p> 
+    				<p><b>- You unlocked this with having Exploring the Silent Sanctuary at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadSanctuaryToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringSanctuary() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Silent Sanctuary is now " + exploringSanctuary + "/3)");
+	}, 500);
+}
+
 function loadChambersToSanctuary() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tosanctuary.txt");
 	xhttp.send();
 }
+function loadSanctuaryIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/sanctuary/sanctuaryexplore.txt");
+	xhttp.send();
+}
 
 
 // CHANDLERY FUNCTIONS
+function ContinueChandlery() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I step into a room unburdened by the smog, I am met with the heart of the Chandlery...</p> 
+    				<p><b>- You unlocked this with having Exploring the Chandlery at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadChandleryToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringChandlery() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Chandlery is now " + exploringChandlery + "/3)");
+	}, 500);
+}
+
 function loadChambersToChandlery() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tochandlery.txt");
 	xhttp.send();
 }
+function loadChandleryIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/chandlery/chandleryexplore.txt");
+	xhttp.send();
+}
 
 
 // CROSSROADS FUNCTIONS
+function ContinueCrossroads() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I approach a light at the end of a corridor, I am met with the heart of the Crossroads...</p> 
+    				<p><b>- You unlocked this with having Exploring the Crossroads at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadCrossroadsToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringCrossroads() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Crossroads is now " + exploringCrossroads + "/3)");
+	}, 500);
+}
+
 function loadChambersToCrossroads() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/tocrossroads.txt");
 	xhttp.send();
 }
+function loadCrossroadsIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/crossroads/crossroadsexplore.txt");
+	xhttp.send();
+}
 
 
 // REFLECTORY FUNCTIONS
+function ContinueReflectory() {
+	setTimeout(function(){
+		$("#addcontinue").append(`
+			<div class="action">
+				<h2>Approaching the Heart</h2>
+				<p>As I follow the light of my reflections, I am met with the heart of the Reflectory...</p> 
+    				<p><b>- You unlocked this with having Exploring the Reflectory at 3 or more.<b></p>
+				<p style="text-align:right"><actionbutton onclick="loadReflectoryToHeart()">Follow</actionbutton></p>
+			</div>
+			<br>
+		`);
+	}, 500);
+}
+function ExploringReflectory() {
+	setTimeout(function(){
+		$("#outcome").append(" (Exploring the Reflectory is now " + exploringReflectory + "/3)");
+	}, 500);
+}
+
 function loadChambersToReflectory() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/chambersliminal/outcome/toreflectory.txt");
+	xhttp.send();
+}
+function loadReflectoryIntro() {
+	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+	xhttp.open("GET", "/gatesofdream/constellarium/reflectory/reflectoryexplore.txt");
 	xhttp.send();
 }
