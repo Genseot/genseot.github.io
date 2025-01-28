@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Bouquet of Roses</h2>
+		<p>The bundle of roses and brambles lies before me. I cut and twine and twist these bare materials into what is necessary for the rite. The chosen roses are bundled, twined with the brambles and knotted - a perfect bouquet for the Rose. The unused, imperfect roses have their petals cut from their stems - both are kept, each serving their own purpose for the rite proper.</p>
+		<p>The bouquet is tied, the materials are ready. The rite is prepared, now for the performance.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>I have prepared the Rite Unsating.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensHeart()">Continue</actionbutton></p>
+<br>

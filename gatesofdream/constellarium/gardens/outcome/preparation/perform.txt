@@ -1,0 +1,16 @@
+<br>
+	<div class="storylettitle">
+		<h2>Unsating</h2>
+		<p>I stand before the Rosen Door - everything for the Rite Unsating has been prepared, now I just need to perform the actions, say the words, pray that the Rose accepts my offering. </p>
+		<p>I place the rose-bouquet on the grass before the Rosen Door. I say those succulent-secrets the Rose enjoys so. As I say those words, I take those discarded rose petals and squeeze them upon the bark of the roots beside the Door. dripping their nectar upon them. Now, I take the discarded stem, its thorn sharp and thirsting - and I prick my finger. It is only a little cut, but it is enough. A drop of blood coalesces, and I smear it upon the roses of the bouquet. I take the bouquet and the rest of the rose-stems and approach the Rosen Door.</p>
+		<p>Between the cracks of the roots I twine the stems of the roses - as I do so, the roots of the tree begin to shift and move, almost inviting the stems. Once they are all interlocked within the tree's roots, I pick up the bouquet. I crush the petals upon the Rosen Door and they burst in a deluge of sticky sweetness - the roots of the Door and the earth eagerly sup upon the nectar, momentarily abating their hunger and their thirst. I say the final words - it is done. The Door quivers in excitement.</p>
+		<p>The Rosen Door begins to shift. Its roots tremble. At once - it furiously unknots and lashes out like many snakes! Then it is quiet. It is open. Before me lies a vista of a grand garden - lush and verdant and rosen. A pale-clad figure awaits at the threshold, awaiting me.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>I have performed the Rite Unsating.</p>
+		<p>The Rosen Door unlaces and unbraids. The Rose-Witch awaits.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensHeart()">Continue</actionbutton></p>
+<br>

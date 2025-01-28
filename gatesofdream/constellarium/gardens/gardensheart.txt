@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Rosen Tree</h2>
+		<p>I stand before a grand, scarred oak tree - a tree of roses, the gateway into the heart of the Rose's Domain - the Rosen Door. Its branches throng with roses, their petals breaking off and drifting towards the floor - carpeting the ground in sanguine rose-petals. Its roots protect the gateway the tree holds, before breaking the earth and reaching deep, deep underground. The wilds seem to hold their breath, awaiting, as I stand here.</p>
+		<p>In the clearing before the tree, the Rose watches, waiting to see what I will do next. The tree is hungry - it holds an appetite unsating; if I can sate this appetite - even just for a moment - the Rose may allow me to pass through the door. To perform this rite - the Rite Unsating, one dedicated to the eternal hungers and desires of the Rose - I will, of course, need something to sate the appetite of the tree and Rose both.</p>
+	</div>
+	<br>
+	<div class="action">
+		<h2 id="changeoptiontitle"></h2>
+		<p id="changeoptiontext"></p> 
+		<p style="text-align:right" id="changeoptionbutton"></p>
+	</div>
+<br>

@@ -1,0 +1,12 @@
+<br>
+	<div class="storylettitle">
+		<h2></h2>
+		<p></p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p></p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="load()">Continue</actionbutton></p>
+<br>

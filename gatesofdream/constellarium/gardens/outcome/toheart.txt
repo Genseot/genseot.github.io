@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Heart of the Gardens</h2>
+		<p>The heart of the Rosen Gardens stands before me, inviting. The trees and roses and brambles clear away from me, forming a clearing--as if they were dividing before a king. In the centre, a grand, scarred oak tree holds court over the gardens, its branches and its roots multitudinous and twisting, one into the skies above and one into the earth below.</p>
+		<p>The branches of the tree grasp the skies, reaching for the false-sunlight that lights this glade. In the stead of leaves upon the branches, they host roses dripping with their sacrament, feeding its roots. Rose-petals break off of the roses, drifting softly unto the ground among the roots of the tree - yet the roses replenish those fallen petals with new ones.</p>
+		<p>The tree's roots are almost as thick as its trunk, they twine and slither into the earth amongst the fallen rose-petals of the branches above. As each drop of the roses' nectar lands upon them the roots eagerly subsume them, leaving only red streaks upon the wood. The roots clear up in a certain spot of the tree, covering--protecting its trunk - blocking the ways into the deeper parts of the Rose's Domain, where its avatar holds court.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>I must prepare a suitable rite and offering to the Rose.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensHeart()">Continue</actionbutton></p>
+<br>

@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>Digging Roots, Piercing Thorns</h2>
+		<p>To prepare, I head to the edges of the clearing, keen to harvest some of what the Rose has sown. I get to work. I uproot some of the roses, though their roots are tough - almost fighting against me as I pull, careful not to touch the thorns. After a few minutes - or hours, it is hard to tell under this light - I've managed to uproot a handful of roses with their stems intact, their roots cut so they might look uniform and perfect.</p>
+		<p>Now for something to twine and wrap this bouquet of roses - I go to cut some of those brambles slithering along the trees. It is hard to cut snippings of these brambles. As I pull and twist, the thorns dig into my skin - eventually, though, the snatching of bramble comes off. My hands come away covered in cuts and scars - though they'll heal under this false-sunlight.</p>
+		<p>I return before the Rosen Door with the roses and brambles - now to prepare the offering.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>I have gathered the offerings for the Rite Unsating.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensHeart()">Continue</actionbutton></p>
+<br>

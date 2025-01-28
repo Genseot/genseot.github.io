@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Tangled Thicket</h2>
+		<p>I delve into a deep, branching path of the gardens - where the trees are many and the false-sunlight little; I am within the untamed wilds of these gardens. The roots of the trees squirm, wrapped and coiled along with large branches of thorny bramble like snakes; roses blossom between the cracks of the roots, anywhere where they can jut out from to spread their intoxicating scents; vines hang from branches, forming thick mats I have to break through to continue delving deep, deep into these wilds.</p>
+		<p>As I continue, the wilds seem to respond to the paths I take - trees begin to weave their roots in ways blocking passages; roses enlargen and form barriers with their thorny stems; the vines seem to choke out the canopy above and begin to grasp at me. As I break through the treacherous thicket and follow any path open to my travels, I eventually return to the less untamed sections of the gardens--almost as if the gardens itself have denied me passage into those outer wilds. Nevertheless I am closer to the heart of the gardens.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You've travelled through the thickets of the Rosen Gardens.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensIntro()">Continue</actionbutton></p>
+<br>

@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Sanguine Stream</h2>
+		<p>I strike out on a path riddled with ruby-red roses. The roses hang heavy with their syrup - a strong scent pervades the air as the hungry earth feasts upon the dripping succulence of the roses. As I travel these rose-laden paths, I can make out a sound - the trickling of water. As I follow this sound, the canopies begin to clear, the false-sunlight shining unto the earth as I approach the source. Cleaving through the gardens - the trees and the roses and the grass - is a small stream, the water glistening under the sunlight.</p>
+		<p>The stream trickles through rocks and earth down into deeper parts of the garden. As I observe, the stream is streaked with red as the syrup-heavy roses drip their nectar into it; that nectar commingles with the pure water, dying it a light-pink. I follow the red-streaked stream, I am led down the paths it travels to satisfy the thirst of the gardens. Through tree-thicket and rose-garden, I follow the stream as close as I can until it slithers back underground.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You've travelled through the ways of the streams of the Rosen Gardens.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensIntro()">Continue</actionbutton></p>
+<br>

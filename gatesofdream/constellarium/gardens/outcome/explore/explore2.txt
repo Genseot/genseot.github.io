@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Sunlit Ways</h2>
+		<p>I promenade among the paths in this garden lit by that false-sunlight. Under the Stars, I see the shafts of the light falling from the heavens - yet there does not seem to be any source - it descends upon the gardens, shrouding it in a mantle of warm, comforting light. The canopy here begins to lessen as the trees reach upwards towards the cosmos, rather than cloaking the earth; the roots of the trees descend under the warm earth, and the only things upon the surface are the grass and the roses and the trees.</p>
+		<p>As I travel along these paths, I note that the roses' scent grows stronger - red, curling wisps of vapour arise from their petals as the warmth of the sunlight begins to evaporate their secreting syrup; they do not last long in place before being dispersed by the winds. Passing through these sunlit passages, the gardens are ever kinder - shedding a sort of mercy upon my swift travels to the garden's heart for an audience - perhaps it senses my desire. Despite everything, though, these ways are quite tranquil under the warming sun and among the blossoming roses - a small respite, as I travel these gardens.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p>You've travelled through the ways exposed to the false-sunlight of the Rosen Gardens.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadGardensIntro()">Continue</actionbutton></p>
+<br>
