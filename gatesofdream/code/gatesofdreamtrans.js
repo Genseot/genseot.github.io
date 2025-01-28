@@ -599,7 +599,7 @@ function ContinueGardens() {
 	}, 500);
 }
 function ExploringGardens() {
-	setTimeout(function(){
+	setTimeout(function() {
 		$("#outcome").append(" (Exploring the Rosen Gardens is now " + exploringGardens + "/3)");
 	}, 500);
 }
