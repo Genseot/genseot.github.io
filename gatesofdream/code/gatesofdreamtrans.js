@@ -632,12 +632,12 @@ function loadGardensIntro() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/gardens/gardensexplore.txt");
 	xhttp.send();
-	if (exploringGardens >= 10) {
+	if (exploringGardens >= 3) {
 		ContinueGardens();
 	}
 }
 function loadGardensExplore() {
-	let airs = Math.floor(Math.random() * 101);
+	let airs = Math.floor(Math.random() * 100);
 	exploringGardens++;
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	if (airs < 33) {
