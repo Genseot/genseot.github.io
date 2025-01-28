@@ -639,16 +639,15 @@ function loadGardensIntro() {
 function loadGardensExplore() {
 	let airs = Math.floor(Math.random() * 101);
 	exploringGardens++;
-	
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	if (airs > 33) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/explore/explore1.txt");
 	}
 	else if (airs >= 33 && airs < 66) {
-		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/explore/explore2.txt");
 	}
 	else {
-		xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
+		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/explore/explore3.txt");
 	}
 	xhttp.send();
 	ExploringGardens();
