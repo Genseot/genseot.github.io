@@ -10,6 +10,6 @@
 	<div class="action">
 		<h2 id="changeoptiontitle">Explore</h2>
 		<p id="changeoptiontext">I'll need to delve into the wilds of the Rose's Domain to find its heart.</p> 
-		<p style="text-align:right" id="changeoptionbutton"><actionbutton onclick="loadRoseExplore()">Explore</actionbutton></p>
+		<p style="text-align:right" id="changeoptionbutton"><actionbutton onclick="loadGardensExplore()">Explore</actionbutton></p>
 	</div>
 <br>
