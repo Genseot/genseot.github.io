@@ -11,5 +11,5 @@
 		<p>I seek audience with the avatar of the Candle - the Chandler...</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadChandleryMain()">Continue</actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadChandleryIntro()">Continue</actionbutton></p>
 <br>

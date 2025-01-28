@@ -8,8 +8,8 @@
 	<br>
 	<div class="outcome">
 		<p>The sickly-sweet smell of blood, the cold iron flakes of the shores - I travel the Domain of the Scar.</p>
-		<p>I seek audience with the avatar of the Scar - the Flayed Knight...</p>
+		<p>I seek audience with the avatar of the Scar - the Flayed Warrior...</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadShoresMain()">Continue</actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadShoresIntro()">Continue</actionbutton></p>
 <br>

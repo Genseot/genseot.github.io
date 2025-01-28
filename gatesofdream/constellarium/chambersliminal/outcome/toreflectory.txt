@@ -11,5 +11,5 @@
 		<p>I seek audience with the avatar of the Mirror - the Silvered Twins...</p>
 	</div>
 	<br>
-	<p style="text-align:right"><actionbutton onclick="loadReflectoryMain()">Continue</actionbutton></p>
+	<p style="text-align:right"><actionbutton onclick="loadReflectoryIntro()">Continue</actionbutton></p>
 <br>
