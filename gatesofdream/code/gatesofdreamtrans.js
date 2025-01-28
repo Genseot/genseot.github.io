@@ -666,17 +666,17 @@ function loadGardensHeart() {
 }
 function loadGardensRite() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
-	if (exploreGardens == 0) {
+	if (exploringGardens == 0) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt");
 	}
-	if (exploreGardens == 1) {
+	if (exploringGardens == 1) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt");
 	}	
-	if (exploreGardens == 2) {
+	if (exploringGardens == 2) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt");
 	}
 	xhttp.send();
-	exploreGardens++;
+	exploringGardens++;
 }
 
 
