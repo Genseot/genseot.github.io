@@ -606,16 +606,16 @@ function ExploringGardens() {
 function ChangeGardensOptions() {
 	setTimeout(function() {
 		if (exploringGardens == 0) {
-		$("#changeoptiontitle").append(`Gather`);
-		$("#changeoptiontext").append(`To perform the rites, I must gather something from among the roses and the trees.`);
-		$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Gather</actionbutton>`);
+			$("#changeoptiontitle").append(`Gather`);
+			$("#changeoptiontext").append(`To perform the rites, I must gather something from among the roses and the trees.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Gather</actionbutton>`);
 		}
 		else if (exploringGardens == 1) {
 			$("#changeoptiontitle").append(`Prepare`);
 			$("#changeoptiontext").append(`Now, to prepare the rites - to place everything in the proper order and the proper manner.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Prepare</actionbutton>`);
 		}
-		if (exploringGardens == 2) {
+		else if (exploringGardens == 2) {
 			$("#changeoptiontitle").append(`Perform`);
 			$("#changeoptiontext").append(`I must recite the words, perform the actions, pray the Rose looks kindly upon me.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Perform</actionbutton>`);
@@ -669,10 +669,10 @@ function loadGardensRite() {
 	if (exploringGardens == 0) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt");
 	}
-	if (exploringGardens == 1) {
+	else if (exploringGardens == 1) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt");
 	}	
-	if (exploringGardens == 2) {
+	else if (exploringGardens == 2) {
 		xhttp.open("GET", "/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt");
 	}
 	xhttp.send();
