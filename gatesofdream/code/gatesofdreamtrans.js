@@ -341,18 +341,6 @@ function loadRecordatiumIntro() {
 
 // CONSTELLARIUM FUNCTIONS
 // RECORDATIUM FUNCTIONS
-function ChangeRecordatiumText() {
-	setTimeout(function() {
-		if (exploringRecordatium == 0) {
-			$("#body1").append(`I stand after the gates of the Constellarium, beholding the sights before me: a vast, circular chamber - the Recordatium; shelves line the walls and stand upright--almost forming a maze or labyrinth--each brimming with crystals of varying colours. Spiralling staircases lead to even greater heights - hundreds and hundreds of floors rise up above you, each floor being a labyrinth of its own. The underbellies of the floors above are sky-high, almost as if they were the skies of the waking world; the murals on those ceilings span the length of what would be entire mountains, painted in colours rarely-seen.`)
-			$("#body2").append(`Within the heart of the ground floor of the Constellarium, an amphitheatre lies in rest. Cradled within its heart - the Tree of Light, humming with power and pure light, illuminating the Recordatium. What you're looking for is beyond the Recordatium, though - you must find a way into the deeper reaches of the Constellarium. You know what to look for, but not exactly where - the Recordatium is ever-shifting with the help of its Librarians, though they probably aren't prowling at this time.`);
-		}
-		else {
-			$("#body1").append(`A sea of shimmering stone bookshelves crest the horizons of my sight. On those gleaming shelves lie vibrant, overpowering purple-hued memory-crystals and solemn, yielding blue-hued echo-shards. Each of these crystals vary slightly in colour - the crystal's natural colour mingling with other hues the memory contained within propagates. In certain areas of the Recordatium, the crystals lining the shelves may be entirely of a deep green or a vibrant red or the vast multitudes of other chromatiques; a library of hues.`);
-			$("#body2").append(`Along the aisles, other dreamers are also lost within the Recordatium. These dreamers are but mere wisps of their waking selves, almost intangible; some wander, looking for a place or a direction as I do; but others stare intently at the crystals within the bookshelves - lost within the memories or reveries of the Stars. One can only hope that they are kind.`);
-		}
-	}, 500);
-}
 function ExploringRecordatium() {
 	setTimeout(function() {
 		$("#outcome").append(" (Exploring the Recordatium is now " + exploringRecordatium + "/10)");
@@ -378,7 +366,6 @@ function loadRecordatiumMain() {
 	xhttp.onload = function() {document.getElementById("storylet").innerHTML = this.responseText;};
 	xhttp.open("GET", "/gatesofdream/constellarium/recordatium/recordatiummain.txt");
 	xhttp.send();
-	ChangeRecordatiumText();
 	if (exploringRecordatium >= 10) {
 		ContinueRecordatium();
 	}

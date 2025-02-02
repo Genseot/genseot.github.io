@@ -1,15 +1,15 @@
 <br>
 	<div class="storylettitle">
 		<h2>The Recordatium</h2>
-		<p id="body1"></p>
-		<p id="body2"></p>
+		<p>I stand after the gates of the Constellarium, beholding the sights before me: a vast, circular chamber - the Recordatium; shelves line the walls and stand upright--forming into a sort of maze--each brimming with crystals of varying colours. Spiralling staircases lead to even greater heights - hundreds and hundreds of floors rise up above me, each floor being a labyrinth of its own. The underbellies of the floors above are sky-high - as though they were the firmament of the waking world. Upon the ceilings lie murals, spanning the length of what would be entire mountains, painted in colours rarely-seen.</p>
+		<p>What I am looking for lies beyond the shelves of the Recordatium, though. I seek a place beyond these walls, and so I would need to forge a path through this grand library of memory; the path into the deeper reaches of the Constellarium should be easy enough to follow - though the Recordatium's ever-shifting nature won't make it easy to find.</p>
 	</div>
 	<br>
 	<div id="addcontinue">
 	</div>
 	<div class="action">
 		<h2>Explore</h2>
-		<p>I must find a way through the winding and labyrinthine ways of the Recordatium's crystalline shelf-aisles to the deeper reaches of the Constellarium.</p> 
+		<p>I must find a way through the winding and labyrinthine ways of the Recordatium's crystalline aisles to the deeper reaches of the Constellarium.</p> 
 		<p style="text-align:right"><actionbutton onclick="loadRecordatiumExplore()">Explore</actionbutton></p>
 	</div>
 <br>
