@@ -30,7 +30,10 @@
 			</a>
 			<a href="https://adenator.neocities.org/">
 				<img src="/buttons/adenator.gif">
-			</a>
+	                </a>
+                        <a href="https://noobgonis.neocities.org/"> 
+                                <img sec="https://noobogonis.neocities.org/8831.png">
+                        </a>
 			<a href="https://vangare.neocities.org/">
 				<img src="/buttons/vangare.gif">
 			</a>
