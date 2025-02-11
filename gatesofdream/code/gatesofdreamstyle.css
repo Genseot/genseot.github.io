@@ -8,3 +8,5 @@ star {color:#a2a2ff; font-weight: bold; font-style:normal;}
 candle {color:#ffdc02; font-weight: bold; font-style:italic;}
 threshold {color:#68626e; font-weight: bold; font-style:italic;}
 mirror {color:#b2b2b2; font-weight: bold; font-style:normal;}
+
+h2, p {font-style:italic;}
