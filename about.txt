@@ -32,7 +32,7 @@
 				<img src="/buttons/adenator.gif">
 	                </a>
                         <a href="https://noobgonis.neocities.org/"> 
-                                <img sec="https://noobogonis.neocities.org/8831.png">
+                                <img src="https://noobogonis.neocities.org/8831.png">
                         </a>
 			<a href="https://vangare.neocities.org/">
 				<img src="/buttons/vangare.gif">
