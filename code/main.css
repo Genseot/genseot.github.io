@@ -2,10 +2,7 @@ h2 {border-bottom: 1px solid white;}
 p {font-size:16px;} 
 h1, h2, p {font-family:slabo; color:white;}
 @font-face {font-family:"slabo";src: url("https://file.garden/ZgeTHkDRARPwyXFA/Slabo_27px.zip");} 
-body{width:100%; background-color:#1d1d1d;}
-
-.columnmain{}
-.columnleft{}
+body{background-color:#1d1d1d;}
 
 .storyletbig{background-color:#182828; padding:10px; margin:0 auto; width:75%; border:2px solid white; border-style:groove;}
 .storylet{background-color:#182828; padding:10px; margin:0 auto; width:50%; border:2px solid white; border-style:groove;}
