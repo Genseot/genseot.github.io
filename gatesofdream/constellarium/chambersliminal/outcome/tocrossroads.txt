@@ -8,7 +8,7 @@
 	<br>
 	<div class="outcome">
 		<p>The ever-encroaching shadows, the little sparks of light, far in the distance - I travel the Domain of the Threshold.</p>
-		<p>I seek audience with the avatar of the Threshold - the Crossroads-Bearer</p>
+		<p>I seek audience with the avatar of the Threshold - the Crossroads-Bearer...</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadCrossroadsIntro()">Continue</actionbutton></p>
