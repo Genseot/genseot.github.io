@@ -392,28 +392,28 @@ function loadRecordatiumExplore() {
 		if (aisleAirs < 10) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/rosecircle.txt");
 		}
-		if (aisleAirs >= 10 && aisleAirs < 20) {
+		else if (aisleAirs >= 10 && aisleAirs < 20) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/heartcircle.txt");
 		}
-		if (aisleAirs >= 20 && aisleAirs < 30) {
+		else if (aisleAirs >= 20 && aisleAirs < 30) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/crystalcircle.txt");
 		}
-		if (aisleAirs >= 30 && aisleAirs < 40) {
+		else if (aisleAirs >= 30 && aisleAirs < 40) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/galecircle.txt");
 		}
-		if (aisleAirs >= 40 && aisleAirs < 50) {
+		else if (aisleAirs >= 40 && aisleAirs < 50) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/flamecircle.txt");
 		}
-		if (aisleAirs >= 50 && aisleAirs < 60) {
+		else if (aisleAirs >= 50 && aisleAirs < 60) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/scarcircle.txt");
 		}
-		if (aisleAirs >= 60 && aisleAirs < 70) {
+		else if (aisleAirs >= 60 && aisleAirs < 70) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/starcircle.txt");
 		}
-		if (aisleAirs >= 70 && aisleAirs < 80) {
+		else if (aisleAirs >= 70 && aisleAirs < 80) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/candlecircle.txt");
 		}
-		if (aisleAirs >= 80 && aisleAirs < 90) {
+		else if (aisleAirs >= 80 && aisleAirs < 90) {
 			xhttp.open("GET", "/gatesofdream/constellarium/recordatium/outcome/explore/circles/thresholdcircle.txt");
 		}
 		else {
