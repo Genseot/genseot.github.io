@@ -8,7 +8,7 @@
 	<br>
 	<div class="outcome">
 		<p>The silent drifting of snow, the harsh winds of a blizzard - I travel the Domain of the Star.</p>
-		<p>I seek audience with the avatar of the Star - the Shattered King...</p>
+		<p>I seek audience with the avatar of the Star - the King-in-Rags...</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadSanctuaryIntro()">Continue</actionbutton></p>
