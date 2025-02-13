@@ -8,7 +8,7 @@
 	<br>
 	<div class="outcome">
 		<p>The sickly-sweet smell of blood, the cold, iron spears of the sea - I travel the Domain of the Scar.</p>
-		<p>I seek audience with the avatar of the Scar - the Flayed Warrior...</p>
+		<p>I seek audience with the avatar of the Scar - the Flayed Conqueror...</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadShoresIntro()">Continue</actionbutton></p>
