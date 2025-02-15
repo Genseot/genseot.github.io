@@ -14,44 +14,33 @@
 	<br>
 	<div class="action">
 		<h2>Buttons</h2>
-		<a href="https://genseot.github.io/">
-			<img src="/buttons/genseot.png">
-		</a>
-		<br>
 		<p>
-			<a href="https://actualzyra.nekoweb.org/">
-				<img src="/buttons/zyra.png">
-			</a>
-			<a href="https://adenator.neocities.org/">
-				<img src="/buttons/adenator.gif">
-	                </a>
-			<a href="https://apia46.neocities.org/">
-				<img src="/buttons/apia.gif">
-			</a>
-                        <a href="https://noobgonis.neocities.org/"> 
-                                <img src="https://noobogonis.neocities.org/8831.png">
-                        </a>
-			<a href="https://omnicrumb.neocities.org/">
-				<img src="/buttons/omni.gif">
-			</a>
-                        <a href="https://ramen-guy.neocities.org/">
-				<img src="/buttons/ramen.png">
-			</a>
-                        <a href="https://snailsnapple.nekoweb.org">
-                                <img src="https://snailsnapple.nekoweb.org/itzil%208831.png">
-                        </a>
-			<a href="https://vangare.neocities.org/">
-				<img src="/buttons/vangare.gif">
-			</a>
-	</p>
+		<a href="https://genseot.github.io/"><img src="/buttons/genseot.png"></a>
+		</p>
 		<p>
-			<a href="https://corru.observer">
-				<img src="/buttons/corru.gif">
-			</a>
-			<a href="https://i-n-t-e-n-d-e-d.neocities.org/">
-				<img src="/buttons/intended.png">
-			</a>
+			<a href="https://actualzyra.nekoweb.org/"><img src="/buttons/zyra.png"></a>
+			<a href="https://adenator.neocities.org/"><img src="/buttons/adenator.gif"></a>
+			<a href="https://apia46.neocities.org/"><img src="/buttons/apia.gif"></a>
+                        <a href="https://noobgonis.neocities.org/"> <img src="https://noobogonis.neocities.org/8831.png"></a>
+			<a href="https://omnicrumb.neocities.org/"><img src="/buttons/omni.gif"></a>
+                        <a href="https://ramen-guy.neocities.org/"><img src="/buttons/ramen.png"></a>
+                        <a href="https://snailsnapple.nekoweb.org"><img src="https://snailsnapple.nekoweb.org/itzil%208831.png"></a>
+			<a href="https://vangare.neocities.org/"><img src="/buttons/vangare.gif"></a>
+		</p>
+		<p>
+			<a href="https://corru.observer"><img src="/buttons/corru.gif"></a>
+			<a href="https://i-n-t-e-n-d-e-d.neocities.org/"><img src="/buttons/intended.png"></a>
 		</p>	
+	</div>
+	<br>
+	<div class="action">
+		<h2>Webring</h2>
+			<div id="okidoia">
+    				<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+    				<link href="https://apia46.neocities.org/okidoia/onionring.css" rel="stylesheet">
+    				<script type="text/javascript" src="https://apia46.neocities.org/okidoia/onionring-variables.js"></script>
+    				<script type="text/javascript" src="https://apia46.neocities.org/okidoia/onionring-widget.js"></script>
+			</div>
 	</div>
 	<br>
 	<p><actionbutton onclick="loadIndex()">Return</actionbutton></p>
