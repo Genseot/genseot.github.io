@@ -1,5 +1,4 @@
     <br>
-    <div class="storyletbig">
 	<div class="storylettitle">
         	<h2>Welcome</h2>
         	<p>Hello!! Welcome to my website!! I'm Genseot, i program and write.</p>
@@ -18,6 +17,4 @@
         	<p>Check out my stories!</p>
         	<p style="text-align:right"><actionbutton onclick="loadStories()">Continue</actionbutton></p>
         </div>
-        <br>
-    </div>
     <br>
