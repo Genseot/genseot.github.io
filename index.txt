@@ -1,4 +1,5 @@
-   <div class="storyletbig">
+    <br>
+    <div class="storyletbig">
 	<div class="storylettitle">
         	<h2>Welcome</h2>
         	<p>Hello!! Welcome to my website!! I'm Genseot, i program and write.</p>
