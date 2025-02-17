@@ -1,5 +1,5 @@
-        <br>
-        <div class="storylettitle">
+   <div class="storyletbig">
+	<div class="storylettitle">
         	<h2>Welcome</h2>
         	<p>Hello!! Welcome to my website!! I'm Genseot, i program and write.</p>
         	<p>This site won't have much yet, still working on it, sorry!</p>
@@ -20,14 +20,3 @@
         <br>
     </div>
     <br>
-    <div class="storylet">
-	<div class="action">
-		<h2>Webring</h2>
-			<div id="okidoia">
-    				<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
-    				<link href="https://apia46.neocities.org/okidoia/onionring.css" rel="stylesheet">
-    				<script type="text/javascript" src="https://apia46.neocities.org/okidoia/onionring-variables.js"></script>
-    				<script type="text/javascript" src="https://apia46.neocities.org/okidoia/onionring-widget.js"></script>
-			</div>
-	</div>
-     <br>
