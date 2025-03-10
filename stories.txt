@@ -1,17 +1,34 @@
 <br>
 	<div class="storylettitle">
         	<h2>Stories</h2>
-        	<p>Play stories set within my worldbuilding project (unofficially (if that matters) it's called "The Heavens"), will take a while before they come out, sorry!</p>
+        	<p>Play stories set within my worldbuilding project (unofficially (as in i've called it that sometimes (if that matters)) it's called "The Heavens").</p>
+		<p>It will be a while before I finish these as they take quite a while to write - though you can be able to play little demos as I work on them!</p>
         </div>
         <br>
         <div class="action">
         	<h2>Beyond the Gates of Dream</h2>
-        	<p>Delve within the dream-castle of the Stars, explore and enlist the help of the Ten Constellations, unseal the Dream-Gate and ascend into the Stars beyond.</p>
-        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="transitionTo('')"-->Begin</actionbutton></p>
-			<br>
-			<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.github.io/gatesofdream/main.html')">Try the Demo!</actionbutton></p>
+        	<p>Delve within the dream-realm of the Stars, enlist the help of the Ten Constellations, unseal the Dream-Gate and ascend into the Stars beyond.</p>
+        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="transitionTo('https://genseot.github.io/gatesofdream/main.html')"-->>Begin</actionbutton></p>
+		<br>
+		<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.github.io/gatesofdream/main.html')">Try the Demo!</actionbutton></p>
         </div>
         <br>
+	<!--
+	<div class="action">
+		<h2>The Black Dream</h2>
+		<p></p>
+		<p style="text-align:right"><actionbutton onclick="transitionTo('')">Begin</actionbutton></>
+	</div>
+	<br>
+	-->
+	<!--
+	<div class="action">
+		<h2>The Weaver's Touch</h2>
+		<p></p>
+		<p style="text-align:right"><actionbutton onclick="transitionTo('')">Begin</actionbutton></>
+	</div>
+	<br>
+	-->
 	<!--
 	<div class="action">
 		<h2>A Starlit Storm</h2>
