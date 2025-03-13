@@ -9,7 +9,7 @@
 	<div class="action">
 		<h2>Neocities</h2>
            	<p>Check out my Neocities page while you're waiting for new stuff here!! Although it's slightly (a lot) outdated, it's set within a place that will not be mentioned within my stories for quite a while - if you'd like to check it out!</p>
-		<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.neocities.org')">Visit</actionbutton></p>
+		<p style="text-align:right"><actionbutton><a href="https://genseot.neocities.org">Visit</a></actionbutton></p>
 	</div>
 	<br>
 	<div class="action">
