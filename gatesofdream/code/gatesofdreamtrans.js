@@ -747,6 +747,9 @@ async function loadHeartIntro() {
 	await fetch("/gatesofdream/constellarium/heart/heartexplore.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
+	if (exploringHeart >= 3) {
+		ContinueHeart();
+	}
 }
 async function loadHeartExplore() {
 	let airs = Math.floor(Math.random() * 100);
