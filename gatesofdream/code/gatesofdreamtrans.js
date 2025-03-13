@@ -688,7 +688,7 @@ async function loadGardensRite() {
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 			break;
 		case 3:
-			await fetch("/gatesofdream/constellarium/gardens/outcome/todomain.txt");
+			await fetch("/gatesofdream/constellarium/gardens/outcome/todomain.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 			break;
@@ -739,12 +739,12 @@ function ChangeHeartOptions() {
 }
 
 async function loadChambersToHeart() {
-	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toheart.txt");
+	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toheart.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
 async function loadHeartIntro() {
-	await fetch("/gatesofdream/constellarium/heart/heartexplore.txt");
+	await fetch("/gatesofdream/constellarium/heart/heartexplore.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
@@ -752,30 +752,30 @@ async function loadHeartExplore() {
 	let airs = Math.floor(Math.random() * 100);
 	exploringHeart++;
 	if (airs < 33) {
-		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore1.txt");
+		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore1.txt")
 		.then(response => response.text())
 		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 33 && airs < 66) {
-		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore2.txt");
+		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore2.txt")
 		.then(response => response.text())
 		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else {
-		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore3.txt");
+		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore3.txt")
 		.then(response => response.text())
 		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	ExploringHeart();
 }
 async function loadHeartToHeart() {
-	await fetch("/gatesofdream/constellarium/heart/outcome/toheart.txt");
+	await fetch("/gatesofdream/constellarium/heart/outcome/toheart.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	exploringHeart = 0;
 }
 async function loadHeartHeart() {
-	await fetch("/gatesofdream/constellarium/heart/heartheart.txt");
+	await fetch("/gatesofdream/constellarium/heart/heartheart.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	ChangeHeartOptions();
@@ -784,22 +784,22 @@ async function loadHeartRite() {
 	switch (exploringHeart)
 	{
 		case 0:
-			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/gather.txt");
+			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/gather.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 			break;
 		case 1:
-			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/prepare.txt");
+			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/prepare.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 			break;
 		case 2:
-			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/perform.txt");
+			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/perform.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 			break;
 		case 3:
-			await fetch("/gatesofdream/constellarium/heart/outcome/todomain.txt");
+			await fetch("/gatesofdream/constellarium/heart/outcome/todomain.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 			break;
