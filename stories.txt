@@ -8,9 +8,9 @@
         <div class="action">
         	<h2>Beyond the Gates of Dream</h2>
         	<p>Delve within the dream-realm of the Stars, enlist the help of the Ten Constellations, unseal the Dream-Gate and ascend into the Stars beyond.</p>
-        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton <!--onclick="transitionTo('https://genseot.github.io/gatesofdream/main.html')"-->>Begin</actionbutton></p>
+        	<p style="text-align:right">(WORK IN PROGRESS) <actionbutton>Begin</actionbutton></p>
 		<br>
-		<p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.github.io/gatesofdream/main.html')">Try the Demo!</actionbutton></p>
+		<p style="text-align:right"><actionbutton><a href="https://genseot.github.io/gatesofdream/main.html">Try the Demo!</a></actionbutton></p>
         </div>
         <br>
 	<!--
