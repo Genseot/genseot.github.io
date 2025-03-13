@@ -57,7 +57,7 @@ async function loadWoodMain()
 	}
 }
 
-async async function loadWoodExploreOutcome()
+async function loadWoodExploreOutcome()
 {
 	let airs = Math.floor(Math.random() * 101);
 	exploringWood++;
@@ -82,7 +82,7 @@ async async function loadWoodExploreOutcome()
 	ExploringWood();
 }
 
-async async function loadWoodPonderOutcome()
+async function loadWoodPonderOutcome()
 {
 	let airs = Math.floor(Math.random() * 101);
 	exploringWood++;
@@ -871,12 +871,12 @@ function ExploringCrossroads() {
 	$("#outcome").append(` (Exploring the Crossroads is now ${exploringCrossroads}/3)`);
 }
 
-async async function loadChambersToCrossroads() {
+async function loadChambersToCrossroads() {
 	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/tocrossroads.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
-async async function loadCrossroadsIntro() {
+async function loadCrossroadsIntro() {
 	await fetch("/gatesofdream/constellarium/crossroads/crossroadsexplore.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
@@ -901,12 +901,12 @@ function ExploringReflectory() {
 	$("#outcome").append(` (Exploring the Reflectory is now ${exploringReflectory}/3)`);
 }
 
-async async function loadChambersToReflectory() {
+async function loadChambersToReflectory() {
 	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toreflectory.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
-async async function loadReflectoryIntro() {
+async function loadReflectoryIntro() {
 	await fetch("/gatesofdream/constellarium/reflectory/reflectoryexplore.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
