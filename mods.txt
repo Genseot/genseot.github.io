@@ -1,0 +1,19 @@
+  <br>
+	      <div class="storylettitle">
+          <h2>Mods</h2>
+        	<p>I also have moded a few things! they're linked here if you'd like to see!</p>
+        </div>
+        <br>
+        <div class="action">
+        	<h2>Ordering QoL (Book of Hours)</h2>
+        	<p>A quality-of-life mod for Book of Hours - this mod removes the need to wait between writing orders, allows certain non-orderable items to be ordered, and allows everything to be ordered in multiples 5.</p>
+        	<p style="text-align:right"><actionbutton onclick="transitionTo("https://www.nexusmods.com/bookofhours/mods/29?tab=description")">Visit</actionbutton></p>
+        </div>
+        <br>
+        <div class="action">
+        	<h2>corru.observer</h2>
+        	<p>The future holds many things - this, the Candle knows.</p>
+        </div>
+    <br>
+    <p><actionbutton onclick="loadIndex()">Return</actionbutton></p>
+    <br>
