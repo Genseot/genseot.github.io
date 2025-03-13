@@ -1,7 +1,7 @@
   <br>
 	      <div class="storylettitle">
           <h2>Mods</h2>
-        	<p>I also have moded a few things! they're linked here if you'd like to see!</p>
+        	<p>I also have modded a few things! They're linked here if you'd like to see!</p>
         </div>
         <br>
         <div class="action">
