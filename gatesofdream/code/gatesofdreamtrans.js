@@ -585,17 +585,15 @@ async function loadChambersLiminalMain() {
 
 // GARDENS FUNCTIONS
 function ContinueGardens() {
-	setTimeout(function(){
-		$("#addcontinue").append(`
-			<div class="action">
-				<h2>Approaching the Heart</h2>
-				<p>As I cleave through the final curtain of vines, I am met with the heart of the Rosen Gardens...</p> 
+	$("#addcontinue").append(`
+		<div class="action">
+			<h2>Approaching the Heart</h2>
+			<p>As I cleave through the final curtain of vines, I am met with the heart of the Rosen Gardens...</p> 
     			<p><b>- You unlocked this with having Exploring the Rosen Gardens at 3 or more.<b></p>
-				<p style="text-align:right"><actionbutton onclick="loadGardensToHeart()">Follow</actionbutton></p>
-			</div>
-			<br>
-		`);
-	}, 500);
+			<p style="text-align:right"><actionbutton onclick="loadGardensToHeart()">Follow</actionbutton></p>
+		</div>
+		<br>
+	`);
 }
 function ExploringGardens() {
 	$("#outcome").append(` (Exploring the Rosen Gardens is now ${exploringGardens}/3)`);
@@ -691,7 +689,6 @@ async function loadGardensRite() {
 
 // HEART FUNCTIONS
 function ContinueHeart() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -701,7 +698,6 @@ function ContinueHeart() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringHeart() {
 	$("#outcome").append(` (Exploring the Heart is now ${exploringHeart}/3)`);
@@ -721,7 +717,6 @@ async function loadHeartIntro() {
 
 // GROVE FUNCTIONS
 function ContinueGrove() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -731,7 +726,6 @@ function ContinueGrove() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringGrove() {
 	$("#outcome").append(` (Exploring the Starlit Grove is now ${exploringGrove}/3)`);
@@ -751,7 +745,6 @@ async function loadGroveIntro() {
 
 // PRECIPICE FUNCTIONS
 function ContinuePrecipice() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -761,7 +754,6 @@ function ContinuePrecipice() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringPrecipice() {
 	$("#outcome").append(` (Exploring the Precipice is now ${exploringPrecipice}/3)`);
@@ -781,7 +773,6 @@ async function loadPrecipiceIntro() {
 
 // SANDS FUNCTIONS
 function ContinueSands() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -791,7 +782,6 @@ function ContinueSands() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringSands() {
 	$("#outcome").append(` (Exploring the Sunswept Sands is now ${exploringSands}/3)`);
@@ -811,7 +801,6 @@ async function loadSandsIntro() {
 
 // SHORES FUNCTIONS
 function ContinueShores() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -821,7 +810,6 @@ function ContinueShores() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringShores() {
 	$("#outcome").append(` (Exploring the Bloodsteeped Shores is now ${exploringShores}/3)`);
@@ -841,7 +829,6 @@ async function loadShoresIntro() {
 
 // SANCTUARY FUNCTIONS
 function ContinueSanctuary() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -851,7 +838,6 @@ function ContinueSanctuary() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringSanctuary() {
 	$("#outcome").append(` (Exploring the Silent Sanctuary is now ${exploringSanctuary}/3)`);
@@ -871,7 +857,6 @@ async function loadSanctuaryIntro() {
 
 // CHANDLERY FUNCTIONS
 function ContinueChandlery() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -881,7 +866,6 @@ function ContinueChandlery() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringChandlery() {
 	$("#outcome").append(` (Exploring the Chandlery is now ${exploringChandlery}/3)`);
@@ -901,7 +885,6 @@ async function loadChandleryIntro() {
 
 // CROSSROADS FUNCTIONS
 function ContinueCrossroads() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -911,7 +894,6 @@ function ContinueCrossroads() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringCrossroads() {
 	$("#outcome").append(` (Exploring the Crossroads is now ${exploringCrossroads}/3)`);
@@ -931,7 +913,6 @@ async function loadCrossroadsIntro() {
 
 // REFLECTORY FUNCTIONS
 function ContinueReflectory() {
-	setTimeout(function(){
 		$("#addcontinue").append(`
 			<div class="action">
 				<h2>Approaching the Heart</h2>
@@ -941,7 +922,6 @@ function ContinueReflectory() {
 			</div>
 			<br>
 		`);
-	}, 500);
 }
 function ExploringReflectory() {
 	$("#outcome").append(` (Exploring the Reflectory is now ${exploringReflectory}/3)`);
