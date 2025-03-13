@@ -64,21 +64,27 @@ async function loadWoodExploreOutcome()
 	if (airs < 25)
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/explore/explorenormal.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 25 && airs < 50)
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/explore/explorewood.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 50 && airs < 75)
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/explore/explorewarren.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/explore/exploregarden.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
-	.then(response => response.text())
-	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	ExploringWood();
 }
 
@@ -89,21 +95,27 @@ async function loadWoodPonderOutcome()
 	if (airs <= 25) 
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/ponder/pondernormal.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 25 && airs < 50)
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/ponder/ponderinspiration.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 50 && airs < 75)
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/ponder/pondermoon.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else
 	{
 		await fetch("/gatesofdream/beginning/wood/outcome/ponder/ponderroots.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
-	.then(response => response.text())
-	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	ExploringWood();
 }
 
@@ -351,52 +363,78 @@ async function loadRecordatiumExplore() {
 	exploringRecordatium++;
 	if (airs < 20) {
 		await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/reminiscenceroom.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 20 && airs < 40) {
 		await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/treeoflight.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 40 && airs < 60) {
 		await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/librariansoffice.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 60 && airs < 80) {
-		await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/grandstaircase.txt")
+		await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/grandstaircase.txt")	
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else {
 		let aisleAirs = Math.floor(Math.random() * 101);
 		if (aisleAirs < 10) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/rosecircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 10 && aisleAirs < 20) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/heartcircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 20 && aisleAirs < 30) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/crystalcircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 30 && aisleAirs < 40) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/galecircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 40 && aisleAirs < 50) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/flamecircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 50 && aisleAirs < 60) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/scarcircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 60 && aisleAirs < 70) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/starcircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 70 && aisleAirs < 80) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/candlecircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else if (aisleAirs >= 80 && aisleAirs < 90) {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/thresholdcircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		}
 		else {
 			await fetch("/gatesofdream/constellarium/recordatium/outcome/explore/circles/mirrorcircle.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 
 		}
 	}
-	.then(response => response.text())
-	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	ExploringRecordatium();
 }
 
@@ -601,15 +639,19 @@ async function loadGardensExplore() {
 	exploringGardens++;
 	if (airs < 33) {
 		await fetch("/gatesofdream/constellarium/gardens/outcome/explore/explore1.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else if (airs >= 33 && airs < 66) {
 		await fetch("/gatesofdream/constellarium/gardens/outcome/explore/explore2.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
 	else {
 		await fetch("/gatesofdream/constellarium/gardens/outcome/explore/explore3.txt")
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	}
-	.then(response => response.text())
-	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	ExploringGardens();
 }
 async function loadGardensToHeart() {
@@ -629,16 +671,20 @@ async function loadGardensRite() {
 	{
 		case 0:
 			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		break;
 		case 1:
 			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		break;
 		case 2:
 			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt")
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
 		break;
 	}
-	.then(response => response.text())
-	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	exploringGardens++;
 }
 
