@@ -41,14 +41,14 @@ function ContinueWood() {
 
 async function loadIntroOutcome() 
 {
-	await fetch("/gatesofdream/beginning/wood/outcome/intro.txt");
+	await fetch("/gatesofdream/beginning/wood/outcome/intro.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
 
 async function loadWoodMain()
 {
-	await fetch("/gatesofdream/beginning/wood/main.txt");
+	await fetch("/gatesofdream/beginning/wood/main.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 	if (exploringWood >= 10)
@@ -628,13 +628,13 @@ async function loadGardensRite() {
 	switch (exploringGardens)
 	{
 		case 0:
-			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt");
+			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt")
 		break;
 		case 1:
-			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt");
+			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt")
 		break;
 		case 2:
-			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt");
+			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt")
 		break;
 	}
 	.then(response => response.text())
@@ -782,12 +782,12 @@ function ExploringShores() {
 }
 
 async function loadChambersToShores() {
-	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toshores.txt");
+	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toshores.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
 async function loadShoresIntro() {
-	await fetch("/gatesofdream/constellarium/shores/shoresexplore.txt");
+	await fetch("/gatesofdream/constellarium/shores/shoresexplore.txt")
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
