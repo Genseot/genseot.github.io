@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>Inscribed Upon the Earth</h2>
+		<p>I will need to prepare a performance for the Heart - a dance as so many others have done in the past. To prepare for this, I look up on the inscribed performances upon the earthen walls of this chamber to perhaps collate a dance from the multitudinous dances past. The dances carved here all seem to be dedicated towards the Heart, and all carry the same dangers - I will only be able to see snatches of the dance; too long and I will blossom. </p>
+		<p>Each of these dances are performed in the same rhythm - the tempo the Heart beats at. Here at the beginning, the dances are performed slowly, as if the dancers were in water; the Heart beats as slow as the dancers' steps. A rising tempo then begins to set in - the crescendo - the Heart begins to beat faster and faster - the dancers compensate in turn, their techniques becoming ever more fervent and passionate. And now - the climax! the Heart beats at its fastest tempo and the dancers become fervent and feverish in their steps and their movements and their hearts. Slowly, slowly, the Heart's rhythm begins to approach it's decrescendo - the dancers begin to slowly, slowly settle into a slower tempo. And now the conclusion - the Heart beats, once again, at its resting rhythm; this is where the dance shall conclude.</p>
+		<p>All these past performers have yielded their techniques and their steps to me. I know the way to perform these scraps, but I will first need to piece them together for a true performance.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">I have gathered the offerings for the Rite Unceasing.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartHeart()">Continue</actionbutton></p>
+<br>

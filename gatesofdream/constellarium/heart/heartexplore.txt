@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Heart</h2>
+		<p>The Heart - the Domain of its namesake, the Heart. The heavens are obscured by the burying, choking cavern pressing in at all sides - although leaving enough space to manoeuvre through its passages and dangers without too much trouble. Amidst the jutting earthen spears and the cramped cavern walls, I stand within one of the lesser chambers of the Heart. A chamber only in name - yet it is still vast, stretching high into the rocky ceiling, carved into the stone of the caverns.</p>
+		<p>Within this chamber, the stifling darkness of the cavern is pushed away by wrought-iron braziers with flickering, eternally-dancing blazes staving off the murky black. Upon all the walls and floors and ceilings of the chamber lie inscriptions, depictions, sigils of dances that were performed, once, and carved into the earth to preserve them for all eternity. </p>
+		<p>As I examine certain carvings - my heart swells, beating in the rhythm that the dance was once performed by; my blood rushes to keep pace. Before it can reach its climax, I quickly tear myself away. An irresistible urge to dance and preserve and continue and never cease - a danger of the Heart. I should be on the correct path, here - I'll need to find the thread leading to the heart of the Heart; once there, I should prepare a rite to the Heart--like last time, though the Heart will require a grand performance - one in time with its heartbeat, one to share its burden of persistence will do well.</p>
+	</div>
+	<br>
+	<div class="action">
+		<h2 id="changeoptiontitle">Explore</h2>
+		<p id="changeoptiontext">I'll need to delve into the caverns of the Heart's Domain to find its heart.</p> 
+		<p style="text-align:right" id="changeoptionbutton"><actionbutton onclick="loadHeartExplore()">Explore</actionbutton></p>
+	</div>
+<br>

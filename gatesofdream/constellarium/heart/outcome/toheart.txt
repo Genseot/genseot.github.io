@@ -1,0 +1,14 @@
+<br>
+	<div class="storylettitle">
+		<h2>Approaching the Heart</h2>
+		<p>Before me lies the heart of the Heart - the stalagmites and stalactites of the cavern give way to a clearing in the centre of this vast chamber, each quivering as the Heart beats. The shadows on the walls cast by the flickering, persistent braziers move in a strange light as they dance and tremble. In the clearing betwixt the jutting stone of the chamber - a pit; and above this pit, a heart. </p>
+		<p>Suspended above the gaping pit, strung up by arteries as thick as roots of trees and veins spiderwebbing across and between, a vast human heart. It beats, casting a reverberation throughout the arteries of the cavern and its multitudinous veins. Its veins and arteries heave and sigh after every beat of the Heart, pulsing with the blood of the Earth as it travels down those vital ways.</p>
+		<p>As the Heart pulses, two flaps bulge upon its centre - the Dancing Door. Beyond the flaps is where the deeper parts of the Heart's Domain lies; and where its avatar beats and dances endlessly.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">I must prepare a suitable rite and performance for the Heart.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartHeart()">Continue</actionbutton></p>
+<br>

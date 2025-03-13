@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Buried Skies</h2>
+		<p>I follow the primaeval ways of the Heart, those of cracked stone bearing ancient inscriptions. I walk upon the craggy cavern stone, gazing at the glyphs scratched on the walls--the ones I know might be safe. I follow the footsteps and dances of the previous dancers that have passed here before me. As I travel, the Heart's heartbeat swells and lessen - the performance's crescendo and decrescendo - the beat only pierced by my footsteps and the occasional drip and gale, echoing throughout the caverns.</p>
+		<p>Following the footsteps of the previous dancers, I am led toward stony cloisters before a vast and endless black void, emptying out into the heavens below. Winds and gales drift between, their howling echoing down the endless walls of the expanse. The cloister leads me to a lip upon the cracked walls, a path just big enough for me to cross as I am buffeted by the winds of the expanse. Pebbles break off the stone walls, tumbling down into the skies below - echoing as they fall; and then only leaving silence behind in their stead. The stony lip leads back into the cramped caverns of the Heart - I must keep going.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've travelled through the ways exposed to the heavens of the Heart.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartIntro()">Continue</actionbutton></p>
+<br>

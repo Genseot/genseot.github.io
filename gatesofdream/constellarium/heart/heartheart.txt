@@ -1,0 +1,15 @@
+<br>
+	<div class="storylettitle">
+		<h2>The Heart's Heart</h2>
+		<p>I stand before the vast, beating heart of the Earth, buried under the light of the Stars. Its veins and arteries stretch across the entire length of the chamber's ceiling, twisting and turning before tunneling deep into the earth above, pulsating as the Heart beats. Dangled above a deep and murky pit, the vast heart is held by its arteries, holding it like a branch laden with fruit. The Heart beats slowly, at its resting rhythm, curious to see what I will do next.</p>
+		<p>Before this heart, the Heart watches - waiting for a performance, or something else worth its time from me. The heart conducts the rhythm that the flow of the blood within its veins and the flow of time within the heavens follow. As the Heart beats, it slowly grows tired of its burden and its rhythm; so, if I perform a grand dance - one to ease its burden by sharing it with me and to renew its burning passion - the Heart will bid me entrance through the door. To perform this grand performance - the Rite Unceasing, one dedicated to the eternal rhythm and dance of the Heart - I will, of course, first need something to perform.</p>
+	</div>
+	<br>
+	<div id=”addcontinue”>
+	</div>
+	<div class="action">
+		<h2 id="changeoptiontitle"></h2>
+		<p id="changeoptiontext"></p> 
+		<p style="text-align:right" id="changeoptionbutton"></p>
+	</div>
+<br>

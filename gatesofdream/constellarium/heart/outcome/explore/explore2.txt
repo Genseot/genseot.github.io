@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>Blooming Hearts</h2>
+		<p>I follow the ways of the Heart that are pierced by the jutting stalactites and stalagmites of the caverns. I travel though vast fields of those earthen spears, weaving through and out of them as I travel deeper and deeper into the Heart. Here, the stalactites and stalagmites seem to quiver as the heartbeat of the cavern swells. My blood seems to quicken and my heart beats with a fervent passion. My heart begins to blossom with a passionate fire.</p>
+		<p>I stand before another field of stalactites and stalagmites - though these are thinner, and more spear-like. Veins of blood twist and turn and entangle upon them, spreading across like webs between each jutting stone. Pierced upon their tips are human hearts - the arteries each dividing, stemming into veins before travelling upwards to unfold onto a blossom. I make my way through the field of blossoming hearts, wary not to disturb their roots. I hear the beating of the Heart once again. Around me, the many, many multitudes of miniature heartbeats begin once more. The flowers rise ever higher with each pump of blood into their blossoms. As they reach their shuddering climax, I find a passage out of this chamber - an artery leading out this field of bleeding hearts.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've travelled through the Heart's forests of blossoming hearts.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartIntro()">Continue</actionbutton></p>
+<br>

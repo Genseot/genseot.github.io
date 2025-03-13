@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Prepared Performance</h2>
+		<p>I have gathered many, many scraps of dances once performed before the Heart - now to put them together. A slow dance to start - those small scraps of flowing, watery movement to persuade the Heart to watch my performance. Dances of rising speed shall be for when the Heart both accepts my invitation to dance and when it begins to tire--moves that are sharp - yet fluid still. When the climax arises, and the Heart persists in its timekeeping - I need moves that are passionate and fiery in the heart, quick and sharp. To conclude, the beginning shall be performed once again; as the Heart knows: to end is to begin once more.</p>
+		<p>The dance is collated and I have practiced. The rite is prepared, now for the performance.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">I have prepared the Rite Unceasing.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartHeart()">Continue</actionbutton></p>
+<br>

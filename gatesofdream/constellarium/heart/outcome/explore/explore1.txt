@@ -1,0 +1,13 @@
+<br>
+	<div class="storylettitle">
+		<h2>A Vein-Crossing</h2>
+		<p>I follow the sounds of flowing liquid deep within the earth. The rocky cavern floor I walk upon heaves and sighs ever so slightly as the rushing of the earth's blood begins and abates. The heartbeat of the Heart can be heard strong here as it echoes through the vast network of the caverns. A quiet pulse reverberates from the ground as I walk upon certain spots - I can feel that pulse as it starts at my feet, and reaches into my heart and mind.</p>
+		<p>I follow the beating and the rushing as far as I can go through the passages and ways of the caverns of the Heart. As I approach a crossroads between chambers - the vein is exposed in the open air, vulnerable. A significant chip in the wall of the cavern reveals the vein - pumping and red and vast. Webs of smaller veins reach out into the cracked stone - the multitudinous branches of the artery. The vein burrows deeper into the stone - no matter where I follow I cannot seem to find its pulse again; this is as far as it'll take me within the Domain of the Heart.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">You've travelled through the ways that the Heart's veins follow.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartIntro()">Continue</actionbutton></p>
+<br>

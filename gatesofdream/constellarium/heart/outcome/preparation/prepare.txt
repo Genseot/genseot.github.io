@@ -1,0 +1,18 @@
+<br>
+	<div class="storylettitle">
+		<h2>Unceasing</h2>
+		<p>As I approach the pit and the heart - I feel as though my movements become sluggish and slow; my footsteps fall as the Heart beats, there is no choice but to follow its rhythm here. I begin the performance.</p>
+		<p>My movements are slow, following the resting rhythm of the Heart - I invite it to dance with me, to share its burden of preservation. As I perform, the heart begins to lower - possibly in interest of my dance, accepting my invitation. The cavern shudders as the arteries and veins lower the vast heart of the earth as it settles before me. It watches in interest as it begins to increase its tempo.</p>
+		<p>Beyond the drumming thump of the Heart, something begins to set in - a distant sound of a violin, playing to the Heart's beats and my dance-steps. As the shrill sounds of the violin and the beating of the Heart echo throughout the chamber, everything begins to accelerate. I am no longer mired in heavy air - I can move freely and speedily as I continue my performance. I continue my dance with the rhythm the Heart sets before me, growing ever faster. Now - the Heart reaches the climax of its crescendo - </p>
+		<p>The Heart begins to beat faster and faster; my heart growing ever more feverish in the fiery passion the dance invokes within my soul; another instrument sets in - the viola, less shrill than the violin, but only a little; sweat begins to bead upon my skin, but it does not matter - I must continue; my hands and my feet feel as though I were being puppeted by something high above, stepping and moving and performing with such a fiery ardour; my own heart beats as though it will soon burst -</p>
+		<p>Slowly, slowly the Heart settles - the test of persistence is over, and now the decrescendo begins. While I dance, the final instrument sets in - a cello, deep and gritty and calmer than the two upper strings. As I continue, the air becomes heavy once again.  The Heart beats at its normal rhythm once more; our performance concludes.</p>
+		<p>As I stand before the Heart, its heartbeat swells in great joy. As it beats, its two-valved gate opens before me - the Dancing Door flaps open, revealing the corridors of the Heart. I see vast passages of what must be the insides of the Heart, a bloody dissection. Deep within, the drumming continues - there I must meet its conductor, its orchestrator; the Drummer-in-the-Heart.</p>
+	</div>
+	<br>
+	<div class="outcome">
+		<p id="outcome">I have performed the Rite Unceasing.</p>
+		<p id="outcome">The Dancing Door flaps open. The Drummer-in-the-Heart welcomes me.</p>
+	</div>
+	<br>
+	<p style="text-align:right"><actionbutton onclick="loadHeartHeart()">Continue</actionbutton></p>
+<br>
