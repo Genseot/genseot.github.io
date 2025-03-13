@@ -1,7 +1,4 @@
 //blah blah transitions here for main page
-window.transitionTo = function(href) {document.querySelector('body');
-setTimeout(function() {window.location.href = href})};
-
 async function loadIndex() {
   await fetch("index.txt")
   .then(response => response.text())
