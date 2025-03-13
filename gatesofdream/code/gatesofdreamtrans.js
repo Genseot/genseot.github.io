@@ -616,6 +616,11 @@ function ChangeGardensOptions() {
 			$("#changeoptiontext").append(`I must recite the words, perform the actions, pray the Rose looks kindly upon me.`);
 			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Perform</actionbutton>`);
 			break;
+		case 3:
+			$("#changeoptiontitle").append(`Enter`);
+			$("#changeoptiontext").append(`The Rose-Witch awaits--clad in silk and twining rose--before the threshold of the tree.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadGardensRite()">Enter</actionbutton>`);
+			break;
 	}
 }
 
@@ -671,17 +676,22 @@ async function loadGardensRite() {
 			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/gather.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
-		break;
+			break;
 		case 1:
 			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/prepare.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
-		break;
+			break;
 		case 2:
 			await fetch("/gatesofdream/constellarium/gardens/outcome/preparation/perform.txt")
 			.then(response => response.text())
 			.then((data) => { document.getElementById("storylet").innerHTML = data; })
-		break;
+			break;
+		case 3:
+			await fetch("/gatesofdream/constellarium/gardens/outcome/todomain.txt");
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
+			break;
 	}
 	exploringGardens++;
 }
@@ -689,29 +699,112 @@ async function loadGardensRite() {
 
 // HEART FUNCTIONS
 function ContinueHeart() {
-		$("#addcontinue").append(`
-			<div class="action">
-				<h2>Approaching the Heart</h2>
-				<p>As I squeeze through the final rock faces, I am met with the heart of the Heart...</p> 
-    				<p><b>- You unlocked this with having Exploring the Heart at 3 or more.<b></p>
-				<p style="text-align:right"><actionbutton onclick="loadHeartToHeart()">Follow</actionbutton></p>
-			</div>
-			<br>
-		`);
+	$("#addcontinue").append(`
+		<div class="action">
+			<h2>Approaching the Heart</h2>
+			<p>As I squeeze through the final rock faces, I am met with the heart of the Heart...</p> 
+				<p><b>- You unlocked this with having Exploring the Heart at 3 or more.<b></p>
+			<p style="text-align:right"><actionbutton onclick="loadHeartToHeart()">Follow</actionbutton></p>
+		</div>
+		<br>
+	`);
 }
 function ExploringHeart() {
 	$("#outcome").append(` (Exploring the Heart is now ${exploringHeart}/3)`);
 }
+function ChangeHeartOptions() {
+	switch(exploringHeart) 
+	{
+		case 0:
+			$("#changeoptiontitle").append(`Read`);
+			$("#changeoptiontext").append(`To perform the rites, I should take a look at those inscriptions written upon the walls.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadHeartRite()">Gather</actionbutton>`);
+			break;
+		case 1:
+			$("#changeoptiontitle").append(`Prepare`);
+			$("#changeoptiontext").append(`Now, to prepare the rites - to perform everything in the proper order and the proper manner.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadHeartRite()">Prepare</actionbutton>`);
+			break;
+		case 2:
+			$("#changeoptiontitle").append(`Perform`);
+			$("#changeoptiontext").append(`I must recite the words, perform the actions, pray the Heart looks kindly upon me.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadHeartRite()">Perform</actionbutton>`);
+			break;
+		case 3:
+			$("#changeoptiontitle").append(`Enter`);
+			$("#changeoptiontext").append(`I hear the drum-beats of the Drummer-in-the-Heart - I am close.`);
+			$("#changeoptionbutton").append(`<actionbutton onclick="loadHeartRite()">Enter</actionbutton>`);
+			break;
+}
+}
 
 async function loadChambersToHeart() {
-	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toheart.txt")
+	await fetch("/gatesofdream/constellarium/chambersliminal/outcome/toheart.txt");
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
 async function loadHeartIntro() {
-	await fetch("/gatesofdream/constellarium/heart/heartexplore.txt")
+	await fetch("/gatesofdream/constellarium/heart/heartexplore.txt");
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
+}
+async function loadHeartExplore() {
+	let airs = Math.floor(Math.random() * 100);
+	exploringHeart++;
+	if (airs < 33) {
+		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore1.txt");
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
+	}
+	else if (airs >= 33 && airs < 66) {
+		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore2.txt");
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
+	}
+	else {
+		await fetch("/gatesofdream/constellarium/heart/outcome/explore/explore3.txt");
+		.then(response => response.text())
+		.then((data) => { document.getElementById("storylet").innerHTML = data; })
+	}
+	ExploringHeart();
+}
+async function loadHeartToHeart() {
+	await fetch("/gatesofdream/constellarium/heart/outcome/toheart.txt");
+	.then(response => response.text())
+	.then((data) => { document.getElementById("storylet").innerHTML = data; })
+	exploringHeart = 0;
+}
+async function loadHeartHeart() {
+	await fetch("/gatesofdream/constellarium/heart/heartheart.txt");
+	.then(response => response.text())
+	.then((data) => { document.getElementById("storylet").innerHTML = data; })
+	ChangeHeartOptions();
+}
+async function loadHeartRite() {
+	switch (exploringHeart)
+	{
+		case 0:
+			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/gather.txt");
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
+			break;
+		case 1:
+			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/prepare.txt");
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
+			break;
+		case 2:
+			await fetch("/gatesofdream/constellarium/heart/outcome/preparation/perform.txt");
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
+			break;
+		case 3:
+			await fetch("/gatesofdream/constellarium/heart/outcome/todomain.txt");
+			.then(response => response.text())
+			.then((data) => { document.getElementById("storylet").innerHTML = data; })
+			break;
+	}	
+	exploringHeart++;
 }
 
 
