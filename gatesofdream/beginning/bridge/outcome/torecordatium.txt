@@ -15,5 +15,5 @@
 	</div>
 	<br>
 	<p style="text-align:right">END OF DEMO</p>
-        <p style="text-align:right"><actionbutton onclick="transitionTo('https://genseot.github.io/')">Return to the Main Page</actionbutton></p>
+        <p style="text-align:right"><actionbutton><a href="https://genseot.github.io">Return to the Main Page</a></actionbutton></p>
 <br>
