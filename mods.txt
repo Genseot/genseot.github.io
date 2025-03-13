@@ -7,7 +7,7 @@
         <div class="action">
         	<h2>Ordering QoL (Book of Hours)</h2>
         	<p>A quality-of-life mod for Book of Hours - this mod removes the need to wait between writing orders, allows certain non-orderable items to be ordered, and allows everything to be ordered in multiples 5.</p>
-        	<p style="text-align:right"><actionbutton onclick="transitionTo("https://www.nexusmods.com/bookofhours/mods/29?tab=description")">Visit</actionbutton></p>
+        	<p style="text-align:right"><actionbutton><a href="https://www.nexusmods.com/bookofhours/mods/29?tab=description">Visit</a></actionbutton></p>
         </div>
         <br>
         <div class="action">
