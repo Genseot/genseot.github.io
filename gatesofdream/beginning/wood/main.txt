@@ -14,7 +14,7 @@
 	</div>
 	<br>
 	<div class="action">
-		<h2>Ponder a Way Through</h2>
+		<h2>Ponder</h2>
 		<p>I must find a way through the moonlit Wood, but perhaps I can stay here, and inspiration will strike me under the moonlight.</p>
 		<p style="text-align:right"><actionbutton onclick="loadWoodPonderOutcome()">Ponder</actionbutton></p>
 	</div>
