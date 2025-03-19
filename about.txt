@@ -23,6 +23,7 @@
 			<a href="https://apia46.neocities.org/"><img src="/buttons/apia.gif"></a>
                         <a href="https://noobgonis.neocities.org/"> <img src="https://noobogonis.neocities.org/8831.png"></a>
 			<a href="https://omnicrumb.neocities.org/"><img src="/buttons/omni.gif"></a>
+			<a href="https://puffinthefish.neocities.org/"><img src="/buttons/puffin.png"></a>
                         <a href="https://ramen-guy.neocities.org/"><img src="/buttons/ramen.png"></a>
                         <a href="https://snailsnapple.nekoweb.org"><img src="https://snailsnapple.nekoweb.org/itzil%208831.png"></a>
 			<a href="https://vangare.neocities.org/"><img src="/buttons/vangare.gif"></a>
