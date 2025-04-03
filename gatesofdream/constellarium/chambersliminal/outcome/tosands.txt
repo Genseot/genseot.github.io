@@ -8,7 +8,7 @@
 	<br>
 	<div class="outcome">
 		<p>The unmerciful Sun's heat, the blazing sands - I travel the Domain of the Flame.</p>
-		<p>I seek audience with the avatar of the Flame - the Leashed Crucible...</p>
+		<p>I seek audience with the avatar of the Flame - the Crucible-Corona...</p>
 	</div>
 	<br>
 	<p style="text-align:right"><actionbutton onclick="loadSandsIntro()">Continue</actionbutton></p>
