@@ -381,48 +381,48 @@ if(firstLoad || env.waitOnLoad) {
 
 	// general
 	// weather
-	env.definitions[`spirestorm`] = `'weather phenomena';'ceaseless violent storm surrounding natural spire'`;						
-	env.definitions[`clear-sky`] = `'partial translation';'inherited description-generated noun'`;
-	env.definitions[`brightwall`] = { type: `NOTE`, text: `'partial translation';'reference to weather phenomena'`};
+	env.definitions[\`spirestorm\`] = \`'weather phenomena';'ceaseless violent storm surrounding natural spire'\`;						
+	env.definitions[\`clear-sky\`] = \`'partial translation';'inherited description-generated noun'\`;
+	env.definitions[\`brightwall\`] = { type: \`NOTE\`, text: \`'partial translation';'reference to weather phenomena'\`};
 	// obeski
-	env.definitions[`zevazni`] = `'cave-city central to vazni';'corrucystic revolution origin'`;
-	env.definitions[`vazni`] = `'continent';'home';'central to inhabitable zone'`;
-	env.definitions[`oltazni`] = `'vaznian cave-city'`;
-	env.definitions[`vaznian`] = `'ethnic implication';'origination from continent';'vazni'`;
-	env.definitions['yuzku river'] = `'great river';'splits the continent of vazni';'known for its bioluminescent lights, flourishing at night';'like yuzku'`;
-	env.definitions['gozazni'] = `'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'our destination'`;
+	env.definitions[\`zevazni\`] = \`'cave-city central to vazni';'corrucystic revolution origin'\`;
+	env.definitions[\`vazni\`] = \`'continent';'home';'central to inhabitable zone'\`;
+	env.definitions[\`oltazni\`] = \`'vaznian cave-city'\`;
+	env.definitions[\`vaznian\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
+	env.definitions[\'yuzku river\'] = \`'great river';'splits the continent of vazni';'known for its bioluminescent lights, flourishing at night';'like yuzku'\`;
+	env.definitions[\'gozazni\'] = \`'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'our destination'\`;
 	// colliqualisms
-	env.definitions[`tir stumbling into their research chamber`] = `'common myth';'intoxicated tir knocked over corru container and fell into it'`;
-	env.definitions[`velzie's eye cast down`] = `'common idiom';'even velzie watches in shock'`;
-	env.definitions[`keep velzie entertained`] = `'common phrase';'religious implication';'implies wish for safe journey'`;
-	env.definitions[`spike in the heel`] = `'common idiom';'persistent issue'`;
-	env.definitions[`kelnit`] = `'derogatory';'incompetent fighter'`;
+	env.definitions[\`tir stumbling into their research chamber\`] = \`'common myth';'intoxicated tir knocked over corru container and fell into it'\`;
+	env.definitions[\`velzie's eye cast down\`] = \`'common idiom';'even velzie watches in shock'\`;
+	env.definitions[\`keep velzie entertained\`] = \`'common phrase';'religious implication';'implies wish for safe journey'\`;
+	env.definitions[\`spike in the heel\`] = \`'common idiom';'persistent issue'\`;
+	env.definitions[\`kelnit\`] = \`'derogatory';'incompetent fighter'\`;
 	// time
-	env.definitions[`θradiant`] = `'time period';'segments around the eye of velzie';'each heralds a new season'`;
-	env.definitions[`θradiants`] = `'time period';'segments around the eye of velzie';'each heralds a new season'`;
+	env.definitions[\`θradiant\`] = \`'time period';'segments around the eye of velzie';'each heralds a new season'\`;
+	env.definitions[\`θradiants\`] = \`'time period';'segments around the eye of velzie';'each heralds a new season'\`;
 
 	// obesk-related
 	// tech
-	env.definitions[`zzepel`] = `'back-mounted multi-purpose surface utility';'popular for veilk camping'`;
-	env.definitions[`dullvoice`] = { type: `NOTE`, text: `'partial translation';'inherited description-generated noun'`};
-	env.definitions[`sfer`] = `'refined corrucystic fuel/food';'currency'`;
-	env.definitions[`zuzucri-masks`] = `'corrucystic treatment for zuzucri infestation';'partial translation';'inherited description-generated noun'`;
+	env.definitions[\`zzepel\`] = \`'back-mounted multi-purpose surface utility';'popular for veilk camping'\`;
+	env.definitions[\`dullvoice\`] = { type: \`NOTE\`, text: \`'partial translation';'inherited description-generated noun'\`};
+	env.definitions[\`sfer\`] = \`'refined corrucystic fuel/food';'currency'\`;
+	env.definitions[\`zuzucri-masks\`] = \`'corrucystic treatment for zuzucri infestation';'partial translation';'inherited description-generated noun'\`;
 	// clothing
-	env.definitions[`valika`] = `'wide conical headwear';'surface camouflage'`;
+	env.definitions[\`valika\`] = `'wide conical headwear';'surface camouflage'`;
 	// other
-	env.definitions[`surface voice`] = `'specialized volume management';'fast and enunciated'`;
+	env.definitions[\`surface voice\`] = `'specialized volume management';'fast and enunciated'`;
 
 	// crittas
-	env.definitions[`akozak`] = `'burrowing slime';'sinkhole';'many arms'`;
-	env.definitions[`celki`] = `'veilk parasite';'food'`;
-	env.definitions[`dog`] = { type: `NOTE`, text: `'partial translation';'implied closest cultural equivalent'`};
-	env.definitions[`veilk`] = `'surface fauna';'foundation of entire ecosystem';'enormous and endless'`;
-	env.definitions[`guktik`] = `'predator';'bladed arms';'cooked flesh goes well with zzoust'`;
-	env.definitions[`cavernguard`] = { type: `NOTE`, text: `'partial translation';'inherited description-generated noun'`};
-	env.definitions[`yuzku`] = `'sluggish bioluminescent scavengers';'intentionally cultivated in veilk parasite husks for lighting';'fatal if consumed'`;
+	env.definitions[\`akozak\`] = \`'burrowing slime';'sinkhole';'many arms'\`;
+	env.definitions[\`celki\`] = \`'veilk parasite';'food'\`;
+	env.definitions[\`dog\`] = { type: \`NOTE\`, text: \`'partial translation';'implied closest cultural equivalent'\`};
+	env.definitions[\`veilk\`] = \`'surface fauna';'foundation of entire ecosystem';'enormous and endless'\`;
+	env.definitions[\`guktik\`] = \`'predator';'bladed arms';'cooked flesh goes well with zzoust'\`;
+	env.definitions[\`cavernguard\`] = { type: \`NOTE\`, text: \`'partial translation';'inherited description-generated noun'\`};
+	env.definitions[\`yuzku\`] = \`'sluggish bioluminescent scavengers';'intentionally cultivated in veilk parasite husks for lighting';'fatal if consumed'\`;
 
 	// other
-	env.definitions[`kalstik`] = { type: `TRANSLATION FAILED`, text: `CAUSE:'no equivalent internal meaning';'no relevant inherited context'::ROMANIZATION SUCCESSFUL`};
+	env.definitions[\`kalstik\`] = { type: \`TRANSLATION FAILED\`, text: \`CAUSE:'no equivalent internal meaning';'no relevant inherited context'::ROMANIZATION SUCCESSFUL\`};
 
 			
 	console.log('rendering buddies!')
