@@ -73,7 +73,7 @@ surfacerunningContent = `
 			document.scrollingElement.scrollTop = 0
 			updatePreferenceAttributes()
 			//dynamically inserted
-		// <- idk whether or not this bracket is supposed to exist. if this breaks try removing this bracket (future gen here. removed.)
+
 // DIALOGUE
 // kazzanesche vel zakori
 env.dialogueActors["kaz"] = {
@@ -81,21 +81,21 @@ env.dialogueActors["kaz"] = {
     type: "thoughtform portrait-contain obesk qou portrait-dark loose-thought",
     voice: ()=>play('talkgal', 0.7),
     player: true,
-    name: ""
+    name: "kaz"
 }
 // yankani vel metvi
 env.dialogueActors["yan"] = {
     image: "/img/sprites/obesk/larval/larval2.gif",
     type: "thoughtform portrait-contain portrait-darkripple larval qou loose-thought",
     voice: ()=>play('talk', 1.3),
-    name: ""
+    name: "yan"
 }
 // vakallkorik kiv kazani
 env.dialogueActors["vak"] = {
     image: "/img/sprites/obesk/larval/larval5.gif",
     type: "thoughtform portrait-contain portrait-darkripple obesk larval loose-thought",
     voice: ()=>play('talk', 0.8),
-    name: ""
+    name: "vak"
 }
 env.dialogueActors["evil"] = {
     type: "obesk qou portrait-contain portrait-blocker mutter",
@@ -103,85 +103,88 @@ env.dialogueActors["evil"] = {
 }
 
 // RESPOBJS
-env.dialogues.chapterselection = generateDialogueObject(`
+env.dialogues.chapterselection = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
-        chapter 1: introduction<+>intro
-        chapter 2: eyes<+>eyes
+        chapter one<+>intro
+        chapter two<+>eyes
             SHOWIF::"eyes"
-	chapter 3: bone<+>bone
+	chapter three<+>bone
 	    SHOWIF::"bone"
-	chapter 4: claws<+>claws
+	chapter four<+>claws
 	    SHOWIF::"claws"
-	chapter 5: ichor<+>ichor
+	chapter five<+>ichor
 	    SHOWIF::"ichor"
-	chapter 6: light<+>light
+	chapter six<+>light
 	    SHOWIF::"light"
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
-`)
-env.dialogues.introconclusion = generateDialogueObject(`
+\`)
+env.dialogues.introconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
 	continue<+>eyes
 	    EXEC::change("eyes", true)
 	return to chapter select<+>loop
 	    EXEC::change("eyes", true)
-`)
-env.dialogues.eyesconclusion = generateDialogueObject(`
+\`)
+env.dialogues.eyesconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
 	continue<+>bone
 	    EXEC::change("bone", true)
 	return to chapter select<+>loop
 	    EXEC::change("bone", true)
-`)
-env.dialogues.boneconclusion = generateDialogueObject(`
+\`)
+env.dialogues.boneconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
 	continue<+>claws
 	    EXEC::change("claws", true)
 	return to chapter select<+>loop
 	    EXEC::change("claws", true)
-`)
-env.dialogues.clawsconclusion = generateDialogueObject(`
+\`)
+env.dialogues.clawsconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
 	continue<+>ichor
 	    EXEC::change("ichor", true)
 	return to chapter select<+>loop
 	    EXEC::change("ichor", true)
-`)
-env.dialogues.ichorconclusion = generateDialogueObject(`
+\`)
+env.dialogues.ichorconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
 	continue<+>light
 	    EXEC::change("light", true)
 	return to chapter select<+>loop
 	    EXEC::change("light", true)
-`)
-env.dialogues.lightconclusion = generateDialogueObject(`
+\`)
+env.dialogues.lightconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
 	return to chapter select<+>loop
-`)
+\`)
 // CHAPTER SELECT			
-env.dialogues["reading"] = generateDialogueObject(`
+env.dialogues["reading"] = generateDialogueObject(\`
 start
     sys
         ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT"
-	NOTICE::'select starting chapter'
+	NOTICE::'select chapter'
 
     RESPOBJ::chapterselection
 
 loop
+    sys 
+        NOTICE::'select chapter'
+
     RESPOBJ::chapterselection
 
 
 // CHAPTER 1: INTRODUCTION
 intro
     sys
-	ATTENTION::'chapter 1';'introduction'
+	ATTENTION::'chapter one';'introduction'
 
     sourceless
 	I TRUDGE ALONG THE MUDDY BANKS OF THE RIVER, MY COMPANIONS CLOSE BEHIND ME
@@ -262,7 +265,7 @@ intro
 
     vak
 	no
-	we cannot afford to 
+	the faster we arrive, the faster we get back home 
 
     sourceless
 	AND SO, WE CONTINUE IN SILENCE
@@ -277,7 +280,7 @@ intro
 // CHAPTER 2: EYES
 eyes
     sys
-	ATTENTION::'chapter 2';'eyes'
+	ATTENTION::'chapter two';'eyes'
 
 
     sys
@@ -290,7 +293,7 @@ eyes
 // CHAPTER 3: BONE
 bone
     sys
-	ATTENTION::'chapter 3';'bone'
+	ATTENTION::'chapter three';'bone'
 
 
     sys
@@ -303,7 +306,7 @@ bone
 // CHAPTER 4: CLAWS
 claws
     sys
-	ATTENTION::'chapter 4';'claws'
+	ATTENTION::'chapter four';'claws'
 
 
     sys
@@ -316,7 +319,7 @@ claws
 // CHAPTER 5: ICHOR
 ichor
     sys
-	ATTENTION::'chapter 5';'ichor'
+	ATTENTION::'chapter five';'ichor'
 
 
     sys
@@ -329,14 +332,14 @@ ichor
 // CHAPTER 6: LIGHT
 light
     sys
-	ATTENTION::'chapter 6';'light'
+	ATTENTION::'chapter six';'light'
 
 
     sys
 	ATTENTION::'conclusion of memory stream'
 
     RESPOBJ::lightconclusion
-`)
+\`)
 		
 
 
@@ -491,41 +494,41 @@ onEnter: ()=>{
 	}, 400)
 	},
 
-	onLeaving: (dest = false)=>{
-		body.setAttribute('state', 'corru-leaving')
-		MUI("off")
-		env.waitOnLoad = false
+onLeaving: (dest = false)=>{
+	body.setAttribute('state', 'corru-leaving')
+	MUI("off")
+	env.waitOnLoad = false
 
-		if(env.bgm){
-			let oldbgm = env.bgm
-			env.bgm = null
+	if(env.bgm){
+		let oldbgm = env.bgm
+		env.bgm = null
 
-			if(oldbgm.playing()) {
-				oldbgm.fade(oldbgm.volume(), 0, 1000)
-				setTimeout(()=> oldbgm.stop(), 1001)
-			}
-		}
-
-		if(!body.classList.contains("hard-cut")) {
-			corruStatic.volume(0)
-			corruStatic.play()
-			corruStatic.fade(0, env.corruStaticBaseVol, 1000)
-		}
-
-		//dyn
-		body.classList.remove('codezone')
-		change('TEMP!!sat', true)
-		Buddy.cleanPageBuddies({removeEl: false})
-		document.dispatchEvent(env.hooks.corru_leaving)
-
-		if(dest) swup.loadPage({url: dest})
-		delete page.vn
+		if(oldbgm.playing()) {
+			oldbgm.fade(oldbgm.volume(), 0, 1000)
+			setTimeout(()=> oldbgm.stop(), 1001)
 		}
 	}
 
-	env.pageName = "unknown";
-	env.pagePath = location.pathname;
-	</script>
+	if(!body.classList.contains("hard-cut")) {
+		corruStatic.volume(0)
+		corruStatic.play()
+		corruStatic.fade(0, env.corruStaticBaseVol, 1000)
+	}
+
+	//dyn
+	body.classList.remove('codezone')
+	change('TEMP!!sat', true)
+	Buddy.cleanPageBuddies({removeEl: false})
+	document.dispatchEvent(env.hooks.corru_leaving)
+
+	if(dest) swup.loadPage({url: dest})
+	delete page.vn
+	}
+}
+
+env.pageName = "unknown";
+env.pagePath = location.pathname;
+</script>
 </div>
 `
 
