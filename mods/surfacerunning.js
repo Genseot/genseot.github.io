@@ -169,7 +169,7 @@ RESPOBJ::
 env.dialogues["reading"] = generateDialogueObject(\`
 start
     sys
-        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT"
+        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT'
 	NOTICE::'select chapter'
 
     RESPOBJ::chapterselection
