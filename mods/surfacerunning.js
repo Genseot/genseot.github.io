@@ -102,7 +102,7 @@ env.dialogueActors["evil"] = {
     voice: ()=>play('scarydoia', 0.7),
 }
 
-// CHAPTER SELECT RESPOBJ
+// RESPOBJS
 env.dialogues.chapterselection = generateDialogueObject(`
 RESPOBJ::
     RESPONSES::sys
@@ -120,20 +120,66 @@ RESPOBJ::
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
 `)
+env.dialogues.introconclusion = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::sys
+	continue<+>eyes
+	    EXEC::change("eyes", true)
+	return to chapter select<+>loop
+	    EXEC::change("eyes", true)
+`)
+env.dialogues.eyesconclusion = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::sys
+	continue<+>bone
+	    EXEC::change("bone", true)
+	return to chapter select<+>loop
+	    EXEC::change("bone", true)
+`)
+env.dialogues.boneconclusion = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::sys
+	continue<+>claws
+	    EXEC::change("claws", true)
+	return to chapter select<+>loop
+	    EXEC::change("claws", true)
+`)
+env.dialogues.clawsconclusion = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::sys
+	continue<+>ichor
+	    EXEC::change("ichor", true)
+	return to chapter select<+>loop
+	    EXEC::change("ichor", true)
+`)
+env.dialogues.ichorconclusion = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::sys
+	continue<+>light
+	    EXEC::change("light", true)
+	return to chapter select<+>loop
+	    EXEC::change("light", true)
+`)
+env.dialogues.lightconclusion = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::sys
+	return to chapter select<+>loop
+`)
 // CHAPTER SELECT			
-env.dialogues["chapterselect"] = generateDialogueObject(`
+env.dialogues["reading"] = generateDialogueObject(`
 start
     sys
-        ATTENTION::"memory stream located";"SURFACE RUNNING";"by GENSEOT"
-	NOTICE::"select starting chapter"
+        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT"
+	NOTICE::'select starting chapter'
 
     RESPOBJ::chapterselection
-`)
+
+loop
+    RESPOBJ::chapterselection
 
 
 // CHAPTER 1: INTRODUCTION
-env.dialogues["intro"] = generateDialogueObject(`
-start
+intro
     sys
 	ATTENTION::'chapter 1';'introduction'
 
@@ -225,17 +271,11 @@ start
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
 
-    RESPONSES::sys
-	continue<+>eyes
-	    EXEC::change('eyes', true)
-	return to chapter select<+>chapterselect
-	    EXEC::change('eyes', true)
-`)
+    RESPOBJ::introconclusion
 
 
 // CHAPTER 2: EYES
-env.dialogues["eyes"] = generateDialogueObject(`
-start
+eyes
     sys
 	ATTENTION::'chapter 2';'eyes'
 
@@ -244,17 +284,11 @@ start
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
 
-    RESPONSES::sys
-	continue<+>bone
-	    EXEC::change('bone', true)
-	return to chapter select<+>chapterselect
-	    EXEC::change('bone', true)
-`)
+    RESPOBJ::eyesconclusion
 
 
 // CHAPTER 3: BONE
-env.dialogues["bone"] = generateDialogueObject(`
-start
+bone
     sys
 	ATTENTION::'chapter 3';'bone'
 
@@ -263,17 +297,11 @@ start
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
 
-    RESPONSES::sys
-	continue<+>claws
-	    EXEC::change('claws', true)
-	return to chapter select<+>chapterselect
-	    EXEC::change('claws', true)
-`)
+    RESPOBJ::boneconclusion
 
 
 // CHAPTER 4: CLAWS
-env.dialogues["claws"] = generateDialogueObject(`
-start
+claws
     sys
 	ATTENTION::'chapter 4';'claws'
 
@@ -282,17 +310,11 @@ start
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
 
-    RESPONSES::sys
-	continue<+>ichor
-	    EXEC::change('ichor', true)
-	return to chapter select<+>chapterselect
-	    EXEC::change('ichor', true)
-`)
+    RESPOBJ::clawsconclusion
 
 
 // CHAPTER 5: ICHOR
-env.dialogues["ichor"] = generateDialogueObject(`
-start
+ichor
     sys
 	ATTENTION::'chapter 5';'ichor'
 
@@ -301,17 +323,11 @@ start
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
 
-    RESPONSES::sys
-	continue<+>light
-	    EXEC::change('light', true)
-	return to chapter select<+>chapterselect
-	    EXEC::change('light', true)
-`)					
+    RESPOBJ::ichorconclusion			
 
 
 // CHAPTER 6: LIGHT
-env.dialogues["light"] = generateDialogueObject(`
-start
+light
     sys
 	ATTENTION::'chapter 6';'light'
 
@@ -319,8 +335,7 @@ start
     sys
 	ATTENTION::'conclusion of memory stream'
 
-    RESPONSES::sys
-	return to chapter select<+>chapterselect
+    RESPOBJ::lightconclusion
 `)
 		
 
