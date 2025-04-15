@@ -100,7 +100,7 @@ env.dialogueActors["vak"] = {
 }
 env.dialogueActors["evil"] = {
     type: "obesk qou portrait-contain portrait-blocker mutter",
-    voice: ()=>play('scarydoia', 0.7),
+    voice: ()=>play('scarydoia', 0.7)
 }
 
 // RESPOBJS
