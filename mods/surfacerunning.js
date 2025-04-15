@@ -121,51 +121,6 @@ RESPOBJ::
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
 \`)
-env.dialogues.introconclusion = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-        continue<+>eyes
-	    EXEC::change("eyes", true)
-        return to chapter select<+>loop
-	    EXEC::change("eyes", true)
-\`)
-env.dialogues.eyesconclusion = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-	continue<+>bone
-	    EXEC::change("bone", true)
-	return to chapter select<+>loop
-	    EXEC::change("bone", true)
-\`)
-env.dialogues.boneconclusion = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-	continue<+>claws
-	    EXEC::change("claws", true)
-	return to chapter select<+>loop
-	    EXEC::change("claws", true)
-\`)
-env.dialogues.clawsconclusion = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-	continue<+>ichor
-	    EXEC::change("ichor", true)
-	return to chapter select<+>loop
-	    EXEC::change("ichor", true)
-\`)
-env.dialogues.ichorconclusion = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-	continue<+>light
-	    EXEC::change("light", true)
-	return to chapter select<+>loop
-	    EXEC::change("light", true)
-\`)
-env.dialogues.lightconclusion = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-	return to chapter select<+>loop
-\`)
 
 
 // READING			
@@ -188,21 +143,99 @@ intro
     sys
 	ATTENTION::'chapter one';'introduction'
 
-    kaz
-	hi im kaz 
- 	blah blah 
+    sourceless
+	I TRUDGE ALONG THE MUDDY BANKS OF THE RIVER, MY COMPANIONS CLOSE BEHIND ME
+	THE MUD CLINGS TO MY FEET LIKE THE GRIP OF AN AKOZAK, BUT I PAY IT NO HEED
+	MY QUICK AND NIMBLE FOOTSTEPS OUTMACH THE MUD'S GRASP
+	AS MY COMPANIONS STUMBLE AND CURSE BEHIND ME, I SLOW DOWN MY PACE 
 
     yan
-	hi im yan 
+	AøI+ÈHA!
+
+    sourceless
+	YAN TUMBLES INTO THE MUD, SCATTERING THEIR SACHEL OF CYSTS
+	I GIGGLE A LITTLE 
+	IT IS ALWAYS A DELIGHT TO SEE OTHERS GET TWISTED IN THE RIVER'S BANKS
+
+    kaz
+	never been on the surface before, cavern-crawler?
+
+    sourceless
+	THEY SIGH AT MY COMMENT, SAYING NOTHING
+	THEY CONTINUE TO CLEAN AND RETURN THE CYSTS TO THEIR PROPER PLACE
 
     vak
-        hi im vak 
+	come on, we should not keep stopping like this while it is still clear-sky
+
+    sourceless
+	WE TRAVEL ALONG THE yuzku river 
+	I HAVE KNOWN THIS RIVER ALL MY LIFE
+	I HAVE HUNTED, TRAVELLED, AND LIVED ALONGSIDE IT
+	I KNOW ITS SECRETS - AND IT KNOWS MINE
+
+    vak
+	ready, yan?
+
+    yan
+	yes, let us keep going
+	how long until we reach the spire, kaz?
+
+    kaz
+	judging by the distance - a few more θgazes 
+
+    sourceless
+	ACROSS THE HORIZON - THE SPIRE LIES
+	IT DRAPES THE SKIES AROUND IT IN ITS BLACK TEMPEST, OBSCURING VELZIE'S GAZE
+	EVEN HERE, WE CAN SEE THE CRACKS OF LIGHTNING IT EMITS
+	BUT BEYOND IT - OUR DESTINATION
+
+    yan
+	then that should put us several θgazes to gozazni - right, vak?
+
+    vak
+	seems like it to me
+
+    sourceless
+	IT IS STILL A FEW θwinks BEFORE DUSK FALLS
+	WE SET OFF ONCE AGAIN ALONG THE RIVER'S BANKS...
+	TIME WHITTLES AWAY AS WE TRAVEL UNDER VELZIE'S GAZE
+	AS THE θblinks PASS - I HEAR MY COMPANIONS BICKER BEHIND, AS THEY FOLLOW ME
+
+    yan
+	uuugh my back hurts already
+
+    vak
+	lighten up, i have been carrying everything else since we left ukazni ozo
+	besides, i am the one with the zzepel - i decide when we will rest
+
+    sourceless
+	A PAUSE
+            I CAN ONLY ASSUME VAK GLARES AT YAN
+
+    vak
+	before you ask, now is not that time
+
+    sourceless
+	YAN GROANS
+
+    yan
+	not even for a θblink?
+
+    vak
+	no
+	the faster we arrive, the faster we get back home 
+
+    sourceless
+	AND SO, WE CONTINUE IN SILENCE
 
     sys
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
+	    EXEC::change("eyes", true)
 
-    RESPOBJ::introconclusion
+    RESPONSES::sys
+        continue<+>eyes
+        return to chapter select<+>loop
 
 eyes
     sys
@@ -212,8 +245,11 @@ eyes
     sys
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
+	    EXEC::change("bone", true)
 
-    RESPOBJ::eyesconclusion
+    RESPONSES::sys
+        continue<+>bone
+        return to chapter select<+>loop
 
 bone
     sys
@@ -223,8 +259,11 @@ bone
     sys
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
+	    EXEC::change("claws", true)
 
-    RESPOBJ::boneconclusion
+    RESPONSES::sys
+        continue<+>claws
+        return to chapter select<+>loop
 
 claws
     sys
@@ -234,9 +273,11 @@ claws
     sys
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
+	    EXEC::change("ichor", true)
 
-    RESPOBJ::clawsconclusion
-
+    RESPONSES::sys
+        continue<+>ichor
+        return to chapter select<+>loop
 
 ichor
     sys
@@ -246,8 +287,11 @@ ichor
     sys
 	ATTENTION::'conclusion of chapter'
 	NOTICE::'continue?'
+	    EXEC::change("light", true)
 
-    RESPOBJ::ichorconclusion			
+    RESPONSES::sys
+        continue<+>light
+        return to chapter select<+>loop
 
 light
     sys
@@ -257,7 +301,8 @@ light
     sys
 	ATTENTION::'conclusion of memory stream'
 
-    RESPOBJ::lightconclusion
+    RESPONSES::sys
+        return to chapter select<+>loop
 \`)
 		
 
