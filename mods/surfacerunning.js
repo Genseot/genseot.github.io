@@ -368,7 +368,6 @@ if(firstLoad || env.waitOnLoad) {
 	env.definitions[\`velzie\`] = \`'god'\`;
 	env.definitions[\`veilk\`] = \`'surface fauna';'foundation of entire ecosystem';'enormous and endless'\`;
 	env.definitions[\`zuzucri\`] = \`'violent parasitic surface fauna';'hijacks mind of victim for use as social camouflage';'ekivik profanity'\`;
-	env.definitions[`akozak`] = `'burrowing slime';'sinkhole';'many arms'`;
 
 	// other
 	env.definitions[\`jokzi ozo\`] = \`'home';'fortress upon jokzi'\`;
@@ -414,6 +413,7 @@ if(firstLoad || env.waitOnLoad) {
 	env.definitions[`surface voice`] = `'specialized volume management';'fast and enunciated'`;
 
 	// crittas
+	env.definitions[`akozak`] = `'burrowing slime';'sinkhole';'many arms'`;
 	env.definitions[`celki`] = `'veilk parasite';'food'`;
 	env.definitions[`dog`] = { type: `NOTE`, text: `'partial translation';'implied closest cultural equivalent'`};
 	env.definitions[`veilk`] = `'surface fauna';'foundation of entire ecosystem';'enormous and endless'`;
