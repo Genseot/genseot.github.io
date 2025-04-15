@@ -123,9 +123,9 @@ RESPOBJ::
 env.dialogues.introconclusion = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
-	continue<+>eyes
+        continue<+>eyes
 	    EXEC::change("eyes", true)
-	return to chapter select<+>loop
+        return to chapter select<+>loop
 	    EXEC::change("eyes", true)
 \`)
 env.dialogues.eyesconclusion = generateDialogueObject(\`
@@ -165,15 +165,17 @@ RESPOBJ::
     RESPONSES::sys
 	return to chapter select<+>loop
 \`)
-// CHAPTER SELECT			
+// READING			
 env.dialogues["reading"] = generateDialogueObject(\`
+// CHAPTER SELECT
 start
     sys
-        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT'
-	NOTICE::'select chapter'
+	ATTENTION::'memory stream located'
+ 	ATTENTION::'SURFACE RUNNING';'by GENSEOT'
+        NOTICE::'select chapter'
 
     RESPOBJ::chapterselection
-
+    
 loop
     sys 
         NOTICE::'select chapter'
