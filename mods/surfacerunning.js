@@ -337,42 +337,42 @@ if(firstLoad || env.waitOnLoad) {
 
 	// global definitions
 	// general
-	env.definitions[`velzie's stage`] = `'all that can be observed';'physical reality';'religious term now used scientifically';'partial translation';'inherited description-generated noun'`;
+	env.definitions[\`velzie's stage\`] = \`'all that can be observed';'physical reality';'religious term now used scientifically';'partial translation';'inherited description-generated noun'\`;
 	// time
-	env.definitions[`θeye`] = `'time period';'patrols around the eye of velzie';'religious implication'`;
-	env.definitions[`θeyes`] = `'time period';'patrols around the eye of velzie';'religious implication'`;
-	env.definitions[`θgazes`] = `'time period';'numerous within eyes'`;
-	env.definitions[`θgaze`] = `'time period';'numerous within eyes'`;
-	env.definitions[`θwinks`] = `'time period';'numerous within gazes'`;
-	env.definitions[`θwink`] = `'time period';'numerous within gazes'`;
-	env.definitions[`θblinks`] = `'time period';'numerous within winks'`;
-	env.definitions[`θblink`] = `'time period';'numerous within winks'`;
+	env.definitions[\`θeye\`] = \`'time period';'patrols around the eye of velzie';'religious implication'\`;
+	env.definitions[\`θeyes\`] = \`'time period';'patrols around the eye of velzie';'religious implication'\`;
+	env.definitions[\`θgazes\`] = \`'time period';'numerous within eyes'\`;
+	env.definitions[\`θgaze\`] = \`'time period';'numerous within eyes'\`;
+	env.definitions[\`θwinks\`] = \`'time period';'numerous within gazes'\`;
+	env.definitions[\`θwink\`] = \`'time period';'numerous within gazes'\`;
+	env.definitions[\`θblinks\`] = \`'time period';'numerous within winks'\`;
+	env.definitions[\`θblink\`] = \`'time period';'numerous within winks'\`;
 
 	// obesk-related
 	// castes
-	env.definitions[`θjut`] = `'engineer';'caste'`;
-	env.definitions[`vel`] = `'caste';'partial meaning loss due to damaged context'`;
-	env.definitions[`tir`] = `'caste';'partial meaning loss due to damaged context'`;
-	env.definitions[`kiv`] = `'caste';'partial meaning loss due to damaged context'`;
-	env.definitions[`qou`] = `'caste';'partial meaning loss due to damaged context'`;
+	env.definitions[\`θjut\`] = \`'engineer';'caste'\`;
+	env.definitions[\`vel\`] = \`'caste';'partial meaning loss due to damaged context'\`;
+	env.definitions[\`tir\`] = \`'caste';'partial meaning loss due to damaged context'\`;
+	env.definitions[\`kiv\`] = \`'caste';'partial meaning loss due to damaged context'\`;
+	env.definitions[\`qou\`] = \`'caste';'partial meaning loss due to damaged context'\`;
 	// other
-	env.definitions[`θdeath`] = { type: `NOTE`, text: `'implies altered living state'`};
-	env.definitions[`θdeaths`] = { type: `NOTE`, text: `'implies altered living state'`};
-	env.definitions[`θdeathly`] = { type: `NOTE`, text: `'implies altered living state'`};
+	env.definitions[\`θdeath\`] = { type: \`NOTE\`, text: \`'implies altered living state'\`};
+	env.definitions[\`θdeaths\`] = { type: \`NOTE\`, text: \`'implies altered living state'\`};
+	env.definitions[\`θdeathly\`] = { type: \`NOTE\`, text: \`'implies altered living state'\`};
 
 	// crittas
-	env.definitions[`fairy`] = { type: `NOTE`, text: `'partial translation';'implied closest cultural equivalent'`};
-	env.definitions[`golem`] = { type: `NOTE`, text: `'partial translation';'implied closest cultural equivalent'`};
-	env.definitions[`golems`] = { type: `NOTE`, text: `'partial translation';'implied closest cultural equivalent'`};
-	env.definitions[`secri`] = `'predator';'infection';'primal terror'`;
-	env.definitions[`velzie`] = `'god'`;
-	env.definitions[`veilk`] = `'surface fauna';'foundation of entire ecosystem';'enormous and endless'`;
-	env.definitions[`zuzucri`] = `'violent parasitic surface fauna';'hijacks mind of victim for use as social camouflage';'ekivik profanity'`;
+	env.definitions[\`fairy\`] = { type: \`NOTE\`, text: \`'partial translation';'implied closest cultural equivalent'\`};
+	env.definitions[\`golem\`] = { type: \`NOTE\`, text: \`'partial translation';'implied closest cultural equivalent'\`};
+	env.definitions[\`golems\`] = { type: \`NOTE\`, text: \`'partial translation';'implied closest cultural equivalent'\`};
+	env.definitions[\`secri\`] = \`'predator';'infection';'primal terror'\`;
+	env.definitions[\`velzie\`] = \`'god'\`;
+	env.definitions[\`veilk\`] = \`'surface fauna';'foundation of entire ecosystem';'enormous and endless'\`;
+	env.definitions[\`zuzucri\`] = \`'violent parasitic surface fauna';'hijacks mind of victim for use as social camouflage';'ekivik profanity'\`;
 
 	// other
-	env.definitions[`jokzi ozo`] = `'home';'fortress upon jokzi'`;
-	env.definitions[`ukazni ozo`] = `'surface city';'mountainous fortress';'origin of dull pulse weaponry'`;
-	env.definitions[`uncosm`] = { type: `NOTE`, text: `'reconstructive translation';'implies non-world'`};
+	env.definitions[\`jokzi ozo\`] = \`'home';'fortress upon jokzi'\`;
+	env.definitions[\`ukazni ozo\`] = \`'surface city';'mountainous fortress';'origin of dull pulse weaponry'\`;
+	env.definitions[\`uncosm\`] = { type: \`NOTE\`, text: \`'reconstructive translation';'implies non-world'\`};
 
 
 
@@ -381,48 +381,48 @@ if(firstLoad || env.waitOnLoad) {
 
 	// general
 	// weather
-	env.definitions[`spirestorm`] = `'weather phenomena';'ceaseless violent storm surrounding natural spire'`;						
-	env.definitions[`clear-sky`] = `'partial translation';'inherited description-generated noun'`;
-	env.definitions[`brightwall`] = { type: `NOTE`, text: `'partial translation';'reference to weather phenomena'`};
+	env.definitions[\`spirestorm\`] = \`'weather phenomena';'ceaseless violent storm surrounding natural spire'\`;						
+	env.definitions[\`clear-sky\`] = \`'partial translation';'inherited description-generated noun'\`;
+	env.definitions[\`brightwall\`] = { type: \`NOTE\`, text: \`'partial translation';'reference to weather phenomena'\`};
 	// obeski
-	env.definitions[`zevazni`] = `'cave-city central to vazni';'corrucystic revolution origin'`;
-	env.definitions[`vazni`] = `'continent';'home';'central to inhabitable zone'`;
-	env.definitions[`oltazni`] = `'vaznian cave-city'`;
-	env.definitions[`vaznian`] = `'ethnic implication';'origination from continent';'vazni'`;
-	env.definitions[\'yuzku river\'] = `'great river';'splits the continent of vazni';'known for its bioluminescent lights, flourishing at night';'like yuzku'`;
-	env.definitions[\'gozazni\'] = `'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'our destination'`;
+	env.definitions[\`zevazni\`] = \`'cave-city central to vazni';'corrucystic revolution origin'\`;
+	env.definitions[\`vazni\`] = \`'continent';'home';'central to inhabitable zone'\`;
+	env.definitions[\`oltazni\`] = \`'vaznian cave-city'\`;
+	env.definitions[\`vaznian\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
+	env.definitions[\'yuzku river\'] = \`'great river';'splits the continent of vazni';'known for its bioluminescent lights, flourishing at night';'like yuzku'\`;
+	env.definitions[\'gozazni\'] = \`'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'our destination'\`;
 	// colliqualisms
-	env.definitions[`tir stumbling into their research chamber`] = `'common myth';'intoxicated tir knocked over corru container and fell into it'`;
-	env.definitions[`velzie's eye cast down`] = `'common idiom';'even velzie watches in shock'`;
-	env.definitions[`keep velzie entertained`] = `'common phrase';'religious implication';'implies wish for safe journey'`;
-	env.definitions[`spike in the heel`] = `'common idiom';'persistent issue'`;
-	env.definitions[`kelnit`] = `'derogatory';'incompetent fighter'`;
+	env.definitions[\`tir stumbling into their research chamber\`] = \`'common myth';'intoxicated tir knocked over corru container and fell into it'\`;
+	env.definitions[\`velzie's eye cast down\`] = \`'common idiom';'even velzie watches in shock'\`;
+	env.definitions[\`keep velzie entertained\`] = \`'common phrase';'religious implication';'implies wish for safe journey'\`;
+	env.definitions[\`spike in the heel\`] = \`'common idiom';'persistent issue'\`;
+	env.definitions[\`kelnit\`] = \`'derogatory';'incompetent fighter'\`;
 	// time
-	env.definitions[`θradiant`] = `'time period';'segments around the eye of velzie';'each heralds a new season'`;
-	env.definitions[`θradiants`] = `'time period';'segments around the eye of velzie';'each heralds a new season'`;
+	env.definitions[\`θradiant\`] = \`'time period';'segments around the eye of velzie';'each heralds a new season'\`;
+	env.definitions[\`θradiants\`] = \`'time period';'segments around the eye of velzie';'each heralds a new season'\`;
 
 	// obesk-related
 	// tech
-	env.definitions[`zzepel`] = `'back-mounted multi-purpose surface utility';'popular for veilk camping'`;
-	env.definitions[`dullvoice`] = { type: `NOTE`, text: `'partial translation';'inherited description-generated noun'`};
-	env.definitions[`sfer`] = `'refined corrucystic fuel/food';'currency'`;
-	env.definitions[`zuzucri-masks`] = `'corrucystic treatment for zuzucri infestation';'partial translation';'inherited description-generated noun'`;
+	env.definitions[\`zzepel\`] = \`'back-mounted multi-purpose surface utility';'popular for veilk camping'\`;
+	env.definitions[\`dullvoice\`] = { type: \`NOTE\`, text: \`'partial translation';'inherited description-generated noun'\`};
+	env.definitions[\`sfer\`] = \`'refined corrucystic fuel/food';'currency'\`;
+	env.definitions[\`zuzucri-masks\`] = \`'corrucystic treatment for zuzucri infestation';'partial translation';'inherited description-generated noun'\`;
 	// clothing
-	env.definitions[`valika`] = `'wide conical headwear';'surface camouflage'`;
+	env.definitions[\`valika\`] = \`'wide conical headwear';'surface camouflage'\`;
 	// other
-	env.definitions[`surface voice`] = `'specialized volume management';'fast and enunciated'`;
+	env.definitions[\`surface voice\`] = \`'specialized volume management';'fast and enunciated'\`;
 
 	// crittas
-	env.definitions[`akozak`] = `'burrowing slime';'sinkhole';'many arms'`;
-	env.definitions[`celki`] = `'veilk parasite';'food'`;
-	env.definitions[`dog`] = { type: `NOTE`, text: `'partial translation';'implied closest cultural equivalent'`};
-	env.definitions[`veilk`] = `'surface fauna';'foundation of entire ecosystem';'enormous and endless'`;
-	env.definitions[`guktik`] = `'predator';'bladed arms';'cooked flesh goes well with zzoust'`;
-	env.definitions[`cavernguard`] = { type: `NOTE`, text: `'partial translation';'inherited description-generated noun'`};
-	env.definitions[`yuzku`] = `'sluggish bioluminescent scavengers';'intentionally cultivated in veilk parasite husks for lighting';'fatal if consumed'`;
+	env.definitions[\`akozak\`] = \`'burrowing slime';'sinkhole';'many arms'\`;
+	env.definitions[\`celki\`] = \`'veilk parasite';'food'\`;
+	env.definitions[\`dog\`] = { type: \`NOTE\`, text: \`'partial translation';'implied closest cultural equivalent'\`};
+	env.definitions[\`veilk\`] = \`'surface fauna';'foundation of entire ecosystem';'enormous and endless'\`;
+	env.definitions[\`guktik\`] = \`'predator';'bladed arms';'cooked flesh goes well with zzoust'\`;
+	env.definitions[\`cavernguard\`] = { type: \`NOTE\`, text: \`'partial translation';'inherited description-generated noun'\`};
+	env.definitions[\`yuzku\`] = \`'sluggish bioluminescent scavengers';'intentionally cultivated in veilk parasite husks for lighting';'fatal if consumed'\`;
 
 	// other
-	env.definitions[`kalstik`] = { type: `TRANSLATION FAILED`, text: `CAUSE:'no equivalent internal meaning';'no relevant inherited context'::ROMANIZATION SUCCESSFUL`};
+	env.definitions[\`kalstik\`] = { type: \`TRANSLATION FAILED\`, text: \`CAUSE:'no equivalent internal meaning';'no relevant inherited context'::ROMANIZATION SUCCESSFUL\`};
 
 			
 	console.log('rendering buddies!')
