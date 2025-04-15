@@ -536,7 +536,7 @@ if(typeof pages == "undefined") {
 }
 // CACHE DA PAGE SO IT LOADS
 pages['/local/uncosm/surfacerunning/'] = {
-  "title": "..__UNKNOWN__..",
+  "title": "..__SURFACE RUNNING__..",
   "name": "unknown",
   "dialoguePrefix": "sec",
   "path": location.pathname,
