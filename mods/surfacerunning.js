@@ -169,7 +169,6 @@ RESPOBJ::
 
 // READING			
 env.dialogues["reading"] = generateDialogueObject(\`
-// CHAPTER SELECT
 start
     sys
         ATTENTION::'memory stream located'
@@ -185,7 +184,6 @@ loop
     RESPOBJ::chapterselection
 
 
-// CHAPTER 1: INTRODUCTION
 intro
     sys
 	ATTENTION::'chapter one';'introduction'
@@ -281,7 +279,6 @@ intro
     RESPOBJ::introconclusion
 
 
-// CHAPTER 2: EYES
 eyes
     sys
 	ATTENTION::'chapter two';'eyes'
@@ -294,7 +291,6 @@ eyes
     RESPOBJ::eyesconclusion
 
 
-// CHAPTER 3: BONE
 bone
     sys
 	ATTENTION::'chapter three';'bone'
@@ -307,7 +303,6 @@ bone
     RESPOBJ::boneconclusion
 
 
-// CHAPTER 4: CLAWS
 claws
     sys
 	ATTENTION::'chapter four';'claws'
@@ -320,7 +315,6 @@ claws
     RESPOBJ::clawsconclusion
 
 
-// CHAPTER 5: ICHOR
 ichor
     sys
 	ATTENTION::'chapter five';'ichor'
@@ -333,7 +327,6 @@ ichor
     RESPOBJ::ichorconclusion			
 
 
-// CHAPTER 6: LIGHT
 light
     sys
 	ATTENTION::'chapter six';'light'
