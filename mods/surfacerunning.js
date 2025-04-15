@@ -165,13 +165,15 @@ RESPOBJ::
     RESPONSES::sys
 	return to chapter select<+>loop
 \`)
+
+
 // READING			
 env.dialogues["reading"] = generateDialogueObject(\`
 // CHAPTER SELECT
 start
     sys
-	ATTENTION::'memory stream located'
- 	ATTENTION::'SURFACE RUNNING';'by GENSEOT'
+        ATTENTION::'memory stream located'
+        ATTENTION::'SURFACE RUNNING';'by GENSEOT'
         NOTICE::'select chapter'
 
     RESPOBJ::chapterselection
