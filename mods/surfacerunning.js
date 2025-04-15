@@ -104,22 +104,29 @@ env.dialogueActors["evil"] = {
 }
 
 // RESPOBJS
-env.dialogues.chapterselection = generateDialogueObject(\`
+env.dialogues.chapterselect = generateDialogueObject(\`
+RESPOBJ::
+    RESPONSES::sys
+        chapter one<+>intro
+        end stream<+>END
+            EXEC::moveTo("/local/depths/")
+\`)
+env.dialogues.chapterselectionwabaha = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
         chapter one<+>intro
         chapter two<+>eyes
             SHOWIF::"eyes"
-	chapter three<+>bone
-	    SHOWIF::"bone"
-	chapter four<+>claws
-	    SHOWIF::"claws"
-	chapter five<+>ichor
-	    SHOWIF::"ichor"
-	chapter six<+>light
-	    SHOWIF::"light"
-	end stream<+>END
-	    EXEC::moveTo("/local/depths/")
+        chapter three<+>bone
+            SHOWIF::"bone"
+        chapter four<+>claws
+            SHOWIF::"claws"
+        chapter five<+>ichor
+            SHOWIF::"ichor"
+        chapter six<+>light
+            SHOWIF::"light"
+        end stream<+>END
+            EXEC::moveTo("/local/depths/")
 \`)
 
 
@@ -131,121 +138,120 @@ start
         ATTENTION::'SURFACE RUNNING';'by GENSEOT'
         NOTICE::'select chapter'
 
-    RESPOBJ::chapterselection
+    RESPOBJ::chapterselect
     
 loop
     sys 
         NOTICE::'select chapter'
 
-    RESPOBJ::chapterselection
+    RESPOBJ::chapterselect
 
 intro
     sys
-	ATTENTION::'chapter one';'introduction'
+        ATTENTION::'chapter one';'introduction'
 
     sourceless
-	I TRUDGE ALONG THE MUDDY BANKS OF THE RIVER, MY COMPANIONS CLOSE BEHIND ME
-	THE MUD CLINGS TO MY FEET LIKE THE GRIP OF AN AKOZAK, BUT I PAY IT NO HEED
-	MY QUICK AND NIMBLE FOOTSTEPS OUTMACH THE MUD'S GRASP
-	AS MY COMPANIONS STUMBLE AND CURSE BEHIND ME, I SLOW DOWN MY PACE 
+        I TRUDGE ALONG THE MUDDY BANKS OF THE RIVER, MY COMPANIONS CLOSE BEHIND ME
+        THE MUD CLINGS TO MY FEET LIKE THE GRIP OF AN AKOZAK, BUT I PAY IT NO HEED
+        MY QUICK AND NIMBLE FOOTSTEPS OUTMACH THE MUD'S GRASP
+        AS MY COMPANIONS STUMBLE AND CURSE BEHIND ME, I SLOW DOWN MY PACE 
 
     yan
-	AøI+ÈHA!
+        AøI+ÈHA!
 
     sourceless
-	YAN TUMBLES INTO THE MUD, SCATTERING THEIR SACHEL OF CYSTS
-	I GIGGLE A LITTLE 
-	IT IS ALWAYS A DELIGHT TO SEE OTHERS GET TWISTED IN THE RIVER'S BANKS
+        YAN TUMBLES INTO THE MUD, SCATTERING THEIR SACHEL OF CYSTS
+        I GIGGLE A LITTLE 
+        IT IS ALWAYS A DELIGHT TO SEE OTHERS GET TWISTED IN THE RIVER'S BANKS
 
     kaz
-	never been on the surface before, cavern-crawler?
+        never been on the surface before, cavern-crawler?
 
     sourceless
-	THEY SIGH AT MY COMMENT, SAYING NOTHING
-	THEY CONTINUE TO CLEAN AND RETURN THE CYSTS TO THEIR PROPER PLACE
+        THEY SIGH AT MY COMMENT, SAYING NOTHING
+        THEY CONTINUE TO CLEAN AND RETURN THE CYSTS TO THEIR PROPER PLACE
 
     vak
-	come on, we should not keep stopping like this while it is still clear-sky
+        come on, we should not keep stopping like this while it is still clear-sky
 
     sourceless
-	WE TRAVEL ALONG THE yuzku river 
-	I HAVE KNOWN THIS RIVER ALL MY LIFE
-	I HAVE HUNTED, TRAVELLED, AND LIVED ALONGSIDE IT
-	I KNOW ITS SECRETS - AND IT KNOWS MINE
+        WE TRAVEL ALONG THE yuzku river 
+        I HAVE KNOWN THIS RIVER ALL MY LIFE
+        I HAVE HUNTED, TRAVELLED, AND LIVED ALONGSIDE IT
+        I KNOW ITS SECRETS - AND IT KNOWS MINE
 
     vak
-	ready, yan?
+        ready, yan?
 
     yan
-	yes, let us keep going
-	how long until we reach the spire, kaz?
+        yes, let us keep going
+        how long until we reach the spire, kaz?
 
     kaz
-	judging by the distance - a few more θgazes 
+        judging by the distance - a few more θgazes 
 
     sourceless
-	ACROSS THE HORIZON - THE SPIRE LIES
-	IT DRAPES THE SKIES AROUND IT IN ITS BLACK TEMPEST, OBSCURING VELZIE'S GAZE
-	EVEN HERE, WE CAN SEE THE CRACKS OF LIGHTNING IT EMITS
-	BUT BEYOND IT - OUR DESTINATION
+        ACROSS THE HORIZON - THE SPIRE LIES
+        IT DRAPES THE SKIES AROUND IT IN ITS BLACK TEMPEST, OBSCURING VELZIE'S GAZE
+        EVEN HERE, WE CAN SEE THE CRACKS OF LIGHTNING IT EMITS
+        BUT BEYOND IT - OUR DESTINATION AWAITS
 
     yan
-	then that should put us several θgazes to gozazni - right, vak?
+        then that should put us several θgazes to gozazni - right, vak?
 
     vak
-	seems like it to me
+        seems like it to me
 
     sourceless
-	IT IS STILL A FEW θwinks BEFORE DUSK FALLS
-	WE SET OFF ONCE AGAIN ALONG THE RIVER'S BANKS...
-	TIME WHITTLES AWAY AS WE TRAVEL UNDER VELZIE'S GAZE
-	AS THE θblinks PASS - I HEAR MY COMPANIONS BICKER BEHIND, AS THEY FOLLOW ME
+        IT IS STILL A FEW θwinks BEFORE DUSK FALLS
+        WE SET OFF ONCE AGAIN ALONG THE RIVER'S BANKS...
+        TIME WHITTLES AWAY AS WE TRAVEL UNDER VELZIE'S GAZE
+        AS THE θblinks PASS - I HEAR MY COMPANIONS BICKER BEHIND, AS THEY FOLLOW ME
 
     yan
-	uuugh my back hurts already
+        uuugh my back hurts already
 
     vak
-	lighten up, i have been carrying everything else since we left ukazni ozo
-	besides, i am the one with the zzepel - i decide when we will rest
+        lighten up, i have been carrying everything else since we left ukazni ozo
+        besides, i am the one with the zzepel - i decide when we will rest
 
     sourceless
-	A PAUSE
-            I CAN ONLY ASSUME VAK GLARES AT YAN
+        A PAUSE
+        I CAN ONLY ASSUME VAK GLARES AT YAN
 
     vak
-	before you ask, now is not that time
+        before you ask, now is not that time
 
     sourceless
-	YAN GROANS
+        YAN GROANS
 
     yan
-	not even for a θblink?
+        not even for a θblink?
 
     vak
-	no
-	the faster we arrive, the faster we get back home 
+        no
+        the faster we arrive, the faster we get back home 
 
     sourceless
-	AND SO, WE CONTINUE IN SILENCE
+        AND SO, WE CONTINUE IN SILENCE
 
     sys
-	ATTENTION::'conclusion of chapter'
-	NOTICE::'continue?'
-	    EXEC::change("eyes", true)
+        ATTENTION::'conclusion of chapter'
+        NOTICE::'continue?'
+            EXEC::change("eyes", true)
 
     RESPONSES::sys
-        continue<+>eyes
         return to chapter select<+>loop
 
-eyes
+/*eyes
     sys
-	ATTENTION::'chapter two';'eyes'
+        ATTENTION::'chapter two';'eyes'
 
 
     sys
-	ATTENTION::'conclusion of chapter'
-	NOTICE::'continue?'
-	    EXEC::change("bone", true)
+        ATTENTION::'conclusion of chapter'
+        NOTICE::'continue?'
+            EXEC::change("bone", true)
 
     RESPONSES::sys
         continue<+>bone
@@ -253,13 +259,13 @@ eyes
 
 bone
     sys
-	ATTENTION::'chapter three';'bone'
+        ATTENTION::'chapter three';'bone'
 
 
     sys
-	ATTENTION::'conclusion of chapter'
-	NOTICE::'continue?'
-	    EXEC::change("claws", true)
+        ATTENTION::'conclusion of chapter'
+        NOTICE::'continue?'
+            EXEC::change("claws", true)
 
     RESPONSES::sys
         continue<+>claws
@@ -267,13 +273,13 @@ bone
 
 claws
     sys
-	ATTENTION::'chapter four';'claws'
+        ATTENTION::'chapter four';'claws'
 
 
     sys
-	ATTENTION::'conclusion of chapter'
-	NOTICE::'continue?'
-	    EXEC::change("ichor", true)
+        ATTENTION::'conclusion of chapter'
+        NOTICE::'continue?'
+            EXEC::change("ichor", true)
 
     RESPONSES::sys
         continue<+>ichor
@@ -281,13 +287,13 @@ claws
 
 ichor
     sys
-	ATTENTION::'chapter five';'ichor'
+        ATTENTION::'chapter five';'ichor'
 
 
     sys
-	ATTENTION::'conclusion of chapter'
-	NOTICE::'continue?'
-	    EXEC::change("light", true)
+        ATTENTION::'conclusion of chapter'
+        NOTICE::'continue?'
+            EXEC::change("light", true)
 
     RESPONSES::sys
         continue<+>light
@@ -295,14 +301,14 @@ ichor
 
 light
     sys
-	ATTENTION::'chapter six';'light'
+        ATTENTION::'chapter six';'light'
 
 
     sys
-	ATTENTION::'conclusion of memory stream'
+        ATTENTION::'conclusion of memory stream'
 
     RESPONSES::sys
-        return to chapter select<+>loop
+        return to chapter select<+>loop*/
 \`)
 		
 
