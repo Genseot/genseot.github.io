@@ -73,7 +73,7 @@ surfacerunningContent = `
 			document.scrollingElement.scrollTop = 0
 			updatePreferenceAttributes()
 			//dynamically inserted
-		} // <- idk whether or not this bracket is supposed to exist. if this breaks try removing this bracket
+		// <- idk whether or not this bracket is supposed to exist. if this breaks try removing this bracket (future gen here. removed.)
 // DIALOGUE
 // kazzanesche vel zakori
 env.dialogueActors["kaz"] = {
