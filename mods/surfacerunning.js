@@ -483,7 +483,7 @@ onEnter: ()=>{
 
 	//dyn					
 	body.classList.add('codezone')
-	startDialogue("chapterselect")
+	startDialogue("reading")
 	Buddy.triggerPageBuddies()
 	document.querySelector('#PageData').remove()
 	document.dispatchEvent(env.hooks.corru_entered)
