@@ -103,7 +103,7 @@ env.dialogueActors["evil"] = {
 }
 
 // CHAPTER SELECT RESPOBJ
-env.dialogues.chapterselection = generateDialogueObject{`
+env.dialogues.chapterselection = generateDialogueObject(`
 RESPOBJ::
     RESPONSES::sys
         chapter 1: introduction<+>intro
@@ -119,7 +119,7 @@ RESPOBJ::
 	    SHOWIF::"light"
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
-`}
+`)
 
 // CHAPTER SELECT			
 env.dialogues["chapterselect"] = generateDialogueObject(\`
