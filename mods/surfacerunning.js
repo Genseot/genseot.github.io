@@ -102,17 +102,13 @@ env.dialogueActors["evil"] = {
     voice: ()=>play('scarydoia', 0.7),
 }
 
-// CHAPTER SELECT			
-env.dialogues["chapterselect"] = generateDialogueObject(\`
-start
-    sys
-        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT'
-	NOTICE::'select starting chapter'
-
+// CHAPTER SELECT RESPOBJ
+env.dialogues.chapterselection = generateDialogueObject{`
+RESPOBJ::
     RESPONSES::sys
-        chapter 1: introduction<+>intro 
-	chapter 2: eyes<+>eyes
-	    SHOWIF::"eyes"
+        chapter 1: introduction<+>intro
+        chapter 2: eyes<+>eyes
+            SHOWIF::"eyes"
 	chapter 3: bone<+>bone
 	    SHOWIF::"bone"
 	chapter 4: claws<+>claws
@@ -123,6 +119,16 @@ start
 	    SHOWIF::"light"
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
+`}
+
+// CHAPTER SELECT			
+env.dialogues["chapterselect"] = generateDialogueObject(\`
+start
+    sys
+        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT'
+	NOTICE::'select starting chapter'
+
+    RESPOBJ::chapterselection
 \`)
 
 
