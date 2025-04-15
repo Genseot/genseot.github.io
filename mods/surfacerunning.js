@@ -95,7 +95,7 @@ env.dialogueActors["yan"] = {
 env.dialogueActors["vak"] = {
     image: "/img/sprites/obesk/larval/larval5.gif",
     type: "thoughtform portrait-contain portrait-darkripple obesk larval loose-thought",
-    voice: ()=>play('talk', 0.8),
+    voice: ()=>play('talk', 2),
     name: "vak"
 }
 env.dialogueActors["evil"] = {
