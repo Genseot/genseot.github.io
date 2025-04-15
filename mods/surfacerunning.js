@@ -112,15 +112,15 @@ start
     RESPONSES::sys
         chapter 1: introduction<+>intro 
 	chapter 2: eyes<+>eyes
-	    SHOWIF::'eyes'
+	    SHOWIF::"eyes"
 	chapter 3: bone<+>bone
-	    SHOWIF::'bone'
+	    SHOWIF::"bone"
 	chapter 4: claws<+>claws
-	    SHOWIF::'claws'
+	    SHOWIF::"claws"
 	chapter 5: ichor<+>ichor
-	    SHOWIF::'ichor'
+	    SHOWIF::"ichor"
 	chapter 6: light<+>light
-	    SHOWIF::'light'
+	    SHOWIF::"light"
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
 \`)
@@ -198,7 +198,7 @@ start
 	besides, i am the one with the zzepel - i decide when we will rest
 
     sourceless
-	A PAUSE, I ASSUME VAK LOOKED AT YAN
+	A PAUSE
 
     vak
 	before you ask, now is not that time
