@@ -120,20 +120,19 @@ RESPOBJ::
 	end stream<+>END
 	    EXEC::moveTo("/local/depths/")
 `)
-
 // CHAPTER SELECT			
-env.dialogues["chapterselect"] = generateDialogueObject(\`
+env.dialogues["chapterselect"] = generateDialogueObject(`
 start
     sys
-        ATTENTION::'memory stream located';'SURFACE RUNNING';'by GENSEOT'
-	NOTICE::'select starting chapter'
+        ATTENTION::"memory stream located";"SURFACE RUNNING";"by GENSEOT"
+	NOTICE::"select starting chapter"
 
     RESPOBJ::chapterselection
-\`)
+`)
 
 
 // CHAPTER 1: INTRODUCTION
-env.dialogues["intro"] = generateDialogueObject(\`
+env.dialogues["intro"] = generateDialogueObject(`
 start
     sys
 	ATTENTION::'chapter 1';'introduction'
@@ -231,11 +230,11 @@ start
 	    EXEC::change('eyes', true)
 	return to chapter select<+>chapterselect
 	    EXEC::change('eyes', true)
-\`)
+`)
 
 
 // CHAPTER 2: EYES
-env.dialogues["eyes"] = generateDialogueObject(\`
+env.dialogues["eyes"] = generateDialogueObject(`
 start
     sys
 	ATTENTION::'chapter 2';'eyes'
@@ -250,11 +249,11 @@ start
 	    EXEC::change('bone', true)
 	return to chapter select<+>chapterselect
 	    EXEC::change('bone', true)
-\`)
+`)
 
 
 // CHAPTER 3: BONE
-env.dialogues["bone"] = generateDialogueObject(\`
+env.dialogues["bone"] = generateDialogueObject(`
 start
     sys
 	ATTENTION::'chapter 3';'bone'
@@ -269,11 +268,11 @@ start
 	    EXEC::change('claws', true)
 	return to chapter select<+>chapterselect
 	    EXEC::change('claws', true)
-\`)
+`)
 
 
 // CHAPTER 4: CLAWS
-env.dialogues["claws"] = generateDialogueObject(\`
+env.dialogues["claws"] = generateDialogueObject(`
 start
     sys
 	ATTENTION::'chapter 4';'claws'
@@ -288,11 +287,11 @@ start
 	    EXEC::change('ichor', true)
 	return to chapter select<+>chapterselect
 	    EXEC::change('ichor', true)
-\`)
+`)
 
 
 // CHAPTER 5: ICHOR
-env.dialogues["ichor"] = generateDialogueObject(\`
+env.dialogues["ichor"] = generateDialogueObject(`
 start
     sys
 	ATTENTION::'chapter 5';'ichor'
@@ -307,11 +306,11 @@ start
 	    EXEC::change('light', true)
 	return to chapter select<+>chapterselect
 	    EXEC::change('light', true)
-\`)					
+`)					
 
 
 // CHAPTER 6: LIGHT
-env.dialogues["light"] = generateDialogueObject(\`
+env.dialogues["light"] = generateDialogueObject(`
 start
     sys
 	ATTENTION::'chapter 6';'light'
@@ -322,7 +321,7 @@ start
 
     RESPONSES::sys
 	return to chapter select<+>chapterselect
-\`)
+`)
 		
 
 
