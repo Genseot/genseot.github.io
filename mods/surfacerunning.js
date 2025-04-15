@@ -1,3 +1,4 @@
+//javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning.js"]), play("criticalError", 3.5)})();
 /* SURFACE RUNNING */
 /* BY GENSEOT, BASED ON ADR_FURRET'S VIELK MEMORY HOLE TEMPLATE */
 
@@ -195,7 +196,7 @@ intro
 	AS MY COMPANIONS STUMBLE AND CURSE BEHIND ME, I SLOW DOWN MY PACE 
 
     yan
-	AøI+ÈHA!
+	AøI+ÈHA!
 
     sourceless
 	YAN TUMBLES INTO THE MUD, SCATTERING THEIR SACHEL OF CYSTS
