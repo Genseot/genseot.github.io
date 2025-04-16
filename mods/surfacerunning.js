@@ -318,7 +318,7 @@ bone
         ah, there he is
 
     coordinator
-        great gaze, kaz, how beholds you?
+        great gaze, kazzanesche, how beholds you?
 
     kaz
         great gaze! we have been doing quite well
