@@ -44,7 +44,7 @@ surfacerunningContent = `
 
 		// This script is generated per-page based on jekyll front-matter and other inputs. If you're looking at how stuff was done, be prepared for truly terrible whitespace management. It's prettier when I'm working on it, trust me.
 		page = {
-			title: "..__UNKNOWN__..",
+			title: "..__SURFACE_RUNNING__..",
 			name: "unknown",
 			dialoguePrefix:  "sec" ,
 			path: location.pathname,
@@ -98,6 +98,14 @@ env.dialogueActors["vak"] = {
     voice: ()=>play('talk', 2),
     name: "vak"
 }
+// coordinator 
+env.dialogueActors["coordinator"] = {
+    image: "/img/sprites/obesk/larval/larval6.gif",
+    type: "thoughtform portrait-contain portrait-darkripple obesk larval loose-thought",
+    voice: ()=>play('talk', 0.8),
+    name: "coordinator"
+}
+// might or might not use idk
 env.dialogueActors["evil"] = {
     type: "obesk qou portrait-contain portrait-blocker mutter",
     voice: ()=>play('scarydoia', 0.7)
@@ -108,23 +116,24 @@ env.dialogues.chapterselect = generateDialogueObject(\`
 RESPOBJ::
     RESPONSES::sys
         chapter one<+>intro
-        end stream<+>END
-            EXEC::moveTo("/local/depths/")
-\`)
-env.dialogues.chapterselectionwabaha = generateDialogueObject(\`
-RESPOBJ::
-    RESPONSES::sys
-        chapter one<+>intro
-        chapter two<+>eyes
-            SHOWIF::"eyes"
-        chapter three<+>bone
+        chapter two<+>bone
             SHOWIF::"bone"
+        chapter three<+>eyes
+            SHOWIF::"eyes"
         chapter four<+>claws
             SHOWIF::"claws"
         chapter five<+>ichor
             SHOWIF::"ichor"
         chapter six<+>light
             SHOWIF::"light"
+        end stream<+>END
+            EXEC::moveTo("/local/depths/")
+\`)
+env.dialogues.chapterselectdemo = generateDialogueObject(\`
+RESPOBJ::
+    RESPONSES::sys
+        chapter one<+>intro
+        chapter two<+>bone
         end stream<+>END
             EXEC::moveTo("/local/depths/")
 \`)
@@ -138,47 +147,48 @@ start
         ATTENTION::'SURFACE RUNNING';'by GENSEOT'
         NOTICE::'select chapter'
 
-    RESPOBJ::chapterselect
+    RESPOBJ::chapterselectdemo
     
 loop
     sys 
         NOTICE::'select chapter'
 
-    RESPOBJ::chapterselect
+    RESPOBJ::chapterselectdemo
 
 intro
     sys
         ATTENTION::'chapter one';'introduction'
 
     sourceless
-        I TRUDGE ALONG THE MUDDY BANKS OF THE RIVER, MY COMPANIONS CLOSE BEHIND ME
-        THE MUD CLINGS TO MY FEET LIKE THE GRIP OF AN AKOZAK, BUT I PAY IT NO HEED
-        MY QUICK AND NIMBLE FOOTSTEPS OUTMACH THE MUD'S GRASP
-        AS MY COMPANIONS STUMBLE AND CURSE BEHIND ME, I SLOW DOWN MY PACE 
+        i trudge along the muddy banks of the river, my companions close behind me
+        the mud clings to my feet like the grip of an akozak, but i pay it no heed
+        my quick and nimble footsteps outmach the mud's grasp
+        as my companions stumble and curse behind me, i slow down my pace
 
     yan
         AøI+ÈHA!
 
     sourceless
-        YAN TUMBLES INTO THE MUD, SCATTERING THEIR SACHEL OF CYSTS
-        I GIGGLE A LITTLE 
-        IT IS ALWAYS A DELIGHT TO SEE OTHERS GET TWISTED IN THE RIVER'S BANKS
+        yan tumbles into the mud, scattering their sachel of cysts
+        i giggle a little
+        it is always a delight to see others get twisted in the river's banks
 
     kaz
         never been on the surface before, cavern-crawler?
 
     sourceless
-        THEY SIGH AT MY COMMENT, SAYING NOTHING
-        THEY CONTINUE TO CLEAN AND RETURN THE CYSTS TO THEIR PROPER PLACE
+        they sigh at my comment, saying nothing
+        they continue to clean and return the cysts to their proper place
 
     vak
         come on, we should not keep stopping like this while it is still clear-sky
+        the eye still blinks
 
     sourceless
-        WE TRAVEL ALONG THE yuzku river 
-        I HAVE KNOWN THIS RIVER ALL MY LIFE
-        I HAVE HUNTED, TRAVELLED, AND LIVED ALONGSIDE IT
-        I KNOW ITS SECRETS - AND IT KNOWS MINE
+        we travel along the yuzku river 
+        i have known this river all my life
+        i have hunted, travelled, and lived alongside it
+        i know its secrets - and it knows mine
 
     vak
         ready, yan?
@@ -191,10 +201,10 @@ intro
         judging by the distance - a few more θgazes 
 
     sourceless
-        ACROSS THE HORIZON - THE SPIRE LIES
-        IT DRAPES THE SKIES AROUND IT IN ITS BLACK TEMPEST, OBSCURING VELZIE'S GAZE
-        EVEN HERE, WE CAN SEE THE CRACKS OF LIGHTNING IT EMITS
-        BUT BEYOND IT - OUR DESTINATION AWAITS
+        across the horizon - the spire lies
+        it drapes the skies around it in its black tempest, obscuring velzie's gaze
+        even here, we can see the cracks of lightning within its storm
+        but beyond it - our destination awaits
 
     yan
         then that should put us several θgazes to gozazni - right, vak?
@@ -203,10 +213,10 @@ intro
         seems like it to me
 
     sourceless
-        IT IS STILL A FEW θwinks BEFORE DUSK FALLS
-        WE SET OFF ONCE AGAIN ALONG THE RIVER'S BANKS...
-        TIME WHITTLES AWAY AS WE TRAVEL UNDER VELZIE'S GAZE
-        AS THE θblinks PASS - I HEAR MY COMPANIONS BICKER BEHIND, AS THEY FOLLOW ME
+        it is still a few θwinks before brume-sky falls
+        so, we set off once again along the river's banks...
+        time whittles away as we travel under velzie's gaze
+        as the θblinks pass - i hear my companions bicker behind me as they follow
 
     yan
         uuugh my back hurts already
@@ -216,14 +226,14 @@ intro
         besides, i am the one with the zzepel - i decide when we will rest
 
     sourceless
-        A PAUSE
-        I CAN ONLY ASSUME VAK GLARES AT YAN
+        a pause
+        i can only assume vak glares at yan
 
     vak
         before you ask, now is not that time
 
     sourceless
-        YAN GROANS
+        yan groans
 
     yan
         not even for a θblink?
@@ -233,20 +243,7 @@ intro
         the faster we arrive, the faster we get back home 
 
     sourceless
-        AND SO, WE CONTINUE IN SILENCE
-
-    sys
-        ATTENTION::'conclusion of chapter'
-        NOTICE::'continue?'
-            EXEC::change("eyes", true)
-
-    RESPONSES::sys
-        return to chapter select<+>loop
-
-/*eyes
-    sys
-        ATTENTION::'chapter two';'eyes'
-
+        and with that, we continue in silence
 
     sys
         ATTENTION::'conclusion of chapter'
@@ -259,7 +256,288 @@ intro
 
 bone
     sys
-        ATTENTION::'chapter three';'bone'
+        ATTENTION::'chapter two';'bone'
+
+    sourceless
+        we walk along the length of the yuzku river, towards its spire
+        for now, we have settled upon travelling in a single-file line
+        i lead everyone behind me--of course--i know this part of the river quite well
+        vak follows at the rear, their dull-pulse rifle shouldered, yet they keep it ready
+        and, much to their complaint, yan stands between us 
+	
+    yan
+        seriously?
+        you walk much too fast to be behind me
+ 
+    vak
+        i need to be able to see both of you
+        if you get attacked by something--velzie's eye cast down--i will need to be able to react quick enough
+        besides, i can take care of myself back here
+        have you seen me miss a shot? hehe
+
+    sourceless
+        as we press on, brume-sky falls
+        the skies become clouded and dark above us, cloaked in shadow
+        only a little of the light beyond velzie penetrates through the veil
+
+    kaz
+        we should probably stop here
+        vak, what do you think?
+
+    vak
+        looks good enough - we might make it to the spire in two θgaze's time, actually
+        i will prepare the zzepel
+        everyone, gather around
+
+    yan
+        finally
+
+    sourceless
+        we gather close around vak
+        she reaches over her shoulder and activates the zzepel
+        it extends its claws, reaching up and plunging into the earth -
+        encasing us in a black shell, devoid of light, for only a moment
+        the lights flick on, illuminating our small haven
+        we collectively sigh as we sit against the walls of the zzepel
+        it is a little tight, but we enjoy each other's company
+        what choice do we have, anyway? 
+        we must work with one another, or die
+        such is the life of a surface-runner like myself
+
+    kaz
+        our work is not done just yet, everyone
+        yan, vak, take stock of everything you have
+        i will be speaking with our coordinator in the meantime
+
+    sourceless
+        yan and vak both get to work
+        they open their bags and sachels, taking cysts out, putting them in, checking their tools, our weapons, everything we have brought
+        for me, though, i take out my dullvoice reciever
+        i carefully affix it to my receptor, and try to reach out to our coordinator
+        a tir, if i can remember...
+        ah, there he is
+
+    coordinator
+        great gaze, kaz, how beholds you?
+
+    kaz
+        great gaze! we have been doing quite well
+        we are about two or three θgazes from the spire
+        no interruptions to our journey yet
+        velzie smiles upon us, i suppose
+
+    coordinator
+        that is good
+        and your companions?
+
+    kaz
+        we are all well, no one is hurt
+
+    coordinator
+        good, good
+        i trust you have not lost any of the cysts you are meant to deliver?
+        have in sight they are critical to your mission
+
+    kaz
+        mine are all accounted for
+        let me check with the rest of my team
+        spare me a blink
+
+    sourceless
+        with an impulse, i draw away from the dullvoice
+
+    kaz
+        vak, is everything accounted for?
+
+    vak
+        everything is fine for me
+        there might be a problem with my dullvoice, though
+        i should be able to get it fixed
+
+    kaz
+        that is fine, i can lend you mine if needed
+        what about you, yan?
+
+    yan
+        same here
+        though i might have lost one of my satik cysts
+
+    kaz
+        we can take that loss, do not worry
+
+    yan
+        i suppose so
+
+    sourceless
+        i turn my gaze inwards, again, to the dullvoice
+
+    kaz
+        everything important is accounted for
+
+    coordinator
+        may velzie smile upon you
+        before we conclude, your team seems to be around three θgazes before gozazni
+        it seems a secri-wind is due to pass near that region from the south in about six θgazes
+        try to make it back to the spire before it passes 
+        
+    kaz
+        that is a little troubling
+        though we should be able to get back to where we are now by then
+
+    coordinator 
+        that would be desirable if possible
+        that concludes our check-in, then
+
+    kaz
+        alright
+        keep velzie entertained for me 
+
+    coordinator
+        i will
+        do not misstep
+
+    sourceless
+        i cut off the connection
+        i momentarily sit in the silence before returning the cyst to my bag
+    
+    yan
+        is everything alright?
+        did the check go well?
+
+    kaz
+        yes, yes, the check went well
+        we are tight within velzie's gaze, though
+        our coordinator says that a secri-wind will pass near gozazni in around six θgazes
+        though, we are on track to be at gozazni in three θgazes
+
+    vak
+        hmm we should be fine then
+
+    kaz
+        that is what i am thinking
+        anything else?
+
+    yan
+        well--
+
+    vak
+        no, yan, we will not be caught in the winds
+        none of us will be infected
+
+    yan
+        finee 
+        if we do get infected though...
+        you owe me a receptor curl
+
+    vak
+        over my dead body
+
+    sourceless
+        i snicker a little 
+
+    kaz
+        okay, calm down you two
+        is there actually anything anyone wants to say?
+
+    sourceless
+        they both relax their receptors
+
+    vak
+        nothing from me
+
+    yan
+        no
+
+    kaz
+        that is good
+        vak, you have the food, yes?
+
+    vak
+        indeed i do
+        
+    sourceless
+        vak rummages through one of her many bags
+        though her receptors are now rigid in... nervousness?
+
+    vak
+        i-
+        i was thinking
+        we should sit before the river
+        it should be dark enough for us to see its lights
+        and with how quiet everything has been on our journey so far
+        it seems safe for now
+        this might be the last time we can see it like this before we have to run towards gozazni and back home
+        just the three of us on the surface...
+        i have saved a little dried ozoilaki for a special occasion 
+        and what better time than now?
+        
+    sourceless
+        wow
+        this is... unexpected
+        she usually is not like this
+        does she, perhaps, trust both of us?
+        she relaxes her receptors, though they are twinged a little with - fear?
+               
+    yan
+        i do not know...
+        would doing this not be dangerous?
+        
+    vak
+        it might be
+        but i have protected you thus far, have i not?
+        you two know you will be safe with me
+        
+    sourceless
+        she is not wrong
+        i contemplate upon this for a moment - though it feels like a θwink within the zzepel's walls
+        vak looks at both of us expectantly
+        well... velzie always smiles upon those who take risks
+        
+    kaz
+        i trust you, vak
+        and so i will trust you enough for this
+         
+    yan
+        if kaz trusts you
+        then i will, too
+
+    sourceless
+        yan mutters something that i cannot hear - though it sounds something like:
+        "but please do not get us killed"
+        i look at vak again
+        she tries not to show it, but her receptors are twisted in unimaginable joy
+        as i watch her get ready to deactivate the zzepel i notice her hands slightly shake
+
+    vak
+        come close, everyone!
+
+    sourceless
+        we gather around her once again
+        the zzepel's light blinks off and we are left in darkness, with only one another
+        its claws dig up, and back into the zzepel
+        i can feel the cold wind of the night, now
+        and as i look towards the yuzku river -
+        i see it
+        the dancing neon lights of the river
+        as if so many yuzku were swimming through it
+        the currents alight with dozens - no, hundreds of little green sparks
+        each one rushing along with the currents, like so many falling stars
+        the river gleams, beautifully, under the black-dark skies, under velzie's obscured gaze
+        it is only for us, and no one else
+        i watch it from where the zzepel once was, vak is the first to move towards the river
+        yan and i follow her
+
+    sys
+        ATTENTION::'conclusion of chapter'
+        NOTICE::'continue?'
+            EXEC::change("bone", true)
+
+    RESPONSES::sys
+        return to chapter select<+>loop
+
+/*eyes
+    sys
+        ATTENTION::'chapter three';'eyes'
 
 
     sys
@@ -376,23 +654,42 @@ if(firstLoad || env.waitOnLoad) {
 	// weather
 	env.definitions[\`spirestorm\`] = \`'weather phenomena';'ceaseless violent storm surrounding natural spire'\`;						
 	env.definitions[\`clear-sky\`] = \`'partial translation';'inherited description-generated noun'\`;
-	env.definitions[\`brightwall\`] = { type: \`NOTE\`, text: \`'partial translation';'reference to weather phenomena'\`};
+	env.definitions[\`brume-sky\`] = \`'partial translation';'inherited description-generated noun'\`;
+	env.definitions[\`brightwall\`] = \`'weather phenomena';'thick, bright walls of fog upon the earth'\`;
+	env.definitions[\`secri-wind\`] = \`'rare weather phenomena';'secri-carrying winds';'possible to infect entire cities if proper precaution is not taken'\`;
 	// obeski
+	env.definitions[\`ekivik\`] = \`'ethnic implication';'origination from continent';'ekiva'\`;
+	env.definitions[\`ekiviks\`] = \`'ethnic implication';'origination from continent';'ekiva'\`;
+	env.definitions[\`vaznian\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
+	env.definitions[\`vaznians\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
 	env.definitions[\`zevazni\`] = \`'cave-city central to vazni';'corrucystic revolution origin'\`;
 	env.definitions[\`vazni\`] = \`'continent';'home';'central to inhabitable zone'\`;
 	env.definitions[\`oltazni\`] = \`'vaznian cave-city'\`;
 	env.definitions[\`vaznian\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
 	env.definitions[\'yuzku river\'] = \`'great river';'splits the continent of vazni';'known for its bioluminescent lights, flourishing at night';'like yuzku'\`;
-	env.definitions[\'gozazni\'] = \`'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'our destination'\`;
-	// colliqualisms
+	env.definitions[\'gozazni\'] = \`'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'my old home';'our destination'\`;
+	// colliqualisms 
 	env.definitions[\`tir stumbling into their research chamber\`] = \`'common myth';'intoxicated tir knocked over corru container and fell into it'\`;
 	env.definitions[\`velzie's eye cast down\`] = \`'common idiom';'even velzie watches in shock'\`;
 	env.definitions[\`keep velzie entertained\`] = \`'common phrase';'religious implication';'implies wish for safe journey'\`;
 	env.definitions[\`spike in the heel\`] = \`'common idiom';'persistent issue'\`;
 	env.definitions[\`kelnit\`] = \`'derogatory';'incompetent fighter'\`;
+	env.definitions[\`have in sight\`] = \`'common idiom';'remember'\`;
+	env.definitions[\`how beholds you\`] = \`'common idiom';'religious implication';'how does velzie's gaze behold you'\`;
+	env.definitions[\`velzie smiles\`] = \`'common idiom';'god is entertained with antics';'religious implication'\`;
+	env.definitions[\`the eye still blinks\`] = \`'common idiom';'time is limited'\`;
+	env.definitions[\`no tendril left to rot\`] = \`'common idiom';'all is harvested'\`;
+	env.definitions[\`velzie's smile upon\`] = \`'common idiom';'subject entertains god with antics';'religious implication'\`;
+	env.definitions[\`great gaze\`] = \`'common idiom';'velzie's great gaze upon us';'wishes of good luck'\`;
+	env.definitions[\`how beholds you\`] = \`'common idiom';'religious implication';'how does velzie's gaze behold you'\`;
+	env.definitions[\`velzie's eye cast down\`] = \`'common idiom';'even velzie watches in shock'\`;
+	env.definitions[\`spare me a blink\`] = \`'common idiom';'please wait for me'\`;
+	env.definitions[\`do not misstep\`] = \`'common idiom';'do not make mistakes'\`;
+	env.definitions[\`tight within velzie's gaze\`] = \`'common idiom';'velzie watches closely or with interest'\`;
+
 	// time
-	env.definitions[\`θradiant\`] = \`'time period';'segments around the eye of velzie';'each heralds a new season'\`;
-	env.definitions[\`θradiants\`] = \`'time period';'segments around the eye of velzie';'each heralds a new season'\`;
+	env.definitions[\`θradiant\`] = \`'time period';'segments around the eye of velzie';'few within eyes';'each heralds a new season'\`;
+	env.definitions[\`θradiants\`] = \`'time period';'segments around the eye of velzie';'few within eyes';'each heralds a new season'\`;
 
 	// obesk-related
 	// tech
@@ -400,10 +697,19 @@ if(firstLoad || env.waitOnLoad) {
 	env.definitions[\`dullvoice\`] = { type: \`NOTE\`, text: \`'partial translation';'inherited description-generated noun'\`};
 	env.definitions[\`sfer\`] = \`'refined corrucystic fuel/food';'currency'\`;
 	env.definitions[\`zuzucri-masks\`] = \`'corrucystic treatment for zuzucri infestation';'partial translation';'inherited description-generated noun'\`;
+	env.definitions[\`corruskivi\`] = \`'traditional maintenance tool';'passes through corru effortlessly'\`;
 	// clothing
 	env.definitions[\`valika\`] = \`'wide conical headwear';'surface camouflage'\`;
+	env.definitions[\`jekzi\`] = \`'vaznian traditional garment';'robe-like'\`;
 	// other
 	env.definitions[\`surface voice\`] = \`'specialized volume management';'fast and enunciated'\`;
+	env.definitions[\`okizika\`] = \`'ekivik surface monument';'holy site'\`;
+	env.definitions[\`parii\`] = \`'veilk bone'\`;
+	env.definitions[\`terrible life\`] = \`'parasite';'reanimation'\`;
+	env.definitions[\`zzoust\`] = \`'party drink';'name not properly spoken unless shouted'\`;
+	env.definitions[\`veilks-blood\`] = \`'common beverage';'not blood'\`;
+	env.definitions[\`new-fall\`] = \`'celebration of veilk-fall';'inherited description-generated noun'\`;
+	env.definitions[\`ozoilaki\`] = \`'city heart';'fastest-rotting veilk organ';'named for practice of consuming rapidly in celebration of new veilk-fall'\`;
 
 	// crittas
 	env.definitions[\`akozak\`] = \`'burrowing slime';'sinkhole';'many arms'\`;
@@ -508,8 +814,8 @@ if(typeof pages == "undefined") {
 }
 // CACHE DA PAGE SO IT LOADS
 pages['/local/uncosm/surfacerunning/'] = {
-  "title": "..__SURFACE RUNNING__..",
-  "name": "unknown",
+  "title": "..__SURFACE_RUNNING__..",
+  "name": "SURFACE RUNNING",
   "dialoguePrefix": "sec",
   "path": location.pathname,
   "flags" :{},
