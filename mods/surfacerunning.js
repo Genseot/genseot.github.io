@@ -207,7 +207,7 @@ intro
         but beyond it - our destination awaits
 
     yan
-        then that should put us several θgazes to gozazni - right, vak?
+        then that should put us a couple θgazes to gozazni - right, vak?
 
     vak
         seems like it to me
@@ -322,7 +322,7 @@ bone
 
     kaz
         great gaze! we have been doing quite well
-        we are about two or three θgazes from the spire
+        we are about two θgazes from the spire
         no interruptions to our journey yet
         velzie smiles upon us, i suppose
 
