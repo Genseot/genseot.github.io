@@ -152,7 +152,7 @@ start
 loop
     sys 
         NOTICE::'select chapter'
-	          EXEC::ratween(env.bgm, 0.75)
+            EXEC::ratween(env.bgm, 0.75)
 
     RESPOBJ::chapterselectdemo
 
@@ -299,7 +299,7 @@ bone
         it extends its claws, reaching up and plunging into the earth -
         encasing us in a black shell, devoid of light, for only a moment
         the lights flick on, illuminating our small haven
-	          EXEC::ratween(env.bgm, 0.4)
+            EXEC::ratween(env.bgm, 0.4)
         we collectively sigh as we sit against the walls of the zzepel
         it is a little tight, but we enjoy each other's company
         what choice do we have, anyway? 
@@ -463,14 +463,14 @@ bone
 
     vak
         i-
-        i was thinking
+        i, um, was thinking
         we should sit before the river
         it should be dark enough for us to see its lights
         and with how quiet everything has been on our journey so far
         it seems safe for now
         this might be the last time we can see it like this before we have to run towards gozazni and back home
         just the three of us on the surface...
-        i have saved a little dried ozoilaki for a special occasion 
+        i had saved a little dried ozoilaki for a special occasion 
         and what better time than now?
         
     sourceless
@@ -518,7 +518,7 @@ bone
         the zzepel's light blinks off and we are left in darkness, with only one another
         its claws dig up, and back into the zzepel
         i can feel the cold wind of the night, now
-	          EXEC::ratween(env.bgm, 0.75)
+            EXEC::ratween(env.bgm, 0.75)
         and as i look towards the yuzku river -
         i see it
         the dancing neon lights of the river
