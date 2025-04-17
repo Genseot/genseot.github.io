@@ -79,7 +79,7 @@ surfacerunningContent = `
 // kazzanesche vel zakori
 env.dialogueActors["kaz"] = {
     image: "/img/sprites/obesk/larval/something1.gif",
-    type: "thoughtform portrait-contain portrait-darkripple larval loose-thought",
+    type: "thoughtform portrait-contain portrait-darkripple larval portrait-dark loose-thought",
     voice: ()=>play('talkgal', 0.7),
     player: true,
     name: "kaz"
@@ -87,14 +87,14 @@ env.dialogueActors["kaz"] = {
 // yankani vel metvi
 env.dialogueActors["yan"] = {
     image: "/img/sprites/obesk/larval/larval2.gif",
-    type: "thoughtform portrait-contain portrait-darkripple obesk qou portrait-dark loose-thought",
+    type: "thoughtform portrait-contain portrait-darkripple obesk qou loose-thought",
     voice: ()=>play('talk', 1.3),
     name: "yan"
 }
 // vakallkorik kiv kazani
 env.dialogueActors["vak"] = {
     image: "/img/sprites/obesk/larval/larval5.gif",
-    type: "thoughtform portrait-contain portrait-darkripple obesk larval loose-thought",
+    type: "thoughtform portrait-contain portrait-darkripple obesk larval portrait-dark loose-thought",
     voice: ()=>play('talk', 2),
     name: "vak"
 }
