@@ -79,7 +79,7 @@ surfacerunningContent = `
 // kazzanesche vel zakori
 env.dialogueActors["kaz"] = {
     image: "/img/sprites/obesk/larval/something1.gif",
-    type: "thoughtform portrait-contain obesk qou portrait-dark loose-thought",
+    type: "thoughtform portrait-contain portrait-darkripple larval loose-thought",
     voice: ()=>play('talkgal', 0.7),
     player: true,
     name: "kaz"
@@ -87,7 +87,7 @@ env.dialogueActors["kaz"] = {
 // yankani vel metvi
 env.dialogueActors["yan"] = {
     image: "/img/sprites/obesk/larval/larval2.gif",
-    type: "thoughtform portrait-contain portrait-darkripple larval qou loose-thought",
+    type: "thoughtform portrait-contain portrait-darkripple obesk qou portrait-dark loose-thought",
     voice: ()=>play('talk', 1.3),
     name: "yan"
 }
@@ -152,6 +152,7 @@ start
 loop
     sys 
         NOTICE::'select chapter'
+	          EXEC::ratween(env.bgm, 0.75)
 
     RESPOBJ::chapterselectdemo
 
@@ -298,6 +299,7 @@ bone
         it extends its claws, reaching up and plunging into the earth -
         encasing us in a black shell, devoid of light, for only a moment
         the lights flick on, illuminating our small haven
+	          EXEC::ratween(env.bgm, 0.4)
         we collectively sigh as we sit against the walls of the zzepel
         it is a little tight, but we enjoy each other's company
         what choice do we have, anyway? 
@@ -506,7 +508,7 @@ bone
         "but please do not get us killed"
         i look at vak again
         she tries not to show it, but her receptors are twisted in unimaginable joy
-        as i watch her get ready to deactivate the zzepel i notice her hands slightly shake
+        as i watch her get ready to deactivate the zzepel i notice that her hands slightly shake
 
     vak
         come close, everyone!
@@ -516,6 +518,7 @@ bone
         the zzepel's light blinks off and we are left in darkness, with only one another
         its claws dig up, and back into the zzepel
         i can feel the cold wind of the night, now
+	          EXEC::ratween(env.bgm, 0.75)
         and as i look towards the yuzku river -
         i see it
         the dancing neon lights of the river
