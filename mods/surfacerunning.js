@@ -420,7 +420,7 @@ bone
         anything else?
 
     yan
-        well--
+        well what if--
 
     vak
         no, yan, we will not be caught in the winds
