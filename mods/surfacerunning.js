@@ -384,8 +384,10 @@ bone
     kaz
         that is troubling
         i will speak about it with the rest
+        hopefully it is possible to get to kozali quick enough
 
     coordinator 
+        for the sake of you and your team, we hope it is
         that is all, then
 
     kaz
@@ -476,13 +478,15 @@ bone
 
     sourceless
         we continue on this path... we stay at kozali... both lead to the same outcome...
-        we will be cut off returning, likely... infected, maybe...
+        we will be cut off returning, likely... 
+        ...and at worst, infected, maybe... 
+	...wait, no infection can be almost-certain if the winds blow just right...
 
     vak 
         ‡*KÄZ÷)Z@NÊ=¥S¢HÈ_:!
 
     sourceless
-        we cut through the spirestorm... 
+        rather, if we cut through the spirestorm... 
         injury is likely... but we make it to kozali with enough time left...
         ...but we will have to go through it once again...
         ...better than the secri-wind?... unsure...
@@ -502,7 +506,7 @@ bone
         im <em>sorry</em>!
         we tried to get your attention, but you were not responding!
         you were gazing like velzie, staring out into the distance
-        but that is besides the point!
+        but! that is besides the point!
         yan, would you...?
 
     yan
@@ -526,7 +530,7 @@ bone
         we will head towards the spirestorm
 
     sourceless
-        i hope we do not come to regret this
+        i hope we do not come to regret this decision
 
     sys
         ATTENTION::'conclusion of chapter'
