@@ -471,7 +471,8 @@ bone
         K3Ã0;‡Z?
 
     sourceless
-        the possiblities rush through my head
+        all the possiblities rush through my head
+        i try to undo the knots, see what may happen
 
     vak
         H|—E®s²7Y•!
