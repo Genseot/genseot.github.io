@@ -378,17 +378,15 @@ bone
 
     coordinator
         may velzie smile upon you
-        before we conclude, your team seems to be around three θgazes before gozazni
-        it seems a secri-wind is due to pass near that region from the south in about six θgazes
-        try to make it back to the spire before it passes 
+        before we conclude, your team seems to be four θgazes before kozali
+        it seems a secri-wind is due to pass near the region from the south in six θgazes
         
     kaz
-        that is a little troubling
-        though we should be able to get back to where we are now by then
+        that is troubling
+        i will speak about it with the rest
 
     coordinator 
-        that would be desirable if possible
-        that concludes our check-in, then
+        that is all, then
 
     kaz
         alright
@@ -409,126 +407,126 @@ bone
     kaz
         yes, yes, the check went well
         we are tight within velzie's gaze, though
-        our coordinator says that a secri-wind will pass near gozazni in around six θgazes
-        though, we are on track to be at gozazni in three θgazes
+        our coordinator says that a secri-wind will pass near kozali in six θgazes
 
-    vak
-        hmm we should be fine then
+    sourceless
+        at these words, everyone falls silent
+        i know what they must be thinking -
+        "a secri-wind? here? now?"
+        the air is heavy with a silent dread
+        we exchange glances, our receptors twisted in anxiety
 
     kaz
-        that is what i am thinking
-        anything else?
-
-    yan
-        well what if--
-
-    vak
-        no, yan, we will not be caught in the winds
-        none of us will be infected
-
-    yan
-        finee 
-        if we do get infected though...
-        you owe me a receptor curl
-
-    vak
-        over my dead body
+        they say we are four θgazes before kozali
+        so we should plan to get there--as fast as we can--before we get caught beyond the spire by the secri-wind...
 
     sourceless
-        i snicker a little 
+        ...but that would require us to take a new route
+        one faster towards kozali, even one θgaze faster...
+        one through the spirestorm
+        a long sigh escapes my lips
 
     kaz
-        okay, calm down you two
-        is there actually anything anyone wants to say?
-
-    sourceless
-        they both relax their receptors
-
-    vak
-        nothing from me
+        though we would need to take a faster route 
+        and we do not have one - 
+        unless we travel through the spirestorm
 
     yan
-        no
+        are you sure?
+        would it not be dangerous to travel through?
 
     kaz
-        that is good
-        vak, you have the food, yes?
+        yes, it might be
+        though the spirestorm should not be as violent this θradiant
+        but, even if it is, what other choice do we have?
+        even if the secri-wind does not pass through kozali, it might cut us off on one side or the other of the spire
+        then we would almost certainly be infected if we attempted to cross
 
     vak
-        indeed i do
-        
-    sourceless
-        vak rummages through one of her many bags
-        though her receptors are now rigid in... nervousness?
+        even so - should it not be safe to stay in kozali?
+        if we arrive, of course
 
-    vak
-        i-
-        i, um, was thinking
-        we should sit before the river
-        it should be dark enough for us to see its lights
-        and with how quiet everything has been on our journey so far
-        it seems safe for now
-        this might be the last time we can see it like this before we have to run towards gozazni and back home
-        just the three of us on the surface...
-        i had saved a little dried ozoilaki for a special occasion 
-        and what better time than now?
-        
-    sourceless
-        wow
-        this is... unexpected
-        she usually is not like this
-        does she, perhaps, trust both of us?
-        she relaxes her receptors, though they are twinged a little with - fear?
-               
-    yan
-        i do not know...
-        would doing this not be dangerous?
-        
-    vak
-        it might be
-        but i have protected you thus far, have i not?
-        you two know you will be safe with me
-        
-    sourceless
-        she is not wrong
-        i contemplate upon this for a moment - though it feels like a θwink within the zzepel's walls
-        vak looks at both of us expectantly
-        well... velzie always smiles upon those who take risks
-        
     kaz
-        i trust you, vak
-        and so i will trust you enough for this
-         
-    yan
-        if kaz trusts you
-        then i will, too
+        it is too uncertain
+        we do not know how defensible their position is against one -
+        their city is exposed to the outside and might not even have a deeper system to take refuge in
+        if the secri-wind passes through, then we will all almost certainly fall into a terrible life...
+        but if it does not, then we will be cut off from our route home for quite a time...
+        it--it is a dance upon veilk
+        we just--we do not know
+        anything can happen
 
     sourceless
-        yan mutters something that i cannot hear - though it sounds something like:
-        "but please do not get us killed"
-        i look at vak again
-        she tries not to show it, but her receptors are twisted in unimaginable joy
-        as i watch her get ready to deactivate the zzepel i notice that her hands slightly shake
+        i grip my head
+        too many uncertainties, too many risks, too much left to velzie
+        i begin tapping my head against the wall of the zzepel
+        x¶›¢Ã°! ]°ù*[‘%!
+        i notice yan and vak conversing among themselves
+        but my mind is too clouded to make out what they say
+        and soon, i am too deep within my mind to notice what is happening
+
+    yan
+        K3Ã0;‡Z?
+
+    sourceless
+        the possiblities rush through my head
 
     vak
-        come close, everyone!
+        H|—E®s²7Y•!
 
     sourceless
-        we gather around her once again
-        the zzepel's light blinks off and we are left in darkness, with only one another
-        its claws dig up, and back into the zzepel
-        i can feel the cold wind of the night, now
-            EXEC::ratween(env.bgm, 0.75)
-        and as i look towards the yuzku river -
-        i see it
-        the dancing neon lights of the river
-        as if so many yuzku were swimming through it
-        the currents alight with dozens - no, hundreds of little green sparks
-        each one rushing along with the currents, like so many falling stars
-        the river gleams, beautifully, under the black-dark skies, under velzie's obscured gaze
-        it is only for us, and no one else
-        i watch it from where the zzepel once was, vak is the first to move towards the river
-        yan and i follow her
+        we continue on this path... we stay at kozali... both lead to the same outcome...
+        we will be cut off returning, likely... infected, maybe...
+
+    vak 
+        ‡*KÄZ÷)Z@NÊ=¥S¢HÈ_:!
+
+    sourceless
+        we cut through the spirestorm... 
+        injury is likely... but we make it to kozali with enough time left...
+        ...but we will have to go through it once again...
+        ...better than the secri-wind?... unsure...
+
+    vak
+        --ZANESCHE!!
+        HEY!!
+
+    kaz
+        ìŠŸ=÷)¥!
+        both of you! get your hands off of me!!
+
+    yan
+        oh!! sorry
+
+    vak
+        im <em>sorry</em>!
+        we tried to get your attention, but you were not responding!
+        you were gazing like velzie, staring out into the distance
+        but that is besides the point!
+        yan, would you...?
+
+    yan
+        oh, yes
+        we have both decided...
+        the spirestorm - it is probably the best option
+        if we can get to kozali and back even a θgaze faster, then we should be alright 
+
+    vak
+        but still, it will be uncertain
+        a dance upon veilk - as you said
+
+    sourceless
+        so this is what they have chosen 
+        i can make this work
+        though the earth around the spire is craggy and clifflike, with mountains rising high -
+        i must make this work
+
+    kaz 
+        then it is decided
+        we will head towards the spirestorm
+
+    sourceless
+        i hope we do not come to regret this
 
     sys
         ATTENTION::'conclusion of chapter'
