@@ -643,7 +643,18 @@ eyes
     sourceless
         the veilk-herd is travelling upriver, where we have already passed
         as their tendril-steps shake the ground less and less, we head for the spire
-        θwinks pass as we travel downriver, the fleeting eye of velzie ever-watching our journey...
+	yan and vak converse behind me - though i cannot hear 
+        i think of the spirestorm...
+        what will we do? what will come of us?
+        will we survive? will we die?
+        the surface is dangerous... and the storm is no exception
+	i hope, sincerely, i have made the right decision
+        if not for me, but for both yan and vak too
+        i would not be able to bear the burden if one of them...
+        no, no -  i cannot think of this now
+        yet the thoughts swirl in my mind as we travel
+        a deep, gnawing fear--an anxiety--has set its teeth within me
+	but we travel nonetheless, passing θwinks, the fleeting eye of velzie ever-watching our journey...
        
     yan
         hey!
