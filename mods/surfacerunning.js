@@ -134,6 +134,7 @@ RESPOBJ::
     RESPONSES::sys
         chapter one<+>intro
         chapter two<+>bone
+        chapter three<+>eyes
         end stream<+>END
             EXEC::moveTo("/local/depths/")
 \`)
@@ -208,7 +209,7 @@ intro
         but beyond it - our destination awaits
 
     yan
-        then that should put us a couple θgazes to gozazni - right, vak?
+        then that should put us a couple θgazes to kozali - right, vak?
 
     vak
         seems like it to me
@@ -539,12 +540,523 @@ bone
             EXEC::change("bone", true)
 
     RESPONSES::sys
+        continue<+>eyes
         return to chapter select<+>loop
 
-/*eyes
+eyes
     sys
         ATTENTION::'chapter three';'eyes'
 
+    sourceless
+        i awaken splayed upon the floor of the zzepel
+            EXEC::ratween(env.bgm, 0.4)
+        the light is dim - it must be clear-sky now
+        it is silent
+        it seems neither yan nor vak have awoken yet
+        i drag my weary body up, resting upon the wall, careful not to disturb either of them 
+        last night was... difficult
+        i should let them rest for a while longer
+        but i, myself, stayed up late into the night planning the route within the spirestorm
+        i retrace the steps we should take, again and again and again
+        i check my bags once, twice, thrice to see if i have everything i need
+        the cysts we need to deliver to those in kozali
+        the weapons i and yan will use--vak has her rifle, of course 
+        the rest: aima cysts, satik cysts... it goes on
+        i can barely afford for anyone to be injured within the spirestorm
+        i might never forgive myself if someone were to die
+        i must be prepared
+        ...
+        wait - has the ground been shaking?
+        i have not noticed this before, but it becomes ever more apparent
+        what is this?
+        then suddenly - a great crash from outside the zzepel!
+        vak and yan jolt upright together
+        vak snatches her rifle from beside her
+        
+    yan
+        what is going on? 
+        what was that?
+
+    vak 
+        quiet!
+
+    sourceless 
+        the ground shakes - our zzepel shudders
+        the trembling blows do not relent
+        but - they yield to a sort of... pattern?
+        a pattern of grand, trembling -
+
+    kaz
+        tendril-steps
+        it is a veilk-herd
+
+    yan
+        this close?
+
+    vak
+        i mean - they could be beyond the river
+        do you know which direction you are facing?
+
+    yan
+        ... no
+    
+    kaz
+        hehe
+        great gaze you two
+
+    sourceless
+        our mourning routine begins - we work in mostly-silence
+        as silent as it can be as the veilk-herd passes us, their footsteps 
+        supplies, food, it is a blur to me...
+        we gather around vak, once again
+        the zzepel's light blinks off - we are left in a dim darkness
+        then its claws dig up from the earth and plunge back into the zzepel
+        i am hit with the blinding light of the surface
+            EXEC::ratween(env.bgm, 0.75)
+        it takes us all a moment to recover
+        the ground quakes as we stand on the surface
+        across the river, almost as tall as the spire across the horizon - a herd of veilk
+        they stretch tall into the sky, like moving spires
+        their eyes dart around the surface - looking, observing, searching?
+
+    yan
+        look - that one in the centre
+
+    sourceless
+        yan points out the one in the centre of the herd, the tallest
+        its receptors--like tree-branches--stretch high, crowned with fat celki
+        its eyes are multicoloured - cyan, magenta, yellow
+        all of them blink and dart around and sweep across the surface
+        one eye, however, is pinned upon us
+        watching like velzie's ceaseless gaze above
+
+    vak
+        they do not usually do that, do they?
+
+    yan
+        not unless they feel threatened
+        though i am not sure if this one does?
+        the herd is moving away from us, so...
+        probably not
+        maybe it is sick?
+
+    sourceless
+        the veilk-herd is travelling upriver, where we have already passed
+        as their tendril-steps shake the ground less and less, we head for the spire
+        θwinks pass as we travel downriver, the fleeting eye of velzie ever-watching our journey...
+       
+    yan
+        hey!
+
+    vak
+        what?
+        i did not even do anything this time
+
+    yan 
+        no, no 
+        on the shore
+        fairy-eyes!
+
+    sourceless
+        vak and i watch as yan scrambles towards the shore
+        they lift up a fairy-eye, waving it towards us
+
+    yan
+        theres two more here!!
+    
+    sourceless
+        yan returns with an armful of fairy-eyes, showing us before they put them in one of their sacks
+
+    yan
+        i could make amulets for the three of us...
+        later, of course
+
+    kaz
+        are you sure?
+        i have not seen you bring any of the tools necessary
+
+    yan
+        i can get by without
+        i have made some for you before, do you not remember?
+
+    kaz
+        hm, i do
+        that was when we were in azozali, though
+        not on the surface
+
+    vak
+        okay, both of you 
+        we should keep going
+
+    sourceless
+        we trudge on, again, in the banks of the river
+        it is mostly uneventful as we travel closer to the spirestorm
+        
+    vak
+        hey, hold on
+        get behind something
+    
+    sourceless
+        we stand on the top of a small hill
+        yan and i rush to take cover behind one of the many rock outcroppings near vak
+
+    vak
+        do you see it?
+        over there, near the bottom of the hill -
+        a lone guktik
+
+    kaz
+        and what of it?
+        it is heading away from the spirestorm
+        we will not even be in its path by the time we get down...
+        wait - do you want to shoot it?
+
+    vak
+        well, obviously
+        i am behind a rock with a rifle
+        what else were you expecting me to do?
+        
+    yan
+        would you not alert anything else if you shot it?
+
+    vak
+        i do not think so
+        did you see anything else?
+        tell me if you do 
+
+    yan
+        hmm 
+        nothing else it seems
+
+    vak
+        right
+    
+    sourceless
+        vak takes a moment to sweep across the landscape as we stand above...
+        it seems to her like there is nothing else
+        vak sets up the rifle on the rock, training its barrel towards its target
+        yan and i hold our breath, awaiting the pulse...
+        and she fires -
+        a bright white ---
+        then nothing at all
+        a dessicated corpse lies at the foot of the hill
+        steam rises from its body, from where its flesh was seared from the blast 
+
+    vak
+        ha
+        still got it 
+
+    sourceless
+        vak hurries down the hill
+        yan and i follow
+        as we get to the base, we stand afar as vak approaches the corpse
+        vak pokes and prods at it inquisitively, though they are certain it is dead already
+        
+    vak 
+        definitely dead 
+        it is clear!
+        sorry, just making sure
+
+    sourceless
+        yan crouches near the remains, examining the corpse
+        as they do so, they point out certain parts of the anatomy to us 
+
+    yan 
+        hm
+        this one seems to be an adult - as far as i can make out, at least 
+        this could have given us trouble if it spotted us 
+        look at its claw - long and sharp, its hard chitin could work as a blade 
+        this one is a tooth - see how it hooks on the end? once something is caught within, it cannot escape 
+        that one is a leg! we could have a proper feast tonight, hehe
+
+    sourceless
+        i observe yan from behind
+        under their breath, they question the corpse
+        
+    yan 
+        but why so close to a spirestorm?
+        i have not seen an adequate enough feeding-ground for anything near one 
+        it could not have come from the opposite side of the river - it is much too long to allow for crossing 
+        did it come from within?
+        how strange...
+
+    sourceless 
+        yan taps my leg
+
+    yan
+        kaz - knife?
+
+    kaz
+        oh yes
+
+    sourceless
+        i hand them one of my parii-knives
+        yan unsheathes it and quickly begins slicing select parts of the guktik
+
+    yan
+        ...torso... leg...
+        ...arm... claw...
+
+    sourceless
+        vak and i watch yan cut the bone and slice the flesh of the guktik
+        they harvest any viable part that can be eaten or used otherwise
+        i watch, impressed, at their efficency
+        yan finishes, their bag bulges with what they have collected
+        they sheath my knife and pats their hands upon their jekzi
+        
+    yan
+        kaz, your knife
+
+    kaz
+        no, no
+        you can keep it - you will need it later
+
+    sourceless
+        they nod, attaching the knife to their belt
+        
+    vak
+        so - 
+        we can probably travel a little closer to the spire, here
+        brume-sky will fall in, what, one or two θwinks 
+        
+    kaz
+        that should be fine 
+        just not too close, though
+        we should be in a more defensible position here
+
+    vak
+        sure
+        do you see that cliff-face over there? facing the river?
+        i think that should be good
+
+    kaz
+        it works
+        let us go, then
+
+    sourceless
+        we set off as the spire rises high, its storm choking the horizon
+        ...
+        we arrive at our destination
+
+    vak
+        around me, everyone
+
+    sourceless
+        we gather around
+        the zzepel's claws plunge up into the sky - then down into the earth
+        the lights flicker on
+            EXEC::ratween(env.bgm, 0.4)
+        our cramped haven, once again
+        
+    kaz
+        you know your duties, everyone
+
+    sourceless
+        yan and vak nod in assent
+        i affix my dullvoice to my receptor
+        the coordinator...
+
+    coordinator
+        great gaze, kazzanesche 
+        i trust everything is well?
+
+    kaz
+        great gaze my friend
+        yes - it is the same as always
+        it has been uneventful; no injuries, no losses
+
+    coordinator
+        i would expect nothing less of you
+        your cysts?
+
+    sourceless
+        i pull away from the dullvoice
+        i affirm with kaz and yan - nothing gone
+        i return
+
+    kaz
+        all accounted for
+
+    coordinator
+        good, good
+        as you know, the secri-wind is due in five θgazes
+        are you sure you can make to kozali in time?
+
+    kaz
+        yes, yes, we have rerouted
+        we decided to travel through the spirestorm
+        it should cut our time by a θgaze to kozali and back 
+        enough to bypass the secri-wind--
+  
+    coordinator
+        wait- stop
+        the <em>spirestorm</em>?
+        are you sure you can travel through it? <em>twice</em>?
+        you know of the dangers, correct? 
+        <em>especially</em> after last--
+
+    kaz
+        yes, yes, i understand
+        but is there anything else we can do?
+        the winds could cut us off on our way back 
+        we could even be infected!
+        i would rather risk death within the storm than a terrible life
+
+    coordinator
+        <em>kazzanesche</em>
+        do you know what you are talking about?
+        all of your companions could die
+        <em>you</em> could die
+        the storm almost spells the certain death of all of you
+
+    kaz
+        the winds do too!!
+        <em>you</em> do not know where it will blow either
+        it is all up to velzie
+        and i would rather have <em>this</em> decision upon my hands - 
+        rather than in velzie's
+
+    sourceless
+        our coordinator is silent for a moment
+        does he not understand the risks of the wind?
+        yet he berates me about the risks of the storm 
+        it is not like i decided this as i danced upon a veilk
+        i know what i am doing 
+        i have been through this before, i know what risks to take and what not to
+
+    coordinator
+        §Ø%¿\Á
+        both of us know i cannot convince you otherwise 
+        but <em>please</em> do not try to get everyone <em>and</em> yourself killed
+        <em>do not misstep</em>
+
+    sourceless
+        the connection is severed
+        žØìÉ
+        i withdraw from the dullvoice, tearing it off my receptor
+        
+    yan
+        hey, kaz?
+        what happened?
+
+    vak
+        you were looking... stressed
+        is everything alright?
+
+    kaz
+        Kô¶Ð
+        our coordinator does not approve
+        he does not want us to go into the spirestorm
+        is it only five θgazes until the secri-wind tears through this place!
+        and he is not even <em>attempting</em> to help
+        after everything... ugh...
+
+    sourceless
+        i slump back into the wall of the zzepel
+        my head is raised towards the ceiling
+
+    vak
+        ... right 
+        do you... do you need anything?
+        i was watching you today and you were...
+        stressed--like, really stressed--and a little... afraid?
+        please... tell us if there is anything we can do for you
+
+    yan
+        look - i need to be serious
+        she is right - <em>we</em> care for you
+        you are not alone in your troubles
+        we all have to bear the burden if we are to survive here
+        you know that more than either of us
+
+    sourceless
+        °&Ø¤%
+        i do not need this now
+
+    kaz
+        i am <em>fine</em>
+        i just--
+
+    yan
+        you very obviously are not 
+        we can both tell
+        you need a clear head tomorrow
+        it is life or death for all of us - going into the spirestorm
+        we need our leader to be capable - if you do not lead, then who will?
+        you have been through this many times before, you know that any mistake can and will lead to death
+        the surface is unforgiving, and if we want even a chance--
+
+    vak
+        yan, that is enough - that is too much
+        but they are right kaz
+        we need you as our leader
+        we need you to be clear-minded and ready 
+        so - we decided, if this stress is too much for you...
+        you need a break
+        
+    yan
+        yes, um
+        we decided that we should see the river tonight
+        the three of us, together
+        it might be our last chance to, before the storm... our destination...
+        what do you think?
+        
+    kaz
+        i-
+        i do not know what to say 
+        
+    sourceless
+        i choke on my words
+        all this, for <em>me</em>?
+        i- i- what??
+        my voice shakes as i speak
+
+    kaz
+        um...
+
+    sourceless
+        they both watch me expectantly - and nervously
+        to see what i will say
+        ...
+
+    kaz
+        ... yes
+
+    sourceless
+        i whisper
+        yet they seem to understand
+
+    vak
+        gather around me, please
+
+    sourceless
+        we gather around vak
+        the zzepel's light blinks off and we are left in darkness, with only one another
+        its claws dig up, and back into the zzepel
+        i can feel the cold wind of the night, now
+            EXEC::ratween(env.bgm, 0.75)
+   
+    vak
+        yan, you can go to the river...
+        i will talk to kaz for a moment
+
+    yan
+        sure
+
+    sourceless
+        yan moves towards the river, alone for now
+        and as i look towards the yuzku river -
+        i see it
+        the dancing neon lights of the river
+        as if so many yuzku were swimming through it
+        the currents alight with dozens - no, hundreds of little green sparks
+        each one rushing along with the currents, like so many falling stars
+        the river gleams, beautifully, under the black-dark skies, under velzie's obscured gaze
+        it is only for us, and no one else
+        vak sits beside me
+
+    vak
+        ... kaz, thank you
 
     sys
         ATTENTION::'conclusion of chapter'
@@ -552,12 +1064,141 @@ bone
             EXEC::change("claws", true)
 
     RESPONSES::sys
-        continue<+>claws
         return to chapter select<+>loop
 
+/*
 claws
     sys
         ATTENTION::'chapter four';'claws'
+
+    sourceless
+        the three of us stand before the storm
+        its baleful winds cry out as it rushes past our ears, curling around our receptors 
+        the incessant rain beats down hard upon the ground, beating upon the earth like the drummer of a grand festival 
+        its cracks of thunder light up the skies - blinding velzie's eye for a moment 
+        it is silent between us three
+        our receptors are all twisted in anticipation of the coming storm
+        each one of us are laden heavy with bags: restoratives, satiks; the tools necessary for us to survive
+        moments before, we each affixed our dullvoice receivers and found one another in the dull
+        i stare into the dark, inky-black of the spirestorm
+        i clutch yan's fairy amulet hard - its dead carapace digs into my skin
+        i send a pulse through the dullvoice 
+
+    kaz 
+        everyone... 
+        are we ready?
+
+    vak 
+        as ready as i will ever be
+
+    sourceless
+        a twinge of delight curls around her receptors...
+        she anticipates a good fight
+
+    yan 
+        yes - i think so 
+
+    sourceless 
+        that light in their eyes - i have seen it before...
+        it is hope
+        
+    kaz
+        now -  
+        weapons, everyone 
+
+    sourceless
+        yan and i unsheath our parii-daggers
+        vak readies her rifle
+
+    kaz 
+        let us head in
+
+    sourceless
+        we stride forward into the storm - 
+        and we are swallowed whole 
+        the skies wear a mourning-grey veil, only the lightning pierces the deep dark
+        we are obscured from velzie's gaze 
+        now we are truly alone upon the surface
+
+    kaz
+        by my side, everyone 
+        do not leave one another's sight at all costs
+        if either one of you get lost - use your flares 
+
+    sourceless
+        the craggy mountains rise high into the sky - trapping us within the routes between each
+        and in the centre - the spire, wreathed in its storm
+        it lies in wait, pointed towards velzie
+        the rain beats down upon my valika, hard 
+
+    kaz 
+        follow me
+
+    sourceless
+        the ways between each mountain are varied 
+        some may allow for us to travel by one another's side
+        and others force us into a single-file line 
+        as we do, we hold one another's hands, gripping each other tightly 
+        our amulets sway in the wind, like true fairies
+
+    vak 
+        [swear]!
+
+    yan 
+        what? what? 
+        what happened? you are still with us 
+
+    vak
+        no- no
+        did you see that? 
+        something was on that mountain 
+        it- i think it crawled away 
+        i am not sure if that was... just the storm 
+        i do not know 
+
+    kaz 
+        vak - are you sure? 
+        what did it look like?
+
+    vak 
+        it was... 
+        it looked like that guktik we saw before         
+        though it had too many claws, too many limbs 
+        and i felt... as if it were watching us? 
+
+    yan 
+        [swear]
+        there should not be anything else here!
+
+    kaz
+        which direction did it go?
+
+    vak
+        it came from... where the river is, i think
+        from the west 
+        and it went... towards the spire? 
+
+    yan 
+        <em>towards the spire</em>?? 
+
+    sourceless
+        this is not supposed to happen
+        something in the spirestorm, with us?
+        no that should not be possible 
+        but...
+        going towards the spire?
+        [swear] 
+        i planned to cut by the spire 
+        if something is going towards the spire from the river...
+
+    kaz
+        then let us give both places a wider berth
+        come on, keep going 
+
+    sourceless 
+        the gravel beneath our feet shifts uncomfortably 
+        but we keep going 
+        we travel through the labyrinthine mountain-passages, towards the east
 
 
     sys
@@ -669,11 +1310,13 @@ if(firstLoad || env.waitOnLoad) {
 	env.definitions[\`vaznian\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
 	env.definitions[\`vaznians\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
 	env.definitions[\`zevazni\`] = \`'cave-city central to vazni';'corrucystic revolution origin'\`;
-	env.definitions[\`vazni\`] = \`'continent';'home';'central to inhabitable zone'\`;
+	env.definitions[\`vazni\`] = \`'continent';'central to inhabitable zone'\`;
+	env.definitions[\`azali\`] = \`'continent';'home';'borders the inhabitable zone'\`;
 	env.definitions[\`oltazni\`] = \`'vaznian cave-city'\`;
 	env.definitions[\`vaznian\`] = \`'ethnic implication';'origination from continent';'vazni'\`;
-	env.definitions[\'yuzku river\'] = \`'great river';'splits the continent of vazni';'known for its bioluminescent lights, flourishing at night';'like yuzku'\`;
-	env.definitions[\'gozazni\'] = \`'vaznian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'my old home';'our destination'\`;
+	env.definitions[\'yuzku river\'] = \`'great river';'splits the continent of azali';'known for its bioluminescent lights, flourishing at night';'like yuzku'\`;
+	env.definitions[\'kozali\'] = \`'azalian gulch-city';'recently opened communications, unaware of the corrucystic revolution';'my old home';'our destination'\`;
+        env.definitions[\'azozali\'] = \`'azalian cave-city';'home'\`;
 	// colliqualisms 
 	env.definitions[\`tir stumbling into their research chamber\`] = \`'common myth';'intoxicated tir knocked over corru container and fell into it'\`;
 	env.definitions[\`velzie's eye cast down\`] = \`'common idiom';'even velzie watches in shock'\`;
