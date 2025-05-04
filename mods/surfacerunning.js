@@ -35,6 +35,9 @@ surfacerunningContent = `
 
 // SCRIPT
 	<script id="PageData">
+    		surface = \`"<div style='background: url(/img/textures/ccontours.gif); position: absolute; width: 100%; height: 100%;'></div>"\`;
+    		zzepel = \`"<div style='background: url(/img/textures/mcontours.gif); position: absolute; width: 100%; height: 100%;'></div>"\`;
+    		spirestorm = \`"<div style='background: url(/img/textures/fear.gif); position: absolute; width: 100%; height: 100%;'></div>"\`;
 		content = document.querySelector('#content')
 		body = document.body
 
@@ -67,6 +70,8 @@ surfacerunningContent = `
 		// onload stuff initialisation
 		onLoaded: ()=>{	
 			document.querySelectorAll('#grid-ref').forEach(e=>e.remove())
+			document.getElementById("content").insertAdjacentHTML("beforeend", "<div id='background' style='position: absolute; width: 100%; height: 100%;'></div>")
+    			background = document.getElementById("background");
 			body.setAttribute('page', page.name)
 			content.setAttribute('page', page.name)
 			document.querySelector('#static .enter').setAttribute('page', page.title)
@@ -241,7 +246,7 @@ reset
 loop
     sys 
         NOTICE::'select chapter'
-            EXEC::changeBgm(env.music.surface);
+            EXEC::changeBgm(env.music.surface);background.textContent='';background.insertAdjacentHTML("beforeend", surface);
 
     RESPOBJ::chapterselect
 
@@ -389,7 +394,7 @@ bone
         it extends its claws, reaching up and plunging into the earth -
         encasing us in a black shell, devoid of light, for only a moment
         the lights flick on, illuminating our small haven
-            EXEC::changeBgm(env.music.zzepel)
+            EXEC::changeBgm(env.music.zzepel);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);
         we collectively sigh as we sit against the walls of the zzepel
         it is a little tight, but we enjoy each other's company
         what choice do we have, anyway? 
@@ -638,7 +643,7 @@ eyes
 
     sourceless
         i awaken splayed upon the floor of the zzepel
-            EXEC::changeBgm(env.music.zzepel)
+            EXEC::changeBgm(env.music.zzepel);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);
         the lights are bright - it must be clear-sky now
         it is silent
         it seems neither yan nor vak have awoken yet
@@ -702,7 +707,7 @@ eyes
         the zzepel's light blinks off - we are left in a deep darkness
         then its claws dig up from the earth and plunge back into the zzepel
         i am hit with the blinding light of the surface
-            EXEC::changeBgm(env.music.surface)
+            EXEC::changeBgm(env.music.surface);background.textContent='';background.insertAdjacentHTML("beforeend", surface);
         it takes us all a moment to recover
         the ground quakes as we stand on the surface
         across the river, almost as tall as the spire across the horizon - a herd of veilk
@@ -936,7 +941,7 @@ eyes
         we gather around
         the zzepel's claws plunge up into the sky - then down into the earth
         the lights flicker on
-            EXEC::changeBgm(env.music.zzepel)
+            EXEC::changeBgm(env.music.zzepel);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);
         our cramped haven, once again
         
     kaz
@@ -1126,7 +1131,7 @@ eyes
         the zzepel's light blinks off and we are left in darkness, with only one another
         its claws dig up, and back into the zzepel
         i can feel the cold wind of the night, now
-            EXEC::changeBgm(env.music.surface)
+            EXEC::changeBgm(env.music.surface);background.textContent='';background.insertAdjacentHTML("beforeend", surface);
    
     vak
         yan, you can go to the river...
@@ -1209,7 +1214,7 @@ claws
     sourceless
         we stride forward into the storm - 
         and we are swallowed whole 
-            EXEC::changeBgm(env.music.spirestorm)
+            EXEC::changeBgm(env.music.spirestorm);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);background.insertAdjacentHTML("beforeend", spirestorm);
         the skies wear a mourning-grey veil, only the lightning pierces the deep dark
         we are obscured from velzie's gaze 
         now we are truly alone upon the surface
@@ -1964,7 +1969,7 @@ claws
         i am not too sure 
         but it does not matter now 
         the storm lets us out of its grasp -
-            EXEC::changeBgm(env.music.surface)
+            EXEC::changeBgm(env.music.surface);background.textContent='';background.insertAdjacentHTML("beforeend", surface);
         
     vak
         going to put down the zzepel, kaz
@@ -1977,7 +1982,7 @@ claws
         or this early during clear-sky?
         but regardless, we have endured so much 
         the zzepel closes, the lights flick on
-            EXEC::changeBgm(env.music.zzepel)
+            EXEC::changeBgm(env.music.zzepel);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);
         vak lays yan on the floor, aside from both of us
         i disconnect my dullvoice, putting it in my bag - vak does so to both herself and yan
         i- i realise how exhausted i am, actually
@@ -2015,7 +2020,7 @@ ichor
 
     sourceless
         my eyes open, i stir upon the ground
-            EXEC::changeBgm(env.music.zzepel)
+            EXEC::changeBgm(env.music.zzepel);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);
         it is still and silent in the zzepel - i am the only one awake once again
         the dim light illuminates only a little of what surrounds me - it is probably brume-sky right now
         i... do not usually wake at this time
@@ -2184,7 +2189,7 @@ light
 
     vak
         kazzz- great gaze 
-            EXEC::changeBgm(env.music.zzepel)
+            EXEC::changeBgm(env.music.zzepel);background.textContent='';background.insertAdjacentHTML("beforeend", zzepel);
 
     sourceless
         vak shakes me awake
@@ -2227,7 +2232,7 @@ light
     sourceless 
         i approach the zzepel - the opening of a panel and the press of a button is all it takes
         the zzepel closes, and now the surface lies open to us 
-            EXEC::changeBgm(env.music.surface)
+            EXEC::changeBgm(env.music.surface);background.textContent='';background.insertAdjacentHTML("beforeend", surface);
         
     vak
         could you- could you also take the zzepel, please 
@@ -2507,8 +2512,8 @@ env.pagePath = location.pathname;
 `
 
 // MAKE SURE DA PAGES VAR EXISTS !
-if(typeof pages == "undefined") {
-    pages = {}
+if (typeof pages == "undefined") {
+  pages = {}
 }
 // CACHE DA PAGE SO IT LOADS
 pages['/local/uncosm/surfacerunning/'] = {
@@ -2516,7 +2521,7 @@ pages['/local/uncosm/surfacerunning/'] = {
   "name": "SURFACE RUNNING",
   "dialoguePrefix": "sec",
   "path": location.pathname,
-  "flags" :{},
+  "flags": {},
   "pageClass": "",
   "originalContent": "",
   "blocks": [
@@ -2526,55 +2531,58 @@ pages['/local/uncosm/surfacerunning/'] = {
   "url": "/local/uncosm/surfacerunning/"
 }
 // SWUP DOSE PAGES OUT
-Object.defineProperty(swup.cache, 'pages', { get: () => pages, set: () => { } })
+Object.defineProperty(swup.cache, 'pages', {
+  get: () => pages,
+  set: () => {}
+})
 
 // REFRESH PAGE IF ITS EMPTY 4 SOME REASON
-if((location.pathname == "/local/uncosm/surfacerunning/") && (page.dialoguePrefix.includes("notfound"))) {
-    body.classList.add('hard-cut') // needed 4 the static sound to not break
-    moveTo("/local/uncosm/surfacerunning/")
-    body.classList.remove('hard-cut')
+if ((location.pathname == "/local/uncosm/surfacerunning/") && (page.dialoguePrefix.includes("notfound"))) {
+  body.classList.add('hard-cut') // needed 4 the static sound to not break
+  moveTo("/local/uncosm/surfacerunning/")
+  body.classList.remove('hard-cut')
 }
 
 // MEMORY HOLE
 document.addEventListener('corru_entered', () => {
-    if (page.path == '/local/uncosm/where/') {
-        env.uncode = {
-            input: content.querySelector('#code'),
-            enter: () => { // sorry mods that change this!
-                let value = env.uncode.input.value.toLowerCase().replaceAll(".", "").replaceAll("/", "")
+  if (page.path == '/local/uncosm/where/') {
+    env.uncode = {
+      input: content.querySelector('#code'),
+      enter: () => { // sorry mods that change this!
+        let value = env.uncode.input.value.toLowerCase().replaceAll(".", "").replaceAll("/", "")
 
-                if (value.length) {
-                    env.uncode.input.blur()
-                    cutscene(true)
-                    play('destabilize', 0.5)
-                    ratween(env.bgm, 0.1)
-                    content.classList.add('memorydive')
+        if (value.length) {
+          env.uncode.input.blur()
+          cutscene(true)
+          play('destabilize', 0.5)
+          ratween(env.bgm, 0.1)
+          content.classList.add('memorydive')
 
-                    if (!check("hub__funfriend-ah1") && value == "recosm") {
-                        //fuck you lol
-                        location.href = `/img/sprites/obesk/larval/larval7.gif`
-                    }
+          if (!check("hub__funfriend-ah1") && value == "recosm") {
+            //fuck you lol
+            location.href = `/img/sprites/obesk/larval/larval7.gif`
+          }
 
-                    if (swup.cache.exists(`/local/uncosm/${value}/`)) {
-                        setTimeout(() => {
-                            cutscene(false)
-                            moveTo(`/local/uncosm/${value}/`)
-                        }, 4000)
-                    } else {
-                        fetch(`/local/uncosm/${value}/`).then(resp => {
-                            if (resp.status == 404) {
-                                cutscene(false)
-                                startDialogue('wrong')
-                            } else {
-                                setTimeout(() => {
-                                    cutscene(false)
-                                    moveTo(`/local/uncosm/${value}/`)
-                                }, 4000)
-                            }
-                        })
-                    }
-                }
-            }
+          if (swup.cache.exists(`/local/uncosm/${value}/`)) {
+            setTimeout(() => {
+              cutscene(false)
+              moveTo(`/local/uncosm/${value}/`)
+            }, 4000)
+          } else {
+            fetch(`/local/uncosm/${value}/`).then(resp => {
+              if (resp.status == 404) {
+                cutscene(false)
+                startDialogue('wrong')
+              } else {
+                setTimeout(() => {
+                  cutscene(false)
+                  moveTo(`/local/uncosm/${value}/`)
+                }, 4000)
+              }
+            })
+          }
         }
-    };
+      }
+    }
+  };
 })
