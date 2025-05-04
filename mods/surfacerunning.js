@@ -260,7 +260,7 @@ intro
         AøI+ÈHA!
 
     sourceless
-        yan tumbles into the mud, scattering their sachel of cysts
+        yan tumbles into the mud, scattering their satchel of cysts
         i giggle a little
         it is always a delight to see others get twisted in the river's banks
 
@@ -377,7 +377,7 @@ bone
         vak, what do you think?
 
     vak
-        looks good enough - we might make it to the spire in two θgaze's time, actually
+        looks good enough - we might make it to the spire in two θgazes' time, actually
         i will prepare the zzepel
         everyone, gather around
 
@@ -404,7 +404,7 @@ bone
 
     sourceless
         yan and vak both get to work
-        they open their bags and sachels, taking cysts out, putting them in, checking their tools, our weapons, everything we have brought
+        they open their bags and satchels, taking cysts out, putting them in, checking their tools, our weapons, everything we have brought
         for me, though, i take out my dullvoice reciever
         i carefully affix it to my receptor, and try to reach out to our coordinator
         a tir, if i can remember...
@@ -595,7 +595,7 @@ bone
         oh!! sorry
 
     vak
-        im <em>sorry</em>!
+        i am <em>sorry</em>!
         we tried to get your attention, but you were not responding!
         you were gazing like velzie, staring out into the distance
         but! that is besides the point!
@@ -753,7 +753,7 @@ eyes
         they lift up a fairy-eye, waving it towards us
 
     yan
-        theres two more here!!
+        there are two more here!!
     
     sourceless
         yan returns with an armful of fairy-eyes, showing us before they put them in one of their sacks
@@ -892,7 +892,7 @@ eyes
     sourceless
         vak and i watch yan cut the bone and slice the flesh of the guktik
         they harvest any viable part that can be eaten or used otherwise
-        i watch, impressed, at their efficency
+        i watch, impressed, at their efficiency
         yan finishes, their bag bulges with what they have collected
         they sheath my knife and pat their hands upon their clothes
         
@@ -1040,7 +1040,7 @@ eyes
         Kô¶Ð
         our coordinator does not approve
         he does not want us to go into the spirestorm
-        is it only five θgazes until the secri-wind tears through this place!
+        it is only five θgazes until the secri-wind tears through this place!
         and he is not even <em>attempting</em> to help
         after everything... ugh...
 
@@ -1310,7 +1310,7 @@ claws
         got it
 
     sourceless
-        i search in my sachels with my free hand for an aima cyst
+        i search in my satchels with my free hand for an aima cyst
         i should have one...
         there - this is it, i think
         i attempt to thread the cyst's tassel through my valika...
@@ -1433,7 +1433,7 @@ claws
         i- i saw another sac, though i am not sure what it could be for...
         i tried to rupture either, but i missed...
         though - if it has an acid sac then i doubt it will just be chasing us on the surface
-        that is if its caught our scent... 
+        that is if it has caught our scent... 
         it would probably have retreated within the earth, for now 
         with luck it will probably leave us alone - or we just might have made it angrier 
         but then again, if there is one predator here, then there must be something else, of course -
@@ -1473,7 +1473,7 @@ claws
 
     sourceless
         i look upwards towards the spire -
-        its shifted back to where i remember it being, before the vision
+        it has shifted back to where i remember it being, before the vision
         it flourishes far in the distance, under the storm
         it is a little hard to make out where we are - but it will probably do
         the storm continues its relentless battering upon us - 
@@ -1595,7 +1595,7 @@ claws
         but for every one i kill, five others take its place 
         more meat for the slaughter, then 
         but i must find that choke-point - and quickly 
-        i am tiring, and i must kill all of them before the they overtake me
+        i am tiring, and i must kill all of them before they overtake me
         ---
             EXEC::changeBgm(env.music.kazswarm)
         the first of the guktik charges at me, swinging wildly 
@@ -1852,7 +1852,7 @@ claws
         may velzie smile upon you 
 
     sourceless
-        kaz rushes ahead of me
+        vak rushes ahead of me
         i am... feeling a little better now
         i hold on to the walls to keep me steady 
         i am not as fast as vak, but i limp along
@@ -2192,7 +2192,7 @@ light
 
     vak
         how long did you stay up?
-        its been clear-sky for a while 
+        it has been clear-sky for a while 
         i was waiting for you to wake up on your own, but...
         you did not 
         so i woke you up myself 
