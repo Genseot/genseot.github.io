@@ -51,6 +51,7 @@ surfacerunningContent = `
 
 // SCRIPT
 	<script id="PageData">
+                var changebackground;
     		surface = \`"<div class='background' style='background: url(/img/textures/ccontours.gif);'></div>"\`;
     		zzepel = \`"<div class='background' style='background: url(/img/textures/mcontours.gif);'></div>"\`;
     		spirestorm = \`"<div class='background' style='background: url(/img/textures/fear.gif);'></div>"\`;
@@ -90,6 +91,7 @@ surfacerunningContent = `
 			background.insertAdjacentHTML("beforeend", surface);
     			background = document.getElementById("background");
 			oldbackground = document.querySelector(".background");
+			oldbackgroundlist = document.querySelectorAll(".background");
 			body.setAttribute('page', page.name)
 			content.setAttribute('page', page.name)
 			document.querySelector('#static .enter').setAttribute('page', page.title)
@@ -264,7 +266,7 @@ reset
 loop
     sys 
         NOTICE::'select chapter'
-            EXEC::changeBgm(env.music.surface);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", surface);
+            EXEC::changeBgm(env.music.surface);
 
     RESPOBJ::chapterselect
 
@@ -412,7 +414,7 @@ bone
         it extends its claws, reaching up and plunging into the earth -
         encasing us in a black shell, devoid of light, for only a moment
         the lights flick on, illuminating our small haven
-            EXEC::changeBgm(env.music.zzepel);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", zzepel);
+            EXEC::changeBgm(env.music.zzepel);changebackground='zzepel';BackgroundSwap();
         we collectively sigh as we sit against the walls of the zzepel
         it is a little tight, but we enjoy each other's company
         what choice do we have, anyway? 
@@ -649,7 +651,7 @@ bone
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("eyes", true)
+            EXEC::change("eyes", true);changebackground='surface';BackgroundSwap();
 
     RESPONSES::sys
         continue<+>eyes
@@ -661,7 +663,7 @@ eyes
 
     sourceless
         i awaken splayed upon the floor of the zzepel
-            EXEC::changeBgm(env.music.zzepel);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", zzepel);
+            EXEC::changeBgm(env.music.zzepel);changebackground='zzepel';BackgroundSwap();
         the lights are bright - it must be clear-sky now
         it is silent
         it seems neither yan nor vak have awoken yet
@@ -725,7 +727,7 @@ eyes
         the zzepel's light blinks off - we are left in a deep darkness
         then its claws dig up from the earth and plunge back into the zzepel
         i am hit with the blinding light of the surface
-            EXEC::changeBgm(env.music.surface);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", surface);
+            EXEC::changeBgm(env.music.surface);changebackground='surface';BackgroundSwap();
         it takes us all a moment to recover
         the ground quakes as we stand on the surface
         across the river, almost as tall as the spire across the horizon - a herd of veilk
@@ -959,7 +961,7 @@ eyes
         we gather around
         the zzepel's claws plunge up into the sky - then down into the earth
         the lights flicker on
-            EXEC::changeBgm(env.music.zzepel);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", zzepel);
+            EXEC::changeBgm(env.music.zzepel);changebackground='zzepel';BackgroundSwap();
         our cramped haven, once again
         
     kaz
@@ -1106,15 +1108,12 @@ eyes
         but they are right kaz
         we need you as our leader
         we need you to be clear-minded and ready 
-        so - we decided, if this stress is too much for you...
-        you need a break
-        
-    yan
-        yes, um
+        so - we thought that if this stress is too much for you...
+        you need a break - something to take your mind off of things...
         we decided that we should see the river tonight
-        the three of us, together
+        all three of us
         it might be our last chance to, before the storm... our destination...
-        what do you think?
+        do you accept...?
         
     kaz
         i-
@@ -1149,7 +1148,7 @@ eyes
         the zzepel's light blinks off and we are left in darkness, with only one another
         its claws dig up, and back into the zzepel
         i can feel the cold wind of the night, now
-            EXEC::changeBgm(env.music.surface);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", surface);
+            EXEC::changeBgm(env.music.surface);changebackground='surface';BackgroundSwap();
    
     vak
         yan, you can go to the river...
@@ -1176,7 +1175,7 @@ eyes
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("claws", true)
+            EXEC::change("claws", true);changebackground='surface';BackgroundSwap();
 
     RESPONSES::sys
         continue<+>claws
@@ -1232,7 +1231,7 @@ claws
     sourceless
         we stride forward into the storm - 
         and we are swallowed whole 
-            EXEC::changeBgm(env.music.spirestorm);background.insertAdjacentHTML("beforeend", zzepel);background.insertAdjacentHTML("beforeend", spirestorm);
+            EXEC::changeBgm(env.music.spirestorm);changebackground='spirestorm';BackgroundSwap();
         the skies wear a mourning-grey veil, only the lightning pierces the deep dark
         we are obscured from velzie's gaze 
         now we are truly alone upon the surface
@@ -1987,7 +1986,7 @@ claws
         i am not too sure 
         but it does not matter now 
         the storm lets us out of its grasp -
-            EXEC::changeBgm(env.music.surface);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", surface);
+            EXEC::changeBgm(env.music.surface);changebackground='surface';BackgroundSwap();
         
     vak
         going to put down the zzepel, kaz
@@ -2000,7 +1999,7 @@ claws
         or this early during clear-sky?
         but regardless, we have endured so much 
         the zzepel closes, the lights flick on
-            EXEC::changeBgm(env.music.zzepel);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", zzepel);
+            EXEC::changeBgm(env.music.zzepel);changebackground='zzepel';BackgroundSwap();
         vak lays yan on the floor, aside from both of us
         i disconnect my dullvoice, putting it in my bag - vak does so to both herself and yan
         i- i realise how exhausted i am, actually
@@ -2025,7 +2024,7 @@ claws
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("ichor", true)
+            EXEC::change("ichor", true);changebackground='surface';BackgroundSwap();
 
     RESPONSES::sys
         continue<+>ichor
@@ -2038,7 +2037,7 @@ ichor
 
     sourceless
         my eyes open, i stir upon the ground
-            EXEC::changeBgm(env.music.zzepel);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", zzepel);
+            EXEC::changeBgm(env.music.zzepel);changebackground='zzepel';BackgroundSwap();
         it is still and silent in the zzepel - i am the only one awake once again
         the dim light illuminates only a little of what surrounds me - it is probably brume-sky right now
         i... do not usually wake at this time
@@ -2195,7 +2194,7 @@ ichor
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("light", true)
+            EXEC::change("light", true);changebackground='surface';BackgroundSwap();
 
     RESPONSES::sys
         continue<+>light
@@ -2207,7 +2206,7 @@ light
 
     vak
         kazzz- great gaze 
-            EXEC::changeBgm(env.music.zzepel);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", zzepel);
+            EXEC::changeBgm(env.music.zzepel);changebackground='zzepel';BackgroundSwap();
 
     sourceless
         vak shakes me awake
@@ -2250,7 +2249,7 @@ light
     sourceless 
         i approach the zzepel - the opening of a panel and the press of a button is all it takes
         the zzepel closes, and now the surface lies open to us 
-            EXEC::changeBgm(env.music.surface);oldbackground.classList.remove("background");oldbackground.classList.add("oldbackground");background.insertAdjacentHTML("beforeend", surface);
+            EXEC::changeBgm(env.music.surface);
         
     vak
         could you- could you also take the zzepel, please 
@@ -2302,11 +2301,11 @@ light
         ATTENTION::'conclusion of memory stream' 
         AUTHOR'S NOTE::'hello!!! hope you enjoyed the story!!';'this concludes my first corru mod - i have plans for a few more things, though nothing like this again probably';'though if you do enjoy this - tell me!! i might consider making more things like this!!'
         AUTHOR'S NOTE (CONT.)::'anyway, to conclude - have a great day!! if you want to reread the story, all the chapters will be available in the chapter select (each chapter unlocks after you finish the previous one, if you havent seen)';'bye!!!'
+        EXEC::ClearBackground()
 
     RESPONSES::sys
         return to chapter select<+>loop
 \`)
-		
 
 
 
@@ -2528,6 +2527,27 @@ env.pagePath = location.pathname;
 </script>
 </div>
 `
+
+function BackgroundSwap() {
+    switch(changebackground) {
+        case "surface":
+            background.insertAdjacentHTML("beforeend", surface);
+            break;
+        case "zzepel":
+            background.insertAdjacentHTML("beforeend", zzepel);
+            break;
+        case "spirestorm":
+            background.insertAdjacentHTML("beforeend", zzepel);
+            background.insertAdjacentHTML("beforeend", spirestorm);
+            break;
+    }
+    setTimeout(function(){
+        oldbackground=document.querySelector(".background");
+        oldbackground.classList.remove("background");
+        oldbackground.classList.add("oldbackground");
+        oldbackgroundlist.forEach(oldbackground => oldbackground.remove());
+    }, 1500);
+}
 
 // MAKE SURE DA PAGES VAR EXISTS !
 if (typeof pages == "undefined") {
