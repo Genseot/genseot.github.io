@@ -266,7 +266,7 @@ reset
 loop
     sys 
         NOTICE::'select chapter'
-            EXEC::changeBgm(env.music.surface);
+            EXEC::changeBgm(env.music.surface);changebackground='surface';BackgroundSwap();
 
     RESPOBJ::chapterselect
 
@@ -2249,7 +2249,7 @@ light
     sourceless 
         i approach the zzepel - the opening of a panel and the press of a button is all it takes
         the zzepel closes, and now the surface lies open to us 
-            EXEC::changeBgm(env.music.surface);
+            EXEC::changeBgm(env.music.surface);changebackground='surface';BackgroundSwap();
         
     vak
         could you- could you also take the zzepel, please 
