@@ -52,9 +52,9 @@ surfacerunningContent = `
 // SCRIPT
 	<script id="PageData">
                 var changebackground;
-    		surface = \`"<div class='background' style='background: url(/img/textures/ccontours.gif);'></div>"\`;
-    		zzepel = \`"<div class='background' style='background: url(/img/textures/mcontours.gif);'></div>"\`;
-    		spirestorm = \`"<div class='background' style='background: url(/img/textures/fear.gif);'></div>"\`;
+    		surface = \`<div class='background' style='background: url(/img/textures/ccontours.gif);'></div>\`;
+    		zzepel = \`<div class='background' style='background: url(/img/textures/mcontours.gif);'></div>\`;
+    		spirestorm = \`<div class='background' style='background: url(/img/textures/fear.gif);'></div>\`;
 		content = document.querySelector('#content')
 		body = document.body
 
@@ -658,6 +658,7 @@ bone
 eyes
     sys
         ATTENTION::'chapter three';'eyes'
+        CONTENT_WARNING::'description of animal death & remains'
 
     sourceless
         i awaken splayed upon the floor of the zzepel
@@ -1182,7 +1183,7 @@ eyes
 claws
     sys
         ATTENTION::'chapter four';'claws'
-        ATTENTION::'content warning';'contains description of injuries, people & animals being hurt & killed'
+        CONTENT_WARNING::'contains description of injuries, people & animals being hurt & killed'
 
     sourceless
         the three of us stand before the storm
@@ -2031,7 +2032,7 @@ claws
 ichor
     sys
         ATTENTION::'chapter five';'ichor'
-        ATTENTION::'content warning';'contains description of injuries'
+'       CONTENT_WARNING::'contains description of injuries'
 
     sourceless
         my eyes open, i stir upon the ground
