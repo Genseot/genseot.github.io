@@ -2544,9 +2544,9 @@ function BackgroundSwap() {
         oldbackground = document.querySelector(".background");
         oldbackground.classList.remove("background");
         oldbackground.classList.add("oldbackground");
+	oldbackgroundlist = document.querySelectorAll(".oldbackground");
+    	oldbackgroundlist.forEach(oldbackground => oldbackground.remove());
     }, 1500);
-    oldbackgroundlist = document.querySelectorAll(".background");
-    oldbackgroundlist.forEach(oldbackground => oldbackground.remove());
 }
 
 // MAKE SURE DA PAGES VAR EXISTS !
