@@ -90,8 +90,6 @@ surfacerunningContent = `
 			document.getElementById("content").insertAdjacentHTML("beforeend", "<div id='background' style='position: absolute; width: 100%; height: 100%;'></div>")
 			background.insertAdjacentHTML("beforeend", surface);
     			background = document.getElementById("background");
-			oldbackground = document.querySelector(".background");
-			oldbackgroundlist = document.querySelectorAll(".background");
 			body.setAttribute('page', page.name)
 			content.setAttribute('page', page.name)
 			document.querySelector('#static .enter').setAttribute('page', page.title)
@@ -2528,6 +2526,10 @@ env.pagePath = location.pathname;
 `
 
 function BackgroundSwap() {
+    oldbackground = document.querySelector(".background");
+    oldbackground.classList.remove("background");
+    oldbackground.classList.add("oldbackground");
+    oldbackgroundlist = document.querySelectorAll(".oldbackground");
     switch(changebackground) {
         case "surface":
             background.insertAdjacentHTML("beforeend", surface);
@@ -2541,10 +2543,6 @@ function BackgroundSwap() {
             break;
     }
     setTimeout(function(){
-        oldbackground = document.querySelector(".background");
-        oldbackground.classList.remove("background");
-        oldbackground.classList.add("oldbackground");
-	oldbackgroundlist = document.querySelectorAll(".oldbackground");
     	oldbackgroundlist.forEach(oldbackground => oldbackground.remove());
     }, 1500);
 }
