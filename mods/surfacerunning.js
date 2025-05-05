@@ -364,7 +364,7 @@ intro
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("bone", true)
+            EXEC::change("bone", true);
 
     RESPONSES::sys
         continue<+>bone
@@ -651,7 +651,7 @@ bone
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("eyes", true);changebackground='surface';BackgroundSwap();
+            EXEC::change("eyes", true);changebackground='surface';BackgroundSwap();changeBgm(env.music.surface);
 
     RESPONSES::sys
         continue<+>eyes
@@ -2024,7 +2024,7 @@ claws
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("ichor", true);changebackground='surface';BackgroundSwap();
+            EXEC::change("ichor", true);changebackground='surface';BackgroundSwap();changeBgm(env.music.surface);
 
     RESPONSES::sys
         continue<+>ichor
@@ -2194,7 +2194,7 @@ ichor
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("light", true);changebackground='surface';BackgroundSwap();
+            EXEC::change("light", true);changebackground='surface';BackgroundSwap();changeBgm(env.music.surface);
 
     RESPONSES::sys
         continue<+>light
@@ -2301,7 +2301,6 @@ light
         ATTENTION::'conclusion of memory stream' 
         AUTHOR'S NOTE::'hello!!! hope you enjoyed the story!!';'this concludes my first corru mod - i have plans for a few more things, though nothing like this again probably';'though if you do enjoy this - tell me!! i might consider making more things like this!!'
         AUTHOR'S NOTE (CONT.)::'anyway, to conclude - have a great day!! if you want to reread the story, all the chapters will be available in the chapter select (each chapter unlocks after you finish the previous one, if you havent seen)';'bye!!!'
-        EXEC::ClearBackground()
 
     RESPONSES::sys
         return to chapter select<+>loop
