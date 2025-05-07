@@ -2032,7 +2032,7 @@ claws
 ichor
     sys
         ATTENTION::'chapter five';'ichor'
-'       CONTENT WARNING::'contains description of injuries'
+        CONTENT WARNING::'contains description of injuries'
 
     sourceless
         my eyes open, i stir upon the ground
