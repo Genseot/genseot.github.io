@@ -12,7 +12,8 @@
         <br>
         <div class="action">
         	<h2>corru.observer</h2>
-        	<p>The future holds many things - this, the Candle knows.</p>
+                <p>Mods for the webgame <a href="https://corru.observer">corru.observer</a>.</p>
+        	<p style="text-align:right"><actionbutton onclick="loadCorruMods()">Continue</actionbutton></p>
         </div>
     <br>
     <p><actionbutton onclick="loadIndex()">Return</actionbutton></p>
