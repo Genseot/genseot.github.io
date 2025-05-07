@@ -12,7 +12,7 @@
         <br>
         <div class="action">
         	<h2>corru.observer</h2>
-                <p>Mods for the webgame <a href="https://corru.observer">corru.observer</a>.</p>
+                <p>Mods for the webgame <crystal><a href="https://corru.observer">corru.observer</a></crystal>.</p>
         	<p style="text-align:right"><actionbutton onclick="loadCorruMods()">Continue</actionbutton></p>
         </div>
     <br>
