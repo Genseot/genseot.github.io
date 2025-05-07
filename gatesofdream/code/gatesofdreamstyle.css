@@ -1,13 +1,13 @@
 rose {color:#ff60bc; font-style:italic;}
 heart {color:#fc9cff; font-weight: bold; font-style:normal;}
-crystal {color:#ff42ff; font-weight: bold; font-style:normal;}
+crystal {color:#ff42ff; text-shadow: 0px 0px 4px #ff77ff; font-weight: bold; font-style:normal;}
 gale {color:#87c1da; font-style:italic;}
 flame {color:#ff8027; font-weight: bold; font-style:normal;}
 scar {color:#b44dfb; font-weight: bold; font-style:normal;}
 star {color:#a2a2ff; font-weight: bold; font-style:normal;}
-candle {color:#ffdc02; font-weight: bold; font-style:italic;}
+candle {color:#ffdc02; text-shadow: 0px 0px 4px #e1bc39; font-weight: bold; font-style:italic;}
 threshold {color:#68626e; font-weight: bold; font-style:italic;}
-mirror {color:#b2b2b2; font-weight: bold; font-style:normal;}
+mirror {color:#b2b2b2; text-shadow: 0px 0px 4px #b3b3b3; font-weight: bold; font-style:normal;}
 
 p {font-style:italic;}
 b {font-weight:bold;}
