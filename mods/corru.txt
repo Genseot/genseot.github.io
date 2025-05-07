@@ -1,0 +1,15 @@
+  <br>
+	      <div class="storylettitle">
+          <h2>corru.observer Mods</h2>
+        	<p>This is the sub-category compendium of mods I have made for corru.observer - more to come, probably.</p>
+        </div>
+        <br>
+        <div class="action">
+        	<h2>Surface-Running</h2>
+        	<p>A 6-chapter memory hole following Kazzanesche and her companions as they travel down the Yuzku River towards the Azalian gulch-city, Kozali, and the trials they endure along the way.</p>
+        	<p><code>https://genseot.github.io/mods/surfacerunning.js</code> (input into sys mod list)</p>
+          <p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning.js"]), play("criticalError", 3.5)})();</code> (input into console)</p>
+        </div>
+    <br>
+    <p><actionbutton onclick="loadMods()">Return</actionbutton></p>
+    <br>
