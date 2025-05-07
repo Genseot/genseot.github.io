@@ -19,3 +19,8 @@ async function loadMods() {
 	.then(response => response.text())
 	.then((data) => { document.getElementById("storylet").innerHTML = data; })
 }
+async function loadCorruMods() {
+  await fetch("/mods/corru.txt")
+	.then(response => response.text())
+	.then((data) => { document.getElementById("storylet").innerHTML = data; })
+}
