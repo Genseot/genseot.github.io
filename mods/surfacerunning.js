@@ -719,7 +719,7 @@ eyes
         great gaze you two
 
     sourceless
-        our mourning routine begins - we all mostly work in silence
+        our morning routine begins - we all mostly work in silence
         as silent as it can be as the veilk-herd passes us, their tendril-steps shaking the earth 
         supplies, food, it is a blur to me...
         we gather around vak, once again
