@@ -12,8 +12,8 @@
         		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunning.js</code> (input into sys mod list)</p>
                 	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunning.js"]), play("criticalError", 3.5)})();</code> (input into console before loading the Memory Hole page)</p>   
 		<h3>Contest Version</h3>
-        		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunningc.js</code> (input into sys mod list)</p>
-                	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunningc.js"]), play("criticalError", 3.5)})();</code> (input into console before loading the Memory Hole page)</p>
+        		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js</code> (input into sys mod list)</p>
+                	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js"]), play("criticalError", 3.5)})();</code> (input into console before loading the Memory Hole page)</p>
         </div>
     <br>
     <p><actionbutton onclick="loadMods()">Return</actionbutton></p>
