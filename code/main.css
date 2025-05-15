@@ -1,4 +1,4 @@
-h2 {border-bottom: 1px solid white;}
+h2, h3 {border-bottom: 1px solid white;}
 p {font-size:16px;} 
 h1, h2, p {font-family:slabo; color:white; font-style:normal;}
 a {color:inherit; text-decoration: inherit;}
