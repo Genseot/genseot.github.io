@@ -1,6 +1,6 @@
 h2, h3 {border-bottom: 1px solid white;}
 p {font-size:16px;} 
-h1, h2, p {font-family:slabo; color:white; font-style:normal;}
+h1, h2, h3, p {font-family:slabo; color:white; font-style:normal;}
 a {color:inherit; text-decoration: inherit;}
 @font-face {font-family:"slabo";src: url("https://file.garden/ZgeTHkDRARPwyXFA/Slabo_27px.zip");} 
 body{background-color:#1d1d1d;}
