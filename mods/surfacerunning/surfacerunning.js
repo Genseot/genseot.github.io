@@ -1,5 +1,5 @@
 /* SURFACE RUNNING */
-/* BY GENSEOT, BASED ON ADR_FURRET'S VIELK MEMORY HOLE TEMPLATE */
+/* BY GENSEOT, CODE BASED ON ADR_FURRET'S VIELK MEMORY HOLE TEMPLATE */
 
 /* TABLE OF CONTENTS */
 // STYLE
@@ -53,7 +53,8 @@ surfacerunningContent = `
                 var changebackground;
     		surface = \`<div class='background' style='background: url(/img/textures/ccontours.gif);'></div>\`;
     		zzepel = \`<div class='background' style='background: url(/img/textures/mcontours.gif);'></div>\`;
-    		spirestorm = \`<div class='background' style='background: url(/img/textures/fear.gif);'></div>\`;
+    		spirestorm = \`<div class='background' style='background: url(/img/textures/mspinnel.gif);'></div><div class='background' style='background: url(/img/textures/fear.gif);'></div>\`;
+                river = \`<div class='background' style='background: url(/img/textures/chromec.gif);'></div>\`;
 		content = document.querySelector('#content')
 		body = document.body
 
@@ -228,6 +229,8 @@ RESPOBJ::
             SHOWIF::"ichor"
         chapter six: light<+>light
             SHOWIF::"light"
+        supplemental: epilogue<+>epilogue
+            SHOWIF::"supplemental"
         reset chapters<+>resetconfirm
         end stream<+>END
             EXEC::moveTo("/local/depths/")
@@ -255,7 +258,7 @@ resetconfirm
 reset
     sys
         ATTENTION::'chapter data has been reset'
-            EXEC::change("bone", false);change("eyes", false);change("claws", false);change("ichor", false);change("light", false);
+            EXEC::ResetChapters();
 
     RESPONSES::sys
         return to chapter select<+>loop
@@ -648,7 +651,7 @@ bone
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("eyes", true);changebackground='surface';BackgroundSwap();changeBgm(env.music.surface);
+            EXEC::change("eyes", true);ResetEffects();
 
     RESPONSES::sys
         continue<+>eyes
@@ -657,7 +660,7 @@ bone
 eyes
     sys
         ATTENTION::'chapter three';'eyes'
-        ::'description of animal death & remains'
+        CONTENT WARNING::'contains description of animal death & remains'
 
     sourceless
         i awaken splayed upon the floor of the zzepel
@@ -1146,7 +1149,7 @@ eyes
         the zzepel's light blinks off and we are left in darkness, with only one another
         its claws dig up, and back into the zzepel
         i can feel the cold wind of the night, now
-            EXEC::changeBgm(env.music.surface);changebackground='surface';BackgroundSwap();
+            EXEC::changeBgm(env.music.surface);changebackground='river';BackgroundSwap();
    
     vak
         yan, you can go to the river...
@@ -1182,7 +1185,7 @@ eyes
 claws
     sys
         ATTENTION::'chapter four';'claws'
-        ::'contains description of injuries, people & animals being hurt & killed'
+        CONTENT WARNING::'contains description of injuries, people & animals being hurt & killed'
 
     sourceless
         the three of us stand before the storm
@@ -2022,7 +2025,7 @@ claws
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("ichor", true);changebackground='surface';BackgroundSwap();changeBgm(env.music.surface);
+            EXEC::change("ichor", true);ResetEffects();
 
     RESPONSES::sys
         continue<+>ichor
@@ -2192,7 +2195,7 @@ ichor
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("light", true);changebackground='surface';BackgroundSwap();changeBgm(env.music.surface);
+            EXEC::change("light", true);ResetEffects();
 
     RESPONSES::sys
         continue<+>light
@@ -2298,7 +2301,78 @@ light
     sys
         ATTENTION::'conclusion of memory stream' 
         AUTHOR'S NOTE::'hello!!! hope you enjoyed the story!!';'this concludes my first corru mod - i have plans for a few more things, though nothing like this again probably';'though if you do enjoy this - tell me!! i might consider making more things like this!!'
-        AUTHOR'S NOTE (CONT.)::'anyway, to conclude - have a great day!! if you want to reread the story, all the chapters will be available in the chapter select (each chapter unlocks after you finish the previous one, if you havent seen)';'bye!!!'
+        AUTHOR'S NOTE (CONT.)::'anyway, to conclude - if you want to reread the story, all the chapters will be available in the chapter select (each unlocks after finishing the previous chapter) as well as a bonus small-ish epilogue';'other than that - bye!!! have a great day!!!'
+            EXEC::change("supplemental", true);ResetEffects();
+
+    RESPONSES::sys
+        return to chapter select<+>loop
+
+epilogue
+    sys
+        ATTENTION::'supplemental chapter';'epilogue'
+
+    sourceless
+        the skies above are wreathed in dark clouds, obscuring velzie's sight
+            EXEC::changeBgm(env.music.zzepel);changebackground='river';BackgroundSwap();
+        the cold wind of the night ruffles my clothes as it passes by
+        it is tranquil and still, save for the winds, the river, the distant spirestorm
+        we have camped before the yuzku river, at the same cliff-face we did before first entering the spirestorm 
+        i sit before the banks of that river, my knees tucked to my chest
+        vak sits at my side, transfixed by the river's lights
+        and yan has been set upon the softer patches of the earth beside me
+        between vak and i - an empty container, once-filled with veilks-blood, raised in celebration
+        i have drunk just enough to feel its effects...
+        and vak drank the rest - it is her favourite, after all
+        tonight we celebrated our delivery, our goal completed, the beginning of safer journey home -
+        the θgaze before, we had left kozali to begin our journey back
+        our bags are considerably lighter, now, that we have delivered everything
+        it took θwinks of explanation... but the people there trust us
+        especially vak and i--of course--given we lived there, once 
+        we gave them our cysts, our instructions, as our coordinator said
+        we warned them, too, of the secri-wind arriving soon
+        though, they seemed to have dug deeper into the earth, breaching into caverns beneath the city -
+        that should serve as a considerable bulwark against the wind
+        and so, in turn, they have helped us with supplies, tools, - and yan...
+        i visited an old tir friend of mine, explaining their accident
+        they knew more about medicine than i did - they prepared a healing-draught for them
+        "it might help them, it might not - but it will take time for them to recover"
+        that is what they said
+        they warned us as well, saying that yan might not be fit to surface-run afterwards
+        i do not know much about medicine - but i hope yan awakens, soon...
+        we stayed there, in kozali, for the night - until this θgaze
+        early during clear-sky, we travelled through the spirestorm once again 
+        this journey was much... quieter than the previous one
+        i led the way as i did last time, retracing our previous steps to the best of my ability
+        what little opposition we faced - i cut down with vak's rifle, mercilessly 
+        and after the spire had let us out of its grasp...
+        vak shifts, her movement shakes me out of my reminiscing, reminding me where i am
+         she looks at me, over my shoulder - i see her out of the corner of my eye 
+         i turn to meet her gaze, but she quickly looks away, back towards the river, her receptors flush in embarrassment
+         i hold her tightly, arms crossing her torso, bringing my head to rest upon her shoulder
+         vak lets out a small yelp of surprise   
+
+    vak 
+        ah!- hey!!
+
+    kaz
+        hehe
+        kelnit 
+
+    sourceless
+        vak stares at me, and i stare back 
+        the bright, swimming lights of the river illuminate her face 
+        the not-yuzku of the river swim, glimmering and reflected in her eyes
+        we stare at one another in a silent understanding - a mutual intimacy between us...
+        then, vak ashamedly turns her gaze away, twisting and curling her receptors under the veilks-blood haze 
+        i turn my gaze towards the river, its green lights streaking by, hundreds at a time
+        those lights, vak's warming presence against the cold winds - they instill me with... something 
+        i let out a long exhale - is this... contentment?
+        i look beyond the river, into the darkness, curling my receptors in glee
+        yes... yes it is 
+
+    sys
+        ATTENTION::'conclusion of chapter'
+            EXEC::ResetEffects();
 
     RESPONSES::sys
         return to chapter select<+>loop
@@ -2427,6 +2501,7 @@ if(firstLoad || env.waitOnLoad) {
 	env.definitions[\`veilks-blood\`] = \`'common beverage';'not blood'\`;
 	env.definitions[\`new-fall\`] = \`'celebration of veilk-fall';'inherited description-generated noun'\`;
 	env.definitions[\`ozoilaki\`] = \`'city heart';'fastest-rotting veilk organ';'named for practice of consuming rapidly in celebration of new veilk-fall'\`;
+	env.definitions[\`veilks-blood\`] = \`'common beverage';'not blood'\`;
 
 	// crittas
 	env.definitions[\`akozak\`] = \`'burrowing slime';'sinkhole';'many arms'\`;
@@ -2525,6 +2600,21 @@ env.pagePath = location.pathname;
 </div>
 `
 
+function ResetChapters() {
+    change("bone", false);
+    change("eyes", false);
+    change("claws", false);
+    change("ichor", false);
+    change("light", false);
+    change("supplemental", false);
+}
+
+function ResetEffects() {
+    changebackground='surface';
+    BackgroundSwap();
+    changeBgm(env.music.surface);
+}
+
 function BackgroundSwap() {
     oldbackground = document.querySelector(".background");
     oldbackground.classList.remove("background");
@@ -2534,17 +2624,28 @@ function BackgroundSwap() {
         case "surface":
             background.insertAdjacentHTML("beforeend", surface);
             break;
+        case "river":
+            background.insertAdjacentHTML("beforeend", river);
+            break;
         case "zzepel":
             background.insertAdjacentHTML("beforeend", zzepel);
             break;
         case "spirestorm":
-            background.insertAdjacentHTML("beforeend", zzepel);
             background.insertAdjacentHTML("beforeend", spirestorm);
             break;
     }
     setTimeout(function(){
     	oldbackgroundlist.forEach(oldbackground => oldbackground.remove());
     }, 1500);
+}
+
+function UnlockChapters() {
+    change("bone", true);
+    change("eyes", true);
+    change("claws", true);
+    change("ichor", true);
+    change("light", true);
+    change("supplemental", true);
 }
 
 // MAKE SURE DA PAGES VAR EXISTS !
