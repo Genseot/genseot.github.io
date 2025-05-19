@@ -2348,7 +2348,7 @@ epilogue
         vak shifts, her movement shakes me out of my reminiscing, reminding me where i am
          she looks at me, over my shoulder - i see her out of the corner of my eye 
          i turn to meet her gaze, but she quickly looks away, back towards the river, her receptors flush in embarrassment
-         i hold her tightly, arms crossing her torso, bringing my head to rest upon her shoulder
+         i hold her tightly, arms crossing her chest, bringing my head to rest upon her shoulder
          vak lets out a small yelp of surprise   
 
     vak 
