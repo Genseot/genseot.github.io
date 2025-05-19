@@ -1176,7 +1176,7 @@ eyes
     sys
         ATTENTION::'conclusion of chapter'
         NOTICE::'continue?'
-            EXEC::change("claws", true);changebackground='surface';BackgroundSwap();
+            EXEC::change("claws", true);ResetEffects();
 
     RESPONSES::sys
         continue<+>claws
