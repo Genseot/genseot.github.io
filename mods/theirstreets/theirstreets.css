@@ -1,6 +1,6 @@
 /* BACKGROUNDS & LOCALE STUFF */
 body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 #content[locale="nightcity"], body#city_street_bridge7 #content[locale="nightcity"] {
-    background: url(/img/local/city/citybank.gif), url(/img/local/orbit/stars.gif), var(--dark-color);
+    background: url(https://corru.observer/img/local/city/citybank.gif), url(https://corru.observer/img/local/orbit/stars.gif), var(--dark-color);
     background-position: bottom;
     background-size: cover, auto;
     background-repeat: no-repeat, repeat;    
