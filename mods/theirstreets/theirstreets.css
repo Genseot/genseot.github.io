@@ -14,7 +14,7 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     display: flex;
     justify-content: center;
     align-items: center;
-    --baseTransform: translate(-50%, -30%) translateZ(-10px) rotate(90deg);
+    --baseTransform: translate(-50%, -33.5%) translateZ(-10px) rotate(90deg);
     transform: var(--baseTransform);
     transform-origin: center;
 }
