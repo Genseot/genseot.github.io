@@ -13,7 +13,6 @@ function EpisodeCheck() {
                 e.innerHTML = ""
             })
         }
-
         if(!check('ENV!!ep2')) {
             document.querySelectorAll('#grid-ref .ep2, #realgrid .ep2').forEach(e=>{
                 console.log(e)
@@ -27,7 +26,6 @@ async function RenderWater() {
         // create renderer
         PIXI.Container.defaultSortableChildren = true
         PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST
-
         try {
             page.pixi = new PIXI.Application({
                 width: 1200,
@@ -35,13 +33,11 @@ async function RenderWater() {
                 view: document.querySelector("#water"),
                 backgroundAlpha: 0,
             })
-
             env.renderInit = async function() {
-                env.water = await PIXI.Assets.load('/img/textures/chromec.gif')
+                env.water = await PIXI.Assets.load('https://genseot.github.io/mods/theirstreets/img/chromecmicro.gif')
                 env.water.width = 400
                 env.water.height = 400
                 page.pixi.stage.addChild(env.water)
-
                 // gif tiling
                 const horizontalCount = Math.ceil(page.pixi.renderer.width / env.water.width)
                 const verticalCount = Math.ceil(page.pixi.renderer.height / env.water.height)
@@ -55,7 +51,6 @@ async function RenderWater() {
                         page.pixi.stage.addChild(sprite);
                     }
                 }
-
                 // cannot use Assets.load for regular images it seems - attempting to use a simpler load and add the resulting sprite will create an invisible useless child on the stage
                 fetch("/img/textures/spotgradient.gif")
                     .then(response => response.blob())
@@ -68,18 +63,17 @@ async function RenderWater() {
                     }).then(()=>{
                         if(check("default_quality") != "regular") {
                             page.pixi.stop()
-                            page.pixi.view.classList.forEach(el=>el.classList.remove())
+                            page.pixi.view.classList.add('still')
                         }
                     })
             }
-            env.renderInit()          
+            env.renderInit()            
         } 
-        catch(e) {
+	catch(e) {
             console.log("renderer failed")
-            content.querySelectorAll("#water").forEach(el=>el.classList.remove())
+            content.querySelectorAll("#water").forEach(el=>el.classList.add("still"))
         }
 }
-
 
 
 
