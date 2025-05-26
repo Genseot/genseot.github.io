@@ -1,5 +1,5 @@
-/* LOCALES & SUCH */
-body#city_streets_bridge5 #content[locale="nightcity"], body#city_streets_bridge6 #content[locale="nightcity"], body#city_streets_bridge7 #content[locale="nightcity"] {
+/* BACKGROUNDS & LOCALE STUFF */
+body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 #content[locale="nightcity"], body#city_street_bridge7 #content[locale="nightcity"] {
     background: url(/img/local/city/citybank.gif), url(/img/local/orbit/stars.gif), var(--dark-color);
     background-position: bottom;
     background-size: cover, auto;
@@ -27,6 +27,12 @@ body#city_streets_bridge5 #content[locale="nightcity"], body#city_streets_bridge
 }
 
 
+/* INTERACTIBLE PROPS */ 
+.bench {
+
+}
+
+
 
 /* PROPS */
 #fountain {
@@ -36,12 +42,5 @@ body#city_streets_bridge5 #content[locale="nightcity"], body#city_streets_bridge
 
 }
 #tree {
-
-}
-
-
-
-/* INTERACTIBLE PROPS */ 
-.bench {
 
 }
