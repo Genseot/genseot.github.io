@@ -1,0 +1,47 @@
+/* LOCALES & SUCH */
+body#city_streets_bridge5 #content[locale="nightcity"], body#city_streets_bridge6 #content[locale="nightcity"], body#city_streets_bridge7 #content[locale="nightcity"] {
+    background: url(/img/local/city/citybank.gif), url(/img/local/orbit/stars.gif), var(--dark-color);
+    background-position: bottom;
+    background-size: cover, auto;
+    background-repeat: no-repeat, repeat;    
+}
+#water {
+    position: absolute;
+    top: calc(0.25 * var(--gridTileSize) * var(--stage-height));
+    left: calc(0.5 * var(--gridTileSize) * var(--stage-width));
+    width: calc(var(--gridTileSize) * var(--stage-height) * 1.5);
+    height: calc(var(--gridTileSize) * var(--stage-height) * 1.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --baseTransform: translate(-50%, -50%) translateZ(-10px) rotate(90deg);
+    transform: var(--baseTransform);
+    transform-origin: center;
+}
+
+
+
+/* TILES */
+#crosswalk {
+
+}
+
+
+
+/* PROPS */
+#fountain {
+
+}
+#bush { 
+
+}
+#tree {
+
+}
+
+
+
+/* INTERACTIBLE PROPS */ 
+.bench {
+
+}
