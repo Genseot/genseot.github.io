@@ -19,7 +19,7 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     transform-origin: center;
 }
 #water.still {
-    background: url('https://corru.observer/img/textures/spotgradienttiny.gif'), url('/img/chromecmicrostill.png');
+    background: url('https://corru.observer/img/textures/spotgradienttiny.gif'), url('https://genseot.github.io/mods/theirstreets/img/chromecmicrostill.png');
     background-size: 100% 100%, 400px;
     animation: unset;
 }
