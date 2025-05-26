@@ -493,6 +493,7 @@ env.stages['city_street_bridge5'] = {
         page.bgm.rate(0.8)
         EpisodeCheck()
         content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="water"></canvas>`)
+        RenderWater()
     },
     entities: {
         L: {
@@ -578,6 +579,7 @@ env.stages['city_street_bridge6'] = {
         page.bgm.rate(0.8)
         EpisodeCheck()
         content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="water"></canvas>`)
+        RenderWater()
     },
     entities: {
         L: {
