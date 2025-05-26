@@ -30,24 +30,24 @@ async function RenderWater() {
             page.pixi = new PIXI.Application({
                 width: 1200,
                 height: 1200,
-                view: document.querySelector("#water"),
+                view: document.querySelector("#citywater"),
                 backgroundAlpha: 0,
             })
             env.renderInit = async function() {
-                env.water = await PIXI.Assets.load('https://genseot.github.io/mods/theirstreets/img/chromecmicro.gif')
-                env.water.width = 400
-                env.water.height = 400
-                page.pixi.stage.addChild(env.water)
+                env.citywater = await PIXI.Assets.load('https://genseot.github.io/mods/theirstreets/img/chromecmicro.gif')
+                env.citywater.width = 400
+                env.citywater.height = 400
+                page.pixi.stage.addChild(env.citywater)
                 // gif tiling
-                const horizontalCount = Math.ceil(page.pixi.renderer.width / env.water.width)
-                const verticalCount = Math.ceil(page.pixi.renderer.height / env.water.height)
+                const horizontalCount = Math.ceil(page.pixi.renderer.width / env.citywater.width)
+                const verticalCount = Math.ceil(page.pixi.renderer.height / env.citywater.height)
                 for (let row = 0; row < verticalCount; row++) {
                     for (let col = row == 0 ? 1 : 0; col < horizontalCount; col++) {
-                        const sprite = new PIXI.Sprite(env.water.texture);
+                        const sprite = new PIXI.Sprite(env.citywater.texture);
                         sprite.width = 400
                         sprite.height = 400
-                        sprite.x = col * env.water.width;
-                        sprite.y = row * env.water.height;
+                        sprite.x = col * env.citywater.width;
+                        sprite.y = row * env.citywater.height;
                         page.pixi.stage.addChild(sprite);
                     }
                 }
@@ -71,7 +71,7 @@ async function RenderWater() {
         } 
 	catch(e) {
             console.log("renderer failed")
-            content.querySelectorAll("#water").forEach(el=>el.classList.add("still"))
+            content.querySelectorAll("#citywater").forEach(el=>el.classList.add("still"))
         }
 }
 
