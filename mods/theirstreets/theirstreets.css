@@ -5,7 +5,7 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     background-size: cover, auto;
     background-repeat: no-repeat, repeat;    
 }
-#water {
+#citywater {
     position: absolute;
     top: calc(0.25 * var(--gridTileSize) * var(--stage-height));
     left: calc(0.5 * var(--gridTileSize) * var(--stage-width));
@@ -18,7 +18,7 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     transform: var(--baseTransform);
     transform-origin: center;
 }
-#water.still {
+#citywater.still {
     background: url('https://corru.observer/img/textures/spotgradienttiny.gif'), url('https://genseot.github.io/mods/theirstreets/img/chromecmicrostill.png');
     background-size: 100% 100%, 400px;
     animation: unset;
