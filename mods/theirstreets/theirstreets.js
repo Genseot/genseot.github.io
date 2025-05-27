@@ -282,8 +282,8 @@ env.stages['city_street_fountain'] = {
             teleportTarget: "city_street_city1"
         },
         bl: {
-            class: "blocks"
-	}
+            class: "prop"
+	      }
     },
     plan: [
         '.','.','.','.','.','c','.','.','.','.','.',
@@ -685,8 +685,8 @@ env.stages['city_street_bridge6'] = {
             teleportTarget: "city_street_bridge7"
         },
         bl: {
-            class: "blocks"
-	}
+            class: "prop"
+	      }
     },
     plan: [
         '.','.','.','.','.','.','.','.','.','b','.','.','.','.','.','.','.','.','.',
