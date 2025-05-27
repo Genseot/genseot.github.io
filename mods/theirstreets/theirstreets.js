@@ -240,7 +240,7 @@ env.stages['city_street_fountain'] = {
                 id: "fountainbench",
                 class: "bench",
                 dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench)',
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.png)',
                     width: 3,
                     height: 1.5
                 }
@@ -594,7 +594,7 @@ env.stages['city_street_bridge6'] = {
                 id: "bridgebench",
                 class: "bench",
                 dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench)',
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.png)',
                     width: 3,
                     height: 1.5,
                     transform: "rotateY(90deg)"
