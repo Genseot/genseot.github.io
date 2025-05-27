@@ -490,7 +490,7 @@ env.stages['city_street_bridge5'] = {
     exec: () => {
         page.bgm.rate(0.8)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="water"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
         RenderWater()
     },
     entities: {
@@ -576,7 +576,7 @@ env.stages['city_street_bridge6'] = {
     exec: () => {
         page.bgm.rate(0.8)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="water"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
         RenderWater()
     },
     entities: {
@@ -716,7 +716,7 @@ env.stages['city_street_bridge7'] = {
     exec: () => {
         page.bgm.rate(0.8)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="water"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
         RenderWater()
     },
     entities: {
