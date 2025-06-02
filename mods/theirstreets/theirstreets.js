@@ -34,7 +34,7 @@ async function RenderWater() {
                 backgroundAlpha: 0,
             })
             env.renderInit = async function() {
-                env.citywater = await PIXI.Assets.load('https://genseot.github.io/mods/theirstreets/img/chromecmicro.gif')
+                env.citywater = await PIXI.Assets.load('https://corru.observer/img/textures/chromec.gif')
                 env.citywater.width = 400
                 env.citywater.height = 400
                 page.pixi.stage.addChild(env.citywater)
@@ -86,6 +86,17 @@ env.stageEntities['l'] = {
         class: "lamp"
     }
 }
+env.stageEntities['lr'] = {
+    class:"prop",
+    contains: {
+        slug: 'lr',
+        id: "lamp",
+        class: "lamp",
+        dyp: {
+            transform: "rotateY(90deg)"
+        }
+    }
+}
 env.stageEntities['c'] = {
     class:"prop",
     contains: {
@@ -116,7 +127,7 @@ env.stageEntities['T'] = {
 env.stageEntities['E'] = {
     class: "prop later",
     contains: {
-        slug: 'B',
+        slug: 'E',
         id: 'busy',
         class: "civvie busy eyeball",
     }
@@ -137,7 +148,27 @@ env.stageEntities['C'] = {
         class: "civvie creep",
     }
 }
-
+env.stageEntities['L'] = {
+    class: "prop",
+    contains: { 
+        dyp: {
+            image: 'url(/img/local/city/blacklamp.gif)',
+            width: 1.5,
+            height: 4
+        }
+    } 
+}
+env.stageEntities['Lr'] = {
+    class: "prop",
+    contains: { 
+        dyp: {
+            image: 'url(/img/local/city/blacklamp.gif)',
+            width: 1.5,
+            height: 4,
+            transform: "rotateY(90deg)"
+        }
+    } 
+}
 
 
 
@@ -150,19 +181,7 @@ env.stages['city_street2'] = {
         page.bgm.rate(1)
         EpisodeCheck()
     },
-
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4,
-                    transform: "rotateY(90deg)"
-                }
-            } 
-        },
         n: {
             teleportSpot: 9,
             teleportTarget: "city_street"
@@ -204,11 +223,11 @@ env.stages['city_street2'] = {
     plan: [
         '.','.','.','r','r','r','r','.','.','n','.','.','.','.',
         '.','░','░','r','r','r','r','░','░','p','░','░','r','.',
-        '.','L','░','r','r','r','r','░','░','░','░','░','r','.',
+        '.','Lr','░','r','r','r','r','░','░','░','░','░','r','.',
         '.','░','░','r','r','r','r','░','░','░','░','░','r','.',
         'm','░','░','c','c','c','c','░','░','░','░','░','e','f',
         '.','░','░','r','r','r','r','j','░','░','░','░','r','.',
-        '.','L','░','r','r','r','r','░','░','░','░','░','r','.',
+        '.','Lr','░','r','r','r','r','░','░','░','░','░','r','.',
         '.','░','░','r','r','r','r','░','░','░','░','░','r','.',
         '.','.','.','r','r','r','r','.','.','Y','.','.','.','.',
     ]
@@ -236,11 +255,8 @@ env.stages['city_street_fountain'] = {
         fb: {
     	    class:"prop",
     	    contains: {
-                slug: 'fb',
-                id: "fountainbench",
-                class: "bench",
                 dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.png)',
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.gif)',
                     width: 3,
                     height: 1.25
                 }
@@ -253,17 +269,7 @@ env.stages['city_street_fountain'] = {
                 id: "bush",
                 class: "bush"
     	    }	
-        },  
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },     
+        },      
         m: {
             teleportSpot: 57,
             teleportTarget: "city_street2",
@@ -283,7 +289,7 @@ env.stages['city_street_fountain'] = {
         },
         bl: {
             class: "prop"
-	      }
+	}
     },
     plan: [
         '.','.','.','.','.','c','.','.','.','.','.',
@@ -320,16 +326,6 @@ env.stages['city_street_bridge1'] = {
         EpisodeCheck()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        }, 
         c: {
             teleportSpot: 43,
             teleportTarget: "city_street_city1"
@@ -356,16 +352,6 @@ env.stages['city_street_bridge2'] = {
         EpisodeCheck()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },
         f: {
             teleportSpot: 97,
             teleportTarget: "city_street_fountain"
@@ -399,17 +385,7 @@ env.stages['city_street_bridge3'] = {
         page.bgm.rate(1)
         EpisodeCheck()
     },
-    entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },        
+    entities: {       
         c: {
             class: "empty plain",
             id: "crosswalk"
@@ -419,9 +395,8 @@ env.stages['city_street_bridge3'] = {
             teleportTarget: "city_street_bridge2"
         },
         b: {
-            teleportSpot: 94,
-            teleportTarget: "city_street_bridge4",
-            shouldFace: "left"
+            teleportSpot: 177,
+            teleportTarget: "city_street_bridge4"
         }
     },
     plan: [
@@ -444,44 +419,40 @@ env.stages['city_street_bridge4'] = {
         EpisodeCheck()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
+        D: {
+            class:"road prop",
+            contains: {
+                slug: 'R', 
+                id: "car", 
+                class: "prop car downwards"
+            }
         },
         e: {
             teleportSpot: 32,
-            teleportTarget: "city_street_bridge3",
-            shouldFace: "left"
+            teleportTarget: "city_street_bridge3"
         },
         b: {
             teleportSpot: 232,
-            teleportTarget: "city_street_bridge5",
-            shouldFace: "down"
+            teleportTarget: "city_street_bridge5"
         }
     },
     plan: [
+        '.','.','.','.','.','.','.','.','.','.','.','b','.','D','D','D',
+        '.','.','.','.','.','.','.','.','.','.','L','░','L','r','r','r',
+        '.','.','.','.','.','.','.','.','.','.','░','░','░','r','r','r',
+        '.','.','.','.','.','.','.','.','.','.','░','░','░','r','r','r',
+        '.','.','.','.','.','.','.','.','.','.','░','░','░','r','r','r',
+        '.','.','.','.','.','.','.','.','.','L','░','░','░','r','r','r',
+        '.','.','.','.','.','.','.','.','.','.','░','░','░','r','r','r',
+        '.','.','.','.','.','.','.','.','.','.','░','░','░','r','r','r',
+        '.','.','.','.','.','.','.','.','.','.','░','░','░','r','r','r',
+        '.','L','.','.','.','L','.','.','.','L','░','░','░','r','r','r',
+        '.','░','░','░','░','░','░','░','░','░','░','░','░','r','r','r',
+        'e','p','░','░','░','░','░','░','░','░','░','░','░','r','r','r',
+        '.','░','l','░','░','░','░','l','░','░','░','░','l','r','r','r',
         'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
         'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','r',
         'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
-        'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','r',
-        'r','r','r','r','l','░','░','░','l','░','░','░','l','░','░','.',
-        'r','r','r','r','░','░','░','░','░','░','░','░','░','░','░','e',
-        'r','r','r','r','░','░','░','░','░','░','░','░','░','░','░','.',
-        'r','r','r','r','░','░','░','L','.','.','.','.','L','.','.','.',
-        'r','r','r','r','l','░','░','.','.','.','.','.','.','.','.','.',
-        'r','r','r','r','░','░','░','.','.','.','.','.','.','.','.','.',
-        'r','r','r','r','░','░','░','.','.','.','.','.','.','.','.','.',
-        'r','r','r','r','░','░','░','.','.','.','.','.','.','.','.','.',
-        'r','r','r','r','l','░','░','L','.','.','.','.','.','.','.','.',
-        'r','r','r','r','░','░','░','.','.','.','.','.','.','.','.','.',
-        'r','r','r','r','L','p','L','.','.','.','.','.','.','.','.','.',
-        'r','R','r','R','.','b','.','.','.','.','.','.','.','.','.','.',
     ]
 } 
 env.stages['city_street_bridge5'] = {
@@ -494,16 +465,6 @@ env.stages['city_street_bridge5'] = {
         RenderWater()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },
         r: {
             class: "prop",
             contains: {
@@ -541,9 +502,8 @@ env.stages['city_street_bridge5'] = {
             }
         },
         e: {
-            teleportSpot: 229,
-            teleportTarget: "city_street_bridge4",
-            shouldFace: "down"
+            teleportSpot: 27,
+            teleportTarget: "city_street_bridge4"
         },
         b: {
             teleportSpot: 332,
@@ -580,24 +540,11 @@ env.stages['city_street_bridge6'] = {
         RenderWater()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },
         bb: {
     	    class:"prop",
     	    contains: {
-                slug: 'bb',
-                id: "bridgebench",
-                class: "bench",
                 dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.png)',
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.gif)',
                     width: 3,
                     height: 1.25,
                     transform: "rotateY(90deg)"
@@ -720,16 +667,6 @@ env.stages['city_street_bridge7'] = {
         RenderWater()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },
         r: {
             class: "prop",
             contains: {
@@ -771,8 +708,9 @@ env.stages['city_street_bridge7'] = {
             teleportTarget: "city_street_bridge6"
         },
         b: {
-            teleportSpot: 1,
-            teleportTarget: "city_street_fountain"
+            teleportSpot: 20,
+            teleportTarget: "city_street_streets7",
+            shouldFace: "down"
         }
     },
     plan: [
@@ -816,7 +754,7 @@ env.stages['city_street_streets1'] = {
             teleportTarget: "city_street_fountain"
         },
         s: {
-            teleportSpot: 65,
+            teleportSpot: 154,
             teleportTarget: "city_street_streets2"
         }
     },
@@ -826,42 +764,30 @@ env.stages['city_street_streets1'] = {
         '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
         '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
         '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','l','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','l','░','░','░','░','░','░','░','░','░','.',
+        '.','r','r','r','l','░','░','░','L','.','.','.','.','.','.',
+        '.','r','r','r','.','░','░','░','░','░','░','░','░','░','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','░','p','f',
         '.','r','r','r','.','░','░','░','░','░','░','░','░','░','.',
         '.','r','r','r','l','.','.','l','.','.','.','l','.','.','l',
         '.','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
         '.','r','r','r','r','r','r','r','r','r','r','r','r','r','r',
         '.','R','r','R','r','r','r','r','r','r','r','r','r','r','T',
-        '.','.','.','.','.','.','.','.','.','.','.','.','.','.','.',
     ]
 }
 env.stages['city_street_streets2'] = {
     locale: 'city',
-    width: 9,
+    width: 10,
     exec: ()=>{
-        page.bgm.rate(0.8)
+        page.bgm.rate(1)
         EpisodeCheck()
     },
     entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        },  
         e: {
             teleportSpot: 19,
             teleportTarget: "city_street_streets1"
         },
         s: {
-            teleportSpot: 1,
+            teleportSpot: 95,
             teleportTarget: "city_street_streets3"
         },
         c: {
@@ -870,16 +796,236 @@ env.stages['city_street_streets2'] = {
         }
     },
     plan: [
-        '.','s','.','.','r','r','l','.','.',
-        '.','░','░','.','r','r','.','.','.',
-        '.','░','░','.','r','r','.','.','.',
-        '.','░','░','.','r','r','l','.','l',
-        '.','░','░','.','r','r','r','r','r',
-        '.','░','░','.','r','r','r','r','r',
-        '.','░','░','L','.','.','.','.','.',
-        '.','░','░','░','░','░','░','░','c',
-        '.','p','░','░','░','░','░','░','.',
-        '.','e','.','.','.','.','.','.','.',
+        'r','r','r','.','s','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','lr','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','lr','░','░','Lr','.','.','.',
+        'r','r','r','░','░','░','░','░','░','.',
+        'r','r','r','░','░','░','░','░','░','c',
+        'r','r','r','░','░','░','░','░','░','.',
+        'r','r','r','lr','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','p','░','.','.','.','.',
+        'r','R','R','.','e','.','.','.','.','.',
+    ]
+}
+env.stages['city_street_streets3'] = {
+    locale: 'city',
+    width: 7,
+    exec: ()=>{
+        page.bgm.rate(1)
+        EpisodeCheck()
+    },
+    entities: {
+        e: {
+            teleportSpot: 14,
+            teleportTarget: "city_street_streets2"
+        },
+        s: {
+            teleportSpot: 235,
+            teleportTarget: "city_street_streets4", 
+            shouldFace: "left"
+        }
+    },
+    plan: [
+        'r','r','r','.','s','.','.',
+        'r','r','r','░','░','░','Lr',
+        'r','r','r','lr','░','░','.',
+        'r','r','r','░','░','░','.',
+        'r','r','r','░','░','░','.',
+        'r','r','r','lr','░','░','.',
+        'r','r','r','░','░','░','.',
+        'c','c','c','░','░','░','Lr',
+        'r','r','r','░','░','░','.',
+        'r','r','r','lr','░','░','.',
+        'r','r','r','░','░','░','.',
+        'r','r','r','░','░','░','.',
+        'r','r','r','lr','░','░','.',
+        'r','r','r','░','p','░','Lr',
+        'R','R','R','.','e','.','.',
+    ]
+}
+env.stages['city_street_streets4'] = {
+    locale: 'city',
+    width: 13,
+    exec: ()=>{
+        page.bgm.rate(1)
+        EpisodeCheck()
+    },
+    entities: {
+        sb: {
+    	    class:"prop",
+    	    contains: {
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.gif)',
+                    width: 3,
+                    height: 1.25,
+                    transform: "rotateY(270deg)"
+                }
+    	    }
+        },
+        bl: {
+            class: "prop"
+	},
+        B: {
+    	    class:"prop",
+    	    contains: {
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
+                    width: 1.5,
+                    height: 1.5
+                }
+    	    }	
+        },
+        e: {
+            teleportSpot: 11,
+            teleportTarget: "city_street_streets3",
+            shouldFace: "up"
+        },
+        s: {
+            teleportSpot: 1,
+            teleportTarget: "city_street_streets5"
+        }
+    },
+    plan: [
+        'r','r','r','.','s','.','.','.','.','.','.','.','.',
+        'r','r','r','lr','░','░','Lr','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','lr','░','░','Lr','.','.','.','.','.','.',
+        'r','r','r','░','░','░','░','░','B','B','.','.','.',
+        'r','r','r','░','░','░','░','░','bl','B','.','.','.',
+        'r','r','r','░','░','░','░','░','sb','B','.','.','.',
+        'r','r','r','lr','░','░','░','░','bl','B','.','.','.',
+        'r','r','r','░','░','░','░','░','B','B','.','.','.',
+        'r','r','r','░','░','░','Lr','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','lr','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','L','.','.','.','.','L','.',
+        'r','r','r','░','░','░','░','░','░','░','░','░','.',
+        'r','r','r','░','░','░','░','░','░','░','░','p','e',
+        'r','r','r','l','░','░','░','l','░','░','░','l','.',
+        'r','r','r','r','r','r','r','r','r','r','r','r','T',
+        'r','r','r','r','r','r','r','r','r','r','r','r','T',
+        'R','r','R','r','r','r','r','r','r','r','r','r','r',
+    ]
+}
+env.stages['city_street_streets5'] = {
+    locale: 'city',
+    width: 10,
+    exec: ()=>{
+        page.bgm.rate(1)
+        EpisodeCheck()
+    },
+    entities: {
+        s: {
+            teleportSpot: 134,
+            teleportTarget: "city_street_streets6"
+        },
+        e: {
+            teleportSpot: 17,
+            teleportTarget: "city_street_streets4"
+        }
+    },
+    plan: [
+        'r','r','r','.','s','.','.','.','.','.',
+        'r','r','r','░','░','░','Lr','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'c','c','c','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','p','░','Lr','.','.','.',
+        'R','R','R','.','e','.','.','.','.','.',
+    ]
+}
+env.stages['city_street_streets6'] = {
+    locale: 'city',
+    width: 10,
+    exec: ()=>{
+        page.bgm.rate(1)
+        EpisodeCheck()
+    },
+    entities: {
+        s: {
+            teleportSpot: 172,
+            teleportTarget: "city_street_streets7",
+            shouldFace: "left"
+        },
+        e: {
+            teleportSpot: 14,
+            teleportTarget: "city_street_streets5"
+        }
+    },
+    plan: [
+        'r','r','r','.','s','.','.','.','.','.',
+        'r','r','r','░','░','░','Lr','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'c','c','c','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.',
+        'r','r','r','░','p','░','Lr','.','.','.',
+        'R','R','R','.','e','.','.','.','.','.',
+    ]
+}
+env.stages['city_street_streets7'] = {
+    locale: 'city',
+    width: 16,
+    exec: ()=>{
+        page.bgm.rate(1)
+        EpisodeCheck()
+    },
+    entities: {
+        b: {
+            teleportSpot: 22,
+            teleportTarget: "city_street_bridge7",
+            shouldFace: "up"
+        },
+        e: {
+            teleportSpot: 14,
+            teleportTarget: "city_street_streets6",
+            shouldFace: "up"
+        }
+    },
+    plan: [
+        'r','r','r','.','b','.','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','L','░','L','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','L','.','.','.','L','.','.','.','L','.',
+        'r','r','r','░','░','░','░','░','░','░','░','░','░','░','░','.',
+        'r','r','r','░','░','░','░','░','░','░','░','░','░','░','p','e',
+        'r','r','r','l','░','░','l','░','░','l','░','░','l','░','░','.',
+        'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
+        'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
+        'R','r','R','r','r','r','r','r','r','r','r','r','r','r','r','r',
     ]
 }
 
@@ -897,23 +1043,13 @@ env.stages['city_street_city1'] = {
         page.bgm.rate(0.8)
         EpisodeCheck()
     },
-    entities: {
-        L: {
-            class: "prop",
-            contains: { 
-                dyp: {
-                    image: 'url(/img/local/city/blacklamp.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            } 
-        }, 
+    entities: { 
         f: {
             teleportSpot: 16,
             teleportTarget: "city_street_fountain"
         },
         s: {
-            teleportSpot: 62,
+            teleportSpot: 108,
             teleportTarget: "city_street_streets2"	
         },
         b: {
@@ -948,18 +1084,25 @@ env.stages['city_street_city2'] = {
         B: {
     	    class:"prop",
     	    contains: {
-                slug: 'B',
-                id: "bush",
-                class: "bush"
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
+                    width: 1.5,
+                    height: 1.5
+                }
     	    }	
         },
         t: {
             class:"prop",
             contains: {
-                slug: "t",
-                id: "tree",
-                class: "tree"
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
+                    width: 1.5,
+                    height: 4
+                }
             }
+        },
+        g: {
+            class:"prop"
         },
         c: {
             teleportSpot: 1,
@@ -974,17 +1117,17 @@ env.stages['city_street_city2'] = {
         '.','r','r','r','.','.','.','.','c','.','.','.','.','r','r','r','.',
         '.','r','r','r','.','.','.','l','░','l','.','.','.','r','r','r','.',
         '.','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','.',
-        '.','r','r','r','.','.','░','░','░','░','░','.','.','r','r','r','.',
+        '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','.','r','r','r','.',
         '.','r','r','r','l','░','░','B','B','B','░','░','l','r','r','r','.',
         '.','r','r','r','░','░','B','B','t','B','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','t','.','t','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','.','t','.','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','t','.','t','B','░','░','r','r','r','.',
+        '.','r','r','r','░','░','B','t','g','t','B','░','░','r','r','r','.',
+        '.','r','r','r','░','░','B','g','t','g','B','░','░','r','r','r','.',
+        '.','r','r','r','░','░','B','t','g','t','B','░','░','r','r','r','.',
         '.','r','r','r','░','░','B','B','t','B','B','░','░','r','r','r','.',
         '.','r','r','r','l','░','░','B','B','B','░','░','l','r','r','r','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','.','r','r','r','.',
-        '.','r','r','r','.','.','░','░','░','░','░','.','.','r','r','r','.',
+        '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
         '.','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','.',
         '.','r','r','r','.','.','.','l','p','l','.','.','.','r','r','r','.',
         '.','R','r','R','.','.','.','.','e','.','.','.','.','R','r','R','.',

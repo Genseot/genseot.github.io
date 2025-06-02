@@ -19,34 +19,15 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     transform-origin: center;
 }
 #citywater.still {
-    background: url('https://corru.observer/img/textures/spotgradienttiny.gif'), url('https://genseot.github.io/mods/theirstreets/img/chromecmicrostill.png');
+    background: url('https://corru.observer/img/textures/spotgradienttiny.gif'), url('https://genseot.github.io/mods/theirstreets/img/chromecstill.gif');
     background-size: 100% 100%, 400px;
     animation: unset;
 }
 
 
 
-/* TILES */
-#crosswalk {
-
-}
-
-
-
-/* INTERACTIBLE PROPS */ 
-.bench {
-
-}
-
-
-
 /* PROPS */
-#fountain {
-
-}
-#bush { 
-
-}
-#tree {
-
+.road .prop.car.downwards {
+    animation-delay: 2.5s;
+    --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
