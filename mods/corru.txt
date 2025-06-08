@@ -8,7 +8,7 @@
         	<h2>Surface-Running</h2>
         		<p>A 6-chapter memory hole following Kazzanesche and her companions as they travel down the Yuzku River towards the Azalian gulch-city, Kozali, and the trials they endure along the way.</p>
                 <h3>Updated Version</h3>
-                        <p><b>Note:</b> there is no difference between versions yet, this will be updated to add an epilogue soon!</p>
+                        <p>(The updated version contains some visual changes & an epilogue)</p>
         		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunning.js</code> (input into sys mod list)</p>
                 	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunning.js"]), play("criticalError", 3.5)})();</code> (input into console before loading the Memory Hole page)</p>   
 		<h3>Contest Version</h3>
