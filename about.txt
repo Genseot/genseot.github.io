@@ -3,8 +3,14 @@
         	<h2>About This Website</h2>
         	<p>As you probably know, I'm Genseot, i program and write etc.</p>
         	<p>I'm still working on my website, can't say much about how it'll come out but it'll host my web projects - currently my attention is mostly focused on writing stories (see stories page for more info). Feel free to check out everything listed here while you're waiting, though!</p>
-			<p>Also if you'd like to contact me for whatever reason, im @Genseot on discord.</p>
         </div>
+	<br>
+	<div class="action">
+		<h2>Contact</h2>
+           	<p>If you want to contact me for whatever reason, you can find ways below:</p>
+                <p>Discord: <code>@Genseot</code></p>
+                <p>Email: <code>genseot2@gmail.com</code> (unlikely to respond i never use email)</p>
+	</div>
 	<br>
 	<div class="action">
 		<h2>Neocities</h2>
