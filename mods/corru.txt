@@ -8,12 +8,16 @@
         	<h2>Surface-Running</h2>
         		<p>A 6-chapter memory hole following Kazzanesche and her companions as they travel down the Yuzku River towards the Azalian gulch-city, Kozali, and the trials they endure along the way.</p>
                 <h3>Updated Version</h3>
-                        <p>(The updated version contains some visual changes & an epilogue)</p>
-        		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunning.js</code> (input into sys mod list)</p>
-                	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunning.js"]), play("criticalError", 3.5)})();</code> (input into console before loading the Memory Hole page)</p>   
+                        <p>Note: the updated version contains some visual changes & an epilogue chapter.</p>
+        		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunning.js</code></p>
+                        <p><b>- Input into SYS > Mindpike Data Management > Advanced Operations > Modification URL List</b></p>
+                	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunning.js"]), play("criticalError", 3.5)})();</code></p>
+                        <p><b>- Input into the browser's developer console before loading the Memory Hole page</b></p>
 		<h3>Contest Version</h3>
-        		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js</code> (input into sys mod list)</p>
-                	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js"]), play("criticalError", 3.5)})();</code> (input into console before loading the Memory Hole page)</p>
+        		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js</code></p>
+                        <p><b>- Input into SYS > Mindpike Data Management > Advanced Operations > Modification URL List</b></p>
+                	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js"]), play("criticalError", 3.5)})();</code></p>
+                        <p><b>- Input into the browser's developer console before loading the Memory Hole paeg</b></p>
         </div>
     <br>
     <p><actionbutton onclick="loadMods()">Return</actionbutton></p>
