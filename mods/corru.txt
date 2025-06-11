@@ -17,7 +17,7 @@
         		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js</code></p>
                         <p><b>- Input into SYS > Mindpike Data Management > Advanced Operations > Modification URL List</b></p>
                 	<p><code>javascript:(function(){addResources(["https://genseot.github.io/mods/surfacerunning/surfacerunningcontest.js"]), play("criticalError", 3.5)})();</code></p>
-                        <p><b>- Input into the browser's developer console before loading the Memory Hole paeg</b></p>
+                        <p><b>- Input into the browser's developer console before loading the Memory Hole page</b></p>
         </div>
     <br>
     <p><actionbutton onclick="loadMods()">Return</actionbutton></p>
