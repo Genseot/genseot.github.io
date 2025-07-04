@@ -1361,7 +1361,7 @@ env.stages['city_street_city3'] = {
             teleportTarget: "city_street_city4"
         },
         cm: {
-            teleportSpot: 261,
+            teleportSpot: 262,
             teleportTarget: "city_street_city5"
         },
         cw: {
@@ -1457,7 +1457,7 @@ env.stages['city_street_city4'] = {
                     height: 1.25,
                     transform: "rotateY(270deg)"
                 },
-                examineEntity: "garden bench"
+                examineEntity: "park bench"
     	    }
         }, 
         e: {
@@ -1602,7 +1602,8 @@ env.stages['city_street_city5'] = {
         },
         s: {
             teleportSpot: 70, 
-            teleportTarget: "city_street_streets5"
+            teleportTarget: "city_street_streets5",
+            shouldFace: "left"
         },
         cb: {
     	    class:"prop",
@@ -1622,7 +1623,7 @@ env.stages['city_street_city5'] = {
     },
     plan: [
         '.','.','.','.','.','.','.','s','.','.','.','.','.','.','.',
-        '.','.','t','g','g','Lr','░','░','░','Lr','g','g','t','.','.',
+        '.','.','t','g','g','L','░','░','░','L','g','g','t','.','.',
         '.','.','g','g','░','░','░','░','░','░','░','g','g','.','.',
         '.','.','g','░','░','░','░','░','░','░','░','░','g','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
@@ -1638,7 +1639,7 @@ env.stages['city_street_city5'] = {
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','g','░','░','░','░','░','░','░','░','░','g','.','.',
         '.','.','g','g','░','░','░','░','░','░','░','g','g','.','.',
-        '.','.','t','g','g','Lr','░','p','░','Lr','g','g','t','.','.',
+        '.','.','t','g','g','L','░','p','░','L','g','g','t','.','.',
         '.','.','.','.','.','.','.','e','.','.','.','.','.','.','.',
     ]
 }
