@@ -37,7 +37,7 @@ body#city_street_city3 #content[locale="interiorcity"], body#city_street_city4 #
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
-.grass {
+.prop .grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
 }
 .crosswalk {
