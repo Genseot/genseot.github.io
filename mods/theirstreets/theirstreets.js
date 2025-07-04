@@ -26,6 +26,12 @@ content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
 
+/*env.stage.locales["interiorcity"] = [
+    [".empty.plain", "/img/local/city/tiles/empty.gif"],
+    [".prop", "/img/local/city/tiles/occupied.gif"],
+    [".road", "/img/textures/black.gif"],
+]*/
+
 function EpisodeCheck() {
 	if(!check('ep0_epilogue')) {
             document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
@@ -1287,7 +1293,7 @@ env.stages['city_street_city2'] = {
             }
         },
         g: {
-            class:"empty prop grass"
+            class:"prop grass"
         },
         c: {
             teleportSpot: 367,
@@ -1440,7 +1446,7 @@ env.stages['city_street_city4'] = {
             }
         },
         g: {
-            class:"empty prop grass"
+            class:"prop grass"
         },
         gb: {
     	    class:"prop",
@@ -1516,7 +1522,7 @@ env.stages['city_street_city5'] = {
             }
         },
 	g: {
-            class:"empty prop grass"
+            class:"prop grass"
         },
         r: {
             class: "prop",
