@@ -1428,7 +1428,7 @@ env.stages['city_street_city4'] = {
                 }
             }
         },
-        t: {
+        tr: {
             class:"prop grass",
             contains: {
                 dyp: {
