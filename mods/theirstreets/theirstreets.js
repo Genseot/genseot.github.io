@@ -1494,6 +1494,30 @@ env.stages['city_street_city5'] = {
         EpisodeCheck()
     },
     entities: {
+        B: {
+    	    class:"prop grass",
+    	    contains: {
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
+                    width: 1.25,
+                    height: 1.25,
+                    transform: "rotateY(90deg)"
+                }
+    	    }		
+        }, 
+        t: {
+            class:"prop grass",
+            contains: {
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
+                    width: 1.5,
+                    height: 4
+                }
+            }
+        },
+	g: {
+            class:"empty prop grass"
+        },
         r: {
             class: "prop",
             contains: {
@@ -1503,16 +1527,6 @@ env.stages['city_street_city5'] = {
                     width: 2,
                     height: 1,
                     transform: "rotateY(90deg)"
-                }
-            }
-        },
-        t: {
-            class:"prop grass",
-            contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-                    width: 1.5,
-                    height: 4
                 }
             }
         },
@@ -1598,7 +1612,7 @@ env.stages['city_street_city5'] = {
         }, 
         bl: {
             class: "prop"
-	    }
+        }
     },
     plan: [
         '.','.','.','.','.','.','.','s','.','.','.','.','.','.','.',
