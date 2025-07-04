@@ -31,6 +31,26 @@ body#city_street_city3 #content[locale="interiorcity"], body#city_street_city4 #
     background-repeat: no-repeat, repeat;
 }
 
+/*#content[locale="city"] {
+    background: var(--bright-color);
+    background-image: url(/img/textures/fadeinlong.gif), url(/img/local/city/street.gif);
+    background-position: bottom, bottom;
+    background-size: cover, cover;
+}
+#content[locale="city"] {
+    background: var(--bright-color);
+    background-image: url(/img/local/city/streetnight.gif);
+    background-position: bottom, bottom;
+    background-size: cover, cover;
+}
+#content[locale="interiorcity"] {
+    background: var(--bright-color);
+    background-image: url(/img/textures/fadeinlong.gif), url(https://genseot.github.io/mods/theirstreets/img/interiorcity.gif);
+    background-position: bottom, bottom;
+    background-size: cover, cover;
+}*/
+
+
 
 /* PROPS & TILES */
 .road .prop.car.downwards {
