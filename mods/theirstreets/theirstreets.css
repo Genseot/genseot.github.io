@@ -57,13 +57,13 @@ body#city_street_city3 #content[locale="interiorcity"], body#city_street_city4 #
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
-#content[locale="city"], #content[locale="interiorcity"] #realgrid .gridpiece.prop.grass {
+#content[locale="interiorcity"] #realgrid .gridpiece.prop.grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
 }
-#content[locale="city"], #content[locale="interiorcity"] #realgrid .gridpiece.empty.plain.crosswalk {
+#content[locale="city"] #realgrid .gridpiece.empty.plain.crosswalk, #content[locale="interiorcity"] #realgrid .gridpiece.empty.plain.crosswalk {
     background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
     --baseTransform: rotateX(90deg);
 }
-#content[locale="city"], #content[locale="interiorcity"] #realgrid .gridpiece.empty.plain.crosswalk.rotated {
+#content[locale="city"] #realgrid .gridpiece.empty.plain.crosswalk, #content[locale="interiorcity"] #realgrid .gridpiece.empty.plain.crosswalk.rotated {
     background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
 }
