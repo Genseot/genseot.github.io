@@ -1,4 +1,4 @@
-/* BACKGROUNDS & LOCALE STUFF */
+/* BACKGROUNDS & LOCALES */
 body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 #content[locale="nightcity"], body#city_street_bridge7 #content[locale="nightcity"] {
     background: url('https://corru.observer/img/local/city/citybank.gif'), url('https://corru.observer/img/local/orbit/stars.gif'), var(--dark-color);
     background-position: bottom;
@@ -24,10 +24,26 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     animation: unset;
 }
 
+body#city_street_city3 #content[locale="interiorcity"], body#city_street_city4 #content[locale="interiorcity"], body#city_street_city5 #content[locale="interiorcity"], body#city_street_city6 #content[locale="interiorcity"] {
+    background: url('https://genseot.github.io/mods/theirstreets/img/cityinterior.gif'), var(--bright-color);
+    backgrund-position: bottom;
+    background-size: cover, auto;
+    background-repeat: no-repeat, repeat;
+}
 
 
-/* PROPS */
+/* PROPS & TILES */
 .road .prop.car.downwards {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
+}
+.grass {
+    background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
+}
+.crosswalk {
+    background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
+    --baseTransform: rotateX(90deg);
+}
+.crosswalk .rotated {
+    background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
 }
