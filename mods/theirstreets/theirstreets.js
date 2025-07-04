@@ -15,8 +15,10 @@ CUSTOM STAGES
 DIALOGUE
     FOUNTAIN BENCH
     BRIDGE BENCH
-    STREETS BENCH
-    
+    STREETS BENCH 
+    PARK BENCH
+    CITY BENCH
+    WATERFRONT BENCH
 */
 
 // CUSTOM STUFF INITIALISATION 
@@ -213,8 +215,7 @@ env.stageEntities['Lr'] = {
     } 
 }
 env.stageEntities['c'] = {      
-    class:"empty plain",
-    id: "crosswalk"
+    class:"empty plain crosswalk",
 }
 env.stageEntities['r'] = {
     class:"road"
@@ -306,6 +307,30 @@ createEntity({
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('parkbench')
+    }]
+}),
+createEntity({
+    name: 'city bench',
+    type: "recollection thoughtform portrait-bright portrait-cover",
+    image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
+    text: `::INCOMPLETE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
+    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    actions: [{
+         name: "sit",
+         exec: ()=>startDialogue('citybench')
+    }]
+}),
+createEntity({
+    name: 'waterfront bench',
+    type: "recollection thoughtform portrait-bright portrait-cover",
+    image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
+    text: `::INCOMPLETE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
+    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    actions: [{
+         name: "sit",
+         exec: ()=>startDialogue('waterfrontbench')
     }]
 }),
 
@@ -1118,6 +1143,9 @@ env.stages['city_street_streets6'] = {
         EpisodeCheck()
     },
     entities: {
+        cr: {
+            class:"empty plain crosswalk rotated",
+        },
         s: {
             teleportSpot: 172,
             teleportTarget: "city_street_streets7",
@@ -1135,9 +1163,9 @@ env.stages['city_street_streets6'] = {
         'r','r','r','░','░','░','░',
         'r','r','r','░','░','░','░',
         'r','r','r','l','░','░','░',
-        'r','r','r','r','c','r','r',
-        'r','r','r','r','c','r','r',
-        'r','r','r','r','c','r','r',
+        'r','r','r','r','cr','r','r',
+        'r','r','r','r','cr','r','r',
+        'r','r','r','r','cr','r','r',
         'r','r','r','l','░','░','░',
         'r','r','r','░','░','░','░',
         'r','r','r','░','░','░','░',
@@ -1688,6 +1716,48 @@ RESPOBJ::
         
 `)
 env.dialogues["streetsbench"] = generateDialogueObject(`
+start
+    RESPONSES::akizet
+        end<+>END
+`)
+
+
+
+// PARK BENCH
+env.dialogues.streetsresp1 = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::akizet
+        
+`)
+env.dialogues["parkbench"] = generateDialogueObject(`
+start
+    RESPONSES::akizet
+        end<+>END
+`)
+
+
+
+// CITY BENCH
+env.dialogues.streetsresp1 = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::akizet
+        
+`)
+env.dialogues["citybench"] = generateDialogueObject(`
+start
+    RESPONSES::akizet
+        end<+>END
+`)
+
+
+
+// WATERFRONT BENCH
+env.dialogues.streetsresp1 = generateDialogueObject(`
+RESPOBJ::
+    RESPONSES::akizet
+        
+`)
+env.dialogues["waterfrontbench"] = generateDialogueObject(`
 start
     RESPONSES::akizet
         end<+>END
