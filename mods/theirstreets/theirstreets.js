@@ -1006,7 +1006,7 @@ env.stages['city_street_streets3'] = {
             shouldFace: "left"
         },
         cg: {
-            teleportSpot: 120,
+            teleportSpot: 105,
             teleportTarget: "city_street_city4"
         }
     },
@@ -1112,7 +1112,7 @@ env.stages['city_street_streets5'] = {
             teleportSpot: 17,
             teleportTarget: "city_street_streets4"
         },
-        c : {
+        cm: {
             teleportSpot: 22,
             teleportTarget: "city_street_city5"
         }
@@ -1125,7 +1125,7 @@ env.stages['city_street_streets5'] = {
         'r','r','r','░','░','░','.','.','.',
         'r','r','r','l','░','░','.','.','.',
         'r','r','r','░','░','░','░','░','.',
-        'r','r','r','░','░','░','░','░','c ',
+        'r','r','r','░','░','░','░','░','cm',
         'r','r','r','░','░','░','░','░','.',
         'r','r','r','l','░','░','.','.','.',
         'r','r','r','░','░','░','.','.','.',
@@ -1503,6 +1503,16 @@ env.stages['city_street_city5'] = {
                     width: 2,
                     height: 1,
                     transform: "rotateY(90deg)"
+                }
+            }
+        },
+        t: {
+            class:"prop grass",
+            contains: {
+                dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
+                    width: 1.5,
+                    height: 4
                 }
             }
         },
