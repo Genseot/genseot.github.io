@@ -247,7 +247,7 @@ env.stageEntities['B'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1,
+	    width: 1.75,
 	    height: 2
 	}
     }
@@ -257,7 +257,7 @@ env.stageEntities['Br'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1,
+	    width: 1.75,
 	    height: 2,
             transform: "rotateY(90deg)"
 	}
@@ -268,7 +268,7 @@ env.stageEntities['Bc'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1,
+	    width: 1.75,
 	    height: 2,
             transform: "rotateY(45deg)"
 	}
@@ -279,7 +279,7 @@ env.stageEntities['Bcr'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1,
+	    width: 1.75,
 	    height: 2,
             transform: "rotateY(135deg)"
 	}
@@ -290,7 +290,7 @@ env.stageEntities['t'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 1.5,
+            width: 2.5,
             height: 4
         }
     }
@@ -300,7 +300,7 @@ env.stageEntities['tr'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 1.5,
+            width: 2.5,
             height: 4,
             transform: "rotateY(90deg)"
         }
@@ -311,7 +311,7 @@ env.stageEntities['tc'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 1.5,
+            width: 2.5,
             height: 4,
             transform: "rotateY(45deg)"
         }
@@ -322,7 +322,7 @@ env.stageEntities['tcr'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 1.5,
+            width: 2.5,
             height: 4,
             transform: "rotateY(135deg)"
         }
