@@ -1340,7 +1340,7 @@ env.stages['city_street_city1'] = {
     ]
 }
 env.stages['city_street_city2'] = {
-    locale: 'city',
+    locale: 'interiorcity',
     width: 17,
     exec: ()=>{
         page.bgm.rate(1)
@@ -1373,7 +1373,7 @@ env.stages['city_street_city2'] = {
         '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
         '.','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','.',
         '.','r','r','r','.','.','.','l','p','l','.','.','.','r','r','r','.',
-        '.','R','r','R','.','.','.','.','e','.','.','.','.','R','r','R','.',
+        '.','r','r','r','.','.','.','.','e','.','.','.','.','r','r','r','.',
     ]
 }
 env.stages['city_street_city3'] = {
