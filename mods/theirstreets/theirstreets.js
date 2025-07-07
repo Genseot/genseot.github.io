@@ -488,7 +488,7 @@ env.stages['city_street_fountain'] = {
 
 // BRIDGE
 env.stages['city_street_bridge1'] = {
-    locale: 'city',
+    locale: 'interiorcity',
     width: 8,
     exec: ()=>{
         page.bgm.rate(0.8)
@@ -1228,7 +1228,7 @@ env.stages['city_street_streets7'] = {
 
 // CITY 
 env.stages['city_street_city1'] = {
-    locale: 'city',
+    locale: 'interiorcity',
     width: 9,
     exec: ()=>{
         page.bgm.rate(0.8)
@@ -1325,7 +1325,7 @@ env.stages['city_street_city2'] = {
     ]
 }
 env.stages['city_street_city3'] = {
-    locale: 'city',
+    locale: 'interiorcity',
     width: 21,
     exec: ()=>{
         page.bgm.rate(1)
@@ -1395,7 +1395,7 @@ env.stages['city_street_city3'] = {
     ]
 }
 env.stages['city_street_city4'] = {
-    locale: 'city',
+    locale: 'interiorcity',
     width: 13,
     exec: ()=>{
         page.bgm.rate(1)
@@ -1493,7 +1493,7 @@ env.stages['city_street_city4'] = {
     ]
 }
 env.stages['city_street_city5'] = {
-    locale: 'city',
+    locale: 'interiorcity',
     width: 15,
     exec: ()=>{
         page.bgm.rate(1)
@@ -1644,7 +1644,7 @@ env.stages['city_street_city5'] = {
     ]
 }
 env.stages['city_street_city6'] = {
-    locale: 'city',
+    locale: 'waterfrontcity',
     width: 16,
     exec: ()=>{
         page.bgm.rate(1)
