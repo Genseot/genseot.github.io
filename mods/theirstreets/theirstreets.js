@@ -242,29 +242,105 @@ env.stageEntities['T'] = {
         class: "prop car sideways"
     }
 }
-env.stageEntities['E'] = {
-    class: "prop later",
+env.stageEntities['B'] = {
+    class: "prop grass",
     contains: {
-        slug: 'E',
-        id: 'busy',
-        class: "civvie busy eyeball",
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
+	    width: 1,
+	    height: 2
+	}
     }
+},
+env.stageEntities['Br'] = {
+    class: "prop grass",
+    contains: {
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
+	    width: 1,
+	    height: 2,
+            transform: "rotateY(90deg)"
+	}
+    }
+},
+env.stageEntities['Bc'] = {
+    class: "prop grass",
+    contains: {
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
+	    width: 1,
+	    height: 2,
+            transform: "rotateY(45deg)"
+	}
+    }
+},
+env.stageEntities['t'] = {
+    class:"prop grass",
+    contains: {
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
+            width: 1.5,
+            height: 4
+        }
+    }
+},
+env.stageEntities['tr'] = {
+    class:"prop grass",
+    contains: {
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
+            width: 1.5,
+            height: 4,
+            transform: "rotateY(90deg)"
+        }
+    }
+},
+env.stageEntities['tc'] = {
+    class:"prop grass",
+    contains: {
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
+            width: 1.5,
+            height: 4,
+            transform: "rotateY(45deg)"
+        }
+    }
+},
+env.stageEntities['F1'] = {
+    class: "prop grass",
+    contains: { 
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets//img/flower1.gif)',
+            width: 1,
+            height: 2
+        }
+    } 
 }
-env.stageEntities['S'] = {
-    class: "prop later",
-    contains: {
-        slug: 'S',
-        id: 'slim',
-        class: "civvie slim",
-    }
+env.stageEntities['F2'] = {
+    class: "prop grass",
+    contains: { 
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets//img/flower2.gif)',
+            width: 1,
+            height: 2
+        }
+    } 
 }
-env.stageEntities['C'] = {
-    class: "prop later",
-    contains: {
-        slug: 'C',
-        id: 'creep',
-        class: "civvie creep",
-    }
+env.stageEntities['F3'] = {
+    class: "prop grass",
+    contains: { 
+        dyp: {
+            image: 'url(https://genseot.github.io/mods/theirstreets//img/flower3.gif)',
+            width: 1,
+            height: 2
+        }
+    } 
+}
+env.stageEntities['bl'] = {
+    class: "prop"
+}
+env.stageEntities['g'] = {
+    class:"prop grass"
 }
 // CUSTOM ENTITIES
 createEntity({
@@ -410,13 +486,30 @@ env.stages['city_street_fountain'] = {
     },
 
     entities: {
-        F: {
+        Fb: {
     	    class:"prop",
     	    contains: {
-                slug: 'F',
-                id: "fountain",
-                class: "fountain"
+		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
+                    width: 3,
+                    height: 1.25
     	    }	
+        },
+	Fbr: {
+    	    class:"prop",
+    	    contains: {
+		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
+                    width: 3,
+                    height: 1.25,
+		    transform: "rotateY(90deg)"
+    	    }	
+        },
+	Fp: {
+    	    class:"prop",
+    	    contains: {
+                image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
+                width: 1,
+                height: 4    	    
+	    }	
         },
         fb: {
     	    class:"prop",
@@ -428,17 +521,7 @@ env.stages['city_street_fountain'] = {
                 },
                 examineEntity: "fountain bench"
     	    }
-        },    
-        B: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                }
-    	    }		
-        },     
+        },        
         m: {
             teleportSpot: 57,
             teleportTarget: "city_street2",
@@ -455,28 +538,25 @@ env.stages['city_street_fountain'] = {
         c: {
             teleportSpot: 68,
             teleportTarget: "city_street_city1"
-        },
-        bl: {
-            class: "prop"
-	    }
+        }
     },
     plan: [
         '.','.','.','.','.','c','.','.','.','.','.',
-        '.','B','B','░','░','░','░','░','B','B','.',
-        '.','B','░','░','░','░','░','░','░','B','.',
+        '.','Bc','B','░','░','░','░','░','B','Bc','.',
+        '.','Br','░','░','░','░','░','░','░','Br','.',
         '.','░','░','░','░','░','░','░','░','░','.',
         '.','░','░','░','░','░','░','░','░','░','.',
         '.','L','░','░','░','░','░','░','░','L','.',
-        '.','░','░','░','S','F','░','░','░','░','.',
-        '.','░','░','░','F','F','F','░','░','░','.',
-        's','░','░','F','F','F','F','F','░','░','b',
-        '.','░','░','░','F','F','F','░','░','░','.',
-        '.','░','░','░','░','F','░','░','░','░','.',
+        '.','░','░','░','bl','Fb','bl','░','░','░','.',
+        '.','░','░','░','bl','░','bl','░','░','░','.',
+        's','░','░','░','Fbr','Fp','Fbr','░','░','░','b',
+        '.','░','░','░','bl','░','bl','░','░','░','.',
+        '.','░','░','░','bl','Fb','bl','░','░','░','.',
         '.','L','░','░','░','░','░','░','░','L','.',
         '.','░','░','░','bl','fb','bl','░','░','░','.',
         '.','░','░','░','░','░','░','░','░','░','.',
-        '.','B','░','░','░','░','░','░','░','B','.',
-        '.','B','B','░','░','p','░','░','B','B','.',
+        '.','Br','░','░','░','░','░','░','░','Bc','.',
+        '.','Bc','B','░','░','p','░','░','B','Br','.',
         '.','.','.','.','.','m','.','.','.','.','.',
     ]
 }
@@ -797,10 +877,7 @@ env.stages['city_street_bridge6'] = {
         b: {
             teleportSpot: 232,
             teleportTarget: "city_street_bridge7"
-        },
-        bl: {
-            class: "prop"
-	      }
+        }
     },
     plan: [
         '.','.','.','.','.','.','.','.','.','b','.','.','.','.','.','.','.','.','.',
@@ -909,7 +986,7 @@ env.stages['city_street_bridge7'] = {
 
 
 // STREETS
-env.stages['city_street_streets1'] = {
+env.stages['city_street_streets1'] = { //FIX THIS PLEASE PLACEHOLDER. REVISE. ETC 
     locale: 'city',
     width: 15,
     exec: ()=>{
@@ -991,17 +1068,6 @@ env.stages['city_street_streets3'] = {
         EpisodeCheck()
     },
     entities: {
-        Br: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                    transform: "rotateY(90deg)"
-                }
-    	    }	
-        }, 
         e: {
             teleportSpot: 14,
             teleportTarget: "city_street_streets2"
@@ -1054,19 +1120,6 @@ env.stages['city_street_streets4'] = {
                 examineEntity: "streets bench"
     	    }
         },
-        bl: {
-            class: "prop"
-	    },
-        B: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                }
-    	    }		
-        }, 
         e: {
             teleportSpot: 13,
             teleportTarget: "city_street_streets3",
@@ -1084,11 +1137,11 @@ env.stages['city_street_streets4'] = {
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','lr','░','░','Lr','.','.','.','.','.','.',
-        'r','r','r','░','░','░','░','░','B','B','.','.','.',
+        'r','r','r','░','░','░','░','░','Br','Bc','.','.','.',
         'r','r','r','░','░','░','░','░','bl','B','.','.','.',
         'r','r','r','░','░','░','░','░','sb','B','.','.','.',
         'r','r','r','lr','░','░','░','░','bl','B','.','.','.',
-        'r','r','r','░','░','░','░','░','B','B','.','.','.',
+        'r','r','r','░','░','░','░','░','Br','Bc','.','.','.',
         'r','r','r','░','░','░','Lr','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','lr','░','░','.','.','.','.','.','.','.',
@@ -1271,30 +1324,7 @@ env.stages['city_street_city2'] = {
         page.bgm.rate(1)
         EpisodeCheck()
     },
-    entities: {
-        B: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                }
-    	    }		
-        }, 
-        t: {
-            class:"prop",
-            contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            }
-        },
-        g: {
-            class:"prop grass"
-        },
+    entities: { 
         c: {
             teleportSpot: 367,
             teleportTarget: "city_street_city3"
@@ -1311,11 +1341,11 @@ env.stages['city_street_city2'] = {
         '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','.','r','r','r','.',
         '.','r','r','r','lr','░','░','B','B','B','░','░','lr','r','r','r','.',
-        '.','r','r','r','░','░','B','B','t','B','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','t','g','t','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','g','t','g','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','t','g','t','B','░','░','r','r','r','.',
-        '.','r','r','r','░','░','B','B','t','B','B','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','Bc','t','Bc','Br','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','tc','g','tc','Br','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','g','tr','g','Br','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','tc','g','tc','Br','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','Bc','t','Bc','Br','░','░','r','r','r','.',
         '.','r','r','r','lr','░','░','B','B','B','░','░','lr','r','r','r','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','.','r','r','r','.',
         '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
@@ -1331,27 +1361,7 @@ env.stages['city_street_city3'] = {
         page.bgm.rate(1)
         EpisodeCheck()
     },
-    entities: {
-        B: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                }
-    	    }		
-        },    
-        t: {
-            class:"prop",
-            contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            }
-        },  
+    entities: {    
         ce: {
             teleportSpot: 25,
             teleportTarget: "city_street_city2"
@@ -1372,8 +1382,8 @@ env.stages['city_street_city3'] = {
     plan: [
         '.','.','.','r','r','r','.','.','.','.','cm','.','.','.','.','r','r','r','.','.','.',
         '.','░','░','r','r','r','.','.','.','L','░','L','.','.','.','r','r','r','░','░','.',
-        '.','░','lr','r','r','r','.','t','B','░','░','░','B','t','.','r','r','r','lr','░','.',
-        '.','░','░','r','r','r','.','B','B','░','░','░','B','B','.','r','r','r','░','░','.',
+        '.','░','lr','r','r','r','.','tc','Br','░','░','░','Br','tc','.','r','r','r','lr','░','.',
+        '.','░','░','r','r','r','.','B','Bc','░','░','░','Bc','B','.','r','r','r','░','░','.',
         '.','░','░','r','r','r','Lr','░','░','░','░','░','░','░','Lr','r','r','r','░','░','.',
         '.','░','░','r','r','r','░','░','░','░','░','░','░','░','░','r','r','r','░','░','.',
         '.','░','lr','r','r','r','lr','░','░','░','░','░','░','░','lr','r','r','r','lr','░','.',
@@ -1383,8 +1393,8 @@ env.stages['city_street_city3'] = {
         '.','░','lr','r','r','r','lr','░','░','░','░','░','░','░','lr','r','r','r','lr','░','.',
         '.','░','░','r','r','r','░','░','░','░','░','░','░','░','░','r','r','r','r','░','.',
         '.','░','░','r','r','r','Lr','░','░','░','░','░','░','░','Lr','r','r','r','r','░','.',
-        '.','░','░','r','r','r','.','B','B','░','░','░','B','B','.','r','r','r','░','░','.',
-        '.','░','lr','r','r','r','.','t','B','░','░','░','B','t','.','r','r','r','lr','░','.',
+        '.','░','░','r','r','r','.','B','Bc','░','░','░','Bc','B','.','r','r','r','░','░','.',
+        '.','░','lr','r','r','r','.','tc','Br','░','░','░','Br','tc','.','r','r','r','lr','░','.',
         '.','░','░','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','░','░','.',
         '.','░','░','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','░','░','.',
         '.','░','░','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','░','░','.',
@@ -1402,52 +1412,6 @@ env.stages['city_street_city4'] = {
         EpisodeCheck()
     },
     entities: {
-        B: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                    transform: "rotateY(90deg)"
-                }
-    	    }		
-        }, 
-        Br: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                    transform: "rotateY(90deg)"
-                }
-    	    }	
-        }, 
-        t: {
-            class:"prop grass",
-            contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            }
-        },
-        tr: {
-            class:"prop grass",
-            contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-                    width: 1.5,
-                    height: 4,
-                    transform: "rotateY(90deg)"
-                }
-            }
-        },
-        g: {
-            class:"prop grass"
-        },
         gb: {
     	    class:"prop",
     	    contains: {
@@ -1467,14 +1431,11 @@ env.stages['city_street_city4'] = {
         s: {
             teleportSpot: 70,
             teleportTarget: "city_street_streets3"
-        },
-        bl: {
-            class: "prop"
-	    }
+        }
     },
     plan: [
         '.','.','.','.','.','.','.','.','.','.','.','.','.',
-        '.','t','g','B','g','g','B','g','g','B','g','t','.',
+        '.','tc','g','B','g','g','B','g','g','B','g','tc','.',
         '.','g','░','░','░','░','░','░','░','░','░','g','.',
         '.','Br','░','░','░','░','░','░','░','░','░','Br','.',
         '.','g','░','t','g','B','░','B','g','t','░','g','.',
@@ -1488,7 +1449,7 @@ env.stages['city_street_city4'] = {
         '.','g','░','t','g','B','░','B','g','t','░','g','.',
         '.','Br','░','░','░','░','░','░','░','░','░','Br','.',
         '.','g','░','░','░','░','░','░','░','░','░','g','.',
-        '.','t','g','B','g','g','B','g','g','B','g','t','.',
+        '.','tc','g','B','g','g','B','g','g','B','g','tc','.',
         '.','.','.','.','.','.','.','.','.','.','.','.','.',
     ]
 }
@@ -1500,30 +1461,6 @@ env.stages['city_street_city5'] = {
         EpisodeCheck()
     },
     entities: {
-        B: {
-    	    class:"prop grass",
-    	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-                    width: 1.25,
-                    height: 1.25,
-                    transform: "rotateY(90deg)"
-                }
-    	    }		
-        }, 
-        t: {
-            class:"prop grass",
-            contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-                    width: 1.5,
-                    height: 4
-                }
-            }
-        },
-	g: {
-            class:"prop grass"
-        },
         r: {
             class: "prop",
             contains: {
@@ -1616,9 +1553,6 @@ env.stages['city_street_city5'] = {
                 },
                 examineEntity: "city bench"
     	    }
-        }, 
-        bl: {
-            class: "prop"
         }
     },
     plan: [
@@ -1681,10 +1615,7 @@ env.stages['city_street_city6'] = {
                 },
                 examineEntity: "waterfront bench"
     	    }
-        }, 
-        bl: {
-            class: "prop"
-	    }
+        }
     },
     plan: [
         '.','Lr','░','░','░','░','░','░','░','░','r','.','.','.','.','.',
