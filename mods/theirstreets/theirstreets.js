@@ -373,8 +373,7 @@ env.stageEntities['bl'] = {
     class: "prop"
 }
 env.stageEntities['g'] = {
-    id: "grass",
-    class:"prop"
+    class:"prop grass"
 }
 // CUSTOM ENTITIES
 createEntity({
