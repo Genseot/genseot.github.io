@@ -247,9 +247,7 @@ env.stageEntities['B'] = {
     class: "prop grass",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1.75,
-	    height: 2
+            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)'
 	}
     }
 },
@@ -259,8 +257,6 @@ env.stageEntities['Br'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1.75,
-	    height: 2,
             transform: "rotateY(90deg)"
 	}
     }
@@ -271,8 +267,6 @@ env.stageEntities['Bc'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1.75,
-	    height: 2,
             transform: "rotateY(45deg)"
 	}
     }
@@ -283,8 +277,6 @@ env.stageEntities['Bcr'] = {
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
-	    width: 1.75,
-	    height: 2,
             transform: "rotateY(135deg)"
 	}
     }
