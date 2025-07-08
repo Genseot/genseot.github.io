@@ -243,6 +243,7 @@ env.stageEntities['T'] = {
     }
 }
 env.stageEntities['B'] = {
+    id: "bush",
     class: "prop grass",
     contains: {
         dyp: {
@@ -253,6 +254,7 @@ env.stageEntities['B'] = {
     }
 },
 env.stageEntities['Br'] = {
+    id: "bush",
     class: "prop grass",
     contains: {
         dyp: {
@@ -264,6 +266,7 @@ env.stageEntities['Br'] = {
     }
 },
 env.stageEntities['Bc'] = {
+    id: "bush",
     class: "prop grass",
     contains: {
         dyp: {
@@ -275,6 +278,7 @@ env.stageEntities['Bc'] = {
     }
 },
 env.stageEntities['Bcr'] = {
+    id: "bush",
     class: "prop grass",
     contains: {
         dyp: {
@@ -286,6 +290,7 @@ env.stageEntities['Bcr'] = {
     }
 },
 env.stageEntities['t'] = {
+    id: "tree",
     class:"prop grass",
     contains: {
         dyp: {
@@ -296,6 +301,7 @@ env.stageEntities['t'] = {
     }
 },
 env.stageEntities['tr'] = {
+    id: "tree",
     class:"prop grass",
     contains: {
         dyp: {
@@ -307,6 +313,7 @@ env.stageEntities['tr'] = {
     }
 },
 env.stageEntities['tc'] = {
+    id: "tree",
     class:"prop grass",
     contains: {
         dyp: {
@@ -318,6 +325,7 @@ env.stageEntities['tc'] = {
     }
 },
 env.stageEntities['tcr'] = {
+    id: "tree",
     class:"prop grass",
     contains: {
         dyp: {
@@ -329,6 +337,7 @@ env.stageEntities['tcr'] = {
     }
 },
 env.stageEntities['F1'] = {
+    id: "flower1",
     class: "prop grass",
     contains: { 
         dyp: {
@@ -339,6 +348,7 @@ env.stageEntities['F1'] = {
     } 
 }
 env.stageEntities['F2'] = {
+    id: "flower2",
     class: "prop grass",
     contains: { 
         dyp: {
@@ -349,6 +359,7 @@ env.stageEntities['F2'] = {
     } 
 }
 env.stageEntities['F3'] = {
+    id: "flower3",
     class: "prop grass",
     contains: { 
         dyp: {
