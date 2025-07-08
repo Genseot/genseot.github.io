@@ -37,31 +37,16 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
     background-repeat: no-repeat, repeat;
 }
 
-/*#content[locale="city"] {
-    background: var(--bright-color);
-    background-image: url(/img/textures/fadeinlong.gif), url(/img/local/city/street.gif);
-    background-position: bottom, bottom;
-    background-size: cover, cover;
-}
-#content[locale="city"] {
-    background: var(--bright-color);
-    background-image: url(/img/local/city/streetnight.gif);
-    background-position: bottom, bottom;
-    background-size: cover, cover;
-}
-#content[locale="interiorcity"] {
-    background: var(--bright-color);
-    background-image: url(/img/textures/fadeinlong.gif), url(https://genseot.github.io/mods/theirstreets/img/interiorcity.gif);
-    background-position: bottom, bottom;
-    background-size: cover, cover;
-}*/
-
 
 
 /* PROPS & TILES */
 .road .prop.car.downwards {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
+}
+.gridpiece.prop .bush {
+    height: calc(var(--gridTileSize) * 1.5);
+    width: var(--gridTileSize);
 }
 #content[locale="city"] #realgrid .gridpiece.prop.grass, #content[locale="interiorcity"] #realgrid .gridpiece.prop.grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
