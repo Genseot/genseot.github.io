@@ -47,8 +47,8 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 
 
 /* TILES */
-#content[locale="city"] #realgrid .gridpiece.grass, 
-#content[locale="interiorcity"] #realgrid .gridpiece.grass {
+#content[locale="city"] #realgrid .gridpiece.prop .grass,
+#content[locale="interiorcity"] #realgrid .gridpiece.prop .grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
 }
 #content[locale="city"] #realgrid .gridpiece.crosswalk,
@@ -66,73 +66,4 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 .road .prop.car.downwards {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
-}
-
-.gridpiece.grass.prop .bush {
-    height: calc(var(--gridTileSize) * 5); width: calc(var(--gridTileSize) * 0.75);
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/bush.gif);
-}
-.gridpiece.grass.prop .bush.default::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/bush.gif); 
-}
-.gridpiece.grass.prop .bush.reverse::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/bush.gif); transform: rotateY(90deg);
-}
-.gridpiece.grass.prop .bush.corner::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/bush.gif); transform: rotateY(45deg);
-}
-.gridpiece.grass.prop .bush.cornerreverse::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/bush.gif); transform: rotateY(135deg);
-}
-
-.gridpiece.grass.prop .tree {
-    height: calc(var(--gridTileSize) * 5); width: calc(var(--gridTileSize) * 0.75);
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif);
-}
-.gridpiece.grass.prop .tree.default::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif);
-}
-.gridpiece.grass.prop .tree.reverse::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif); transform: rotateY(90deg);
-}
-.gridpiece.grass.prop .tree.corner::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif); transform: rotateY(45deg);
-}
-.gridpiece.grass.prop .tree.cornerreverse::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif); transform: rotateY(135deg);
-}
-
-.gridpiece.grass.prop .flower1 {
-    height: calc(var(--gridTileSize) * 5); width: calc(var(--gridTileSize) * 0.75);
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);
-}
-.gridpiece.grass.prop .flower1::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);
-}
-
-.gridpiece.grass.prop .flower2 {
-    height: calc(var(--gridTileSize) * 5); width: calc(var(--gridTileSize) * 0.75);
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);
-}
-.gridpiece.grass.prop .flower2::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);
-}
-
-.gridpiece.grass.prop .flower3 {
-    height: calc(var(--gridTileSize) * 5); width: calc(var(--gridTileSize) * 0.75);
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);
-}
-.gridpiece.grass.prop .flower3::after {
-    content: ""; position: absolute; width: 100%; height: 100%; background: inherit; backface-visibility: hidden;
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);
 }
