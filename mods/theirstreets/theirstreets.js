@@ -238,7 +238,7 @@ env.stageEntities['T'] = {
 }
 env.stageEntities['B'] = {
     class: "grass prop",
-    contains: { class: "bush" }
+    contains: { class: "bush default" }
 }
 env.stageEntities['Br'] = {
     class: "grass prop",
@@ -254,7 +254,7 @@ env.stageEntities['Bcr'] = {
 }
 env.stageEntities['t'] = {
     class: "grass prop",
-    contains: { class: "tree" }
+    contains: { class: "tree default" }
 }
 env.stageEntities['tr'] = {
     class: "grass prop",
