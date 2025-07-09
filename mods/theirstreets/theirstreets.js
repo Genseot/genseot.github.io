@@ -351,10 +351,10 @@ env.stageEntities['r'] = {
     class:"road"
 }
 env.stageEntities['bl'] = {
-    class: "prop"
+    class:"prop"
 }
 env.stageEntities['g'] = {
-    class:"prop grass"
+    class:"grass"
 }
 // CUSTOM ENTITIES
 createEntity({
