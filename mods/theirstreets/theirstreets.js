@@ -26,12 +26,6 @@ content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
 
-/*env.stage.locales["interiorcity"] = [
-    [".empty.plain", "/img/local/city/tiles/empty.gif"],
-    [".prop", "/img/local/city/tiles/occupied.gif"],
-    [".road", "/img/textures/black.gif"],
-]*/
-
 function EpisodeCheck() {
 	if(!check('ep0_epilogue')) {
             document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
@@ -155,6 +149,19 @@ async function RenderWater() {
                 break;
         }
 }
+
+env.stage.locales["city"] = [
+    [".empty.plain", "/img/local/city/tiles/empty.gif"],
+    [".prop", "/img/local/city/tiles/occupied.gif"],
+    [".road", "/img/textures/black.gif"],
+    [".prop .grass", "https://genseot.github.io/mods/theirstreets/img/grass.gif"]
+]
+env.stage.locales["interiorcity"] = [
+    [".empty.plain", "/img/local/city/tiles/empty.gif"],
+    [".prop", "/img/local/city/tiles/occupied.gif"],
+    [".road", "/img/textures/black.gif"],
+    [".prop .grass", "https://genseot.github.io/mods/theirstreets/img/grass.gif"]
+]
 
 
 
