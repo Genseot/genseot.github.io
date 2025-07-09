@@ -56,8 +56,8 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
     height: calc(var(--gridTileSize) * 5);
     width: calc(var(--gridTileSize) * 0.75);
 }*/
-#content[locale="city"] #realgrid .gridpiece.prop.grass, 
-#content[locale="interiorcity"] #realgrid .gridpiece.prop.grass {
+#content[locale="city"] #realgrid .gridpiece.grass, 
+#content[locale="interiorcity"] #realgrid .gridpiece.grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
 }
 #content[locale="city"] #realgrid .gridpiece.crosswalk,
