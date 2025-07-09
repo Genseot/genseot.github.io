@@ -1218,7 +1218,7 @@ env.stages['city_street_streets6'] = {
     },
     entities: {
         cr: {
-            class:"empty plain crosswalkrotated"
+            class:"crosswalkrotated"
         },
         s: {
             teleportSpot: 172,
