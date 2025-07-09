@@ -51,11 +51,11 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
-#content[locale="city"] #realgrid .gridpiece.prop.grass.bush,
+/*#content[locale="city"] #realgrid .gridpiece.prop.grass.bush,
 #content[locale="interiorcity"] #realgrid .gridpiece.prop.grass.bush {
     height: calc(var(--gridTileSize) * 5);
     width: calc(var(--gridTileSize) * 0.75);
-}
+}*/
 #content[locale="city"] #realgrid .gridpiece.prop.grass, 
 #content[locale="interiorcity"] #realgrid .gridpiece.prop.grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
