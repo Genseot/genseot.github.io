@@ -1,5 +1,7 @@
 /* BACKGROUNDS & LOCALES */
-body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 #content[locale="nightcity"], body#city_street_bridge7 #content[locale="nightcity"] {
+body#city_street_bridge5 #content[locale="nightcity"], 
+body#city_street_bridge6 #content[locale="nightcity"], 
+body#city_street_bridge7 #content[locale="nightcity"] {
     background: url('https://corru.observer/img/local/city/citybank.gif'), url('https://corru.observer/img/local/orbit/stars.gif'), var(--dark-color);
     background-position: bottom;
     background-size: cover, auto;
@@ -24,7 +26,12 @@ body#city_street_bridge5 #content[locale="nightcity"], body#city_street_bridge6 
     animation: unset;
 }
 
-body#city_street_bridge1 #content[locale="interiorcity"], body#city_street_city1 #content[locale="interiorcity"], body#city_street_city2 #content[locale="interiorcity"], body#city_street_city3 #content[locale="interiorcity"], body#city_street_city4 #content[locale="interiorcity"], body#city_street_city5 #content[locale="interiorcity"] {
+body#city_street_bridge1 #content[locale="interiorcity"], 
+body#city_street_city1 #content[locale="interiorcity"], 
+body#city_street_city2 #content[locale="interiorcity"], 
+body#city_street_city3 #content[locale="interiorcity"], 
+body#city_street_city4 #content[locale="interiorcity"], 
+body#city_street_city5 #content[locale="interiorcity"] {
     background: url('https://genseot.github.io/mods/theirstreets/img/cityinterior.gif'), var(--bright-color);
     backgrund-position: bottom;
     background-size: cover, auto;
