@@ -238,17 +238,11 @@ env.stageEntities['T'] = {
 }
 env.stageEntities['B'] = {
     class: "grass bush prop",
-    contains: {
-        dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)'
-	}
-    }
 },
 env.stageEntities['Br'] = {
     class: "grass bush prop",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
             transform: "rotateY(90deg)"
 	}
     }
@@ -257,7 +251,6 @@ env.stageEntities['Bc'] = {
     class: "grass bush prop",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
             transform: "rotateY(45deg)"
 	}
     }
@@ -266,28 +259,17 @@ env.stageEntities['Bcr'] = {
     class: "grass bush prop",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
             transform: "rotateY(135deg)"
 	}
     }
 },
 env.stageEntities['t'] = {
     class: "grass tree prop",
-    contains: {
-        dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 2.5,
-            height: 4
-        }
-    }
 },
 env.stageEntities['tr'] = {
     class: "grass tree prop",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 2.5,
-            height: 4,
             transform: "rotateY(90deg)"
         }
     }
@@ -296,9 +278,6 @@ env.stageEntities['tc'] = {
     class: "grass tree prop",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 2.5,
-            height: 4,
             transform: "rotateY(45deg)"
         }
     }
@@ -307,42 +286,18 @@ env.stageEntities['tcr'] = {
     class: "grass tree prop",
     contains: {
         dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
-            width: 2.5,
-            height: 4,
             transform: "rotateY(135deg)"
         }
     }
 },
 env.stageEntities['F1'] = {
     class: "grass flower1 prop",
-    contains: { 
-        dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets//img/flower1.gif)',
-            width: 1,
-            height: 2
-        }
-    } 
 }
 env.stageEntities['F2'] = {
     class: "grass flower2 prop",
-    contains: { 
-        dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets//img/flower2.gif)',
-            width: 1,
-            height: 2
-        }
-    } 
 }
 env.stageEntities['F3'] = {
     class: "grass flower3 prop",
-    contains: { 
-        dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets//img/flower3.gif)',
-            width: 1,
-            height: 2
-        }
-    } 
 }
 env.stageEntities['c'] = {   
     class:"crosswalkrotated"
