@@ -67,8 +67,28 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
-#content[locale="city"] #realgrid .gridpiece.grass.bush.prop,
-#content[locale="interiorcity"] #realgrid .gridpiece.prop.grass.bush {
+.gridpiece.grass.prop .bush {
     height: calc(var(--gridTileSize) * 5);
     width: calc(var(--gridTileSize) * 0.75);
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/bush.gif);
+}
+.gridpiece.grass.prop .tree {
+    height: calc(var(--gridTileSize) * 5);
+    width: calc(var(--gridTileSize) * 0.75);
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif);
+}
+.gridpiece.grass.prop .flower1 {
+    height: calc(var(--gridTileSize) * 5);
+    width: calc(var(--gridTileSize) * 0.75);
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);
+}
+.gridpiece.grass.prop .flower2 {
+    height: calc(var(--gridTileSize) * 5);
+    width: calc(var(--gridTileSize) * 0.75);
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);
+}
+.gridpiece.grass.prop .flower3 {
+    height: calc(var(--gridTileSize) * 5);
+    width: calc(var(--gridTileSize) * 0.75);
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);
 }
