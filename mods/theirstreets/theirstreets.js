@@ -151,16 +151,20 @@ async function RenderWater() {
 }
 
 env.stage.locales["city"] = [
+    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"],
+    [".crosswalk", "https://genseot.github.io/mods/theirstreets/img/crosswalk.gif"],
+    [".crosswalkrotated", "https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif"],
     [".empty.plain", "/img/local/city/tiles/empty.gif"],
     [".prop", "/img/local/city/tiles/occupied.gif"],
     [".road", "/img/textures/black.gif"],
-    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"]
 ]
 env.stage.locales["interiorcity"] = [
+    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"],
+    [".crosswalk", "https://genseot.github.io/mods/theirstreets/img/crosswalk.gif"],
+    [".crosswalkrotated", "https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif"],
     [".empty.plain", "/img/local/city/tiles/empty.gif"],
     [".prop", "/img/local/city/tiles/occupied.gif"],
     [".road", "/img/textures/black.gif"],
-    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"]
 ]
 
 
