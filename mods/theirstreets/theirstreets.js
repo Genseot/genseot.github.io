@@ -243,8 +243,7 @@ env.stageEntities['T'] = {
     }
 }
 env.stageEntities['B'] = {
-    id: "bush",
-    class: "prop grass",
+    class: "prop grass bush",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)'
@@ -252,8 +251,7 @@ env.stageEntities['B'] = {
     }
 },
 env.stageEntities['Br'] = {
-    id: "bush",
-    class: "prop grass",
+    class: "prop grass bush",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
@@ -262,8 +260,7 @@ env.stageEntities['Br'] = {
     }
 },
 env.stageEntities['Bc'] = {
-    id: "bush",
-    class: "prop grass",
+    class: "prop grass bush",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
@@ -272,8 +269,7 @@ env.stageEntities['Bc'] = {
     }
 },
 env.stageEntities['Bcr'] = {
-    id: "bush",
-    class: "prop grass",
+    class: "prop grass bush",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)',
@@ -282,8 +278,7 @@ env.stageEntities['Bcr'] = {
     }
 },
 env.stageEntities['t'] = {
-    id: "tree",
-    class:"prop grass",
+    class:"prop grass tree",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
@@ -293,8 +288,7 @@ env.stageEntities['t'] = {
     }
 },
 env.stageEntities['tr'] = {
-    id: "tree",
-    class:"prop grass",
+    class:"prop grass tree",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
@@ -305,8 +299,7 @@ env.stageEntities['tr'] = {
     }
 },
 env.stageEntities['tc'] = {
-    id: "tree",
-    class:"prop grass",
+    class:"prop grass tree",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
@@ -317,8 +310,7 @@ env.stageEntities['tc'] = {
     }
 },
 env.stageEntities['tcr'] = {
-    id: "tree",
-    class:"prop grass",
+    class:"prop grass tree",
     contains: {
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)',
@@ -329,8 +321,7 @@ env.stageEntities['tcr'] = {
     }
 },
 env.stageEntities['F1'] = {
-    id: "flower1",
-    class: "prop grass",
+    class: "prop grass flower1",
     contains: { 
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets//img/flower1.gif)',
@@ -340,8 +331,7 @@ env.stageEntities['F1'] = {
     } 
 }
 env.stageEntities['F2'] = {
-    id: "flower2",
-    class: "prop grass",
+    class: "prop grass flower2",
     contains: { 
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets//img/flower2.gif)',
@@ -351,8 +341,7 @@ env.stageEntities['F2'] = {
     } 
 }
 env.stageEntities['F3'] = {
-    id: "flower3",
-    class: "prop grass",
+    class: "prop grass flower3",
     contains: { 
         dyp: {
             image: 'url(https://genseot.github.io/mods/theirstreets//img/flower3.gif)',
