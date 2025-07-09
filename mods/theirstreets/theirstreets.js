@@ -237,67 +237,48 @@ env.stageEntities['T'] = {
     }
 }
 env.stageEntities['B'] = {
-    class: "grass bush prop",
-},
+    class: "grass prop",
+    contains: { class: "bush" }
+}
 env.stageEntities['Br'] = {
-    class: "grass bush prop",
-    contains: {
-        dyp: {
-            transform: "rotateY(90deg)"
-	}
-    }
-},
+    class: "grass prop",
+    contains: { class: "bush reverse" }
+}
 env.stageEntities['Bc'] = {
-    class: "grass bush prop",
-    contains: {
-        dyp: {
-            transform: "rotateY(45deg)"
-	}
-    }
-},
+    class: "grass prop",
+    contains: { class: "bush corner" }
+}
 env.stageEntities['Bcr'] = {
-    class: "grass bush prop",
-    contains: {
-        dyp: {
-            transform: "rotateY(135deg)"
-	}
-    }
-},
+    class: "grass prop",
+    contains: { class: "bush cornerreverse" }
+}
 env.stageEntities['t'] = {
-    class: "grass tree prop",
-},
+    class: "grass prop",
+    contains: { class: "tree" }
+}
 env.stageEntities['tr'] = {
-    class: "grass tree prop",
-    contains: {
-        dyp: {
-            transform: "rotateY(90deg)"
-        }
-    }
-},
+    class: "grass prop",
+    contains: { class: "tree reverse" }
+}
 env.stageEntities['tc'] = {
-    class: "grass tree prop",
-    contains: {
-        dyp: {
-            transform: "rotateY(45deg)"
-        }
-    }
-},
+    class: "grass prop",
+    contains: { class: "tree corner" }
+}
 env.stageEntities['tcr'] = {
-    class: "grass tree prop",
-    contains: {
-        dyp: {
-            transform: "rotateY(135deg)"
-        }
-    }
-},
+    class: "grass prop",
+    contains: { class: "tree cornerreverse" }
+}
 env.stageEntities['F1'] = {
-    class: "grass flower1 prop",
+    class: "grass prop",
+    contains: { class: "flower1" }
 }
 env.stageEntities['F2'] = {
-    class: "grass flower2 prop",
+    class: "grass prop",
+    contains: { class: "flower2" }
 }
 env.stageEntities['F3'] = {
-    class: "grass flower3 prop",
+    class: "grass prop",
+    contains: { class: "flower3" }
 }
 env.stageEntities['c'] = {   
     class:"crosswalkrotated"
