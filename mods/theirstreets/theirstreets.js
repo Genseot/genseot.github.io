@@ -220,8 +220,9 @@ env.stageEntities['Lr'] = {
         }
     } 
 }
-env.stageEntities['c'] = {      
-    class:"empty plain crosswalk",
+env.stageEntities['c'] = {   
+    id: "crosswalk",
+    class:"empty plain"
 }
 env.stageEntities['r'] = {
     class:"road"
@@ -1228,7 +1229,8 @@ env.stages['city_street_streets6'] = {
     },
     entities: {
         cr: {
-            class:"empty plain crosswalk rotated",
+	    id: "crosswalkrotated",
+            class:"empty plain"
         },
         s: {
             teleportSpot: 172,
