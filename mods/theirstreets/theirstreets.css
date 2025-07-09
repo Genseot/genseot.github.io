@@ -44,17 +44,17 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
-.gridpiece.prop .bush {
+#content[locale="city"] #realgrid .gridpiece.prop #bush, #content[locale="interiorcity"] #realgrid .gridpiece.prop #bush {
     height: calc(var(--gridTileSize) * 5);
     width: calc(var(--gridTileSize) * 0.75);
 }
 #content[locale="city"] #realgrid .gridpiece.prop.grass, #content[locale="interiorcity"] #realgrid .gridpiece.prop.grass {
     background: url(https://genseot.github.io/mods/theirstreets/img/grass.gif);
 }
-#content[locale="city"] #realgrid .gridpiece.crosswalk, #content[locale="interiorcity"] #realgrid .gridpiece.crosswalk {
+#content[locale="city"] #realgrid .gridpiece #crosswalk, #content[locale="interiorcity"] #realgrid .gridpiece #crosswalk {
     background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
 }
-#content[locale="city"] #realgrid .gridpiece.crosswalk.rotated, #content[locale="interiorcity"] #realgrid .gridpiece.crosswalk.rotated {
+#content[locale="city"] #realgrid .gridpiece #crosswalkrotated, #content[locale="interiorcity"] #realgrid .gridpiece #crosswalkrotated {
     background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
     --baseTransform: rotateX(90deg);
 }
