@@ -66,6 +66,5 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 }
 #content[locale="city"] #realgrid .gridpiece.crosswalkrotated,
 #content[locale="interiorcity"] #realgrid .gridpiece.crosswalkrotated {
-    background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
-    --baseTransform: rotateX(90deg);
+    background: url(https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif);
 }
