@@ -345,7 +345,7 @@ env.stageEntities['F3'] = {
     } 
 }
 env.stageEntities['c'] = {   
-    class:"crosswalk"
+    class:"crosswalkrotated"
 }
 env.stageEntities['r'] = {
     class:"road"
@@ -1218,7 +1218,7 @@ env.stages['city_street_streets6'] = {
     },
     entities: {
         cr: {
-            class:"crosswalkrotated"
+            class:"crosswalk"
         },
         s: {
             teleportSpot: 172,
