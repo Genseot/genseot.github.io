@@ -221,12 +221,7 @@ env.stageEntities['Lr'] = {
     } 
 }
 env.stageEntities['c'] = {      
-    class:"empty plain",
-    contains: {
-        dyp: {
-            image: 'url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif)'
-	}
-    }
+    class:"empty plain crosswalk",
 }
 env.stageEntities['r'] = {
     class:"road"
@@ -1233,13 +1228,7 @@ env.stages['city_street_streets6'] = {
     },
     entities: {
         cr: {
-            class:"empty plain",
-	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif)',
-                    transform: "rotateY(90deg)"
-		}
-	    }
+            class:"empty plain crosswalk rotated",
         },
         s: {
             teleportSpot: 172,
