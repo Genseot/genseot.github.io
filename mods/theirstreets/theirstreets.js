@@ -220,12 +220,6 @@ env.stageEntities['Lr'] = {
         }
     } 
 }
-env.stageEntities['c'] = {   
-    class:"empty plain crosswalk"
-}
-env.stageEntities['r'] = {
-    class:"road"
-}
 env.stageEntities['R'] = {
     class:"road prop",
     contains: {
@@ -349,6 +343,12 @@ env.stageEntities['F3'] = {
             height: 2
         }
     } 
+}
+env.stageEntities['c'] = {   
+    class:"crosswalk"
+}
+env.stageEntities['r'] = {
+    class:"road"
 }
 env.stageEntities['bl'] = {
     class: "prop"
