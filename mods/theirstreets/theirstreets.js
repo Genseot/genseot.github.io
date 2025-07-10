@@ -151,20 +151,20 @@ async function RenderWater() {
 }
 
 env.stage.locales["city"] = [
-    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"],
-    [".crosswalk", "https://genseot.github.io/mods/theirstreets/img/crosswalk.gif"],
-    [".crosswalkrotated", "https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif"],
     [".empty.plain", "/img/local/city/tiles/empty.gif"],
     [".prop", "/img/local/city/tiles/occupied.gif"],
     [".road", "/img/textures/black.gif"],
+    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"],
+    [".crosswalk", "https://genseot.github.io/mods/theirstreets/img/crosswalk.gif"],
+    [".crosswalkrotated", "https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif"],
 ]
 env.stage.locales["interiorcity"] = [
-    [".grass.prop", "https://genseot.github.io/mods/theirstreets/img/grass.gif"],
-    [".crosswalk", "https://genseot.github.io/mods/theirstreets/img/crosswalk.gif"],
-    [".crosswalkrotated", "https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif"],
     [".empty.plain", "/img/local/city/tiles/empty.gif"],
     [".prop", "/img/local/city/tiles/occupied.gif"],
     [".road", "/img/textures/black.gif"],
+    [".grass", "https://genseot.github.io/mods/theirstreets/img/grass.gif"],
+    [".crosswalk", "https://genseot.github.io/mods/theirstreets/img/crosswalk.gif"],
+    [".crosswalkrotated", "https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif"],
 ]
 
 
@@ -217,67 +217,67 @@ env.stageEntities['T'] = {
     contains: { slug: 'R', id: "car", class: "prop car sideways" }
 }
 env.stageEntities['B'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: {  image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5  }
     }
 }
 env.stageEntities['Br'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5, transform: "rotateY(90deg)" }
     }
 }
 env.stageEntities['Bc'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5, transform: "rotateY(45deg)" }
     }
 }
 env.stageEntities['Bcr'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5, transform: "rotateY(135deg)" }
     }
 }
 env.stageEntities['t'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4 }
     }
 }
 env.stageEntities['tr'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4, transform: "rotateY(90deg)" }
     }
 }
 env.stageEntities['tc'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4, transform: "rotateY(45deg)" }
     }
 }
 env.stageEntities['tcr'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4, transform: "rotateY(135deg)" }
     }
 }
 env.stageEntities['F1'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);', width: 1.1, height: 1.5 }
     }
 }
 env.stageEntities['F2'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);', width: 1.1, height: 1.5 }
     }
 }
 env.stageEntities['F3'] = {
-    class: "grass prop",
+    class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);', width: 1.1, height: 1.5 }
     }
@@ -292,8 +292,8 @@ env.stageEntities['bl'] = {
     class:"prop"
 }
 env.stageEntities['g'] = {
-    class:"prop",
-    contains: { class:"grass" }
+    class:"grass",
+    contains: { class:"prop" }
 }
 // CUSTOM ENTITIES
 createEntity({
