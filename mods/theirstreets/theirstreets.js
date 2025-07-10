@@ -442,26 +442,38 @@ env.stages['city_street_fountain'] = {
         Fb: {
     	    class:"prop",
     	    contains: {
+		dyp: {
 		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
                     width: 3,
                     height: 1.25
+		}
     	    }	
         },
 	Fbr: {
     	    class:"prop",
     	    contains: {
+		dyp: {
 		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
                     width: 3,
                     height: 1.25,
 		    transform: "rotateY(90deg)"
+		}
     	    }	
         },
 	Fp: {
     	    class:"prop",
     	    contains: {
-                image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
-                width: 1,
-                height: 4    	    
+		dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
+                    width: 2,
+                    height: 4 
+		},
+		dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
+                    width: 2,
+                    height: 4,
+		    transform: "rotateY(90deg)"
+		}  
 	    }	
         },
         fb: {
