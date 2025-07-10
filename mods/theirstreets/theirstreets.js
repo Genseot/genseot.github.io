@@ -25,8 +25,8 @@ DIALOGUE
 content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" href="https://genseot.github.io/mods/theirstreets/theirstreets.css">`) 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
-var getFountainPillar = document.getElementById("fountainpillar");
-var spawnFountainPillar = `<div id="genprop26" base="genprop" class=" dypcontent " type="" origin-spot="94" style="--piece-delay: -18.626161118958752s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);"></div>`;
+var getFountainPillar = document.getElementById("fountainpillar26");
+var spawnFountainPillar = `<div id="fountainpillar26" base="fountainpillar" class=" dypcontent " type="" origin-spot="94" style="--piece-delay: -18.626161118958752s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);"></div>`;
 
 function EpisodeCheck() {
 	if(!check('ep0_epilogue')) {
