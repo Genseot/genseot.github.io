@@ -219,49 +219,49 @@ env.stageEntities['T'] = {
 env.stageEntities['B'] = {
     class: "grass",
     contains: { 
-	dyp: {  image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5  }
+	dyp: {  image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.35, height: 1.5  }
     }
 }
 env.stageEntities['Br'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5, transform: "rotateY(90deg)" }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.35, height: 1.5, transform: "rotateY(90deg)" }
     }
 }
 env.stageEntities['Bc'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5, transform: "rotateY(45deg)" }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.35, height: 1.5, transform: "rotateY(45deg)" }
     }
 }
 env.stageEntities['Bcr'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.1, height: 1.5, transform: "rotateY(135deg)" }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bush.gif)', width: 1.35, height: 1.5, transform: "rotateY(135deg)" }
     }
 }
 env.stageEntities['t'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4 }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 6, height: 6 }
     }
 }
 env.stageEntities['tr'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4, transform: "rotateY(90deg)" }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 6, height: 6, transform: "rotateY(90deg)" }
     }
 }
 env.stageEntities['tc'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4, transform: "rotateY(45deg)" }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 6, height: 6, transform: "rotateY(45deg)" }
     }
 }
 env.stageEntities['tcr'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 1.2, height: 4, transform: "rotateY(135deg)" }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 6, height: 6, transform: "rotateY(135deg)" }
     }
 }
 env.stageEntities['F1'] = {
