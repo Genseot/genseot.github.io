@@ -150,6 +150,8 @@ async function RenderWater() {
         }
 }
 function Fountain() {
+    var getFountainPillar = document.getElementById("fountainpillar26");
+    var spawnFountainPillar = `<div id="fountainpillar26" base="fountainpillar" class=" dypcontent " type="" origin-spot="94" style="--piece-delay: -18.626161118958752s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);"></div>`;
     getFountainPillar.insertAdjacentHTML('beforebegin', spawnFountainPillar) 
 }
 
@@ -439,9 +441,7 @@ env.stages['city_street_fountain'] = {
     exec: ()=>{ 
         page.bgm.rate(1)
         EpisodeCheck()
-	setTimeout(function(){var getFountainPillar = document.getElementById("fountainpillar26");
-        var spawnFountainPillar = `<div id="fountainpillar26" base="fountainpillar" class=" dypcontent " type="" origin-spot="94" style="--piece-delay: -18.626161118958752s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);"></div>`;
-	Fountain()}, 5000)
+	setTimeout(function(){Fountain()}, 5000)
     },
     entities: {
         Fb: {
