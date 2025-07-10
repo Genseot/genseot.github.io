@@ -1127,7 +1127,7 @@ env.stages['city_street_streets5'] = {
         cm: {
             teleportSpot: 22,
             teleportTarget: "city_street_city5",
-	    shouldFace: "right"
+	    shouldFace: "down"
         }
     },
     plan: [
