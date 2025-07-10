@@ -444,8 +444,8 @@ env.stages['city_street_fountain'] = {
     	    contains: {
 		dyp: {
 		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
-                    width: 3,
-                    height: 1.25
+                    width: 4,
+                    height: 1
 		}
     	    }	
         },
@@ -454,8 +454,8 @@ env.stages['city_street_fountain'] = {
     	    contains: {
 		dyp: {
 		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
-                    width: 3,
-                    height: 1.25,
+                    width: 4,
+                    height: 1,
 		    transform: "rotateY(90deg)"
 		}
     	    }	
