@@ -149,6 +149,9 @@ async function RenderWater() {
                 break;
         }
 }
+function Fountain() {
+    document.querySelector(".fountainpillar").insertAdjacentHTML('beforebegin', `<div id="genprop26" base="genprop" class=" dypcontent " type="" origin-spot="94" style="--piece-delay: -18.626161118958752s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);"></div>`) 
+}
 
 env.stage.locales["city"] = [
     [".empty.plain", "/img/local/city/tiles/empty.gif"],
@@ -436,6 +439,7 @@ env.stages['city_street_fountain'] = {
     exec: ()=>{ 
         page.bgm.rate(1)
         EpisodeCheck()
+	Fountain()
     },
 
     entities: {
@@ -461,16 +465,8 @@ env.stages['city_street_fountain'] = {
     	    }	
         },
 	Fp: {
-    	    class:"prop",
+    	    class:"prop fountainpillar",
 	    contains: {
-		dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
-                    width: 2,
-                    height: 4,
-		    transform: "rotateY(90deg)"
-		}  
-	    },
-    	    contains: {
 		dyp: {
                     image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
                     width: 2,
