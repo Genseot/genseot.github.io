@@ -462,18 +462,20 @@ env.stages['city_street_fountain'] = {
         },
 	Fp: {
     	    class:"prop",
-    	    contains: {
-		dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
-                    width: 2,
-                    height: 4 
-		},
+	    contains: {
 		dyp: {
                     image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
                     width: 2,
                     height: 4,
 		    transform: "rotateY(90deg)"
 		}  
+	    },
+    	    contains: {
+		dyp: {
+                    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
+                    width: 2,
+                    height: 4 
+		}
 	    }	
         },
         fb: {
