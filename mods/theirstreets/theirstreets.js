@@ -1583,29 +1583,29 @@ env.stages['city_street_city5'] = {
         sf1: {
             class:"storefront blocks",
             contains: {
-                id: "storefront1",
-                class: "storefront1 building"
+                class: "storefront1 building",
+                html: `<figure></figure>`
             }
         },
         sf2: {
             class:"storefront blocks",
             contains: {
-                id: "storefront2",
-                class: "storefront2 building"
+                class: "storefront2 building",
+                html: `<figure></figure>`
             }
         },
         sf3: {
             class:"storefront blocks",
             contains: {
-                id: "storefront3",
-                class: "storefront3 building"
+                class: "storefront3 building",
+                html: `<figure></figure>`
             }
         },
         sf4: {
             class:"storefront blocks",
             contains: {
-                id: "storefront4",
-                class: "storefront4 building"
+                class: "storefront4 building",
+                html: `<figure></figure>`
             }
         }
     },
@@ -1616,13 +1616,13 @@ env.stages['city_street_city5'] = {
         '.','.','g','░','░','░','░','░','░','░','░','░','F2cr','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
-        '.','sf1','░','░','░','░','░','░','░','░','░','░','░','sf4','.',
+        '.','sf1','░','░','░','░','░','░','░','░','░','░','░','sf2','.',
         '.','.','░','░','░','Lr','ir','i','il','Lr','░','░','░','.','.',
         '.','.','bl','░','░','lb','g','B','g','lb','░','░','░','.','.',
         '.','.','cb','░','░','r','Br','trs','Br','r','░','░','░','.','.',
         '.','.','bl','░','░','lt','g','B','g','lt','░','░','░','.','.',
         '.','.','░','░','░','Lr','ir','i','il','Lr','░','░','░','.','.',
-        '.','sf2','░','░','░','░','░','░','░','░','░','░','░','sf3','.',
+        '.','sf3','░','░','░','░','░','░','░','░','░','░','░','sf4','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','F1cr','░','░','░','░','░','░','░','░','░','F2c','.','.',
