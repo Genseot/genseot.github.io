@@ -1573,12 +1573,40 @@ env.stages['city_street_city5'] = {
                 examineEntity: "city bench"
     	    }
         },
- 	      trs: {
+ 	    trs: {
     	      class:"grass",
 	          contains: {
                   class: "citytree",
 		          dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)', width: 6, height: 6 }
 	          }	
+        },
+        sf1: {
+            class:"storefront blocks",
+            contains: {
+                id: "storefront1",
+                class: "storefront1 building"
+            }
+        },
+        sf2: {
+            class:"storefront blocks",
+            contains: {
+                id: "storefront2",
+                class: "storefront2 building"
+            }
+        },
+        sf3: {
+            class:"storefront blocks",
+            contains: {
+                id: "storefront3",
+                class: "storefront3 building"
+            }
+        },
+        sf4: {
+            class:"storefront blocks",
+            contains: {
+                id: "storefront4",
+                class: "storefront4 building"
+            }
         }
     },
     plan: [
