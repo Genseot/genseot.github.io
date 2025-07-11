@@ -52,37 +52,55 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
 
-.storefront.storefront1 {
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront1.gif);
+.storefront1.building {
     transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
-    width: 800%;
-    height: 800%;
-    transform-origin: bottom;
-    bottom: 0;
+    width: 800%; height: 800%;
+    transform-origin: bottom; bottom: 0;
 }
-.storefront.storefront2 {
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront2.gif);
-    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
-    width: 800%;
-    height: 800%;
-    transform-origin: bottom;
-    bottom: 0;
+.storefront1.building > figure::after {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront1.gif); transform: translateY(0);
 }
-.storefront.storefront3 {
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront3.gif);
-    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
-    width: 800%;
-    height: 800%;
-    transform-origin: bottom;
-    bottom: 0;
+.storefront1.building > figure::before {
+    content: unset; display: none;
 }
-.storefront.storefront4 {
-    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront4.gif);
+
+
+.storefront2.building {
     transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
-    width: 800%;
-    height: 800%;
-    transform-origin: bottom;
-    bottom: 0;
+    width: 800%; height: 800%;
+    transform-origin: bottom; bottom: 0;
+}
+.storefront2.building > figure::after {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront2.gif); transform: translateY(0);
+}
+.storefront2.building > figure::before {
+    content: unset; display: none;
+}
+
+
+.storefront3.building {
+    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    width: 800%; height: 800%;
+    transform-origin: bottom; bottom: 0;
+}
+.storefront3.building > figure::after {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront3.gif); transform: translateY(0);
+}
+.storefront3.building > figure::before {
+    content: unset; display: none;
+}
+
+
+.storefront4.building {
+    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    width: 800%; height: 800%;
+    transform-origin: bottom; bottom: 0;
+}
+.storefront4.building > figure::after {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront4.gif); transform: translateY(0);
+}
+.storefront4.building > figure::before {
+    content: unset; display: none;
 }
 
 
