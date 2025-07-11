@@ -53,7 +53,7 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 }
 
 .storefront1.building {
-    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    transform: rotateZ(270deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
     width: 800%; height: 800%;
     transform-origin: bottom; bottom: 0;
 }
@@ -79,7 +79,7 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 
 
 .storefront3.building {
-    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    transform: rotateZ(270deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
     width: 800%; height: 800%;
     transform-origin: bottom; bottom: 0;
 }
