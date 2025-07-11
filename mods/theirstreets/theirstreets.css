@@ -46,20 +46,47 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 
 
 
-/* TILES */
-/*#content[locale="city"] #realgrid .gridpiece.crosswalk,
-#content[locale="interiorcity"] #realgrid .gridpiece.crosswalk {
-    background: url(https://genseot.github.io/mods/theirstreets/img/crosswalk.gif);
-}
-#content[locale="city"] #realgrid .gridpiece.crosswalkrotated,
-#content[locale="interiorcity"] #realgrid .gridpiece.crosswalkrotated {
-    background: url(https://genseot.github.io/mods/theirstreets/img/crosswalkflipped.gif);
-}*/
-
-
-
 /* PROPS */
 .road .prop.car.downwards {
     animation-delay: 2.5s;
     --baseTransform: rotateX(-90deg) rotateY(270deg);
 }
+
+.storefront.storefront1 {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront1.gif);
+    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    width: 800%;
+    height: 800%;
+    transform-origin: bottom;
+    bottom: 0;
+}
+.storefront.storefront2 {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront2.gif);
+    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    width: 800%;
+    height: 800%;
+    transform-origin: bottom;
+    bottom: 0;
+}
+.storefront.storefront3 {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront3.gif);
+    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    width: 800%;
+    height: 800%;
+    transform-origin: bottom;
+    bottom: 0;
+}
+.storefront.storefront4 {
+    background-image: url(https://genseot.github.io/mods/theirstreets/img/storefront4.gif);
+    transform: rotateZ(90deg) rotateX(-90deg) translateX( calc(var(--gridTileSize) * -0.5) ) translateY(calc(var(--gridTileSize) * 0.5) );
+    width: 800%;
+    height: 800%;
+    transform-origin: bottom;
+    bottom: 0;
+}
+
+
+
+
+
+
