@@ -150,11 +150,19 @@ async function RenderWater() {
         }
 }
 function Fountain() {
-    setTimeout(function(){
-        var getFountainPillar = document.getElementById("fountainpillar30");
-        var spawnFountainPillar = `<div id="fountainpillar30" base="fountainpillar" class=" dypcontent " type="" origin-spot="94" style="--piece-delay: -18.626161118958752s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);"></div>`;
-        getFountainPillar.insertAdjacentHTML('beforebegin', spawnFountainPillar) 
-    }, 1000)
+    var getFountainPillar = document.querySelector(".fountainpillar");
+    var spawnFountainPillar = `<div id="genprop30" base="genprop" class="fountainpillar dypcontent " type="" style="--piece-delay: -8.533590360382039s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif);--dyp-width: 2;--dyp-height: 4; --dyp-transform:rotateY(90deg);" origin-spot="94"></div>;`
+    getFountainPillar.insertAdjacentHTML('beforebegin', spawnFountainPillar) 
+}
+function ParkTree() {
+    var getParkTree = document.querySelector(".parktree");
+    var spawnParkTree = `<div id="genprop163" base="" class="parktree dypcontent " type="" style="--piece-delay: -6.905337766272646s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif);--dyp-width: 6;--dyp-height: 6;;" origin-spot="143"></div>`;
+    getParkTree.insertAdjacentHTML('beforebegin', spawnParkTree) 
+}
+function CityTree() {
+    var getCityTree = document.querySelector(".citytree");
+    var spawnCityTree = `<div id="genprop492" base="" class="citytree dypcontent " type="" style="--piece-delay: -14.8349898360371s; animation-delay: var(--piece-delay);--dyp-image: url(https://genseot.github.io/mods/theirstreets/img/tree.gif);--dyp-width: 6;--dyp-height: 6; --dyp-transform:rotateY(90deg);" origin-spot="143"></div>`;
+    getCityTree.insertAdjacentHTML('beforebegin', spawnCityTree)
 }
 
 env.stage.locales["city"] = [
@@ -274,7 +282,25 @@ env.stageEntities['tcr'] = {
 env.stageEntities['F1'] = {
     class: "grass",
     contains: { 
-	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);', width: 1.1, height: 1.5 }
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);', width: 1.3, height: 1.5 }
+    }
+}
+env.stageEntities['F1r'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);', width: 1.3, height: 1.5, transform:"rotateY(90deg)"}
+    }
+}
+env.stageEntities['F1c'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);', width: 1.3, height: 1.5, transform:"rotateY(45deg)" }
+    }
+}
+env.stageEntities['F1cr'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower1.gif);', width: 1.3, height: 1.5, transform:"rotateY(135deg)" }
     }
 }
 env.stageEntities['F2'] = {
@@ -283,10 +309,46 @@ env.stageEntities['F2'] = {
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);', width: 1.1, height: 1.5 }
     }
 }
+env.stageEntities['F2r'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);', width: 1.1, height: 1.5, transform:"rotateY(90deg)"}
+    }
+}
+env.stageEntities['F2c'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);', width: 1.1, height: 1.5, transform:"rotateY(45deg)" }
+    }
+}
+env.stageEntities['F2cr'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower2.gif);', width: 1.1, height: 1.5, transform:"rotateY(135deg)" }
+    }
+}
 env.stageEntities['F3'] = {
     class: "grass",
     contains: { 
 	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);', width: 1.1, height: 1.5 }
+    }
+}
+env.stageEntities['F3r'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);', width: 1.1, height: 1.5, transform:"rotateY(90deg)"}
+    }
+}
+env.stageEntities['F3c'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);', width: 1.1, height: 1.5, transform:"rotateY(45deg)" }
+    }
+}
+env.stageEntities['F3cr'] = {
+    class: "grass",
+    contains: { 
+	dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/flower3.gif);', width: 1.1, height: 1.5, transform:"rotateY(135deg)" }
     }
 }
 env.stageEntities['c'] = {   
@@ -450,43 +512,25 @@ env.stages['city_street_fountain'] = {
         Fb: {
     	    class:"prop",
     	    contains: {
-		dyp: {
-		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
-                    width: 4,
-                    height: 1
-		}
+		    dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)', width: 4, height: 1 }
     	    }	
         },
-	Fbr: {
+	    Fbr: {
     	    class:"prop",
     	    contains: {
-		dyp: {
-		    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)',
-                    width: 4,
-                    height: 1,
-		    transform: "rotateY(90deg)"
-		}
+		        dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainbasin.gif)', width: 4, height: 1, transform: "rotateY(90deg)" }
     	    }	
         },
-	Fp: {
+	    Fp: {
     	    class:"prop",
-	    contains: {
-                id: "fountainpillar",
-		dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)',
-                    width: 2,
-                    height: 4 
-		}
-	    }	
+	            contains: { class: "fountainpillar",
+                dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/fountainpillar.gif)', width: 2, height: 4 }
+	        }	
         },
         fb: {
     	    class:"prop",
     	    contains: {
-                dyp: {
-                    image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.gif)',
-                    width: 3,
-                    height: 1.25
-                },
+                dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/bench.gif)', width: 3, height: 1.25 },
                 examineEntity: "fountain bench"
     	    }
         },        
@@ -496,7 +540,7 @@ env.stages['city_street_fountain'] = {
             shouldFace: "right"
         },
         s: {
-            teleportSpot: 124,
+            teleportSpot: 102,
             teleportTarget: "city_street_streets1"
         },
         b: {
@@ -954,9 +998,9 @@ env.stages['city_street_bridge7'] = {
 
 
 // STREETS
-env.stages['city_street_streets1'] = { //FIX THIS PLEASE PLACEHOLDER. REVISE. ETC 
+env.stages['city_street_streets1'] = {  
     locale: 'city',
-    width: 15,
+    width: 13,
     exec: ()=>{
         page.bgm.rate(1)
         EpisodeCheck()
@@ -972,19 +1016,18 @@ env.stages['city_street_streets1'] = { //FIX THIS PLEASE PLACEHOLDER. REVISE. ET
         }
     },
     plan: [
-        '.','r','r','r','.','.','s','.','.','.','.','.','.','.','.',
-        '.','r','r','r','l','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','.','░','░','░','.','.','.','.','.','.','.',
-        '.','r','r','r','l','░','░','░','L','.','.','.','.','.','.',
-        '.','r','r','r','.','░','░','░','░','░','░','░','░','░','.',
-        '.','r','r','r','.','░','░','░','░','░','░','░','░','p','f',
-        '.','r','r','r','.','░','░','░','░','░','░','░','░','░','.',
-        '.','r','r','r','l','.','.','lr','.','.','.','lr','.','.','lr',
-        '.','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
-        '.','r','r','r','r','r','r','r','r','r','r','r','r','r','r',
-        '.','R','r','R','r','r','r','r','r','r','r','r','r','r','T',
+        'r','r','r','.','s','.','.','.','.','.','.','.','.',
+        'r','r','r','l','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.',
+        'r','r','r','l','░','░','L','.','.','.','.','.','.',
+        'r','r','r','░','░','░','░','░','░','░','░','░','.',
+        'r','r','r','░','░','░','░','░','░','░','░','p','f',
+        'r','r','r','░','░','lr','░','░','░','lr','░','░','.',
+        'r','r','r','r','r','r','r','r','r','r','r','r','T',
+        'r','r','r','r','r','r','r','r','r','r','r','r','r',
+        'R','r','R','r','r','r','r','r','r','r','r','r','T',
     ]
 }
 env.stages['city_street_streets2'] = {
@@ -996,7 +1039,7 @@ env.stages['city_street_streets2'] = {
     },
     entities: {
         e: {
-            teleportSpot: 21,
+            teleportSpot: 17,
             teleportTarget: "city_street_streets1"
         },
         s: {
@@ -1046,7 +1089,7 @@ env.stages['city_street_streets3'] = {
             shouldFace: "left"
         },
         cg: {
-            teleportSpot: 105,
+            teleportSpot: 134,
             teleportTarget: "city_street_city4"
         }
     },
@@ -1105,11 +1148,11 @@ env.stages['city_street_streets4'] = {
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','lr','░','░','Lr','.','.','.','.','.','.',
-        'r','r','r','░','░','░','░','░','B','Bcr','.','.','.',
+        'r','r','r','░','░','░','░','░','B','F1cr','.','.','.',
         'r','r','r','░','░','░','░','░','bl','Br','.','.','.',
         'r','r','r','░','░','░','░','░','sb','Br','.','.','.',
         'r','r','r','lr','░','░','░','░','bl','Br','.','.','.',
-        'r','r','r','░','░','░','░','░','B','Bc','.','.','.',
+        'r','r','r','░','░','░','░','░','B','F1c','.','.','.',
         'r','r','r','░','░','░','Lr','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','lr','░','░','.','.','.','.','.','.','.',
@@ -1186,8 +1229,8 @@ env.stages['city_street_streets6'] = {
     },
     plan: [
         'r','r','r','.','s','.','.',
-        'r','r','r','░','░','░','Lr',
-        'r','r','r','l','░','░','.',
+        'r','r','r','░','░','░','.',
+        'r','r','r','l','░','░','Lr',
         'r','r','r','░','░','░','░',
         'r','r','r','░','░','░','░',
         'r','r','r','l','░','░','░',
@@ -1197,8 +1240,8 @@ env.stages['city_street_streets6'] = {
         'r','r','r','l','░','░','░',
         'r','r','r','░','░','░','░',
         'r','r','r','░','░','░','░',
-        'r','r','r','l','░','░','.',
-        'r','r','r','░','p','░','Lr',
+        'r','r','r','l','░','░','Lr',
+        'r','r','r','░','p','░','.',
         'R','R','R','.','e','.','.',
     ]
 }
@@ -1295,7 +1338,7 @@ env.stages['city_street_city2'] = {
     },
     entities: { 
         c: {
-            teleportSpot: 367,
+            teleportSpot: 409,
             teleportTarget: "city_street_city3"
         },
         e: {
@@ -1309,13 +1352,13 @@ env.stages['city_street_city2'] = {
         '.','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','.',
         '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','.','r','r','r','.',
-        '.','r','r','r','lr','░','░','B','B','B','░','░','lr','r','r','r','.',
-        '.','r','r','r','░','░','Br','Bc','t','Bcr','Br','░','░','r','r','r','.',
-        '.','r','r','r','░','░','Br','tc','g','tcr','Br','░','░','r','r','r','.',
-        '.','r','r','r','░','░','Br','g','tr','g','Br','░','░','r','r','r','.',
-        '.','r','r','r','░','░','Br','tcr','g','tc','Br','░','░','r','r','r','.',
-        '.','r','r','r','░','░','Br','Bcr','t','Bc','Br','░','░','r','r','r','.',
-        '.','r','r','r','lr','░','░','B','B','B','░','░','lr','r','r','r','.',
+        '.','r','r','r','lr','░','░','Bc','F2','Bcr','░','░','lr','r','r','r','.',
+        '.','r','r','r','░','░','F3r','g','t','g','F3r','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','g','g','g','Br','░','░','r','r','r','.',
+        '.','r','r','r','░','░','F1r','tr','g','tr','F1r','░','░','r','r','r','.',
+        '.','r','r','r','░','░','Br','g','g','g','Br','░','░','r','r','r','.',
+        '.','r','r','r','░','░','F3r','g','t','g','F3r','░','░','r','r','r','.',
+        '.','r','r','r','lr','░','░','Bcr','F2','Bc','░','░','lr','r','r','r','.',
         '.','r','r','r','.','░','░','░','░','░','░','░','.','r','r','r','.',
         '.','r','r','r','.','L','░','░','░','░','░','L','.','r','r','r','.',
         '.','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','.',
@@ -1336,7 +1379,7 @@ env.stages['city_street_city3'] = {
             teleportTarget: "city_street_city2"
         },
         cg: {
-            teleportSpot: 115,
+            teleportSpot: 150,
             teleportTarget: "city_street_city4"
         },
         cm: {
@@ -1352,7 +1395,7 @@ env.stages['city_street_city3'] = {
         '.','.','.','r','r','r','.','.','.','.','cm','.','.','.','.','r','r','r','.','.','.',
         '.','░','░','r','r','r','.','.','.','L','░','L','.','.','.','r','r','r','░','░','.',
         '.','░','lr','r','r','r','.','tc','Br','░','░','░','Br','tcr','.','r','r','r','lr','░','.',
-        '.','░','░','r','r','r','.','B','Bc','░','░','░','Bcr','B','.','r','r','r','░','░','.',
+        '.','░','░','r','r','r','.','B','F1c','░','░','░','F2cr','B','.','r','r','r','░','░','.',
         '.','░','░','r','r','r','Lr','░','░','░','░','░','░','░','Lr','r','r','r','░','░','.',
         '.','░','░','r','r','r','░','░','░','░','░','░','░','░','░','r','r','r','░','░','.',
         '.','░','lr','r','r','r','lr','░','░','░','░','░','░','░','lr','r','r','r','lr','░','.',
@@ -1362,7 +1405,7 @@ env.stages['city_street_city3'] = {
         '.','░','lr','r','r','r','lr','░','░','░','░','░','░','░','lr','r','r','r','lr','░','.',
         '.','░','░','r','r','r','░','░','░','░','░','░','░','░','░','r','r','r','r','░','.',
         '.','░','░','r','r','r','Lr','░','░','░','░','░','░','░','Lr','r','r','r','r','░','.',
-        '.','░','░','r','r','r','.','B','Bcr','░','░','░','Bc','B','.','r','r','r','░','░','.',
+        '.','░','░','r','r','r','.','B','F2cr','░','░','░','F1c','B','.','r','r','r','░','░','.',
         '.','░','lr','r','r','r','.','tcr','Br','░','░','░','Br','tc','.','r','r','r','lr','░','.',
         '.','░','░','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','░','░','.',
         '.','░','░','r','r','r','.','.','.','░','░','░','.','.','.','r','r','r','░','░','.',
@@ -1375,10 +1418,11 @@ env.stages['city_street_city3'] = {
 }
 env.stages['city_street_city4'] = {
     locale: 'interiorcity',
-    width: 13,
+    width: 19,
     exec: ()=>{
         page.bgm.rate(1)
         EpisodeCheck()
+        ParkTree()
     },
     entities: {
         gb: {
@@ -1393,6 +1437,13 @@ env.stages['city_street_city4'] = {
                 examineEntity: "park bench"
     	    }
         }, 
+        trs: {
+            class: "grass",
+            contains: { 
+	            class: "parktree",
+	            dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif);', width: 6, height: 6, transform: "rotateY(90deg)" }
+            }
+        },
         e: {
             teleportSpot: 169,
             teleportTarget: "city_street_city3"
@@ -1403,23 +1454,21 @@ env.stages['city_street_city4'] = {
         }
     },
     plan: [
-        '.','.','.','.','.','.','.','.','.','.','.','.','.',
-        '.','tc','g','B','g','g','B','g','g','B','g','tcr','.',
-        '.','g','░','░','░','░','░','░','░','░','░','g','.',
-        '.','Br','░','░','░','░','░','░','░','░','░','Br','.',
-        '.','g','░','tc','g','B','░','B','g','tcr','░','g','.',
-        '.','Br','░','g','Lr','g','░','░','Lr','g','░','Br','.',
-        '.','Lr','░','Br','g','g','░','░','░','Br','░','Lr','.',
-        '.','░','░','g','Br','g','░','░','bl','g','░','░','.',
-        's','░','░','g','tr','g','░','░','gb','g','░','p','e',
-        '.','░','░','g','Br','g','░','░','bl','g','░','░','.',
-        '.','Lr','░','Br','g','g','░','░','░','Br','░','Lr','.',
-        '.','Br','░','g','Lr','g','░','░','Lr','g','░','Br','.',
-        '.','g','░','tcr','g','B','░','B','g','tc','░','g','.',
-        '.','Br','░','░','░','░','░','░','░','░','░','Br','.',
-        '.','g','░','░','░','░','░','░','░','░','░','g','.',
-        '.','tcr','g','B','g','g','B','g','g','B','g','tc','.',
-        '.','.','.','.','.','.','.','.','.','.','.','.','.',
+        '.','tc','g','F2','g','B','g','g','F3','t','F3','g','g','B','g','F2','g','tcr','.',
+        '.','F3r','░','░','░','░','░','░','░','░','░','░','░','░','░','░','░','F3r','.',
+        '.','g','░','░','░','░','░','░','░','░','░','░','░','░','░','░','░','g','.',
+        '.','g','░','░','F1c','g','g','B','░','░','░','B','g','g','F1cr','░','░','g','.',
+        '.','F1r','░','░','g','Lr','░','░','░','░','░','░','░','Lr','g','░','░','F1r','.',
+        '.','Lr','░','░','g','F3c','░','░','░','F3','░','░','░','F3cr','g','░','░','Lr','.',
+        '.','░','░','░','Br','bl','░','░','F2c','g','F1cr','░','░','bl','F2r','░','░','░','.',
+        's','░','░','░','F2r','gb','░','░','g','trs','g','░','░','gb','Br','░','░','p','e',
+        '.','░','░','░','Br','bl','░','░','F1cr','g','F2c','░','░','bl','F2r','░','░','░','.',
+        '.','Lr','░','░','g','F3cr','░','░','░','F3','░','░','░','F3c','g','░','░','Lr','.',
+        '.','F1r','░','░','g','Lr','░','░','░','░','░','░','░','Lr','g','░','░','F1r','.',
+        '.','g','░','░','F1cr','g','g','B','░','░','░','B','g','g','F1c','░','░','g','.',
+        '.','g','░','░','░','░','░','░','░','░','░','░','░','░','░','░','░','g','.',
+        '.','F3r','░','░','░','░','░','░','░','░','░','░','░','░','░','░','░','F3r','.',
+        '.','tcr','g','F2','g','B','g','g','F3','t','F3','g','g','B','g','F2','g','tc','.',
     ]
 }
 env.stages['city_street_city5'] = {
@@ -1428,6 +1477,7 @@ env.stages['city_street_city5'] = {
     exec: ()=>{
         page.bgm.rate(1)
         EpisodeCheck()
+        CityTree()
     },
     entities: {
         r: {
@@ -1522,27 +1572,34 @@ env.stages['city_street_city5'] = {
                 },
                 examineEntity: "city bench"
     	    }
+        },
+ 	      trs: {
+    	      class:"grass",
+	          contains: {
+                  class: "citytree",
+		          dyp: { image: 'url(https://genseot.github.io/mods/theirstreets/img/tree.gif)', width: 6, height: 6 }
+	          }	
         }
     },
     plan: [
         '.','.','.','.','.','.','.','s','.','.','.','.','.','.','.',
-        '.','.','tc','g','g','L','░','░','░','L','g','g','tcr','.','.',
-        '.','.','g','g','░','░','░','░','░','░','░','g','g','.','.',
-        '.','.','g','░','░','░','░','░','░','░','░','░','g','.','.',
+        '.','.','tc','F3c','g','L','░','░','░','L','F1cr','g','tcr','.','.',
+        '.','.','F3c','g','░','░','░','░','░','░','░','g','g','.','.',
+        '.','.','g','░','░','░','░','░','░','░','░','░','F2cr','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','Lr','ir','i','il','Lr','░','░','░','.','.',
         '.','.','bl','░','░','lb','g','B','g','lb','░','░','░','.','.',
-        '.','.','cb','░','░','r','Br','tr','Br','r','░','░','░','.','.',
+        '.','.','cb','░','░','r','Br','trs','Br','r','░','░','░','.','.',
         '.','.','bl','░','░','lt','g','B','g','lt','░','░','░','.','.',
         '.','.','░','░','░','Lr','ir','i','il','Lr','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
-        '.','.','g','░','░','░','░','░','░','░','░','░','g','.','.',
+        '.','.','F1cr','░','░','░','░','░','░','░','░','░','F2c','.','.',
         '.','.','g','g','░','░','░','░','░','░','░','g','g','.','.',
-        '.','.','tcr','g','g','L','░','p','░','L','g','g','tc','.','.',
+        '.','.','tcr','g','F1cr','L','░','p','░','L','F2c','g','tc','.','.',
         '.','.','.','.','.','.','.','e','.','.','.','.','.','.','.',
     ]
 }
@@ -1620,8 +1677,11 @@ RESPOBJ::
 `)
 env.dialogues["fountainbench"] = generateDialogueObject(`
 start
+    sys
+        NOTICE::'memory stream located'
+
     RESPONSES::akizet
-        end<+>END
+        placeholder<+>END
 `)
 
 
@@ -1634,8 +1694,11 @@ RESPOBJ::
 `)
 env.dialogues["bridgebench"] = generateDialogueObject(`
 start
+    sys
+        NOTICE::'memory stream located'
+
     RESPONSES::akizet
-        end<+>END
+        placeholder<+>END
 `)
 
 
@@ -1648,48 +1711,71 @@ RESPOBJ::
 `)
 env.dialogues["streetsbench"] = generateDialogueObject(`
 start
+    sys
+        NOTICE::'memory stream located'
+
     RESPONSES::akizet
-        end<+>END
+        placeholder<+>END
 `)
 
 
 
 // PARK BENCH
-env.dialogues.streetsresp1 = generateDialogueObject(`
+env.dialogues.parkresp1 = generateDialogueObject(`
 RESPOBJ::
     RESPONSES::akizet
         
 `)
 env.dialogues["parkbench"] = generateDialogueObject(`
 start
-    RESPONSES::akizet
+    sys
+        NOTICE::'memory stream located'
+__SHOWIF::"parkbenchdone"
+        ATTENTION::'previously-viewed memory stream';'replay?'
+
+    RESPONSES::self
+        replay<+>loop
         end<+>END
+__END
+
+    RESPONSES::akizet
+        placeholder<+>END
+
+loop
+    RESPONSES::akizet
+        placeholder<+>END
 `)
 
 
 
 // CITY BENCH
-env.dialogues.streetsresp1 = generateDialogueObject(`
+env.dialogues.cityresp1 = generateDialogueObject(`
 RESPOBJ::
     RESPONSES::akizet
         
 `)
 env.dialogues["citybench"] = generateDialogueObject(`
 start
+    sys
+        NOTICE::'memory stream located'
+
     RESPONSES::akizet
-        end<+>END
+        placeholder<+>END       
 `)
 
 
 
 // WATERFRONT BENCH
-env.dialogues.streetsresp1 = generateDialogueObject(`
+env.dialogues.waterfrontresp1 = generateDialogueObject(`
 RESPOBJ::
     RESPONSES::akizet
         
 `)
 env.dialogues["waterfrontbench"] = generateDialogueObject(`
 start
+    sys
+        NOTICE::'memory stream located'
+
     RESPONSES::akizet
-        end<+>END
+        placeholder<+>END
 `)
