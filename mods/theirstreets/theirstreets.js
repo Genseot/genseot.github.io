@@ -729,7 +729,7 @@ env.stages['city_street_bridge5'] = {
     exec: () => {
         page.bgm.rate(0.8)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater" class="bridge"></canvas>`)
         stageWater="bridge"
         RenderWater()
     },
@@ -805,7 +805,7 @@ env.stages['city_street_bridge6'] = {
     exec: () => {
         page.bgm.rate(0.8)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater" class="bridge"></canvas>`)
         stageWater="bridge"
         RenderWater()
     },
@@ -931,7 +931,7 @@ env.stages['city_street_bridge7'] = {
     exec: () => {
         page.bgm.rate(0.8)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater" class="bridge"></canvas>`)
         stageWater="bridge"
         RenderWater()
     },
@@ -1649,7 +1649,7 @@ env.stages['city_street_city6'] = {
     exec: ()=>{
         page.bgm.rate(1)
         EpisodeCheck()
-        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater"></canvas>`)
+        content.querySelector("#realgrid").insertAdjacentHTML('beforeend', `<canvas id="citywater" class="waterfront"></canvas>`)
         stageWater="waterfront"
         RenderWater()
     },
