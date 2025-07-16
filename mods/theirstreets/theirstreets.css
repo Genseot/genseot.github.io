@@ -10,12 +10,12 @@ body#city_street_bridge7 #content[locale="nightcity"] {
 #citywater.bridge {
     position: absolute; display: flex; justify-content: center; align-items: center;
     top: calc(0.45 * var(--gridTileSize) * var(--stage-height)); left: calc(0.5 * var(--gridTileSize) * var(--stage-width));
-    width: calc(var(--gridTileSize) * var(--stage-height) * 1.7); height: calc(var(--gridTileSize) * var(--stage-height) * 0.55);
+    width: calc(var(--gridTileSize) * var(--stage-height) * 2); height: calc(var(--gridTileSize) * var(--stage-height) * 0.25);
     --baseTransform: translate(-50%, -37.5%) translateZ(-10px) rotate(90deg); transform: var(--baseTransform); transform-origin: center;
 }
 #citywater.waterfront {
     position: absolute; display: flex; justify-content: center; align-items: center;
-    top: calc(0.1 * var(--gridTileSize) * var(--stage-height)); left: calc(4 * var(--gridTileSize) * var(--stage-width));
+    top: calc(2 * var(--gridTileSize) * var(--stage-height)); left: calc(5 * var(--gridTileSize) * var(--stage-width));
     width: calc(var(--gridTileSize) * var(--stage-height) * 1.2); height: calc(var(--gridTileSize) * var(--stage-height) * 1.3);
     --baseTransform: translate(-50%, -37.5%) translateZ(-10px) rotate(90deg); transform: var(--baseTransform); transform-origin: center;
 }
