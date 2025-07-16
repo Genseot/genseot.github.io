@@ -9,7 +9,7 @@ body#city_street_bridge7 #content[locale="nightcity"] {
 }
 #citywater.bridge {
     position: absolute; display: flex; justify-content: center; align-items: center;
-    top: calc(0.2 * var(--gridTileSize) * var(--stage-height)); height: calc(var(--gridTileSize) * var(--stage-height) * 1.45);
+    top: calc(0.1 * var(--gridTileSize) * var(--stage-height)); height: calc(var(--gridTileSize) * var(--stage-height) * 1.25);
     left: calc(0.5 * var(--gridTileSize) * var(--stage-width)); width: calc(var(--gridTileSize) * var(--stage-height) * 1.5);
     --baseTransform: translate(-50%, -37.5%) translateZ(-10px) rotate(90deg); transform: var(--baseTransform); transform-origin: center;
 }
