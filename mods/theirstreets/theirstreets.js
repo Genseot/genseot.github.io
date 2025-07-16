@@ -2,6 +2,7 @@
 /* by Genseot */
 
 /* TABLE OF CONTENTS */
+/* (recommended to search with whole word & case sensitive) */
 /*
 CUSTOM STUFF INITIALISATION
 ENTITY INITIALISATION
@@ -14,7 +15,7 @@ CUSTOM STAGES
     CITY
 DIALOGUE
     FOUNTAIN BENCH
-    BRIDGE BENCH
+    BRIDGE BENCH 
     STREETS BENCH 
     PARK BENCH
     CITY BENCH
@@ -382,9 +383,8 @@ createEntity({
     name: 'fountain bench',
     type: "recollection thoughtform portrait-bright portrait-cover",
     image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
-    text: `::INCOMPLETE THOUGHTFORM
-    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
-    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    text: `::RESPONSIVE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'`,
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('fountainbench')
@@ -394,9 +394,8 @@ createEntity({
     name: 'bridge bench',
     type: "recollection thoughtform portrait-bright portrait-cover",
     image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
-    text: `::INCOMPLETE THOUGHTFORM
-    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
-    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    text: `::RESPONSIVE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'`,
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('bridgebench')
@@ -406,9 +405,8 @@ createEntity({
     name: 'streets bench',
     type: "recollection thoughtform portrait-bright portrait-cover",
     image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
-    text: `::INCOMPLETE THOUGHTFORM
-    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
-    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    text: `::RESPONSIVE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'`,
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('streetsbench')
@@ -418,9 +416,8 @@ createEntity({
     name: 'park bench',
     type: "recollection thoughtform portrait-bright portrait-cover",
     image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
-    text: `::INCOMPLETE THOUGHTFORM
-    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
-    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    text: `::RESPONSIVE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'`,
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('parkbench')
@@ -430,9 +427,8 @@ createEntity({
     name: 'city bench',
     type: "recollection thoughtform portrait-bright portrait-cover",
     image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
-    text: `::INCOMPLETE THOUGHTFORM
-    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
-    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    text: `::RESPONSIVE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'`,
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('citybench')
@@ -442,9 +438,8 @@ createEntity({
     name: 'waterfront bench',
     type: "recollection thoughtform portrait-bright portrait-cover",
     image: 'https://genseot.github.io/mods/theirstreets/img/bench.gif',
-    text: `::INCOMPLETE THOUGHTFORM
-    ::EXPLICIT PURPOSE::'recollection';'unique scenery'
-    <span style="color:var(--obesk-color)" definition="ANALYSIS::'degraded recollection'">::INCOHERENCE DETECTED</span>`,
+    text: `::RESPONSIVE THOUGHTFORM
+    ::EXPLICIT PURPOSE::'recollection';'unique scenery'`,
     actions: [{
          name: "sit",
          exec: ()=>startDialogue('waterfrontbench')
@@ -1725,15 +1720,57 @@ env.stages['city_street_city6'] = {
 env.dialogues.fountainresp1 = generateDialogueObject(`
 RESPOBJ::
     RESPONSES::akizet
-        
+        left?<+>left
+        forward?<+>forward
+        right?<+>right
 `)
 env.dialogues["fountainbench"] = generateDialogueObject(`
 start
     sys
         NOTICE::'memory stream located'
 
+    akizet
+        ah, a bench 
+        gordon, i can sit here, yes?
+
+    envoy
+        Yeah, that's fine, no one's siting here anyway.
+        We've been walking for a while, so I don't think anyone will mind.
+
+    sourceless
+        the bench creaks as gordon and i sit upon it
+            EXEC::setCam({x: 5, y: 6, rotation: 0})
+        the wood of the bench is hard - not too comfortable to sit on, but it works
+        the pattering of the fountain's water as it falls into the basin is an incessant noise as we sit
+        but it is a little comfort between the cousins' dead-metal spires
+        though - the longer i watch, the more i wonder from what endless source of water the fountain draws from...
+        gordon shifts into a more comfortable position, drawing his communicator 
+
+    envoy
+        Enjoying the fountain?
+
+    sourceless
+        gordon fiddles with his communicator while i talk
+        
+    akizet
+        it is quite fascinating!
+        we do not have such things in my home
+        though i must wonder how it works...
+
+    envoy
+        The wonders of technology, hm?
+        Before you ask, I'm afraid I don't know too much about this sort of thing, sorry.
+        Though we can stay here for a while longer, if you'd like to keep watching -
+
+    sourceless
+        gordon returns his communicator into his skin cloak
+
+    envoy
+        But I'm ready to go whenever you are.
+        
     RESPONSES::akizet
-        placeholder<+>END
+        let us go, then<+>END
+            EXEC::specialCam(false)
 `)
 
 
@@ -1749,8 +1786,12 @@ start
     sys
         NOTICE::'memory stream located'
 
+    akizet
+        this is a placeholder
+
     RESPONSES::akizet
-        placeholder<+>END
+        get up<+>END
+            EXEC::specialCam(false)
 `)
 
 
@@ -1766,8 +1807,12 @@ start
     sys
         NOTICE::'memory stream located'
 
+    akizet
+        this is a placeholder
+
     RESPONSES::akizet
-        placeholder<+>END
+        get up<+>END
+            EXEC::specialCam(false)
 `)
 
 
@@ -1790,12 +1835,20 @@ __SHOWIF::"parkbenchdone"
         end<+>END
 __END
 
+    akizet
+        this is a placeholder
+
     RESPONSES::akizet
-        placeholder<+>END
+        get up<+>END
+            EXEC::specialCam(false)
 
 loop
+    akizet
+        this is a placeholder
+
     RESPONSES::akizet
-        placeholder<+>END
+        get up<+>END
+            EXEC::specialCam(false)
 `)
 
 
@@ -1811,8 +1864,12 @@ start
     sys
         NOTICE::'memory stream located'
 
+    akizet
+        this is a placeholder
+
     RESPONSES::akizet
-        placeholder<+>END       
+        get up<+>END
+            EXEC::specialCam(false)
 `)
 
 
@@ -1828,6 +1885,10 @@ start
     sys
         NOTICE::'memory stream located'
 
+    akizet
+        this is a placeholder
+
     RESPONSES::akizet
-        placeholder<+>END
+        get up<+>END
+            EXEC::specialCam(false)
 `)
