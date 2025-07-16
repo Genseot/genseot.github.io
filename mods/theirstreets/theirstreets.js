@@ -28,7 +28,7 @@ addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
 
 function ResetCam() {
-    pauseSwapCam(false);setCam();vn.done();
+    pauseSwapCam(false);setCam();vn.done();ShowGordon();
 }
 function HideGordon() {
     var envoy = document.querySelector(".envoy");
@@ -1479,9 +1479,9 @@ env.stages['city_street_city4'] = {
         '.','g','░','░','F1c','g','g','B','░','░','░','B','g','g','F1cr','░','░','g','.',
         '.','F1r','░','░','g','Lr','░','░','░','░','░','░','░','Lr','g','░','░','F1r','.',
         '.','Lr','░','░','g','F3c','░','░','░','F3','░','░','░','F3cr','g','░','░','Lr','.',
-        '.','░','░','░','Br','bl','░','░','F2c','g','F1cr','░','░','bl','F2r','░','░','░','.',
-        's','░','░','░','F2r','gb','░','░','g','trs','g','░','░','gb','Br','░','░','p','e',
-        '.','░','░','░','Br','bl','░','░','F1cr','g','F2c','░','░','bl','F2r','░','░','░','.',
+        '.','░','░','░','Br','bl','░','░','F2c','g','F1cr','░','░','g','F2r','░','░','░','.',
+        's','░','░','░','F2r','gb','░','░','g','trs','g','░','░','F3r','Br','░','░','p','e',
+        '.','░','░','░','Br','bl','░','░','F1cr','g','F2c','░','░','g','F2r','░','░','░','.',
         '.','Lr','░','░','g','F3cr','░','░','░','F3','░','░','░','F3c','g','░','░','Lr','.',
         '.','F1r','░','░','g','Lr','░','░','░','░','░','░','░','Lr','g','░','░','F1r','.',
         '.','g','░','░','F1cr','g','g','B','░','░','░','B','g','g','F1c','░','░','g','.',
@@ -1793,9 +1793,11 @@ start
 
     akizet
         this is a placeholder
+            EXEC::setCam({x: 14, y: 9, rotation: 90});HideGordon();
 
     RESPONSES::akizet
         get up<+>END
+            EXEC::ResetCam()
 `)
 
 
@@ -1813,9 +1815,11 @@ start
 
     akizet
         this is a placeholder
+            EXEC::setCam({x: 8, y: 9, rotation: 270})
 
     RESPONSES::akizet
         get up<+>END
+            EXEC::ResetCam()
 `)
 
 
@@ -1833,9 +1837,11 @@ start
  
     akizet
         this is a placeholder
+            EXEC::setCam({x: 7, y: 8, rotation: 90})
 
     RESPONSES::akizet
         get up<+>END
+            EXEC::ResetCam()
 `)
 
 
@@ -1853,9 +1859,13 @@ start
 
     akizet
         this is a placeholder
+            EXEC::setCam({x: 4, y: 10, rotation: 90})
+        blah blah blah
+            EXEC::HideGordon()
 
     RESPONSES::akizet
         get up<+>END
+            EXEC::ResetCam()
 `)
 
 
@@ -1873,7 +1883,9 @@ start
 
     akizet
         this is a placeholder
+            EXEC::setCam({x: 10, y: 9, rotation: 90})
 
     RESPONSES::akizet
         get up<+>END
+            EXEC::ResetCam()
 `)
