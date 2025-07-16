@@ -104,6 +104,7 @@ body#city_street_city6 #content[locale="waterfrontcity"] {
 
 
 
-
-
-
+/* OTHER */
+.gordonhidden {
+    opacity: 0;
+}
