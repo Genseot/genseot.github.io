@@ -28,7 +28,7 @@ addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
 
 function ResetCam() {
-    setCam({x: --stage-steps-x, y: --stage-steps-y, rotation: --camera-rotation})
+    pauseSwapCam(false);setCam();vn.done();
 }
 function HideGordon() {
     var envoy = document.querySelector(".envoy");
