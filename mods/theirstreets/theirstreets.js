@@ -27,13 +27,16 @@ content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
 
+function ResetCam() {
+    setCam({x: --stage-steps-x, y: --stage-steps-y, rotation: --camera-rotation})
+}
 function HideGordon() {
     var envoy = document.querySelector(".envoy");
-    envoy.style.visibility = "block";
+    envoy.classList.add("gordonhidden");
 }
 function ShowGordon() {
     var envoy = document.querySelector(".envoy");
-    envoy.style.visibility = "none";
+    envoy.classList.remove("gordonhidden");
 }
 
 function EpisodeCheck() {
@@ -1772,6 +1775,7 @@ start
         
     RESPONSES::akizet
         let us go, then<+>END
+            EXEC::ResetCam()
 `)
 
 
