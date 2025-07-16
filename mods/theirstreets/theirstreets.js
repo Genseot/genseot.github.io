@@ -27,6 +27,15 @@ content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
 var stageWater
 
+function HideGordon() {
+    var envoy = document.querySelector(".envoy");
+    envoy.style.visibility = "block";
+}
+function ShowGordon() {
+    var envoy = document.querySelector(".envoy");
+    envoy.style.visibility = "none";
+}
+
 function EpisodeCheck() {
 	if(!check('ep0_epilogue')) {
             document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
@@ -1717,13 +1726,6 @@ env.stages['city_street_city6'] = {
 
 // DIALOGUE
 // FOUNTAIN BENCH
-env.dialogues.fountainresp1 = generateDialogueObject(`
-RESPOBJ::
-    RESPONSES::akizet
-        left?<+>left
-        forward?<+>forward
-        right?<+>right
-`)
 env.dialogues["fountainbench"] = generateDialogueObject(`
 start
     sys
