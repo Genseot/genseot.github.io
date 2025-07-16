@@ -1739,7 +1739,7 @@ start
 
     sourceless
         the bench creaks as gordon and i sit upon it
-            EXEC::setCam({x: 5, y: 12, rotation: 0})
+            EXEC::setCam({x: 5, y: 11, rotation: 0})
         the wood of the bench is hard - not too comfortable to sit on, but it works
         the pattering of the fountain's water as it falls into the basin is an incessant noise as we sit
         but it is a little comfort between the cousins' dead-metal spires
