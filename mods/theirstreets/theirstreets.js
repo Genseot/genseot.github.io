@@ -1965,7 +1965,7 @@ start
         through the glass, wrapped packages sit upon perches, swathed in multitudes of colours
         gordon had told me about this chocolate - a sweet delicacy for our cousins
         it seems something like citric acid to us, but not exactly
-        perhaps i could try some, sometime...
+        perhaps the barfriend has a simulacrum...
         across the marketplace is another store
             EXEC::setCam({x: 11, y: 5, rotation: 270})
         strung plastic balls sway near the entrance, like strings of celki
