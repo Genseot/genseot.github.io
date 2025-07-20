@@ -5,6 +5,7 @@
 /* (recommended to search with whole word & case sensitive) */
 /*
 CUSTOM STUFF INITIALISATION
+INITIALISE LISTENER
 ENTITY INITIALISATION
     DEFAULT STAGEENTITIES
     CUSTOM ENTITIES
@@ -22,8 +23,6 @@ DIALOGUE
     WATERFRONT BENCH
 */
 
-document.addEventListener('corru_entered', ()=>{
-if(page.path == "/local/city/street/") { // THANK YOU NOVAE I COMPLETELY FORGOT ABOUT THIS 
 // CUSTOM STUFF INITIALISATION 
 content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" href="https://genseot.github.io/mods/theirstreets/theirstreets.css">`) 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
@@ -180,6 +179,11 @@ function CityTree() {
     getCityTree.insertAdjacentHTML('beforebegin', spawnCityTree)
 }
 
+
+
+// INITIALISE LISTENER
+document.addEventListener('corru_entered', ()=>{
+if(page.path == "/local/city/street/") { // THANK YOU NOVAE I COMPLETELY FORGOT ABOUT THIS 
 env.stage.locales["city"] = [
     [".empty.plain", "/img/local/city/tiles/empty.gif"],
     [".prop", "/img/local/city/tiles/occupied.gif"],
