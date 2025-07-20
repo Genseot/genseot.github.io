@@ -24,7 +24,6 @@ DIALOGUE
 
 document.addEventListener('corru_entered', ()=>{
 if(page.path == "/local/city/street/") { // THANK YOU NOVAE I COMPLETELY FORGOT ABOUT THIS 
-...
 // CUSTOM STUFF INITIALISATION 
 content.insertAdjacentHTML('beforeend', `<link type="text/css" rel="stylesheet" href="https://genseot.github.io/mods/theirstreets/theirstreets.css">`) 
 addResources(["/js/lib/pixi.js","/js/lib/pixi-gif.js",])
