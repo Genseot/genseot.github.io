@@ -1737,6 +1737,9 @@ env.stages['city_street_city6'] = {
 
 // DIALOGUE
 env.definitions[`yuzku`] = `'sluggish bioluminescent scavengers';'intentionally cultivated in veilk parasite husks for lighting';'fatal if consumed'`;
+env.definitions[`vaznian`] = `'ethnic implication';'origination from continent';'vazni'`;
+env.definitions[`vazni`] = `'continent';'central to inhabitable zone'`;
+env.definitions[`oltazni`] = `'vaznian cave-city'`;
 // FOUNTAIN BENCH
 env.dialogues["fountainbench"] = generateDialogueObject(`
 start
