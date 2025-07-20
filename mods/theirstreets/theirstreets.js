@@ -1861,7 +1861,7 @@ start
         I don't think <em>anyone's</em> taught an obesk to drive yet,
         and, honestly, I don't think anyone would be willing to let one use a car.
         Though - I heard that your exchange initiative got a car a few days ago...
-        A [Ford F150] I think?
+        A Ford F150 I think?
         Maybe you can ask one of them to teach you - if they've figured it out.
 
     akizet
