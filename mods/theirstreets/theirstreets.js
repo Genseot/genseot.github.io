@@ -2031,7 +2031,7 @@ start
         the ocean mirrors the hue of the sky, blue and endless
         across the ocean, i can see the rest of the city, sprawling across the cousins' earth
         their spires seem so tall despite how far i am
-        to think they their sprawling cities all by themselves 
+        to think they built their sprawling cities all by themselves 
         they look all the more impressive as they glimmer under their star's light...
         i step back, and sit beside gordon
             EXEC::ShowGordon();
