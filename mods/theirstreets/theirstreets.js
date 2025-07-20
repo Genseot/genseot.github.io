@@ -244,6 +244,7 @@ env.stageEntities['T'] = {
     class:"road prop",
     contains: { slug: 'R', id: "car", class: "prop car sideways" }
 }
+// random comment here hi guys im dumb. i think i could have just added a class or something on some that would rotate them or something instead of making a wholly new object for every type of rotation lol 
 env.stageEntities['pB'] = {
     class: "prop",
     contains: { 
@@ -1036,14 +1037,14 @@ env.stages['city_street_streets1'] = {
     },
     plan: [
         'r','r','r','.','s','.','.','.','.','.','.','.','.',
-        'r','r','r','l','░','░','.','.','.','.','.','.','.',
+        'r','r','r','lr','░','░','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
-        'r','r','r','l','░','░','L','.','.','.','.','.','.',
+        'r','r','r','tr','░','░','L','.','.','.','.','.','.',
         'r','r','r','░','░','░','░','░','░','░','░','░','.',
         'r','r','r','░','░','░','░','░','░','░','░','p','f',
-        'r','r','r','░','░','lr','░','░','░','lr','░','░','.',
+        'r','r','r','░','l','░','░','t','░','░','l','░','.',
         'r','r','r','r','r','r','r','r','r','r','r','r','T',
         'r','r','r','r','r','r','r','r','r','r','r','r','r',
         'R','r','R','r','r','r','r','r','r','r','r','r','T',
@@ -1079,7 +1080,7 @@ env.stages['city_street_streets2'] = {
         'r','r','r','░','░','░','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.',
-        'r','r','r','lr','░','░','Lr','.','.','.',
+        'r','r','r','tr','░','░','Lr','.','.','.',
         'r','r','r','░','░','░','░','░','░','.',
         'r','r','r','░','░','░','░','░','░','c',
         'r','r','r','░','░','░','░','░','░','.',
@@ -1114,19 +1115,19 @@ env.stages['city_street_streets3'] = {
     },
     plan: [
         'r','r','r','.','s','.','.','.','.',
-        'r','r','r','░','░','░','Lr','.','.',
-        'r','r','r','lr','░','░','.','.','.',
+        'r','r','r','lr','░','░','Lr','.','.',
         'r','r','r','░','░','░','.','.','.',
         'r','r','r','░','░','░','.','.','.',
-        'r','r','r','lr','░','░','Br','.','.',
+        'r','r','r','░','░','░','.','.','.',
+        'r','r','r','tr','░','░','Br','.','.',
         'r','r','r','░','░','░','░','░','.',
         'r','r','r','░','░','░','░','░','cg',
         'r','r','r','░','░','░','░','░','.',
-        'r','r','r','lr','░','░','Br','.','.',
+        'r','r','r','tr','░','░','Br','.','.',
         'r','r','r','░','░','░','.','.','.',
         'r','r','r','░','░','░','.','.','.',
-        'r','r','r','lr','░','░','.','.','.',
-        'r','r','r','░','p','░','Lr','.','.',
+        'r','r','r','░','░','░','.','.','.',
+        'r','r','r','lr','p','░','Lr','.','.',
         'R','R','R','.','e','.','.','.','.',
     ]
 }
@@ -1164,17 +1165,17 @@ env.stages['city_street_streets4'] = {
         'r','r','r','.','s','.','.','.','.','.','.','.','.',
         'r','r','r','lr','░','░','Lr','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
-        'r','r','r','░','░','░','.','.','.','.','.','.','.',
-        'r','r','r','░','░','░','.','.','.','.','.','.','.',
-        'r','r','r','lr','░','░','Lr','.','.','.','.','.','.',
-        'r','r','r','░','░','░','░','░','B','F1cr','.','.','.',
-        'r','r','r','░','░','░','░','░','bl','Br','.','.','.',
-        'r','r','r','░','░','░','░','░','sb','Br','.','.','.',
-        'r','r','r','lr','░','░','░','░','bl','Br','.','.','.',
-        'r','r','r','░','░','░','░','░','B','F1c','.','.','.',
-        'r','r','r','░','░','░','Lr','.','.','.','.','.','.',
-        'r','r','r','░','░','░','.','.','.','.','.','.','.',
-        'r','r','r','lr','░','░','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','░','░','.','.','.','.','.',
+        'r','r','r','░','░','░','░','░','░','.','.','.','.',
+        'r','r','r','tr','░','░','Lr','░','░','.','.','.','.',
+        'r','r','r','░','░','░','Br','░','░','Lr','F1cr','.','.',
+        'r','r','r','░','░','░','F3r','░','░','bl','Br','.','.',
+        'r','r','r','░','░','░','F2r','░','░','sb','Br','.','.',
+        'r','r','r','░','░','░','F3r','░','░','bl','Br','.','.',
+        'r','r','r','░','░','░','Br','░','░','Lr','F1c','.','.',
+        'r','r','r','tr','░','░','Lr','░','░','.','.','.','.',
+        'r','r','r','░','░','░','░','░','░','.','.','.','.',
+        'r','r','r','░','░','░','░','░','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','L','.','.','.','.','L','.',
         'r','r','r','░','░','░','░','░','░','░','░','░','.',
@@ -1182,7 +1183,7 @@ env.stages['city_street_streets4'] = {
         'r','r','r','l','░','░','░','l','░','░','░','l','.',
         'r','r','r','r','r','r','r','r','r','r','r','r','T',
         'r','r','r','r','r','r','r','r','r','r','r','r','T',
-        'R','r','R','r','r','r','r','r','r','r','r','r','r',
+        'R','R','R','r','r','r','r','r','r','r','r','r','r',
     ]
 }
 env.stages['city_street_streets5'] = {
@@ -1210,17 +1211,17 @@ env.stages['city_street_streets5'] = {
     plan: [
         'r','r','r','.','s','.','.','.','.',
         'r','r','r','░','░','░','Lr','.','.',
-        'r','r','r','l','░','░','.','.','.',
+        'r','r','r','lr','░','░','.','.','.',
         'r','r','r','░','░','░','.','.','.',
         'r','r','r','░','░','░','.','.','.',
-        'r','r','r','l','░','░','pBr','.','.',
+        'r','r','r','░','░','░','pBr','.','.',
         'r','r','r','░','░','░','░','░','.',
-        'r','r','r','░','░','░','░','░','cm',
+        'r','r','r','tr','░','░','░','░','cm',
         'r','r','r','░','░','░','░','░','.',
-        'r','r','r','l','░','░','pBr','.','.',
+        'r','r','r','░','░','░','pBr','.','.',
         'r','r','r','░','░','░','.','.','.',
         'r','r','r','░','░','░','.','.','.',
-        'r','r','r','l','░','░','.','.','.',
+        'r','r','r','lr','░','░','.','.','.',
         'r','r','r','░','p','░','Lr','.','.',
         'R','R','R','.','e','.','.','.','.',
     ]
@@ -1249,17 +1250,17 @@ env.stages['city_street_streets6'] = {
     plan: [
         'r','r','r','.','s','.','.',
         'r','r','r','░','░','░','.',
-        'r','r','r','l','░','░','Lr',
+        'r','r','r','lr','░','░','Lr',
         'r','r','r','░','░','░','░',
         'r','r','r','░','░','░','░',
-        'r','r','r','l','░','░','░',
+        'r','r','r','lr','░','░','░',
         'r','r','r','r','cr','r','r',
         'r','r','r','r','cr','r','r',
         'r','r','r','r','cr','r','r',
-        'r','r','r','l','░','░','░',
+        'r','r','r','lr','░','░','░',
         'r','r','r','░','░','░','░',
         'r','r','r','░','░','░','░',
-        'r','r','r','l','░','░','Lr',
+        'r','r','r','lr','░','░','Lr',
         'r','r','r','░','p','░','.',
         'R','R','R','.','e','.','.',
     ]
@@ -1288,16 +1289,16 @@ env.stages['city_street_streets7'] = {
         'r','r','r','L','░','L','.','.','.','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
-        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
-        'r','r','r','l','░','░','.','.','.','.','.','.','.','.','.','.',
-        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','lr','░','░','.','.','.','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
         'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
-        'r','r','r','l','░','░','.','.','.','.','.','.','.','.','.','.',
-        'r','r','r','░','░','░','L','.','.','.','L','.','.','.','L','.',
+        'r','r','r','tr','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','░','░','░','.','.','.','.','.','.','.','.','.','.',
+        'r','r','r','lr','░','░','L','.','.','.','L','.','.','.','L','.',
         'r','r','r','░','░','░','░','░','░','░','░','░','░','░','░','.',
         'r','r','r','░','░','░','░','░','░','░','░','░','░','░','p','e',
-        'r','r','r','l','░','░','l','░','░','l','░','░','l','░','░','.',
+        'r','r','r','l','░','░','l','░','░','t','░','░','l','░','░','.',
         'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
         'r','r','r','r','r','r','r','r','r','r','r','r','r','r','r','T',
         'R','r','R','r','r','r','r','r','r','r','r','r','r','r','r','r',
@@ -1479,9 +1480,9 @@ env.stages['city_street_city4'] = {
         '.','g','░','░','F1c','g','g','B','░','░','░','B','g','g','F1cr','░','░','g','.',
         '.','F1r','░','░','g','Lr','░','░','░','░','░','░','░','Lr','g','░','░','F1r','.',
         '.','Lr','░','░','g','F3c','░','░','░','F3','░','░','░','F3cr','g','░','░','Lr','.',
-        '.','░','░','░','Br','bl','░','░','F2c','g','F1cr','░','░','░','F2r','░','░','░','.',
-        's','░','░','░','F2r','gb','░','░','g','trs','g','░','░','░','Br','░','░','p','e',
-        '.','░','░','░','Br','bl','░','░','F1cr','g','F2c','░','░','░','F2r','░','░','░','.',
+        '.','░','░','░','Br','bl','░','░','F2c','g','F1cr','░','░','g','F2r','░','░','░','.',
+        's','░','░','░','F2r','gb','░','░','g','trs','g','░','░','F1r','Br','░','░','p','e',
+        '.','░','░','░','Br','bl','░','░','F1cr','g','F2c','░','░','g','F2r','░','░','░','.',
         '.','Lr','░','░','g','F3cr','░','░','░','F3','░','░','░','F3c','g','░','░','Lr','.',
         '.','F1r','░','░','g','Lr','░','░','░','░','░','░','░','Lr','g','░','░','F1r','.',
         '.','g','░','░','F1cr','g','g','B','░','░','░','B','g','g','F1c','░','░','g','.',
@@ -1630,23 +1631,23 @@ env.stages['city_street_city5'] = {
     },
     plan: [
         '.','.','.','.','.','.','.','s','.','.','.','.','.','.','.',
-        '.','.','tr','░','pB','L','░','░','░','L','pB','░','tr','.','.',
-        '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
-        '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
-        '.','sf1','pBr','░','░','░','░','░','░','░','░','░','pBr','.','.',
+        '.','.','░','░','pB','L','░','░','░','L','pB','░','░','.','.',
+        '.','.','░','░','░','░','░','░','░','░','░','░','pBr','.','.',
+        '.','.','pBr','░','░','░','░','░','░','░','░','░','░','.','.',
+        '.','sf1','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','sf2','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','pBr','░','░','Lr','ir','i','il','Lr','░','░','pBr','.','.',
         '.','.','bl','░','░','lb','g','B','g','lb','░','░','░','.','.',
         '.','.','cb','░','░','r','Br','trs','Br','r','░','░','░','.','.',
         '.','.','bl','░','░','lt','g','B','g','lt','░','░','░','.','.',
-        '.','.','pBr','░','░','Lr','ir','i','il','Lr','░','░','pBr','.','.',
+        '.','.','pBr','░','░','Lr','ir','i','il','Lr','░','░','░','.','.',
         '.','sf3','░','░','░','░','░','░','░','░','░','░','░','.','.',
-        '.','.','░','░','░','░','░','░','░','░','░','░','░','sf4','.',
-        '.','.','pBr','░','░','░','░','░','░','░','░','░','pBr','.','.',
+        '.','.','░','░','░','░','░','░','░','░','░','░','pBr','sf4','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
+        '.','.','pBr','░','░','░','░','░','░','░','░','░','░','.','.',
         '.','.','░','░','░','░','░','░','░','░','░','░','░','.','.',
-        '.','.','tr','░','pB','L','░','p','░','L','pB','░','tr','.','.',
+        '.','.','░','░','pB','L','░','p','░','L','pB','░','░','.','.',
         '.','.','.','.','.','.','.','e','.','.','.','.','.','.','.',
     ]
 }
@@ -1728,12 +1729,10 @@ env.stages['city_street_city6'] = {
 
 
 // DIALOGUE
+env.definitions[`yuzku`] = `'sluggish bioluminescent scavengers';'intentionally cultivated in veilk parasite husks for lighting';'fatal if consumed'`;
 // FOUNTAIN BENCH
 env.dialogues["fountainbench"] = generateDialogueObject(`
 start
-    sys
-        NOTICE::'memory stream located'
-
     akizet
         ah, a bench 
         gordon, i can sit here, yes?
@@ -1781,111 +1780,271 @@ start
 
 
 // BRIDGE BENCH
-env.dialogues.bridgeresp1 = generateDialogueObject(`
-RESPOBJ::
-    RESPONSES::akizet
-        
-`)
 env.dialogues["bridgebench"] = generateDialogueObject(`
 start
-    sys
-        NOTICE::'memory stream located'
+    sourceless
+        i dawdle at the railing of the bridge, looking into the ripping waters of the city 
+        gordon sits behind me on a bench, watching me and the city beyond the sea
+        the brisk wind of the bright cousins' nights curls around my receptors 
+        the light of the lamps and stars shine, reflected, in the night waters 
+        even the dull contrivance gleams in the dark sea...
 
-    akizet
-        this is a placeholder
-            EXEC::setCam({x: 13, y: 9, rotation: 270});HideGordon();
+    envoy 
+        Enjoying the view, Akizet?
+        It's much better at night, isn't it?
 
+    akizet 
+        ... ah- yes, yes it is 
+        is it always like this?
+
+    envoy 
+        What, the ocean?
+        It's pretty much like this every night, yeah.
+        Some people come here just to see this -
+        though you won't see many people here, this is one of the quieter spots.
+        The city is usually pretty quiet at night, anyway.
+        Why do you ask?
+
+    akizet 
+        oh, i see...
+        i was just wondering - on obeski the oceans are not like this at all 
+        they are much... darker at night
+        the stars do not shine as bright as they do upon your oceans
+        though i have not been upon our coasts too often
+
+    envoy 
+        Oh, you said you came from... 
+
+    akizet 
+        oltazni?
+        it is far away from many of the coastlines of vazni
+        though i have seen a few rivers and lakes on my time upon the surface 
+        and i have been to the coast once, of course, when i was still running 
+        our oceans are not too dissimilar to yours
+
+    sourceless 
+        gordon nods his head thoughtfully 
+        
+    envoy
+        It's beautiful, isn't it?
+       
     RESPONSES::akizet
-        get up<+>END
+        yes, it is<+>END
             EXEC::ResetCam()
 `)
 
 
 
 // STREETS BENCH
-env.dialogues.streetsresp1 = generateDialogueObject(`
-RESPOBJ::
-    RESPONSES::akizet
-        
-`)
 env.dialogues["streetsbench"] = generateDialogueObject(`
 start
-    sys
-        NOTICE::'memory stream located'
+    sourceless
+        gordon and i step off the main path, sitting upon a bench
+            EXEC::setCam({x: 8, y: 8, rotation: 90})
+        through the light parasites, i watch the street across us
+        the cousins' vehicles crawl slowly across their roads
+        they move in tandem with one another, like a herd of veilk
+        though - some disrupt that pattern, blaring loudly as they do so
+        through the window of each, i can see the obscured shape of a bright cousin...
+        surely learning to pilot one such vehicle would be easy, then?
+        it seems as though every cousin knows how to pilot one...
 
     akizet
-        this is a placeholder
-            EXEC::setCam({x: 7, y: 8, rotation: 90})
+        gordon - about your vehicles...
+        how difficult would it be to learn to operate one?
+
+    sourceless
+        gordon produces a strange sound through his nose
+
+    envoy
+        What? You want to learn to drive?
+        I don't think <em>anyone's</em> taught an obesk to drive yet,
+        and, honestly, I don't think anyone would be willing to let one use a car.
+        Though - I heard that your exchange initiative got a car a few days ago...
+        A [Ford F150] I think?
+        Maybe you can ask one of them to teach you - if they've figured it out.
+
+    akizet
+        ah - i had heard it was given to the materials initiative
+        but that might mean it would have already been disassembled...
+        you would not happen to let me see yours, would you?
+
+    sourceless
+        gordon nods his head in disagreement 
+
+    envoy
+        As much as I would love to see you drive a car, I don't have one.
+        I live pretty close by to the office, so I just walk instead.
+        I don't really travel much besides for work anyway.
+
+    akizet
+        i see...
 
     RESPONSES::akizet
-        get up<+>END
+        perhaps not, then<+>END
             EXEC::ResetCam()
 `)
 
 
 
 // PARK BENCH
-env.dialogues.parkresp1 = generateDialogueObject(`
-RESPOBJ::
-    RESPONSES::akizet
-        
-`)
 env.dialogues["parkbench"] = generateDialogueObject(`
 start
-    sys
-        NOTICE::'memory stream located'
- 
-    akizet
-        this is a placeholder
+    sourceless
+        gordon and i sit - a slight breeze ruffling our clothes
             EXEC::setCam({x: 6, y: 7, rotation: 270})
+        many of the cousins' light parasites pervade this place, moreso than the rest of the city
+        perhaps a place to contain them?
+        even so, i find they are quite beautiful
+        their colours and form are far-removed from anything known on obeski...
+        suddenly, i am filled with an alien curiosity
+        i begin to examine the one closest to me more intently
+            EXEC::setCam({x: 6, y: 6, rotation: 45});HideGordon();
+        the parasite curls and twists its tendrils in strange ways
+        cyst-like bulbs lie upon the tendrils, like celki
+        parasites upon the parasite? surely that is not the case
+        i prod at it, but it seems to provoke no reaction from the parasite
+        is it even alive?
+        gordon watches me from the other side of the bench
+
+    envoy
+        The flowers look nice at this time of year, don't they?
+        I have a friend who works at a flower shop, if you're interested.
+        Maybe you can talk to her then.
+
+    akizet
+        ah, "flowers" are what they are called?
+
+    sourceless
+        i turn back towards gordon
+            EXEC::setCam({x: 6, y: 7, rotation: 270});ShowGordon();
+
+    akizet
+        that sounds interesting - i would like to visit sometime
+        that is, if you can make time for it
+        perhaps later today?
+
+    envoy
+        That sounds fine to me.
+        I haven't talked to her in a while, so...
+        I'm sure she'll be glad to see us.
 
     RESPONSES::akizet
-        get up<+>END
+        wonderful<+>END
             EXEC::ResetCam()
 `)
 
 
 
 // CITY BENCH
-env.dialogues.cityresp1 = generateDialogueObject(`
-RESPOBJ::
-    RESPONSES::akizet
-        
-`)
 env.dialogues["citybench"] = generateDialogueObject(`
 start
-    sys
-        NOTICE::'memory stream located'
+    sourceless
+        i sit, motioning for gordon to sit beside me 
+            EXEC::setCam({x: 3, y: 9, rotation: 270})
+        as he sits, a strange ringing sounds from within his skin cloak
+        gordon withdraws his communicator, mumbling a curse 
+
+    envoy
+        Akizet, I've gotta take a call, I'll be gone for a bit.
+        Just... don't go too far, alright?
+        You can window-shop, if you'd like.
+
+    sourceless
+        gordon sighs and leaves, bringing his communicator to his ear
+            EXEC:: HideGordon();
+        i am now left alone within this city
+        perhaps i should do something to pass the time to when he returns...
+        i cast my gaze across the city's marketplace
+        it bears a sort of resemblance to the marketplaces of our cities
+        the stalls, the sights and smells, the chatter between customers and vendors...
+        i gaze through the clear glass of the stores, eager to see what they might offer
+        i peruse through the glass of the store to my left
+            EXEC::setCam({x: 3, y: 5, rotation: 90})
+        the words "chocolatier" are emblazoned upon the glass, it seems
+        through the glass, wrapped packages sit upon perches, swathed in multitudes of colours
+        gordon had told me about this chocolate - a sweet delicacy for our cousins
+        it seems something like citric acid to us, but not exactly
+        perhaps i could try some, sometime...
+        across the marketplace is another store
+            EXEC::setCam({x: 11, y: 5, rotation: 270})
+        strung plastic balls sway near the entrance, like strings of celki
+        it is dark within, but i can see nonetheless
+        a miscellany of things sit on display, like they would upon stalls within a cave-city's marketplace
+        many do not seem to have a discernable purpose, though - decoration? leisure? it is hard to tell...
+        i look towards my left, peering through the glass of the store
+            EXEC::setCam({x: 3, y: 13, rotation: 90})
+        necklaces and bracelets are placed upon still, pale-white imitations of our cousins
+        gold and silver sparkle prettily in the light
+        gemstones are cut into circles and squares, reflecting the light in different colours
+        perhaps i could bring some of the bright cousins' jewelry back home...
+        and across this store lies another
+            EXEC::setCam({x: 11, y: 13, rotation: 270})
+        but... i am unsure of its purpose
+        twisting shapes and bizarre figures await
+        might this be for decoration as well?
+        if so, these are quite bizarre
+        something only a vaznian surrealist would dream of - and want, for that matter...
+
+    envoy
+        Akizet!
+            EXEC::setCam({x: 3, y: 9, rotation: 270})
+ 
+    sourceless
+        gordon waves from across the marketplace, walking towards me
+        and he settles upon the bench, beside me
+            EXEC::ShowGordon()
 
     akizet
-        this is a placeholder
-            EXEC::setCam({x: 3, y: 9, rotation: 270})
-        blah blah blah
-            EXEC::HideGordon()
+        hello, gordon
+
+    envoy
+        Sorry for going, I just had to deal with some things.
+        Are you ready to go?
 
     RESPONSES::akizet
-        get up<+>END
+        i am<+>END
             EXEC::ResetCam()
 `)
 
 
 
 // WATERFRONT BENCH
-env.dialogues.waterfrontresp1 = generateDialogueObject(`
-RESPOBJ::
-    RESPONSES::akizet
-        
-`)
 env.dialogues["waterfrontbench"] = generateDialogueObject(`
 start
-    sys
-        NOTICE::'memory stream located'
+    sourceless
+        i lean upon the railings before the city's waterfront
+            EXEC::setCam({x: 9, y: 8, rotation: 270});HideGordon();
+        gordon sits behind me, using his communicator
+        the skies are clear and unshrouded, allowing our cousins' watchful star to gaze upon the ocean
+        the star's glare reflects upon the water, tiny spots gleaming like yuzku of a cavelight 
+        the ocean mirrors the hue of the sky, blue and endless
+        across the ocean, i can see the rest of the city, sprawling across the cousins' earth
+        their spires seem so tall despite how far i am
+        to think they their sprawling cities all by themselves 
+        they look all the more impressive as they glimmer under their star's light...
+        i step back, and sit beside gordon
+            EXEC::ShowGordon();
+
+    envoy
+        So, Akizet,
+        how are you enjoying the city?
 
     akizet
-        this is a placeholder
-            EXEC::setCam({x: 9, y: 8, rotation: 270})
+        so far?
+        it is grand - larger than even our largest cities
+        i feel as though i have explored so much... yet it seems that i have barely done so
+
+    envoy
+        Mhm...
+        This <em>is</em> one of the bigger cities in the country, though -
+        you'll see smaller cities and towns if you decide to travel for whatever reason.
+        Those'll probably be about the size you expect.
+
+    akizet
+        i see...
 
     RESPONSES::akizet
-        get up<+>END
+        perhaps we could go someday<+>END
             EXEC::ResetCam()
 `)
