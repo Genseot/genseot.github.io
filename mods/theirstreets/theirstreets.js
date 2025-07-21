@@ -1748,7 +1748,7 @@ start
         gordon, i can sit here, yes?
 
     envoy
-        Yeah, that's fine, no one's siting here anyway.
+        Yeah, that's fine, no one's sitting here anyway.
         We've been walking for a while, so I don't think anyone will mind.
 
     sourceless
