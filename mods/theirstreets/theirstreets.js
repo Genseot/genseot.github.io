@@ -542,7 +542,7 @@ env.stages['city_cafe'] = {
     entities: {
         e: {
             slug: 'e',
-            teleportSpot: 68,
+            teleportSpot: 67,
             shouldFace: 'left',
             teleportTarget: "city_street2"
         },
