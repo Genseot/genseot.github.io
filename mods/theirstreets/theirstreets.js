@@ -524,6 +524,176 @@ env.stages['city_street2'] = {
         '.','.','.','r','r','r','r','.','.','Y','.','.','.','.',
     ]
 }
+env.stages['city_cafe'] = {
+    locale: "city",
+    width: 5,
+    enterDirection: "up",
+    exec: ()=>{ 
+        page.bgm.rate(0.9)
+        if(!check('ep0_epilogue')) {
+            document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
+                console.log(e)
+                e.classList.remove('prop', 'later')
+                e.innerHTML = ""
+            })
+        }
+    },
+
+    entities: {
+        e: {
+            slug: 'e',
+            teleportSpot: 68,
+            shouldFace: 'left',
+            teleportTarget: "city_street2"
+        },
+
+        c: {
+            slug: 'c',
+            class:"blocks",
+            contains: {
+                slug: 'c',
+                id: "cafecounter",
+                class: "cafecounter cafegfx",
+                html: `<figure></figure>`
+            }
+        },
+
+        w: {
+            slug: 'w',
+            class:"blocks",
+            contains: {
+                slug: 'w',
+                id: "cashier",
+                class: "cashier cafegfx",
+                examineEntity: "cashier"
+            }
+        },
+
+        m: {
+            slug: 'm',
+            class:"blocks",
+            contains: {
+                slug: 'm',
+                id: "menu",
+                class: "menu cafegfx",
+                examineEntity: "menu"
+            }
+        },
+
+        t: {
+            class: "prop later",
+            contains: {
+                slug: 't',
+                id: 'creep',
+                class: "civvie creep",
+                examineEntity: "stre wal k"
+            }
+        },
+
+        v: {
+            class: "prop blocks ep1on",
+            contains: {
+                id: 'tv',
+                class: "tv",
+                examineEntity: "electric face box"
+            }
+        }
+    },
+
+    plan: [
+        '.','.','e','.','.',
+        't','░','p','░','░',
+        '░','░','░','░','░',
+        '░','░','░','░','░',
+        '░','░','░','░','░',
+        'r','r','c','r','r',
+        'r','r','m','w','v',
+    ]
+}
+env.stages['city_street3'] = {
+    locale: "nightcity",
+    width: 14,
+    exec: ()=>{ 
+        page.bgm.rate(1)
+        if(!check('ep0_epilogue')) {
+            document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
+                console.log(e)
+                e.classList.remove('prop', 'later')
+                e.innerHTML = ""
+            })
+        }
+    },
+
+    entities: {
+        n: {
+            teleportSpot: 107,
+            teleportTarget: "city_street2"
+        },
+
+        P: {
+            teleportTarget: "city_flowers",
+            shouldFace: 'up',
+            contains: {
+                dyp: {
+                    width: 5,
+                    height: 4,
+                    image: 'url(/img/local/city/flowershop.gif)',
+                    transform: `translateX(10%) rotateY(-90deg)`,
+                    noback: true
+                }
+            } 
+        },
+    
+        ":": {
+            teleportTarget: "city_flowers",
+            shouldFace: 'up',
+            contains: {
+                dyp: {
+                    width: 5,
+                    height: 4,
+                    image: 'url(/img/local/city/flowershop.gif)',
+                    transform: "rotateY(90deg) translateX(10%) rotateY(-90deg)",
+                    noback: true
+                }
+            } 
+        },
+
+        L: {
+            class: "prop",
+            contains: { 
+                dyp: {
+                    image: 'url(/img/local/city/blacklamp.gif)',
+                    width: 1.5,
+                    height: 4
+                }
+            } 
+        },
+        
+        "C": {
+            teleportTarget: "city_banks",
+            teleportSpot: 112,
+            shouldFace: "down"
+        },
+    },
+
+    plan: `
+        rrrr.n........
+        rrrr░p░r......
+        rrrrL░░r......
+        rrrr░░░P......
+        rrrrL░░r......
+        rrrr░░░r......
+        rrrrL░░rrr:rr.
+        rrrr░░░░░░░░░.
+        rrrrl░░░░░░░░C
+        rrrr░░░░░░░░░.
+        rrrrrrrrrrrrrr
+        rrrrrrrrrrrrrT
+        rrrrrrrrrrrrrT
+        rRRrrrrrrrrrrr
+    `
+}
+	
 
 
 // CUSTOM STAGES
