@@ -530,13 +530,7 @@ env.stages['city_cafe'] = {
     enterDirection: "up",
     exec: ()=>{ 
         page.bgm.rate(0.9)
-        if(!check('ep0_epilogue')) {
-            document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
-                console.log(e)
-                e.classList.remove('prop', 'later')
-                e.innerHTML = ""
-            })
-        }
+        EpisodeCheck()
     },
 
     entities: {
@@ -615,13 +609,7 @@ env.stages['city_street3'] = {
     width: 14,
     exec: ()=>{ 
         page.bgm.rate(1)
-        if(!check('ep0_epilogue')) {
-            document.querySelectorAll('#grid-ref .later, #realgrid .later').forEach(e=>{
-                console.log(e)
-                e.classList.remove('prop', 'later')
-                e.innerHTML = ""
-            })
-        }
+        EpisodeCheck()
     },
 
     entities: {
