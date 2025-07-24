@@ -479,7 +479,7 @@ env.stages['city_street2'] = {
     },
     entities: {
         n: {
-            teleportSpot: 9,
+            teleportSpot: 149,
             teleportTarget: "city_street"
         },
         Y: {
