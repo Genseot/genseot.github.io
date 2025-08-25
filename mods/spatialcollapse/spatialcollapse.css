@@ -1,1 +1,295 @@
+/* ENEMIES */
+/* SQUISH ANIMATION */
+.sprite-wrapper .squishyfast { animation: bomber 4s cubic-bezier(.29,.01,.07,1.07) infinite alternate; transform-origin:bottom; }
+.sprite-wrapper .squishyslow { animation: bomber 5s cubic-bezier(.29,.01,.07,1.07) infinite alternate; transform-origin:bottom; }
 
+/* MOVEFOE */
+#combat-realgrid .lifter { width:40vh; height:40vh; position:absolute; display:flex; justify-content:center; align-items:center; background:url(/img/local/embassy/liftfrienddark.gif); background-position:center; background-size:contain; background-repeat:no-repeat; transform:translateY(-125px) rotateZ(0deg); }
+#combat-realgrid .lifter figure::after, #combat-realgrid .lifter figure::before, #combat-realgrid .lifter::after  { content:unset; }
+#combat-realgrid .lifter.sprite figure::after, #combat-realgrid .lifter.aggressormode figure::after { content:""; width:12.5vh; height:12.5vh; position:absolute; display:block; background:url(/img/sprites/aggressor/aggressoroverlay.png), url(/img/local/orbit/core.gif), radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(0,0,0,0) 45%); border-radius:100%; background-position:center; background-repeat:no-repeat; background-size:contain; animation:SPIN 20s linear infinite reverse; }
+
+
+
+/* TIMESTOPPER */
+.spatialtimestopper figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialtimestopper figure span { width:100%; height:100%; position:absolute; transform-origin:top; }
+
+.spatialtimestopper figure#base span { background: url(/img/local/embassy/timestoptimize.gif); background-repeat:no-repeat; background-size:contain; }
+.spatialtimestopper figure#base span:nth-child(1) { width:500%; height:500%; transform: rotateX(-90deg) translateY(-250px) translateZ(595px); }
+.spatialtimestopper figure#base span:nth-child(2) { width:450%; height:450%; transform: rotateX(-90deg) translateY(-225px) translateZ(530px); }
+.spatialtimestopper figure#base span:nth-child(3) { width:400%; height:400%; transform: rotateX(-90deg) translateY(-200px) translateZ(470px); }
+.spatialtimestopper figure#base span:nth-child(4) { width:350%; height:350%; transform: rotateX(-90deg) translateY(-175px) translateZ(410px); }
+.spatialtimestopper figure#base span:nth-child(5) { width:300%; height:300%; transform: rotateX(-90deg) translateY(-150px) translateZ(350px); }
+.spatialtimestopper figure#base span:nth-child(6) { width:250%; height:250%; transform: rotateX(-90deg) translateY(-125px) translateZ(290px); }
+
+.spatialtimestopper figure#tendril span { width:550%; height:350%; background:url(/img/local/embassy/timestoppertop.gif); background-size:contain; background-repeat:no-repeat; }
+.spatialtimestopper figure#tendril span:nth-child(1) { transform: rotateY(90deg); }
+.spatialtimestopper figure#tendril span:nth-child(2) { transform: rotateY(45deg); }
+.spatialtimestopper figure#tendril span:nth-child(3) { transform: rotateY(135deg); }
+
+
+
+/* CHAIR */
+.spatialchair figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialchair figure span { width:100%; height:100%; position:absolute; background:url(/img/sprites/obesk/chair.gif); background-size:contain; background-position:center; background-repeat:no-repeat; }
+
+.spatialchair figure span.bottomleft { transform:rotateY(-105deg) rotateX(-90deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+.spatialchair figure span.topleft { transform:rotateY(105deg) rotateX(270deg) rotateZ(180deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+.spatialchair figure span.bottomright { transform:rotateY(105deg) rotateX(270deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+.spatialchair figure span.topright { transform:rotateY(-105deg) rotateX(-90deg) rotateZ(-180deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+.spatialchair figure span.top { transform:rotateY(195deg) rotateX(-90deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+.spatialchair figure span.bottom { transform:rotateY(15deg) rotateX(-90deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+
+
+
+/* TIMESTOPPER DESK */
+.spatialtimestopperdesk figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+
+.spatialtimestopperdesk figure span.desk { width:100000%; height:150%; background-image:url(/img/textures/blackstaticSTILL.gif); border:2px solid var(--obesk-color); border-radius:20%; transform-origin:center; transform:translateY(calc(0.15 * var(--gridTileSize))) rotateX(90deg) rotateZ(180deg); }
+.spatialtimestopperdeskleg figure { width:200%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialtimestopperdeskleg figure span.leg1, .spatialtimestopperdeskleg figure span.leg2 { width:100%; height:200%; background:url(https://genseot.github.io/mods/spatialcollapse/img/deskleg.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateY(-100px) rotateY(-45deg); }
+.spatialtimestopperdeskleg figure span.leg2 { transform:translateX(-100px) translateY(-100px) rotateY(45deg); }
+
+.spatialtimestopperdesk figure span.doodad1, .spatialtimestopperdesk figure span.doodad3 { width:120%; height:100%; position:absolute; background:url(/img/sprites/obesk/cystline.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateZ(-80px) translateX(10px) rotateY(110deg) translateY(-80px); }
+.spatialtimestopperdesk figure span.doodad3 { transform:translateX(10px) translateZ(80px) rotateY(-110deg) translateY(-80px); }
+.spatialtimestopperdesk figure span.doodad2 { width:120%; height:100%; position:absolute; background:url(/img/sprites/obesk/cystrack.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateX(10px) rotateY(90deg) translateY(-80px); }
+.spatialtimestopperdesk figure span.doodad4 { width:80%; height:80%; position:absolute; background:url(/img/sprites/obesk/scanner.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateZ(-50px) translateX(-10px) rotateY(110deg) translateY(-60px); }
+
+
+
+/* VEILKLIGHT */
+.spatialveilklight figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+
+.spatialveilklight figure span.stand1, .spatialveilklight figure span.stand2 { width:90%; height:100%; position:absolute; background:url(/img/local/embassy/lampstand.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; }
+.spatialveilklight figure span.stand1 { --triform:translateY(15px) rotateY(45deg); }
+.spatialveilklight figure span.stand2 { --triform:translateY(15px) rotateY(135deg); }
+
+.spatialveilklight figure span.lamp1, .spatialveilklight figure span.lamp2 { width:45%; height:100%; position:absolute; background:url(/img/local/embassy/lampdark.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; }
+.spatialveilklight figure span.lamp1 { --triform:translateY(-45px) rotateY(45deg); }
+.spatialveilklight figure span.lamp2 { --triform:translateY(-45px) rotateY(135deg); }
+
+
+
+/* LISTENER */
+.spatiallistener figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatiallistener figure span.listener { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/listener.gif); background-size:contain; background-position:center; background-repeat:no-repeat;}
+.spatiallistener figure span.callscreen { width:20%; height:20%; border-radius:100%; top:20%; left:35%; overflow:hidden; background-color:var(--friend-color); border:2px solid var(--dark-color);  transform:var(--triform); transform-origin:top; --triform:translateX(-10px) translateZ(1px); }
+.spatiallistener figure span.callscreen::after { content:""; width:200%; height:100%; background-size:50% 100%; background:url(/img/textures/corruripple.gif); animation:unset; }
+
+.spatiallistener span.listener.recreation { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/listener.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:rotateY(-225deg) translateX(20px) translateZ(8px); }
+
+
+
+/* BAR */
+.spatialbar figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+
+.spatialbar figure span.wall { width:350%; height:300%; position:absolute; background:url(/img/local/embassy/barbasedark.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateY(-190px) translateZ(5px) rotateX(-10deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialbar figure span.drinks { width:300%; height:400%; position:absolute; background:url(/img/local/embassy/bardrinksdark.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateY(-280px) translateZ(45px) translateX(-30px) rotateX(-10deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialbar figure span.tier1 { width:340%; height:100%; top:0; bottom:unset; position:absolute; background:transparent; border:calc(var(--gridTileSize) * 0.5) double var(--friend-color); border-top:0; border-radius:0 0 100% 100%; transform:translateZ(60px) translateX(0px) translateY(50px) rotateX(90deg) rotateY(5deg); } 
+.spatialbar figure span.tier2 { width:340%; height:100%; top:0; bottom:unset; position:absolute; background:transparent; border:calc(var(--gridTileSize) * 0.5) double var(--friend-color); border-top:0; border-radius:0 0 100% 100%; transform:translateZ(60px) translateX(0px) translateY(30px) rotateX(90deg) rotateY(5deg); } 
+.spatialbar figure span.tier3 { width:340%; height:100%; top:0; bottom:unset; position:absolute; background:transparent; border:calc(var(--gridTileSize) * 0.5) double var(--friend-color); border-top:0; border-radius:0 0 100% 100%; transform:translateZ(60px) translateX(0px) translateY(10px) rotateX(90deg) rotateY(5deg); } 
+.spatialbar figure span.tier1, .spatialbar figure span.tier2, .spatialbar figure span.tier3 { animation: BARFLICKER 5s linear infinite; animation-delay: unset !important; }
+
+
+
+/* BARFRIEND */
+.spatialbarfriend figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialbarfriend figure span { width:100%; height:125%; position:absolute; background:url(/img/sprites/obesk/golem.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateZ(-100px) rotateX(2deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+
+
+
+/* RECREATION TABLE */
+.spatialrecreationtable figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialrecreationtable figure span.table, .spatialrecreationtable figure span.canopy, .spatialrecreationtable figure span.cysts1, .spatialrecreationtable figure span.cysts2 { position:absolute; background-position:center; background-repeat:no-repeat; background-size:contain; transform-origin:top; }
+
+.spatialrecreationtable figure span.table, .spatialrecreationtable figure span.canopy { width:200%; height:200%; background:url(/img/sprites/obesk/circletable.gif); background-repeat:no-repeat; background-size:contain; }
+.spatialrecreationtable figure span.table { transform:rotateX(185deg) translateY(-300px) translateZ(60px); }
+.spatialrecreationtable figure span.canopy { transform:rotateX(210deg) translateY(-335px) translateZ(20px); }
+
+.spatialrecreationtable figure span.cysts1, .spatialrecreationtable figure span.cysts2 { width:150%; height:150%; background:url(/img/sprites/obesk/circletablecysts.gif); background-position:bottom; background-size:100% auto; background-repeat:no-repeat; background-size:contain; }
+.spatialrecreationtable figure span.cysts1 { transform:rotateX(-90deg) rotateY(0deg) translateY(-240px) translateZ(150px); }
+.spatialrecreationtable figure span.cysts2 { transform:rotateX(-90deg) rotateY(100deg) translateY(-240px) translateX(-150px) translateZ(-25px); } 
+
+.spatialrecreationtableleg figure { width:200%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialrecreationtableleg figure span.leg1, .spatialrecreationtableleg figure span.leg2 { width:100%; height:200%; background:url(https://genseot.github.io/mods/spatialcollapse/img/deskleg.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateY(5px) translateZ(170px) rotateZ(90deg) rotateX(-90deg) rotateY(-45deg); }
+.spatialrecreationtableleg figure span.leg2 { transform:translateY(5px) translateZ(170px) translateX(-100px) rotateZ(90deg) rotateX(-90deg) rotateY(45deg); }
+
+
+
+/* WINDOW CORNER */
+.spatialwindow figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialwindow figure span.window { width:150%; height:100%; position:absolute; background:url(/img/local/embassy/window.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateX(-10px) translateZ(-5px) translateY(-35px) rotateY(45deg) rotateX(180deg) rotateZ(180deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+
+.spatialfloor figure { width:400%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialfloor figure span:nth-child(1) { width:350%; height:200%; position:absolute; background:url(/img/local/embassy/cornermasscolor.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateY(99.75px) translateX(-199px) translateZ(-50px) rotateX(90deg); }
+.spatialverticalwall figure { width:400%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialverticalwall figure span:nth-child(1) { width:350%; height:200%; position:absolute; background:url(/img/local/embassy/cornermasscolor.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateX(-99.5px) translateY(-100px) translateZ(-49px) rotateZ(-90deg) rotateY(-90deg) rotateX(90deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialhorizontalwall figure { width:400%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialhorizontalwall figure span:nth-child(1) { width:350%; height:200%; position:absolute; background:url(/img/local/embassy/cornermasscolor.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateX(-199px) translateY(-100px) translateZ(50px) rotateX(180deg) rotateZ(-90deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+
+
+
+/* DEAD QOU */
+.spatialdeadqou figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialdeadqou figure span { width:100%; height:100%; position:absolute; background:url(/img/sprites/obesk/deadqou.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateY(60px); }
+
+
+
+/* DOORS */
+.spatialdooropen figure { width:300%; height:275%;%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialdooropen figure span { width:100%; height:100%; background:url(/img/local/embassy/door.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateY(-350px) translateX(-50px) rotateY(90deg); }
+
+.spatialdoorleft figure { width:300%; height:275%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialdoorleft figure span { width:100%; height:100%; background:url(/img/local/embassy/doorlocked.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateY(-350px) translateX(-50px) rotateY(90deg); }
+
+.spatialdoorright figure { width:300%; height:275%;%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialdoorright figure span { width:100%; height:100%; background:url(/img/local/embassy/doorlocked.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateY(-350px) translateX(-150px) rotateY(-90deg); }
+
+
+
+/* KAZKI DESK */
+.spatialkazkidesk figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+
+.spatialkazkidesk figure span.desk { width:100000%; height:150%; background-image:url(/img/textures/blackstaticSTILL.gif); border:2px solid var(--obesk-color); border-radius:20%; transform-origin:center; transform:translateY(calc(0.15 * var(--gridTileSize))) rotateX(90deg) rotateZ(90deg); }
+.spatialkazkideskleg figure { width:200%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialkazkideskleg figure span.leg1, .spatialkazkideskleg figure span.leg2 { width:100%; height:200%; background:url(https://genseot.github.io/mods/spatialcollapse/img/deskleg.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateY(-100px) rotateY(-45deg); }
+.spatialkazkideskleg figure span.leg2 { transform:translateX(-100px) translateY(-100px) rotateY(45deg); }
+
+.spatialkazkidesk figure span.doodad1 { width:80%; height:80%; position:absolute; background:url(/img/local/embassy/drinkypile.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; transform:translateZ(10px) translateY(-65px) translateX(-100px) rotateY(10deg); }
+.spatialkazkidesk figure span.doodad2 { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/gunops.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; 
+transform:translateZ(-40px) translateY(-30px) rotateX(60deg); }
+.spatialkazkidesk figure span.doodad3 { width:80%; height:80%; position:absolute; background:url(/img/sprites/obesk/dd1.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; 
+transform:translateZ(10px) translateY(-65px) translateX(100px) rotateY(-55deg); }
+.spatialkazkidesk figure span.gunshelf { width:175%; height:175%; position:absolute; background:url(/img/local/embassy/gunrack.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateY(-165px) translateZ(-60px); }
+.spatialkazkidesk figure span.chair { width:100%; height:100%; position:absolute; background:url(/img/sprites/obesk/chair.gif); background-size:contain; background-position:center; background-repeat:no-repeat;
+transform:translateZ(100px) translateX(65px) translateY(35px) rotateY(125deg); }
+
+
+
+/* REJUVENATION CHAMBER */
+.spatialrejuvenation figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialrejuvenation figure span { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/sleepchamberalt.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:rotateY(90deg); }
+
+
+
+/* SHELF */
+.spatialshelf figure { width:125%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialshelf figure span.shelfbody { width:100%; height:175%; position:absolute; background:url(/img/local/embassy/shelf.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:rotateY(90deg) translateX(50px) translateY(-25px) translateZ(-35px); }
+.spatialshelf figure span.shelfcysts { width:60%; height:50%; top:10%; position:absolute; background:url(/img/sprites/obesk//cystrack.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:rotateY(90deg) translateX(50px) translateY(-40px) translateZ(-35px); }
+
+
+
+/* MINDCORES */
+.spatialmindcores figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialmindcores figure span.itzil { width:60%; height:50%; position:absolute; background:url(/img/local/embassy/mindcore1.gif); background-size:contain; background-position:center; background-repeat:no-repeat; 
+transform:translateX(-20px) translateZ(-15px) rotateY(-15deg) translateY(85px);}
+.spatialmindcores figure span.karik { width:60%; height:50%; position:absolute; background:url(/img/local/embassy/mindcore2.gif); background-size:contain; background-position:center; background-repeat:no-repeat;
+transform:translateX(20px) translateZ(15px) rotateY(-60deg) translateY(85px); }
+
+
+
+
+
+
+
+
+/* ARCHIVAL DOORS */
+.spatialbstrddoor figure { width:300%; height:200%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialbstrddoor figure span.bstrddoor { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/doorlocked.gif); background-size:contain; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility: hidden; transform:translateY(-150px) translateX(-100px) translateZ(50px); }
+.spatialbstrddoor figure span.chains { width:100%; height:100%; position:absolute; background:url(/img/sprites/bstrd/bstrdlock_noface.gif); background-size:contain; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility: hidden; transform:translateY(-150px) translateX(-100px) translateZ(51px); } 
+.spatialbstrddoor figure#archivalcoresensitive span.bstrddoor { transform:translateY(-150px) translateX(-50px) translateZ(0px) rotateY(90deg); }
+.spatialbstrddoor figure#archivalcoresensitive span.chains { transform:translateY(-150px) translateX(-50px) translateZ(0px) rotateY(90deg); }
+
+.spatialarchivedoorbottom figure { width:300%; height:200%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialarchivedoorbottom figure span { width:100%; height:100%; background:url(/img/local/embassy/doorarchive.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility: hidden;
+transform:translateY(-200px) translateX(-100px) translateZ(-50px) rotateY(180deg); }
+
+.spatialarchivedoorright figure { width:275%; height:250%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialarchivedoorright figure span { width:100%; height:100%; background:url(/img/local/embassy/doorarchive.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility: hidden;
+transform:translateY(-300px) translateX(-145px) rotateY(-90deg); }
+
+.spatialarchivedoorleft figure { width:275%; height:250%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialarchivedoorleft figure span { width:100%; height:100%; background:url(/img/local/embassy/doorarchive.gif); background-size:contain; background-position:bottom; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility: hidden;
+transform:translateY(-300px) translateX(-35px) rotateY(90deg); }
+
+
+
+/* ARCHIVAL WALL */
+.spatialarchivalwall figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+
+.spatialarchivalwall figure span.top { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalwall.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialarchivalwall figure span.top.archivalvein { width:905%; height:170%; translateZ(48px) translateY(-68px); }
+.spatialarchivalwall figure span.top.archivalcore { width:700%; height:170%; transform:translateY(-68px) translateZ(149px); }
+.spatialarchivalwall figure span.top.archivalcoresensitive { width:400%; height:170%; transform:translateY(-68px) translateZ(149px); }
+
+.spatialarchivalwall figure span.bottom { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalwall.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialarchivalwall figure span.bottom.archivalvein { width:905%; height:170%; transform:translateZ(-48px) translateY(-68px) rotateY(180deg); }
+.spatialarchivalwall figure span.bottom.archivalcore { width:700%; height:170%; transform:translateY(-68px) rotateY(180deg) translateZ(149px); }
+.spatialarchivalwall figure span.bottom.archivalcoresensitive { width:400%; height:170%; transform:translateY(-68px) rotateY(180deg) translateZ(149px); }
+
+.spatialarchivalwall figure span.left { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalwall.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialarchivalwall figure span.left.archivalvein { width:300%; height:170%; transform:translateX(148px) translateY(-68px) rotateY(90deg); }
+.spatialarchivalwall figure span.left.archivalcore { width:500%; height:170%; transform:translateY(-68px) rotateY(90deg) translateZ(149px); }
+
+.spatialarchivalwall figure span.right { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalwall.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialarchivalwall figure span.right.archivalvein { width:300%; height:170%; transform:translateX(-148px) translateY(-68px) rotateY(-90deg); }
+.spatialarchivalwall figure span.right.archivalcore { width:500%; height:170%; transform:translateY(-68px) rotateY(-90deg) translateZ(149px); }
+
+
+
+/* ARCHIVAL SHELF */
+.spatialarchivalshelf figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+
+.spatialarchivalshelf figure span.top { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalshelf.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateZ(49px) translateY(-68px); }
+.spatialarchivalshelf figure span.top.archivalcore { width:750%; height:170%; transform:translateY(-68px) translateZ(50px); }
+.spatialarchivalshelf figure span.top.archivalcoresensitive { width:400%; height:170%; transform:translateY(-68px) translateZ(50px); }
+
+.spatialarchivalshelf figure span.bottom { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalshelf.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateZ(-49px) translateY(-68px) rotateY(180deg); }
+.spatialarchivalshelf figure span.bottom.archivalcore { width:750%; height:170%; transform:translateY(-68px) rotateY(180deg) translateZ(50px); }
+.spatialarchivalshelf figure span.bottom.archivalcoresensitive { width:400%; height:170%; transform:translateY(-68px) rotateY(180deg) translateZ(50px); }
+
+.spatialarchivalshelf figure span.left { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalshelf.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateX(149px) translateY(-68px) rotateY(90deg); }
+.spatialarchivalshelf figure span.left.archivalcore { width:500%; height:170%; transform:translateY(-68px) rotateY(90deg) translateZ(50px); }
+
+.spatialarchivalshelf figure span.right { width:100%; height:100%; position:absolute; background:url(/img/local/embassy/archivalshelf.gif); background-size:cover; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+transform:translateX(-149px) translateY(-68px) rotateY(-90deg); }
+
+
+
+/* CORRUPT WALL */
+.spatialcorruptwall figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialcorruptwall figure span.left { width:500%; height:500%; position:absolute; background:url(/img/local/embassy/corruptwall2fb.gif); background-size:contain; background-position:center; background-repeat:no-repeat; backface-visibility:hidden;
+transform:translateY(-150px) translateZ(-50px) translateX(-100px) rotateY(-180deg); }
+.spatialcorruptwall figure span.middle { width:500%; height:500%; position:absolute; background:url(/img/local/embassy/corruptwall1b.gif); background-size:contain; background-position:center; background-repeat:no-repeat; backface-visibility:hidden;
+transform:translateY(-150px) translateX(50px) rotateY(90deg); }
+.spatialcorruptwall figure span.right { width:500%; height:500%; position:absolute; background:url(/img/local/embassy/corruptwall2b.gif); background-size:contain; background-position:center; background-repeat:no-repeat; backface-visibility:hidden;
+transform:translateY(-150px) translateZ(50px) translateX(-100px); }
+.spatialcorruptwall figure span.floor { width:500%; height:500%; position:absolute; background:url(/img/local/embassy/corruptwall1b.gif); background-size:contain; background-position:center; background-repeat:no-repeat;
+transform:translateY(99.75px) translateX(-500px) rotateX(90deg) rotateY(180deg) rotateZ(-90deg); }
+
+
+
+/* WEIRD CYST PILLAR */
+.spatialarchivepillar figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialarchivepillar figure span.pillar { width:100%; height:120%; position:absolute; background:url(/img/local/embassy/bstrdpillar.gif); background-size:contain; backgorund-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:rotateY(90deg) translateY(-10px) translateX(15px); }
+.spatialarchivepillar figure span.cyst { width:40%; height:40%; position:absolute; background:url(/img/local/embassy/bstrdcyst.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:rotateY(90deg) translateY(-95px) translateX(-2px); }
+
+
+
+/* SCARY BLACK BOX */
+.spatialblackbox figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialblackbox figure span:nth-child(1) { width:100%; height:100%; position:absolute; background:url(/img/sprites/combat/items/redbox_dither.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:rotateY(90deg); }
+
+
+
+/* SORRY CYST PILLAR */
+.spatialsorrypillar figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
+.spatialsorrypillar figure span.pillar { width:100%; height:120%; position:absolute; background:url(/img/local/embassy/bstrdpillar.gif); background-size:contain; backgorund-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:translateY(-10px) translateX(15px); }
+.spatialsorrypillar figure span.cyst { width:45%; height:45%; position:absolute; background:url(/img/sprites/combat/items/sorry_dither.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:translateY(-95px) translateX(-2px); }
