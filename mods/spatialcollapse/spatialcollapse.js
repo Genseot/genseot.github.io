@@ -1661,7 +1661,6 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
 
     width: 16,
     plan: `
-        .....t...t......
         .....T...T......
         ...---------....
         ..--░.-░.░░---..
@@ -1671,7 +1670,6 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
         .-░░-.░░-░.░--..
         .------------...
         ......B...B.....
-        ......b...b.....
     `,
     entities: {
         "-": { class: "basic notile damagetile" },
@@ -1690,9 +1688,7 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
         "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
 
         "T": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
-        "t": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
         "B": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
-        "b": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
     }
 }
 CombatScene.SCENARIOS['spatial_archivalboss'] = {
@@ -4048,7 +4044,7 @@ env.stages['embassy_archivalcore_sensitive'] = {
 
     onStep: ()=>{
         if(check("PAGE!!archivemini")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
+            document.querySelectorAll('.bstrdshelf').forEach(e=>{
                 e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
                 e.parentElement.id = ""; e.parentElement.dialogue = "";
                 e.parentElement.innerHTML = ""
@@ -4136,53 +4132,12 @@ env.stages['embassy_archivalboss'] = {
     locale: "research",
 
     entities: {
-        "^": {
-            class: "door up",
-            teleportSpot: 22,
-            teleportTarget: "embassy_archivalvein",
-            shouldFace: 'up',
-        },
+        "^": { class: "door up", teleportSpot: 22, teleportTarget: "embassy_archivalvein", shouldFace: 'up', },
+        "P": { class:"prop blocks notile hide", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure></figure>` } },
 
-        "ö": {
-            contains: {
-                id: "boss",
-                class: "prop blocks bstrdbosspanel",
-                html: `<figure> <span class="staticarchivalgolem"></span> </figure>`,
-            }
-        },
-
-        "ô": {
-            class: "prop blocks notile",
-            contains: {
-                class: "lamp bstrd collapsed",
-                html: `<figure><div class="target" entity="hostile veilklight"></div></figure>`
-            }
-        },
-
-        "£": {
-            class: "notile",
-            contains: {
-                id: "foe",
-                class: "evil staysdead collapseonly maintcloak",
-                type: "archivecloaktainer",
-                dialogue: "d3_genericenemy",
-                html: `<figure class="spritestack">
-                    <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif">
-                    <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
-                    <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
-                    <div class="target" entity="jutskin"></div>
-                </figure>`
-            }
-        },
-        
-        "P": {
-            class:"prop blocks notile hide",
-            contains: {
-                class: "bstrdpillar",
-                examineEntity: "peculiar obelisk",
-                html: `<figure></figure>`                
-            }
-        },
+        "ö": { contains: { id: "boss", class: "prop blocks bstrdbosspanel", html: `<figure class="archivalgolem bstrdboss"><div class="target" entity="bstrd golem"></div></figure>` } },
+        "ô": { class: "prop blocks notile", contains: { class: "lamp bstrd collapsed", html: `<figure><div class="target" entity="hostile veilklight"></div></figure>` } },
+        "£": { class: "notile", contains: { id: "foe", class: "evil staysdead collapseonly maintcloak", type: "archivecloaktainer", dialogue: "d3_genericenemy", html: `<figure class="spritestack"> <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif"><img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"><img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"><div class="target" entity="jutskin"></div> </figure>` } },
     },
 
     width: 7,
