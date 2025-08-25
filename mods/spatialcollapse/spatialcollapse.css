@@ -37,12 +37,12 @@
 .spatialchair figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
 .spatialchair figure span { width:100%; height:100%; position:absolute; background:url(https://corru.observer/img/sprites/obesk/chair.gif); background-size:contain; background-position:center; background-repeat:no-repeat; }
 
-.spatialchair figure span.bottomleft { transform:rotateY(-105deg) rotateX(-90deg) translateZ(30px) translateY(-80px) translateZ(95px); }
-.spatialchair figure span.topleft { transform:rotateY(105deg) rotateX(270deg) rotateZ(180deg) translateZ(30px) translateY(-80px) translateZ(95px); }
-.spatialchair figure span.bottomright { transform:rotateY(105deg) rotateX(270deg) translateZ(30px) translateY(-80px) translateZ(95px); }
-.spatialchair figure span.topright { transform:rotateY(-105deg) rotateX(-90deg) rotateZ(-180deg) translateZ(30px) translateY(-80px) translateZ(95px); }
-.spatialchair figure span.top { transform:rotateY(195deg) rotateX(-90deg) translateZ(30px) translateY(-80px) translateZ(95px); }
-.spatialchair figure span.bottom { transform:rotateY(15deg) rotateX(-90deg) translateZ(30px) translateY(-80px) translateZ(95px); }
+.spatialchair figure span.bottomleft { transform:translateZ(30px) translateY(60px) translateZ(-20px) rotateY(-105deg) rotateX(-90deg); }
+.spatialchair figure span.topleft { transform:translateZ(30px) translateY(60px) translateZ(-40px) rotateY(105deg) rotateX(270deg) rotateZ(180deg); }
+.spatialchair figure span.bottomright { transform:translateZ(30px) translateY(60px) translateZ(-20px) rotateY(105deg) rotateX(270deg); }
+.spatialchair figure span.topright { transform:translateZ(30px) translateY(60px) translateZ(-40px) rotateY(-105deg) rotateX(-90deg) rotateZ(-180deg); }
+.spatialchair figure span.top { transform:translateZ(30px) translateY(60px) translateZ(-40px) rotateY(195deg) rotateX(-90deg); }
+.spatialchair figure span.bottom { transform:translateZ(30px) translateY(60px) translateZ(-20px) rotateY(15deg) rotateX(-90deg); }
 
 
 
