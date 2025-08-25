@@ -4007,8 +4007,8 @@ env.stages['embassy_archivalcore'] = {
         "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
         "P": { class:"prop blocks notile", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure><div class="target" priority="2" entity="unnerving cyst"></div></figure>` } },
 
-        "ö": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticarchivalgolem" style="transform:rotateY(90deg)"></span> </figure>`, } },
-
+        "ö": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
+        
         'N': { class: "blocks cwall north",
             contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` } },
         'S': { class: "blocks cwall south",
