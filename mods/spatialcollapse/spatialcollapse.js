@@ -64,6 +64,7 @@ addResources([
         "https://genseot.github.io/mods/spatialcollapse/grm.js",
 ])  
 content.insertAdjacentHTML("beforeend", `<link href="/css/combatGrid.css" rel="stylesheet" type="text/css" media="all">`)
+content.insertAdjacentHTML("beforeend", `<link href="https://genseot.github.io/mods/spatialcollapse/spatialcollapse.css" rel="stylesheet" type="text/css" media="all">`)
 
 setTimeout(function(){
 // - ACTORS
