@@ -47,7 +47,7 @@
 
 /* TODO:: */
 /*
-    - if youre reading this hi 
+    - if youre reading this hi
 */
 
 
@@ -65,6 +65,8 @@ addResources([
 ])  
 content.insertAdjacentHTML("beforeend", `<link href="/css/combatGrid.css" rel="stylesheet" type="text/css" media="all">`)
 content.insertAdjacentHTML("beforeend", `<link href="https://genseot.github.io/mods/spatialcollapse/spatialcollapse.css" rel="stylesheet" type="text/css" media="all">`)
+
+
 
 setTimeout(function(){
 // - ACTORS
@@ -1092,7 +1094,7 @@ CombatScene.SCENARIOS['spatial_timestopper'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_tutorial_end"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+        else startDialogue("d3_tutorial_end")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1118,7 +1120,7 @@ CombatScene.SCENARIOS['spatial_timestopper'] = {
 
 
 
-        "L": {  class:"blocks los prop",  contains: {  html: `<figure> <span class="listener"></span> <span class="callscreen"></span> </figure>`, dyp: { class: "spatiallistener", width: 2, height: 2, image: "transparent"} } },
+        "L": {  class:"blocks los prop",  contains: {  html: `<figure> <span class="listener"></span> <span class="callscreen"></span> <span class="cyst1"></span><span class="cyst2"></span><span class="cyst3"></span> </figure>`, dyp: { class: "spatiallistener", width: 2, height: 2, image: "transparent"} } },
 
         "C": { class:"blocks los prop",
             contains: {
@@ -1166,7 +1168,7 @@ CombatScene.SCENARIOS['spatial_recreation'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_rec_clear"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+        else startDialogue("d3_rec_clear")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1198,7 +1200,7 @@ CombatScene.SCENARIOS['spatial_recreation'] = {
         "+": { class:"blocks los prop", contains: { html: `<figure> <span class="table"></span> <span class="canopy"></span> <span class="cysts1"></span><span class="cysts2"></span> <span class="leg1"></span><span class="leg2"></span> </figure>`, dyp: { class:"spatialrecreationtable", image: "transparent" } } },
         "b": { class:"blocks los prop" },
 
-        "L": {  class:"blocks los prop",  contains: { html: `<figure> <span class="listener recreation"></span> </figure>`, dyp: { class: "spatiallistener", width: 2, height: 2, image: "transparent" } } },
+        "L": {  class:"blocks los prop",  contains: { html: `<figure> <span class="listener recreation"></span> <span class="callscreen recreation"></span> <span class="cyst1 recreation"></span><span class="cyst2 recreation"></span><span class="cyst3 recreation"></span> </figure>`, dyp: { class: "spatiallistener", width: 2, height: 2, transform:"rotateY(-225deg)", image: "transparent" } } },
 
         "&": { class: "blocks los prop", contains: { html: `<figure> <span class="recreation"></span> </figure>`, dyp: { class: "spatialcontainer", width: 1.75, height: 1.3, image: "transparent" } } },
         "Q": { class:"blocks los prop", contains: { html: `<figure> <span></span> </figure>`, dyp: { class: "spatialdeadqou", image: "transparent" } } },
@@ -1230,7 +1232,7 @@ CombatScene.SCENARIOS['spatial_personnel'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_person_clear"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+        else startDialogue("d3_person_clear"); 
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1286,7 +1288,7 @@ CombatScene.SCENARIOS['spatial_cquarters2'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3r2_postcombat"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+        else startDialogue("d3r2_postcombat")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1351,7 +1353,7 @@ CombatScene.SCENARIOS['spatial_movefoe'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_movefriend_finish"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+        else startDialogue("d3_movefriend_finish")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
@@ -1403,7 +1405,7 @@ CombatScene.SCENARIOS['spatial_movefoe_lowintensity'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_movefriend_finish"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+        else startDialogue("d3_movefriend_finish")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
@@ -1447,7 +1449,7 @@ CombatScene.SCENARIOS['spatial_archivalintro'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archiveintro"); }
+        else startDialogue("d3_archiveintro")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1493,7 +1495,7 @@ CombatScene.SCENARIOS['spatial_archivalvein'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivalvein"); }
+        else startDialogue("d3_archivalvein")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1548,7 +1550,7 @@ CombatScene.SCENARIOS['spatial_archivalcore'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivecore"); }
+        else startDialogue("d3_archivecore")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1604,7 +1606,7 @@ CombatScene.SCENARIOS['spatial_archivaldelivery'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivedeliveryclear"); }
+        else startDialogue("d3_archivedeliveryclear")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1654,13 +1656,14 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
     startCallback: ()=> { console.log("startcallback"); env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType.damagetile,  effect: "scene_edge", length: 99 }); },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archiveminiclear"); }
+        else startDialogue("d3_archiveminiclear")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
 
     width: 16,
     plan: `
+        .....t...t......
         .....T...T......
         ...---------....
         ..--░.-░.░░---..
@@ -1670,6 +1673,7 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
         .-░░-.░░-░.░--..
         .------------...
         ......B...B.....
+        ......b...b.....
     `,
     entities: {
         "-": { class: "basic notile damagetile" },
@@ -1688,7 +1692,9 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
         "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
 
         "T": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "t": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
         "B": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "b": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
     }
 }
 CombatScene.SCENARIOS['spatial_archivalboss'] = {
@@ -1719,7 +1725,7 @@ CombatScene.SCENARIOS['spatial_archivalboss'] = {
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivebossend"); }
+        else startDialogue("d3_archivebossend")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1784,7 +1790,7 @@ CombatScene.SCENARIOS['spatial_archivalboss_lowintensity'] = {
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivebossend"); }
+        else startDialogue("d3_archivebossend")
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -3978,7 +3984,7 @@ env.stages['embassy_archivalcore'] = {
         content.classList.add("archives", "show-walls")
         if(checkItem(env.ITEM_LIST.cool_orb_thingy)) env.stage.current.hidePillarCyst()
 
-        if(!check("PAGE!!archivalcorefight")) startDialogue("d3_archivecore_intro")
+        startDialogue("d3_archivecore_intro")
     },
 
     hidePillarCyst: ()=>{
@@ -4003,8 +4009,8 @@ env.stages['embassy_archivalcore'] = {
         "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
         "P": { class:"prop blocks notile", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure><div class="target" priority="2" entity="unnerving cyst"></div></figure>` } },
 
-        "ö": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
-        
+        "ö": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticarchivalgolem" style="transform:rotateY(90deg)"></span> </figure>`, } },
+
         'N': { class: "blocks cwall north",
             contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` } },
         'S': { class: "blocks cwall south",
@@ -4044,7 +4050,7 @@ env.stages['embassy_archivalcore_sensitive'] = {
 
     onStep: ()=>{
         if(check("PAGE!!archivemini")) {
-            document.querySelectorAll('.bstrdshelf').forEach(e=>{
+            document.querySelectorAll('.enemy').forEach(e=>{
                 e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
                 e.parentElement.id = ""; e.parentElement.dialogue = "";
                 e.parentElement.innerHTML = ""
@@ -4132,12 +4138,53 @@ env.stages['embassy_archivalboss'] = {
     locale: "research",
 
     entities: {
-        "^": { class: "door up", teleportSpot: 22, teleportTarget: "embassy_archivalvein", shouldFace: 'up', },
-        "P": { class:"prop blocks notile hide", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure></figure>` } },
+        "^": {
+            class: "door up",
+            teleportSpot: 22,
+            teleportTarget: "embassy_archivalvein",
+            shouldFace: 'up',
+        },
 
-        "ö": { contains: { id: "boss", class: "prop blocks bstrdbosspanel", html: `<figure class="archivalgolem bstrdboss"><div class="target" entity="bstrd golem"></div></figure>` } },
-        "ô": { class: "prop blocks notile", contains: { class: "lamp bstrd collapsed", html: `<figure><div class="target" entity="hostile veilklight"></div></figure>` } },
-        "£": { class: "notile", contains: { id: "foe", class: "evil staysdead collapseonly maintcloak", type: "archivecloaktainer", dialogue: "d3_genericenemy", html: `<figure class="spritestack"> <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif"><img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"><img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"><div class="target" entity="jutskin"></div> </figure>` } },
+        "ö": {
+            contains: {
+                id: "boss",
+                class: "prop blocks bstrdbosspanel",
+                html: `<figure> <span class="staticarchivalgolem"></span> </figure>`,
+            }
+        },
+
+        "ô": {
+            class: "prop blocks notile",
+            contains: {
+                class: "lamp bstrd collapsed",
+                html: `<figure><div class="target" entity="hostile veilklight"></div></figure>`
+            }
+        },
+
+        "£": {
+            class: "notile",
+            contains: {
+                id: "foe",
+                class: "evil staysdead collapseonly maintcloak",
+                type: "archivecloaktainer",
+                dialogue: "d3_genericenemy",
+                html: `<figure class="spritestack">
+                    <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif">
+                    <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
+                    <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
+                    <div class="target" entity="jutskin"></div>
+                </figure>`
+            }
+        },
+        
+        "P": {
+            class:"prop blocks notile hide",
+            contains: {
+                class: "bstrdpillar",
+                examineEntity: "peculiar obelisk",
+                html: `<figure></figure>`                
+            }
+        },
     },
 
     width: 7,
@@ -4157,6 +4204,7 @@ env.stages['embassy_archivalboss'] = {
 
 
 
-}, 5000)
+}, 2000)
 }
 }) 
+
