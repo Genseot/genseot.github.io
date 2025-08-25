@@ -185,7 +185,7 @@ transform:translateZ(100px) translateX(65px) translateY(35px) rotateY(125deg); }
 /* REJUVENATION CHAMBER */
 .spatialrejuvenation figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
 .spatialrejuvenation figure span { width:100%; height:100%; position:absolute; background:url(https://corru.observer/img/local/embassy/sleepchamberalt.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:rotateY(90deg); }
-.spatialrejuvenation figure span::before, .spatialrejuvenation figure span::after { width:100%; height:100%; position:absolute; background:url(https://corru.observer/img/local/embassy/sleepchamberalt.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:rotateY(91deg); }
+.spatialrejuvenation figure span::before, .spatialrejuvenation figure span::after { content:""; width:100%; height:100%; position:absolute; background:url(https://corru.observer/img/local/embassy/sleepchamberalt.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:rotateY(91deg); }
 .spatialrejuvenation figure span::after { transform:rotateY(89deg); }
 
 
