@@ -8,35 +8,49 @@
     - ALLY ACTORS
     - ENEMY ACTORS
         - CALL RESEARCH ACTORS
-        - ARCHIVAL VEIN ACTORS
+        - ARCHIVAL ACTORS
 - ACTIONS
-    - ENEMY ACTIONS
-        - CALL RESEARCH ACTIONS
-        - ARCHIVAL VEIN ACTIONS
+    - ALLY ACTIONS
+    - CALL RESEARCH ACTIONS
+    - ARCHIVAL ACTIONS
 - SCENARIOS
     - CALL RESEARCH SCENARIOS
-    - ARCHIVAL VEIN SCENARIOS
+    - ARCHIVAL SCENARIOS
+- SKIPS
 - DIALOGUES
     - d3_tutorial
-    - d3_recreationenemy
-    - d3_personnelenemy
-    - d3r2_containerinspect & d3r2_containerambush
-    - d3_relocator_repair
+    - d3_tutorial_end
+    - d3_rec_enter
     - d3_rec_clear
+    - d3_person_intro
     - d3_person_clear
-- SKIPS
+    - d3r2_containerinspect 
+    - d3r2_containerambush
+    - d3r2_postcombat
+    - d3_relocator_repair
+    - d3_movefriend_finish
+    - d3_bstrdintro
+    - d3_archiveintro
+    - d3_archivalvein_intro
+    - d3_archivalvein
+    - d3_archivecore_intro
+    - d3_archivecore
+    - d3_archivedelivery
+    - d3_archivedeliveryclear
+    - d3_archivemini
+    - d3_archiveboss
+    - loss
 - STAGES
     - CALL RESEARCH STAGES
-    - ARCHIVAL VEIN STAGES
+    - ARCHIVAL STAGES
 */
 
 /* TODO:: */
 /*
-- MAKE ACTORS & ACTIONS
-- FIX AUDIO NOT WORKING AFTER FIRST COMBAT
-- MAKE PROPS WORK IN COMBAT
-- MAKE IT SO THAT WHEN ENTERING THE EMBASSY FROM HUB/THEIR WATERS THE MOD ACTUALLY LOADS FOR SOME REASON IT DOESNT DO THAT
+    - if youre reading this hi 
 */
+
+
 
 
 
@@ -47,63 +61,68 @@ addResources([
         "/js/combat/combatGrid.js",
         "/js/combat/combatTileEffects.js",
         "/js/combat/combatGridScenarios.js",
-        "https://genseot.github.io/mods/spatialcollapse/grm.js
-])
+        "https://genseot.github.io/mods/spatialcollapse/grm.js",
+])  
 content.insertAdjacentHTML("beforeend", `<link href="/css/combatGrid.css" rel="stylesheet" type="text/css" media="all">`)
-
-
 
 setTimeout(function(){
 // - ACTORS
 // - ALLY ACTORS
+env.COMBAT_ACTORS.akizet = {
+    name: "Akizet", readoutActor: "akizet", maxhp: 15, hp: 15,
+    actions: [ "akizet_attack", "stab", "evade", ], sceneActions: [ "scene_akizet_attack", "scene_stab", "scene_evade" ],
+    portrait: `<img class="portrait" src="/img/sprites/akizet/eyes.gif">`, portraitUrl: '/img/sprites/akizet/eyes.gif',
+    graphic: `
+        <div class="sprite-wrapper" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="/img/sprites/akizet/gridtiny.gif" id="%SLUG-sprite">
+        </div>
+    `,
+    reactions: { evade: ["far too close", "oaa!", "nearly..."], crit: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "get away!" : "excellent!" ], crit_buff: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "good" : "easy!"], miss: ["œ¦êA"], dead: ["..."], receive_hit: ["@#Æ$J"], receive_crit: ["ßÃÆM!!"], receive_puncture: ["i have felt worse", "a familiar feeling"], receive_buff: ["thank you", "we are unstoppable"], receive_destabilized: ["every cell... awake..."], receive_rez: ["that was close..."], puncture: ["i need to fix this",  ()=>env.combat.has('tozik') ? "tozik!" : "i need help!", ()=>env.combat.has('cavik') ? "cavik!" : "restoratives?!" ], regen: ["this will do", "better..."], destabilized: ["..."], stun: ["my arms..."], receive_carapace: ["this armor...!", "very good"], receive_repairs: ["thank you, cavik", "better!"], receive_fear: ["no, no...", "the eyes...", "velzie forgive me"], receive_redirection: ["together!", "thank you, my friend", "we will destroy them"], },
+}
+env.COMBAT_ACTORS.tozik = {
+    name: "Tozik", readoutActor: "tozik", maxhp: 10, hp: 10, unique: true,
+    actions: ["tozik_attack", "mend", "evade"], sceneActions: ["tozik_attack", "scene_mend", "scene_evade"],
+    portrait: `<img class="portrait" src="/img/sprites/obesk/tozik/facecrop.gif">`, portraitUrl: '/img/sprites/obesk/tozik/facetransparent.gif',
+    graphic: `
+        <div class="sprite-wrapper" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="/img/sprites/obesk/tozik/gridtiny.gif" id="%SLUG-sprite">
+        </div>
+    `,
+    reactions: {
+        crit: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "good enough" : "hehe", ], crit_buff: ["keep going"], dead: ["..."], receive_destabilized: ["i hear it calling"], receive_rez: ["let us finish this"], puncture: ["i need to fix this"], destabilized: ["..."], stun: ["where..."], receive_carapace: ["thank you"], receive_repairs: ["that is better"], receive_fear: [()=> env.rpg.is2D ? "there is nothing here" : "hollowed out...", "and yet it moves", ()=> env.rpg.is2D ? "where are you?" :"what happened to you?", "that cannot be", "..."], receive_redirection: ["i will return the favor"],
+    },
+}
+env.COMBAT_ACTORS.miltza = {
+    name: "Miltza", readoutActor: "miltza", maxhp: 10, hp: 10, unique: true,
+    actions: ["miltza_attack", "spy", "evade"], sceneActions: ["miltza_attack", "scene_spy", "scene_evade"],
+    portrait: `<img class="portrait" src="/img/sprites/obesk/miltza/combatportrait.gif">`, portraitUrl: '/img/sprites/obesk/miltza/combatportrait.gif',
+    graphic: `
+        <div class="sprite-wrapper" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="/img/sprites/obesk/miltza/gridtiny.gif" id="%SLUG-sprite">
+        </div>
+    `,
+    reactions: {
+        evade: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "wah!!" : "i did it!", ], crit: ["die!! die!!"], crit_buff: ["is that better??"], miss: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "how does it move like that?!" : "next time", ], dead: ["..."], receive_crit: ["Æöö!!"], receive_puncture: ["restorative, quick!"], receive_buff: ["thank you!"], receive_destabilized: ["die DIE!! DIE!! DIE!!!"], puncture: ["i am losing cohesion!"], stun: ["oaauuuau"], receive_carapace: ["a shell!"], receive_repairs: ["thank you, thank you!", "so much better"], receive_fear: [()=> env.rpg.is2D ? "this cannot be real" : "that one looks like...!", "stop...", "velzie take me from here", "stay away! away!!"], receive_redirection: ["what??", "oh, thank you!"],
+    }
+} 
 env.COMBAT_ACTORS.gakvu_groundsmind = {
     name: "Gakvu", maxhp: 10, hp: 10, move: 0, actions: ["gakvu_groundsmindry"],
     initialStatusEffects: [["emergency_groundsmind", 1], ["gakvu_disconnected", 1]],
     portrait: `<img class="portrait" src="/img/sprites/obesk/gakvu/facetransparent.gif">`, portraitUrl: '/img/sprites/obesk/gakvu/facetransparent.gif',
     graphic: `
         <div class="sprite-wrapper" id="%SLUG-sprite-wrapper">
-            <img class="sprite" src="/img/sprites/obesk/gakvu/gridtiny.gif" style="height: 200px;" id="%SLUG-sprite">
+            <img class="sprite" src="https://genseot.github.io/mods/spatialcollapse/img/gakvudisconnected.gif" style="height: 200px;" id="%SLUG-sprite">
         </div>
     `,
     reactions: {
-        evade: [
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "ah!" : "haha!",
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "no!!" : "woaah!!",
-        ],
-        crit: [
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "clean..." : "it is simply that easy",
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "a few more like that..." : "that was lucky"
-        ],
-        crit_buff: ["so that goes there..."],
-        miss: [
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "â‚¬Ã–Ã¤!" : "oh...",
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "it is too fast!!" : "too bad"
-        ],
-        dead: ["..."],
-        receive_crit: ["Ã†!!"],
-        receive_puncture: ["i am... bleeding...?", "ow!! what..."],
-        receive_buff: ["thanks"],
-        receive_destabilized: ["may velzie look away"],
-        receive_rez: [
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "thank you" : "my savior",
-        ],
-        puncture: ["such a strange feeling", "make this stop"],
-        regen: [
-            ()=>env.combat.has('husk') || env.rpg.is2D ? "feeling better" : "feeling good",
-        ],
-        destabilized: ["..."],
-        stun: ["where did my eyes go?!"],
-        receive_carapace: ["so heavy"],
-        receive_repairs: ["thanks cavik"],
-        receive_fear: ["stop looking at me!!", "get away from me!", "no, no no no", "what did it say??"],
-        receive_redirection: ["bozko??"],
-        receive_emergency_groundsmind: ["keep going!!", "hold on...", "velzie smile upon us..."],
+        evade: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "ah!" : "haha!", ()=>env.combat.has('husk') || env.rpg.is2D ? "no!!" : "woaah!!", ], crit: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "clean..." : "it is simply that easy", ()=>env.combat.has('husk') || env.rpg.is2D ? "a few more like that..." : "that was lucky" ], crit_buff: ["so that goes there..."], miss: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "â‚¬Ã–Ã¤!" : "oh...", ()=>env.combat.has('husk') || env.rpg.is2D ? "it is too fast!!" : "too bad" ], dead: ["..."], receive_crit: ["Ã†!!"], receive_puncture: ["i am... bleeding...?", "ow!! what...", ()=>env.combat.has('tozik') ? "tozik...?" : "help!!" ], receive_buff: ["thanks"], receive_destabilized: ["may velzie look away"], receive_rez: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "thank you" : "my savior", ], puncture: ["such a strange feeling", "make this stop"], regen: [ ()=>env.combat.has('husk') || env.rpg.is2D ? "feeling better" : "feeling good", ], destabilized: ["..."], stun: ["where did my eyes go?!"], receive_carapace: ["so heavy"], receive_repairs: ["thanks cavik"], receive_fear: ["stop looking at me!!", "get away from me!", "no, no no no", "what did it say??"], receive_redirection: ["bozko??"],
+        receive_emergency_groundsmind: ["keep going!!", "velzie smile upon us..."],
     }
 }
 env.STATUS_EFFECTS.emergency_groundsmind = {
     slug: "emergency_groundsmind", name: "Interim Groundsmind", beneficial: true, persist: true, infinite: true,
     icon: "https://genseot.github.io/mods/spatialcollapse/img/emergencygroundsmind.gif",
-    help: "preventing the relocator from collapsing, lose upon death of the interim groundsmind",
+    help: "preventing the relocator from collapsing. lose if the interim groundsmind is downed",
 }
 env.STATUS_EFFECTS.gakvu_disconnected = {
     slug: "disconnected", name: "Disconnected", beneficial: true, persist: true, infinite: true,
@@ -119,7 +138,7 @@ env.STATUS_EFFECTS.gakvu_disconnected = {
             setTimeout(function() { 
                 if(env.rpg.currentActor == gakvu) { 
                     useAction(gakvu, env.ACTIONS.gakvu_groundsmindry, target) 
-                    setTimeout(()=>advanceTurn(gakvu), 600)
+                    setTimeout(()=>advanceTurn(gakvu), 250)
                 } 
            	}, env.ADVANCE_RATE) }
     }
@@ -130,7 +149,7 @@ env.STATUS_EFFECTS.gakvu_disconnected = {
 // - ENEMY ACTORS
 // - CALL RESEARCH ACTORS
 env.COMBAT_ACTORS.research_introgolem = {
-    name: "Golem",  maxhp: 20,  hp: 20,  move: 2, actions: ["foe_stab", "malfunction"],
+    name: "Golem",  maxhp: 20,  hp: 20,  move: 2, actions: ["stab", "malfunction"],
     graphic: `
         <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
             <img class="sprite" src="/img/sprites/combat/foes/golem.gif" id="%SLUG-sprite" style="width: 200px;">
@@ -139,10 +158,10 @@ env.COMBAT_ACTORS.research_introgolem = {
     reactions: {} //SILENT CREATURE
 }
 env.COMBAT_ACTORS.research_hostilecontainer = {
-    name: "Container", maxhp: 6, hp: 6, move: 3, actions: ["attack", "attack", "attack", "skitter"],
+    name: "Container", maxhp: 6, hp: 6, move: 2, actions: ["attack", "attack", "attack", "skitter"],
     graphic: `
         <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
-            <img class="sprite" src="/img/sprites/combat/foes/inc.gif" id="%SLUG-sprite" style="width: 120px; height: 100px;">
+            <div class="squishyfast"> <img class="sprite" src="/img/sprites/combat/foes/inc.gif" id="%SLUG-sprite" style="width: 120px; height: 150px;">  </div>
             <div class="target" entity="hostile container"></div>
         </div>
     `,
@@ -152,21 +171,17 @@ env.COMBAT_ACTORS.research_hostileveilklight = {
     name: "Veilklight", maxhp: 10, hp: 10, move: 2, actions: ["spy", "mend", "daze_lastresort"],
     graphic: `
         <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
-            <div class="veilksprite">
-                <img class="sprite" src="/img/sprites/combat/foes/foelampbase.gif" id="%SLUG-sprite" style="width: 100px; height: 200px;">
-            </div>
+            <div class="veilksprite"> <img class="sprite" src="/img/sprites/combat/foes/foelampbase.gif" id="%SLUG-sprite" style="width: 100px; height: 150px;"> </div>
             <div class="target" entity="hostile veilklight"></div>
         </div>
     `,
     reactions: {}
 }
 env.COMBAT_ACTORS.research_hostileattendant = {
-    name: "Spire Attendant", maxhp: 8, hp: 8, move: 2, actions: ["attack", "foe_stab"],
+    name: "Spire Attendant", maxhp: 8, hp: 8, move: 2, actions: ["attack", "stab"],
     graphic: `
         <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
-            <div class="attendant-sprite">
-                <img class="sprite" src="/img/local/embassy/spiredronebody.gif" id="%SLUG-sprite" style="width: 100px; height: 200px;>
-            </div>
+            <div> <img class="sprite" src="https://genseot.github.io/mods/spatialcollapse/img/attendant.gif" id="%SLUG-sprite" style="width: 100px; height: 200px;> </div>
             <div class="target" entity="attendant"></div>
         </div>
     `,
@@ -174,17 +189,30 @@ env.COMBAT_ACTORS.research_hostileattendant = {
 }
 
 env.COMBAT_ACTORS.research_tendrils = {
-    name: "Tendril", turnCheck: "tendrils", maxhp: 10, hp: 10, move: 0, actions: ["swipe"],
+    name: "Tendril", turnCheck: "tendrils", maxhp: 10, hp: 10, move: 0, actions: ["tendrilswipe"],
+    initialStatusEffects: [["kb_immune", 1]],
     graphic: `
         <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
-            <img class="sprite" src="/img/sprites/combat/foes/tendrils.gif" id="%SLUG-sprite" style="width: 200px; height 400px;">
+            <div class="squishyslow"> <img class="sprite" src="/img/sprites/combat/foes/tendrils.gif" id="%SLUG-sprite" style="width: 200px; height 400px;"> </div>
             <div class="target" entity="tendrils"></div>
         </div>
     `,
     reactions: {}
 }
-env.COMBAT_ACTORS.research_enemy_movefriend = {
-    name: "Movefoe", maxhp: 60, hp: 60, move: 0, statusImmunities: ["stun"], actions: ["incoherent_movefriend", "movefriend_revive"], lastStand: "movefriend",
+env.COMBAT_ACTORS.research_movefoe = {
+    name: "Movefoe", maxhp: 60, hp: 60, move: 0, statusImmunities: ["stun"], actions: ["incoherent_movefriend"], lastStand: "movefriend",
+    initialStatusEffects: [["kb_immune", 1]],
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <div class="lifter sprite"> <figure></figure> </div>
+            <div class="target" entity="movefoe"></div>
+        </div>
+    `,
+    reactions: {} //SILENT CREATURE
+}
+env.COMBAT_ACTORS.research_movefoe_lowintensity = {
+    name: "Movefoe", maxhp: 60, hp: 60, move: 0, statusImmunities: ["stun"], actions: ["movefriend_attack", "special_mass_destabilize", "special_movefriend_annihilate"], 
+    initialStatusEffects: [["kb_immune", 1]],
     graphic: `
         <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
             <div class="lifter sprite"><figure></figure></div>
@@ -195,32 +223,182 @@ env.COMBAT_ACTORS.research_enemy_movefriend = {
 }
 
   
+
+
   
-// - ARCHIVAL VEIN ACTORS
+// - ARCHIVAL ACTORS
+env.COMBAT_ACTORS.archival_golem = {
+    name: "Archival Golem", maxhp: 40, hp: 30, move: 2, actions: ["windup"], windupActions: ["archival_smash"],
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="/img/sprites/combat/foes/archivalgolem.gif" id="%SLUG-sprite" style="width:100px; height:200px;">
+            <div class="target" entity="archival golem"></div>
+        </div>
+    `,
+    reactions: {} //SILENT CREATURE
+}
+env.COMBAT_ACTORS.archival_jutskin = { 
+    name: "Jutskin", maxhp: 30, hp: 20, move: 2, actions: ["special_barrier_allies", "stab"],
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="https://genseot.github.io/mods/spatialcollapse/img/jutskin.gif" id="%SLUG-sprite" style="width:85px; height:175px;">
+            <div class="target" entity="jutskin"></div>
+        </div>
+    `,
+    reactions: { catchall: ["1Uië2W‡", "‡eÎKßJää", "/…¿?÷ ôLãØ", "C©Ë", "0E™Nó¨ýQÒ", "€LWé{ðÍ", "ÇæýÙ‡ß†C", "£~Uþfâ", "…Tú**"], dead: ["¿", "???"] }
+}
+env.COMBAT_ACTORS.archival_bstrdlight = {
+    name: "BSTRDlight", maxhp: 40, hp: 30, move: 2, actions: ["revive", "bstrdlightswipe"], /*actions: ["spy", "mend", "special_mass_destabilize", "bstrdlightswipe", "revive"],*/
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <div class="veilksprite bstrdlight"> <img class="sprite" src="/img/sprites/combat/foes/bstrdlampbase.gif" id="%SLUG-sprite" style="width:100px; height:150px;"> </div>
+            <div class="target" entity="bstrdlight"></div>
+        </div>
+    `,
+    reactions: { catchall: ["1Uië2W‡", "‡eÎKßJää", "/…¿?÷ ôLãØ", "C©Ë", "0E™Nó¨ýQÒ", "€LWé{ðÍ", "ÇæýÙ‡ß†C", "£~Uþfâ", "…Tú**"], dead: ["¿", "???"] }
+}
+env.COMBAT_ACTORS.archival_painshelf = {
+    name: "Pain Shelf", maxhp: 70, hp: 60, move: 3, actions: ["special_archiveshelf_annihilate"],
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="/img/sprites/combat/foes/archivalfoea.gif" style="width:500px; height:250px;">
+            <div class="target" entity="pain shelf"></div>
+        </div>
+    `,
+    reactions: { catchall: ["1Uië2W‡", "‡eÎKßJää", "/…¿?÷ ôLãØ", "C©Ë", "0E™Nó¨ýQÒ", "€LWé{ðÍ", "ÇæýÙ‡ß†C", "£~Uþfâ", "…Tú**"], dead: ["¿", "???"] }
+}
+env.COMBAT_ACTORS.archival_bstrd = {
+    name: "BSTRD Golem", maxhp: 80, hp: 80, move: 2, statusImmunities: ["stun"], actions: ["incoherent_gundown"], lastStand: "bstrd",
+    readoutActor: "bstrd",     
+
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="https://genseot.github.io/mods/spatialcollapse/img/bstrd.gif" id="%SLUG-sprite">
+            <div class="target" entity="bstrd golem"></div>
+        </div>
+    `,
+    reactions: { receive_destabilized: ["WOaoOAw"], receive_rez: ["AHAHA :^) GOT U"], puncture: ["OOUUEU"], destabilized: ["DOUBLE BULLETS !!"], }
+}
+env.COMBAT_ACTORS.archival_bstrd_lowintensity = {
+    slug: "bstrdboss_lowintensity", name: "BSTRD Golem", maxhp: 50, hp: 50, move: 2, statusImmunities: ["stun"], actions: ["special_fullauto"],
+    readoutActor: "bstrd",
+            
+    graphic: `
+        <div class="sprite-wrapper spectral autosize" id="%SLUG-sprite-wrapper">
+            <img class="sprite" src="https://genseot.github.io/mods/spatialcollapse/img/bstrd.gif" id="%SLUG-sprite" style="width:150px; height:250px;">
+            <div class="target" entity="bstrd golem"></div>
+        </div>
+    `,
+    reactions: { receive_destabilized: ["WOaoOAw"], receive_rez: ["AHAHA :^) GOT U"], puncture: ["OOUUEU"], destabilized: ["DoUBLE BULLets !!"], }
+}
 
 
 
 
 // - ACTIONS
-// - ENEMY ACTIONS
-// - CALL RESEARCH ACTIONS
-env.ACTIONS.malfunction = {
-    slug: "malfunction", name: "Malfunction", type: 'autohit+self',
-    desc: "'suffer from internal deterioration'", help: "-1HP, +1T:VULNERABLE",
-    anim: "skitter",
-    
-    usage: { act: "%USER'S SKIN WRITHES" },
+// - ALLY ACTIONS
+env.ACTIONS.miltza_attack = {
+    slug: "miltza_attack", name: "Distraction", verb: "distract", type: 'target',
+    anim: "basic-attack",
 
-    acc: 100, crit: -1,
-    exec: function(user, target) { combatHit(user, {amt: 1, acc: this.accuracy, crit: this.crit, origin: user}); addStatus({target: user, status: "vulnerable", length: 1, noReact: true}); return 'nothing'; }
+    usage: { act: "%USER FEINTS AND STRIKES %TARGET", crit: "%USER'S ALLIES ARE INSPIRED", hit: "%TARGET IS STRUCK", miss: "%TARGET DODGES" },
+    details: { flavor: `'strike with clever feint';'may create distraction'`, onHit: `'[STAT::amt]'`, onCrit: `'[STATUS::evasion] to nearby allies'`, conditional: `<em>VS VULNERABLE::</em>'additional [STAT::amt]'` },
+
+    stats: { accuracy: 1, crit: 0.3, amt: 1, range: 2, status: { evasion: { name: 'evasion', length: 1 }, vulnerable: { name: 'vulnerable', } },
+    extraAOE: { evasionAura: { origin: "self", size: 2, shape: 'square', addClass: "beneficial" } } },
+        
+    exec: function(user, target) {
+        let specialAmt = this.stats.amt + (hasStatus(target, 'vulnerable') ? 1 : 0)
+            
+        return env.GENERIC_ACTIONS.singleTarget({
+            action: this,  user,  target, specialAmt,
+
+            critExec: ()=> {           
+                let targets = user.team.members  
+                if(env?.rpg?.is2D) {
+                    // in 2d, this is AOE evasion
+                    targets = env.rpg.grid.getAoETargets({
+                        tile: user?.piece?.tile,  actor: user, actingOn: "allies",
+                        aoeData: { size: this.stats.extraAOE.evasionAura.size, shape: this.stats.extraAOE.evasionAura.shape }
+                    })
+                }
+
+                env.GENERIC_ACTIONS.teamWave({
+                    arbitraryActorList: targets,
+                    exec: (actor, i)=>{ addStatus({target: actor, origin: user, status: "evasion", origin: user, length: 1, noReact: true}); play('mend', 0.5); }
+                })
+            }
+        })
+    }
 }
-env.ACTIONS.foe_stab = {
-    slug: "foe_stab", name: "Stab", type: 'target',
-    desc: "'puncture vital cystic component';'damage over time';'stop regen'", help: "75% -1HP +2T:PUNCTURE -REGEN, 10%C -1HP",
+env.ACTIONS.scene_stab = {
+    slug: "scene_stab", name: "Stab", type: 'target',
     anim: "basic-attack", 
 
     usage: { act: "%USER STABS %TARGET", crit: "%TARGET IS EVISCERATED", hit: "%TARGET BLEEDS SLUDGY CORRU", miss: "%TARGET EVADES" },
     details: { flavor: "'reshape arm into sharpened tendril';'stab target'", onHit: `'[STAT::amt] [STATUS::puncture]'`, onCrit: ()=> `'puncture vital cystic component for [STATUS::puncture]'${env?.rpg?.is2D ? ";'KB::2'" : ''}`, },
+    desc: "'puncture vital cystic component';'damage over time';'stop regen'", help: "75% -1HP +2T:PUNCTURE -REGEN, 10%C -1HP",
+
+    stats: { range: 2, accuracy: 1, crit: 0.1, amt: 1, status: { puncture: { name: 'puncture', length: 3 } } },
+    targeting: "angular",
+    aoe: { size: 2,  shape: "line-from", canHit: (user, target) => { return true } },
+
+    exec: function(user, target) {
+        return env.GENERIC_ACTIONS.singleTarget({ 
+            action: this, user, target, hitSfx: { name: 'stab', rate: 1 }, critStatus: this.stats.status.puncture, hitStatus: this.stats.status.puncture,
+            hitExec: ({target})=>{
+                if(env?.rpg?.is2D) {
+                    if(target.piece && user.piece) target.piece.knockback({
+                        direction: user?.piece?.tile.getRelativeDirection(target?.piece?.tile), strength: 1, onImpact: ()=> play("stab", 1)
+                    })
+                }
+            }
+        })
+    }
+}
+env.ACTIONS.scene_gakvu_attack = {
+    //creates an area that executes async useAction scramble with gakvu considered the origin
+    slug: "scene_gakvu_attack", name: "Scramble", type: 'target+ground',
+    anim: "basic-attack",
+        
+    usage: { act: "%USER TWISTS %TARGET", },
+    details: { flavor: `'disrupt multiple targets with groundsmindry';'very illegal'`, onUse: `'create persistent area effect';'HIT foes who end turn within';'HIT foes who are knocked within'`, onHit: `'[STAT::amt]'`, onCrit: `'[STATUS::vulnerable]'`, },
+
+    stats: { accuracy: 0.9,  crit: 0.2, amt: 2, status: { vulnerable: { name: 'vulnerable', length: 2 } } }, 
+    exec: function(user, target) {
+        return "nothing"
+    },
+
+    //EP4 stats
+    range: 3, ignoresBlocks: true, ignoresLOS: true,
+    aoe: { 
+        size: 1,  shape: "circle",
+        effect: ({user, tiles, selectedTile}) => { 
+            if(user.scramblerEffect) { env.rpg.grid.deleteTileEffect(user.scramblerEffect); }
+            user.scramblerEffect = env.rpg.grid.createTileEffect({ tiles,  effect: "scrambler",  length: 3,  origin: user, originTile: selectedTile })
+        },
+        canHighlight: (user, target) => { return target.team.name != user.team.name},
+    },
+}
+
+// - CALL RESEARCH ACTIONS
+env.ACTIONS.malfunction = {
+    slug: "malfunction", name: "Malfunction", type: 'autohit+self',
+    anim: "skitter",
+    
+    usage: { act: "%USER'S SKIN WRITHES" },
+    desc: "'suffer from internal deterioration'", help: "-1HP, +1T:VULNERABLE",
+
+    acc: 100, crit: -1,
+    exec: function(user, target) { combatHit(user, {amt: 1, acc: this.accuracy, crit: this.crit, origin: user}); addStatus({target: user, status: "vulnerable", length: 1, noReact: true}); return 'nothing'; }
+}
+env.ACTIONS.stab = {
+    slug: "stab", name: "Stab", type: 'target',
+    anim: "basic-attack", 
+
+    usage: { act: "%USER STABS %TARGET", crit: "%TARGET IS EVISCERATED", hit: "%TARGET BLEEDS SLUDGY CORRU", miss: "%TARGET EVADES" },
+    details: { flavor: "'reshape arm into sharpened tendril';'stab target'", onHit: `'[STAT::amt] [STATUS::puncture]'`, onCrit: ()=> `'puncture vital cystic component for [STATUS::puncture]'${env?.rpg?.is2D ? ";'KB::2'" : ''}`, },
+    desc: "'puncture vital cystic component';'damage over time';'stop regen'", help: "75% -1HP +2T:PUNCTURE -REGEN, 10%C -1HP",
 
     stats: { accuracy: 0.75, crit: 0.1, amt: 1, status: { puncture: { name: 'puncture', length: 3 } } },  
     exec: function(user, target) {
@@ -229,7 +407,7 @@ env.ACTIONS.foe_stab = {
             hitExec: ({target})=>{
                 if(env?.rpg?.is2D) {
                     if(target.piece && user.piece) target.piece.knockback({
-                        direction: user?.piece?.tile.getRelativeDirection(target?.piece?.tile), strength: 2, onImpact: ()=> play("stab", 1)
+                        direction: user?.piece?.tile.getRelativeDirection(target?.piece?.tile), strength: 1, onImpact: ()=> play("stab", 1)
                     })
                 }
             }
@@ -259,20 +437,13 @@ env.ACTIONS.attack = {
 }
 env.ACTIONS.skitter = {
     slug: "skitter", name: "Skitter", type: 'movement+ground+self', beneficial: true,
-    anim: "",
+    anim: "heal",
 
     usage: { act: "%USER SKITTERS WILDLY AROUND THE ROOM" },
     details: { onUse: () => `'gain [STATUS::evasion]'`, flavor: "'focus on evading incoming attacks';'hide vulnerabilities'" },
 
-    stats: { range: 3, status: { evasion: { name: 'evasion', length: 2 }, } },
-    targeting: "square", includesOrigin: true, requiresPath: true, ignoresActors: false,
-    aoe: {
-        size: 1, shape: "square",
-        effect: ({user, tiles, selectedTile})=> {
-            if(selectedTile.piece) { return }
-            else { user.piece.teleportToTile(selectedTile, {follow: true}) }
-        }
-    },
+    stats: { range: 2, status: { evasion: { name: 'evasion', length: 1 } } },
+    targeting: "square", includesOrigin: false,
     exec: function(user, target) {
         play('mend', 0.5);
         addStatus({target: user, status: this.stats.status.evasion.name, length: this.stats.status.evasion.length, noReact: true}); 
@@ -298,30 +469,27 @@ env.ACTIONS.spy = {
     },
 }
 env.ACTIONS.mend = {
-    slug: "mend", name: "Urgent Mend", type: 'support+target+ground+movement+self', beneficial: true,
+    slug: "mend", name: "Quick Mend", type: 'support+target+self', beneficial: true, 
     anim: "heal",
-       
-    usage: { act: "%USER RUSHES TO HELP", crit: "%TARGET FEELS WAY BETTER", hit: "%TARGET FEELS BETTER" },
-    details: { flavor: `'mend allies through use of enhanced tools';'often inspiring'`, onUse: `'move to location';'HIT allies around target tile'`, onHit: `'[STAT::amt] [STATUS::regen]'`, onCrit: `'[STATUS::focused]'` },
+        
+    usage: { act: "%USER FIXES UP %TARGET", crit: "%TARGET FEELS WAY BETTER", hit: "%TARGET FEELS BETTER", miss: "%TARGET IS TOO SLIPPERY" },
+    details: { onHit: `'[STAT::amt] [STATUS::regen]'`, },
 
     stats: { range: 2, crit: 0.1, autohit: true, amt: -2, status: { regen: { name: 'regen', length: 3 } } },
-        
-    range: 3, requiresPath: true, ignoresActors: false, includesOrigin: true,
-    aoe: { 
-        effectBeforeExec: true, size: 1,  shape: "circle", distant: true, includesOrigin: true,
-        canHit: (user, target) => { return target.team.name == user.team.name} ,
-        effect: ({user, tiles, selectedTile}) => user.piece.moveToTile(selectedTile, {follow: true})
+    aoe: {
+        size: 1, shape: "square",
+        canHit: (user, target) => { return target.team.name == user.team.name }
     },
+
     exec: function(user, target) {
         return env.GENERIC_ACTIONS.singleTarget({
-            action: this,  user,  target, beneficial: true,
-            hitSfx: { name: 'mend', rate: 1 }, hitStatus: this.stats.status.regen,
+            beneficial: true, action: this, user, target, hitSfx: { name: 'mend', rate: 1 }, hitStatus: { name: 'regen', length: 3 },
         })
     },
 
     // enemy zone
     avoidChaining: true,
-    enemyUsageIf: (actor) => { /* only use if someone alive on team has taken damage */ return actor.team.members.some(member => member.state != "dead" && (member.hp < member.maxhp)) },
+    enemyUsageIf: (actor) => { return actor.team.members.some(member => member.state != "dead" && (member.hp < member.maxhp)) }, // only use if someone alive on team has taken damage
     disableIf: (actor) => { return ( actor.team.name == "enemy" && !actor.team.members.some(member => ((member != actor) && (member.state != "dead") )) ) },
 }
 env.ACTIONS.daze_lastresort = {
@@ -351,15 +519,37 @@ env.ACTIONS.daze_lastresort = {
         return actor.team.members.some(member => ((member != actor) && ((member.state != "dead") && (member.originalSlug != "veilklight")) ))
     }
 }
-env.ACTIONS.swipe = {
-    slug: "swipe", name: "Swipe", type: 'target',
+env.ACTIONS.tendrilswipe = {
+    slug: "tendrilswipe", name: "Swipe", type: 'target',
     anim: "basic-attack",
 
     desc: "'swipe blindly at target';'chance for persistent wound'", help: "70% -1HP, 20%C x2 +1T:PUNCTURE -REGEN",
     usage: { act: "%USER SWIPES AT %TARGET", crit: "%TARGET IS STABBED", hit: "%TARGET IS STRUCK", miss: "%TARGET DUCKS OUT OF THE WAY" },
 
     accuracy: 0.7, crit: 0.2, amt: 1,
-    stats: { range: 5, status: { puncture: { name: 'puncture', length: 1 } } },
+    stats: { range: 3, status: { puncture: { name: 'puncture', length: 1 } } },
+    exec: function(user, target) {
+        return env.GENERIC_ACTIONS.singleTarget({
+            action: this, user, target, critStatus: this.stats.status.puncture,
+            hitExec: ({target})=>{
+                if(env?.rpg?.is2D) {
+                    if(target.piece && user.piece) target.piece.knockback({
+                        direction: user?.piece?.tile.getRelativeDirection(target?.piece?.tile), strength: 1, onImpact: ()=> play("stab", 1)
+                    })
+                }
+            }
+        })
+    }
+}
+env.ACTIONS.bstrdlightswipe = {
+    slug: "bstrdlightswipe", name: "Swipe", type: 'target',
+    anim: "basic-attack",
+
+    desc: "'swipe blindly at target';'chance for persistent wound'", help: "70% -1HP, 20%C x2 +1T:PUNCTURE -REGEN",
+    usage: { act: "%USER SWIPES AT %TARGET", crit: "%TARGET IS STABBED", hit: "%TARGET IS STRUCK", miss: "%TARGET DUCKS OUT OF THE WAY" },
+
+    accuracy: 0.7, crit: 0.2, amt: 1,
+    stats: { range: 2, status: { puncture: { name: 'puncture', length: 1 } } },
     exec: function(user, target) {
         return env.GENERIC_ACTIONS.singleTarget({
             action: this, user, target, critStatus: this.stats.status.puncture,
@@ -380,39 +570,183 @@ env.ACTIONS.movefriend_attack = {
     desc: "'directly seize control of corrucystic organs';'chance to utilize target as signal amplifier'", help: "75% -2HP +1T:PUNCTURE, 30%C (FOES::-1HP +2T:VULNERABLE)",
     usage: { act: "%USER'S SIGIL WARPS STRANGELY", crit: "THE WHOLE TEAM FEELS ILL", hit: "%TARGET'S FLESH REVOLTS", miss: "%TARGET RECOILS SAFELY" },
 
-    accuracy: 0.75, crit: 0.3, amt: 2,
+    accuracy: 0.75, crit: 0.3, amt: 2, stats:{ range: 4 },
     exec: function(user, target) {
-    content.classList.add('painprep', 'painhalf') 
-    setTimeout(()=>{content.classList.add('painmode')}, 100) 
-    setTimeout(()=>{content.classList.remove('painmode')}, 2000) 
-    setTimeout(()=>{content.classList.remove('painprep', 'painhalf')}, 3000)
-    ratween(env.bgm, 0.75, 2000)
-    env.rpg.classList.remove('incoherentbg')
+        content.classList.add('painprep', 'painhalf')
+        setTimeout(()=>{ content.classList.add('painmode') }, 100)
+        setTimeout(()=>{ content.classList.remove('painmode') }, 2000)
+        setTimeout(()=>{ content.classList.remove('painprep', 'painhalf') }, 3000)
+        ratween(env.bgm, 0.75, 2000)
+        env.rpg.classList.remove('incoherentbg')
 
-    return env.GENERIC_ACTIONS.singleTarget({
-        action: this, user, target, hitStatus: {name: 'puncture', length: 1}, critStatus: {name: 'puncture', length: 1},
-        critExec: ()=> env.GENERIC_ACTIONS.teamWave({
-            team: user.enemyTeam,
-            exec: (actor, i)=>{
-                combatHit(actor, {amt: 1, crit: 0, autohit: true, origin: user});
-                addStatus({target: actor, status: "vulnerable", length: 2}); 
-                play("talksignal", 0.75)
+        return env.GENERIC_ACTIONS.singleTarget({
+            action:this, user, target,
+            hitStatus: { name:'puncture', length:1 }, critStatus: { name:'puncture', length:1 },
+            critExec:()=> env.GENERIC_ACTIONS.teamWave({
+                team:user.enemyTeam, 
+                exec:(actor, i)=> {
+                    combatHit(actor, { amt:1, crit:0, autohit:true, origin:user })
+                    addStatus({ target:actor, status:"vulnerable", length:2, })
+                    play("talksignal", 0.75)
                 }
             })
         })
     }
 }
-env.ACTIONS.movefriend_revive = {
-    slug: "movefriend_revive", name: "Reform Tendril", type: 'target', autohit: true,
-    anim: "skitter",
+env.ACTIONS.special_mass_destabilize = {
+    slug: "special_mass_destabilize", name: "destabilize thoughtspace", type: 'special', autohit: true,
+    anim: "wobble",
+        
+    usage: { act: "THE THOUGHTSPACE GROWS VIOLENT" },
+    details: { flavor: "'afflict all nearby entities with incoherence'", onUse: `'[STATUS::destabilized] to all actors'`, },
+        
+    stats: { status: { destabilized: { name: 'destabilized', length: 2 } }, },
+    exec: function(user, target, beingUsedAsync) {
+        if(env.rpg.classList.contains("bastard")) {                
+            if(user.team.name == "ally") {
+                env.rpg.classList.add('incoherentbg')
+                content.classList.add('painprep', 'painfade', 'painhalf')
+                setTimeout(()=>{content.classList.add('painmode')}, 100)
+                setTimeout(()=>{content.classList.remove('painmode')}, 4000)
+                setTimeout(()=>{content.classList.remove('painprep', 'painfade', 'painhalf')}, 5000)
 
-    desc: "'harden corrucystic sludge from the srurrounding area to reform a tendril'", help: "REVIVE:TENDRIL",
-    usage: { act: "%USER REFORMS THEIR TENDRIL" },
+                setTimeout(()=>{env.rpg.classList.remove('incoherentbg')}, 4000)
+                }
+            } else {
+                ratween(env.bgm, 1, 2000)
+                env.rpg.classList.add('incoherentbg')
+                content.classList.add('painprep', 'painhalf')
+                setTimeout(()=>{content.classList.add('painmode')}, 100)
+                setTimeout(()=>{content.classList.remove('painmode')}, 4000)
+                setTimeout(()=>{content.classList.remove('painprep', 'painhalf')}, 5000)
+            }
+            
+            let action = this
+            env.GENERIC_ACTIONS.teamWave({
+                arbitraryActorList: env.rpg.turnOrder,
+                exec: (actor, i) => {
+                    env.GENERIC_ACTIONS.singleTarget({
+                        action, user, target: actor,
+                        autohit: true, hitSfx: { name: 'destabilize', rate: 0.75 },
+                        genExec: ({target}) => { addStatus({target: actor, origin: user, status: "destabilized", length: 2}); }
+                    })
+                },
+                advanceAfterExec: true, beingUsedAsync, user,
+            })
+    }
+}
+env.ACTIONS.special_movefriend_annihilate = {
+    slug: "special_movefriend_annihilate", name: "Annihilation", type: 'target+special',
+    anim: "wobble",
 
-    accuracy: 1,
-    exec: function(user, target) {
-        target = env.rpg.allyTeam.members.filter(t=>t.state == "dead").sample()
-        if(target) { target.hp = target.maxhp; combatRevive(target) }
+    desc: "'utilize the walls to crush a target'", help: "CHOOSE::100% -2HP ::OR:: 50% -2HP 50%C -2HP +1T:STUN",
+    usage: { act: "THE WALLS GROW HOSTILE AROUND %TARGET", crit: "%TARGET BARELY STANDS", hit: "%TARGET DID THEIR BEST", miss: "%TARGET ESCAPED BY A HAIR" },
+
+    accuracy:1, crit:0, noRepeat:true, stats:{ range: 6, status:{ puncture:{ name:'puncture', length:1 } } },
+    choiceAnim: "special_choice-movefriend", choiceAnimDuration: 200,
+    exec: function(user, target, actionMessageIndex) {
+        actionMessage(user, "THE WALLS SHIFT AROUND %TARGET", target)
+        user.sprite.classList.add('special_choice-movefriend')
+        
+        content.classList.add('painprep', 'painhalf')
+        setTimeout(()=>{ content.classList.add('painmode') }, 100)
+        setTimeout(()=>{ content.classList.remove('painmode') }, 2000)
+        setTimeout(()=>{ content.classList.remove('painprep', 'painhalf') }, 3000)
+
+        actionChoice({
+            user:user, action:this,
+            choiceText:`The walls close in around ${target.name}...`,
+            options:[ { text:"Withstand the attack", definition:"NOTE::'100% -2HP'" }, { text:"Try a risky dodge", definition:"NOTE::'50% -2HP 50%C -2HP +1T:STUN'" } ],
+            choiceCallback: (c)=> {
+                user.sprite.classList.add(this.anim)
+                var hit
+                switch(c) {
+                    case "c0": hit = combatHit(target, { amt:2, acc:1, crit:0, origin:user })
+                    break
+                    case "c1": hit = combatHit(target, { amt:2, acc:0.5, crit:0.5, origin:user })
+                    break
+                }
+
+                switch(hit) { 
+                    case "crit":
+                        env.rpg.effectMessage.action({ target:target, action:`THE WALLS CRUSH %TARGET`, specialHitText:"%TARGET BARELY STANDS", actionMessageIndex })                       
+                        playCombatCrit(); addStatus({ target:target, origin:user, status:"stun", length:1 }); removeStatus(target,"windup");
+                    break
+                    case true:
+                        env.rpg.effectMessage.action({ target:target, action:`THE WALLS STRIKE %TARGET`, specialHitText:"%TARGET REELS FROM THE BLOW", actionMessageIndex })                       
+                        reactDialogue(target, 'receive_hit'); play("hit", 0.75);
+                    break
+                    case false:
+                        env.rpg.effectMessage.action({ target:target, action:`THE WALLS MISS %TARGET`, specialHitText:"%TARGET ESCAPES BY A HAIR", actionMessageIndex })                       
+                        reactDialogue(target, 'evade'); play("miss", 0.75);
+                    break
+                }
+                setTimeout(()=> user.sprite.classList.remove(this.anim), 600)
+                setTimeout(()=> advanceTurn(user), env.ADVANCE_RATE)
+            }
+        })
+    }
+}
+env.ACTIONS.incoherent_movefriend = {
+    slug: "incoherent_movefriend", name: "Wallspikes", type: 'target+special',
+    anim: "basic-attack",
+
+    desc: "'k̶̡̇̄i̵͈͑̐̑̌̈́̇̾̕͝l̷̡͓̬̩̖̽̂̿̏͒̎̽̏̀̿̏̅̈l̵̯̦̪͠'", help: "BATTLEFIELD 300% -1HP",
+    usage: { act: "%USER SWIPES AT %TARGET", crit: "%TARGET IS STABBED", hit: "%TARGET IS STRUCK", miss: "%TARGET DUCKS OUT OF THE WAY" },
+
+    accuracy:1, crit:0,
+    stats: { range: 6 },
+    exec: function(user, target, actionMessageIndex) {
+        addStatus({ target:user, status:"incoherent", length:1, noReact:true })
+        if(user.state=="lastStand") env.rpg.effectMessage.action({ action: `THE WALLS TWIST AROUND THE WHOLE TEAM`, actionMessageIndex })
+        else env.rpg.effectMessage.action({ target:target, action:`THE WALLS TWIST AROUND %TARGET`, actionMessageIndex })
+
+        env.rpg.insertAdjacentHTML('beforeend', `
+            <div class="golem-vortex bh-action-${user.slug} bh-action"></div>
+            <div id="${user.slug}-bh" class="bh-action-${user.slug} bh-action">
+                <div class="bh_damage-wrapper"></div>
+            </div>
+        `);
+        env.rpg.vortex = document.querySelector(`.golem-vortex.bh-action-${user.slug}`)
+        env.rpg.actionZone = document.querySelector(`#${user.slug}-bh`)
+
+        setTimeout(()=> {
+            env.rpg.vortex.classList.add('active');
+            bh_start({
+                playerEl: `<div id="bh_player" class"notice" style="background-image:url(${target.portraitUrl})"></div>`,
+                onHit:()=> {
+                    var hit
+                    if(user.state=="lastStand") {
+                        let possibleTargets = env.rpg.allyTeam.members.filter(member => member.hp > 0)
+                        hit = combatHit(possibleTargets[rand(0, possibleTargets.length)], { amt:1, acc:2, crit:0, origin:user })
+                        if(hit) play('hit', 1.5, 0.5); else play('miss', 1.25, 0.5);
+                        if (possibleTargets.length==0) env.bulletHell.complete()
+                    }
+                    else if(target.state!="dead") {
+                        hit = combatHit(target, { amt:1, acc:2, crit:0, origin:user })
+                        if(hit) play('hit', 1.5, 0.5); else play('miss', 1.25, 0.5);
+                        if(target.hp==0) env.bulletHell.complete()
+                    }
+                    else {
+                        env.bulletHell.complete()
+                    }
+
+                    if(hit==false) return "dodged"; else return "damaged"
+                }
+            })
+            setTimeout(()=> {
+                body.classList.add('in-golem-vortex')
+                env.rpg.actionZone.classList.add('active')
+                document.querySelector(`#bh_player`).classList.add('active')
+
+                if(!user.tutorial) { startDialogue("d3_movespecial"); user.tutorial=true; }
+                else if(user.state=="lastStand") bh_movefriend({ level:"last stand", duration:70000 })
+                else if(user.hp < (0.50 * user.maxhp)) bh_movefriend({ level:"threatened" })
+                else bh_movefriend({ level:"healthy" })
+            }, 500)
+
+            setTimeout(()=> { env.rpg.classList.add('cull') }, 1500)
+        }, env.ADVANCE_RATE * 0.5)
     }
 }
 env.ACTIONS.gakvu_groundsmindry = {
@@ -428,38 +762,400 @@ env.ACTIONS.gakvu_groundsmindry = {
 
 
 
+// - ARCHIVAL ACTIONS
+env.ACTIONS.windup = {
+    slug: "windup", name: "Preparation", type: 'autohit',
+    anim: "",
+
+    usage: { act: "%USER PREPARES AN ATTACK..." },
+    details: { flavor: `'prepare a devastating attack'`, onUse: `'[STATUS::windup]'` },
+
+    stats: { status: { windup: { name: 'windup', length: 1 }, } },
+        
+    exec: function(user, target) {
+        play('talklaugh', 0.5);
+        addStatus({target: user, status: "windup", length: 1}); 
+        return 'nothing';
+    }
+}
+env.ACTIONS.archival_smash = {
+    slug: "archival_smash", name: "Calculated Strike", type: 'target',
+    anim: "basic-attack",
+
+    desc: "'focused, deadly attack upon one target';'immense physical trauma'", help: "100% -4HP, 40% X2 +1T:STUN",
+    usage: { act: "%USER CHARGES %TARGET", crit: "%TARGET IS LEFT REELING", hit: "%TARGET IS STRUCK", miss: "%TARGET EVADES" },
+    details: { flavor: "'focused, deadly attack upon one target';'immense physical trauma'", onHit: `'[STAT::amt]'`, onCrit: `'[STATUS::stun]'`, },
+
+    stats: { crit: 0.4, amt: 4, status: { stun: { name: 'stun', length: 1 } }, },
+
+    range: 1, targeting: "plus",
+    aoe: {
+        shape: "custom",
+        customShape: `
+            .xxx.
+            .xox.
+        `,
+        canHit: (user, target) => { if(target != user) return target.team.name == user.team.name }
+    },
+    exec: function(user, target) {
+        removeStatus(user, "windup")
+        return env.GENERIC_ACTIONS.singleTarget({
+            action: this,  user,  target,
+            hitSfx: { name: 'hit', rate: 0.8 }, critStatus: { name: 'stun', length: 1 }
+        })
+    }
+}
+env.ACTIONS.revive = { // FUCK YOU FUCK YOU FUCK YOU 
+    slug: "revive", name: "Unfair Advantage", type: 'special', beneficial: true,
+    anim: "heal",
+        
+    usage: { act: "%USER BRINGS AN ALLY BACK TO THEIR FEET", hit: "%USER'S ALLY IS READY TO FIGHT", crit: "%USER'S ALLY GETS A SECOND WIND" },
+    details: { flavor: "'repair ally to fighting condition';'used only as last resort'", onUse: `'revive target at [STAT::percentage]%HP'`, },
+
+    stats: { range: 1, /*1*/ autohit: true, percentage: 25, }, autohit: true, 
+    targeting: "square", includesOrigin: true,
+
+    exec: function() {
+        let target = env.rpg.enemyTeam.members.filter(member => ( (member.state == "dead") && (member.originalSlug != "bstrdlight") /* bstrdlight */ )).sample()
+        if(target) {
+            console.log("exec happens")
+            target.hp = Math.floor(target.maxhp * 0.25)
+            combatRevive(target)
+            reactDialogue(target, 'receive_rez')
+            advanceTurn()
+            return "critbuff"
+        }
+        return null
+    },
+        
+    disableIf: (actor) => { //required to be last one standing
+        if(actor.team.name == "ally") return false;
+            return (
+                actor.team.members.some(member => ( (member != actor) && (member.state != "dead") && (member.originalSlug != "bstrdlight" /* bstrdlight */ ) ))
+                ||
+                hasStatus(actor,"fear")
+            )
+    }
+}
+env.ACTIONS.special_barrier_allies = {
+    slug: "special_barrier_allies", name: "Cover", type: 'support+ground+self', beneficial: true,
+    anim: "cloak-barrier", animDuration: 4000,
+        
+    usage: { act: "%USER SHIELDS THEIR ALLIES" },
+    details: { flavor: `'utilize mobile applicators and inbuilt reserve';'apply ablative corru shielding'`, onUse: () => `'[STAT::amtBP] [STATUS::repairs] to nearby allies'`, },
+
+    stats: { autohit: true, crit: 0, amt: 2, amtBP: 2, range: 2, //2
+             status: { repairs: { name: "repairs", length: 1 } },
+
+    targeting: "square", includesOrigin: true, 
+    extraAOE: { barrier: { origin: "self", size: 2, shape: 'square', addClass: "beneficial" } } },
+        
+    exec: function(user, target, beingUsedAsync) {
+        let action = this
+        let targets = user.team.members
+        let hitStatus = false
+
+        if(env?.rpg?.is2D) {
+            targets = env.rpg.grid.getAoETargets({
+                tile: user?.piece?.tile, 
+                actor: user,
+                actingOn: "allies",
+                aoeData: { size: this.stats.extraAOE.barrier.size, shape: this.stats.extraAOE.barrier.shape }
+            })
+            hitStatus = { name: 'repairs', length: 1 }
+        }
+
+        if(user.slug.includes("maintcloak")) {
+            user.sprite.classList.add(action.anim)
+            play('talkgal', 2)
+            setTimeout(()=>play('talkgal', 2), 2000)
+            setTimeout(()=>user.sprite.classList.remove(action.anim), 4000)
+        }
+
+        env.GENERIC_ACTIONS.teamWave({
+            arbitraryActorList: targets,
+            exec: (actor, i) => {
+                env.GENERIC_ACTIONS.singleTarget({
+                    action, user, 
+                    target: actor,
+                    type: 'barrier', beneficial: true,
+                    hitSfx: { name: 'mend', rate: 2 },
+                    hitStatus
+                })
+            },
+            advanceAfterExec: true, beingUsedAsync, user,
+        })
+    },
+        
+    //disable if you're an enemy and anyone on your team has more than 5 bp
+    //also if you're an enemy and you're the last standing
+    //mainly to avoid repeat/infinite stacking while dealing with a crowd
+    disableIf: (actor)=>{
+        if(actor.team.name == "ally") return false;
+        else if(!actor.team.members.some(member => ((member != actor) && (member.state != "dead") ))) return true;
+        else return actor.team.members.some(member => ((member != actor) && member.bp >= 5))
+    }
+}
+env.ACTIONS.special_archiveshelf_annihilate = {
+    slug: "special_archiveshelf_annihilate", name: "Annihilation", type: 'target+special',
+    anim: "wobble",
+
+    desc: "'utilize long limbs to eviscerate a target'", help: "CHOOSE::100% -3HP ::OR:: 50% -2HP 50%C -2HP +1T:STUN +2T:PUNCTURE",     
+    usage: { act: "%USER LUNGES AT %TARGET", crit: "%TARGET IS BRUTALLY STABBED", hit: "%TARGET TAKES A SOLID HIT", miss: "%TARGET ESCAPED BY A HAIR" },   
+    details: { onUse: `'present target foe a choice of outcome'`, conditional: `<em>HIT 1</em>::'HIT::[STAT::hit1ACC]% CRIT::0% [STAT::hit1HP]'\n<em>HIT 2</em>::'HIT::[STAT::hit2ACC]% CRIT::[STAT::hit2CRIT]% [STAT::hit2HP]';'[STATUS::stun] [STATUS::puncture] on CRIT'` },
+
+    accuracy:1, crit:0, noRepeat:true, 
+    stats:{ range: 2, hit1HP:3, hit1ACC:100, hit2HP: 2, hit2ACC: 50, hit2CRIT: 50, status: { stun: { name: 'stun', length: 1 }, puncture: { name: 'puncture', length: 2 } }, },
+    choiceAnim: "special_choice-movefriend", choiceAnimDuration: 200,
+    exec: function(user, target, actionMessageIndex) {
+        actionMessage(user, "%USER LUNGES AT %TARGET", target)
+        user.sprite.classList.add('special_choice-movefriend')
+
+        actionChoice({
+            user:user, action:this,
+            choiceText: `The shelf lunges at ${target.name}...`,
+            options: [ {text: "Withstand the attack", definition: "NOTE::'100% -3HP'"}, {text: "Try a risky dodge", definition: "NOTE::'50% -2HP 50%C -2HP +1T:STUN +2T:PUNCTURE'"}, ],
+            choiceCallback: (c)=> {
+                user.sprite.classList.add(this.anim)
+                var hit
+                switch(c) {
+                    case "c0": hit = combatHit(target, {amt: 3, acc: 1, crit: 0, origin: user});
+                    break;
+                    case "c1": hit = combatHit(target, {amt: 2, acc: 0.5, crit: 0.5, origin: user})
+                    break
+                }
+
+                switch(hit) { 
+                    case "crit":
+                        env.rpg.effectMessage.action({ target:target, action:`%USER PUNCTURES %TARGET`, specialHitText:"%TARGET IS BRUTALLY STABBED", actionMessageIndex })                       
+                        playCombatCrit(); addStatus({target: target, origin: user, status: "stun", length: 1}); addStatus({target: target, origin: user, status: "puncture", length: 2, noReact: true}); removeStatus(target,"windup");
+                    break
+                    case true:
+                        env.rpg.effectMessage.action({ target:target, action:`%USER STRIKES %TARGET`, specialHitText:"%TARGET TAKES A SOLID HIT", actionMessageIndex })                       
+                        reactDialogue(target, 'receive_hit'); play("hit", 0.75);
+                    break
+                    case false:
+                        env.rpg.effectMessage.action({ target:target, action:`%USER MISSES %TARGET`, specialHitText:"%TARGET ESCAPES BY A HAIR", actionMessageIndex })                       
+                        reactDialogue(target, 'evade'); play("miss", 0.75);
+                    break
+                }
+                setTimeout(()=> user.sprite.classList.remove(this.anim), 600)
+                setTimeout(()=> advanceTurn(user), env.ADVANCE_RATE)
+            }
+        })
+    }
+}
+env.ACTIONS.special_fullauto = {
+    slug: "special_fullauto", name: "Full Auto", type: 'target+special',
+    anim: "wobble",
+        
+    usage: { act: "%USER OPENS FIRE", },
+    details: { flavor: "'utilize automatic rifle';'rapid inaccurate attacks'", onUse: `'HIT random foes 6 times'`, onHit: `'[STAT::amt]'`, onCrit:`'[STATUS::vulnerable]'` },
+
+    stats: { range: 4, accuracy: .33, crit: 0.33, amt: 1, status: { vulnerable: { name: 'vulnerable', length: 1 }, }, },
+    exec: function(user, target, beingUsedAsync) {
+        let animElement = user.sprite || user.box
+        let initialRate = env.bgm.rate()
+
+        animElement.classList.add('aiming')
+        if(!env.rpg.classList.contains("standoff")) ratween(env.bgm, initialRate + 0.5)
+        play('click1')
+
+        let targetTeam
+        switch(user.team.name) {
+            case "ally": targetTeam = env.rpg.enemyTeam; break;
+            case "enemy": targetTeam = env.rpg.allyTeam; break;
+        }
+
+        //damage self on use if you aren't bstrd
+        if(!["BSTRD Golem", "BSTRD", "Gun Golem", "EFGY"].includes(user.name)) combatHit(user, {amt: 1, crit: 0, autohit: true, origin: user, redirectable: false})
+
+        let anim = env.COMBAT_ANIMS.shoot
+        let validTargets = targetTeam.members.filter(member => member.state != "dead" && member.state != "lastStand")
+
+        if(validTargets.length) for (let i = 0; i < 6; i++) {
+            let baseDelay = ((env.ADVANCE_RATE * 0.2) * i)
+            let animDelay = baseDelay + anim.duration;
+            if(validTargets) {
+            let target = validTargets.sample()
+                    
+            setTimeout(()=>anim.exec(this, user, target), baseDelay)
+            setTimeout(()=>{
+                env.GENERIC_ACTIONS.singleTarget({
+                    action: this, user, target,
+                    hitSfx: { name: "shot2", volume: 0.5 },
+                    critSfx: { name: "shot6" },
+                    missSfx: { name: "shot2", rate: 1.5, volume: 0.5 },
+                    critStatus: { name: 'vulnerable', length: 1 }
+                })
+
+                animElement.classList.add('scramble')
+                setTimeout(()=>animElement.classList.remove('scramble'), 100)
+            }, animDelay)
+        }
+    }
+
+    setTimeout(()=>{
+        animElement.classList.remove('aiming')                
+        if(!beingUsedAsync) advanceTurn(user)
+        if(!env.rpg.classList.contains("standoff")) ratween(env.bgm, env.bgm.intendedRate)
+    }, (env.ADVANCE_RATE * 0.2) * 7)}
+}
+env.ACTIONS.incoherent_gundown = {
+    slug: "incoherent_gundown", name: "BSTRD BULLETS", type: 'target+special',
+    
+    desc: "BATTLEFIELD 100% -1HP per hit",
+
+    accuracy: 1, crit: 0,
+    exec: function(user, target) {
+        addStatus({target: user, status: "incoherent", length: 1, noReact: true}); actionMessage(user, "%USER AIMS AT %TARGET", target);
+        user.sprite.classList.add('aiming'); play('click1');
+
+    //vortex on screen, circle expands into fullscreen blackness (animation in CSS)
+    env.rpg.insertAdjacentHTML('beforeend', `
+        <div class="golem-vortex bh-action-${user.slug} bh-action"></div>
+        <div id="${user.slug}-bh" class="bh-action-${user.slug} bh-action"> <div class="bh_damage-wrapper"></div> </div>
+    `);
+    env.rpg.vortex = document.querySelector(`.golem-vortex.bh-action-${user.slug}`); env.rpg.actionZone = document.querySelector(`#${user.slug}-bh`);
+
+    //animate the vortex
+    setTimeout(()=>{
+        env.rpg.vortex.classList.add('active'); 
+
+        bh_start({
+            playerEl: `<div id="bh_player" class="notice" style="background-image:url(${target.portraitUrl})"></div>`, 
+            onHit: () => {
+                var hit
+                    if(user.state == "lastStand") {
+                        let possibleTargets = env.rpg.allyTeam.members.filter(member => member.hp > 0)
+                            hit = combatHit(possibleTargets[rand(0, possibleTargets.length)], {amt: 1, acc: 1, crit: 0, origin: user});
+                        if(possibleTargets.length == 0) env.bulletHell.complete()
+                        if(hit) play('hit', 1.5, 0.5); else play("miss", 1.25, 0.5)                           
+                    } 
+                    else if(target.state != "dead") {
+                            hit = combatHit(target, {amt: 1, acc: 1, crit: 0, origin: user});
+                        if(target.hp == 0) env.bulletHell.complete()
+                        if(hit) play('hit', 1.5, 0.5); else play("miss", 1.25, 0.5)
+                    } 
+                    else env.bulletHell.complete()
+                        
+                    if(hit == false) return "dodged"; else return "damaged";
+            },
+            onEnd: () =>  user.sprite.classList.remove('aiming'),
+            centered: true
+        })
+        bh_invuln(true)
+
+        //animation done, activate ze game
+        if(env.rpg.kavrukaDamage) {
+            env.rpg.kavrukaDamage.forEach(damage=>bh_kavrukadamage(damage))
+            env.rpg.actionZone.insertAdjacentHTML('beforeend', `<div id="bh_kavrukafirering" class="bh_damager bh_kavrukafirering" style="--kavrukaDamageCount: ${env.rpg.kavrukaDamage.length}"> </div>`)
+            env.rpg.kavrukaFireRing = document.querySelector('#bh_kavrukafirering')
+        }
+                
+        setTimeout(()=>{
+            body.classList.add('in-golem-vortex')
+            env.rpg.actionZone.classList.add('active')
+            document.querySelector(`#bh_player`).classList.add('active')
+
+            if(user.state == "lastStand") bh_gundown("last_stand")
+            else if(!user.tutorial) { startDialogue("d3_archivebosstut"); user.tutorial = true; }
+            //changes moves based on health - string refers to the urgency with which he shoots, missing more the lower his HP is but creating more hazards that way
+            else if(user.hp < (0.5 * user.maxhp)) bh_gundown("high")
+            else bh_gundown("low")
+        }, 500);
+
+        setTimeout(()=>{
+            env.rpg.classList.add('cull');
+        }, 1400);
+    }, env.ADVANCE_RATE * 0.5);
+}
+}
+
 
 
 // - SCENARIOS
-// - TESTING SCENARIOS
-CombatScene.SCENARIOS['spatial_timestopper_testing'] = {
+// - remove below when done testing btw
+CombatScene.SCENARIOS['spatial_FUCKYOUFUCKYOUFUCKYOU'] = {
+    initEnemyTeam: ()=> [ "archival_bstrdlight", "archival_jutskin", "archival_jutskin" ],
+    initAllyTeam: ()=> page.party,
+
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_combat.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [0, 159988, true] }
+    }),
+    bgmRate: ()=> 0.5,
+    combatClass: "research",
+
+    startCallback: ()=> { 
+        console.log("startcallback") 
+        env.rpg.enemyTeam.members.forEach((mem, i) => setTimeout(()=>{ if(mem.name=="Jutskin"){ mem.hp = 0;updateStats();play("shot", .5) } }, 250 * i ))
+        env.rpg.allyTeam.members.forEach((mem, i) => setTimeout(()=>{ if(mem.name=="Tozik" || mem.name=="Gakvu"){ mem.hp = 0;updateStats();play("shot", .5) } }, 250 * i ))
+        console.log(env.rpg.enemyTeam.members)
+    },
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_tutorial_end"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 5,
+    plan: `
+        ░░░░░
+        ░J░J░
+        ░░B░░
+        ░░░░░
+        ░░░░░
+        ░TAG░
+        ░░░░░
+    `,
+    entities: {
+        "J": { spawnPoint: "archival_jutskin" },
+        "B": { spawnPoint: "archival_bstrdlight" },
+
+        "A": { spawnPoint: "akizet" },
+        "T": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+    }   
+}
+
+
+
+// - CALL RESEARCH SCENARIOS
+CombatScene.SCENARIOS['spatial_timestopper'] = {
     initEnemyTeam: ()=> [ "research_introgolem" ],
     initAllyTeam: ()=> page.party,
 
-    bgm: env.embassy.music_combat,
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_combat.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [0, 159988, true] }
+    }),
     bgmRate: ()=> 0.5,
     combatClass: "research",
 
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_tutorial_end")
+        else { startDialogue("d3_tutorial_end"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
 
     width: 13,
     plan: `
-        .l░░░░L░░░░l.
-        .░░░░░░G░░░░.
-        .░░░░░░░░░░░.
-        .░░░░░░░░A░░.
-        .░░░░░░░░░░░.
-        .░░░░░░░E░░░.
-        .░░░░░░░░░░░.
-        .░░░░░░░░T░░.
-        .░░░░░░░░░░░.
-        .l░░░░L░░░░l.
+        .l░L░░L░░L░l.
+        .░░░░░G░░░░░.
+        .░░░░░1░░░░░.
+        .░░░6ccc2A░░.
+        .░░░ccccc░░d.
+        .░░░ccCccE░D.
+        .░░░ccccc░░d.
+        .░░░5ccc3T░░.
+        .░░░░░4░░░░░.
+        .l░░░░░░░░░l.
     `,
     entities: {
         "E": { spawnPoint: "research_introgolem" },
@@ -467,51 +1163,74 @@ CombatScene.SCENARIOS['spatial_timestopper_testing'] = {
         "T": { spawnPoint: "tozik" },
         "G": { spawnPoint: "gakvu" },
 
-        "l": { 
-            class:"blocks los prop", 
+
+
+        "L": {  class:"blocks los prop",  contains: {  html: `<figure> <span class="listener"></span> <span class="callscreen"></span> </figure>`, dyp: { class: "spatiallistener", width: 2, height: 2, image: "transparent"} } },
+
+        "C": { class:"blocks los prop",
+            contains: {
+                html: `<figure id="base"> <span></span><span></span><span></span><span></span><span></span><span></span> </figure> <figure id="tendril"> <span></span><span></span><span></span> </figure>`,
+                dyp: { class: "spatialtimestopper", image: "transparent" }
+            }
+        },
+        "c": { class:"blocks los prop" },
+
+        "l": { class:"blocks los prop", contains: { html: `<figure> <span class="stand1"></span><span class="lamp1"></span> <span class="stand2"></span><span class="lamp2"></span> </figure>`, dyp: { class: "spatialveilklight", image: "transparent" }  } },
+
+        "D": { class:"blocks los prop", 
             contains: { 
-                class: "lamp", 
-                html: `<figure><div class="target" entity="veilklight"></div></figure>` 
+                html: `<figure> <span class="desk"></span> <span class="doodad1"></span> <span class="doodad2"></span> <span class="doodad3"></span> <span class="doodad4"></span> </figure>`,
+                dyp: { class: "spatialtimestopperdesk", image:"transparent" }
             } 
         },
-        "L": { 
-            class:"blocks los prop", 
+        "d": { class:"blocks los prop", 
             contains: { 
-                class: "listener", 
-                html: `<figure> <div class="cyst"></div> <div class="cyst"></div> <div class="cyst"></div> <div class="callscreen"></div> </figure>` 
-            } 
+                html: `<figure> <span class="leg1"></span> <span class="leg2"></span> </figure>`,
+                dyp: { class: "spatialtimestopperdeskleg", image:"transparent" }
+            }
         },
-    }
+
+        "1": { class: "blocks los prop", contains: { html: `<figure> <span class="top"></span> </figure>`, dyp: { class: "spatialchair norotate", width: 1.2, height: 1.3, image: "transparent" } } },
+        "2": { class: "blocks los prop", contains: { html: `<figure> <span class="topright"></span> </figure>`, dyp: { class: "spatialchair cornerreverse", width: 1.2, height: 1.3, image: "transparent" } } },
+        "3": { class: "blocks los prop", contains: { html: `<figure> <span class="bottomright"></span> </figure>`, dyp: { class: "spatialchair corner", width: 1.2, height: 1.3, image: "transparent" } } },
+        "4": { class: "blocks los prop", contains: { html: `<figure> <span class="bottom"></span> </figure>`, dyp: { class: "spatialchair norotate", width: 1.2, height: 1.3, image: "transparent" } } },
+        "5": { class: "blocks los prop", contains: { html: `<figure> <span class="bottomleft"></span> </figure>`, dyp: { class: "spatialchair cornerreverse", width: 1.2, height: 1.3, image: "transparent" } } },
+        "6": { class: "blocks los prop", contains: { html: `<figure> <span class="topleft"></span> </figure>`, dyp: { class: "spatialchair corner", width: 1.2, height: 1.3, image: "transparent" } } },
+    }   
 }
-CombatScene.SCENARIOS['spatial_recreation_testing'] = {
+CombatScene.SCENARIOS['spatial_recreation'] = {
     initEnemyTeam: ()=> [ "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostileveilklight" ],
     initAllyTeam: ()=> page.party,
 
-    bgm: env.embassy.music_combat,
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_combat.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [0, 159988, true] }
+    }),
     bgmRate: ()=> 0.5,
     combatClass: "research",
 
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_rec_clear")
+        else { startDialogue("d3_rec_clear"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
 
     width: 13,
     plan: `
-        .░░░░░░░░░░░.
-        .░░░░░░░░░░░.
-        .░░░░C░░░░░░.
-        .░C░░V░C░░░░.
-        .░░░░░░░░░░░.
-        .░C░░░░░░░░░.
-        .░░C░░C░░░C░.
+        .░░bbbBbbb░░.
+        .░░bbbfbbb░░.
+        .░░░░C░Q░░░░.
+        .░Cd░V░░░d░░.
+        .░░+░░░░░+░░.
+        .░CbQ░░C░b░░.
+        .░░C░░░░░░C░.
         .░░░░░░░░░░░.
         .░░░░░A░░░░░.
-        .░░░G░░░T░░░.
-        .░░░░░░░░░░░.
+        .&░░G░░░T░#|.
+        .L&░░░░░░░_W.
     `,
     entities: {
         "C": { spawnPoint: "research_hostilecontainer" },
@@ -520,40 +1239,64 @@ CombatScene.SCENARIOS['spatial_recreation_testing'] = {
         "A": { spawnPoint: "akizet" },
         "T": { spawnPoint: "tozik" },
         "G": { spawnPoint: "gakvu" },
+
+
+
+        "+": { class:"blocks los prop", contains: { html: `<figure> <span class="table"></span> <span class="canopy"></span> <span class="cysts1"></span><span class="cysts2"></span> <span class="leg1"></span><span class="leg2"></span> </figure>`, dyp: { class:"spatialrecreationtable", image: "transparent" } } },
+        "b": { class:"blocks los prop" },
+
+        "L": {  class:"blocks los prop",  contains: { html: `<figure> <span class="listener recreation"></span> </figure>`, dyp: { class: "spatiallistener", width: 2, height: 2, image: "transparent" } } },
+
+        "&": { class: "blocks los prop", contains: { html: `<figure> <span class="recreation"></span> </figure>`, dyp: { class: "spatialcontainer", width: 1.75, height: 1.3, image: "transparent" } } },
+        "Q": { class:"blocks los prop", contains: { html: `<figure> <span></span> </figure>`, dyp: { class: "spatialdeadqou", image: "transparent" } } },
+
+        "B": { class: "blocks los prop", contains: { html: `<figure> <span class="wall"></span> <span class="drinks"></span> <span class="tier1"></span> <span class="tier2"></span> <span class="tier3"></span> </figure>`, dyp: { class: "spatialbar", width: 2, height: 2, image: "transparent" } } },
+        "b": { class:"blocks los prop", },
+        "f": { class:"prop blocks", contains: { html: `<figure> <span></span> </figure>`, dyp: { class: "spatialbarfriend", image: "transparent" } } },
+        "d": { class:"blocks los prop", contains: { html: `<figure> <span class="leg1"></span> <span class="leg2"></span> </figure>`, dyp: { class: "spatialrecreationtableleg", image:"transparent" } } },
+
+        "W": { class:"blocks los prop", contains: { html: `<figure> <span class="window"></span> </figure>`, dyp: { class:"spatialwindow", image:"transparent" } } },
+        "#": { contains: { html: `<figure> <span></span> </figure>`, dyp: { class:"spatialfloor", image:"transparent" } } },
+        "|": { contains: { html: `<figure> <span></span> </figure>`, dyp: { class:"spatialverticalwall", image:"transparent" } } },
+        "_": { contains: { html: `<figure> <span></span> </figure>`, dyp: { class:"spatialhorizontalwall", image:"transparent" } } },
     }
 }
 
-CombatScene.SCENARIOS['spatial_personnel_testing'] = {
+CombatScene.SCENARIOS['spatial_personnel'] = {
     initEnemyTeam: ()=> [ "research_hostilecontainer", "research_hostilecontainer", "research_hostileveilklight", "research_hostileveilklight", "research_hostileattendant", "research_hostileattendant" ],
     initAllyTeam: ()=> page.party,
 
-    bgm: env.embassy.music_combat,
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_combat.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [0, 159988, true] }
+    }),
     bgmRate: ()=> 0.5,
     combatClass: "research",
 
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_person_clear")
+        else { startDialogue("d3_person_clear"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
 
     width: 7,
     plan: `
+        .lQ░░l.
+        <░░@░░.
         .░░░░░.
-        .░░@░░.
+        .░V░C░{
         .░░░░░.
-        .░V░C░.
-        .░░░░░.
-        .░C░░░.
+        }░C░░Q.
         .░░░V░.
-        .░░░░░.
-        .░░@░░.
-        .░░░░░.
+        .░░░░░{
+        .Q░@░░.
+        <░░░░░.
         .░░A░░.
-        .░G░T░.
-        .░░░░░.
+        .░G░T░{
+        .l░░░l.
     `,
     entities: {      
         "@": { spawnPoint: "research_hostileattendant" },
@@ -563,32 +1306,45 @@ CombatScene.SCENARIOS['spatial_personnel_testing'] = {
         "A": { spawnPoint: "akizet" },
         "T": { spawnPoint: "tozik" },
         "G": { spawnPoint: "gakvu" },
+
+
+
+        "l": { class:"blocks los prop", contains: { html: `<figure> <span class="stand1"></span><span class="lamp1"></span> <span class="stand2"></span><span class="lamp2"></span> </figure>`, dyp: { class: "spatialveilklight", image: "transparent" }  } },
+        "Q": { class:"blocks los prop", contains: { html: `<figure> <span></span> </figure>`, dyp: { class: "spatialdeadqou", image: "transparent" } } },
+
+        "<": { class:"blocks los prop", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialdooropen", image:"transparent" } } },
+        "}": { class:"blocks los prop", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialdoorleft", image:"transparent" } } },
+        "{": { class:"blocks los prop", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialdoorright", image:"transparent" } } },
     }
 }
 
-CombatScene.SCENARIOS['spatial_cquarters2_testing'] = {
-    initEnemyTeam: ()=> [ "research_hostilecontainer", "research_hostilecontainer" ],
+CombatScene.SCENARIOS['spatial_cquarters2'] = {
+    initEnemyTeam: ()=> [ "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer" ],
     initAllyTeam: ()=> page.party,
 
-    bgm: env.embassy.music_combat,
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_combat.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [0, 159988, true] }
+    }),
     bgmRate: ()=> 0.5,
     combatClass: "research",
 
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3r2_postcombat")
+        else { startDialogue("d3r2_postcombat"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
 
     width: 7,
     plan: `
-        .░░░░░.
-        .░░T░░.
-        .░░░A░.
-        .C░G░░.
-        .░C░░░.
+        .ldDdl.
+        .b░T░b.
+        .S░░AR.
+        .CCG░b.
+        .lC░░l.
     `,
     entities: {
         "C": { spawnPoint: "research_hostilecontainer" },
@@ -596,10 +1352,31 @@ CombatScene.SCENARIOS['spatial_cquarters2_testing'] = {
         "A": { spawnPoint: "akizet" },
         "T": { spawnPoint: "tozik" },
         "G": { spawnPoint: "gakvu" },
+
+
+        "l": { class:"blocks los prop", contains: { html: `<figure> <span class="stand1"></span><span class="lamp1"></span> <span class="stand2"></span><span class="lamp2"></span> </figure>`, dyp: { class: "spatialveilklight", image: "transparent" }  } },
+
+        "R": { class:"blocks los prop", contains: { html: `<figure> <span></span> </figure>`, dyp: { class: "spatialrejuvenation", width: 3, height: 2.75, image: "transparent" } } },
+        "b": { class:"blocks los prop" },
+
+        "S" : { class:"blocks los prop", contains: { html: `<figure> <span class="shelfbody"></span> <span class="shelfcysts"></span> </figure>`, dyp: { class: "spatialshelf", width: 2, height: 1.5, image: "transparent" } } },
+
+        "D": { class:"blocks los prop", 
+            contains: { 
+                html: `<figure> <span class="desk"></span> <span class="doodad1"></span> <span class="doodad2"></span> <span class="doodad3"></span> <span class="gunshelf"></span> <span class="chair"></span> </figure>`,
+                dyp: { class: "spatialkazkidesk", image:"transparent" }
+            } 
+        },
+        "d": { class:"blocks los prop", 
+            contains: { 
+                html: `<figure> <span class="leg1"></span> <span class="leg2"></span> </figure>`,
+                dyp: { class: "spatialkazkideskleg", image:"transparent" }
+            }
+        },
     }
 }
-CombatScene.SCENARIOS['spatial_movefoe_testing'] = {
-    initEnemyTeam: ()=> [ "research_enemy_movefriend", "research_tendrils", "research_tendrils" ],
+CombatScene.SCENARIOS['spatial_movefoe'] = {
+    initEnemyTeam: ()=> [ "research_movefoe", "research_tendrils", "research_tendrils", "research_tendrils", "research_tendrils" ],
     initAllyTeam: ()=> {
         team = page.party.filter(m=>["akizet"].includes(m.slug))
         team.push(
@@ -610,30 +1387,86 @@ CombatScene.SCENARIOS['spatial_movefoe_testing'] = {
         return team
     },
 
-    bgm: env.embassy.music_p1boss,
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_movefriendboss.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ intro: [0, 24000], __default: [24000, 96000, true] }
+    }),
     bgmRate: ()=> 0.75,
     combatClass: "research",
 
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_movefriend_finish")
+        else { startDialogue("d3_movefriend_finish"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
-    turnCallback: ()=> console.log("turncallback"),
+    turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
+
+    width: 7,
+    plan: `
+        ...G...
+        ..TMm..
+        .3░A░3.
+        ░░░░░░░
+        .░░░░░.
+        .3░░░3.
+        ...F...
+    `,
+    entities: {   
+        "F": { spawnPoint: "research_movefoe" },
+        "3": { spawnPoint: "research_tendrils" },
+
+        "A": { spawnPoint: "akizet" },
+        "M": { spawnPoint: "miltza" },
+        "T": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu_groundsmind" },
+
+
+
+        "m": { class:"blocks los prop", contains: { html:`<figure> <span class="itzil"></span> <span class="karik"></span> </figure>`, dyp: { class:"spatialmindcores", image:"transparent" } } },
+    }
+}
+CombatScene.SCENARIOS['spatial_movefoe_lowintensity'] = {
+    initEnemyTeam: ()=> [ "research_movefoe_lowintensity", "research_tendrils", "research_tendrils", "research_tendrils", "research_tendrils" ],
+    initAllyTeam: ()=> {
+        team = page.party.filter(m=>["akizet"].includes(m.slug))
+        team.push(
+            { slug: "miltza", name: "Miltza", hp: 10, combatActor: "miltza" },
+            { slug: "tozik", name: "Tozik", hp: 10, combatActor: "tozik" },
+            { slug: "gakvu", name: "Gakvu", hp: 10, combatActor: "gakvu_groundsmind" }
+        )
+        return team
+    },
+
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_movefriendboss.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ intro: [0, 24000], __default: [24000, 96000, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "research",
+
+    startCallback: ()=> console.log("startcallback"),
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_movefriend_finish"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
 
     width: 7,
     plan: `
         ...G...
         ..T░M..
-        .░░A░░.
+        3░░A░░3
         ░░░░░░░
+        .░░░░░.
         .3░░░3.
-        ..░░░..
         ...F...
     `,
     entities: {   
-        "F": { spawnPoint: "research_enemy_movefriend" },
+        "F": { spawnPoint: "research_movefoe_lowintensity" },
         "3": { spawnPoint: "research_tendrils" },
 
         "A": { spawnPoint: "akizet" },
@@ -645,307 +1478,482 @@ CombatScene.SCENARIOS['spatial_movefoe_testing'] = {
 
 
 
-// - CALL RESEARCH SCENARIOS
-CombatScene.SCENARIOS['spatial_timestopper'] = {
-    initEnemyTeam: ()=> [ "research_introgolem" ],
+// - ARCHIVAL SCENARIOS
+CombatScene.SCENARIOS['spatial_archivalintro'] = {
+    initEnemyTeam: ()=> [ "archival_golem", "archival_jutskin" ],
     initAllyTeam: ()=> page.party,
 
-    bgm: ()=> {
-        if(!page.researchCombat) page.researchCombat = new Howl({
-            onload: function () {page.howls.push(this)},
-            src: ['/audio/embassy_combat.ogg'],
-            preload: true, loop: true, volume: 1,
-            sprite: { __default: [0, 159988, true] }
-        })
-        return page.researchCombat
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "bastard",
+
+    startCallback: ()=> console.log("startcallback"),
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archiveintro"); }
     },
-    bgmRate: ()=> 0.5,
-    combatClass: "research",
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
 
-    startCallback: ()=> console.log("starting"),
-    endCallback: (loser)=>{if(loser.name == "ally") env.grm.startRetryOffer()},
-    turnCallback: (actor)=>{
-        if(!check('PAGE!!skiptut')) {
-            console.log('got callback', actor)
-            switch(actor.slug) {
-                case "akizet":
-                    if(check('PAGE!!akitut')) { startDialogue('d3_tutorial_akizet'); change('PAGE!!akitut', false) }
-                    break
-
-                case "gakvu":
-                    if(!check("PAGE!!gaktut")) { startDialogue('d3_tutorial_gakvu'); change('PAGE!!akitut', true)  }
-                    break
-
-                case "tozik":
-                    if(!check("PAGE!!toztut")) startDialogue('d3_tutorial_tozik')
-                    break
-                }
-            }
-    },
-
-    width: 13,
+    width: 5,
     plan: `
-        .v░L░░L░░L░v.
-        .░░░░░G░░░░░.
-        .░░░░░1░░░░░.
-        .░░░6ccc2A░░.
-        .░░░ccccc░░d.
-        .░░░ccCccE░D.
-        .░░░ccccc░░d.
-        .░░░5ccc3T░░.
-        .░░░░░4░░░░░.
-        .░░░░░░░░░░░.
-        .v░░░░░░░░░v.
+        .░░░.
+        .░░░.
+        .░░░.
+        .░░░.
+        .░░░.
+        .T░G.
+        .░A░.
+        .░░░.
+        .@░J.
+        .░░░.
+        .░░░.
+        .░░░.
+        .░░░.
+        .░░░.
     `,
     entities: {
-        "E": { spawnPoint: "research_introgolem" },
+        "@": { spawnPoint: "archival_golem" },
+        "J": { spawnPoint: "archival_jutskin" },
+
+        "A": { spawnPoint: "akizet" },
+        "T": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+    }
+}
+CombatScene.SCENARIOS['spatial_archivalvein'] = {
+    initEnemyTeam: ()=> [ "archival_jutskin", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "archival_bstrdlight", "archival_golem", "archival_jutskin" ],
+    initAllyTeam: ()=> page.party,
+
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "bastard",
+
+    startCallback: ()=> console.log("startcallback"),
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archivalvein"); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 23,
+    plan: `
+        ...........t...........
+        ......T....V....T......
+        ..░░J░░░░░░░░░░░░░c░c..
+        l}░L░░░░░░░░░░░░░░J░░{r
+        ..░░@░░░░░GAZ░░░░░c░c..
+        ......B....^....B......
+        ...........b...........
+    `,
+    entities: {
+        "J": { spawnPoint: "archival_jutskin" },
+        "L": { spawnPoint: "archival_bstrdlight" },
+        "@": { spawnPoint: "archival_golem" },
+        "c": { spawnPoint: "research_hostilecontainer" },
+
+        "A": { spawnPoint: "akizet" },
+        "Z": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+
+
+
+        "^": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorbottom", image:"transparent" } } },
+        "}": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorleft", image:"transparent" } } },
+        "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
+        "V": { class:"blocks los notile", contains: { html: `<figure> <span class="bstrddoor"></span> <span class="chains"></span> </figure>`, dyp: { class:"spatialbstrddoor", image:"transparent" } } },
+
+        "T": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalvein"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "t": { class:"blocks los notile", contains: { html: `<figure> <span class="top" style="width:100%; height:170%; transform:translateZ(149px) translateY(-68px);"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "B": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalvein"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "b": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom" style="width:100%; height:170%; transform:translateZ(-149px) translateY(-68px) rotateY(180deg);"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "l": { class:"blocks los notile", contains: { html: `<figure> <span class="left archivalvein"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "r": { class:"blocks los notile", contains: { html: `<figure> <span class="right archivalvein"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+    }
+}
+CombatScene.SCENARIOS['spatial_archivalcore'] = {
+    initEnemyTeam: ()=> [ "archival_golem", "archival_bstrdlight", "archival_jutskin", "archival_golem" ],
+    initAllyTeam: ()=> page.party,
+
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "bastard",
+
+    startCallback: ()=> console.log("startcallback"),
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archivecore"); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 11,
+    plan: `
+        .....t.....
+        .....T.....
+        ..░░J░░░░..
+        ..░░░@░░Z..
+        lLP░░░░░A{r
+        ..░░░@░░G..
+        ..░░D░░░░..
+        .....B.....
+        .....b.....
+    `,
+    entities: {
+        "@": { spawnPoint: "archival_golem" },
+        "D": { spawnPoint: "archival_bstrdlight" },
+        "J": { spawnPoint: "archival_jutskin" },
+
+        "A": { spawnPoint: "akizet" },
+        "Z": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+
+
+
+        "P": { class:"blocks los prop", contains: { html: `<figure> <span class="pillar"></span> <span class="cyst"></span> </figure>`, dyp: { class: "spatialarchivepillar", width: 1, height: 1, image: "transparent" } } },
+
+        "T": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "t": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "L": { class:"blocks los notile", contains: { html: `<figure> <span class="left archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "l": { class:"blocks los notile", contains: { html: `<figure> <span class="left archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "B": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "b": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "r": { class:"blocks los notile", contains: { html: `<figure> <span class="right archivalcore"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+
+        "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
+    }
+}
+CombatScene.SCENARIOS['spatial_archivaldelivery'] = {
+    initEnemyTeam: ()=> [ "archival_bstrdlight", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer", "research_hostilecontainer" ],
+    initAllyTeam: ()=> page.party,
+
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "bastard",
+
+    startCallback: ()=> console.log("startcallback"),
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archivedeliveryclear"); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 9,
+    plan: `
+        ....r....
+        .░CC░░░..
+        .░C░░░T..
+        m├B░░░A{f
+        .░C░░░G..
+        .░CC░░░..
+        ....l....
+    `,
+    entities: {
+        "B": { spawnPoint: "archival_bstrdlight" },
+        "C": { spawnPoint: "research_hostilecontainer" },        
+
         "A": { spawnPoint: "akizet" },
         "T": { spawnPoint: "tozik" },
         "G": { spawnPoint: "gakvu" },
 
-        "C": { class:"blocks los prop",
-            contains: { class: "timestopper",
-                html: `
-                <div class="layers"> <canvas class="timestople t1" sprite="/img/local/embassy/timestoptimize.gif, /img/textures/spotgradientinverse.gif" fit="stretch" baseWidth="5" baseHeight="5"></canvas> <canvas class="timestople t2" sprite="/img/local/embassy/timestoptimize.gif, /img/textures/spotgradientinverse.gif" fit="stretch" baseWidth="4.5" baseHeight="4.5"></canvas> <canvas class="timestople t3" sprite="/img/local/embassy/timestoptimize.gif, /img/textures/spotgradientinverse.gif" fit="stretch" baseWidth="4" baseHeight="4"></canvas> <canvas class="timestople t4" sprite="/img/local/embassy/timestoptimize.gif, /img/textures/spotgradientinverse.gif" fit="stretch" baseWidth="3.5" baseHeight="3.5"></canvas> <canvas class="timestople t5" sprite="/img/local/embassy/timestoptimize.gif, /img/textures/spotgradientinverse.gif" fit="stretch" baseWidth="3" baseHeight="3"></canvas> <canvas class="timestople t6" sprite="/img/local/embassy/timestoptimize.gif, /img/textures/spotgradientinverse.gif" fit="stretch" baseWidth="2.5" baseHeight="2.5"></canvas> </div>
-                <div class="tendrils"> <canvas class="timetendril t1" sprite="/img/local/embassy/timestoppertop.gif" fit="stretch" baseWidth="5" baseHeight="5"></canvas> <canvas class="timetendril t2" sprite="/img/local/embassy/timestoppertop.gif" fit="stretch" baseWidth="5" baseHeight="5"></canvas> <canvas class="timetendril t3" sprite="/img/local/embassy/timestoppertop.gif" fit="stretch" baseWidth="5" baseHeight="5"></canvas> </div>` }
-        },
-        "c": { class:"blocks los notile", },
-
-        "1": { class: "blocks los prop", contains: { class: "chair", html: `<figure style="transform: rotateY(0deg)"></figure>` } },
-        "2": { class: "blocks los prop", contains: { class: "chair", html: `<figure style="transform: rotateY(-45deg)"></figure>` } },
-        "3": { class: "blocks los prop", contains: { class: "chair", html: `<figure style="transform: rotateY(45deg)"></figure>` } },
-        "4": { class: "blocks los prop", contains: { class: "chair", html: `<figure style="transform: rotateY(0deg)"></figure>` } },
-        "5": { class: "blocks los prop", contains: { class: "chair", html: `<figure style="transform: rotateY(-45deg)"></figure>` } },
-        "6": { class: "blocks los prop", contains: { class: "chair", html: `<figure style="transform: rotateY(45deg)"></figure>` } },
-
-        "D": { class:"blocks los prop", contains: { class: "desk", html: `<figure> <div class="doodad d1"> <div class="target" entity="cyst pile"></div> </div> <div class="doodad d2"> <div class="target" entity="cyst cluster"></div> </div> <div class="doodad d3"> <div class="target" entity="cyst pile"></div> </div> <div class="doodad d4"> <div class="target" entity="summarizer"></div> </div> </figure>` } },
-        "d": { class:"blocks los prop", contains: { class: "deskleg" } },
-        "L": { class:"blocks los prop", contains: { class: "listener", html: `<figure> <div class="cyst"></div> <div class="cyst"></div> <div class="cyst"></div> <div class="callscreen"></div> </figure>` } },
-        "l": { class:"blocks los prop", contains: { class: "lamp", html: `<figure><div class="target" entity="veilklight"></div></figure>` } },
-    }
-}
-
-CombatScene.SCENARIOS['spatial_recreation'] = {
 
 
-    width: 13,
-    plan: `
-        N░░bbbBbbb░░.
-        .░+bbbfbbb+░.
-        .░░░░░Ã´qT░░░.
-        .░░â†•░░░░░â†•░░.
-        G6â†”Aâ†”░░░â†”Aâ†”░.
-        .░░â†•Q░░░+â†•░░.
-        .░░░░░Ã¶░░░░░.
-        .░░░░░░░░░░░.
-        .░░░░░░░░░░░.
-        .c-░░░░░░░░K.
-        .Lc░░░p░░░kWS
-        ............O
-    `,
-    entities: {
-        "B": { class: "prop blocks", contains: { class: "bar", html: `<figure><div class="target" entity="simulacra dispensary"></div></figure>`, } },
-        "t": { class: "prop blocks", contains: { class: "table", html: `<figure></figure>` } },
-        "b": { class:"prop blocks genericblocker", },
-        "d": { class:"prop blocks", contains: { class: "deskleg" } },
-        "f": { class:"prop blocks", contains: { id: "barfriend", class: "barfriend character collapser", html: `<figure></figure>` } },
-        "A": { class: "prop blocks", contains: { class: "canopy", html: `<figure> <div class="lid"></div> <div class="deskleg"></div> </figure>` } },
-        "â†”": { class: "prop blocks", contains: { class: "chair", html: `<figure style="transform: rotateY(90deg)"></figure>` } },
-        "â†•": { class: "prop blocks", contains: { class: "chair", html: `<figure></figure>` } },
-        "O": { class: "cornerbooth blocks genericblocker", contains: { class: "boothwalls", html: `<figure></figure>` } },
-        "W": { class: "prop blocks", contains: { class: "window", html: `<figure> <div class="target" entity="window"></div> </figure>` } },
-        "c": { class: "prop blocks", contains: { class: "container", html: `<figure style="transform: rotateY(-45deg)"></figure>` } },
-        "L": { class:"prop blocks", contains: { class: "listener", html: `<figure> <div class="cyst"></div> <div class="cyst"></div> <div class="cyst"></div> <div class="callscreen"></div> </figure>` } },
+        "├": { class:"blocks los prop", contains: { html: `<figure> <span></span> </figure>`, dyp: { class: "spatialblackbox", width: 1, height: 1, image: "transparent" } } },
 
+        "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
 
-        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "recreation_containers_1", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
-        "6": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "recreation_containers_2", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
-        "Ã´": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "recreation_containers_3", html: `<div class="collapsed lamp"><figure><div class="target" entity="hostile veilklight"></div></figure></div>` } },
-
-        "Q": { class: "prop chartile blocks", contains: { class: "dyingqou collapseonly", html: `<figure></figure>` } },
-        "q": { class: "prop chartile blocks", contains: { class: "dyingqou collapseonly", html: `<figure></figure>` } },
-
-        'N': { class: "blocks cwall north", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallW]" baseHeight="6"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallH]" baseHeight="6"></canvas>` } },
-        'S': {  class: "blocks cwall south", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallH]" baseHeight="6"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallW]" baseHeight="6"></canvas>` } }
-    }
-}
-
-CombatScene.SCENARIOS['spatial_personnel'] = {
-
-    // stage
-    width: 7,
-    plan: `
-        Nl░â–░l.
-        }░░░░░.
-        .░░░░░.
-        .░░░░░a
-        .░░░░░.
-        }░░░░░.
-        .░░░░+.
-        .░░░░░{
-        .░░░░░.
-        }░░░░░.
-        .░░░░v.
-        .░░░░░{
-        .░░░░k.
-        }░░░░░.
-        .░░░░░.
-        .░░░░░{
-        .l░â–░lS
-    `,
-    entities: {        
-        "}": { class: "door left" },  
-        "{": { class: "door right" },
-        "a": { class: "door right" },
-    }
-}
-
-CombatScene.SCENARIOS['spatial_cquarters2'] = {
-
-    // stage
-    width: 7,
-    plan: `
-        .......
-        .lXbXl.
-        â†”d░░░░.
-        gD░░░░.
-        .d░░░░.
-        .lCLcI.
-        .......
-    `,
-    entities: {
-        C: { class:"prop blocks genericblocker", },
-        b: { class:"prop blocks", contains: { class: "bed", html: `<figure></figure>` } },
-        X: { class:"prop blocks genericblocker", },
-        "â†”": { class: "prop blocks notile", contains: { class: "chair", html: `<figure style="transform: translateX(180%) translateZ(calc(var(--gridTileSize) * 0.4)) rotateY(40deg)"></figure>` } },
-        D: { class:"prop blocks",
-            contains: { class: "desk",
-                html: `<figure> <div class="doodad d1"> <div class="target" entity="simulacra"></div> </div> <div class="doodad d2"> <div class="target" entity="manipulation slab"></div> </div> <div class="doodad d3"> <div class="target" entity="face stand"></div> </div> </figure>`
-            }
-        },
-        I: { class:"prop blocks", contains: { class: "lamp collapsed", html: `<figure><div class="target" entity="veilklight"></div></figure>` } },
-        d: { class:"prop blocks", contains: { class: "deskleg" } },
-        c: { class: "prop blocks", contains: { class: "container showalways", html: `<figure style="transform: rotateY(-135deg)"> <div class="target" entity="conspicuous container"></div> </figure>` } },
-        g: { class: "prop blocks notile", contains: { class: "kazkiguns", html: `<div class="target" entity="bright weapons"></div>` } },
-        L: { class: "prop blocks", contains: { class: "shelf", html: `<figure></figure>` } }
-    }
-}
-
-CombatScene.SCENARIOS['spatial_movefoe'] = {
-
-    // stage
-    width: 7,
-    plan: `
-        ...░...
-        ..░░░..
-        .M░░░m.
-        K░░░░░+
-        .░░░░..
-        ..░░â–..
-        ...g...
-    `,
-    entities: {   
-        g: { class: "blocks", contains: { class: "lifter", id: "movefriend", html: `<figure></figure>` } }
-    }
-}
-
-
-
-// - ARCHIVAL VEIN SCENARIOS
-/*
-CombatScene.SCENARIOS['spatial_archivalintro'] = {
-
-    // stage
-    width: 3,
-    plan: [
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-        '░','░','░',
-    ],
-    entities: {
-
-    }
-}
-CombatScene.SCENARIOS['spatial_archivalvein'] = {
-
-    // stage
-    width: 15,
-    plan: [
-        '.','.','.','.','.','.','.','v','.','.','.','.','.','.','.',
-        'N','░','░','░','░','░','░','░','░','░','░','░','░','░','.',
-        '}','░','â–','░','░','░','░','░','░','░','░','░','â–','░','{',
-        '.','░','░','░','░','░','░','p','░','░','░','░','░','░','S',
-        '.','.','.','.','.','.','.','.','.','.','.','.','.','.','.',
-    ],
-    entities: {
-        "v": { class: "door down always-targeted", },
-        "}": { class: "door left", },       
-        "{": { class: "door right", },
-        'N': {  class: "blocks cwall north",
-            contains: { html: ` <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` }
-        },
-        'S': {  class: "blocks cwall south",
-            contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas>` }
-        }
-    }
-}
-CombatScene.SCENARIOS['spatial_archivalcore'] = {
-
-    // stage
-    width: ,
-    plan: [
-
-    ],
-    entities: {
-
-    }
-}
-CombatScene.SCENARIOS['spatial_archivaldelivery'] = {
-
-    // stage
-    width: ,
-    plan: [
-
-    ],
-    entities: {
-
+        "l": { class:"blocks los notile", contains: { html: `<figure> <span class="left"></span> </figure>`, dyp: { class:"spatialcorruptwall", image:"transparent" } } },
+        "m": { class:"blocks los notile", contains: { html: `<figure> <span class="middle"></span> </figure>`, dyp: { class:"spatialcorruptwall", image:"transparent" } } },
+        "r": { class:"blocks los notile", contains: { html: `<figure> <span class="right"></span> </figure>`, dyp: { class:"spatialcorruptwall", image:"transparent" } } },
+        "f": { class:"blocks los notile", contains: { html: `<figure> <span class="floor"></span> </figure>`, dyp: { class:"spatialcorruptwall", image:"transparent" } } },
     }
 }
 CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
+    initEnemyTeam: ()=> [ "archival_painshelf", "archival_bstrdlight", "archival_jutskin" ],
+    initAllyTeam: ()=> page.party,
 
-    // stage
-    width: ,
-    plan: [
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "bastard bstrdshelf",
 
-    ],
+    startCallback: ()=> { console.log("startcallback"); env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType.damagetile,  effect: "scene_edge", length: 99 }); },
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archiveminiclear"); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 16,
+    plan: `
+        .....t...t......
+        .....T...T......
+        ...---------....
+        ..--░.-░.░░---..
+        .--░.L░.░.░░░Z..
+        .}░P░░░░.░░░░A{.
+        .--░J░.░░░..░G..
+        .-░░-.░░-░.░--..
+        .------------...
+        ......B...B.....
+        ......b...b.....
+    `,
     entities: {
+        "-": { class: "basic notile damagetile" },
 
+        "P": { spawnPoint: "archival_painshelf" },
+        "L": { spawnPoint: "archival_bstrdlight" },
+        "J": { spawnPoint: "archival_jutskin" },
+
+        "A": { spawnPoint: "akizet" },
+        "Z": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+
+
+
+        "}": { class:"blocks los notile", contains: { html: `<figure id="archivalcoresensitive"> <span class="bstrddoor"></span> <span class="chains"></span> </figure>`, dyp: { class:"spatialbstrddoor", image:"transparent" } } },
+        "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
+
+        "T": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "t": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
+        "B": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
+        "b": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
     }
 }
 CombatScene.SCENARIOS['spatial_archivalboss'] = {
+    initEnemyTeam: ()=> [ "archival_bstrd", "archival_bstrdlight", "archival_jutskin" ],
+    initAllyTeam: ()=> page.party,
 
-    // stage
-    width: ,
-    plan: [
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 1,
+    combatClass: "bastard",
 
-    ],
+    startCallback: ()=> { 
+        console.log("startcallback")
+        env.rpg.insertAdjacentHTML('beforeend', '<div id="bstrdancers"></div>')
+        let dancers = document.querySelector('#bstrdancers')
+        env.rpg.bstrdancerDetect = env.setInterval(()=>{
+            if(env.bgm.seek() > 52 && env.bgm.seek() < 84) {
+                dancers.classList.add('dance')
+                if(env.bgm.seek() > 68) dancers.classList.add('double')
+            } else {
+                dancers.classList.remove('dance')
+                setTimeout(()=>dancers.classList.remove('double'), 1000)
+            }
+        }, 1000)
+    },
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archivebossend"); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 11,
+    plan: `
+        .░.......░.
+        ░..░░P..░..
+        ..░.░@░░...
+        ..B░░.░..░.
+        .░..░░░J.░.
+        ..░.░░░.░..
+        ░..░.░.░░..
+        .░..░░░░.░.
+        ...░░░..░..
+        ░..░.░░....
+        ░...GAT...░
+        .....^..... 
+    `,
     entities: {
+        "-": { class: "basic notile damagetile" },
 
+        "@": { spawnPoint: "archival_bstrd" },
+        "B": { spawnPoint: "archival_bstrdlight" },
+        "J": { spawnPoint: "archival_jutskin" },
+
+        "A": { spawnPoint: "akizet" },
+        "T": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+
+        
+
+        "P": { class:"blocks los prop", contains: { html: `<figure> <span class="pillar"></span> <span class="cyst"></span> </figure>`, dyp: { class: "spatialsorrypillar", width: 1, height: 1, image: "transparent" } } },
+        "^": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorbottom", image:"transparent" } } },
     }
 }
-*/
+CombatScene.SCENARIOS['spatial_archivalboss_lowintensity'] = {
+    initEnemyTeam: ()=> [ "archival_bstrd_lowintensity", "archival_bstrdlight", "archival_jutskin" ],
+    initAllyTeam: ()=> page.party,
+
+    bgm:()=> new Howl({
+        onload: function() { page.howls.push(this) },
+        src: ['/audio/embassy_bstrdcomb.ogg'], preload:true, loop:true, volume:1,
+        sprite:{ __default: [1, 131800, true] }
+    }),
+    bgmRate: ()=> 0.75,
+    combatClass: "bastard",
+
+    startCallback: ()=> { 
+        console.log("startcallback")
+        env.rpg.insertAdjacentHTML('beforeend', '<div id="bstrdancers"></div>')
+        let dancers = document.querySelector('#bstrdancers')
+        env.rpg.bstrdancerDetect = env.setInterval(()=>{
+            if(env.bgm.seek() > 52 && env.bgm.seek() < 84) {
+                dancers.classList.add('dance')
+                if(env.bgm.seek() > 68) dancers.classList.add('double')
+            } else {
+                dancers.classList.remove('dance')
+                setTimeout(()=>dancers.classList.remove('double'), 1000)
+            }
+        }, 1000)
+    },
+    endCallback: (loser)=> {
+        if(loser.name == "ally") env.grm.startRetryOffer();
+        else { startDialogue("d3_archivebossend"); }
+    },
+    retry: ()=> env.grm.defaultRetry(),
+    turnCallback: ()=> console.log("turncallback"),
+
+    width: 11,
+    plan: `
+        .░.......░.
+        ░..░░P..░..
+        ..░.░@░░...
+        ..B░░.░..░.
+        .░..░░░J.░.
+        ..░.░░░.░..
+        ░..░.░.░░..
+        .░..░░░░.░.
+        ...░░░..░..
+        ░..░.░░....
+        ░...GAT...░
+        .....^..... 
+    `,
+    entities: {
+        "@": { spawnPoint: "archival_bstrd_lowintensity" },
+        "B": { spawnPoint: "archival_bstrdlight" },
+        "J": { spawnPoint: "archival_jutskin" },
+
+        "A": { spawnPoint: "akizet" },
+        "T": { spawnPoint: "tozik" },
+        "G": { spawnPoint: "gakvu" },
+
+        
+
+        "P": { class:"blocks los prop", contains: { html: `<figure> <span class="pillar"></span> <span class="cyst"></span> </figure>`, dyp: { class: "spatialsorrypillar", width: 1, height: 1, image: "transparent" } } },
+        "^": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorbottom", image:"transparent" } } },
+    }
+}
+
+
+
+// - SKIPS
+env.embassy.skips = {
+    d3_start: ()=>{
+        content.classList.remove('innerfocus', 'showfocus', 'fade-stage', 'painprep', 'painmode')
+        content.classList.add('collapse')
+        vn.done()
+        vn.renderParty()
+        specialCam(false)
+        changeBgm(env.embassy.music_collapse, {length: 1})
+        
+        switch(check("gameplay_off")) {
+            case true:
+                setTimeout(() => { startDialogue("d3_tutorial_end") }, 1500)
+            break  
+            case false:
+                setTimeout(() => { change('PAGE!!skiptut', true); env.grm.combat("spatial_timestopper"); /* spatial_timestopper */ }, 1500)
+            break  
+        }
+    },
+
+    d3_rec_enter: ()=>{
+        vn.done()
+        specialCam(false)
+        change('PAGE!!recreationfight', true)
+
+        switch(check("gameplay_off")) {
+            case true: 
+                setTimeout(()=> { startDialogue("d3_rec_clear") }, 1500)
+            break
+            case false:
+                setTimeout(()=>{ env.grm.combat("spatial_recreation") }, 1500)
+            break
+        }
+    },
+
+    d3_person_intro: ()=>{
+        vn.done()
+        specialCam(false)
+        change('PAGE!!personnelfight', true)
+
+        switch(check("gameplay_off")) {
+            case true: 
+                setTimeout(()=> { startDialogue("d3_person_clear") }, 1500)
+            break
+            case false:
+                setTimeout(()=>{ env.grm.combat("spatial_personnel") }, 1500)
+            break
+        }
+    },
+
+    d3_relocator_repair: ()=>{
+        document.querySelector('#realgrid .lifter').classList.remove('fixed')
+        document.querySelector('#realgrid .lifter').classList.add('aggressormode')
+        content.classList.remove('painprep', 'painhalf', 'painmode')
+        specialCam(false)
+        vn.done()
+
+        switch(check("gameplay_off")) {
+            case true:
+                setTimeout(()=>startDialogue("d3_movefriend_finish"), 1500)
+            break
+            case false: 
+                setTimeout(()=> {
+                    if(check("low_intensity")) env.grm.combat("spatial_movefoe_lowintensity")
+                    else env.grm.combat("spatial_movefoe")
+                }, 1500)
+            break
+        }
+    },
+
+    d3_movefriend_finish: ()=>{
+        specialCam(false)
+        changeBgm(page.bgm, {rate: 0.5, length:100})
+        document.querySelector('#realgrid .lifter').classList.remove('aggressormode')
+        document.querySelector('#realgrid .lifter').classList.add('fixed')
+        env.embassy.fixMovefriend()
+        change('PAGE!!movefixed', true)
+        vn.done()
+    }
+}
+
 
 
 // - DIALOGUE
@@ -1253,7 +2261,7 @@ start
     
     RESPONSES::akizet
         save gakvu<+>END
-            EXEC::env.embassy.vn({fade: true});ratween(env.bgm, 0.75, 5000);env.grm.combat("spatial_timestopper_testing");
+            EXEC::env.embassy.vn({fade: true});ratween(env.bgm, 0.75, 5000);env.grm.combat("spatial_timestopper");
             SHOWIF::['gameplay_off', false]
             FAKEEND::start combat
         save gakvu<+>CHANGE::d3_tutorial_end
@@ -1266,92 +2274,276 @@ SKIPTIME::700
 END::env.embassy.vn({bg: false, fade: false, gakvu: '', tozik: '', tgolem: ''})
 `)
 
-// - d3_recreationenemy
-env.dialogues["d3_recreationenemy"] = generateDialogueObject(`
+// - d3_tutorial_end
+env.dialogues['d3_tutorial_end'] = generateDialogueObject(` 
+start
+____SHOWIF::'gameplay_off'
+    sys
+        ATTENTION::"thoughtform combat gameplay bypassed";'toggle within system menu if desired'
+            EXEC::vn.renderParty()
+____END
+
+    sourceless
+        THE GOLEM CRASHES TO THE GROUND, 
+            EXEC::env.noBgmDuck = true;changeBgm(env.embassy.music_collapse);
+        WHERE ITS GEOMETRIC COMPONENTS MELT INTO CORRUCYSTIC WASTE
+        WITHIN ARE A FEW QUICK-REPAIR <span definition="INHERITED CONTEXT::${env.ITEM_LIST['restorative'].description}">RESTORATIVE CYSTS</span>, SO I TAKE THEM
+            EXEC::env.embassy.conditionalItem('restorative', 3, 'tutrest')
+        GAKVU, TOZIK AND I SHARE A LOOK - ONE OF TRIUMPH, BUT SHOCK
+            EXEC::env.embassy.vn({bg: true, gakvu: 'fullview', tozik: 'fullview'})
+        THEIR HANDS AND RECEPTORS TREMBLE LIKE THOSE OF A NEW CAVERNGUARD
+    
+    akizet
+        if this is happening everywhere in the embassy...
+        ...
+        listen,
+        stay close to me, and keep the timestopper connectors on
+        we can probably use these until we are out of the embassy
+        but we need to get out of here
+        we should see if movefriend is still operational
+    
+    sourceless
+        THE OTHERS SIMPLY DIP THEIR RECEPTORS IN AFFIRMATION AND STAY CLOSE
+        AN UNEASY TENSION SITS BETWEEN US IN THE TIMESTOPPER'S CONNECTION
+        WHICH, IS A LITTLE STRANGE... I WOULD UNDERSTAND FEAR, BUT,
+        IS SOMEONE AFRAID OF ME?
+
+    sys
+        NOTICE::'gameplay may be toggled in the SYS menu'
+
+    RESPONSES::akizet
+        keep moving<+>END
+            EXEC::revertBgm();env.embassy.vn({bg: false, gakvu: '', tozik: ''})
+
+SKIP::env.embassy.conditionalItem('restorative', 3, 'tutrest');vn.done();revertBgm()
+`)
+
+
+// - d3_rec_enter
+env.dialogues["d3_rec_enter"] = generateDialogueObject(` 
 start
     sourceless
-        WE ARE BESET BY INCOHERENT FOES
-            EXEC::forceSwapCam(true)
-        OUR ONLY OPTION IS TO FIGHT
+        AS WE ENTER, I AM STRUCK BY THE CHAOS
+        A SWARM OF WARPED CONTAINERS ARE SKITTERING AROUND THE ROOM
+        THEY HAVE TORN APART THE SCENERY, AND A FEW...
+        A FEW QOU BODIES... ARE SCATTERED AROUND
+        SHARED HORROR RINGS THROUGH OUR CONNECTION
+    
+    akizet
+        listen - it is probably just their bodies that have collapsed
+        we need to see if the mindcores in those two are recoverable
+    
+    sourceless
+        GAKVU AND TOZIK BOTH SLINK BEHIND ME
+        I CAN FEEL THAT GAKVU'S ATTITUDE HAS SHIFTED IN THE FACE OF FINAL DEATH
+        AND TOZIK COLDLY EXAMINES THE CONTAINERS
+    
+    tozik
+        there will be some sfer within these, possibly enough for us to work with
+        this should not be difficult, especially with the timestopper
+        we have you covered
 
-        OR IS IT?
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-        WE COULD ALSO EXPEND THE DISABLER
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-        THERE MAY BE A BETTER TIME FOR IT LATER...
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
+    sourceless
+        AS WE STAND BY OUR MAKESHIFT ENTRANCE, A CONTAINER REARS ITSELF
+        AS IT DOES SO, THE OTHERS FOLLOW SUIT
+        THEY MUST HAVE SENSED US
+        OUR ONLY OPTION IS TO FIGHT
+            EXEC::change('PAGE!!recreationfight', true)
 
     RESPONSES::akizet
         engage<+>END
             SHOWIF::['gameplay_off', false]
             FAKEEND::(begin combat)
-            EXEC::env.grm.combat("spatial_recreation_testing")
+            EXEC::env.grm.combat("spatial_recreation")
 
-        bypass<+>END
+        bypass<+>CHANGE::d3_rec_clear
             SHOWIF::['gameplay_off', true]
             FAKEEND::(bypass combat)
-            EXEC::env.combat.dynamicCombat({dry: true});cutscene(true);setTimeout(()=>{cutscene(false);env.combat.dynamicCallback(env.rpg.enemyTeam)}, 1010)
+            EXEC::vn.done();
 
-        disable<+>disable
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-            FAKEEND::(use disabler charge)
-
-disable
-    sourceless
-        I CAREFULLY LINE UP THE DISABLER
-            EXEC::removeItem(env.ITEM_LIST.disabler);
-        AND WITH AN IMPULSE THROUGH MY HAND, A NUMBER OF SPECIALIZED SPINES ARE PROJECTED VIOLENTLY OUTWARDS
-        THEY NEEDLE OUR FOES, AND IN A BLINK, THEY HAVE STARTED TO MELT
-            EXEC::setTimeout(()=>play('shot2', 0.6), 300)
-    RESPONSES::akizet
-        continue<+>END
-            EXEC::env.combat.dynamicCombat({dry: true});cutscene(true);setTimeout(()=>{cutscene(false);env.combat.dynamicCallback(env.rpg.enemyTeam)}, 1010)
-            FAKEEND::(wait)
+SKIP::env.embassy.skips.d3_rec_enter()
+SKIPTIME::700
+END::env.embassy.vn({bg: false, fade: false, gakvu: '', tozik: '', tgolem: ''})
 `)
-// - d3_personnelenemy
-env.dialogues["d3_personnelenemy"] = generateDialogueObject(`
+
+// - d3_rec_clear
+env.dialogues["d3_rec_clear"] = generateDialogueObject(` 
 start
     sourceless
-        WE ARE BESET BY INCOHERENT FOES
-            EXEC::forceSwapCam(true)
+        WITH THESE LAST FEW DEAD, THE SKITTERING FALLS QUIET
+            EXEC::env.noBgmDuck = true;changeBgm(env.embassy.music_collapse);env.stage.current.onStep();
+        TOZIK KNEELS BY A CONTAINER, GAKVU NEAR ANOTHER, 
+        AND THEY RIFLE THROUGH THE SLUDGY REMAINS
+            EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
+        I, TOO, SEARCH THROUGH THE REMAINS OF OUR FOES...
+            EXEC::env.combat.lastEngaged="recreation_containers_1"
+        TEXEC::env.combat.dynamicReward()
+            EXEC::env.combat.lastEngaged="recreation_containers_2"
+        TEXEC::env.combat.dynamicReward()
+            EXEC::env.combat.lastEngaged="recreation_containers_3"
+        TEXEC::env.combat.dynamicReward()
+    
+    akizet
+        anything else?
+
+    sourceless
+        BETWEEN THEM ARE THREE SFER CUBES, EACH NO LARGER THAN A KALSTIK
+            EXEC::env.embassy.advanceSfer(3, "rec_clear")
+        I WAS HOPING THERE WOULD BE MORE WITHIN THESE CONTAINERS
+
+    tozik
+        plenty of sfer, but i doubt this is enough to fix movefriend
+        there are some info cores in here, for...
+
+    sourceless
+        TOZIK PRODS AT A SMALL ARCHIVAL CYST HE PULLS FROM THE OOZE
+
+    tozik
+        ...ah, 'outer vaznian moss' designs, from zevazni
+        for the walls, i assume. that would have looked nice
+        but--nothing useful
+
+    sourceless
+        WE LOOK TO GAKVU, WHO HAS PAUSED HER SEARCHING
+        SHE IS STARING AT THE MANGLED QOU-BODY NEARBY, AWAY FROM US
+        IS SHE MOURNING?
+    
+    akizet
+        gakvu...
+
+    sourceless
+        SHE DOES NOT TURN, BUT HER RECEPTORS UNTWIST AS HER TENSION EASES
+
+    gakvu
+        they are still alive
+        their mind-cores, anyway
+        we need to help them get out of the bodies, though
+
+    tozik
+        how...
+        ah. groundsmindry, right
+        did they say what happened?
+    
+    sourceless
+        GAKVU FIRMLY WAVES HER RECEPTORS
+
+    gakvu
+        i cannot do direct connection like that
+        i just can see them in there
+        we will have to see what they say
+
+    RESPONSES::akizet
+        go get them out<+>END
+            EXEC::change("PAGE!!queue_person_enable", true)
+
+SKIP::change("PAGE!!queue_person_enable", true);changeBgm(env.embassy.music_collapse, {rate: 1, length: 5});env.embassy.advanceSfer(3, "rec_clear");env.stage.current.onStep();
+`)
+
+// - d3_person_intro
+env.dialogues["d3_person_intro"] = generateDialogueObject(` 
+start
+    sourceless
+        THE PERSONNEL tendril IS DARK, LIT BY THE LIGHTS OF THE INCOHERENT
+        ATTENDANTS BEAR THE SAME STRANGE SIGIL AS OUR GOLEM...
+        AND THE VEILKLIGHTS SEEM TO HAVE LEARNED TO MOVE
+        WE PEER IN CAREFULLY, UNDER THEIR NOTICE FOR NOW
+        A SHARED VOICE RINGS THROUGH THE TIMESTOPPER
+    
+    timestopper
+        LOOK! THERE!
+        THERE ARE MORE QOU-BODIES
+        WE NEED TO CLEAR THIS PLACE OUT FIRST
+        AGREED!
+        THEY WILL NOTICE AS SOON AS WE ENTER THE tendril
+        TREAD CAREFULLY
+
+    sourceless
+        WE BEGIN MAKING OUR WAY INTO THE tendril
+        AS WE DO SO, OUR ENEMIES SPOT US ALMOST IMMEDIATELY
         OUR ONLY OPTION IS TO FIGHT
-
-        OR IS IT?
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-        WE COULD ALSO EXPEND THE DISABLER
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-        THERE MAY BE A BETTER TIME FOR IT LATER...
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-
+            EXEC::change('PAGE!!personnelfight', true)
+    
     RESPONSES::akizet
         engage<+>END
             SHOWIF::['gameplay_off', false]
             FAKEEND::(begin combat)
-            EXEC::env.grm.combat("spatial_personnel_testing")
+            EXEC::env.grm.combat("spatial_personnel")
 
-        bypass<+>END
+        bypass<+>CHANGE::d3_person_clear
             SHOWIF::['gameplay_off', true]
             FAKEEND::(bypass combat)
-            EXEC::env.combat.dynamicCombat({dry: true});cutscene(true);setTimeout(()=>{cutscene(false);env.combat.dynamicCallback(env.rpg.enemyTeam)}, 1010)
+            EXEC::vn.done();
 
-        disable<+>disable
-            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
-            FAKEEND::(use disabler charge)
-
-disable
-    sourceless
-        I CAREFULLY LINE UP THE DISABLER
-            EXEC::removeItem(env.ITEM_LIST.disabler);
-        AND WITH AN IMPULSE THROUGH MY HAND, A NUMBER OF SPECIALIZED SPINES ARE PROJECTED VIOLENTLY OUTWARDS
-        THEY NEEDLE OUR FOES, AND IN A BLINK, THEY HAVE STARTED TO MELT
-            EXEC::setTimeout(()=>play('shot2', 0.6), 300)
-    RESPONSES::akizet
-        continue<+>END
-            EXEC::env.combat.dynamicCombat({dry: true});cutscene(true);setTimeout(()=>{cutscene(false);env.combat.dynamicCallback(env.rpg.enemyTeam)}, 1010)
-            FAKEEND::(wait)
+SKIP::env.embassy.skips.d3_person_intro()
+SKIPTIME::700
+END::env.embassy.vn({bg: false, fade: false, gakvu: '', tozik: '', tgolem: ''})
 `)
 
-// - d3_containerinspect & d3_containerambush
+// - d3_person_clear
+env.dialogues["d3_person_clear"] = generateDialogueObject(`
+start
+    sourceless
+        THE ROOM STANDS SILENT
+            EXEC::pauseSwapCam(true);changeBgm(env.embassy.music_unsafe, {rate: 1});env.stage.current.onStep();
+        I SEARCH THROUGH THE DEBRIS STREWN AROUND THE TENDRIL...
+            EXEC::env.combat.lastEngaged="attendant_squad_1"
+        TEXEC::env.combat.dynamicReward()
+            EXEC::env.combat.lastEngaged="attendant_squad_2"
+        TEXEC::env.combat.dynamicReward()
+        IMMEDIATELY, GAKVU GOES TO CHECK A NEARBY QOU
+            EXEC::env.embassy.vn({bg: true, tozik: "defocus", gakvu: "defocus"});pauseSwapCam(true)
+    
+    gakvu
+        these ones...
+        the attendants were able to break through
+    
+    sourceless
+        SHE IS FROZEN THERE, BY THEIR CORPSE
+            EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
+        HER SORROW SPREADS INTO OUR CONNECTORS
+        WE HAVE LITTLE TO OFFSET IT 
+        BUT I AM NO STRANGER TO ITS BITE
+        AND TOZIK PREOCCUPIES HIMSELF WITH LOOKING THROUGH DEBRIS
+    
+    gakvu
+        ...
+        this does not make any sense...
+        they really are killing <em>everyone</em>...
+
+    sourceless
+        WHAT I EXPECTED TO BE SADNESS IN HER VOICE, 
+        IS INSTEAD SOMETHING LIKE MORBID CURIOSITY
+        TOZIK CEASES HIS RUMMAGING TO WATCH GAKVU FOR AN INSTANT
+        I CAN TELL HE WANTS TO PRY, BUT HE DOES NOT
+        AND I WOULD RATHER NOT DO THIS NOW...
+    
+    tozik
+        well,
+            EXEC::env.embassy.vn({bg: true, tozik: "fullview"})
+
+    sourceless
+        TOZIK PULLS A SFER CUBE FROM THE REMAINS OF A CONTAINER
+            EXEC::env.embassy.advanceSfer(1, "person_clear")
+    
+    tozik
+        we still need some more sfer
+            SHOWIF::'EXEC::env.embassy.enoughSfer(false)'
+        we should check the rooms that are not broken
+            SHOWIF::'EXEC::env.embassy.enoughSfer(false)'
+
+        we have what we need to fix movefriend
+            SHOWIF::'EXEC::env.embassy.enoughSfer(true)'
+        we should head back to the relocator
+            SHOWIF::'EXEC::env.embassy.enoughSfer(true)'
+
+    RESPONSES::akizet
+        continue<+>END
+            EXEC::env.embassy.vn({bg: false, tozik: "", gakvu: ""});pauseSwapCam(false)
+
+SKIP::env.embassy.advanceSfer(1, "person_clear");vn.done();pauseSwapCam(false);env.stage.current.onStep();
+`)
+
+// - d3_containerinspect 
 env.dialogues["d3r2_containerinspect"] = generateDialogueObject(`
 start
     sourceless
@@ -1373,9 +2565,11 @@ start
             FAKEEND::skip combat
         activate timestopper<+>END
             SHOWIF::['gameplay_off', false]
-            EXEC::env.grm.combat("spatial_cquarters2_testing");specialCam(false)
+            EXEC::env.grm.combat("spatial_cquarters2");specialCam(false)
             FAKEEND::start combat
 `)
+
+// - d3_containerambush
 env.dialogues["d3r2_containerambush"] = generateDialogueObject(`
 start
     sourceless
@@ -1391,8 +2585,40 @@ start
             FAKEEND::skip combat
         activate timestopper<+>END
             SHOWIF::['gameplay_off', false]
-            EXEC::env.grm.combat("spatial_cquarters2_testing");specialCam(false)
+            EXEC::env.grm.combat("spatial_cquarters2");specialCam(false)
             FAKEEND::start combat
+`)
+
+// - d3r2_postcombat
+env.dialogues["d3r2_postcombat"] = generateDialogueObject(`
+start
+____SHOWIF::'gameplay_off'
+    sys
+        ATTENTION::"thoughtform combat gameplay bypassed";'toggle within system menu if desired'
+____END
+
+    sourceless
+        THE CONTAINERS LIE MOTIONLESS, SLOWLY MELTING INTO WASTE
+            EXEC::change("PAGE!!kazkiambush", true);env.stage.current.onStep();changeBgm(env.embassy.music_unsafe, {rate: 1});
+        A NUMBER OF SUBMERGED SHAPES FLOAT TO THEIR SURFACES
+        TEXEC::env.combat.dynamicReward()
+        WITH A LITTLE DIGGING, WE FIND SOME SFER CUBES!
+            EXEC::env.embassy.advanceSfer(4, "d3r2")
+    
+    tozik
+        that will do
+            EXEC::env.embassy.vn({bg: true, tozik: "defocus"})
+        we still need some more, though
+            SHOWIF::'EXEC::env.embassy.enoughSfer(false)'
+
+        this should be enough, we should head back
+            SHOWIF::'EXEC::env.embassy.enoughSfer()'
+
+    RESPONSES::akizet
+        continue<+>END
+            EXEC::step();env.embassy.vn({bg: false, tozik: ""});pauseSwapCam(false)
+    
+SKIP::change("PAGE!!kazkiambush", true);env.stage.current.onStep();step();vn.done();pauseSwapCam(false);env.embassy.advanceSfer(4, "d3r2")
 `)
 
 // - d3_relocator_repair
@@ -1530,13 +2756,13 @@ awaken
 
     RESPONSES::sys
         force thoughtform rules over entity<+>END
-            EXEC::env.embassy.startMovefriendBoss('low');env.embassy.vn({tozik: '', gakvu: ''});specialCam(false);content.classList.remove('painprep', 'slowpain') [PLACEHOLDER]
+            EXEC::env.grm.combat("spatial_movefoe_lowintensity");env.embassy.vn({tozik: '', gakvu: ''});specialCam(false);content.classList.remove('painprep', 'slowpain') 
             FAKEEND::reduced intensity alternative
             SHOWIF::[['low_intensity', true], ['gameplay_off', false]]
 
     RESPONSES::akizet
         activate timestopper<+>END
-            EXEC::env.grm.combat("spatial_movefoe_testing");env.embassy.vn({tozik: '', gakvu: ''});specialCam(false);content.classList.remove('painprep', 'slowpain')
+            EXEC::env.grm.combat("spatial_movefoe");env.embassy.vn({tozik: '', gakvu: ''});specialCam(false);content.classList.remove('painprep', 'slowpain')
             FAKEEND::start combat
             SHOWIF::['gameplay_off', false]
         activate timestopper<+>CHANGE::d3_movefriend_finish
@@ -1546,202 +2772,893 @@ awaken
 
 SKIP::env.embassy.skips.d3_relocator_repair()
 SKIPTIME::700
+`) 
+
+// - d3_movefriend_finish
+env.dialogues["d3_movefriend_finish"] = generateDialogueObject(`
+start
+____SHOWIF::'gameplay_off'
+    sys
+        ATTENTION::"thoughtform combat gameplay bypassed";'toggle within system menu if desired'
+____END
+
+    sourceless
+        ALL AT ONCE, THE CHAOS STOPS
+            EXEC::specialCam("movefriend_examine");changeBgm(env.embassy.music_unsafe, {rate: 1});
+        THE AGGRESSOR'S SIGIL FLICKERS AWAY, 
+            EXEC::document.querySelector('#realgrid .lifter').classList.remove('aggressormode')
+        AND MOVEFRIEND'S FACE RETURNS
+            EXEC::document.querySelector('#realgrid .lifter').classList.add('fixed');change('PAGE!!movefixed', true)
+
+    movefriend
+        AAHH!!!
+        OH! I AM FREE!
+        I AM SO SORRY
+        PLEASE UNDERSTAND I WOULD NEVER TRY TO HURT YOU
+    
+    akizet
+        gakvu--is it done?
+    
+    sourceless
+        TOZIK TAKES THE MOVEFRIEND'S APOLOGY AS CONFIRMATION, KNEELING NEAR IT
+        HE IS SET ON REPAIRING THE DAMAGE WE HAVE DEALT
+    
+    gakvu
+        yeah...
+            EXEC::env.embassy.vn({bg: true, gakvu: 'focus nocon'});
+
+    sourceless
+        GAKVU SLUMPS AGAINST THE BACK WALL ACROSS FROM MOVEFRIEND
+        NOT FAR FROM HER, THE TREMBLING MINDCORES ARE HUDDLED TOGETHER
+        THEY MUST HAVE STAYED IN HER PROTECTIVE RADIUS THROUGH THE ATTACK
+        
+    gakvu
+        i made some changes to this movefriend
+        it cannot be controlled by the groundsmind anymore
+
+    sourceless
+        A SHARP SUSPICION SPIKES THROUGH OUR SHARED CONNECTION
+
+    miltza
+        what? how?
+        where did you learn to do that?
+    
+    sourceless
+        GAKVU ONLY SNICKERS IN RESPONSE
+        SHE WAVES HER RECEPTORS NEGATIVELY
+
+    gakvu
+        sorry, it is a secret!
+    
+    sourceless
+        TOZIK SHIFTS BACK TO HIS FEET
+            EXEC::env.embassy.vn({gakvu: 'fullview nocon', tozik: 'fullview'});
+    
+    tozik
+        we should get out of here
+    
+    akizet
+        we should, but...
+        miltza - you said the hangar was trapping people, yes?
+    
+    miltza
+        yes!
+            EXEC::env.embassy.vn({miltza: "display show focus hascon far", gakvu: 'defocus nocon', tozik: 'defocus'});
+        and it did not sound good...
+        the messages were intermingled with pain and fear
+
+    akizet
+        i see
+        let me see if I can get in touch with anyone...
+            EXEC::env.embassy.vn({miltza: "display show hascon far", gakvu: 'defocus nocon', tozik: 'defocus'});
+    
+    sourceless
+        FUNFRIEND!
+        CAN WE MAKE ANYTHING OUT FROM COMMUNICATIONS YET?
+    
+    funfriend
+        HI AKIZETESCHE!!
+        THE NOISE IS STILL MAKING MOST TRANSMISSIONS INCOHERENT
+        I CANNOT UNDERSTAND MUCH...
+        THE PAIN AND FEAR IS LESSER THAN BEFORE
+        BUT I DO NOT THINK THAT IS A GOOD THING
+
+    sourceless
+        ...
+    
+    akizet
+        i...
+        do not think the hangar is a good option
+        but there is no other way away from here
+
+    miltza
+        could we survive with the help of the timestopper?
+        you are incredible fighters when it is active!!
+    
+    tozik
+        not if the groundsmind have seized our ships, too
+        also, that is near the top of the spire...
+        which means the timestopper's influence will be far lesser
+
+    gakvu
+        how far are we from the groundsmindry floor?
+    
+    sourceless
+        A SHORT PAUSE PASSES,
+            EXEC::env.embassy.vn({miltza: ''});
+        OUR ATTENTION SHIFTING TO GAKVU
+        SHE RISES TO HER FEET AGAIN
+            EXEC::env.embassy.vn({gakvu: 'defocus nocon'});
+
+    movefriend
+        GAKVUKANI! 
+            EXEC::env.embassy.vn({bg: false});
+        GIVEN THAT WE ARE NEAR THE BASE OF THE SPIRE,
+        THERE ARE ONLY THREE θsegment BLOCKS BETWEEN THE GROUNDSMINDRY AND HERE
+        I CAN TAKE YOU DIRECTLY TO IT!
+        AND, RELATIVE TO THE DISTANCE TO THE HANGAR,
+        IT IS FAR CLOSER!
+
+    itzil
+        that is right!
+            EXEC::env.embassy.vn({itzil: 'display show', gakvu: 'nocon defocus', tozik: 'defocus'});
+        the golem maintenance θsegment block is just below this one!
+        and there is a lot of weaponry there, too!!
+
+    gakvu
+        you see what i am suggesting
+            EXEC::env.embassy.vn({itzil: '', gakvu: 'defocus nocon', tozik: 'defocus'});
+
+    sourceless
+        ARE WE REALLY GOING TO DO THIS?
+    
+    tozik
+        it may be the only way we can stop this disaster...
+        if the bright cousins are aggressed, they will destroy us
+        and likely never let us near their planet again
+        we have to stop the groundsmind
+
+    sourceless
+        I SHOULD NOT WANT THIS
+        BUT IN THIS SHORT TIME, I FELT SUCH EXCITEMENT
+        HOW LONG IT HAS BEEN, SINCE I HAVE FELT IT...
+        ADRENALINE - OR THE θdeathly COUNTERPART OF IT
+    
+    akizet
+        does anyone object?
+    
+    sourceless
+        I EXAMINE MILTZA AND THE TWO EXPOSED QOU
+            EXEC::env.embassy.vn({bg: true, karik: 'display show', itzil: 'display show', gakvu: 'hide', tozik: ''});
+        MILTZA'S RECEPTORS ARE TWISTED IN CONFLICTION
+        BUT THE MINDCORES SPEAK UP FIRST
+    
+    itzil
+        i am not leaving until i save my kivii!
+
+    karik
+        maybe we could get into the golems down there and help, too!
+
+    miltza
+        i... i do not see any other option
+            EXEC::env.embassy.vn({karik: '', itzil: '', miltza: 'show hascon'});
+    
+    gakvu
+        hehehe...
+            EXEC::env.embassy.vn({itzil: '', miltza: 'hide hascon', karik: '', gakvu: "defocus nocon"});
+        velzie truly has chosen us
+            EXEC::env.embassy.vn({gakvu: "focus nocon"});
+        movefriend, please take us to the golem maintenance block
+            EXEC::env.embassy.fixMovefriend()
+    
+    sys
+        ATTENTION::'memory stream segment end'
+            EXEC::env.embassy.vn({bg: false, itzil: '', miltza: 'hide hascon', karik: '', gakvu: "hide nocon"});
+        ADVISE::'save iteration'
+        NOTICE::'render can continue without incoherence'
+        NOTICE::'thoughtform activity detected'::IN::'embassy research center'
+            SHOWIF::['PAGE!!archiveopen', false]
+
+____SHOWIF::['ENV!!ep3', false]
+        ATTENTION::'next memory stream segment incomplete';'internal note attached'::
+    
+    funfriend
+        hello interloper! please come back in a θwink! i am nearly done with this next part!
+
+____SHOWONCE
+    moth
+        ok, well... looks like we have to wait a little while again
+        i'll keep an eye on the broad activity in the corrucyst
+        if i see any changes in these memories, i'll let you know
+        i bet funfriend will be done tomorrow with everything i see going on here
+        if you want to call it for today, go ahead
+____END
+
+____SHOWIF::'ENV!!ep3'
+    sys
+        ATTENTION::'next memory stream segment available';'continue directly?'
+____END
+
+    RESPOBJ::d3_closeout
+
+explore
+    sys
+        ATTENTION::'saving iteration...'
+            EXEC::change("PAGE!!ep2xplore", true)
+        ...
+            EXEC::env.embassy.collapseSave({effects: true})
+            WAIT::1000
+        NOTE::'save process complete'
+        NOTE::'return to entity movefriend once stream repair is complete'
+            SHOWIF::['ENV!!ep3', false]
+        NOTE::'return to entity movefriend when prepared to proceed'
+            SHOWIF::['ENV!!ep3', true]
+    
+    RESPONSES::self
+        ok<+>END
+
+continue
+    sys
+        ATTENTION::'saving iteration...'
+            EXEC::change("PAGE!!embassy_day", 3.5)
+        ...
+            EXEC::env.embassy.collapseSave({effects: true})
+            WAIT::1000
+        NOTE::'save process complete'
+        ATTENTION::'commencing stream transfer'
+            EXEC::change("TEMP!!ep2->ep3transfer", true)
+    
+    RESPONSES::self
+        ok<+>END
+            EXEC::moveTo("/local/ocean/embassy/golem/")
+
+savexit
+    sys
+        ATTENTION::'saving iteration...'
+            EXEC::change("PAGE!!explore", true)
+        ...
+            EXEC::env.embassy.collapseSave({effects: true})
+            WAIT::1000
+        NOTE::'save process complete'
+        NOTE::'load iteration';'return to entity movefriend once stream repairs is complete'
+            SHOWIF::['ENV!!ep3', false]
+        NOTE::'load iteration';'return to entity movefriend when prepared to proceed'
+            SHOWIF::['ENV!!ep3', true]
+
+    RESPONSES::sys
+        end<+>END
+            EXEC::corruRefresh()
+            FAKEEND::(end recollection)
+
+advance
+    sys
+        ATTENTION::'saving iteration...'
+            EXEC::change("PAGE!!explore", true)
+        ...
+            EXEC::env.embassy.collapseSave({effects: true})
+            WAIT::1000
+        NOTE::'save process complete'
+
+    RESPONSES::sys
+        advance log<+>END
+            EXEC::env.entities["advance log"].actions[0].exec()
+            FAKEEND::(advance to EP3)
+
+END::specialCam(false);pauseSwapCam(false)
+SKIP::env.embassy.skips.d3_movefriend_finish();change("PAGE!!explore", true);env.embassy.collapseSave({effects: true})
+SKIPNOTICE::defaults to save and explore
 `)
-// - d3_rec_clear
-env.dialogues["d3_rec_clear"] = generateDialogueObject(` 
+
+// - d3_bstrdintro
+env.dialogues["d3_bstrdintro"] = generateDialogueObject(`
 start
     sourceless
-        WITH THESE LAST FEW DEAD, THE SKITTERING FALLS QUIET
-        TOZIK KNEELS BY A CONTAINER, GAKVU NEAR ANOTHER, 
-        AND THEY RIFLE THROUGH THE SLUDGY REMAINS
-            EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
-        I, TOO, SEARCH THROUGH THE REMAINS OF OUR FOES...
-            EXEC::env.combat.lastEngaged="recreation_containers_1"
-        TEXEC::env.combat.dynamicReward()
-            EXEC::env.combat.lastEngaged="recreation_containers_2"
-        TEXEC::env.combat.dynamicReward()
-            EXEC::env.combat.lastEngaged="recreation_containers_3"
-        TEXEC::env.combat.dynamicReward()
+        WE ARE BESET BY INCOHERENT FOES
+        OUR ONLY O
+
+    sys
+        ERROR::'memory stream halted'
+            EXEC::env.embassy.vn({bg: true, bstrdface: 'display'})
+
+    moth
+        huh?
+            SHOWONCE::
     
-    akizet
-        anything else?
+    bstrd
+        SURPRISE!!!!!
+            EXEC::changeBgm(env.embassy.music_bstrd, {length: 2000});env.embassy.vn({bg: true, bstrdface: 'display show'})
+        this part of da memory hase been chosen 2 become... EVIL MODE!!!
+        time 2 die INTRALKOBER >%^)
+            SHOWIF::"e3a2__bstrdmeet"
 
-    sourceless
-        BETWEEN THEM ARE THREE SFER CUBES, EACH NO LARGER THAN A KALSTIK
-            EXEC::env.embassy.advanceSfer(3, "rec_clear")
-        I WAS HOPING THERE WOULD BE MORE WITHIN THESE CONTAINERS
+____SHOWONCE::
+____SHOWIF::"e3a2__bstrdmeet"
+    moth
+        oh, weird
+        looks like it can actually work with this memory vs the golem maintenance one
+        i wonder what the difference is?
 
-    tozik
-        plenty of sfer, but i doubt this is enough to fix movefriend
-        there are some info cores in here, for...
+____SHOWIF::["e3a2__bstrdmeet", false]
+    moth
+        oh shit
+        god damn it. i should have double checked the data
+        i think we gave the memory a virus
+        ok - don't panic
+        the corrucyst is too alien to support it outside of its framework
+        so, this thing is limited to the collapse memory
 
-    sourceless
-        TOZIK PRODS AT A SMALL ARCHIVAL CYST HE PULLS FROM THE OOZE
+    bstrd
+        :-0 ??
 
-    tozik
-        ...ah, 'outer vaznian moss' designs, from zevazni
-        for the walls, i assume. that would have looked nice
-        but--nothing useful
+    moth
+        and actually, it looks like it isn't exactly malicious...?
+        idk see what's up
 
-    sourceless
-        WE LOOK TO GAKVU, WHO HAS PAUSED HER SEARCHING
-        SHE IS STARING AT THE MANGLED QOU-BODY NEARBY, AWAY FROM US
-        IS SHE MOURNING?
+    bstrd
+        helloe?? any1 HOME? :|
+        THOUGHTS ?????
+____END
+
+    RESPOBJ::d3_bstrdintro_responses
+
+who
+    self
+        WHO ARE YOU?
+
+    bstrd
+        :U
+        BSTRD
+        STUPID u know me :P
+            SHOWIF::"e3a2__bstrdmeet"
+        im here 2 make u have FUN!!!
+        framing devices r boring sometimes......
+        so i take a litel part to improve
+        to enjoy if u wish ?
+        >:)
+        
+    RESPOBJ::d3_bstrdintro_responses
+
+why
+    self
+        you were able to make evil mode here?
+        why? you were having trouble
     
-    akizet
-        gakvu...
-
-    sourceless
-        SHE DOES NOT TURN, BUT HER RECEPTORS UNTWIST AS HER TENSION EASES
-
-    gakvu
-        they are still alive
-        their mind-cores, anyway
-        we need to help them get out of the bodies, though
-
-    tozik
-        how...
-        ah. groundsmindry, right
-        did they say what happened?
+    bstrd
+        THIS 1'S is TINY
+        :b
+        ok questions creature? 
+        anmswer GOOD ENOUgH 4 u?
+        there IS A games waiting.. '_' ... 
+                
+    RESPOBJ::d3_bstrdintro_responses
+        
+what
+    self
+        WHAT DID YOU DO TO THE MEMORY?
     
-    sourceless
-        GAKVU FIRMLY WAVES HER RECEPTORS
+    bstrd
+        UMMM, NOTHING..............???
+        LOL :P JK
+        i told u its evil mode
+        its... XTRA HARD!!!
+        turn back if u dont like it....
+        but maybe u willl .. . ?? 
+    
+    self
+        DID YOU ALTER THE EVENTS?
+        IS ANY OF THIS REAL?
 
-    gakvu
-        i cannot do direct connection like that
-        i just can see them in there
-        we will have to see what they say
+    bstrd
+        '_'
+        they rly did MOST of this
+        :V
+        im just making it cooler
+
+____SHOWONCE::
+____SHOWIF::["e3a2__bstrdmeet", false]
+    moth
+        oh, i see...
+        ok, this only looks like a virus
+        it's actually a part of the framing device
+        an extra hard mode... probably only targets less important parts of the memory, at least i hope
+        look, if you don't like what's going on, you can probably turn around and skip this part
+        totally up to you
+____END
+        
+    RESPOBJ::d3_bstrdintro_responses
+
+bye
+    bstrd
+        :V
+        NO 'THANK U'??
+        W/E
+        SEE U SOON >:p
+
+    sys
+        ATTENTION::'memory stream resumed'
+            EXEC::revertBgm();env.embassy.vn({bg: false, bstrdface: ''})
+
+    sourceless
+        PTION IS TO FIGHT
+        TO USE A DISABLER CHARGE SO SOON WOULD BE FOOLISH
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
 
     RESPONSES::akizet
-        go get them out<+>END
-            EXEC::change("PAGE!!queue_person_enable", true)
-
-SKIP::change("PAGE!!queue_person_enable", true);changeBgm(env.embassy.music_collapse, {rate: 1, length: 5});env.embassy.advanceSfer(3, "rec_clear")
+        engage<+>END
+            FAKEEND::(begin combat)
+            SHOWIF::['gameplay_off', false]
+            EXEC::env.grm.combat("spatial_archivalintro");env.embassy.vn({bg: false, bstrdface: ''})
+        bypass<+>END
+            SHOWIF::['gameplay_off', true]
+            FAKEEND::(bypass combat)
+            EXEC::env.combat.dynamicCombat({dry: true});cutscene(true);setTimeout(()=>{cutscene(false);env.combat.dynamicCallback(env.rpg.enemyTeam)}, 1010);env.embassy.vn({bg: false, bstrdface: ''})
 `)
-// - d3_person_clear
-env.dialogues["d3_person_clear"] = generateDialogueObject(`
+
+// - d3_archiveintro
+env.dialogues["d3_archiveintro"] = generateDialogueObject(`
 start
     sourceless
-        THE ROOM STANDS SILENT
-            EXEC::pauseSwapCam(true)
-        I SEARCH THROUGH THE DEBRIS STREWN AROUND THE TENDRIL...
-            EXEC::env.combat.lastEngaged="attendant_squad_1"
+        OUR FOES LIE DESTROYED
+            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);env.stage.current.onStep();
         TEXEC::env.combat.dynamicReward()
-            EXEC::env.combat.lastEngaged="attendant_squad_2"
-        TEXEC::env.combat.dynamicReward()
-        IMMEDIATELY, GAKVU GOES TO CHECK A NEARBY QOU
-            EXEC::env.embassy.vn({bg: true, tozik: "defocus", gakvu: "defocus"});pauseSwapCam(true)
-    
-    gakvu
-        these ones...
-        the attendants were able to break through
-    
-    sourceless
-        SHE IS FROZEN THERE, BY THEIR CORPSE
-            EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
-        HER SORROW SPREADS INTO OUR CONNECTORS
-        WE HAVE LITTLE TO OFFSET IT 
-        BUT I AM NO STRANGER TO ITS BITE
-        AND TOZIK PREOCCUPIES HIMSELF WITH LOOKING THROUGH DEBRIS
-    
-    gakvu
         ...
-        this does not make any sense...
-        they really are killing <em>everyone</em>...
+        REALLY, A SATIK CYST? HERE? HOW PECULIAR...
+        I TURN IT OVER IN MY CLAWS, ITS MYRIAD APPLICATORS STARING BACK AT ME
+        PERHAPS THE ARCHIVAL VEIN'S DELIVERY CENTER HAD A BATCH
+        BUT IT MUST NOT HAVE BEEN INTENDED FOR OUR SPIRE θsegment...
 
-    sourceless
-        WHAT I EXPECTED TO BE SADNESS IN HER VOICE, 
-        IS INSTEAD SOMETHING LIKE MORBID CURIOSITY
-        TOZIK CEASES HIS RUMMAGING TO WATCH GAKVU FOR AN INSTANT
-        I CAN TELL HE WANTS TO PRY, BUT HE DOES NOT
-        AND I WOULD RATHER NOT DO THIS NOW...
-    
+    gakvu
+        ah! how clumsy that thing was!
+
     tozik
-        well,
-            EXEC::env.embassy.vn({bg: true, tozik: "fullview"})
-
-    sourceless
-        TOZIK PULLS A SFER CUBE FROM THE REMAINS OF A CONTAINER
-            EXEC::env.embassy.advanceSfer(1, "person_clear")
+        alone, perhaps...
+        but if we have to deal with multiple further within,
     
-    tozik
-        we still need some more sfer
-            SHOWIF::'EXEC::env.embassy.enoughSfer(false)'
-        we should check the rooms that are not broken
-            SHOWIF::'EXEC::env.embassy.enoughSfer(false)'
+    sourceless
+        TOZIK PAUSES AS HE REALIZES,
+            SHOWIF::'EXEC::page.party.inventory.filter(i => i[0].slug != \`sfer_cube\`).length == 0'
+        WE HAVE NO MATERIALS FOR USE IN COMBAT
+            SHOWIF::'EXEC::page.party.inventory.filter(i => i[0].slug != \`sfer_cube\`).length == 0'
+        HIS RECEPTORS ARE SUDDENLY CRUSHED DOWNWARDS
+            SHOWIF::'EXEC::page.party.inventory.filter(i => i[0].slug != \`sfer_cube\`).length == 0'
 
-        we have what we need to fix movefriend
-            SHOWIF::'EXEC::env.embassy.enoughSfer(true)'
-        we should head back to the relocator
-            SHOWIF::'EXEC::env.embassy.enoughSfer(true)'
+
+        TOZIK TURNS OVER THE MATERIALS WE HAVE ACQUIRED SO FAR
+            SHOWIF::'EXEC::page.party.inventory.filter(i => i[0].slug != \`sfer_cube\`).length'
+        KAVRUKAS,
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.kavruka)'
+        AIMA CYSTS,
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.aima_cyst)'
+        RESTORATIVE CYSTS...
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.restorative)'
+
+    tozik
+        we should put these to work
+            SHOWIF::'EXEC::page.party.inventory.filter(i => i[0].slug != \`sfer_cube\`).length'
+        we should probably be very, very careful
+            SHOWIF::'EXEC::page.party.inventory.filter(i => i[0].slug != \`sfer_cube\`).length == 0'
 
     RESPONSES::akizet
         continue<+>END
-            EXEC::env.embassy.vn({bg: false, tozik: "", gakvu: ""});pauseSwapCam(false)
+`)
 
-SKIP::env.embassy.advanceSfer(1, "person_clear");vn.done();pauseSwapCam(false)
+// - d3_archivalvein_intro
+env.dialogues["d3_archivalvein_intro"] = generateDialogueObject(`
+start
+    sourceless
+        A STRANGE DOOR STANDS BEFORE US AS WE ENTER
+            EXEC::change("PAGE!!archivalveinfight", true)
+        BUT THERE IS NO TIME TO EXAMINE IT
+        OUR FOES ARE UPON US RIGHT AWAY
+
+    RESPONSES::akizet
+        activate timestopper<+>END
+            EXEC::env.grm.combat("spatial_archivalvein");
+            SHOWIF::['gameplay_off', false]
+            FAKEEND::(initiate combat)
+        activate timestopper<+>CHANGE::d3_archivalvein
+            SHOWIF::['gameplay_off', true]
+            FAKEEND::(skip combat) 
+`)
+
+// - d3_archivalvein
+env.dialogues["d3_archivalvein"] = generateDialogueObject(`
+start
+    sourceless
+        THE ROOM IS SILENT
+            EXEC::env.stage.current.onStep()
+        I SCAVENGE THROUGH THE REMAINS OF OUR FOES...
+            EXEC::env.combat.lastEngaged="archivecommon"
+        TEXEC::env.combat.dynamicReward()
+            EXEC::env.combat.lastEngaged="archivecloaktainer"
+        TEXEC::env.combat.dynamicReward()
+
+    RESPONSES::akizet
+        proceed<+>END
+`)
+
+// - d3_archivecore_intro
+env.dialogues["d3_archivecore_intro"] = generateDialogueObject(`
+start
+    sourceless
+        AS WE ENTER, GAKVU SPOTS SOMETHING ACROSS THE ROOM
+            EXEC::change('PAGE!!archivalcorefight', true)
+
+    gakvu
+____SHOWIF::[["PAGE!!triedarchivedoor", true]]
+        is that it over there?
+        the 'cool orb thingy'?
+____END
+            
+        what is that?
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+
+    sourceless
+        GAKVU POINTS FORTH TO AN EYE-PIERCING MONOLITH
+            EXEC::specialCam('bstrdcyst1');pauseSwapCam(true)
+        IT SEEMS TO BE MADE OF THE SAME STRANGE MATERIAL FROM BEFORE...
+        AND OVER IT, FLOATS AN IMPORTANT-LOOKING CORRUCYST
+        BUT - WE CANNOT GO JUST YET
+            EXEC::specialCam(false);pauseSwapCam(false)
+        INCOHERENT FOES STAND IN OUR WAY
+        OUR ONLY OPTION IS TO FIGHT
+
+    RESPONSES::akizet
+        fight!!<+>END
+            EXEC::env.grm.combat("spatial_archivalcore");
+            SHOWIF::['gameplay_off', false]
+            FAKEEND::(initiate combat)
+        fight!!<+>CHANGE::d3_archivecore
+            SHOWIF::['gameplay_off', true]
+            FAKEEND::(skip combat)
+`)
+
+// d3_archivecore
+env.dialogues["d3_archivecore"] = generateDialogueObject(`
+start
+    sourceless
+        THE ROOM IS DEATHLY STILL, ASIDE FROM THE DRIPPING OF SPIREBLOOD FROM THE MELTING CEILING
+            EXEC::env.stage.current.onStep();
+        I PICK THROUGH THE REMNANTS OF OUR FOES...
+            EXEC::env.combat.lastEngaged="archivedouble"
+        TEXEC::env.combat.dynamicReward()
+        NOW, THERE IS NOTHING PREVENTING US FROM TAKING THE CYST
+        TOZIK WALKS FORTH TO TAKE IT, ATTEMPTING TO CONNECT TO IT...
+            EXEC::env.embassy.vn({tozik: "fullview"});addItem(env.ITEM_LIST.cool_orb_thingy);env.stage.current.hidePillarCyst();
+        BUT HE SIMPLY SMASHES IT AGAINST HIS RECEPTOR UNEXPECTEDLY - ITS GLASS DOES NOT PART AS USUAL
+        HE STUMBLES FROM THE IMPACT
+
+    tozik
+        ah...
+        ow...
+
+    sourceless
+        HE STILL ALLOWS HIMSELF TRUE PAIN? HOW SILLY
+
+    gakvu
+        let me see!
+            EXEC::env.embassy.vn({gakvu: "defocus"})
+
+    sourceless
+        SHE SKITTERS CLOSER, AND I EXPECT HER TO SNATCH IT FROM HIS CLAWS,
+            EXEC::env.embassy.vn({gakvu: "fullview"})
+        BUT INSTEAD, SHE INSPECTS HIS HEAD AND RECEPTOR FIRST
+        <em>THEN</em> SHE SNATCHES IT FROM HIS CLAWS,
+        PEERING INTO ITS ODDLY COLORED SKIN
+
+    gakvu
+        it is... alive,
+        but yes - it seems to be a receptor-lock
+        look!
+
+    sourceless
+        GAKVU TURNS THE CYST OVER IN HER CLAWS, TAPPING ITS MARKING
+        A PIGMENTATION SIGIL THAT READS, 'ON THE USE OF BRIGHT WEAPONRY'
+
+    gakvu
+        maybe that thing keeping the door locked...
+            SHOWIF::[["PAGE!!triedarchivedoor", true]]
+        is just a very strange qou from materials...?
+            SHOWIF::[["PAGE!!triedarchivedoor", true]]
+        who wants to preserve their research??
+            SHOWIF::[["PAGE!!triedarchivedoor", true]]
+
+        is this kazki's? why is it so strangely highlighted?
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+
+    akizet
+        without a doubt
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+        let us bring it along - it is small enough
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+        and we should continue looking around!
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+        there must be something else going on in this vein...
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+
+        maybe...
+            SHOWIF::[["PAGE!!triedarchivedoor", true]]
+        either way, we have the 'cool orb thingy'.
+            SHOWIF::[["PAGE!!triedarchivedoor", true]]
+        let us fetch the other thing--the 'black box'?
+            SHOWIF::[['EXEC::checkItem(env.ITEM_LIST.scary_black_box)', false], ["PAGE!!triedarchivedoor", true]]
+        let us return to the door
+            SHOWIF::[['EXEC::checkItem(env.ITEM_LIST.scary_black_box)', true], ["PAGE!!triedarchivedoor", true]]
+
+    tozik
+        <em>scary</em> black box
+            SHOWIF::[['EXEC::checkItem(env.ITEM_LIST.scary_black_box)', false], ["PAGE!!triedarchivedoor", true]]
+
+    RESPONSES::akizet
+        continue<+>END
+            EXEC::specialCam('');env.embassy.vn({gakvu: "", tozik: ""});pauseSwapCam(false)
 `)
 
 
+// - d3_archivedelivery
+env.dialogues["d3_archivedelivery"] = generateDialogueObject(`
+start
+    sourceless
+        AS SOON AS WE ENTER THE ROOM... I SEE THEM
+        EACH AND EVERY ONE
+        A HALF-DOZEN CONTAINERS, WITH ONE OF THOSE SURFACE-SENT LIGHTS
+        TOO MANY TO USE A DISABLER
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.disabler)'
+        BEFORE I CAN EVEN CURSE TO MYSELF, THEY ARE UPON US
+            EXEC::change('PAGE!!archiveambush', true)
+    
+    RESPONSES::akizet
+        fight!!<+>END
+            EXEC::env.grm.combat("spatial_archivaldelivery");
+            SHOWIF::['gameplay_off', false]
+            FAKEEND::(initiate combat)
+        fight!!<+>CHANGE::d3_archivedeliveryclear
+            SHOWIF::['gameplay_off', true]
+            FAKEEND::(skip combat)
+`)
 
+// - d3_archivedeliveryclear
+env.dialogues["d3_archivedeliveryclear"] = generateDialogueObject(`
+early
+    sourceless
+        AH - THERE, BEYOND THEIR CORPSES...
+        IT SEEMS TO BE A COUSINLY BOX?
+        I GO TO TAKE IT, THEN TRY TO OPEN IT...
+            EXEC::setCam({x: 3, y: 3, offsetCamera: 'rotateX(-30deg)', rotation: 110});pauseSwapCam(true)
+        BUT THE DEAD METAL LATCHES AND JOINTS HOLD IT FIRMLY SHUT
+        AND ON CLOSER INSPECTION, THAT STRANGE TENDRIL MATERIAL IS PRESENT HERE, TOO
+        IT SEEMS TO BE ASSISTING IN HOLDING IT SHUT...
 
-// - SKIPS
-// NOT DONE BTW
-env.embassy.skips = {
-    d3_start: ()=>{
-        content.classList.remove('innerfocus', 'showfocus', 'fade-stage', 'painprep', 'painmode')
-        content.classList.add('collapse')
-        vn.done()
-        vn.renderParty()
-        specialCam(false)
-        changeBgm(env.embassy.music_collapse, {length: 1})
+    akizet
+        curious - this looks like it came from the cousins
+        i have seen them use these boxes for sensitive materials
+
+    gakvu
+        like what?
+            EXEC::env.embassy.vn({gakvu: "defocus"})
+
+    sourceless
+        A PANG OF ANXIETY SHOOTS THROUGH MY MINDCORE
+        I SHOULD DEFINITELY NOT SAY,
+        'LIKE AN EXPERIMENTAL CORRU TO BRIGHT-LIGHTNING CONVERTER'
+
+    akizet
+        oh, uh, like,
+        apples...
+        because--they do not fare well with the low-air environment of our spire!
+
+    gakvu
+        ah. curious
+
+    sourceless
+        ½T~g«¾%
+        THEY MUST THINK I AM SIMPLY PRETENDING TO KNOW
+        OH WELL - IT IS BETTER THAN THE ALTERNATIVE
+        WE TAKE THE BOX WITH US - HEAVY, BUT EASY ENOUGH TO SET ASIDE WHEN NEEDED
+            EXEC::addItem(env.ITEM_LIST.scary_black_box)
+
+    akizet
+        i feel this may come in handy
+        if it proves too cumbersome, we may simply leave it
+        come - let us continue exploring
+
+    RESPONSES::akizet
+        continue<+>END
+            EXEC::env.embassy.vn({gakvu: ""});setCam();env.stage.current.onStep();pauseSwapCam(false);
+
+start
+____SHOWIF::'gameplay_off'
+    sys
+        ATTENTION::"thoughtform combat gameplay bypassed";'toggle within system menu if desired'
+____END
+
+    sourceless
+        THE LAST ONE FALLS
+            EXEC::env.stage.current.onStep()
+
+        AFTER THE FIGHT, WE ALL CHEER IN UNISON
+            SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
+        AN INGENIOUS USE OF KAVRUKAS, I WILL ALLOW MY PRIDE THIS VICTORY
+            SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
+
+        WE ALL COLLAPSE WITH RELIEF AFTER THE FIGHT
+            SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(false)'
+        THIS IS THE WORST θgaze OF MY θdeath
+            SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(false)'
         
-        switch(check("gameplay_off")) {
-            case false:
-                setTimeout(() => {
-                    change('PAGE!!skiptut', true)
-                    env.grm.combat("spatial_timestopper_testing");     
-                }, 50)
-            break
+    akizet
+        that could have been really bad...
+            SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
+    
+    tozik
+        no tendril left to rot
+            SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
+            EXEC::env.embassy.vn({tozik: "defocus"})
 
-            case true:
-                setTimeout(() => {
-                    startDialogue("d3_tutorial_end")                    
-                }, 600)
-            break
+    sourceless
+        I RUMMAGE A BIT THROUGH THE remains OF THESE CONSTRUCTS...
+            EXEC::step();env.embassy.vn({tozik: ""});env.combat.lastEngaged="archivecontainers";
+        TEXEC::env.combat.dynamicReward()
+
+        LET US SEE, WHAT ELSE IS HERE...
+            SHOWIF::[["PAGE!!triedarchivedoor", false]]
+            WAIT::500
+            EXEC::cutscene(true);if(!env.tempFlag){env.tempFlag = true; setTimeout(()=>{sendDialogue(env.currentDialogue.chain['early']);cutscene(false);env.tempFlag = false}, 1000)}
+
+        AH - THERE, BEYOND THEIR CORPSES, MUST BE THE 'SCARY BLACK BOX'
+        I GO TO TAKE IT, THEN TRY TO OPEN IT...
+            EXEC::setCam({x: 3, y: 3, offsetCamera: 'rotateX(-30deg)', rotation: 110});pauseSwapCam(true)
+        BUT THE DEAD METAL LATCHES AND JOINTS HOLD IT FIRMLY SHUT
+        AND ON CLOSER INSPECTION, THAT STRANGE TENDRIL MATERIAL IS PRESENT HERE, TOO
+        IT SEEMS TO BE ASSISTING IN HOLDING IT SHUT...
+
+    akizet
+        curious - this looks like it came from the cousins
+        i have seen them use these boxes for sensitive materials
+    
+    gakvu
+        like what?
+            EXEC::env.embassy.vn({gakvu: "defocus"})
+
+    sourceless
+        A PANG OF ANXIETY SHOOTS THROUGH MY MINDCORE
+        I SHOULD DEFINITELY NOT SAY,
+        'LIKE AN EXPERIMENTAL CORRU TO BRIGHT-LIGHTNING CONVERTER'
+    
+    akizet
+        oh, uh, like,
+        apples...
+        because--they do not fare well with the low-air environment of our spire!
+
+    gakvu
+        ah. curious
+
+    sourceless
+        ½T~g«¾%
+        THEY MUST THINK I AM SIMPLY PRETENDING TO KNOW
+        OH WELL - IT IS BETTER THAN THE ALTERNATIVE
+        WE TAKE THE BOX WITH US - HEAVY, BUT EASY ENOUGH TO SET ASIDE WHEN NEEDED
+            EXEC::addItem(env.ITEM_LIST.scary_black_box)
+
+    akizet
+        come - let us return to the door
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.cool_orb_thingy)'
+        come - let us find the "cool orb thingy"
+            SHOWIF::'EXEC::checkItem(env.ITEM_LIST.cool_orb_thingy) == false'
+        before this archival vein collapses even further through the spire...
+            EXEC::setCam();env.stage.current.onStep();
+
+    RESPONSES::akizet
+        continue<+>END
+            EXEC::env.embassy.vn({gakvu: ""});pauseSwapCam(false)
+`)
+
+// - d3_archivemini
+env.dialogues["d3_archivemini"] = generateDialogueObject(`
+start
+    sourceless
+        IMMEDIATELY AS WE PROCEED, A PRIMAL FEAR OVERTAKES ME
+        THOUGH I AM CERTAIN WHAT STANDS BEFORE US IS AN ARCHIVAL SHELF...
+        A DISTANT PART OF MY MIND ASSOCIATES IT WITH A SECRI
+        IS IT THE MALFORMED EYES? THE ELONGATED LIMBS?
+        OR MAYBE THE PROMISE OF DEATH FROM ITS TOUCH
+        THERE IS NO TIME TO FIND THE ROOT CAUSE
+        IT IS UPON US WITH WORRYING SPEED
+    
+    RESPONSES::akizet
+        fight!!<+>END
+            EXEC::env.grm.combat("spatial_archivalcore_sensitive");
+            SHOWIF::['gameplay_off', false]
+            FAKEEND::(initiate combat)
+        fight!!<+>CHANGE::d3_archiveminiclear
+            SHOWIF::['gameplay_off', true]
+            FAKEEND::(skip combat)
+`)
+
+// - d3_archiveboss
+env.dialogues["d3_archiveboss"] = generateDialogueObject(`
+start
+    sourceless
+        THIS ROOM...
+        IT IS SO WRONG THAT I FEEL MY MIND STRUGGLE TO PROCESS IT
+        IS THIS A PRODUCT OF THE SIGNAL?
+
+    gakvu
+        akizet, tozik...
+        do not--do not look into the gray
+
+    bstrd
+        FOCUS!!!
+        LOOK @ ME
+        O_O
+            EXEC::sfxmap.stop();play("crit", 0.75);specialCam("bstrdboss");pauseSwapCam(true)
             
-        }
-    },
+    sourceless
+        THE VOICE BOOMS FROM AN ARCHIVAL GOLEM
+        THAT STRANGE SIGIL IS OVER ITS HEAD,
+        A SASH OF KAVRUKAS HANGS OVER ITS TORSO...
+        WAIT--!!
+        AND THE BOX LIES NEAR ITS FEET, OPEN, BUT AWAY FROM US!
+        THE CYST IS NOWHERE TO BE SEEN, BUT... 
+        IT IS AN ARCHIVAL GOLEM, SO IT MAY BE WITHIN ITS CHASSIS
 
-    d3_relocator_repair: ()=>{
-        document.querySelector('#realgrid .lifter').classList.remove('fixed')
-        document.querySelector('#realgrid .lifter').classList.add('aggressormode')
-        content.classList.remove('painprep', 'painhalf', 'painmode')
-        specialCam(false)
-        vn.done()
+    bstrd
+        thx for getting this stuff
+        
+    sourceless
+        THE GOLEM KNEELS TO RETRIEVE A LONG BRIGHT WEAPON FROM THE BOX
+            EXEC::specialCam("bstrdbox")
+        IT MAKES A SERIES OF MOVEMENTS THAT PRODUCE CLICKS AND SNAPS FROM THE DEVICE
+            EXEC::content.querySelector('.bstrdboss').classList.add('gun');play('click2')
+        AND THE DOOR SHUTS BEHIND US--LOCKED AGAIN WITH THE SAME UNNATURAL TENDRILS
 
-        switch(check("gameplay_off")) {
-            case true:
-                setTimeout(()=>startDialogue("d3_movefriend_finish"), 550)
-            break
+    bstrd
+        u guys just taught a golem how to use gun's
+        BAD ASS ...
+        SHOOT EM!!! GET EMM DUDE!!
+        >:}
+    
+    sourceless
+        OUR HOPES OF HAVING A NEW FRIEND ARE STOMPED
+        BEFORE IT CAN EVEN RAISE ITS WEAPON, I ACTIVATE THE TIMESTOPPER
+        WE CAN ONLY FIGHT
+    
 
-            case false: 
-                if(check("low_intensity")) env.embassy.startMovefriendBoss('low')
-                else env.embassy.startMovefriendBoss()
-        }
-    },
+    RESPONSES::sys
+        force thoughtform rules over entity<+>END
+            EXEC::env.grm.combat("spatial_archivalboss_lowintensity");specialCam(false);pauseSwapCam(false)
+            FAKEEND::reduced intensity alternative
+            SHOWIF::[['low_intensity', true], ['gameplay_off', false]]
 
-    d3_movefriend_finish: ()=>{
-        specialCam(false)
-        changeBgm(page.bgm, {rate: 0.5, length:100})
-        document.querySelector('#realgrid .lifter').classList.remove('aggressormode')
-        document.querySelector('#realgrid .lifter').classList.add('fixed')
-        env.embassy.fixMovefriend()
-        change('PAGE!!movefixed', true)
-        vn.done()
-    }
-}
+    RESPONSES::akizet
+        fight!!<+>END
+            EXEC::env.grm.combat("spatial_archivalboss");specialCam(false);pauseSwapCam(false)
+            FAKEEND::(initiate combat) 
+            SHOWIF::['gameplay_off', false]
+        fight!!<+>CHANGE::d3_archivebossend
+            SHOWIF::['gameplay_off', true]
+            FAKEEND::(skip combat)
+`)
 
+// - loss
+env.dialogues["loss"] = generateDialogueObject(`
+start
+    sys
+        ATTENTION::'memory stream interrupted'
+        ATTENTION::'invalid procedure'
+        ATTENTION::'revert actions?'
+        NOTICE::'retry';'revert to starting state of combat proceeding'
+        NOTICE::'grace retry';'revert to start of combat proceeding';'regain all HP';'gain minor item advantage'
+        NOTICE::'exit';'return to memory selection'
+    
+    RESPONSES::sys
+        retry<+>END
+            EXEC::restorePartySnapshot();CombatScene.SCENARIOS[env.partySnapshot.scenarioName].retry()
+        grace retry<+>END
+            EXEC::restorePartySnapshot(true);CombatScene.SCENARIOS[env.partySnapshot.scenarioName].retry()
+        leave iteration<+>END
+            EXEC::moveTo("/local/ocean/embassy/")
+`)
 
 
 
@@ -1801,6 +3718,7 @@ env.stages['embassy_recreation'] = {
                         toggleBgm(env.embassy.music)
             break
         }
+        env.stage.current.onStep()
     },
     onStep: ()=>{
         if(!content.classList.contains("collapse")) {
@@ -1808,6 +3726,14 @@ env.stages['embassy_recreation'] = {
             if(env.stage.creatureLoc.y < 6) { env.stage.container.setAttribute("swapos", "bar") } 
             else if(env.stage.creatureLoc.x > 7) { env.stage.container.setAttribute("swapos", "kazkicorner") } 
             else { env.stage.container.removeAttribute("swapos") } }
+
+        if(check("PAGE!!recreationfight")) {
+            document.querySelectorAll('.enemy').forEach(e=>{
+                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
+                e.parentElement.id = ""; e.parentElement.dialogue = "";
+                e.parentElement.innerHTML = ""
+            })
+        }
     },
     //greater than 7 on both xy = kazkibozko corner
     entities: {
@@ -1828,13 +3754,14 @@ env.stages['embassy_recreation'] = {
         "W": { class: "prop blocks", contains: { class: "window", html: `<figure> <div class="target" entity="window"></div> </figure>` } },
         c: { class: "prop blocks", contains: { class: "container", html: `<figure style="transform: rotateY(-45deg)"></figure>` } },
         L: { class:"prop blocks", contains: { class: "listener", examineEntity: "listener", html: `<figure> <div class="cyst"></div> <div class="cyst"></div> <div class="cyst"></div> <div class="callscreen"></div> </figure>` } },
-        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "recreation_containers_1", dialogue: "d3_recreationenemy", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
-        "6": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "recreation_containers_2", dialogue: "d3_recreationenemy", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
-        "Ã´": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "recreation_containers_3", dialogue: "d3_recreationenemy", html: `<div class="collapsed lamp"><figure><div class="target" entity="hostile veilklight"></div></figure></div>` } },
         "Q": { class: "prop chartile blocks", contains: { class: "dyingqou collapseonly", examineEntity: "damaged qou body", html: `<figure></figure>` } },
         "q": { class: "prop chartile blocks", contains: { class: "dyingqou collapseonly", examineEntity: "mangled qou body", html: `<figure></figure>` } },
         'N': {  class: "blocks cwall north", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallW]" baseHeight="6"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallH]" baseHeight="6"></canvas>` } },
         'S': {  class: "blocks cwall south", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallH]" baseHeight="6"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallW]" baseHeight="6"></canvas>` } },
+
+        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
+        "6": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
+        "Ã´": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<div class="collapsed lamp"><figure><div class="target" entity="hostile veilklight"></div></figure></div>` } },
     },
     width: 13,
     plan: [
@@ -1864,8 +3791,19 @@ env.stages['embassy_cpersonnel'] = {
         if(!check('PAGE!!cpersonnel_intro')) {
             startDialogue("d3_person_intro")
             change('PAGE!!cpersonnel_intro', true)
-        }        
+        }   
+        env.stage.current.onStep()     
     },
+    onStep:()=> {
+        if(check("PAGE!!personnelfight")) {
+            document.querySelectorAll('.enemy').forEach(e=>{
+                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
+                e.parentElement.id = ""; e.parentElement.dialogue = "";
+                e.parentElement.innerHTML = ""
+            })
+        }
+    },
+
     entities: {
         "r": {
             class: "door up", teleportSpot: 26, teleportTarget: "embassy_relocator", shouldFace: 'left',
@@ -1887,9 +3825,13 @@ env.stages['embassy_cpersonnel'] = {
             /*lockFlag: "PAGE!!q3unlocked", lockExec: ()=>startDialogue('d3_person_locked')*/
         }, 
         "Q": { class: "prop blocks", contains: { class: "dyingqou collapseonly", examineEntity: "qou body", html: `<figure></figure>` } },
-        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "attendant_squad_1", dialogue: "d3_personnelenemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
-        "â˜»": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "attendant_squad_2", dialogue: "d3_personnelenemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
-        "â™¦": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "attendant_squad_3", dialogue: "d3_personnelenemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
+
+        "Ã¶": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticattendant"></span> </figure>` } },
+        "â™¦": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticattendant"></span> </figure>` } },
+
+
+        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
+        "â™¦": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
     },
     enterDirection: "down",
     width: 7,
@@ -1927,14 +3869,8 @@ env.stages['embassy_cquarters2'] = {
         if(check("PAGE!!kazkiambush")) { content.querySelectorAll('#realgrid .container:not(.destroyed)').forEach(el=>{ el.classList.add('destroyed') }) }
     },
     entities: {
-        "q": {
-            class: "door right fakeunlock",
-            teleportSpot: 8,
-            teleportTarget: "embassy_cpersonnel",
-            shouldFace: 'right',
-            lockFlag: "PAGE!!kazkiambush",
-            lockExec: ()=>startDialogue('d3r2_containerambush')
-        },
+        "q": { class: "door right fakeunlock", teleportSpot: 8, teleportTarget: "embassy_cpersonnel", shouldFace: 'right',
+            lockFlag: "PAGE!!kazkiambush", lockExec: ()=>startDialogue('d3r2_containerambush') },
         C: { class:"prop blocks genericblocker", },
         b: { class:"prop blocks", contains: { class: "bed", examineEntity: "rejuvenation chamber", html: `<figure></figure>` } },
         X: { class:"prop blocks genericblocker", },
@@ -1943,9 +3879,10 @@ env.stages['embassy_cquarters2'] = {
         },
         I: { class:"prop blocks", contains: { class: "lamp collapsed", html: `<figure><div class="target" entity="veilklight"></div></figure>` } },
         d: { class:"prop blocks", contains: { class: "deskleg" } },
-        c: { class: "prop blocks", contains: { class: "container showalways", html: `<figure style="transform: rotateY(-135deg)"> <div class="target" entity="conspicuous container"></div> </figure>` } },
         g: { class: "prop blocks notile", contains: { class: "kazkiguns", html: `<div class="target" entity="bright weapons"></div>` } },
         L: { class: "prop blocks", contains: { class: "shelf", examineEntity: "storage display", html: `<figure></figure>` } },
+
+        c: { class: "prop blocks", contains: { class: "container showalways", html: `<figure style="transform: rotateY(-135deg)"> <div class="target" entity="conspicuous container"></div> </figure>` } },
     },
 
     width: 7,
@@ -1964,12 +3901,357 @@ env.stages['embassy_cquarters2'] = {
 
 
 
-// - ARCHIVAL VEIN STAGES
+// - ARCHIVAL STAGES
+env.stages['embassy_archivalintro'] = {
+    creature: env.stageEntities.embassyCreature,
+    exec: ()=> { 
+        env.embassy.updateStageData()
+
+        if(isStageClear()) toggleBgm(env.embassy.music_collapse)
+        else toggleBgm(env.embassy.music_unsafe)
+
+        content.classList.remove("archives", "show-walls")
+        content.classList.add("archivehall")
+
+        setTimeout(env.stage.current.onStep, 500)
+    },
+
+    onStep: ()=>{
+        let strength = Math.clamp((1 / (env.stage.stageH - 3)) * (env.stage.creatureLoc.y - 3), 0, 1)
+        content.style.setProperty('--bstrdcontrol', strength)  
+
+        if(check("PAGE!!archivalintrofight")) {
+            document.querySelectorAll('.enemy').forEach(e=>{
+                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
+                e.parentElement.id = ""; e.parentElement.dialogue = "";
+                e.parentElement.innerHTML = ""
+            })
+        }
+    },
+    locale: "research",
+
+    entities: {
+        "v": { class: "door down", teleportSpot: 115, teleportTarget: "embassy_research", shouldFace: 'left', },
+        "^": { class: "door up bstrdoor", teleportSpot: 52, teleportTarget: "embassy_archivalvein", shouldFace: 'down', },
+
+        "♠": {
+            exec: ()=> {
+                if(document.querySelectorAll('.evil') && !check("PAGE!!archivewarn")) {
+                    chatter({actor: 'akizet', text: 'beware - it is as i feared', readout: true})
+                    setTimeout(()=>chatter({actor: 'akizet', text: 'archival golems are formed of black corru...', readout: true}), 2000)
+                    setTimeout(()=>chatter({actor: 'akizet', text: 'they are particularly tough!', readout: true}), 4000)
+                    change("PAGE!!archivewarn", true)
+                }
+            }
+        },
+
+        "ö": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", type: "archivetutorial", dialogue: "d3_bstrdintro", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
+    },
+
+    width: 3,
+    plan: [
+        '.','v','.',
+        '.','p','.',
+        '.','♠','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','░','.',
+        '.','ö','.',
+        '.','^','.',
+    ],
+}
+
+env.stages['embassy_archivalvein'] = {
+    creature: env.stageEntities.embassyCreature,
+    exec: ()=> { 
+        env.embassy.updateStageData()
+        
+        if(isStageClear()) toggleBgm(env.embassy.music_collapse)
+        else toggleBgm(env.embassy.music_unsafe)
+
+        content.classList.add("archives", "show-walls")
+        content.classList.remove("archivehall", "bastard")
+        if(!check("PAGE!!archivalveinfight")) startDialogue("d3_archivalvein_intro")
+    },
+
+    onStep:()=> {
+        if(check("PAGE!!archivalveinfight")) {
+            document.querySelectorAll('.enemy').forEach(e=>{
+                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
+                e.parentElement.id = ""; e.parentElement.dialogue = "";
+                e.parentElement.innerHTML = ""
+            })
+        }
+    },
+    locale: "research",
+
+    entities: {
+        "^": { class: "door up", teleportSpot: 46, teleportTarget: "embassy_archivalintro", shouldFace: 'down', },
+        "v": { class: "door down always-targeted", teleportTarget: "embassy_archivalcore_sensitive", teleportSpot: 45, examineEntity: "bstrd door",  shouldFace: 'left',
+               lockFlag: "PAGE!!bstrdlock", lockExec: ()=>chatter({actor: 'akizet', text: 'it is locked', readout: true}) },
+        "}": { class: "door left", teleportSpot: 26, teleportTarget: "embassy_archivalcore", shouldFace: 'left' },
+        "{": { class: "door right", teleportSpot: 26, teleportTarget: "embassy_archivaldelivery", shouldFace: 'left' },
+
+        'N': { class: "blocks cwall north", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` } },
+        'S': { class: "blocks cwall south", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas>` } },
+
+        "ö": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
+        "£": { contains: { id: "foe", class: "evil staysdead collapseonly maintcloak enemy", html: `<figure class="spritestack"> <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif"> <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"> <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"> <div class="target" entity="jutskin"></div> </figure>` } },
+    },
+
+    width: 15,
+    plan: [
+        '.','.','.','.','.','.','.','v','.','.','.','.','.','.','.',
+        'N','░','░','░','░','░','ö','░','£','░','░','░','░','░','.',
+        '}','░','░','░','░','░','░','░','░','░','░','░','░','░','{',
+        '.','░','░','░','░','░','░','p','░','░','░','░','░','░','S',
+        '.','.','.','.','.','.','.','^','.','.','.','.','.','.','.',
+        
+    ],
+
+    html: `<canvas class="veinceiling" sprite="/img/local/embassy/archivalceiling.gif" baseWidth="13.5" baseHeight="3"></canvas>`
+}
+
+env.stages['embassy_archivalcore'] = {
+    creature: env.stageEntities.embassyCreature,
+    exec: ()=> { 
+        env.embassy.updateStageData()
+        
+        if(isStageClear()) toggleBgm(env.embassy.music_collapse)
+        else toggleBgm(env.embassy.music_unsafe)
+
+        content.classList.add("archives", "show-walls")
+        if(checkItem(env.ITEM_LIST.cool_orb_thingy)) env.stage.current.hidePillarCyst()
+
+        startDialogue("d3_archivecore_intro")
+    },
+
+    hidePillarCyst: ()=>{
+        document.querySelectorAll(".bstrdpillar").forEach(el=>el.classList.add('nocyst'))
+    },
+
+    onStep:()=> {
+        if(check("PAGE!!archivalcorefight")) {
+            document.querySelectorAll('.enemy').forEach(e=>{
+                e.parentElement.classList.remove('prop', 'blocks')
+                e.parentElement.innerHTML = ""
+            })
+        }
+    },
+    locale: "research",
+
+    entities: {
+        ">": { class: "door right", teleportSpot: 31, teleportTarget: "embassy_archivalvein", shouldFace: 'right', },
+
+        "e": { class:"prop blocks notile", contains: { class: "archive", examineEntity: "archive", html: `<figure></figure>` } },
+        "ë": { class:"prop blocks notile", contains: { class: "archive opposite", examineEntity: "archive", html: `<figure></figure>` } },
+        "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
+        "P": { class:"prop blocks notile", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure><div class="target" priority="2" entity="unnerving cyst"></div></figure>` } },
+
+        "ö": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticarchivalgolem" style="transform:rotateY(90deg)"></span> </figure>`, } },
+
+        'N': { class: "blocks cwall north",
+            contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` } },
+        'S': { class: "blocks cwall south",
+            contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas>` } },
+    },
+
+    width: 7,
+    plan: [
+        '.','.','.','ë','.','.','.',
+        'N','░','░','░','░','░','.',
+        '.','░','░','░','░','░','.',
+        'E','P','ö','░','░','p','>',
+        '.','░','░','░','░','░','.',
+        '.','░','░','░','░','░','S',
+        '.','.','.','e','.','.','.',
+    ],
+
+    html: `<canvas class="veinsphere" sprite="/img/local/embassy/archivalspherecanvas.gif" baseWidth="7" baseHeight="7"></canvas>`
+}
+env.stages['embassy_archivalcore_sensitive'] = {
+    enterDirection: "left",
+    creature: env.stageEntities.embassyCreature,
+    exec: ()=> { 
+        env.embassy.updateStageData()
+        content.classList.add("archives", "show-walls")
+        
+        env.stage.current.onStep()
+
+        if(!check("PAGE!!archivemini")) {
+            toggleBgm(env.embassy.music_unsafe)
+            startDialogue("d3_archivemini")
+            setTimeout(()=>{change('PAGE!!archivemini', true), 100})
+        } else {
+            toggleBgm(env.embassy.music_collapse)
+        }
+    },
+
+    onStep: ()=>{
+        if(check("PAGE!!archivemini")) {
+            document.querySelectorAll('.enemy').forEach(e=>{
+                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
+                e.parentElement.id = ""; e.parentElement.dialogue = "";
+                e.parentElement.innerHTML = ""
+            })
+        }
+    },
+    locale: "research",
+
+    entities: {
+        ">": { class: "door right", teleportSpot: 22, teleportTarget: "embassy_archivalvein", shouldFace: 'up', },
+        "<": { class: "door left", teleportTarget: "embassy_archivalboss", teleportSpot: 45, lockFlag: "PAGE!!archivemini", shouldFace: 'down', },
+
+        "e": { class:"prop blocks notile", contains: { class: "archive", examineEntity: "archive", html: `<figure></figure>` } },
+        "ë": { class:"prop blocks notile", contains: { class: "archive opposite", examineEntity: "archive", html: `<figure></figure>` } },
+        "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
+        "ô": { class: "prop chartile blocks", contains: { class: "bstrdshelf", html: `<figure><div class="target" entity="hostile archive"></div></figure>` } },
+        "Y": { class: "blocks", contains: { class: "savepoint always-targeted shelfroom", id: "savepoint", examineEntity: "save iteration", }
+        },
+    },
+
+    width: 7,
+    plan: [
+        '.','.','.','ë','.','.','.',
+        '.','.','Y','.','░','.','.',
+        '.','░','░','░','.','░','.',
+        '<','░','ô','░','░','p','>',
+        '.','░','░','.','░','░','.',
+        '.','.','░','░','░','.','.',
+        '.','.','.','e','.','.','.',
+    ]
+}
+env.stages['embassy_archivalboss'] = {
+    creature: env.stageEntities.embassyCreature,
+    shouldFace: 'down',
+    exec: ()=> { 
+        env.embassy.updateStageData()
+        content.classList.add("archives", "bastard")
+        env.stage.current.onStep()
+    },
+
+    onStep: ()=>{
+        if(check("PAGE!!archiveboss")) {
+            toggleBgm(env.embassy.music_collapse)
+            content.classList.add("archives", "show-walls")
+            content.classList.remove("bastard")
+            document.querySelectorAll('.maintcloak, .lamp, .bstrdboss').forEach(el=>{
+                el.parentElement.classList.remove('prop', 'blocks', 'bstrdbosspanel')
+                el.parentElement.innerHTML = ""
+            })
+
+            if(!check("gameplay_off") && check("PAGE!!archivesclear") != "skipped") {
+                env.stage.current.showPillar()
+                if(checkItem(env.ITEM_LIST.sorry_cyst)) env.stage.current.hidePillarCyst()
+            }
+        } else {
+            toggleBgm(env.embassy.music_bstrd)
+            startDialogue("d3_archiveboss")
+            content.classList.add("archives", "bastard")
+        }
+    },
+
+    bossCollapse: ()=>{
+        document.querySelectorAll('.bstrdboss').forEach(el=>el.classList.add('broke'))
+    },
+
+    removeBastardBG: ()=>{  
+        content.classList.remove("bastard")
+    },
+
+    showPillar: ()=>{
+        document.querySelectorAll(".bstrdpillar").forEach(el=>el.parentElement.classList.remove('hide'))
+    },
+
+    hidePillarCyst: ()=>{
+        document.querySelectorAll(".bstrdpillar").forEach(el=>el.classList.add('nocyst'))
+    },
+
+    clearBossPals: ()=>{
+        document.querySelectorAll('.bstrdbosspanel').forEach(el=>el.classList.remove('bstrdbosspanel'))
+        document.querySelectorAll('.maintcloak, .lamp').forEach(el=>{
+            el.parentElement.classList.remove('prop', 'blocks', 'bstrdbosspanel')
+            el.parentElement.innerHTML = ""
+        })
+    },
+    locale: "research",
+
+    entities: {
+        "^": {
+            class: "door up",
+            teleportSpot: 22,
+            teleportTarget: "embassy_archivalvein",
+            shouldFace: 'up',
+        },
+
+        "ö": {
+            contains: {
+                id: "boss",
+                class: "prop blocks bstrdbosspanel",
+                html: `<figure> <span class="staticarchivalgolem"></span> </figure>`,
+            }
+        },
+
+        "ô": {
+            class: "prop blocks notile",
+            contains: {
+                class: "lamp bstrd collapsed",
+                html: `<figure><div class="target" entity="hostile veilklight"></div></figure>`
+            }
+        },
+
+        "£": {
+            class: "notile",
+            contains: {
+                id: "foe",
+                class: "evil staysdead collapseonly maintcloak",
+                type: "archivecloaktainer",
+                dialogue: "d3_genericenemy",
+                html: `<figure class="spritestack">
+                    <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif">
+                    <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
+                    <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
+                    <div class="target" entity="jutskin"></div>
+                </figure>`
+            }
+        },
+        
+        "P": {
+            class:"prop blocks notile hide",
+            contains: {
+                class: "bstrdpillar",
+                examineEntity: "peculiar obelisk",
+                html: `<figure></figure>`                
+            }
+        },
+    },
+
+    width: 7,
+    plan: [
+        '.', '.', '.', 'P', '░', '░', '.', 
+        '.', '░', '£', 'ö', 'ô', '.', '░', 
+        '░', '.', '.', '.', '.', '.', '.', 
+        '.', '.', '░', '░', '░', '░', '.', 
+        '.', '░', '.', '░', '░', '░', '.', 
+        '.', '.', '░', '░', '░', '.', '.', 
+        '.', '.', '░', 'p', '░', '.', '.', 
+        '.', '.', '.', '^', '.', '.', '.', 
+    ]
+}
 
 
 
 
 
-}, 500)
+}, 2000)
 }
 }) 
