@@ -8,6 +8,10 @@
 #combat-realgrid .lifter figure::after, #combat-realgrid .lifter figure::before, #combat-realgrid .lifter::after  { content:unset; }
 #combat-realgrid .lifter.sprite figure::after, #combat-realgrid .lifter.aggressormode figure::after { content:""; width:12.5vh; height:12.5vh; position:absolute; display:block; background:url(/img/sprites/aggressor/aggressoroverlay.png), url(/img/local/orbit/core.gif), radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(0,0,0,0) 45%); border-radius:100%; background-position:center; background-repeat:no-repeat; background-size:contain; animation:SPIN 20s linear infinite reverse; }
 
+/* BSTRDLIGHT*/
+.sprite-wrapper .veilksprite.bstrdlight::before, 
+.sprite-wrapper .veilksprite.bstrdlight::after { background-image: url(/img/sprites/bstrd/bstrd.gif); background-size:45%; background-position:center 20%; }
+
 
 
 /* TIMESTOPPER */
