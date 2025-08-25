@@ -1075,54 +1075,6 @@ env.ACTIONS.incoherent_gundown = {
 
 
 // - SCENARIOS
-// - remove below when done testing btw
-CombatScene.SCENARIOS['spatial_FUCKYOUFUCKYOUFUCKYOU'] = {
-    initEnemyTeam: ()=> [ "archival_bstrdlight", "archival_jutskin", "archival_jutskin" ],
-    initAllyTeam: ()=> page.party,
-
-    bgm:()=> new Howl({
-        onload: function() { page.howls.push(this) },
-        src: ['/audio/embassy_combat.ogg'], preload:true, loop:true, volume:1,
-        sprite:{ __default: [0, 159988, true] }
-    }),
-    bgmRate: ()=> 0.5,
-    combatClass: "research",
-
-    startCallback: ()=> { 
-        console.log("startcallback") 
-        env.rpg.enemyTeam.members.forEach((mem, i) => setTimeout(()=>{ if(mem.name=="Jutskin"){ mem.hp = 0;updateStats();play("shot", .5) } }, 250 * i ))
-        env.rpg.allyTeam.members.forEach((mem, i) => setTimeout(()=>{ if(mem.name=="Tozik" || mem.name=="Gakvu"){ mem.hp = 0;updateStats();play("shot", .5) } }, 250 * i ))
-        console.log(env.rpg.enemyTeam.members)
-    },
-    endCallback: (loser)=> {
-        if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_tutorial_end"); changeBgm(env.embassy.music_unsafe, {rate: 1}); }
-    },
-    retry: ()=> env.grm.defaultRetry(),
-    turnCallback: ()=> console.log("turncallback"),
-
-    width: 5,
-    plan: `
-        ░░░░░
-        ░J░J░
-        ░░B░░
-        ░░░░░
-        ░░░░░
-        ░TAG░
-        ░░░░░
-    `,
-    entities: {
-        "J": { spawnPoint: "archival_jutskin" },
-        "B": { spawnPoint: "archival_bstrdlight" },
-
-        "A": { spawnPoint: "akizet" },
-        "T": { spawnPoint: "tozik" },
-        "G": { spawnPoint: "gakvu" },
-    }   
-}
-
-
-
 // - CALL RESEARCH SCENARIOS
 CombatScene.SCENARIOS['spatial_timestopper'] = {
     initEnemyTeam: ()=> [ "research_introgolem" ],
