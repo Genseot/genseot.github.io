@@ -4202,6 +4202,6 @@ env.stages['embassy_archivalboss'] = {
 
 
 
-}, 2000)
+}, 5000)
 }
 }) 
