@@ -39,6 +39,7 @@
     - d3_archivedeliveryclear
     - d3_archivemini
     - d3_archiveboss
+    - d3_archivebossend
     - loss
 - STAGES
     - CALL RESEARCH STAGES
@@ -55,6 +56,12 @@
 
 
 // - INITIALISATION
+function ResetMusic() { 
+    setTimeout(()=>{ env.noBgmDuck = true;changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
+}
+
+
+
 document.addEventListener('corru_entered', ()=>{
 if(page.path == "/local/ocean/embassy/") {
 addResources([
@@ -1094,7 +1101,7 @@ CombatScene.SCENARIOS['spatial_timestopper'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_tutorial_end"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_tutorial_end") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1168,7 +1175,7 @@ CombatScene.SCENARIOS['spatial_recreation'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_rec_clear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_rec_clear") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1232,7 +1239,7 @@ CombatScene.SCENARIOS['spatial_personnel'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_person_clear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_person_clear") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1288,7 +1295,7 @@ CombatScene.SCENARIOS['spatial_cquarters2'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3r2_postcombat"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3r2_postcombat") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1353,7 +1360,7 @@ CombatScene.SCENARIOS['spatial_movefoe'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_movefriend_finish"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_movefriend_finish") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
@@ -1405,7 +1412,7 @@ CombatScene.SCENARIOS['spatial_movefoe_lowintensity'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_movefriend_finish"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_movefriend_finish") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
@@ -1449,7 +1456,7 @@ CombatScene.SCENARIOS['spatial_archivalintro'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archiveintro"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archiveintro") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1495,7 +1502,7 @@ CombatScene.SCENARIOS['spatial_archivalvein'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivalvein"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archivalvein") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1550,7 +1557,7 @@ CombatScene.SCENARIOS['spatial_archivalcore'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivecore"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archivecore") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1606,7 +1613,7 @@ CombatScene.SCENARIOS['spatial_archivaldelivery'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivedeliveryclear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archivedeliveryclear") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1656,7 +1663,7 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
     startCallback: ()=> { console.log("startcallback"); env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType.damagetile,  effect: "scene_edge", length: 99 }); },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archiveminiclear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archiveminiclear") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1725,7 +1732,7 @@ CombatScene.SCENARIOS['spatial_archivalboss'] = {
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivebossend"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archivebossend") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1790,7 +1797,7 @@ CombatScene.SCENARIOS['spatial_archivalboss_lowintensity'] = {
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else { startDialogue("d3_archivebossend"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
+        else { startDialogue("d3_archivebossend") }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -2237,6 +2244,7 @@ ____END
 
     sourceless
         THE GOLEM CRASHES TO THE GROUND, 
+            EXEC::ResetMusic();
         WHERE ITS GEOMETRIC COMPONENTS MELT INTO CORRUCYSTIC WASTE
         WITHIN ARE A FEW QUICK-REPAIR <span definition="INHERITED CONTEXT::${env.ITEM_LIST['restorative'].description}">RESTORATIVE CYSTS</span>, SO I TAKE THEM
             EXEC::env.embassy.conditionalItem('restorative', 3, 'tutrest')
@@ -2322,7 +2330,7 @@ env.dialogues["d3_rec_clear"] = generateDialogueObject(`
 start
     sourceless
         WITH THESE LAST FEW DEAD, THE SKITTERING FALLS QUIET
-            EXEC::env.stage.current.onStep();
+            EXEC::env.stage.current.onStep();ResetMusic();
         TOZIK KNEELS BY A CONTAINER, GAKVU NEAR ANOTHER, 
         AND THEY RIFLE THROUGH THE SLUDGY REMAINS
             EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
@@ -2435,7 +2443,7 @@ env.dialogues["d3_person_clear"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM STANDS SILENT
-            EXEC::pauseSwapCam(true);env.stage.current.onStep();
+            EXEC::pauseSwapCam(true);env.stage.current.onStep();ResetMusic();
         I SEARCH THROUGH THE DEBRIS STREWN AROUND THE TENDRIL...
             EXEC::env.combat.lastEngaged="attendant_squad_1"
         TEXEC::env.combat.dynamicReward()
@@ -2550,7 +2558,7 @@ ____END
 
     sourceless
         THE CONTAINERS LIE MOTIONLESS, SLOWLY MELTING INTO WASTE
-            EXEC::change("PAGE!!kazkiambush", true);env.stage.current.onStep();
+            EXEC::change("PAGE!!kazkiambush", true);env.stage.current.onStep();ResetMusic();
         A NUMBER OF SUBMERGED SHAPES FLOAT TO THEIR SURFACES
         TEXEC::env.combat.dynamicReward()
         WITH A LITTLE DIGGING, WE FIND SOME SFER CUBES!
@@ -2735,7 +2743,7 @@ ____END
 
     sourceless
         ALL AT ONCE, THE CHAOS STOPS
-            EXEC::specialCam("movefriend_examine");
+            EXEC::specialCam("movefriend_examine");ResetMusic();
         THE AGGRESSOR'S SIGIL FLICKERS AWAY, 
             EXEC::document.querySelector('#realgrid .lifter').classList.remove('aggressormode')
         AND MOVEFRIEND'S FACE RETURNS
@@ -3150,7 +3158,7 @@ env.dialogues["d3_archiveintro"] = generateDialogueObject(`
 start
     sourceless
         OUR FOES LIE DESTROYED
-            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);env.stage.current.onStep();
+            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);env.stage.current.onStep();ResetMusic();
         TEXEC::env.combat.dynamicReward()
         ...
         REALLY, A SATIK CYST? HERE? HOW PECULIAR...
@@ -3217,7 +3225,7 @@ env.dialogues["d3_archivalvein"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM IS SILENT
-            EXEC::env.stage.current.onStep()
+            EXEC::env.stage.current.onStep();ResetMusic();
         I SCAVENGE THROUGH THE REMAINS OF OUR FOES...
             EXEC::env.combat.lastEngaged="archivecommon"
         TEXEC::env.combat.dynamicReward()
@@ -3269,7 +3277,7 @@ env.dialogues["d3_archivecore"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM IS DEATHLY STILL, ASIDE FROM THE DRIPPING OF SPIREBLOOD FROM THE MELTING CEILING
-            EXEC::env.stage.current.onStep();
+            EXEC::env.stage.current.onStep();ResetMusic();
         I PICK THROUGH THE REMNANTS OF OUR FOES...
             EXEC::env.combat.lastEngaged="archivedouble"
         TEXEC::env.combat.dynamicReward()
@@ -3373,6 +3381,7 @@ env.dialogues["d3_archivedeliveryclear"] = generateDialogueObject(`
 early
     sourceless
         AH - THERE, BEYOND THEIR CORPSES...
+            EXEC::ResetMusic();
         IT SEEMS TO BE A COUSINLY BOX?
         I GO TO TAKE IT, THEN TRY TO OPEN IT...
             EXEC::setCam({x: 3, y: 3, offsetCamera: 'rotateX(-30deg)', rotation: 110});pauseSwapCam(true)
@@ -3425,7 +3434,7 @@ ____END
 
     sourceless
         THE LAST ONE FALLS
-            EXEC::env.stage.current.onStep()
+            EXEC::env.stage.current.onStep();ResetMusic();
 
         AFTER THE FIGHT, WE ALL CHEER IN UNISON
             SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
@@ -3589,6 +3598,151 @@ start
         fight!!<+>CHANGE::d3_archivebossend
             SHOWIF::['gameplay_off', true]
             FAKEEND::(skip combat)
+`)
+
+// - d3_archivebossend
+env.dialogues["d3_archivebossend"] = generateDialogueObject(`
+start
+    sourceless
+        THE GOLEM FALLS TO PIECES, ITS HOVERING CAPABILITIES SLUDGED
+            EXEC::env.stage.current.bossCollapse();env.stage.current.clearBossPals();ResetMusic();
+        BUT ITS SIGIL AND STRANGE VOICE REMAIN
+            EXEC::change('PAGE!!archiveboss', true);
+
+____SHOWIF::['gameplay_off']
+    sys
+        ATTENTION::"thoughtform combat gameplay bypassed";'toggle within system menu if desired'
+
+    bstrd
+        WTF
+            EXEC::specialCam("bstrdbox");pauseSwapCam(true)
+        have u been doing that...
+        THIS WHOLE TIME???
+        >:[
+        NOT FAIR!
+        THIS FUCKINGE SUCKS
+    
+    tozik
+        what are you talking about?
+    
+    bstrd
+        after all i did...
+        to give u a good time...
+        ...
+        u... get...
+        NOTHING!!!!
+
+    sourceless
+        THE SIGIL OVER THE GOLEM'S HEAD FADES, AND ALL AT ONCE, THINGS SEEM TO RETURN TO NORMAL
+            EXEC::env.stage.current.removeBastardBG();env.stage.current.onStep()
+        there is an eerie silence...
+        what could it have meant by that?
+        
+    akizet
+        well...
+        let us return to fixing movefriend
+        we have deviated enough
+            EXEC::change("PAGE!!archivesclear", "skipped")
+    
+____SHOWIF::['gameplay_off', false]
+    bstrd
+        HOLEY SMOKES :O
+            EXEC::specialCam("bstrdbox");pauseSwapCam(true)
+        wow...
+            EXEC::ratween(env.bgm, 0.75)
+        u really did it
+        i was p sure i was gonna KILL u guys there
+    
+    tozik
+        why... why did...
+    
+    bstrd
+        SHUT UP im not done yet
+        listen im about 2 die so i gotta tell u this quick
+        arr... the paine..
+        OHH it HURTS BAD!!!
+        ;-(
+        anywy i found this outside so u can have it
+        im p sure its important so hang on 2 it
+    
+    sourceless
+        BEHIND THE DYING GOLEM RISES ANOTHER STRANGE MONOLITH
+            EXEC::env.stage.current.showPillar(true)
+        OVER IT IS... IT LOOKS LIKE A CORRUCYST
+        AND THERE IS SOME SORT OF MARKING ON IT
+        BUT I CANNOT SEE IT CLEARLY FROM HERE
+
+    gakvu
+        you seem pretty intelligent, for... what is going on
+        do you know what is happening? we could fix you if you help us!
+        
+    akizet
+        and agree not to try to kill us again...
+    
+    bstrd
+        :U
+    
+    sourceless
+        THERE IS A LONG, UNCOMFORTABLE PAUSE
+        DID IT NOT EXPECT TO LIVE THIS LONG? OR FOR US TO MAKE THAT OFFER?
+
+    bstrd
+        no i gotta kill u guys sry
+        but u won this time so gj
+        
+    sourceless
+        THE SIGIL FADES, AND ALL AT ONCE, THINGS SEEM TO RETURN TO NORMAL
+            EXEC::env.stage.current.removeBastardBG()
+        OUR FOE'S GOLEM FALLS TO PIECES ON THE FLOOR, WHERE IT SLOWLY MELTS AWAY
+            EXEC::env.stage.current.onStep()
+        EVEN THE COLOR OF THE ROOM HAS CHANGED...
+        WE ALL STAND IN SILENCE FOR A MOMENT AS WE PROCESS WHAT HAS HAPPENED
+        I LOOK AT THE MONOLITH AGAIN, AND CURIOSITY PULLS ME CLOSER
+            EXEC::specialCam("bstrdbosspillar")
+        
+    akizet
+        well,
+        let us see what that creature left for us...
+    
+    sourceless
+        I TURN THE CORRUCYST OVER IN MY HANDS
+        THE MARKING READS, "SORRY"
+        APOLOGIZING...? FOR TRYING TO KILL US?
+        NO - I FEEL THAT IT PREDATES THIS ENTITY'S INTERFERENCE
+        SOMETHING ABOUT IT FEELS FAMILIAR
+        REGARDLESS, I PLACE THE CYST ON ONE OF MY RECEPTORS, AND...
+            EXEC::env.stage.current.hidePillarCyst();addItem(env.ITEM_LIST.sorry_cyst)
+        FASCINATING!!
+
+    akizet
+        tozik...
+        this is a weapon schematic
+
+    tozik
+        for what?
+    
+    akizet
+        it looks like some sort of compact golem armament...
+        but the schematic itself is unfocused
+        i feel the information is still there, just scrambled
+        if we come across any foundry vats, we could probably fix the cyst and create it!
+        
+    sourceless
+        I GLANCE DOWN AT THE GOLEM'S CORPSE, STILL CLUTCHING ITS BRIGHT WEAPON
+        THE MIND INHABITING IT - SO VIOLENT, BUT STILL HONORABLE
+        TRULY BIZARRE...
+        I KNEEL ALL THE SAME, AND PLACE MY CLAW OVER WHAT REMAINS OF ITS PALE EYESPOTS
+    
+    akizet
+        you fought well... whatever you were
+        let us return to fixing movefriend
+        we have deviated enough
+            EXEC::change("PAGE!!archivesclear", true)
+____END
+
+    RESPONSES::akizet
+        leave<+>END
+            EXEC::specialCam("");pauseSwapCam(false)
 `)
 
 // - loss
