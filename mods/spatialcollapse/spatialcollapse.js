@@ -1960,9 +1960,6 @@ env.embassy.skips = {
 // - d3_start
 env.dialogues["d3_start"] = generateDialogueObject(`
 start
-    moth
-        bleh test
-
     sourceless
         TOZIK, GAKVU AND I SIT HALF-CONNECTED TO THE TIMESTOPPER
             EXEC::content.classList.add('innerfocus', 'showfocus');content.querySelector('.focus').classList.add('day3')
