@@ -3982,7 +3982,7 @@ env.stages['embassy_archivalcore'] = {
         content.classList.add("archives", "show-walls")
         if(checkItem(env.ITEM_LIST.cool_orb_thingy)) env.stage.current.hidePillarCyst()
 
-        startDialogue("d3_archivecore_intro")
+        if(!check("PAGE!!archivalcorefight")) startDialogue("d3_archivecore_intro")
     },
 
     hidePillarCyst: ()=>{
