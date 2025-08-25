@@ -84,7 +84,7 @@
 .spatiallistener figure span.cyst3 { width:15%; height:15%; top:83%; right:-2%; position:absolute; background:url(https://corru.observer/img/sprites/obesk/c2.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:rotateZ(15deg); }
 
 .spatiallistener figure span.listener.recreation { width:100%; height:100%; position:absolute; background:url(https://corru.observer/img/local/embassy/listener.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:translateX(10px) translateZ(8px); }
-.spatiallistener figure span.callscreen.recreation { width:20%; height:20%; border-radius:100%; top:20%; left:35%; overflow:hidden; background-color:var(--friend-color); border:2px solid var(--dark-color);  transform:var(--triform); transform-origin:top; --triform:translateX(-10px) translateZ(8px); }
+.spatiallistener figure span.callscreen.recreation { width:20%; height:20%; border-radius:100%; top:20%; left:35%; overflow:hidden; background-color:var(--friend-color); border:2px solid var(--dark-color);  transform:var(--triform); transform-origin:top; --triform:translateZ(8px); }
 .spatiallistener figure span.callscreen.recreation::after { content:""; width:200%; height:100%; background-size:50% 100%; background:url(https://corru.observer/img/textures/corruripple.gif); animation:unset; }
 .spatiallistener figure span.cyst1.recreation { width:15%; height:15%; top:83%; right:20%; position:absolute; background:url(https://corru.observer/img/sprites/obesk/c4.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateZ(10px) rotateZ(50deg); }
 .spatiallistener figure span.cyst2.recreation { width:15%; height:15%; top:83%; right:10%; position:absolute; background:url(https://corru.observer/img/sprites/obesk/c5.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateZ(9px); }
@@ -130,7 +130,8 @@
 
 /* WINDOW CORNER */
 .spatialwindow figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
-.spatialwindow figure span.window { width:150%; height:100%; position:absolute; background:url(https://corru.observer/img/local/embassy/window.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateX(-10px) translateZ(-5px) translateY(-35px) rotateY(45deg) rotateX(180deg) rotateZ(180deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.spatialwindow figure span.window { width:150%; height:100%; bottom:unset; position:absolute; background-image:url(https://corru.observer/img/local/embassy/window.gif); background-size:contain; background-position:center; background-repeat:no-repeat; backface-visibility:hidden; -webkit-backface-visibility:hidden; transform:translateX(-10px) translateZ(-5px) translateY(-35px) rotateY(45deg) rotateX(180deg) rotateZ(180deg);}
+.spatialwindow figure span.window::before { content:""; width:100%; height:25%; position:absolute; background:url(/img/textures/corruripplegrayscale.gif); backface-visibility:hidden; -webkit-backface-visibility:hidden; transform:translateZ(-1px) translateY(75px); }
 
 .spatialfloor figure { width:400%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
 .spatialfloor figure span:nth-child(1) { width:350%; height:200%; position:absolute; background:url(https://corru.observer/img/local/embassy/cornermasscolor.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:translateY(99.75px) translateX(-199px) translateZ(-50px) rotateX(90deg); }
@@ -305,4 +306,3 @@ transform:translateY(99.75px) translateX(-500px) rotateX(90deg) rotateY(180deg) 
 .spatialsorrypillar figure { width:100%; height:100%; display:flex; justify-content:center; align-items:center; position:absolute; }
 .spatialsorrypillar figure span.pillar { width:100%; height:120%; position:absolute; background:url(https://corru.observer/img/local/embassy/bstrdpillar.gif); background-size:contain; backgorund-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:translateY(-10px) translateX(15px); }
 .spatialsorrypillar figure span.cyst { width:45%; height:45%; position:absolute; background:url(https://corru.observer/img/sprites/combat/items/sorry_dither.gif); background-size:contain; background-position:center; background-repeat:no-repeat; transform:var(--triform); transform-origin:top; --triform:translateY(-95px) translateX(-2px); }
-
