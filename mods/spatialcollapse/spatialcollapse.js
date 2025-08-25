@@ -1094,7 +1094,7 @@ CombatScene.SCENARIOS['spatial_timestopper'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_tutorial_end")
+        else { startDialogue("d3_tutorial_end"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1168,7 +1168,7 @@ CombatScene.SCENARIOS['spatial_recreation'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_rec_clear")
+        else { startDialogue("d3_rec_clear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1232,7 +1232,7 @@ CombatScene.SCENARIOS['spatial_personnel'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_person_clear"); 
+        else { startDialogue("d3_person_clear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1288,7 +1288,7 @@ CombatScene.SCENARIOS['spatial_cquarters2'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3r2_postcombat")
+        else { startDialogue("d3r2_postcombat"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1353,7 +1353,7 @@ CombatScene.SCENARIOS['spatial_movefoe'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_movefriend_finish")
+        else { startDialogue("d3_movefriend_finish"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
@@ -1405,7 +1405,7 @@ CombatScene.SCENARIOS['spatial_movefoe_lowintensity'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_movefriend_finish")
+        else { startDialogue("d3_movefriend_finish"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: (actor)=> { if(actor.name=="Gakvu" && actor.state=="dead") env.grm.startRetryOffer() },
@@ -1449,7 +1449,7 @@ CombatScene.SCENARIOS['spatial_archivalintro'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archiveintro")
+        else { startDialogue("d3_archiveintro"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1495,7 +1495,7 @@ CombatScene.SCENARIOS['spatial_archivalvein'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archivalvein")
+        else { startDialogue("d3_archivalvein"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1550,7 +1550,7 @@ CombatScene.SCENARIOS['spatial_archivalcore'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archivecore")
+        else { startDialogue("d3_archivecore"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1606,7 +1606,7 @@ CombatScene.SCENARIOS['spatial_archivaldelivery'] = {
     startCallback: ()=> console.log("startcallback"),
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archivedeliveryclear")
+        else { startDialogue("d3_archivedeliveryclear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1656,7 +1656,7 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
     startCallback: ()=> { console.log("startcallback"); env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType.damagetile,  effect: "scene_edge", length: 99 }); },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archiveminiclear")
+        else { startDialogue("d3_archiveminiclear"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1725,7 +1725,7 @@ CombatScene.SCENARIOS['spatial_archivalboss'] = {
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archivebossend")
+        else { startDialogue("d3_archivebossend"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -1790,7 +1790,7 @@ CombatScene.SCENARIOS['spatial_archivalboss_lowintensity'] = {
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
-        else startDialogue("d3_archivebossend")
+        else { startDialogue("d3_archivebossend"); env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }
     },
     retry: ()=> env.grm.defaultRetry(),
     turnCallback: ()=> console.log("turncallback"),
@@ -2237,7 +2237,6 @@ ____END
 
     sourceless
         THE GOLEM CRASHES TO THE GROUND, 
-            EXEC::env.noBgmDuck = true;changeBgm(env.embassy.music_collapse);
         WHERE ITS GEOMETRIC COMPONENTS MELT INTO CORRUCYSTIC WASTE
         WITHIN ARE A FEW QUICK-REPAIR <span definition="INHERITED CONTEXT::${env.ITEM_LIST['restorative'].description}">RESTORATIVE CYSTS</span>, SO I TAKE THEM
             EXEC::env.embassy.conditionalItem('restorative', 3, 'tutrest')
@@ -2323,7 +2322,7 @@ env.dialogues["d3_rec_clear"] = generateDialogueObject(`
 start
     sourceless
         WITH THESE LAST FEW DEAD, THE SKITTERING FALLS QUIET
-            EXEC::env.noBgmDuck = true;changeBgm(env.embassy.music_collapse);env.stage.current.onStep();
+            EXEC::env.stage.current.onStep();
         TOZIK KNEELS BY A CONTAINER, GAKVU NEAR ANOTHER, 
         AND THEY RIFLE THROUGH THE SLUDGY REMAINS
             EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
@@ -2436,7 +2435,7 @@ env.dialogues["d3_person_clear"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM STANDS SILENT
-            EXEC::pauseSwapCam(true);changeBgm(env.embassy.music_unsafe, {rate: 1});env.stage.current.onStep();
+            EXEC::pauseSwapCam(true);env.stage.current.onStep();
         I SEARCH THROUGH THE DEBRIS STREWN AROUND THE TENDRIL...
             EXEC::env.combat.lastEngaged="attendant_squad_1"
         TEXEC::env.combat.dynamicReward()
@@ -2551,7 +2550,7 @@ ____END
 
     sourceless
         THE CONTAINERS LIE MOTIONLESS, SLOWLY MELTING INTO WASTE
-            EXEC::change("PAGE!!kazkiambush", true);env.stage.current.onStep();changeBgm(env.embassy.music_unsafe, {rate: 1});
+            EXEC::change("PAGE!!kazkiambush", true);env.stage.current.onStep();
         A NUMBER OF SUBMERGED SHAPES FLOAT TO THEIR SURFACES
         TEXEC::env.combat.dynamicReward()
         WITH A LITTLE DIGGING, WE FIND SOME SFER CUBES!
@@ -2736,7 +2735,7 @@ ____END
 
     sourceless
         ALL AT ONCE, THE CHAOS STOPS
-            EXEC::specialCam("movefriend_examine");changeBgm(env.embassy.music_unsafe, {rate: 1});
+            EXEC::specialCam("movefriend_examine");
         THE AGGRESSOR'S SIGIL FLICKERS AWAY, 
             EXEC::document.querySelector('#realgrid .lifter').classList.remove('aggressormode')
         AND MOVEFRIEND'S FACE RETURNS
@@ -4207,4 +4206,3 @@ env.stages['embassy_archivalboss'] = {
 }, 2000)
 }
 }) 
-
