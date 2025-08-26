@@ -1109,13 +1109,13 @@ CombatScene.SCENARIOS['spatial_timestopper'] = {
     width: 13,
     plan: `
         .l░L░░L░░L░l.
-        .░░░░░G░░░░░.
+        .░░░░░T░░░░░.
         .░░░░░1░░░░░.
         .░░░6ccc2A░░.
         .░░░ccccc░░d.
-        .░░░ccCccE░D.
-        .░░░ccccc░░d.
-        .░░░5ccc3T░░.
+        .░░░ccCcc░░D.
+        .░░░cccccE░d.
+        .░░░5ccc3G░░.
         .░░░░░4░░░░░.
         .l░░░░░░░░░l.
     `,
