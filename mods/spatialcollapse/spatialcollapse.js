@@ -56,8 +56,15 @@
 
 
 // - INITIALISATION
+function KillEveryone() {
+    setTimeout(()=>{ env.stage.current.onStep(); }, 1000)
+}
 function ResetMusic() { 
-    setTimeout(()=>{ env.noBgmDuck = true;changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
+    setTimeout(()=>{ env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
+}
+
+function EvilMovefriend() {
+    setTimeout(()=> { document.querySelector('#realgrid .lifter').classList.remove('fixed');document.querySelector('#realgrid .lifter').classList.add('aggressormode') }, 1000)
 }
 
 
@@ -805,7 +812,7 @@ env.ACTIONS.archival_smash = {
             .xxx.
             .xox.
         `,
-        canHit: (user, target) => { if(target != user) return target.team.name == user.team.name }
+        canHit: (user, target) => { if(target != user) return target.team.name != user.team.name }
     },
     exec: function(user, target) {
         removeStatus(user, "windup")
@@ -1017,6 +1024,7 @@ env.ACTIONS.incoherent_gundown = {
     desc: "BATTLEFIELD 100% -1HP per hit",
 
     accuracy: 1, crit: 0,
+    stats:{ range:8 },
     exec: function(user, target) {
         addStatus({target: user, status: "incoherent", length: 1, noReact: true}); actionMessage(user, "%USER AIMS AT %TARGET", target);
         user.sprite.classList.add('aiming'); play('click1');
@@ -1660,7 +1668,11 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
     bgmRate: ()=> 0.75,
     combatClass: "bastard bstrdshelf",
 
-    startCallback: ()=> { console.log("startcallback"); env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType.damagetile,  effect: "scene_edge", length: 99 }); },
+    startCallback: ()=> { 
+        env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType["damagetile-top"], effect: "scene_edge", length: 999, data: { direction: "down" } })
+        env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType["damagetile-bottom"], effect: "scene_edge", length: 999, data: { direction: "up" } })
+        env.rpg.grid.createTileEffect({ tiles: env.rpg.grid.tilesByType["damagetile-left"], effect: "scene_edge", length: 999, data: { direction: "right" } })
+    },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
         else { startDialogue("d3_archiveminiclear") }
@@ -1670,20 +1682,20 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
 
     width: 16,
     plan: `
-        .....t...t......
         .....T...T......
         ...---------....
         ..--░.-░.░░---..
-        .--░.L░.░.░░░Z..
+        .>-░.L░.░.░░░Z..
         .}░P░░░░.░░░░A{.
-        .--░J░.░░░..░G..
-        .-░░-.░░-░.░--..
-        .------------...
+        .>+░J░.░░░..░G..
+        .+░░+.░░+░.░++..
+        .++++++++++++...
         ......B...B.....
-        ......b...b.....
     `,
     entities: {
-        "-": { class: "basic notile damagetile" },
+        "-": { class: "basic notile damagetile-top" },
+        "+": { class: "basic notile damagetile-bottom" },
+        ">": { class: "basic notile damagetile-left" },
 
         "P": { spawnPoint: "archival_painshelf" },
         "L": { spawnPoint: "archival_bstrdlight" },
@@ -1699,9 +1711,7 @@ CombatScene.SCENARIOS['spatial_archivalcore_sensitive'] = {
         "{": { class:"blocks los notile", contains: { html:`<figure> <span></span> </figure>`, dyp: { class:"spatialarchivedoorright", image:"transparent" } } },
 
         "T": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
-        "t": { class:"blocks los notile", contains: { html: `<figure> <span class="top archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
         "B": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalshelf", image:"transparent" } } },
-        "b": { class:"blocks los notile", contains: { html: `<figure> <span class="bottom archivalcoresensitive"></span> </figure>`, dyp: { class:"spatialarchivalwall", image:"transparent" } } },
     }
 }
 CombatScene.SCENARIOS['spatial_archivalboss'] = {
@@ -2330,7 +2340,7 @@ env.dialogues["d3_rec_clear"] = generateDialogueObject(`
 start
     sourceless
         WITH THESE LAST FEW DEAD, THE SKITTERING FALLS QUIET
-            EXEC::env.stage.current.onStep();ResetMusic();
+            EXEC::KillEveryone();ResetMusic();
         TOZIK KNEELS BY A CONTAINER, GAKVU NEAR ANOTHER, 
         AND THEY RIFLE THROUGH THE SLUDGY REMAINS
             EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
@@ -2395,7 +2405,7 @@ start
         go get them out<+>END
             EXEC::change("PAGE!!queue_person_enable", true)
 
-SKIP::change("PAGE!!queue_person_enable", true);changeBgm(env.embassy.music_collapse, {rate: 1, length: 5});env.embassy.advanceSfer(3, "rec_clear");env.stage.current.onStep();
+SKIP::change("PAGE!!queue_person_enable", true);changeBgm(env.embassy.music_collapse, {rate: 1, length: 5});env.embassy.advanceSfer(3, "rec_clear");KillEveryone();ResetMusic();
 `)
 
 // - d3_person_intro
@@ -2443,7 +2453,7 @@ env.dialogues["d3_person_clear"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM STANDS SILENT
-            EXEC::pauseSwapCam(true);env.stage.current.onStep();ResetMusic();
+            EXEC::pauseSwapCam(true);KillEveryone();ResetMusic();
         I SEARCH THROUGH THE DEBRIS STREWN AROUND THE TENDRIL...
             EXEC::env.combat.lastEngaged="attendant_squad_1"
         TEXEC::env.combat.dynamicReward()
@@ -2499,7 +2509,7 @@ start
         continue<+>END
             EXEC::env.embassy.vn({bg: false, tozik: "", gakvu: ""});pauseSwapCam(false)
 
-SKIP::env.embassy.advanceSfer(1, "person_clear");vn.done();pauseSwapCam(false);env.stage.current.onStep();
+SKIP::env.embassy.advanceSfer(1, "person_clear");vn.done();pauseSwapCam(false);KillEveryone();ResetMusic();
 `)
 
 // - d3_containerinspect 
@@ -2558,7 +2568,7 @@ ____END
 
     sourceless
         THE CONTAINERS LIE MOTIONLESS, SLOWLY MELTING INTO WASTE
-            EXEC::change("PAGE!!kazkiambush", true);env.stage.current.onStep();ResetMusic();
+            EXEC::change("PAGE!!kazkiambush", true);KillEveryone();ResetMusic();
         A NUMBER OF SUBMERGED SHAPES FLOAT TO THEIR SURFACES
         TEXEC::env.combat.dynamicReward()
         WITH A LITTLE DIGGING, WE FIND SOME SFER CUBES!
@@ -2577,7 +2587,7 @@ ____END
         continue<+>END
             EXEC::step();env.embassy.vn({bg: false, tozik: ""});pauseSwapCam(false)
     
-SKIP::change("PAGE!!kazkiambush", true);env.stage.current.onStep();step();vn.done();pauseSwapCam(false);env.embassy.advanceSfer(4, "d3r2")
+SKIP::change("PAGE!!kazkiambush", true);KillEveryone();ResetMusic();step();vn.done();pauseSwapCam(false);env.embassy.advanceSfer(4, "d3r2")
 `)
 
 // - d3_relocator_repair
@@ -2694,7 +2704,7 @@ awaken
 
     sourceless
         THE AGGRESSOR'S SIGIL FORMS IN PLACE OF MOVEFRIEND'S FACE
-            EXEC::env.embassy.vn({bg: false, gakvu: "", tozik: ""});document.querySelector('#realgrid .lifter').classList.remove('fixed');document.querySelector('#realgrid .lifter').classList.add('aggressormode')
+            EXEC::env.embassy.vn({bg: false, gakvu: "", tozik: ""});EvilMovefriend();
         I HEAR THE SOUND OF CORRU SHIFTING BEHIND THE WALLS
 
     aggressor
@@ -2711,7 +2721,7 @@ awaken
         SHARP TENDRILS EMERGE FROM MOVEFRIEND'S FORM IN UNEVEN PATTERNS
         IT INTENDS TO KILL US
         THERE IS NO OTHER CHOICE BUT TO FIGHT
-            EXEC::content.classList.remove('painmode');AddMiltzaToParty();
+            EXEC::content.classList.remove('painmode');
 
     RESPONSES::sys
         force thoughtform rules over entity<+>END
@@ -3158,7 +3168,7 @@ env.dialogues["d3_archiveintro"] = generateDialogueObject(`
 start
     sourceless
         OUR FOES LIE DESTROYED
-            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);env.stage.current.onStep();ResetMusic();
+            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);KilEveryone();ResetMusic();
         TEXEC::env.combat.dynamicReward()
         ...
         REALLY, A SATIK CYST? HERE? HOW PECULIAR...
@@ -3225,7 +3235,7 @@ env.dialogues["d3_archivalvein"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM IS SILENT
-            EXEC::env.stage.current.onStep();ResetMusic();
+            EXEC::KillEveryone();ResetMusic();
         I SCAVENGE THROUGH THE REMAINS OF OUR FOES...
             EXEC::env.combat.lastEngaged="archivecommon"
         TEXEC::env.combat.dynamicReward()
@@ -3277,7 +3287,7 @@ env.dialogues["d3_archivecore"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM IS DEATHLY STILL, ASIDE FROM THE DRIPPING OF SPIREBLOOD FROM THE MELTING CEILING
-            EXEC::env.stage.current.onStep();ResetMusic();
+            EXEC::KillEveryone();ResetMusic();
         I PICK THROUGH THE REMNANTS OF OUR FOES...
             EXEC::env.combat.lastEngaged="archivedouble"
         TEXEC::env.combat.dynamicReward()
@@ -3434,7 +3444,7 @@ ____END
 
     sourceless
         THE LAST ONE FALLS
-            EXEC::env.stage.current.onStep();ResetMusic();
+            EXEC::KillEveryone();ResetMusic();
 
         AFTER THE FIGHT, WE ALL CHEER IN UNISON
             SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
@@ -4265,21 +4275,10 @@ env.stages['embassy_archivalboss'] = {
         }
     },
 
-    bossCollapse: ()=>{
-        document.querySelectorAll('.bstrdboss').forEach(el=>el.classList.add('broke'))
-    },
-
-    removeBastardBG: ()=>{  
-        content.classList.remove("bastard")
-    },
-
-    showPillar: ()=>{
-        document.querySelectorAll(".bstrdpillar").forEach(el=>el.parentElement.classList.remove('hide'))
-    },
-
-    hidePillarCyst: ()=>{
-        document.querySelectorAll(".bstrdpillar").forEach(el=>el.classList.add('nocyst'))
-    },
+    bossCollapse: ()=>{ document.querySelectorAll('.bstrdboss').forEach(el=>el.classList.add('broke')) },
+    removeBastardBG: ()=>{ content.classList.remove("bastard") },
+    showPillar: ()=>{ document.querySelectorAll(".bstrdpillar").forEach(el=>el.parentElement.classList.remove('hide')) },
+    hidePillarCyst: ()=>{ document.querySelectorAll(".bstrdpillar").forEach(el=>el.classList.add('nocyst')) },
 
     clearBossPals: ()=>{
         document.querySelectorAll('.bstrdbosspanel').forEach(el=>el.classList.remove('bstrdbosspanel'))
@@ -4291,53 +4290,19 @@ env.stages['embassy_archivalboss'] = {
     locale: "research",
 
     entities: {
-        "^": {
-            class: "door up",
-            teleportSpot: 22,
-            teleportTarget: "embassy_archivalvein",
-            shouldFace: 'up',
-        },
+        "^": { class: "door up", teleportSpot: 22, teleportTarget: "embassy_archivalvein", shouldFace: 'up', },
 
-        "ö": {
-            contains: {
-                id: "boss",
-                class: "prop blocks bstrdbosspanel",
-                html: `<figure> <span class="staticarchivalgolem"></span> </figure>`,
-            }
-        },
-
-        "ô": {
-            class: "prop blocks notile",
-            contains: {
-                class: "lamp bstrd collapsed",
-                html: `<figure><div class="target" entity="hostile veilklight"></div></figure>`
-            }
-        },
-
-        "£": {
-            class: "notile",
-            contains: {
-                id: "foe",
-                class: "evil staysdead collapseonly maintcloak",
-                type: "archivecloaktainer",
-                dialogue: "d3_genericenemy",
-                html: `<figure class="spritestack">
+        "ö": { contains: { id: "boss", class: "prop blocks bstrdbosspanel", html: `<figure class="archivalgolem bstrdboss"><div class="target" entity="bstrd golem"></div></figure>` } },
+        "ô": { class: "prop blocks notile", contains: { class: "lamp bstrd collapsed", html: `<figure><div class="target" entity="hostile veilklight"></div></figure>` } },
+        "£": { class: "notile", contains: { id: "foe", class: "evil staysdead collapseonly maintcloak", type: "archivecloaktainer", 
+               html: `<figure class="spritestack">
                     <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif">
                     <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
                     <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif">
                     <div class="target" entity="jutskin"></div>
-                </figure>`
-            }
-        },
+                </figure>` } },
         
-        "P": {
-            class:"prop blocks notile hide",
-            contains: {
-                class: "bstrdpillar",
-                examineEntity: "peculiar obelisk",
-                html: `<figure></figure>`                
-            }
-        },
+        "P": { class:"prop blocks notile hide", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure></figure>` } },
     },
 
     width: 7,
