@@ -28,6 +28,7 @@
     - d3r2_containerambush
     - d3r2_postcombat
     - d3_relocator_repair
+    - d3_movecmb
     - d3_movefriend_finish
     - d3_bstrdintro
     - d3_archiveintro
@@ -2746,6 +2747,55 @@ awaken
 SKIP::env.embassy.skips.d3_relocator_repair()
 SKIPTIME::700
 `) 
+
+// - d3_movecmb
+env.dialogues["d3_movecmb"] = generateDialogueObject(`
+start
+    sys
+        WARNING::'incoherence detected'
+            EXEC::env.rpg.classList.add('hideteams')
+
+    gakvu
+        hey...
+        listen
+        now that it is controlling movefriend,
+        the groundsmind is trying to submerge this entire room
+        but i might be able to fight off its control
+        i know we just repaired movefriend, but you need to weaken it
+        and i need to stay back
+
+    sourceless
+        A JOLT OF SHOCK RUNS THROUGH THE TIMESTOPPER CONNECTION
+        GAKVU HAS TORN THE CONNECTOR OFF OF HER RECEPTOR
+        MILTZA IS FROZEN AT THE FAR END, IN WHAT I ASSUME TO BE TERROR PARALYSIS
+        ANOTHER JOLT RUNS THROUGH THE TIMESTOPPER,
+        AS GAKVU SHOVES THE CONNECTOR ONTO MILTZA'S RECEPTOR
+    
+    miltza
+        aaaahhh!!
+        what is this!!!
+        oh... the timestopper? it works remotely?
+        
+    akizet
+        it does indeed
+        you need to help us keep movefriend away from gakvu
+        do you have any weapons?
+    
+    miltza
+        no... sorry... that disabler was all i had
+        but when i was larval, i was a remote coordinator
+        i can lend my reflexes to you!
+
+    akizet
+        that will do
+    
+    RESPONSES::akizet
+        lets get started<+>END
+            FAKEEND::proceed
+            EXEC::env.rpg.classList.remove('hideteams')
+
+SKIP::env.rpg.classList.remove('hideteams')
+`)
 
 // - d3_movefriend_finish
 env.dialogues["d3_movefriend_finish"] = generateDialogueObject(`
