@@ -57,7 +57,7 @@
 
 // - INITIALISATION
 async function KillEveryone () {
-    setTimeout(()=>{ env.stage.current.onStep(); }, 1500)
+    setTimeout(()=>{ env.stage.current.onStep(); }, 1250)
 }
 function ResetMusic() { 
     setTimeout(()=>{ env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
@@ -3168,7 +3168,7 @@ env.dialogues["d3_archiveintro"] = generateDialogueObject(`
 start
     sourceless
         OUR FOES LIE DESTROYED
-            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);KilEveryone();ResetMusic();
+            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);KillEveryone();ResetMusic();
         TEXEC::env.combat.dynamicReward()
         ...
         REALLY, A SATIK CYST? HERE? HOW PECULIAR...
