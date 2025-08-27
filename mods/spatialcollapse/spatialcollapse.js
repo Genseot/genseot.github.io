@@ -56,8 +56,8 @@
 
 
 // - INITIALISATION
-async function KillEveryone () {
-    setTimeout(()=>{ env.stage.current.onStep(); }, 1250)
+function KillEveryone() {
+    setTimeout(()=>{ env.stage.current.onStep(); }, 1000)
 }
 function ResetMusic() { 
     setTimeout(()=>{ env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
@@ -1365,7 +1365,9 @@ CombatScene.SCENARIOS['spatial_movefoe'] = {
     bgmRate: ()=> 0.75,
     combatClass: "research",
 
-    startCallback: ()=> console.log("startcallback"),
+    startCallback: ()=> { console.log("startcallback")
+        setTimeout(()=>{ startDialogue('d3_movecmb'); cutscene(false); }, 1500)
+    },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
         else { startDialogue("d3_movefriend_finish") }
@@ -1417,7 +1419,9 @@ CombatScene.SCENARIOS['spatial_movefoe_lowintensity'] = {
     bgmRate: ()=> 0.75,
     combatClass: "research",
 
-    startCallback: ()=> console.log("startcallback"),
+    startCallback: ()=> { console.log("startcallback")
+        setTimeout(()=>{ startDialogue('d3_movecmb'); cutscene(false); }, 1500)
+    },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
         else { startDialogue("d3_movefriend_finish") }
@@ -3168,7 +3172,7 @@ env.dialogues["d3_archiveintro"] = generateDialogueObject(`
 start
     sourceless
         OUR FOES LIE DESTROYED
-            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);KillEveryone();ResetMusic();
+            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);KilEveryone();ResetMusic();
         TEXEC::env.combat.dynamicReward()
         ...
         REALLY, A SATIK CYST? HERE? HOW PECULIAR...
