@@ -56,8 +56,8 @@
 
 
 // - INITIALISATION
-function KillEveryone() {
-    setTimeout(()=>{ env.stage.current.onStep(); }, 1000)
+async function KillEveryone () {
+    setTimeout(()=>{ env.stage.current.onStep(); }, 1500)
 }
 function ResetMusic() { 
     setTimeout(()=>{ env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
