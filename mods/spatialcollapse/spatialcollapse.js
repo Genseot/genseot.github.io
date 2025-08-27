@@ -1368,6 +1368,7 @@ CombatScene.SCENARIOS['spatial_movefoe'] = {
 
     startCallback: ()=> { console.log("startcallback")
         setTimeout(()=>{ startDialogue('d3_movecmb'); cutscene(false); }, 1500)
+        env.rpg.classList.add('hideteams')
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
@@ -1422,6 +1423,7 @@ CombatScene.SCENARIOS['spatial_movefoe_lowintensity'] = {
 
     startCallback: ()=> { console.log("startcallback")
         setTimeout(()=>{ startDialogue('d3_movecmb'); cutscene(false); }, 1500)
+        env.rpg.classList.add('hideteams')
     },
     endCallback: (loser)=> {
         if(loser.name == "ally") env.grm.startRetryOffer();
@@ -2753,7 +2755,6 @@ env.dialogues["d3_movecmb"] = generateDialogueObject(`
 start
     sys
         WARNING::'incoherence detected'
-            EXEC::env.rpg.classList.add('hideteams')
 
     gakvu
         hey...
