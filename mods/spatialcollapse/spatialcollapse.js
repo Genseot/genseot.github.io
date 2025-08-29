@@ -155,8 +155,8 @@ env.STATUS_EFFECTS.gakvu_disconnected = {
 
             setTimeout(function() { 
                 if(env.rpg.currentActor == gakvu) { 
-                    useAction(gakvu, env.ACTIONS.gakvu_groundsmindry, target) 
-                    setTimeout(()=>advanceTurn(gakvu), 250)
+                    useAction(gakvu, env.ACTIONS.gakvu_groundsmindry, self) 
+                    setTimeout(()=>advanceTurn(), 250)
                 } 
            	}, env.ADVANCE_RATE) }
     }
