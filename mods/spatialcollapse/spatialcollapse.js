@@ -39,6 +39,7 @@
     - d3_archivedelivery
     - d3_archivedeliveryclear
     - d3_archivemini
+    - d3_archiveminiclear
     - d3_archiveboss
     - d3_archivebossend
     - loss
@@ -3600,6 +3601,65 @@ start
             FAKEEND::(skip combat)
 `)
 
+// - d3_archiveminiclear
+env.dialogues["d3_archiveminiclear"] = generateDialogueObject(`
+start
+____SHOWIF::'gameplay_off'
+    sys
+        ATTENTION::"thoughtform combat gameplay bypassed";'toggle within system menu if desired'
+____END
+
+    sourceless
+        THE BEAST FALLS AND MELTS, THOUGH...
+            EXEC::KillEveryone();ResetMusic();
+        THE CORRUCYSTIC SLUDGE THAT REMAINS SEEMS TO DRAIN AWAY
+            EXEC::changeBgm(env.embassy.music_collapse, {length: 4000});
+        ARE THOSE HOLES IN THE GROUND?
+        IS THAT THE GROUND?
+        SOMETHING ABOUT IT MAKES MY HEAD HURT...
+
+    gakvu
+        akizet? are you ok?
+            EXEC::env.embassy.vn({bg: true, gakvu: "fullview"});
+
+    sourceless
+        IS IT SO PLAIN TO SEE?
+        MY RECEPTORS HAVE CURLED INTO TIGHT SPIRALS,
+        AND IN OUR POST-COMBAT, I HAVE LEANED AGAINST A WALL TO RECOVER
+        TOZIK APPROACHES TO SEE IF ANYTHING IN PARTICULAR IS BROKEN
+        BUT, I WAVE THEM AWAY
+    
+    akizet
+        no no, i am all right
+        do you... see anything strange with this room?
+    
+    sourceless
+        THEY LOOK AROUND, CLEARLY NOT AS PERTURBED AS I
+            EXEC::env.embassy.vn({bg: false, gakvu: "defocus", tozik: "defocus"})
+        TOZIK STUDIES THE MIGRAINE-INDUCING VOID OF THE CEILING
+    
+    tozik
+        it looks like the perspective projection might be acting up
+        i am not surprised, given the entity that has been guiding us
+        it has an uncanny control of the environment
+        not unlike the groundsmind, or gakvu...
+
+    gakvu
+        hey, where is it, anyway?
+        did it just take the box and cyst and run around this thing?
+
+    sourceless
+        SUSPICION SPIKES THROUGH OUR CONNECTION
+        IS IT A TRAP?
+        WE CAN EITHER CONTINUE, OR TURN AROUND...
+        WE ARE QUITE FAR OUT OF OUR WAY, AFTER ALL
+        BUT SURELY THIS WILL BE WORTH THE TROUBLE?
+            EXEC::env.embassy.vn({gakvu: "", tozik: ""})
+    
+    RESPONSES::akizet
+        continue<+>END
+`)
+
 // - d3_archiveboss
 env.dialogues["d3_archiveboss"] = generateDialogueObject(`
 start
@@ -4268,10 +4328,9 @@ env.stages['embassy_archivalcore_sensitive'] = {
 
     onStep: ()=>{
         if(check("PAGE!!archivemini")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
-                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
-                e.parentElement.id = ""; e.parentElement.dialogue = "";
-                e.parentElement.innerHTML = ""
+            document.querySelectorAll('.grid-plane .bstrdshelf, #grid-ref .bstrdshelf').forEach(el=>{
+                el.parentElement.classList.remove('prop', 'blocks')
+                el.parentElement.innerHTML = ""
             })
         }
     },
@@ -4284,7 +4343,7 @@ env.stages['embassy_archivalcore_sensitive'] = {
         "e": { class:"prop blocks notile", contains: { class: "archive", examineEntity: "archive", html: `<figure></figure>` } },
         "ë": { class:"prop blocks notile", contains: { class: "archive opposite", examineEntity: "archive", html: `<figure></figure>` } },
         "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
-        "ô": { class: "prop chartile blocks", contains: { class: "bstrdshelf", html: `<figure><div class="target" entity="hostile archive"></div></figure>` } },
+        "ô": { class: "prop chartile blocks", contains: { class: "bstrdshelf enemy", html: `<figure><div class="target" entity="hostile archive"></div></figure>` } },
         "Y": { class: "blocks", contains: { class: "savepoint always-targeted shelfroom", id: "savepoint", examineEntity: "save iteration", }
         },
     },
