@@ -530,13 +530,21 @@ env.stages['city_cafe'] = {
     enterDirection: "up",
     exec: ()=>{ 
         page.bgm.rate(0.9)
-        EpisodeCheck()
+        if(!check('ep0_epilogue')) {
+            [env.stage.real, env.stage.ref].forEach(layer => {
+                layer.querySelectorAll('.later').forEach(e => {
+                    console.log(e)
+                    e.classList.remove('prop', 'later')
+                    e.innerHTML = ""
+                })
+            })
+        }
     },
 
     entities: {
         e: {
             slug: 'e',
-            teleportSpot: 67,
+            teleportSpot: 68,
             shouldFace: 'left',
             teleportTarget: "city_street2"
         },
@@ -584,6 +592,16 @@ env.stages['city_cafe'] = {
             }
         },
 
+        T: {
+            class: "prop later",
+            contains: {
+                slug: 'T',
+                id: 'creep',
+                class: "civvie creep rotxa",
+                examineEntity: "stre wal k"
+            }
+        },
+
         v: {
             class: "prop blocks ep1on",
             contains: {
@@ -591,25 +609,84 @@ env.stages['city_cafe'] = {
                 class: "tv",
                 examineEntity: "electric face box"
             }
-        }
+        },
+
+        ⳉ: {
+            class: "road blocks",
+            contains: { 
+                class: "rotainer",
+                examineEntity: "rotwatcher",
+                html: `<figure class="rotfig"></figure>`,
+                dyp: {
+                    image: 'transparent',
+                    width: 3,
+                    height: 2.5,
+                    transform: `rotateY(90deg) translateX(200%) rotateY(-45deg) translateX(-25%) translateY(-50%)`,
+                    style: `--baseTransform: rotateX(-90deg) var(--dyp-transform);`,
+                }
+            } 
+        },        
     },
 
-    plan: [
-        '.','.','e','.','.',
-        't','░','p','░','░',
-        '░','░','░','░','░',
-        '░','░','░','░','░',
-        '░','░','░','░','░',
-        'r','r','c','r','r',
-        'r','r','m','w','v',
-    ]
+    plan: `
+        ..e..
+        t░p░░
+        ░░░░░
+        ░░░░░
+        ░░░░░
+        rrcrr
+        ⳉrmwv
+    `,
+
+    planAdjustment: (plan) => {
+        console.log("hello.", plan)
+        let newPlan = plan
+        if(!check("mask", "joy") || env?.buddy_globalRotwatcher?.currentLocation != page.path) {
+            console.log("no joy")
+            newPlan = newPlan.replace("ⳉ", "r")
+        } else {
+            newPlan = newPlan.replace("t", "T")
+        }
+
+        console.log(plan)
+
+        return newPlan
+    }
 }
 env.stages['city_street3'] = {
     locale: "nightcity",
     width: 14,
     exec: ()=>{ 
-        page.bgm.rate(1)
-        EpisodeCheck()
+        if(!check('ep0_epilogue')) {
+            [env.stage.real, env.stage.ref].forEach(layer => {
+                layer.querySelectorAll('.later').forEach(e => {
+                    console.log(e)
+                    e.classList.remove('prop', 'later')
+                    e.innerHTML = ""
+                })
+            })
+        }
+
+        env.stage.real.querySelectorAll('#crossbutton').forEach(el=>{
+            el.addEventListener('mouseenter', ()=>{play("muiHover", 1)})
+
+            el.addEventListener('click', ()=>{
+                env.entities["vehicle stream crossing mechanism"].actions[0].exec()
+            })
+        })
+    },
+
+    leaveExec: ()=> {
+        env.citystreet.buttonActive = false
+        clearTimeout(env.citystreet.buttonTimeout)
+        env.setTimeout(() => {
+            if(env.stage.name != "city_street3" || check("mask") != "joy") {
+                env.citystreet.wait.stop()
+                env.citystreet.walk.stop()
+                env.bgm.rate(1)
+                content.classList.remove('hide-envoy')
+            }            
+        }, 50)
     },
 
     entities: {
@@ -656,30 +733,199 @@ env.stages['city_street3'] = {
                 }
             } 
         },
+
+        ";": {
+            class: "prop",
+            contains: { 
+                html: `<div id="crossbutton" class="target" entity="vehicle stream crossing mechanism"></div>`,
+                dyp: {
+                    image: 'url(/img/local/city/blacklamp_crossing.gif)',
+                    width: 1.5,
+                    height: 4,
+                    transform: "rotateY(90deg)"
+                }
+            } 
+        },
+
+        "O": {
+            class: "prop road blocks",
+            contains: { 
+                dyp: {
+                    image: 'url(/img/local/city/crossing_locked.gif)',
+                    width: 2,
+                    height: 4,
+                    style: "transform: translate(50%, 12.5%);bottom: unset;"
+                }
+            } 
+        },
+
+        "o": {
+            class: "prop road blocks",
+            contains: { 
+                dyp: {
+                    image: 'url(/img/local/city/crossing.gif)',
+                    width: 2,
+                    height: 4,
+                    style: "transform: translate(50%, 12.5%);bottom: unset;"
+                }
+            } 
+        },
         
         "C": {
             teleportTarget: "city_banks",
             teleportSpot: 112,
             shouldFace: "down"
         },
+        
+
+        J: {
+            class: "road",
+            contains: {
+                dyp: {
+                    class: "joygap",
+                    image: 'url(/img/textures/flowergate0.gif)',
+                    width: 3,
+                    height: 3,
+                    noback: true,
+                    transform: "rotateY(180deg)"
+                }
+            } 
+        },
+
+        "j": {
+            class: "faketeleport joyport",
+            exec: ()=>{ 
+                change("TEMP!!from", "street")
+                moveTo("/local/city/aquarium/") 
+            }
+        },
+
+        "¤": {
+            class: "road darktile blocks",
+            contains: {
+                html: `
+                    <div class="target joyonly" entity="˜CâR…"></div>
+                    <div class="joyonly joygarnish garnishportal caseportal"><div class="carsign"></div></div>
+                `,
+                dyp: {
+                    image: 'url(/img/local/beneath/car.gif)',
+                    width: 3,
+                    height: 3,
+                    transform: "rotateY(180deg)"
+                }
+            } 
+        },
+
+        "ø": {
+            contains: {
+                examineEntity: "s w   al kk",
+                html: `<div class="joyonly joygarnish garnishprop"></div>`,
+                dyp: {
+                    class: "civvie swalk face-creature",
+                    image: 'url(/img/local/city/pedestrian5.gif)',
+                    width: 1.5,
+                    height: 2,
+                    transform: "rotateY(180deg) rotateY(var(--faceAngle))",
+                    style: "transition: transform 400ms ease-in-out;"
+                }
+            } 
+        },
+        
+        G: {
+            class: "notile",
+            contains: {
+                examineEntity: "×è.÷ùÏÏøø",
+                class: `joyonly freedomonly`,
+                html: `<div class="joygarnish garnishprop" style="backface-visibility: visible;"></div>`,
+                dyp: {
+                    class: "camguy",
+                    image: 'url(/img/local/beneath/lost_pedestrian1.gif)',
+                    width: 1,
+                    height: 2.5,
+                    transform: 'translateZ(var(--tile-5)) translate(var(--tile-8)) rotateY(-120deg)'
+                }
+            } 
+        },
     },
 
-    plan: `
-        rrrr.n........
-        rrrr░p░r......
-        rrrrL░░r......
-        rrrr░░░P......
-        rrrrL░░r......
-        rrrr░░░r......
-        rrrrL░░rrr:rr.
-        rrrr░░░░░░░░░.
-        rrrrl░░░░░░░░C
-        rrrr░░░░░░░░░.
-        rrrrrrrrrrrrrr
-        rrrrrrrrrrrrrT
-        rrrrrrrrrrrrrT
-        rRRrrrrrrrrrrr
-    `
+    plans: {
+        default: `
+            rrrr.n........
+            rrrr░p░r......
+            rrrrL░░r......
+            rrrr░░░P......
+            rrrrL░░r......
+            rrrr░░░rG.....
+            rrrrL░░rrr:rr.
+            rrrr░░░░░░░░░.
+            rrrrl░░░░░░░░C
+            rrrr░░░░░░░░░.
+            rrrrrrrrrrrrrr
+            rrrrrrrrrrrrrT
+            rrrrrrrrrrrrrT
+            rRRrrrrrrrrrrr
+        `,
+
+        joy: `
+            rrrr.n........
+            rrrr░p░r......
+            rrrrL░░r......
+            rrrr░░░P......
+            rrrrL░░r......
+            rrrr░░░rG.....
+            rrrrL░░rrr:rr.
+            rrrr░░░░░░░░░.
+            rrrr;░░░░░░░░C
+            rrrr░░░░░░ø░░.
+            rrrrrrrrrrr¤rr
+            rrrrOrrrrrrrrT
+            rrrrrrrrrrrrrT
+            rRRrrrrrrrrrrr
+        `,
+
+        joycrossing: `
+            rrrr.n........
+            rrrr░p░r......
+            rrrrL░░r......
+            rrrr░░░P......
+            rrrrL░░r......
+            rrrr░░░rG.....
+            rrrrL░░rrr:rr.
+            rrrr░░░░░░░░░.
+            rrrr;░░░░░░░░C
+            rrrr░░░░░░ø░░.
+            rrrrr░rrrrr¤rr
+            rrrro░rrrrrrrr
+            rrrrr░rrrrrrrr
+            rrrrrjrrrrrrrr
+            rrrrrJrrrrrrrr
+        `,
+    },
+
+    getPlan: function() {
+        let plan = this.plans.default
+        
+        switch(check("mask")) {
+            case "joy":
+                plan = this.plans.joy
+                env.citystreet.buttonActive = true
+            break
+
+            default:
+                env.citystreet.buttonActive = false
+        }
+
+        return plan
+    },
+
+    planAdjustment: (plan) => {
+        let newPlan = plan
+
+        if(!check("effigy_sipper")) newPlan = newPlan.replace("G", ".")
+        if(!check("car__intro")) newPlan = newPlan.replace('ø', '░').replace('¤', 'r')
+
+        return newPlan
+    }
 }
 	
 
@@ -2197,3 +2443,4 @@ start
 `)
 }
 })
+
