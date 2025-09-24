@@ -2585,9 +2585,10 @@ document.addEventListener('corru_entered', () => {
     env.uncode = {
       input: content.querySelector('#code'),
       enter: () => { // sorry mods that change this!
-        let value = env.uncode.input.value.toLowerCase().replaceAll(".", "").replaceAll("/", "")
+	  let value = env.uncode.input.value.toLowerCase().replaceAll(".", "").replaceAll("/", "")
+	  if(value == "pit") value = "dangerous"
 
-        if (value.length) {
+	  if (value.length) {
           env.uncode.input.blur()
           cutscene(true)
           play('destabilize', 0.5)
@@ -2622,3 +2623,4 @@ document.addEventListener('corru_entered', () => {
     }
   };
 })
+
