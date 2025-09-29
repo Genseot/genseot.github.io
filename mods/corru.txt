@@ -16,6 +16,7 @@
         <div class="action">
         	<h2>Surface-Running</h2>
         		<p>A 6-chapter memory hole following Kazzanesche and her companions as they travel down the Yuzku River towards the Azalian gulch-city, Kozali, and the trials they endure along the way.</p>
+                <p>Code: <code>surfacerunning</code></p>
                 <h3>Installation (Updated Version)</h3>
                         <p><b>Note: the updated version contains some visual changes & an epilogue chapter.<b></p>
         		<p><code>https://genseot.github.io/mods/surfacerunning/surfacerunning.js</code></p>
