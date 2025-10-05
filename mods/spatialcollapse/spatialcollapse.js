@@ -58,9 +58,6 @@
 
 
 // - INITIALISATION
-function KillEveryone() {
-    setTimeout(()=>{ env.stage.current.onStep(); }, 1000)
-}
 function ResetMusic() { 
     setTimeout(()=>{ env.noBgmDuck = true; changeBgm(env.embassy.music_collapse, {rate:1}); }, 1000)
 }
@@ -68,6 +65,15 @@ function ResetMusic() {
 function EvilMovefriend() {
     setTimeout(()=> { document.querySelector('#realgrid .lifter').classList.remove('fixed');document.querySelector('#realgrid .lifter').classList.add('aggressormode') }, 1000)
 }
+function RecreationRewards() {
+    env.combat.lastEngaged="recreation_containers_1"; env.combat.dynamicReward();
+    env.combat.lastEngaged="recreation_containers_2"; env.combat.dynamicReward();
+    env.combat.lastEngaged="recreation_containers_3"; env.combat.dynamicReward();
+}
+function PersonnelRewards() {
+    env.combat.lastEngaged="attendant_squad_1"; env.combat.dynamicReward();
+    env.combat.lastEngaged="attendant_squad_2"; env.combat.dynamicReward();
+} 
 
 
 
@@ -2348,7 +2354,7 @@ env.dialogues["d3_rec_clear"] = generateDialogueObject(`
 start
     sourceless
         WITH THESE LAST FEW DEAD, THE SKITTERING FALLS QUIET
-            EXEC::KillEveryone();ResetMusic();
+            EXEC::ResetMusic();refreshStage({noFlash: true});
         TOZIK KNEELS BY A CONTAINER, GAKVU NEAR ANOTHER, 
         AND THEY RIFLE THROUGH THE SLUDGY REMAINS
             EXEC::changeBgm(env.embassy.music_collapse, {rate: 1})
@@ -2413,7 +2419,7 @@ start
         go get them out<+>END
             EXEC::change("PAGE!!queue_person_enable", true)
 
-SKIP::change("PAGE!!queue_person_enable", true);changeBgm(env.embassy.music_collapse, {rate: 1, length: 5});env.embassy.advanceSfer(3, "rec_clear");KillEveryone();ResetMusic();
+SKIP::change("PAGE!!queue_person_enable", true);changeBgm(env.embassy.music_collapse, {rate: 1, length: 5});env.embassy.advanceSfer(3, "rec_clear");ResetMusic();refreshStage({noFlash: true});RecreationRewards();
 `)
 
 // - d3_person_intro
@@ -2461,7 +2467,7 @@ env.dialogues["d3_person_clear"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM STANDS SILENT
-            EXEC::pauseSwapCam(true);KillEveryone();ResetMusic();
+            EXEC::pauseSwapCam(true);ResetMusic();refreshStage({noFlash: true});
         I SEARCH THROUGH THE DEBRIS STREWN AROUND THE TENDRIL...
             EXEC::env.combat.lastEngaged="attendant_squad_1"
         TEXEC::env.combat.dynamicReward()
@@ -2517,7 +2523,7 @@ start
         continue<+>END
             EXEC::env.embassy.vn({bg: false, tozik: "", gakvu: ""});pauseSwapCam(false)
 
-SKIP::env.embassy.advanceSfer(1, "person_clear");vn.done();pauseSwapCam(false);KillEveryone();ResetMusic();
+SKIP::env.embassy.advanceSfer(1, "person_clear");vn.done();pauseSwapCam(false);ResetMusic();refreshStage({noFlash: true});PersonnelRewards();
 `)
 
 // - d3_containerinspect 
@@ -2576,7 +2582,7 @@ ____END
 
     sourceless
         THE CONTAINERS LIE MOTIONLESS, SLOWLY MELTING INTO WASTE
-            EXEC::change("PAGE!!kazkiambush", true);KillEveryone();ResetMusic();
+            EXEC::change("PAGE!!kazkiambush", true);ResetMusic();refreshStage({noFlash: true});
         A NUMBER OF SUBMERGED SHAPES FLOAT TO THEIR SURFACES
         TEXEC::env.combat.dynamicReward()
         WITH A LITTLE DIGGING, WE FIND SOME SFER CUBES!
@@ -2595,7 +2601,7 @@ ____END
         continue<+>END
             EXEC::step();env.embassy.vn({bg: false, tozik: ""});pauseSwapCam(false)
     
-SKIP::change("PAGE!!kazkiambush", true);KillEveryone();ResetMusic();step();vn.done();pauseSwapCam(false);env.embassy.advanceSfer(4, "d3r2")
+SKIP::change("PAGE!!kazkiambush", true);step();vn.done();pauseSwapCam(false);env.embassy.advanceSfer(4, "d3r2");refreshStage({noFlash: true});ResetMusic();
 `)
 
 // - d3_relocator_repair
@@ -3224,7 +3230,7 @@ env.dialogues["d3_archiveintro"] = generateDialogueObject(`
 start
     sourceless
         OUR FOES LIE DESTROYED
-            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);KillEveryone();ResetMusic();
+            EXEC::env.combat.lastEngaged="archivetutorial";change('PAGE!!archivalintrofight', true);ResetMusic();refreshStage({noFlash: true});
         TEXEC::env.combat.dynamicReward()
         ...
         REALLY, A SATIK CYST? HERE? HOW PECULIAR...
@@ -3291,7 +3297,7 @@ env.dialogues["d3_archivalvein"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM IS SILENT
-            EXEC::KillEveryone();ResetMusic();
+            EXEC::ResetMusic();refreshStage({noFlash: true});
         I SCAVENGE THROUGH THE REMAINS OF OUR FOES...
             EXEC::env.combat.lastEngaged="archivecommon"
         TEXEC::env.combat.dynamicReward()
@@ -3343,7 +3349,7 @@ env.dialogues["d3_archivecore"] = generateDialogueObject(`
 start
     sourceless
         THE ROOM IS DEATHLY STILL, ASIDE FROM THE DRIPPING OF SPIREBLOOD FROM THE MELTING CEILING
-            EXEC::KillEveryone();ResetMusic();
+            EXEC::ResetMusic();refreshStage({noFlash: true});
         I PICK THROUGH THE REMNANTS OF OUR FOES...
             EXEC::env.combat.lastEngaged="archivedouble"
         TEXEC::env.combat.dynamicReward()
@@ -3500,7 +3506,7 @@ ____END
 
     sourceless
         THE LAST ONE FALLS
-            EXEC::KillEveryone();ResetMusic();
+            EXEC::ResetMusic();refreshStage({noFlash: true});
 
         AFTER THE FIGHT, WE ALL CHEER IN UNISON
             SHOWIF::'EXEC::env.embassy.checkUsedKavrukas(true)'
@@ -3611,7 +3617,7 @@ ____END
 
     sourceless
         THE BEAST FALLS AND MELTS, THOUGH...
-            EXEC::KillEveryone();ResetMusic();
+            EXEC::ResetMusic();env.stage.current.onStep();
         THE CORRUCYSTIC SLUDGE THAT REMAINS SEEMS TO DRAIN AWAY
             EXEC::changeBgm(env.embassy.music_collapse, {length: 4000});
         ARE THOSE HOLES IN THE GROUND?
@@ -3956,16 +3962,8 @@ env.stages['embassy_recreation'] = {
             if(env.stage.creatureLoc.y < 6) { env.stage.container.setAttribute("swapos", "bar") } 
             else if(env.stage.creatureLoc.x > 7) { env.stage.container.setAttribute("swapos", "kazkicorner") } 
             else { env.stage.container.removeAttribute("swapos") } }
-
-        if(check("PAGE!!recreationfight")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
-                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
-                e.parentElement.id = ""; e.parentElement.dialogue = "";
-                e.parentElement.innerHTML = ""
-            })
         }
     },
-    //greater than 7 on both xy = kazkibozko corner
     entities: {
         "r": {
             class: "door up", teleportSpot: 13, teleportTarget: "embassy_relocator", shouldFace: "up", lockFlag: "PAGE!!recreation_leavable",
@@ -3974,40 +3972,49 @@ env.stages['embassy_recreation'] = {
         },
         "B": { class: "prop blocks", contains: { class: "bar", html: `<figure><div class="target" entity="simulacra dispensary"></div></figure>`, } },
         "t": { class: "prop blocks", contains: { class: "table", html: `<figure></figure>` } },
-        b: { class:"prop blocks genericblocker", },
-        d: { class:"prop blocks", contains: { class: "deskleg" } },
+        'b': { class:"prop blocks genericblocker", },
+        'd': { class:"prop blocks", contains: { class: "deskleg" } },
         "f": { class:"prop blocks", contains: { id: "barfriend", examineEntity: "barfriend", class: "barfriend character collapser", html: `<figure></figure>` } },
         "A": { class: "prop blocks", contains: { class: "canopy", html: `<figure> <div class="lid"></div> <div class="deskleg"></div> </figure>` } },
-        "â†”": { class: "prop blocks", contains: { class: "chair", html: `<figure style="transform: rotateY(90deg)"></figure>` } },
-        "â†•": { class: "prop blocks", contains: { class: "chair", html: `<figure></figure>` } },
+        "C": { class: "prop blocks", contains: { class: "chair", html: `<figure style="transform: rotateY(90deg)"></figure>` } },
+        "H": { class: "prop blocks", contains: { class: "chair", html: `<figure></figure>` } },
         "O": { class: "cornerbooth blocks genericblocker", contains: { class: "boothwalls", html: `<figure></figure>` } },
         "W": { class: "prop blocks", contains: { class: "window", html: `<figure> <div class="target" entity="window"></div> </figure>` } },
-        c: { class: "prop blocks", contains: { class: "container", html: `<figure style="transform: rotateY(-45deg)"></figure>` } },
-        L: { class:"prop blocks", contains: { class: "listener", examineEntity: "listener", html: `<figure> <div class="cyst"></div> <div class="cyst"></div> <div class="cyst"></div> <div class="callscreen"></div> </figure>` } },
+        'c': { class: "prop blocks", contains: { class: "container", html: `<figure style="transform: rotateY(-45deg)"></figure>` } },
+        'L': { class:"prop blocks", contains: { class: "listener", examineEntity: "listener", html: `<figure> <div class="cyst"></div> <div class="cyst"></div> <div class="cyst"></div> <div class="callscreen"></div> </figure>` } },
         "Q": { class: "prop chartile blocks", contains: { class: "dyingqou collapseonly", examineEntity: "damaged qou body", html: `<figure></figure>` } },
         "q": { class: "prop chartile blocks", contains: { class: "dyingqou collapseonly", examineEntity: "mangled qou body", html: `<figure></figure>` } },
         'N': {  class: "blocks cwall north", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallW]" baseHeight="6"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallH]" baseHeight="6"></canvas>` } },
         'S': {  class: "blocks cwall south", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallH]" baseHeight="6"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/cavewall.gif" repeat="repeat-x" fit="stretch-y" baseWidth="[wallW]" baseHeight="6"></canvas>` } },
 
-        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
-        "6": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
-        "Ã´": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<div class="collapsed lamp"><figure><div class="target" entity="hostile veilklight"></div></figure></div>` } },
+
+        "1": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
+        "2": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<figure class="evilcontainer"><div class="target" entity="hostile container"></div></figure>` } },
+        "3": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<div class="collapsed lamp"><figure><div class="target" entity="hostile veilklight"></div></figure></div>` } },
     },
     width: 13,
-    plan: [
-        'N','░','░','b','b','b','B','b','b','b','░','░','.',
-        '.','░','+','b','b','b','f','b','b','b','+','░','.',
-        '.','░','░','░','░','░','Ã´','q','T','░','░','░','.',
-        '.','░','░','â†•','░','░','░','░','░','â†•','░','░','.',
-        'G','6','â†”','A','â†”','░','░','░','â†”','A','â†”','░','.',
-        '.','░','░','â†•','Q','░','░','░','+','â†•','░','░','.',
-        '.','░','░','░','░','░','Ã¶','░','░','░','░','░','.',
-        '.','░','░','░','░','░','░','░','░','░','░','░','.',
-        '.','░','░','░','░','░','░','░','░','░','░','░','.',
-        '.','c','-','░','░','░','░','░','░','░','░','K','.',
-        '.','L','c','░','░','░','p','░','░','░','k','W','S',
-        '.','.','.','.','.','.','r','.','.','.','.','.','O',
-    ]
+    plans: { default: `
+        N░░bbbBbbb░░.
+        .░+bbbfbbb+░.
+        .░░░░░3qT░░░.
+        .░░H░░░░░H░░.
+        G2CAC░░░CAC░.
+        .░░HQ░░░+H░░.
+        .░░░░░1░░░░░.
+        .░░░░░░░░░░░.
+        .░░░░░░░░░░░.
+        .c-░░░░░░░░K.
+        .Lc░░░p░░░kWS
+        ......r.....O
+    `},
+
+    getPlan: function() {
+        let plan = this.plans.default;
+        if(check("PAGE!!recreationfight")) {
+            plan = plan.replace("1", "░").replace("2", "░").replace("3", "░")
+        }
+        return plan
+    }
 }
 
 env.stages['embassy_cpersonnel'] = {
@@ -4022,16 +4029,6 @@ env.stages['embassy_cpersonnel'] = {
             startDialogue("d3_person_intro")
             change('PAGE!!cpersonnel_intro', true)
         }   
-        env.stage.current.onStep()     
-    },
-    onStep:()=> {
-        if(check("PAGE!!personnelfight")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
-                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
-                e.parentElement.id = ""; e.parentElement.dialogue = "";
-                e.parentElement.innerHTML = ""
-            })
-        }
     },
 
     entities: {
@@ -4056,31 +4053,36 @@ env.stages['embassy_cpersonnel'] = {
         }, 
         "Q": { class: "prop blocks", contains: { class: "dyingqou collapseonly", examineEntity: "qou body", html: `<figure></figure>` } },
 
-        "Ã¶": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticattendant"></span> </figure>` } },
-        "â™¦": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticattendant"></span> </figure>` } },
 
-
-        "Ã¶": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
-        "â™¦": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
+        "1": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
+        "2": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<figure class="spiregolem"><div class="target" entity="attendant"></div></figure>` } },
     },
     enterDirection: "down",
     width: 7,
-    plan: [
-        'N','l','Q','░','░','l','.',
-        '<','░','░','░','░','░','.',
-        '.','░','░','░','░','░','.',
-        '.','░','░','░','░','░','{',
-        '.','░','░','░','░','░','.',
-        '}','░','░','░','░','Q','.',
-        '.','░','Ã¶','░','░','░','.',
-        '.','░','░','░','░','░','{',
-        '.','Q','░','â™¦','░','░','.',
-        '>','░','░','░','░','░','.',
-        '.','░','░','░','░','░','.',
-        '.','░','░','░','░','░','{',
-        '.','l','░','p','░','l','S',
-        '.','.','.','r','.','.','.',
-    ]
+    plans: { default: `
+        NlQ░░l.
+        <░░░░░.
+        .░░░░░.
+        .░░░░░{
+        .░░░░░.
+        }░░░░Q.
+        .░2░░░.
+        .░░░░░{
+        .Q░1░░.
+        >░░░░░.
+        .░░░░░.
+        .░░░░░{
+        .l░p░lS
+        ...r...
+    `},
+
+    getPlan: function() {
+        let plan = this.plans.default;
+        if(check("PAGE!!personnelfight")) {
+            plan = plan.replace("1", "░").replace("2", "░")
+        }
+        return plan
+    }
 }
 
 env.stages['embassy_cquarters2'] = {
@@ -4149,14 +4151,6 @@ env.stages['embassy_archivalintro'] = {
     onStep: ()=>{
         let strength = Math.clamp((1 / (env.stage.stageH - 3)) * (env.stage.creatureLoc.y - 3), 0, 1)
         content.style.setProperty('--bstrdcontrol', strength)  
-
-        if(check("PAGE!!archivalintrofight")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
-                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
-                e.parentElement.id = ""; e.parentElement.dialogue = "";
-                e.parentElement.innerHTML = ""
-            })
-        }
     },
     locale: "research",
 
@@ -4175,29 +4169,37 @@ env.stages['embassy_archivalintro'] = {
             }
         },
 
-        "ö": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", type: "archivetutorial", dialogue: "d3_bstrdintro", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
+        "1": { contains: { id: "foe", class: "evil staysdead collapseonly", type: "archivetutorial", dialogue: "d3_bstrdintro", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
     },
 
     width: 3,
-    plan: [
-        '.','v','.',
-        '.','p','.',
-        '.','♠','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','░','.',
-        '.','ö','.',
-        '.','^','.',
-    ],
+    plans: { default: `
+        .v.
+        .p.
+        .♠.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .░.
+        .1.
+        .^.
+    `},
+
+    getPlan: function() {
+        let plan = this.plans.default;
+        if(check("PAGE!!archivalintrofight")) {
+            plan = plan.replace("1", "░")
+        }
+        return plan
+    }
 }
 
 env.stages['embassy_archivalvein'] = {
@@ -4213,15 +4215,6 @@ env.stages['embassy_archivalvein'] = {
         if(!check("PAGE!!archivalveinfight")) startDialogue("d3_archivalvein_intro")
     },
 
-    onStep:()=> {
-        if(check("PAGE!!archivalveinfight")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
-                e.parentElement.classList.remove('evil', 'staysdead', 'collapseonly')
-                e.parentElement.id = ""; e.parentElement.dialogue = "";
-                e.parentElement.innerHTML = ""
-            })
-        }
-    },
     locale: "research",
 
     entities: {
@@ -4234,20 +4227,26 @@ env.stages['embassy_archivalvein'] = {
         'N': { class: "blocks cwall north", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` } },
         'S': { class: "blocks cwall south", contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas>` } },
 
-        "ö": { contains: { id: "foe", class: "evil staysdead collapseonly enemy", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
-        "£": { contains: { id: "foe", class: "evil staysdead collapseonly maintcloak enemy", html: `<figure class="spritestack"> <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif"> <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"> <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"> <div class="target" entity="jutskin"></div> </figure>` } },
+        "1": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
+        "2": { contains: { id: "foe", class: "evil staysdead collapseonly maintcloak", html: `<figure class="spritestack"> <img class="sprite" style="width: 100%;" src="/img/sprites/combat/foes/maintcloak.gif"> <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"> <img class="sprite" src="/img/sprites/combat/foes/mainthead.gif"> <div class="target" entity="jutskin"></div> </figure>` } },
     },
 
     width: 15,
-    plan: [
-        '.','.','.','.','.','.','.','v','.','.','.','.','.','.','.',
-        'N','░','░','░','░','░','ö','░','£','░','░','░','░','░','.',
-        '}','░','░','░','░','░','░','░','░','░','░','░','░','░','{',
-        '.','░','░','░','░','░','░','p','░','░','░','░','░','░','S',
-        '.','.','.','.','.','.','.','^','.','.','.','.','.','.','.',
-        
-    ],
+    plans: { default: `
+        .......v.......
+        N░░░░░1░2░░░░░.
+        }░░░░░░░░░░░░░{
+        .░░░░░░p░░░░░░S
+        .......^.......
+    `},
 
+    getPlan: function() {
+        let plan = this.plans.default;
+        if(check("PAGE!!archivalveinfight")) {
+            plan = plan.replace("1", "░").replace("2", "░")
+        }
+        return plan
+    },
     html: `<canvas class="veinceiling" sprite="/img/local/embassy/archivalceiling.gif" baseWidth="13.5" baseHeight="3"></canvas>`
 }
 
@@ -4269,14 +4268,6 @@ env.stages['embassy_archivalcore'] = {
         document.querySelectorAll(".bstrdpillar").forEach(el=>el.classList.add('nocyst'))
     },
 
-    onStep:()=> {
-        if(check("PAGE!!archivalcorefight")) {
-            document.querySelectorAll('.enemy').forEach(e=>{
-                e.parentElement.classList.remove('prop', 'blocks')
-                e.parentElement.innerHTML = ""
-            })
-        }
-    },
     locale: "research",
 
     entities: {
@@ -4287,24 +4278,32 @@ env.stages['embassy_archivalcore'] = {
         "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
         "P": { class:"prop blocks notile", contains: { class: "bstrdpillar", examineEntity: "peculiar obelisk", html: `<figure><div class="target" priority="2" entity="unnerving cyst"></div></figure>` } },
 
-        "ö": { class:"prop blocks", contains: { class:"enemy", html: `<figure> <span class="staticarchivalgolem" style="transform:rotateY(90deg)"></span> </figure>`, } },
-
         'N': { class: "blocks cwall north",
             contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas>` } },
         'S': { class: "blocks cwall south",
             contains: { html: `<canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallH]" baseHeight="3"></canvas> <canvas class="wall" sprite="/img/local/embassy/tiles/archivalwall.gif" repeat="repeat-x" fit="auto" baseWidth="[wallW]" baseHeight="3"></canvas>` } },
+
+
+        "1": { contains: { id: "foe", class: "evil staysdead collapseonly", html: `<figure class="archivalgolem"><div class="target" entity="archival golem"></div></figure>` } },
     },
 
     width: 7,
-    plan: [
-        '.','.','.','ë','.','.','.',
-        'N','░','░','░','░','░','.',
-        '.','░','░','░','░','░','.',
-        'E','P','ö','░','░','p','>',
-        '.','░','░','░','░','░','.',
-        '.','░','░','░','░','░','S',
-        '.','.','.','e','.','.','.',
-    ],
+    plans: { default:`
+        ...ë...
+        N░░░░░.
+        .░░░░░.
+        EP1░░p>
+        .░░░░░.
+        .░░░░░S
+        ...e...
+    `},
+    getPlan: function() {
+        let plan = this.plans.default;
+        if(check("PAGE!!archivalcorefight")) {
+            plan = plan.replace("1", "░")
+        }
+        return plan
+    },
 
     html: `<canvas class="veinsphere" sprite="/img/local/embassy/archivalspherecanvas.gif" baseWidth="7" baseHeight="7"></canvas>`
 }
@@ -4343,7 +4342,7 @@ env.stages['embassy_archivalcore_sensitive'] = {
         "e": { class:"prop blocks notile", contains: { class: "archive", examineEntity: "archive", html: `<figure></figure>` } },
         "ë": { class:"prop blocks notile", contains: { class: "archive opposite", examineEntity: "archive", html: `<figure></figure>` } },
         "E": { class:"prop blocks notile", contains: { class: "archive side", examineEntity: "archive", html: `<figure></figure>` } },
-        "ô": { class: "prop chartile blocks", contains: { class: "bstrdshelf enemy", html: `<figure><div class="target" entity="hostile archive"></div></figure>` } },
+        "ô": { class: "prop chartile blocks", contains: { class: "bstrdshelf", html: `<figure><div class="target" entity="hostile archive"></div></figure>` } },
         "Y": { class: "blocks", contains: { class: "savepoint always-targeted shelfroom", id: "savepoint", examineEntity: "save iteration", }
         },
     },
