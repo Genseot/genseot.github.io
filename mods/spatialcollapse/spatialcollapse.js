@@ -3961,7 +3961,7 @@ env.stages['embassy_recreation'] = {
             env.stage.real.classList.add("dynocam")
             if(env.stage.creatureLoc.y < 6) { env.stage.container.setAttribute("swapos", "bar") } 
             else if(env.stage.creatureLoc.x > 7) { env.stage.container.setAttribute("swapos", "kazkicorner") } 
-            else { env.stage.container.removeAttribute("swapos") } }
+            else { env.stage.container.removeAttribute("swapos") } 
         }
     },
     entities: {
