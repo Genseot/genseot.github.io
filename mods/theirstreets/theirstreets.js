@@ -470,6 +470,63 @@ createEntity({
 
 
 // DEFAULT STAGES
+env.stages['city_street'] = {
+    locale: "city",        
+    width: 11,
+    exec: ()=>env.bgm.rate(1),
+
+    entities: {
+        f: {
+            class:"officebuilding blocks",
+            contains: {
+                slug: 'f',
+                id: "office",
+                class: "office building",
+                html: `<figure></figure><div class="door"></div>`
+            }
+        },
+
+        e: {
+            slug: 'e',
+            teleportSpot: 7,
+            teleportTarget: "city_office"
+        },
+
+        s: {
+            slug: 's',
+            teleportSpot: 23,
+            teleportTarget: "city_street2"
+        },
+
+        b: {
+            class: "prop",
+            contains: {
+                slug: 'j',
+                id: 'busy',
+                class: "civvie busy eyeball",
+                examineEntity: "cloaked streetwalker"
+            }
+        },
+    },
+
+    plan: [
+        'r','r','r','r','.','.','O','.','.','.','.',
+        'r','r','r','r','░','░','p','░','░','r','.',
+        'r','r','r','r','░','░','░','░','░','r','.',
+        'r','r','r','r','░','░','░','░','░','r','.',
+        'r','r','r','r','░','░','l','░','░','r','.',
+        'r','r','r','r','░','░','░','░','l','r','.',
+        'r','r','r','r','░','░','░','░','b','r','.',
+        'r','r','r','r','░','░','░','░','░','e','f',
+        'r','r','r','r','░','░','░','░','░','r','.',
+        'r','r','r','r','░','l','░','░','░','r','.',
+        'r','r','r','r','░','░','░','░','l','r','.',
+        'r','r','r','r','░','░','l','░','░','r','.',
+        'r','r','r','r','░','░','░','░','░','r','.',
+        'r','r','r','r','░','░','░','░','░','r','.',
+        'r','R','R','r','.','.','s','.','.','.','.',
+    ]
+}
 env.stages['city_street2'] = {
     locale: "city",
     width: 14,
@@ -544,7 +601,7 @@ env.stages['city_cafe'] = {
     entities: {
         e: {
             slug: 'e',
-            teleportSpot: 68,
+            teleportSpot: 67,
             shouldFace: 'left',
             teleportTarget: "city_street2"
         },
@@ -2443,4 +2500,3 @@ start
 `)
 }
 })
-
