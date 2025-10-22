@@ -952,15 +952,15 @@ env.ACTIONS.special_archiveshelf_annihilate = {
 
                 switch(hit) { 
                     case "crit":
-                        env.rpg.effectMessage.action({ target:target, action:`%USER PUNCTURES %TARGET`, specialHitText:"%TARGET IS BRUTALLY STABBED", actionMessageIndex })                       
+                        env.rpg.effectMessage.action({ user:user, target:target, action:`%USER PUNCTURES %TARGET`, specialHitText:"%TARGET IS BRUTALLY STABBED", actionMessageIndex })                       
                         playCombatCrit(); addStatus({target: target, origin: user, status: "stun", length: 1}); addStatus({target: target, origin: user, status: "puncture", length: 2, noReact: true}); removeStatus(target,"windup");
                     break
                     case true:
-                        env.rpg.effectMessage.action({ target:target, action:`%USER STRIKES %TARGET`, specialHitText:"%TARGET TAKES A SOLID HIT", actionMessageIndex })                       
+                        env.rpg.effectMessage.action({ user:user, target:target, action:`%USER STRIKES %TARGET`, specialHitText:"%TARGET TAKES A SOLID HIT", actionMessageIndex })                       
                         reactDialogue(target, 'receive_hit'); play("hit", 0.75);
                     break
                     case false:
-                        env.rpg.effectMessage.action({ target:target, action:`%USER MISSES %TARGET`, specialHitText:"%TARGET ESCAPES BY A HAIR", actionMessageIndex })                       
+                        env.rpg.effectMessage.action({ user:user, target:target, action:`%USER MISSES %TARGET`, specialHitText:"%TARGET ESCAPES BY A HAIR", actionMessageIndex })                       
                         reactDialogue(target, 'evade'); play("miss", 0.75);
                     break
                 }
@@ -3913,7 +3913,7 @@ createEntity({
         exec: ()=> startDialogue('d3r2_containerinspect'),
         showIf: ["PAGE!!kazkiambush", false]
     }]
-}),
+})
 // - CALL RESEARCH STAGES
 env.stages['embassy_recreation'] = {
     locale: "research",
